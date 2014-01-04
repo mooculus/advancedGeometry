@@ -1,0 +1,197 @@
+\headline{In this activity we explore neutral geometries.}
+\activitytitle{Euclid's postulates for plane geometry} % the title of the activity
+\prerequisites{rigidMotions}
+\outcomes{neutralGeometry}
+
+
+
+%% We first turn our attention to plane (or `flat') two-dimensional
+%% geometry.
+
+In Western civilization, the primary source of our understanding of
+this geometry comes from Euclid's \textit{Elements}. The treatise is
+of transcendant importance well beyond geometry itself, because it is
+among the first, and perhaps the most influential single example of
+organized, formal logical deductive reasoning. Certain fundamentals,
+that are called \textit{axioms}, are postulated or `given,' providing
+the platform on which a `geometry' is built, that is, a mathematical
+entity modeling a physical `reality'. Its properties are arrived at by
+applying the laws of logic to the given fundamentals. Euclid gives
+five axioms for plane geometry, the first four of which seem to be
+`obvious' reflections of physical reality. In paraphrased form, they
+are:
+
+\begin{axiom}
+(E1) Through any point $P$ and any other point $Q$, there lies a
+unique line.
+\end{axiom}
+
+\begin{axiom}
+(E2) Given any two segments $\overline{AB}$ and $\overline{CD}$, there
+is a segment $\overline{AE}$ such that $B$ lies on $\overline{AE}$ and
+$\left\vert CD\right\vert =\left\vert BE\right\vert $
+
+(NB: In plane geometry we often use the notation $\left\vert
+CD\right\vert $ to denote the distance between two points $A$ and $B$
+rather than the notation $d\left( A,B\right) $ used previously.
+\end{axiom}
+
+\begin{axiom}
+(E3) Given and point $P$ and any positive real number $r$, there
+exists a (unique) circle of radius $r$ and center $P$. (Said another
+way, if you move away from $P$ along a line in any direction, you will
+encounter a unique point at distance $r$ from $P$.)
+\end{axiom}
+
+\begin{axiom}
+(E4) All right angles are congruent. (A right angle is defined as
+follows. Let $C$ be the midpoint on the segment $\overline{AB}$. Let
+$E$ be any point not equal to $C$. The angle $\angle ACE$ is called a
+right angle if $\angle ACE$ is congruent to $\angle BCE$.) [MJG,17-18]
+\end{axiom}
+
+\begin{definition}
+If we are only given E1-E4, we will call our geometry \textbf{neutral
+geometry} (\textbf{NG}).
+\end{definition}
+
+\begin{definition}
+In \textbf{NG}, two distinct lines are called parallel if and only if they
+don't intersect.
+\end{definition}
+
+One implicit assumption of two-dimensional neutral (and Euclidean)
+geometry is the existence of (a group of) rigid motions or
+congruences. That is, it is assumed that given any point $\hat{A}$ and
+any tangent vector $\hat{V}$ emanating from $\hat{A}$ and given any
+second point $\hat{B}$ in the geometry and any tangent vector
+$\hat{W}$ emanating from $\hat{B}$, then there is a transformation
+$\hat{M}$ of the geometry such that
+\begin{enumerate}
+\item $\hat{M}$ takes $\hat{A}$ to $\hat{B}$,
+\item $\hat{M}$ takes $\hat{V}$ and to a positive scalar multiple times $\hat{W}$ to $\hat{M}\left( \hat{V}\right) $,
+\item for all points $\hat{A}^{\prime},\hat{A}^{\prime\prime}$ in the
+geometry, $\hat{M}$ leaves the distance between them unchanged, that
+is,
+\[
+\left\vert \hat{M}\left(  \hat{A}^{\prime}\right)  \hat{M}\left(  \hat
+{A}^{\prime\prime}\right) \right\vert =\left\vert \hat{A}^{\prime}\hat
+{A}^{\prime\prime}\right\vert ,
+\]
+\item for any two tangent vectors $\hat{V}^{\prime}$ and
+$\hat{V}^{\prime\prime}$ emanating from $\hat{A}$, the angle between
+$\hat{M}\left( \hat{V}^{\prime }\right) $ and
+$\hat{M}\left( \hat{V}^{\prime\prime}\right) $ is the same as the
+angle between $\hat{V}^{\prime}$ and $\hat{V}^{\prime\prime}$.
+\end{enumerate}
+
+
+\begin{exercise}
+Using a sketch on grid paper or an algebraic formulation in the
+Euclidean plane, give a concrete example of a rigid motion that takes
+$\left( 1,2\right) $ to $\left( 3,5\right) $ and the tangent vector
+$\left( 1,0\right) $ emanating from $\left( 1,2\right) $ to a positive
+multiple of the tangent vector $\left( 0,2\right) $ emanating from
+$\left( 3,5\right)$.
+\end{exercise}
+
+\begin{exercise}
+(\textbf{NG}) Think back to high school days and write the congruence
+rules SSS, SAS, and ASA. Be very careful with your wording--it had
+better be that triangles can be moved onto each other by a rigid
+motion if and only if they satisfy any one (and hence all) of the
+three properties(SSS, SAS, ASA).
+\end{exercise}
+
+\begin{exercise}
+Give a counterexample to show that there is no universal SSA law.
+\end{exercise}
+
+Although it is a bit tedious to show (and we will not ask you to do it
+here), using only E1-E4 you can derive the usual rules for congruent
+triangles (SSS, SAS, ASA). Thus these laws hold in any neutral
+geometry, that is, in any geometry satisfying E1-E4.
+
+\begin{exercise}
+\label{18} (\textbf{NG}) Suppose, in the diagram below that $\left\vert
+BD\right\vert =\left\vert CD\right\vert $ and $\left\vert
+AD\right\vert =\left\vert ED\right\vert $.
+\[
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,2);
+\coordinate (B) at (2,5);
+\coordinate (C) at (6.5,.5);
+\coordinate (E) at (8,4);
+\coordinate (D) at (4,3);
+\draw (A)--(B)--(C)--(E)--(D)--cycle;
+\tkzLabelPoints[above](B,D,E)
+\tkzLabelPoints[below](A,C)
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\]
+Show that triangle $\triangle BDA$ and triangle $\triangle CDE$ are
+congruent. [MJG,138]
+\begin{solution}
+\begin{hint}
+First you should explain why $\angle BDA = \angle CDE$.
+\end{hint}
+\begin{hint}
+Next you should use one of the congruence properties above. 
+\end{hint}
+\answer[free-response]{To start, we claim that $\angle BDA = \angle CDE$. Labeling our diagram above, 
+\[
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,2);
+\coordinate (B) at (2,5);
+\coordinate (C) at (6.5,.5);
+\coordinate (E) at (8,4);
+\coordinate (D) at (4,3);
+\draw (A)--(B)--(C)--(E)--(D)--cycle;
+
+\tkzMarkAngle[size=0.7cm,thin](B,D,A)
+\tkzLabelAngle[pos = -0.4](B,D,A){$\alpha$}
+
+\tkzMarkAngle[arc=ll,size=0.5cm,thin](E,D,B)
+\tkzLabelAngle[pos = 0.25](E,D,B){$\beta$}
+
+\tkzMarkAngle[size=0.7cm,thin](C,D,E)
+\tkzLabelAngle[pos = 0.4](C,D,E){$\gamma$}
+
+\tkzMarkAngle[arc=ll,size=0.5cm,thin](A,D,C)
+\tkzLabelAngle[pos = 0.25](A,D,C){$\delta$}
+
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\]
+we see that 
+\begin{align*}
+\alpha+\beta &= 180^\circ\\
+\beta + \gamma &= 180^\circ.
+\end{align*}
+Subtracting the equations above we fine that $\alpha=\gamma = 0$
+whic means that $\alpha = \gamma$ and hence $\angle BDA = \angle
+CDE$. Since we know that $\left\vert BD\right\vert =\left\vert
+CD\right\vert $ and $\left\vert AD\right\vert =\left\vert
+ED\right\vert $ we may now apply SAS to prove that triangle $\triangle BDA$ and triangle $\triangle CDE$ are
+congruent.}
+\end{solution}
+\end{exercise}
+
+\begin{exercise}
+\label{118} 
+\begin{enumerate}
+\item Show in neutral geometry that, for $\triangle ABC$ as in
+Exercise \ref{18}, the exterior angle of the triangle at $C$ is
+greater than either remote interior angle. [MJG,119]
+\item Use a) to show that the sum of any two angles of a triangle is less than $180^{\circ}$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+(\textbf{NG}) Show in \textbf{NG} that, if two lines cut by a
+transversal line have a pair of congruent alternate interior angles,
+then they are parallel. [MJG,117]
+
+Hint: Suppose the assertion is false for some pair of lines. Find a
+triangle that violates the conclusion of Exercise \ref{118}a).
+\end{exercise}

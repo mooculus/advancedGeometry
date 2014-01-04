@@ -1,0 +1,10 @@
+\documentclass[handout,space]{../ximera}
+%% handout
+%% nohints
+
+
+\begin{document}
+
+\input{./euclidsPostulatesForPlaneGeometrySource.tex}
+
+\end{document}
