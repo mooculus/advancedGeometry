@@ -51,8 +51,8 @@ right angle if $\angle ACE$ is congruent to $\angle BCE$.) [MJG,17-18]
 \end{axiom}
 
 \begin{definition}
-If we are only given E1-E4, we will call our geometry \textbf{neutral
-geometry} (\textbf{NG}).
+If we are only given axioms E1--E4, we will call our
+geometry \textbf{neutral geometry} (\textbf{NG}).
 \end{definition}
 
 \begin{definition}
@@ -95,25 +95,25 @@ multiple of the tangent vector $\left( 0,2\right) $ emanating from
 $\left( 3,5\right)$.
 \end{exercise}
 
-\begin{exercise}
-(\textbf{NG}) Think back to high school days and write the congruence
-rules SSS, SAS, and ASA. Be very careful with your wording--it had
-better be that triangles can be moved onto each other by a rigid
-motion if and only if they satisfy any one (and hence all) of the
-three properties(SSS, SAS, ASA).
-\end{exercise}
+\begin{exploration}
+Think back to high school days and write the congruence rules SSS,
+SAS, and ASA. Be very careful with your wording---it had better be
+that triangles can be \textbf{moved onto each other by a rigid motion}
+if and only if they satisfy any one (and hence all) of the three
+properties (SSS, SAS, ASA).
+\end{exploration}
 
-\begin{exercise}
+\begin{question}
 Give a counterexample to show that there is no universal SSA law.
-\end{exercise}
+\end{question}
 
 Although it is a bit tedious to show (and we will not ask you to do it
-here), using only E1-E4 you can derive the usual rules for congruent
+here), using only E1--E4 you can derive the usual rules for congruent
 triangles (SSS, SAS, ASA). Thus these laws hold in any neutral
-geometry, that is, in any geometry satisfying E1-E4.
+geometry, that is, in any geometry satisfying E1--E4.
 
-\begin{exercise}
-\label{18} (\textbf{NG}) Suppose, in the diagram below that $\left\vert
+\begin{question}
+\label{18} Suppose, in the diagram below that $\left\vert
 BD\right\vert =\left\vert CD\right\vert $ and $\left\vert
 AD\right\vert =\left\vert ED\right\vert $.
 \[
@@ -175,23 +175,37 @@ CD\right\vert $ and $\left\vert AD\right\vert =\left\vert
 ED\right\vert $ we may now apply SAS to prove that triangle $\triangle BDA$ and triangle $\triangle CDE$ are
 congruent.}
 \end{solution}
-\end{exercise}
+\end{question}
 
-\begin{exercise}
+\begin{question}
 \label{118} 
 \begin{enumerate}
-\item Show in neutral geometry that, for $\triangle ABC$ as in
-Exercise \ref{18}, the exterior angle of the triangle at $C$ is
-greater than either remote interior angle. [MJG,119]
-\item Use a) to show that the sum of any two angles of a triangle is less than $180^{\circ}$.
+\item\label{Exp:ExtAngle} Show in neutral geometry that, for $\triangle ABC$ as in Exercise \ref{18}, 
+\[
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,2);
+\coordinate (B) at (2,5);
+\coordinate (C) at (6.5,2);
+\coordinate (F) at (9,2);
+\draw (A)--(B)--(C)--cycle;
+\draw (C)--(F);
+\tkzLabelPoints[above](B)
+\tkzLabelPoints[below](A,C)
+\tkzMarkAngle[size=0.5cm,thin](F,C,B)
+\tkzLabelAngle[pos = 0.25](F,C,B){$\epsilon$}
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\]
+the exterior angle $\epsilon$ of the triangle at $C$ is greater than either remote interior angle. [MJG,119]
+\item Use \ref{Exp:ExtAngle} to show that the sum of any two angles of a triangle is less than $180^{\circ}$.
 \end{enumerate}
-\end{exercise}
+\end{question}
 
-\begin{exercise}
-(\textbf{NG}) Show in \textbf{NG} that, if two lines cut by a
-transversal line have a pair of congruent alternate interior angles,
-then they are parallel. [MJG,117]
+\begin{exploration}
+Show in \textbf{NG} that, if two lines cut by a transversal line have
+a pair of congruent alternate interior angles, then they are
+parallel. [MJG,117]
 
 Hint: Suppose the assertion is false for some pair of lines. Find a
-triangle that violates the conclusion of Exercise \ref{118}a).
-\end{exercise}
+triangle that violates the conclusion of Exercise \ref{118}\ref{Exp:ExtAngle}.
+\end{exploration}

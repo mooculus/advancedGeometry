@@ -63,6 +63,10 @@
 \handoutfalse
 \DeclareOption{handout}{\handouttrue}
 
+\newif\ifnewpage
+\newpagefalse
+\DeclareOption{newpage}{\newpagetrue}
+
 
 \newif\ifhints
 \hintstrue
@@ -257,7 +261,8 @@
     \BODY % Typeset theorem body/content
     \ifhandout\ifspace\par\addvspace{#1}\nobreak\fi\fi
     \par\addvspace{.5ex}\nobreak\noindent\hung\par\addvspace{.4ex}%
-    \fi
+    \fi  
+    \ifnewpage\newpage\fi
 }
 
 
@@ -280,6 +285,7 @@
     \ifhandout\ifspace\par\addvspace{#1}\nobreak\fi\fi
     \par\addvspace{.5ex}\nobreak\noindent\hung\par\addvspace{.4ex}%
     \fi
+    \ifnewpage\newpage\fi
 }
 
 
@@ -303,6 +309,7 @@
     \ifhandout\ifspace\par\addvspace{#1}\nobreak\fi\fi
     \par\addvspace{.5ex}\nobreak\noindent\hung\par\addvspace{.4ex}%
     \fi
+    \ifnewpage\newpage\fi
 }
 
 
@@ -341,7 +348,9 @@
 
 \NewEnviron{interactive}[1][]{\BODY}
 
-\renewcommand{\labelenumi}{$(\mathrm{\alph{enumi}})$}
+\renewcommand{\theenumi}{$(\mathrm{\alph{enumi}})$}
+\renewcommand{\labelenumi}{\theenumi}
+
 \NewEnviron{multiple-choice}[1][]{
   \begin{enumerate}
     \BODY
