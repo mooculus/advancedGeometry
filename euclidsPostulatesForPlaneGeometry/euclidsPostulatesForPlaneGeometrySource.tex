@@ -180,7 +180,7 @@ congruent.}
 \begin{question}
 \label{118} 
 \begin{enumerate}
-\item\label{Exp:ExtAngle} Show in neutral geometry that, for $\triangle ABC$ as in Exercise \ref{18}, 
+\item\label{Exp:ExtAngle} Show in neutral geometry that, for $\triangle ABC$
 \[
 \begin{tikzpicture}[geometryDiagrams]
 \coordinate (A) at (0,2);
@@ -193,10 +193,17 @@ congruent.}
 \tkzLabelPoints[below](A,C)
 \tkzMarkAngle[size=0.5cm,thin](F,C,B)
 \tkzLabelAngle[pos = 0.25](F,C,B){$\epsilon$}
+
+\tkzMarkAngle[size=0.6cm,thin](A,B,C)
+\tkzLabelAngle[pos = 0.35](A,B,C){$\beta$}
+
+\tkzMarkAngle[size=0.6cm,thin](C,A,B)
+\tkzLabelAngle[pos = 0.35](C,A,B){$\alpha$}
+
 %\draw[step=.5cm] (0,0) grid (10,5);
 \end{tikzpicture}
 \]
-the exterior angle $\epsilon$ of the triangle at $C$ is greater than either remote interior angle. [MJG,119]
+the exterior angle $\epsilon$ of the triangle at $C$ is greater than either remote interior angle $\alpha$ or $\beta$. [MJG,119]
 \item Use \ref{Exp:ExtAngle} to show that the sum of any two angles of a triangle is less than $180^{\circ}$.
 \end{enumerate}
 \end{question}

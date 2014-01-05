@@ -1,0 +1,187 @@
+\headline{Seeing different geometries as a variation on a theme.}
+\activitytitle{Introduction}
+
+As a young mathematician I was introduced to the classic \textit{Le\c{c}ons
+sur la G\'{e}om\'{e}trie des Espaces de Riemann}, written by the great French
+geometer \'{E}lie Cartan. Early in his treatise on geometries in all
+dimensions, the author presents the case of two-dimensional geometries, in
+particular, those two-dimensional geometries that look the same at all points
+and in all directions. (For example, a cylinder looks the same at each of its
+points but not in all directions emanating from any one of its points, whereas
+a sphere looks the same at all points and in all directions.) It turns out
+that there is one and only one such geometry for each real number $K$, called
+the \textit{curvature} of the geometry. The case $K=0$ is the (flat) Euclidean
+geometry that you learned in high school .
+
+These twenty-five pages of Cartan's book (Chapter VI, \S i-v) so captivated me
+that I have returned to them regularly throughout my career and have adapted
+and taught them many times at the advanced undergraduate level. They form the
+basis for this little book. To me they tell one of the most beautiful and
+satisying stories in all of geometry, one which exemplifies a fundamental
+principle of all great mathematics, namely that, using the tools at hand but
+in a slightly novel way, the clouds part and one sees that objects and
+relationships that seemed so different are in fact parts of a single elegant story!
+
+When $K>0$ it turns out that the $K$-geometry is the geometry of the sphere of
+radius $R=1/K^{1/2}$ that we can see as a subset of Euclidean three-space
+$\mathbb{R}^{3}$. But the geometries with $K<$ $0$ are not so easy to
+visualize. They are the so-called `hyperbolic' geometries. In fact it took
+mathematicians a couple thousand years to realize that the existed at all! It
+turns out that the secret to understanding all the two-dimensional geometries,
+including the ones with $K<0$, in a unified way is to simply rescale the third
+coordinate in $\mathbb{R}^{3}$ and, in these `unusual' coordinates $\left(
+x,y,z\right)  $, to look at each two-dimensional geometry as the solution set
+to the equation%
+\[
+K\left(  x^{2}+y^{2}\right)  +z^{2}=1.
+\]
+However the idea of changing coordinates without changing the underlying
+geometry described by those coordinates is a challenging one that did not come
+into mathematics until a couple of centuries ago. It will require that, before
+we get into the beautiful uniform study of all two-dimensional geometries, we
+practice the coordinate change we are going to use, namely the rescaling of
+the third coordinate in Euclidean $3$-space. That practice, together with a
+review of some concepts from several variable calculus and linear algebra,
+will comprise Part \ref{I} of this book.
+
+It has often been said that \textquotedblleft mathematics is not a spectator
+sport." This truism is very much in evidence in the writing of this book. It
+is written so as to guide you through the entire story, yet permit you, when
+possible, to construct the mathematical story for yourself, that is, to do
+some mathematics yourself rather than just observe it done by others. This
+`doing mathematics oneself' takes the form of Exercises with enough help
+(Hints) provided so that the `doing' is not so onerous as to get in the way of
+the story itself.
+
+Strong evidence has been provided by students of mathematics over many
+centuries that such guided `doing' is indispensible for understanding and
+retention. In fact the very form of this book, as a loose-leaf or electronic
+notebook, is intended to encourage you to write out (in correctable form)
+solutions to the Exercises that can be inserted at the appropriate places into
+the text.
+
+This book supposes familiarity with several variable calculus and the linear
+algebra of matrices. In particular you will need to remember and apply the
+chain rule for differentiable functions of several variables, written in
+matrix notation. That is:
+
+\begin{theorem}
+\textbf{(Chain Rule)} Given differentiable mappings%
+\begin{align*}
+&  \left(  y_{1}\left(  x_{1},\ldots,x_{m}\right)  ,\ldots,y_{n}\left(
+x_{1},\ldots,x_{m}\right)  \right) \\
+&  \left(  z_{1}\left(  y_{1},\ldots,y_{n}\right)  ,\ldots,z_{p}\left(
+y_{1},\ldots,y_{n}\right)  \right)
+\end{align*}
+then%
+\[
+\left(  \frac{\partial z_{k}}{\partial x_{i}}\right)  =\left(  \frac{\partial
+z_{k}}{\partial y_{j}}\right)  \cdot\left(  \frac{\partial y_{j}}{\partial
+x_{i}}\right)  .
+\]
+
+\end{theorem}
+
+As a help, at some points in the text and in some of the Exercises, a more
+complete treatment of a particular topic can be found in one of the following
+two texts:
+
+[MJG]: Greenberg, Marvin Jay. \textit{Euclidean and Non-Euclidean Geometry:
+Development and History.} W.H. Freeman \& Co. 3rd Ed., 1994.
+
+[DS]: Davis, H. and Snider, A.D. \textit{Introduction to Vector Analysis.} Wm.
+C. Brown Publishers, 7th Ed. 1994.
+
+The corresponding topics in these texts are referenced. For example, [MJG,311]
+refers to page 311 in the Greenberg book and [DS,59ff] refers to page 59 and
+those pages just following page 59 in the Davis-Snider book.
+
+Some final remarks about notation in this book. The letters `\textbf{EG}' will
+always mean Euclidean (usually plane but occasionally $3$-dimensional)
+Geometry, the letters `\textbf{SG}' will always mean Spherical Geometry, and
+the letters `\textbf{HG}' will always mean Hyperbolic Geometry. One further
+kind of geometry, which we call Neutral Geometry, will be explained in the
+book and denoted by `\textbf{NG}.'
+
+Also, it will often be useful to consider a vector, for example, $V=\left(
+a,b,c\right)  $, as a $1\times3$ matrix and we will write%
+\[
+\left(  V\right)  =\left(
+\begin{array}
+[c]{ccc}%
+a & b & c
+\end{array}
+\right)
+\]
+or as a $3\times1$ matrix and we will write%
+\[
+\left(  V\right)  ^{t}=\left(
+\begin{array}
+[c]{c}%
+a\\
+b\\
+c
+\end{array}
+\right)  .
+\]
+This will allow us, for example, to write the scalar product of two vectors%
+\begin{align*}
+V\bullet V^{\prime}  &  =\left(  a,b,c\right)  \bullet\left(  a^{\prime
+},b^{\prime},c^{\prime}\right) \\
+&  =aa^{\prime}+bb^{\prime}+cc^{\prime}%
+\end{align*}
+as a product of matrices%
+\[
+V\cdot V^{\prime}=\left(
+\begin{array}
+[c]{ccc}%
+a & b & c
+\end{array}
+\right)  \cdot\left(
+\begin{array}
+[c]{c}%
+a^{\prime}\\
+b^{\prime}\\
+c^{\prime}%
+\end{array}
+\right)  .
+\]
+
+
+It is my hope and intention in writing this little book that you engage with
+and enjoy this uniform way of understanding all two-dimensional geometries as
+much as I did!
+
+\begin{remark}
+Special message to current or future teachers of high school geometry: Parts
+II and III of this book are especially relevant to your teaching of the
+subject. Look especially closely at the treatment of congruence (rigid
+motion), similarity (dilation), circles, expressing geometric properties with
+equations, and geometric measurement and dimension, and compare them with the
+high school geometry sections of the Common Core State Standards in
+Mathematics. The latter can be found at:
+\end{remark}
+
+\begin{center}
+http://www.corestandards.org/Math/Content/HSG/introduction.
+\end{center}
+
+A useful companion course to one based on this book, one that might be called
+\textit{Geometry for Teaching}, would explicitly make the connections between
+the material covered as in this book and what you do (or will do) in your high
+school geometry classroom. The idea is \textit{not} that the material we will
+cover in Parts II and III will tell you how to teach that material but rather
+that the treatment given here will give you the depth and breadth of geometric
+understanding that will allow you to design what you teach and bring it into
+your classroom in ways that those who lack that understanding cannot.
+
+\begin{remark}
+This book can also be used as a bridge to a first course in Riemannian
+geometry. It treats the case of two-dimensional geometries that are
+homogeneous, that is, that look the same at all their points. But to treat
+these geometries efficiently, we introduce the notion of changing coordinates
+for the geometry without changing the geometry itself. It is that notion that
+allowed geometers to treat surfaces and higher-dimensional smooth spaces that
+look different at different points, ones that can often not be treated at all
+their points using a single set of coordinates.
+\end{remark}
