@@ -3,7 +3,7 @@
 \prerequisites{rigidMotions}
 \outcomes{neutralGeometry}
 
-
+\subsection*{Neutral geometry}
 
 %% We first turn our attention to plane (or `flat') two-dimensional
 %% geometry.
@@ -126,6 +126,8 @@ AD\right\vert =\left\vert ED\right\vert $.
 \coordinate (E) at (8,4);
 \coordinate (D) at (4,3);
 \draw (A)--(B)--(C)--(E)--(D)--cycle;
+\tkzMarkSegments[mark=|](B,D D,C)
+\tkzMarkSegments[mark=||](A,D D,E)
 \tkzLabelPoints[above](B,D,E)
 \tkzLabelPoints[below](A,C)
 %\draw[step=.5cm] (0,0) grid (10,5);
@@ -219,3 +221,165 @@ Hint: Suppose the assertion is false for some pair of lines. Find a
 triangle that violates the conclusion of Exercise \ref{118}
 part \ref{Exp:ExtAngle}.
 \end{exploration}
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection*{Sum of angles in a triangle in NG}
+
+
+For many centuries, mathematicians attempted to prove that the sum of
+the angles in a triangle was $180^{\circ}$ using only E1--E4. However,
+the discovery of \textit{hyperbolic geometry} about two centuries ago,
+proved this to be a futile pursuite. The thing that separates
+hyperbolic geometry from Euclidean (plane) geometry is the sum of
+the angles in a triangle. (If you had a good geometry course in high
+school, you may remember that you had to use Euclid's fifth axiom in
+order to show that the sum of the angles in a triagle was
+$180^{\circ}.$ But more on that later.)
+
+There is one important fact about the sum of the angles in a triangle that you
+\textit{can} prove in \textbf{NG}, that is, without invoking Euclid's fifth
+axiom. We will in fact accomplish that in this section.
+
+\begin{question}\label{20}
+Show that the sum of the angles in $\triangle ACE$ is the same as the
+sum of the angles in $\triangle ACB$
+\[
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,2);
+\coordinate (B) at (2,5);
+\coordinate (C) at (6.5,.5);
+\coordinate (E) at (8,4);
+\coordinate (D) at (4,3);
+\draw (A)--(B)--(C)--(E)--(D)--cycle;
+\draw (A)--(C);
+\tkzMarkSegments[mark=|](B,D D,C)
+\tkzMarkSegments[mark=||](A,D D,E)
+\tkzLabelPoints[above](B,D,E)
+\tkzLabelPoints[below](A,C)
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\]
+\end{question}
+
+\begin{question}\label{22} 
+Suppose that there is a triangle $\triangle ABC$ in
+\textbf{NG} for which the sum of the angles in a triangle $\triangle ABC$ is
+$\left( 180+x\right)^\circ$ with $x>0$. Construct a new triangle,
+$\triangle ACE$ such that the sum of the angles in a triangle is still
+$\left( 180+x\right)^\circ$, but one of the angles of $\triangle ACE$
+is no more than half the size of $\angle BAC$.
+\[
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,2);
+\coordinate (B) at (2,5);
+\coordinate (C) at (6.5,.5);
+\coordinate (E) at (8,4);
+\coordinate (D) at (4,3);
+
+\draw (A)--(B)--(C)--cycle;
+\draw[thin] (A)--(E)--(C);
+
+\tkzLabelPoints[above](B,D,E)
+\tkzLabelPoints[below](A,C)
+
+\tkzMarkAngle[size=1cm,thin](D,A,B)
+\tkzLabelAngle[pos = 0.6](D,A,B){$\alpha_1$}
+
+\tkzMarkAngle[size=1.2cm,thin](C,A,D)
+\tkzLabelAngle[pos = 0.7](C,A,D){$\alpha_2$}
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\]
+Be sure to carefully explain how points $D$ and $E$ are constructed.
+Note: Despite the diagram above, this new `smaller' angle may or may
+not have vertex $A$. [MJG,125-127]
+\end{question}
+
+\begin{question}
+\label{21} Suppose that there is a triangle $\triangle ABC$ in
+\textbf{NG} for which the sum of the angles in a triangle $\triangle ABC$ is
+$\left( 180+x\right)^\circ$ with $x>0$. Let $\alpha$ denote the
+measure of $\angle BAC$. Repeat the construction in Question \ref{22}
+over and over again $n$-times to construct a triangle with the sum of
+its angles still equal to $\left( 180+x\right)^\circ$ but such that
+one of its angles has size less than%
+\[
+\frac{1}{2^{n}}\alpha.
+\]
+\end{question}
+
+\begin{question}
+\label{121} Suppose that there is a triangle $\triangle ABC$ in
+\textbf{NG} for which the sum of the angles in a triangle $\triangle ABC$ is
+$\left( 180+x\right)^\circ$ with $x>0$. Show that there is a positive
+integer $n$ so that, if you repeat the construction in
+Question \ref{22} over and over again $n$-times, the result will be a
+triangle with the sum of its angles still equal to $\left(
+180+x\right)^\circ$ but with one of its angles having measure less
+than $x$. [MJG,125-127]
+\end{question}
+
+\begin{question}\label{122} 
+On the other hand, by Question \ref{118} (b), you cannot have a triangle
+with two angles summing to more than $180^\circ$. [MJG,124] 
+\end{question}
+
+From our work above, we can prove the following theorem:
+
+\begin{theorem}
+In \textbf{NG}, the sum of the interior angles in any triangle is no greater
+than $180^\circ$.
+\end{theorem}
+
+\begin{proof}
+We argue by contradiction. Start with $\triangle ABC$ as in Question \ref{22}
+for which the sum of the angles in a triangle $\triangle ABC$ is $\left(
+180+x\right)^\circ$ with $x>0$. Suppose the measure of the angle at $A$ is denoted by $\alpha$.
+By Question \ref{22} there exists a triangle $\triangle A^{\left(  1\right)
+}B^{\left(  1\right)  }C^{\left(  1\right)  }$ such that the sum of the angles
+in a triangle $\triangle A^{\left(  1\right)  }B^{\left(  1\right)
+}C^{\left(  1\right)  }$ is $\left(  180+x\right)^\circ$ and the measure of the angle at the vertex $A^{\left(  1\right)  }$ is less
+than or equal to $\frac{\alpha}{2}$. By Question \ref{21} there is a triangle
+$\triangle A^{\left(  n\right)  }B^{\left(  n\right)  }C^{\left(  n\right)  }$
+such that the sum of the angles in a triangle $\triangle A^{\left(  n\right)
+}B^{\left(  n\right)  }C^{\left(  n\right)  }$ is $\left(  180+x\right)^\circ$ and the measure $\alpha_{n}$ of the angle at the vertex $A^{\left(
+n\right)  }$ is less than or equal to $\frac{\alpha}{2^{n}}$. If $n$ is
+sufficiently big,%
+\[
+\frac{\alpha}{2^{n}}<x.
+\]
+So, for that value of $n$, if $\beta_{n}$ is the measure of the angle of
+$\triangle A^{\left(  n\right)  }B^{\left(  n\right)  }C^{\left(  n\right)  }$
+at the vertex $B^{\left(  n\right)  }$ and $\gamma_{n}$ is the measure of the
+angle of $\triangle A^{\left(  n\right)  }B^{\left(  n\right)  }C^{\left(
+n\right)  }$ at the vertex $C^{\left(  n\right)  }$, then we have the two
+relations%
+\begin{gather*}
+\alpha_{n}<\frac{\alpha}{2^{n}}<x\\
+\alpha_{n}+\beta_{n}+\gamma_{n}=180+x.
+\end{gather*}
+So%
+\[
+\beta_{n}+\gamma_{n}=180+\left(  x-\alpha_{n}\right)  >180.
+\]
+But this is impossible by Question \ref{118} (b).
+\end{proof}
+
+\begin{question}
+Show the following:
+\begin{enumerate}
+\item The sum of the interior angles in any quadrilateral is no greater than $360^\circ$.
+\item The sum of the interior angles of an $n$-gon is no greater than
+$\left( n-2\right)\cdot180^\circ$.
+\end{enumerate}
+\end{question}
