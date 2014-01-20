@@ -6,90 +6,117 @@
 
 \subsection{Basics}
 
-Our final topic before leaving Euclidean Geometry is circles. We include this
-partly for its own interest, and partly because the properites we visit here
-will be useful later on. Again we explore the topic through a sequence of
-Exercises (with Hints to their solutions to ease the way). We begin with
-perhaps the most basic fact of all about circles in \textbf{EG}.
+Our final topic before leaving Euclidean Geometry is circles. We
+include this partly for its own interest, and partly because the
+properites we visit here will be useful later on. Again we explore the
+topic through a sequence of Exercises (with Hints to their solutions
+to ease the way). We begin with perhaps the most basic fact of all
+about circles in \textbf{EG}.
 
 \begin{exercise}
-(\textbf{EG}) The circle of radius $1$ has (interior) area $\pi$. Use this to
-reason to the fact that the circle of radius $1$ has circumference $2\pi$.%
-\[%
-%TCIMACRO{\FRAME{itbpF}{1.3413in}{1.3206in}{0in}{}{}{Figure}%
-%{\special{ language "Scientific Word";  type "GRAPHIC";
-%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
-%width 1.3413in;  height 1.3206in;  depth 0in;  original-width 5.5383in;
-%original-height 5.4509in;  cropleft "0";  croptop "1";  cropright "1";
-%cropbottom "0";  tempfilename 'MXAJBX04.png';tempfile-properties "XP";}}}%
-%BeginExpansion
-{\includegraphics[
-natheight=5.450900in,
-natwidth=5.538300in,
-height=1.3206in,
-width=1.3413in
-]%
-{MXAJBX04.png}%
-}%
-%EndExpansion
-\]
-
+The circle of radius $1$ has (interior) area $\pi$. Use this to reason
+to the fact that the circle of radius $1$ has circumference $2\pi$.%
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\draw (0,0) circle (2cm);
+\draw[thin] (0,0)--(2,0);
+\draw[thin] (0,0)--({2*cos(10)},{2*sin(10)});
+\draw[thin] (0,0)--({2*cos(20)},{2*sin(20)});
+\draw[thin] (0,0)--({2*cos(30)},{2*sin(30)});
+\draw[thin] (0,0)--({2*cos(40)},{2*sin(40)});
+\draw[thin] (0,0)--({2*cos(50)},{2*sin(50)});
+\draw[thin] (0,0)--({2*cos(60)},{2*sin(60)});
+\draw[thin] (0,0)--({2*cos(70)},{2*sin(70)});
+\draw[thin] (0,0)--({2*cos(80)},{2*sin(80)});
+\draw[thin] (0,0)--({2*cos(90)},{2*sin(90)});
+\draw[thin] (0,0)--({2*cos(100)},{2*sin(100)});
+\draw[thin] (0,0)--({2*cos(110)},{2*sin(110)});
+\draw[thin] (0,0)--({2*cos(120)},{2*sin(120)});
+\draw[thin] (0,0)--({2*cos(130)},{2*sin(130)});
+\draw[thin] (0,0)--({2*cos(140)},{2*sin(140)});
+\draw[thin] (0,0)--({2*cos(150)},{2*sin(150)});
+\draw[thin] (0,0)--({2*cos(160)},{2*sin(160)});
+\draw[thin] (0,0)--({2*cos(170)},{2*sin(170)});
+\draw[thin] (0,0)--({2*cos(180)},{2*sin(180)});
+\draw[thin] (0,0)--({2*cos(190)},{2*sin(190)});
+\draw[thin] (0,0)--({2*cos(200)},{2*sin(200)});
+\draw[thin] (0,0)--({2*cos(210)},{2*sin(210)});
+\draw[thin] (0,0)--({2*cos(220)},{2*sin(220)});
+\draw[thin] (0,0)--({2*cos(230)},{2*sin(230)});
+\draw[thin] (0,0)--({2*cos(240)},{2*sin(240)});
+\draw[thin] (0,0)--({2*cos(250)},{2*sin(250)});
+\draw[thin] (0,0)--({2*cos(260)},{2*sin(260)});
+\draw[thin] (0,0)--({2*cos(270)},{2*sin(270)});
+\draw[thin] (0,0)--({2*cos(280)},{2*sin(280)});
+\draw[thin] (0,0)--({2*cos(290)},{2*sin(290)});
+\draw[thin] (0,0)--({2*cos(300)},{2*sin(300)});
+\draw[thin] (0,0)--({2*cos(310)},{2*sin(310)});
+\draw[thin] (0,0)--({2*cos(320)},{2*sin(320)});
+\draw[thin] (0,0)--({2*cos(330)},{2*sin(330)});
+\draw[thin] (0,0)--({2*cos(340)},{2*sin(340)});
+\draw[thin] (0,0)--({2*cos(350)},{2*sin(350)});
+\end{tikzpicture}
+\end{image}
 
 Hint: Approximate a rectangle by rearranging the slices in the picture.
 Compute the area of the ``rectangle.''
 \end{exercise}
 
+
+
 Next we turn to some facts about chords in circles and angels inscribed in circles.
 
 \begin{exercise}
-(\textbf{EG}) On the circle with center O below,
-\[%
-%TCIMACRO{\FRAME{itbpF}{1.8127in}{1.4814in}{0in}{}{}{Figure}%
-%{\special{ language "Scientific Word";  type "GRAPHIC";
-%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
-%width 1.8127in;  height 1.4814in;  depth 0in;  original-width 6.9453in;
-%original-height 5.6697in;  cropleft "0";  croptop "1";  cropright "1";
-%cropbottom "0";  tempfilename 'MXAJBY05.png';tempfile-properties "XPR";}}}%
-%BeginExpansion
-{\includegraphics[
-natheight=5.669700in,
-natwidth=6.945300in,
-height=1.4814in,
-width=1.8127in
-]%
-{MXAJBY05.png}%
-}%
-%EndExpansion
-\]
+On the circle with center $O$ below,
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (O) at (0,0);
+\coordinate (A) at ({2*cos(40)},{2*sin(40)});
+\coordinate (B) at ({2*cos(350)},{2*sin(350)});
+\coordinate (X) at ({2*cos(170)},{2*sin(170)});
+
+\draw[thin] (A)--(O);
+\draw[thin] (A)--(X);
+\draw[thin] (X)--(B);
+\draw (0,0) circle (2cm);
+
+\tkzLabelPoints[above](O)
+\tkzLabelPoints[left](X)
+\tkzLabelPoints[right](A,B)
+
+\end{tikzpicture}
+\end{image}
 show that%
 \[
 \angle AXB=(1/2)(\angle AOB).
 \]
-
-
 Hint: $\triangle OAX$ is isosceles.
 \end{exercise}
 
+
+
 \begin{exercise}
-(\textbf{EG}) On the circle with center $O$ below,
-\[%
-%TCIMACRO{\FRAME{itbpF}{1.6509in}{1.5878in}{0in}{}{}{Figure}%
-%{\special{ language "Scientific Word";  type "GRAPHIC";  display "USEDEF";
-%valid_file "T";  width 1.6509in;  height 1.5878in;  depth 0in;
-%original-width 6.3296in;  original-height 6.2855in;  cropleft "0";
-%croptop "1";  cropright "1";  cropbottom "0";
-%tempfilename 'MXAJBY06.png';tempfile-properties "XPR";}}}%
-%BeginExpansion
-{\includegraphics[
-natheight=6.285500in,
-natwidth=6.329600in,
-height=1.5878in,
-width=1.6509in
-]%
-{MXAJBY06.png}%
-}%
-%EndExpansion
-\]
+On the circle with center $O$ below,
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (O) at (0,0);
+\coordinate (A) at ({2*cos(40)},{2*sin(40)});
+\coordinate (B) at ({2*cos(290)},{2*sin(290)});
+\coordinate (X) at ({2*cos(170)},{2*sin(170)});
+
+\draw[thin] (A)--(O);
+\draw[thin] (A)--(X);
+\draw[thin] (X)--(B);
+\draw[thin] (O)--(B);
+\draw (0,0) circle (2cm);
+
+\tkzLabelPoints[above](O)
+\tkzLabelPoints[left](X)
+\tkzLabelPoints[right](A)
+\tkzLabelPoints[below](B)
+
+\end{tikzpicture}
+\end{image}
 show that%
 \[
 \angle AXB=(1/2)(\angle AOB).
@@ -99,27 +126,32 @@ show that%
 Hint: Draw the diameter through $O$ and $X$ and add.
 \end{exercise}
 
+
+
+
 \begin{exercise}
-(\textbf{EG}) On the circle with center $O$ below,
-\[%
-%TCIMACRO{\FRAME{itbpF}{1.7218in}{1.5031in}{0in}{}{}{Figure}%
-%{\special{ language "Scientific Word";  type "GRAPHIC";
-%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
-%width 1.7218in;  height 1.5031in;  depth 0in;  original-width 6.5492in;
-%original-height 5.7147in;  cropleft "0";  croptop "1";  cropright "1";
-%cropbottom "0";  tempfilename 'MXAJBY07.png';tempfile-properties "XPR";}}}%
-%BeginExpansion
-{\includegraphics[
-natheight=5.714700in,
-natwidth=6.549200in,
-height=1.5031in,
-width=1.7218in
-]%
-{MXAJBY07.png}%
-}%
-%EndExpansion
-\]
-show that{}%
+On the circle with center $O$ below,
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (O) at (0,0);
+\coordinate (A) at ({2*cos(60)},{2*sin(60)});
+\coordinate (B) at ({2*cos(20)},{2*sin(20)});
+\coordinate (X) at ({2*cos(170)},{2*sin(170)});
+
+\draw[thin] (A)--(O);
+\draw[thin] (A)--(X);
+\draw[thin] (X)--(B);
+\draw[thin] (O)--(B);
+\draw (0,0) circle (2cm);
+
+\tkzLabelPoints[below](O)
+\tkzLabelPoints[left](X)
+\tkzLabelPoints[above](A)
+\tkzLabelPoints[right](B)
+
+\end{tikzpicture}
+\end{image}
+show that
 \[
 \angle AXB=(1/2)(\angle AOB).
 \]
@@ -127,6 +159,8 @@ show that{}%
 
 Hint: Draw the diameter through $O$ and $X$ and subtract.
 \end{exercise}
+
+
 
 We can summarize the results of the last three exercises into the following Theorem.
 
@@ -136,97 +170,110 @@ measure of the corresponding central angle.
 \end{theorem}
 
 \begin{exercise}
-(\textbf{EG}) Use similar triangles and the previous Exercises to show that
-$\left\vert AX\right\vert $\textperiodcentered$\left\vert XB\right\vert
-=\left\vert A^{\prime}X\right\vert $\textperiodcentered$\left\vert XB^{\prime
-}\right\vert $ in the figure below.%
-\[%
-%TCIMACRO{\FRAME{itbpF}{1.6319in}{1.3206in}{0pt}{}{}{Figure}%
-%{\special{ language "Scientific Word";  type "GRAPHIC";
-%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
-%width 1.6319in;  height 1.3206in;  depth 0pt;  original-width 7.0776in;
-%original-height 5.7147in;  cropleft "0";  croptop "1";  cropright "1";
-%cropbottom "0";  tempfilename 'MXAJBY08.png';tempfile-properties "XPR";}}}%
-%BeginExpansion
-\raisebox{-0pt}{\includegraphics[
-natheight=5.714700in,
-natwidth=7.077600in,
-height=1.3206in,
-width=1.6319in
-]%
-{MXAJBY08.png}%
-}%
-%EndExpansion
+Use similar triangles and the previous exercises to show that
+\[
+\left\vert AX\right\vert \cdot \left\vert
+XB\right\vert =\left\vert A'X\right\vert\cdot \left\vert
+XB'\right\vert
 \]
+in the figure below.%
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (X) at (-.02,1.02);
+\coordinate (B') at ({2*cos(60)},{2*sin(60)});
+\coordinate (B) at ({2*cos(20)},{2*sin(20)});
+\coordinate (A) at ({2*cos(140)},{2*sin(140)});
+\coordinate (A') at ({2*cos(190)},{2*sin(190)});
 
+\draw[thin] (A)--(B);
+\draw[thin] (A')--(B');
+\draw (0,0) circle (2cm);
+
+\tkzLabelPoints[left](A,A')
+\tkzLabelPoints[right](B)
+\tkzLabelPoints[above](B')
+\tkzLabelPoints[above](X)
+
+\end{tikzpicture}
+\end{image}
+Hint: Draw $\overline{AB'}$ and $\overline{A'B}$.
+\end{exercise}
+
+
+\begin{exercise}
+Use similar triangles and the previous exercises to show that
+\[
+\left\vert AX\right\vert\cdot\left\vert XB\right\vert
+=\left\vert A'X\right\vert \cdot \left\vert XB'\right\vert
+\]
+in the figure below.%
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (X) at (4.51,.22);
+\coordinate (B') at ({2*cos(0)},{2*sin(0)});
+\coordinate (B) at ({2*cos(20)},{2*sin(20)});
+\coordinate (A) at ({2*cos(140)},{2*sin(140)});
+\coordinate (A') at ({2*cos(190)},{2*sin(190)});
+
+\draw[thin] (A)--(X);
+\draw[thin] (A')--(X);
+\draw (0,0) circle (2cm);
+
+\tkzLabelPoints[left](A,A')
+\tkzLabelPoints[above right](B)
+\tkzLabelPoints[below right](B')
+\tkzLabelPoints[right](X)
+
+\end{tikzpicture}
+\end{image}
 
 Hint: Draw $\overline{AB^{\prime}}$ and $\overline{A^{\prime}B}$.
 \end{exercise}
 
+
+
+
 \begin{exercise}
-(\textbf{EG}) Use similar triangles and the previous Exercises to show that
-$\left\vert AX\right\vert $\textperiodcentered$\left\vert XB\right\vert
-=\left\vert A^{\prime}X\right\vert $\textperiodcentered$\left\vert XB^{\prime
-}\right\vert $ in the figure below.%
-\[%
-%TCIMACRO{\FRAME{itbpF}{2.9032in}{1.3284in}{0in}{}{}{Figure}%
-%{\special{ language "Scientific Word";  type "GRAPHIC";
-%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
-%width 2.9032in;  height 1.3284in;  depth 0in;  original-width 12.4395in;
-%original-height 5.6697in;  cropleft "0";  croptop "1";  cropright "1";
-%cropbottom "0";  tempfilename 'MXAJBY09.png';tempfile-properties "XPR";}}}%
-%BeginExpansion
-{\includegraphics[
-natheight=5.669700in,
-natwidth=12.439500in,
-height=1.3284in,
-width=2.9032in
-]%
-{MXAJBY09.png}%
-}%
-%EndExpansion
-\]
+Show that, given any three non-collinear points in the Euclidean
+plane, there is a unique circle passing through the three points.
 
-
-Hint: Draw $\overline{AB^{\prime}}$ and $\overline{A^{\prime}B}$.
+Hint: Show that the center of the circle must be the intersection of
+the perpendicular bisectors of any two of the sides of the triangle
+whose vertices are the three given points.
 \end{exercise}
 
-\begin{exercise}
-Show that, given any three non-collinear points in the Euclidean plane, there
-is a unique circle passing through the three points.
+But how about four points in the plane, no three of which are
+collinear?
 
-Hint: Show that the center of the circle must be the intersection of the
-perpendicular bisectors of any two of the sides of the triangle whose vertices
-are the three given points.
+\begin{exercise}
+\begin{enumerate}
+\item Draw four points in the Euclidean plane, no $3$ of which are collinear, that cannot lie on a single circle.
+\item Draw four points in the Euclidean plane that do lie on a single
+circle.
+\end{enumerate}
 \end{exercise}
 
-But how about four points in the plane, no three of which are collinear?
+The issue we will explore in the next two sections is the question of
+finding a numerical condition about the four points that tells us
+exactly when they all lie on a single circle. For that, we will need a
+very famous mathematical relationship, one very closely related to the
+notion of perspective in painting. That is, how do you faithfully
+render depth on a flat canvas? This relationship is called
+the \textit{cross-ratio} of the four points.
 
-\begin{exercise}
-a) Draw four points in the Euclidean plane, no $3$ of which are collinear,
-that cannot lie on a single circle.
+\subsection*{Cross-ratio of points on the number line}
 
-b) Draw four points in the Euclidean plane that do lie on a single circle.
-\end{exercise}
+We begin by studying the cross-ratio of four points on a line. Start
+with the set of points on the real number line with coordinate $t$ and
+add one extra point called $t=\infty$. Call the resulting set
+$\overline{\mathbb{R}}$. You could think of the resulting set as the
+set of all lines through the origin in $\mathbb{R}^{2}$ by assigning
+to each line the real number that is its slope and to the $y$-axis the
+slope $\infty$.
 
-The issue we will explore in the next two sections is the question of finding
-a numerical condition about the four points that tells us exactly when they
-all lie on a single circle. For that, we will need a very famous mathematical
-relationship, one very closely related to the notion of perspective in
-painting. That is, how do you faithfully render depth on a flat canvas? This
-relationship is called the \textit{cross-ratio} of the four points. \pagebreak
-
-\subsection{Cross-ratio of points on the number line}
-
-We begin by studying the cross-ratio of four points on a line. Start with the
-set of points on the real number line with coordinate $t$ and add one extra
-point called $t=\infty$. Call the resulting set $\overline{\mathbb{R}}$. You
-could think of the resulting set as the set of all lines through the origin in
-$\mathbb{R}^{2}$ by assigning to each line the real number that is its slope
-and to the $y$-axis the slope $\infty$.
-
-\begin{exercise}
-a) Show that the transformation%
+\begin{exercise}\hfil
+\begin{enumerate}
+\item Show that the transformation%
 \[
 \left(  x,y\right)  \mapsto\left(  \underline{x},\underline{y}\right)
 =\left(  x,y\right)  \cdot\left(
@@ -237,7 +284,7 @@ c & a
 \end{array}
 \right)
 \]
-is a $1-1$, onto (linear) transformation of $\mathbb{R}^{2}$ as long as%
+is a one-to-one and onto (linear) transformation of $\mathbb{R}^{2}$ as long as
 \begin{equation}
 \left\vert
 \begin{array}
@@ -248,32 +295,32 @@ c & a
 \right\vert \neq0. \label{52}%
 \end{equation}
 
-
-b) For the transformation in the previous Exercise, show that every line
-through the origin in $\left(  x,y\right)  $-space is sent to a line through
-the origin in $\left(  \underline{x},\underline{y}\right)  $-space. The slope
-$t$ of the line through $\left(  0,0\right)  $ and $\left(  x,y\right)  $ is
-of course $t=\frac{y}{x}$. What is the slope \underline{$t$} of the line
-through $\left(  \underline{0},\underline{0}\right)  $ and $\left(
+\item For the transformation in the previous Exercise, show that every line through the origin in $\left( x,y\right) $-space is sent to a line
+through the origin in $\left( \underline{x},\underline{y}\right)
+$-space. The slope $t$ of the line through $\left( 0,0\right) $ and
+$\left( x,y\right) $ is of course $t=\frac{y}{x}$. What is the
+slope \underline{$t$} of the line through
+$\left( \underline{0},\underline{0}\right) $ and $\left(
 \underline{x},\underline{y}\right)  $? Show that%
 \begin{equation}
 \underline{t}=\frac{at+b}{ct+d} \label{41}%
 \end{equation}
-
+\end{enumerate}
 \end{exercise}
 
 \begin{definition}
-Functions $\left(  \ref{41}\right)  $ for which the condition $\left(
+Functions $\left( \ref{41}\right) $ for which the condition $\left(
 \ref{52}\right)  $ holds are called \textbf{linear fractional transformations}.
 \end{definition}
 
+
 \begin{exercise}
 Show that a linear fractional transformation%
-\begin{gather*}
-\overline{\mathbb{R}}\rightarrow\overline{\mathbb{R}}\\
-t\mapsto\underline{t}=\frac{at+b}{ct+d}%
-\end{gather*}
-is $1-1$ and onto. What is its inverse function? (Your answer should show that
+\begin{align*}
+\overline{\mathbb{R}} &\rightarrow\overline{\mathbb{R}}\\
+t &\mapsto\underline{t} =\frac{at+b}{ct+d}%
+\end{align*}
+is one-to-one and onto. What is its inverse function? (Your answer should show that
 the inverse function is also a linear fractional transformation.)
 
 Hint: By algebra solve for $t$ in terms of \underline{$t$}. Then graph%
@@ -290,9 +337,9 @@ $t\mapsto\infty$ and one vertical asymptote where $\underline{t}\mapsto\infty$.
 \end{exercise}
 
 \begin{exercise}
-Show that the set of linear fractional transformations form a group under the
-operation of composition of functions. That is, check associativity, identity
-element and existence of inverses.
+Show that the set of linear fractional transformations form a group
+under the operation of composition of functions. That is, check
+associativity, identity element and existence of inverses.
 \end{exercise}
 
 \begin{exercise}
