@@ -1,7 +1,7 @@
 \shortdescription{In this activity we study circles in Euclidean geometry.}
 \activitytitle{Properties of circles in \textbf{EG}}
 \prerequisites{euclideanGeometry}
-\outcomes{outcome1}
+\outcomes{circles}
 
 
 \subsection{Basics}
@@ -422,43 +422,52 @@ Exercise \ref{42} shows that if four points are moved by any function $\left(
 points is the same as the cross-ratio $\left(  t_{1}:t_{2}:t_{3}:t_{4}\right)
 $ of the original four points.\pagebreak
 
-\subsection{Cross-ratio of points on a circle}
+\subsection*{Cross-ratio of points on a circle}
 
-\begin{exercise}
-\label{46}(\textbf{EG}) a) In the diagram
-\[%
-%TCIMACRO{\FRAME{itbpF}{1.1087in}{1.0032in}{0in}{}{}{Figure}%
-%{\special{ language "Scientific Word";  type "GRAPHIC";
-%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
-%width 1.1087in;  height 1.0032in;  depth 0in;  original-width 6.0217in;
-%original-height 5.4509in;  cropleft "0";  croptop "1";  cropright "1";
-%cropbottom "0";  tempfilename 'MXAJBY0A.png';tempfile-properties "XPR";}}}%
-%BeginExpansion
-{\includegraphics[
-natheight=5.450900in,
-natwidth=6.021700in,
-height=1.0032in,
-width=1.1087in
-]%
-{MXAJBY0A.png}%
-}%
-%EndExpansion
-\]
+\begin{exercise}\label{46}
+In the diagram
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (O) at ({2*cos(120)},{2*sin(120)});
+\coordinate (A) at ({2*cos(190)},{2*sin(190)});
+\coordinate (B) at ({2*cos(250)},{2*sin(250)});
+\coordinate (C) at ({2*cos(330)},{2*sin(330)});
+
+\draw (0,0) circle (2cm);
+\draw (O) -- (C);
+\draw (A) -- (B);
+\draw (O) -- (B);
+\draw (B) -- (C);
+\draw (O) -- (A);
+
+
+\tkzMarkAngle[size=.9cm,thin](A,O,B)
+\tkzLabelAngle[pos = 0.7](A,O,B){$\alpha$}
+\tkzMarkAngle[arc=ll,size=0.9cm,thin](B,O,C)
+\tkzLabelAngle[pos = 0.7](B,O,C){$\beta$}
+
+\tkzLabelPoints[above](O)
+\tkzLabelPoints[left](A)
+\tkzLabelPoints[below](B)
+\tkzLabelPoints[right](C)
+
+\end{tikzpicture}
+\end{image}
 show that%
 \[
 \frac{\left\vert AB\right\vert }{\left\vert CB\right\vert }=\frac
-{\mathrm{sin}\alpha}{\mathrm{sin}\beta}=\frac{\mathrm{sin}\left(  \angle
-AOB\right)  }{\mathrm{sin}\left(  \angle COB\right)  }.
+{\sin\alpha}{\sin\beta}=\frac{\sin\left(  \angle
+AOB\right)  }{\sin\left(  \angle COB\right)  }.
 \]
 
 
 Hint: Notice that by Theorem \ref{43}
 \[
-m\left(  \angle BAO\right)  +m\left(  OCB\right)  =180^{\circ}%
+m\left(  \angle BAO\right)  +m\left(\angle OCB\right)  =180^{\circ}%
 \]
 so that%
 \[
-\mathrm{sin}\left(  \angle BAO\right)  =\mathrm{sin}\left(  OCB\right)  .
+\sin\left(  \angle BAO\right)  =\sin\left(\angle  OCB\right)  .
 \]
 Now use the Law of Sines.
 \end{exercise}
@@ -468,159 +477,197 @@ Now use the Law of Sines.
 circle to the other side of $C$, it is still true that%
 \[
 \frac{\left\vert AB\right\vert }{\left\vert CB\right\vert }=\frac
-{\mathrm{sin}\left(  \angle AOB\right)  }{\mathrm{sin}\left(  \angle
+{\sin\left(  \angle AOB\right)  }{\sin\left(  \angle
 COB\right)  }%
 \]
 
 \end{exercise}
 
-\begin{exercise}
-\label{48}(\textbf{EG})\ In the diagram%
-\begin{equation}%
-%TCIMACRO{\FRAME{itbpF}{1.9666in}{1.1312in}{0in}{}{}{Figure}%
-%{\special{ language "Scientific Word";  type "GRAPHIC";
-%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
-%width 1.9666in;  height 1.1312in;  depth 0in;  original-width 11.7364in;
-%original-height 6.7256in;  cropleft "0";  croptop "1";  cropright "1";
-%cropbottom "0";  tempfilename 'MXAJBZ0B.png';tempfile-properties "XPR";}}}%
-%BeginExpansion
-{\includegraphics[
-natheight=6.725600in,
-natwidth=11.736400in,
-height=1.1312in,
-width=1.9666in
-]%
-{MXAJBZ0B.png}%
-}%
-%EndExpansion
-\label{45}%
-\end{equation}
+\begin{exercise}\label{48}
+In the diagram
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (O) at ({2*cos(120)},{2*sin(120)});
+\coordinate (A) at ({2*cos(190)},{2*sin(190)});
+\coordinate (B) at ({2*cos(250)},{2*sin(250)});
+\coordinate (C) at ({2*cos(330)},{2*sin(330)});
 
-\end{exercise}
+\coordinate (A') at (-3.21,-3);
+\coordinate (B') at (-.59,-3);
+\coordinate (C') at (3.73,-3);
 
+\draw (0,0) circle (2cm);
+\draw (O) -- (C');
+\draw (A) -- (B);
+\draw (O) -- (B');
+\draw (B) -- (C);
+\draw (O) -- (A');
+
+\draw (-4,-3) -- (5,-3);
+
+
+\tkzMarkAngle[size=.9cm,thin](A,O,B)
+\tkzLabelAngle[pos = 0.7](A,O,B){$\alpha$}
+\tkzMarkAngle[arc=ll,size=0.9cm,thin](B,O,C)
+\tkzLabelAngle[pos = 0.7](B,O,C){$\beta$}
+
+\tkzMarkAngle[size=0.7cm,thin](B',A',A)
+\tkzLabelAngle[pos = 0.4](B',A',A){$\gamma$}
+
+\tkzMarkAngle[size=0.9cm,thin](C,C',B')
+\tkzLabelAngle[pos = 0.7](C,C',B'){$\delta$}
+
+\tkzLabelPoints[above](O)
+\tkzLabelPoints[left](A)
+\tkzLabelPoints[below left](B)
+\tkzLabelPoints[below](A',B',C')
+\tkzLabelPoints[right](C)
+
+\end{tikzpicture}
+\end{image}
 show that%
 \[
-\frac{\left\vert A^{\prime}B^{\prime}\right\vert }{\left\vert C^{\prime
-}B^{\prime}\right\vert }=\frac{\mathrm{sin}\alpha}{\mathrm{sin}\beta}\div
-\frac{\mathrm{sin}\gamma}{\mathrm{sin}\delta}=\frac{\mathrm{sin}\left(  \angle
-A^{\prime}OB^{\prime}\right)  }{\mathrm{sin}\left(  \angle C^{\prime
-}OB^{\prime}\right)  }\div\frac{\mathrm{sin}\left(  \angle B^{\prime}%
-A^{\prime}O\right)  }{\mathrm{sin}\left(  \angle B^{\prime}C^{\prime}O\right)
+\frac{\left\vert A'B'\right\vert }{\left\vert C^{\prime
+}B'\right\vert }=\frac{\sin\alpha}{\sin\beta}\div
+\frac{\sin\gamma}{\sin\delta}=\frac{\sin\left(  \angle
+A'OB'\right)  }{\sin\left(  \angle C^{\prime
+}OB'\right)  }\div\frac{\sin\left(  \angle B'%
+A'O\right)  }{\sin\left(  \angle B'C'O\right)
 }.
 \]
 [MJG,266-267]
+\end{exercise}
 
-\begin{exercise}
-\label{49}(\textbf{EG}) Show that if, in the above figure, $B^{\prime}$ moves
-along the line to the other side of $C^{\prime}$, it is still true that%
+
+\begin{exercise}\label{49}
+Show that if, in the previous figure, $B'$ moves
+along the line to the other side of $C'$, it is still true that%
 \[
-\frac{\left\vert A^{\prime}B^{\prime}\right\vert }{\left\vert C^{\prime
-}B^{\prime}\right\vert }=\frac{\mathrm{sin}\left(  \angle A^{\prime}%
-OB^{\prime}\right)  }{\mathrm{sin}\left(  \angle C^{\prime}OB^{\prime}\right)
-}\div\frac{\mathrm{sin}\left(  \angle B^{\prime}A^{\prime}O\right)
-}{\mathrm{sin}\left(  \angle B^{\prime}C^{\prime}O\right)  }.
+\frac{\left\vert A'B'\right\vert }{\left\vert C^{\prime
+}B'\right\vert }=\frac{\sin\left(  \angle A'%
+OB'\right)  }{\sin\left(  \angle C'OB'\right)
+}\div\frac{\sin\left(  \angle B'A'O\right)
+}{\sin\left(  \angle B'C'O\right)  }.
 \]
 
 \end{exercise}
 
-These last two Exercises allow us to define the cross-ratio of four points on
-a circle.
+These last two Exercises allow us to define the cross-ratio of four
+points on a circle.
 
 \begin{definition}
-(\textbf{EG}) For a sequence of four (ordered) points $A,B,C,$ and $D$ on a
-circle, we define%
+For a sequence of four (ordered) points $A,B,C,$ and $D$ on a circle,
+we define%
 \[
 \left(  A:B:C:D\right)  =\frac{\left\vert AB\right\vert }{\left\vert
 CB\right\vert }\div\frac{\left\vert AD\right\vert }{\left\vert CD\right\vert }%
 \]
 which we call the cross-ratio of the ordered sequence of the four points.
-Similarly for a sequence of four (ordered) points $A^{\prime},B^{\prime
-},C^{\prime},$ and $D^{\prime}$ on a line, we define%
+Similarly for a sequence of four (ordered) points $A',B^{\prime
+},C',$ and $D'$ on a line, we define%
 \[
-\left(  A^{\prime}:B^{\prime}:C^{\prime}:D^{\prime}\right)  =\frac{\left\vert
-A^{\prime}B^{\prime}\right\vert }{\left\vert C^{\prime}B^{\prime}\right\vert
-}\div\frac{\left\vert A^{\prime}D^{\prime}\right\vert }{\left\vert C^{\prime
-}D^{\prime}\right\vert }%
+\left(  A':B':C':D'\right)  =\frac{\left\vert
+A'B'\right\vert }{\left\vert C'B'\right\vert
+}\div\frac{\left\vert A'D'\right\vert }{\left\vert C^{\prime
+}D'\right\vert }%
 \]
 which we call the cross-ratio of the ordered sequence of the four points.
 \end{definition}
 
-Notice that Definition \ref{44} is just a refinement of the definition of
-$\left(  A^{\prime}:B^{\prime}:C^{\prime}:D^{\prime}\right)  $ just above. In
-Definition \ref{44} we are keeping track of the signs of the terms in the
-quotients whereas $\left(  A^{\prime}:B^{\prime}:C^{\prime}:D^{\prime}\right)
-$ is always non-negative.
+Notice that Definition \ref{44} is just a refinement of the definition
+of $\left( A':B':C':D'\right) $ just above. In Definition \ref{44} we
+are keeping track of the signs of the terms in the quotients whereas
+$\left( A':B':C':D'\right)$ is always non-negative.
 
-\begin{exercise}
-\label{50}a) Show that, in the figure%
-\[%
-%TCIMACRO{\FRAME{itbpF}{2.0522in}{0.9842in}{0in}{}{}{Figure}%
-%{\special{ language "Scientific Word";  type "GRAPHIC";
-%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
-%width 2.0522in;  height 0.9842in;  depth 0in;  original-width 14.0662in;
-%original-height 6.7256in;  cropleft "0";  croptop "1";  cropright "1";
-%cropbottom "0";  tempfilename 'MXAJBZ0C.png';tempfile-properties "XPR";}}}%
-%BeginExpansion
-{\includegraphics[
-natheight=6.725600in,
-natwidth=14.066200in,
-height=0.9842in,
-width=2.0522in
-]%
-{MXAJBZ0C.png}%
-}%
-%EndExpansion
-\]
+\begin{exercise}\label{50}
+Show that, in the figure%
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (O) at ({2*cos(120)},{2*sin(120)});
+\coordinate (A) at ({2*cos(190)},{2*sin(190)});
+\coordinate (B) at ({2*cos(250)},{2*sin(250)});
+\coordinate (C) at ({2*cos(310)},{2*sin(310)});
+\coordinate (D) at ({2*cos(340)},{2*sin(340)});
+
+\coordinate (A') at (-3.21,-3);
+\coordinate (B') at (-.59,-3);
+\coordinate (C') at (2.31,-3);
+\coordinate (D') at (4.64,-3);
+
+\draw (0,0) circle (2cm);
+\draw (O) -- (C');
+\draw (A) -- (B);
+\draw (C) -- (D);
+\draw (O) -- (B');
+\draw (B) -- (C);
+\draw (O) -- (A');
+\draw (O) -- (D');
+
+\draw (-4,-3) -- (6,-3);
+
+
+
+\tkzLabelPoints[above](O)
+\tkzLabelPoints[left](A)
+\tkzLabelPoints[below left](B)
+\tkzLabelPoints[below](A',B',C',D')
+\tkzLabelPoints[right](C)
+\tkzLabelPoints[above right](D)
+
+\end{tikzpicture}
+\end{image}
 we have the equality%
 \[
-\left(  A:B:C:D\right)  =\left(  A^{\prime}:B^{\prime}:C^{\prime}:D^{\prime
+\left(  A:B:C:D\right)  =\left(  A':B':C':D^{\prime
 }\right)  .
 \]
 
 
 Hint: Use Exercises \ref{46}-\ref{49}.
 
-b) What happens in a) if we move $B$ to the other side of $C$?
+What happens in if we move $B$ to the other side of $C$?
 \end{exercise}
 
 We say that ``Cross-ratio is invariant under stereographic
-projection.''\pagebreak
+projection.''
 
 \subsection{Ptolemy's Theorem}
 
-Given any three non-collinear points in the Euclidean plane, there is one and
-only one circle that passes through the three points. (How do you construct
-it?) You can easily convince yourself with a few examples that, given four
-non-collinear points $A,B,C$ and $D$ in the plane, it is not always true that
-there is a circle that passes through all four. A famous theorem of classical
-Euclidean geometry gives the condition that there is a circle that passes
-through all four.
+Given any three non-collinear points in the Euclidean plane, there is
+one and only one circle that passes through the three points. (How do
+you construct it?) You can easily convince yourself with a few
+examples that, given four non-collinear points $A,B,C$ and $D$ in the
+plane, it is not always true that there is a circle that passes
+through all four. A famous theorem of classical Euclidean geometry
+gives the condition that there is a circle that passes through all
+four.
 
-\begin{theorem}
-(Ptolemy) If the ordered sequence of points $A,B,C$ and $D$ lies on a circle,
-\[%
-%TCIMACRO{\FRAME{itbpF}{1.4278in}{1.2263in}{0in}{}{}{Figure}%
-%{\special{ language "Scientific Word";  type "GRAPHIC";
-%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
-%width 1.4278in;  height 1.2263in;  depth 0in;  original-width 6.1981in;
-%original-height 5.3186in;  cropleft "0";  croptop "1";  cropright "1";
-%cropbottom "0";  tempfilename 'MXAJBZ0D.png';tempfile-properties "XPR";}}}%
-%BeginExpansion
-{\includegraphics[
-natheight=5.318600in,
-natwidth=6.198100in,
-height=1.2263in,
-width=1.4278in
-]%
-{MXAJBZ0D.png}%
-}%
-%EndExpansion
-\]
+\begin{theorem}[Ptolemy] If the ordered sequence of points $A,B,C$ and $D$ lies on a circle,
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at ({2*cos(190)},{2*sin(190)});
+\coordinate (B) at ({2*cos(250)},{2*sin(250)});
+\coordinate (C) at ({2*cos(310)},{2*sin(310)});
+\coordinate (D) at ({2*cos(340)},{2*sin(340)});
+
+\draw (0,0) circle (2cm);
+\draw (A) -- (B);
+\draw (C) -- (D);
+\draw (A) -- (D);
+\draw (B) -- (C);
+
+\tkzLabelPoints[left](A)
+\tkzLabelPoints[below left](B)
+\tkzLabelPoints[right](C)
+\tkzLabelPoints[above right](D)
+
+\end{tikzpicture}
+\end{image}
 then%
 \[
-\left\vert AC\right\vert \text{\textperiodcentered}\left\vert BD\right\vert
-=\left\vert AD\right\vert \text{\textperiodcentered}\left\vert BC\right\vert
-+\left\vert AB\right\vert \text{\textperiodcentered}\left\vert CD\right\vert
+\left\vert AC\right\vert \cdot\left\vert BD\right\vert
+=\left\vert AD\right\vert \cdot\left\vert BC\right\vert
++\left\vert AB\right\vert \cdot\left\vert CD\right\vert
 .
 \]
 That is, the product of the diagonals of the quadrilateral $ABCD$ is the sum
@@ -630,14 +677,14 @@ of the products of pairs of opposite sides.
 \begin{proof}
 We need to check that%
 \[
-\left\vert AC\right\vert \text{\textperiodcentered}\left\vert BD\right\vert
-=\left\vert AD\right\vert \text{\textperiodcentered}\left\vert BC\right\vert
-+\left\vert AB\right\vert \text{\textperiodcentered}\left\vert CD\right\vert
+\left\vert AC\right\vert \cdot\left\vert BD\right\vert
+=\left\vert AD\right\vert \cdot\left\vert BC\right\vert
++\left\vert AB\right\vert \cdot\left\vert CD\right\vert
 \]
 or, what is the same, we need to check that%
 \[
-\frac{\left\vert AC\right\vert \text{\textperiodcentered}\left\vert
-BD\right\vert }{\left\vert AD\right\vert \text{\textperiodcentered}\left\vert
+\frac{\left\vert AC\right\vert \cdot\left\vert
+BD\right\vert }{\left\vert AD\right\vert \cdot\left\vert
 BC\right\vert }=1+\frac{\left\vert AB\right\vert \text{\textperiodcentered
 }\left\vert CD\right\vert }{\left\vert AD\right\vert \text{\textperiodcentered
 }\left\vert BC\right\vert }.
@@ -648,27 +695,26 @@ That is, we need to check that
 \]
 But by Exercise \ref{50} this is the same as checking that%
 \[
-\left(  A^{\prime}:C^{\prime}:B^{\prime}:D^{\prime}\right)  =1+\left(
-A^{\prime}:B^{\prime}:C^{\prime}:D^{\prime}\right)
+\left(  A':C':B':D'\right)  =1+\left(
+A':B':C':D'\right)
 \]
 for the projection of the four points onto a line from a point $O$ on the
 circle. But that is the same thing as showing that
 \[
-\frac{\left\vert A^{\prime}C^{\prime}\right\vert \text{\textperiodcentered
-}\left\vert B^{\prime}D^{\prime}\right\vert }{\left\vert A^{\prime}D^{\prime
-}\right\vert \text{\textperiodcentered}\left\vert B^{\prime}C^{\prime
-}\right\vert }=1+\frac{\left\vert A^{\prime}B^{\prime}\right\vert
-\text{\textperiodcentered}\left\vert C^{\prime}D^{\prime}\right\vert
-}{\left\vert A^{\prime}D^{\prime}\right\vert \text{\textperiodcentered
-}\left\vert B^{\prime}C^{\prime}\right\vert }%
+\frac{\left\vert A'C'\right\vert \text{\textperiodcentered
+}\left\vert B'D'\right\vert }{\left\vert A'D^{\prime
+}\right\vert \cdot\left\vert B'C^{\prime
+}\right\vert }=1+\frac{\left\vert A'B'\right\vert
+\cdot\left\vert C'D'\right\vert
+}{\left\vert A'D'\right\vert \cdot \left\vert B'C'\right\vert }%
 \]
 which is the same thing as showing that%
 \[
-\left\vert A^{\prime}C^{\prime}\right\vert \text{\textperiodcentered
-}\left\vert B^{\prime}D^{\prime}\right\vert =\left\vert A^{\prime}D^{\prime
-}\right\vert \text{\textperiodcentered}\left\vert B^{\prime}C^{\prime
-}\right\vert +\left\vert A^{\prime}B^{\prime}\right\vert
-\text{\textperiodcentered}\left\vert C^{\prime}D^{\prime}\right\vert .
+\left\vert A'C'\right\vert \text{\textperiodcentered
+}\left\vert B'D'\right\vert =\left\vert A'D^{\prime
+}\right\vert \cdot\left\vert B'C^{\prime
+}\right\vert +\left\vert A'B'\right\vert
+\cdot\left\vert C'D'\right\vert .
 \]
 Now check this last equality by high-school algebra.
 \end{proof}
