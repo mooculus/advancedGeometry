@@ -8,7 +8,7 @@
 
 Our final topic before leaving Euclidean geometry is circles. We
 include this partly for its own interest, and partly because the
-properites we visit here will be useful later on. Again we explore the
+properties we visit here will be useful later on. Again we explore the
 topic through a sequence of exercises (with hints to their solutions
 to ease the way). We begin with perhaps the most basic fact of all
 about circles in \textbf{EG}.
@@ -306,7 +306,54 @@ $\left( \underline{0},\underline{0}\right) $ and $\left(
 \underline{t}=\frac{at+b}{ct+d} \label{41}%
 \end{equation}
 \end{enumerate}
+\begin{solution}
+\answer[free-response]{
+To show the map is one-to-one, we will provide an explicit inverse
+map, namely:
+\[
+\left(  \underline{x},\underline{y}\right)\mapsto \left(  \underline{x},\underline{y}\right) 
+\frac{1}{ad-bc}\begin{pmatrix}
+a &-b \\
+-c& d
+\end{pmatrix}
+\]
+Now apply the given transformation and then its inverse to see
+\[
+(x,y) \cdot \begin{pmatrix}
+d & b \\
+c & d
+\end{pmatrix}\frac{1}{ad-bc}\begin{pmatrix}
+a &-b \\
+-c& d
+\end{pmatrix} = (x,y).
+\]
+In fact, the inverse map shows that the original map is onto as well,
+ as for any element of $\mathbb{R}^2$, we can find the preimage of
+ this element using the inverse.  
+
+To answer the second part, consider the line
+\[
+\l(u) = u\cdot (x,y).
+\]
+Now 
+\[
+\underline{\l}(u) = u\cdot (cy+dx,ay+bx)
+\]
+and this line has slope
+\[
+\frac{ay+bx}{cy+dx}.
+\]
+On the other hand, 
+\begin{align*}
+\frac{at+b}{ct+d} &= \frac{\frac{ay}{x} + b}{\frac{cy}{x}+d} \\
+&= \frac{ay+bx}{cy+dx}.
+\end{align*}
+This is what we needed to show.
+}\end{solution}
 \end{exercise}
+
+
+
 
 \begin{definition}
 Functions $\left( \ref{41}\right) $ for which the condition $\left(
@@ -323,7 +370,7 @@ t &\mapsto\underline{t} =\frac{at+b}{ct+d}%
 is one-to-one and onto. What is its inverse function? (Your answer should show that
 the inverse function is also a linear fractional transformation.)
 
-Hint: By algebra solve for $t$ in terms of \underline{$t$}. Then graph%
+Hint: By algebra solve for $t$ in terms of $\underline{t}$. Then graph%
 \[
 \underline{t}=\frac{at+b}{ct+d}%
 \]
@@ -334,13 +381,136 @@ is a straight line with non-zero slope and%
 \]
 If $c\neq0$, show that the graph has exactly one horizontal asymptote where
 $t\mapsto\infty$ and one vertical asymptote where $\underline{t}\mapsto\infty$.
+
+\begin{solution}
+\answer[free-response]{
+To show this map is one-to-one and onto, we will again provide an
+explicit inverse map:
+\[
+\underline{t} \mapsto \frac{d \underline{t}-b}{-c \underline{t} +a}
+\]
+If $c= 0$, this is a line with slope $d/a$. Note since $ad-bc \ne 0$,
+we see that this slope is neither $0$ nor undefined. Moreover, by the construction of $\overline{\mathbb{R}}$, we see that $\infty\mapsto\infty$.
+
+If $c\ne0$ we have that
+\[
+\lim_{t\to \infty} \frac{at+b}{ct+d}  = a/c
+\]
+and this is the horizontal asymptote. On the other hand, 
+\[
+\lim_{\underline{t}\to\infty} \frac{d \underline{t}-b}{-c \underline{t} +a} = -d/c
+\]
+this corresponds to the vertical asymptote. 
+}
+\end{solution}
 \end{exercise}
+
+
+
+
+
+
 
 \begin{exercise}
 Show that the set of linear fractional transformations form a group
 under the operation of composition of functions. That is, check
 associativity, identity element and existence of inverses.
+\begin{solution}
+\answer[free-response]{
+To show that the set of linear fractional transformations form a group, we must show that this set is 
+\begin{enumerate}
+\item closed under function composition, 
+\item that functional composition is an associative operation on linear fractional transformations, 
+\item that there is an identity element, and 
+\item that every linear fractional transformation has an inverse that is also a linear fractional transformation. 
+\end{enumerate}
+We will start by showing that the set of linear fractional
+transformations is closed under functional composition. Write
+\begin{align*}
+f:t &\mapsto\frac{at+b}{ct+d}\\
+g:t &\mapsto\frac{mt+n}{pt+q}
+\end{align*}
+where
+\[
+\begin{array}{|cc|}
+d & b\\
+c& a
+\end{array} \ne 0\qquad\text{and}\qquad
+\begin{array}{|cc|}
+q & n\\
+p& m
+\end{array} \ne 0.
+\]
+Now
+\[
+f\circ g : t \mapsto \frac{(am+bp)t+(an+bq)}{(cm+dp)t + (cn+dq)}
+\]
+and note that
+\begin{align*}
+\begin{array}{|cc|}
+cn+dq & an+bq\\
+cm+dp& am+bp
+\end{array}  &= (cn+dq)(am+bp)- (an+bq)(cm+dp)\\
+&= (bc - ad)(np-mq) \\
+&\ne 0.
+\end{align*}
+Hence we see that the composition of linear fractional transformations
+is a linear fractional transformation.  
+
+Now we will show that composition is an associative operation. Note,
+functional composition is \textbf{always} an associative
+operation. However, it is a good exercise to actually show this---so
+we will. Write
+\[
+f:t \mapsto\frac{at+b}{ct+d},\qquad
+g:t \mapsto\frac{mt+n}{pt+q},\qquad
+h:t \mapsto\frac{rt+s}{ut+v}.
+\]
+where
+\[
+\begin{array}{|cc|}
+d & b\\
+c& a
+\end{array} \ne 0,\qquad
+\begin{array}{|cc|}
+q & n\\
+p& m
+\end{array} \ne 0,\qquad
+\begin{array}{|cc|}
+v & s\\
+u& r
+\end{array} \ne 0.
+\]
+Write
+\[
+f\circ g : t \mapsto \frac{(am+bp)t+(an+bq)}{(cm+dp)t + (cn+dq)}
+\]
+and so
+\[
+(f\circ g) \circ h : t\mapsto \frac{(amr+bpr+anu+bqu)t+(ams+bps+anv+bqv)}{(cmr+dpr+cnu+dqu)t+(cms+dps+cnv+dqv)}. 
+\]
+Now
+\[
+g\circ h : t \mapsto \frac{(mr+nu)t+(ms+nv)}{(pr+qu)t + (ps+qv)}
+\]
+and
+\[
+f\circ (g \circ h) : t\mapsto \frac{(amr+bpr+anu+bqu)t+(ams+bps+anv+bqv)}{(cmr+dpr+cnu+dqu)t+(cms+dps+cnv+dqv)}. 
+\]
+From our work above we see that $(f\circ g)\circ h = f\circ(g\circ
+ h)$.  
+
+The identity element is
+\[
+t\mapsto \frac{a\cdot t + 0}{0\cdot t + a} = t,
+\]
+where $a$ is a nonzero real number.  Finally, each linear fractional
+transformation has an inverse---we found this in the previous problem.
+}
+\end{solution}
 \end{exercise}
+
+
 
 \begin{exercise}
 \label{59}Show that, for any three distinct points $t_{2},t_{3}$ and $t_{4}$,
@@ -349,16 +519,72 @@ the function of $t$ given by the formula%
 \underline{t}=\frac{t_{3}-t_{4}}{t_{3}-t_{2}}\frac{t-t_{2}}{t-t_{4}}%
 =\frac{t-t_{2}}{t_{3}-t_{2}}\div\frac{t-t_{4}}{t_{3}-t_{4}}%
 \]
-takes $t_{2}$ to $0$, takes $t_{3}$ to $1$ and takes $t_{4}$ to $\infty$. Show
-that this function is a linear fractional transformation, that is, a function
-of the form $\left(  \ref{41}\right)  $ for which the condition $\left(
-\ref{52}\right)  $ holds.
+takes $t_{2}$ to $0$, takes $t_{3}$ to $1$ and takes $t_{4}$ to
+$\infty$. Show that this function is a linear fractional
+transformation, that is, a function of the form
+$\left( \ref{41}\right) $ for which the condition $\left(
+\ref{52}\right)$ holds.
+\begin{solution}
+\answer[free-response]{
+Write
+\begin{align*}
+t_2 &\mapsto \frac{t_3-t_4}{t_3-t_2} \cdot \frac{t_2-t_2}{t_2-t_4} = 0.\\
+t_3 &\mapsto \frac{t_3-t_4}{t_3-t_2} \cdot \frac{t_3-t_2}{t_3-t_4} = 1.\\
+t_4 &\mapsto \frac{t_3-t_4}{t_3-t_2} \cdot \frac{t_4-t_2}{t_4-t_4} = \infty.
+\end{align*}
+With a slight bit of algebra, we can see that this is a linear fractional transformation:
+\[
+\frac{t_{3}-t_{4}}{t_{3}-t_{2}}\frac{t-t_{2}}{t-t_{4}} = \frac{t_3t - t_2t_3-t_4t +t_2t_4}{t_3t-t_3t_4-t_2t+t_2t_4} = \frac{(t_3-t_4)t + (t_2t_4-t_2t_3)}{(t_3-t_2)t + (t_2t_4-t_3t_4)}
+\]
+though we must check the determinant condition:
+\begin{align*}
+\begin{array}{|cc|}
+(t_2t_4 - t_3t_4) & (t_2t_4 - t_2t_3) \\
+(t_3-t_2) & (t_3-t_4)
+\end{array}
+&=
+\begin{array}{|cc|}
+(t_2 - t_3)t_4 & (t_4 - t_3)t_2 \\
+(t_3-t_2) & (t_3-t_4)
+\end{array}\\
+&=(t_2-t_3)(t_3-t_4)t_4 - (t_3-t_2)(t_4-t_3)t_2\\
+&= (t_2-t_3)(t_3-t_4)t_4 - (t_2-t_3)(t_3-t_4)t_2\\
+&= (t_2-t_3)(t_3-t_4)(t_4 -t_2).
+\end{align*}
+Since $t_2$, $t_3$, and $t_4$ are distinct, this cannot be
+zero.
+}
+\end{solution}
 \end{exercise}
+
+
+
+
 
 \begin{exercise}
 \label{57}Show that any linear fractional transformation $\left(
-\ref{41}\right)  $ that leaves $0$, $1$, and $\infty$ fixed is the identity map.
+\ref{41}\right)$ that leaves $0$, $1$, and $\infty$ fixed is the identity map.
+\begin{solution}
+\answer[free-response]{
+Consider an arbitrary linear fractional transformation
+\[
+f:t \mapsto \frac{at +b}{ct+d}.
+\]
+If $f(0)=0$, then we see that $b=0$ and that $d\ne 0$. Proceeding
+along with this information if $f(1) = 1$, then we see that
+\[
+\frac{a}{c+d} = 1
+\]
+If $f(\infty) = \infty$, then we see that $c=0$. Hence, $a=d\ne
+0$. This is the identity map.  }
+\end{solution}
 \end{exercise}
+
+
+
+
+
+
 
 \begin{exercise}
 \label{42}Suppose that you are given a function $\left(  \ref{41}\right)  $
@@ -375,11 +601,11 @@ for $i=1,2,3,4$. Show that%
 \]
 [MJG,288]
 
-Hint: Just write out the formula for each side and do the high school algebra.
-There is a fancier way that uses that the set of linear fractional
-transformations form a group whose operation is composition. It goes like
-this. Use Exercise \ref{59} to show that the inverse of the linear fractional
-transformation
+Hint: Just write out the formula for each side and do the high school
+algebra.  There is a fancier way that uses that the set of linear
+fractional transformations form a group whose operation is
+composition. It goes like this. Use Exercise \ref{59} to show that the
+inverse of the linear fractional transformation
 \[
 t\mapsto\frac{t-t_{2}}{t_{3}-t_{2}}\div\frac{t-t_{4}}{t_{3}-t_{4}}%
 \]
@@ -403,7 +629,30 @@ t\mapsto\frac{\underline{t}-\underline{t_{2}}}{\underline{t_{3}}%
 -\underline{t_{2}}}\div\frac{\underline{t}-\underline{t_{4}}}{\underline
 {t_{3}}-\underline{t_{4}}}.
 \]
-
+\begin{solution}
+\answer[free-response]{
+We will use the fancier method of a solution. Start by writing
+\begin{align*}
+\frac{t-t_2}{t_3-t_2} \div \frac{t-t_4}{t_3-t_4}\mapsto t\mapsto \underline{t}\mapsto \frac{\underline{t}-\underline{t_{2}}}{\underline{t_{3}}%
+-\underline{t_{2}}}\div\frac{\underline{t}-\underline{t_{4}}}{\underline
+{t_{3}}-\underline{t_{4}}}.
+\end{align*}
+From our work above, we know this is a linear fractional
+transformation. Moreover, from our work above, we can see that this
+map fixes $0$, $1$, and $\infty$, hence this map is the identity
+map. The upshot of this is that the map
+\[
+t\mapsto \frac{t-t_2}{t_3-t_2} \div \frac{t-t_4}{t_3-t_4}
+\]
+is now seen to be identical to the composition of maps
+\[
+t\mapsto \underline{t}\mapsto \frac{\underline{t}-\underline{t_{2}}}{\underline{t_{3}}%
+-\underline{t_{2}}}\div\frac{\underline{t}-\underline{t_{4}}}{\underline
+{t_{3}}-\underline{t_{4}}}.
+\]
+Evaluating these maps at $t_1$ gives the desired result. 
+}
+\end{solution}
 \end{exercise}
 
 \begin{definition}
@@ -420,7 +669,18 @@ Exercise \ref{42} shows that if four points are moved by any function $\left(
 \ref{41}\right)  $ the cross-ratio $\left(  \underline{t_{1}}:\underline
 {t_{2}}:\underline{t_{3}}:\underline{t_{4}}\right)  $ of the output four
 points is the same as the cross-ratio $\left(  t_{1}:t_{2}:t_{3}:t_{4}\right)
-$ of the original four points.\pagebreak
+$ of the original four points.
+
+
+
+
+
+
+
+
+
+
+
 
 \subsection*{Cross-ratio of points on a circle}
 
@@ -470,18 +730,70 @@ so that%
 \sin\left(  \angle BAO\right)  =\sin\left(\angle  OCB\right)  .
 \]
 Now use the Law of Sines.
+\begin{solution}
+\answer[free-response]{
+By the Law of Sines we have that
+\[
+\frac{|AB|}{\sin\alpha} = \frac{|OB|}{\sin(\angle OAB)}\qquad\text{and}\qquad\frac{|BC|}{\sin\beta} = \frac{|OB|}{\sin(\angle OCB)}.
+\]
+Write 
+\begin{align*}
+m\left(  \angle BAO\right)  +m\left(\angle OCB\right)  &=180^{\circ}\\
+m\left(  \angle BAO\right)  &=180^{\circ}-m\left(\angle OCB\right)  \\
+\sin\left(\angle BAO\right)  &=\sin\left(180^{\circ}-m\left(\angle OCB\right)\right)  \\
+\sin\left(\angle BAO\right)  &=\sin\left(180^{\circ}\right)\cos\left(\angle OCB\right) - \cos\left(180^{\circ}\right)\sin\left(\angle OCB\right)\\ 
+\sin\left(\angle BAO\right)  &=\sin\left(\angle OCB\right).
+\end{align*}
+So  now we have that 
+\[
+\frac{|AB|}{\sin\alpha} = \frac{|OB|}{\sin(\angle OAB)}= \frac{|OB|}{\sin(\angle OCB)}=\frac{|BC|}{\sin\beta}. 
+\]
+Using algebra we find 
+\[
+\frac{\left\vert AB\right\vert }{\left\vert CB\right\vert }=\frac
+{\sin\alpha}{\sin\beta}=\frac{\sin\left(  \angle
+AOB\right)  }{\sin\left(  \angle COB\right)  }.
+\]
+}
+\end{solution}
 \end{exercise}
 
 \begin{exercise}
-\label{47}(\textbf{EG}) Show that if, in the above figure, $B$ moves along the
+\label{47} Show that if, in the above figure, $B$ moves along the
 circle to the other side of $C$, it is still true that%
 \[
 \frac{\left\vert AB\right\vert }{\left\vert CB\right\vert }=\frac
 {\sin\left(  \angle AOB\right)  }{\sin\left(  \angle
 COB\right)  }%
 \]
-
+\begin{solution}
+\answer[free-response]{
+By the Law of Sines we have that
+\[
+\frac{|AB|}{\sin(\angle AOB)} = \frac{|OB|}{\sin(\angle OAB)}\qquad\text{and}\qquad\frac{|CB|}{\sin(\angle COB)} = \frac{|OB|}{\sin(\angle OCB)}.
+\]
+However, 
+\[
+\angle OAB = \angle OCB
+\]
+So now we have that
+\[
+\frac{|AB|}{\sin(\angle AOB)} =\frac{|CB|}{\sin(\angle COB)}. 
+\]
+Using algebra we find 
+\[
+\frac{\left\vert AB\right\vert }{\left\vert CB\right\vert }=\frac
+{\sin\left(  \angle AOB\right)  }{\sin\left(  \angle
+COB\right)  }.
+\]
+}
+\end{solution}
 \end{exercise}
+
+
+
+
+
 
 \begin{exercise}\label{48}
 In the diagram
@@ -536,6 +848,28 @@ A'O\right)  }{\sin\left(  \angle B'C'O\right)
 }.
 \]
 [MJG,266-267]
+\begin{solution}
+\answer[free-response]{
+By the Law of Sines we have that
+\[
+\frac{|A'B'|}{\sin \alpha} = \frac{|OB'|}{\sin \gamma}\qquad\text{and}\qquad\frac{|C'B'|}{\sin \beta} = \frac{|OB'|}{\sin\delta}.
+\]
+We now see that
+\[
+|A'B'| = \frac{|OB'|\sin\alpha}{\sin \gamma}\qquad\text{and}\qquad|C'B'| = \frac{|OB'|\sin\beta}{\sin\delta}.
+\]
+Finally, we see directly that 
+\[
+\frac{\left\vert A'B'\right\vert }{\left\vert C^{\prime
+}B'\right\vert }=\frac{\sin\alpha}{\sin\beta}\div
+\frac{\sin\gamma}{\sin\delta}=\frac{\sin\left(  \angle
+A'OB'\right)  }{\sin\left(  \angle C^{\prime
+}OB'\right)  }\div\frac{\sin\left(  \angle B'%
+A'O\right)  }{\sin\left(  \angle B'C'O\right)
+}.
+\]
+}
+\end{solution}
 \end{exercise}
 
 
@@ -549,7 +883,26 @@ OB'\right)  }{\sin\left(  \angle C'OB'\right)
 }\div\frac{\sin\left(  \angle B'A'O\right)
 }{\sin\left(  \angle B'C'O\right)  }.
 \]
-
+\begin{solution}
+\answer[free-response]{
+By the Law of Sines we have that
+\[
+\frac{|A'B'|}{\sin(\angle A'OB')} = \frac{|OB'|}{\sin(\angle B'A'O)}\qquad\text{and}\qquad\frac{|C'B'|}{\sin(\angle C'OB')} = \frac{|OB'|}{\sin(\angle B'C'O)}.
+\]
+We now see that
+\[
+|A'B'| = \frac{|OB'|\sin(\angle A'OB')}{\sin(B'A'O)}\qquad\text{and}\qquad|C'B'| = \frac{|OB'|\sin(\angle C'OB')}{\sin(\angle B'C'O)}.
+\]
+Again, we see directly that 
+\[
+\frac{\left\vert A'B'\right\vert }{\left\vert C^{\prime
+}B'\right\vert }=\frac{\sin\left(  \angle A'%
+OB'\right)  }{\sin\left(  \angle C'OB'\right)
+}\div\frac{\sin\left(  \angle B'A'O\right)
+}{\sin\left(  \angle B'C'O\right)  }.
+\]
+}
+\end{solution}
 \end{exercise}
 
 These last two Exercises allow us to define the cross-ratio of four
@@ -618,14 +971,43 @@ Show that, in the figure%
 \end{image}
 we have the equality%
 \[
-\left(  A:B:C:D\right)  =\left(  A':B':C':D^{\prime
-}\right)  .
+\left(  A:B:C:D\right)  =\left(A':B':C':D'\right)  .
 \]
 
 
-Hint: Use Exercises \ref{46}-\ref{49}.
+Hint: Use Exercises \ref{46}--\ref{49}.
 
 What happens in if we move $B$ to the other side of $C$?
+\begin{solution}
+\answer{
+By our previous work, 
+\begin{align*}
+(A':B':C':D') &=\frac{|A'B'|}{|C'B'|}\div \frac{|A'D'|}{|C'D'|}\\
+&=\left(\frac{\sin(\angle A'OB')}{\sin(\angle C'OB')} \div \frac{\sin(\angle B'A'O)}{\sin(\angle B'C'O)}\right) \div \left(\frac{\sin(\angle A'OD')}{\sin(\angle C'OD')}\div\frac{\sin(\angle D'A'O)}{\sin(\angle D'C'O)}\right).
+\end{align*}
+Since 
+\begin{align*}
+m(\angle A'OB') &= m(\angle AOB),\\
+m(\angle C'OB') &= m(\angle COB),\\
+m(\angle A'OD') &= m(\angle AOD),\\
+m(\angle C'OD') &= m(\angle COD),\\
+m(\angle B'A'O) &= m(\angle D'A'O),
+\end{align*}
+and as we have shown several times now, 
+\[
+\sin(\angle B'C'O) = \sin(\angle D'C'O)
+\]
+as 
+\[
+m(\angle B'C'O) + m(\angle D'C'O) = 180^\circ.
+\]
+With all of these substitutions, our ``large'' expression above becomes
+\[
+\frac{\sin(\angle AOB)}{\sin(\angle COB)} \div \frac{\sin(\angle AOD)}{\sin(\angle COD)} = (A:B:C:D). 
+\]
+Since none of the formulas change when $B$ is moved to the other side
+of $C$, we are done.  }
+\end{solution}
 \end{exercise}
 
 We say that ``Cross-ratio is invariant under stereographic
