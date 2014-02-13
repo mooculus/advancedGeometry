@@ -1,0 +1,102 @@
+\shortdescription{In this activity we explore the areas of lunes and triangles on the sphere.}
+\activitytitle{Areas on spheres in euclidean $3$-space}
+
+
+\subsection*{Lunes}
+
+In the picture we have shaded in an ` $\alpha$-lune' on the $R$-sphere in
+euclidean $3$-space.%
+\[%
+%TCIMACRO{\FRAME{itbpF}{1.2505in}{1.19in}{0in}{}{}{Figure}%
+%{\special{ language "Scientific Word";  type "GRAPHIC";
+%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
+%width 1.2505in;  height 1.19in;  depth 0in;  original-width 5.4509in;
+%original-height 5.1863in;  cropleft "0";  croptop "1";  cropright "1";
+%cropbottom "0";  tempfilename 'MXAJBZ0I.png';tempfile-properties "XPR";}}}%
+%BeginExpansion
+{\includegraphics[
+natheight=5.186300in,
+natwidth=5.450900in,
+height=1.19in,
+width=1.2505in
+]%
+{MXAJBZ0I.png}%
+}%
+%EndExpansion
+\]
+
+
+The lune has two vertices. They are at opposite (antipodal) points on the
+$R$-sphere, that is, the line in Eucludean $3$-space that joins the two
+vertices runs through the center of the sphere. The angle at a vertex of the
+lune is $\alpha$ radians.
+
+\begin{exercise}
+\label{67}(\textbf{SG}) Explain why the area of the $\alpha$-lune is $2\alpha
+$\textperiodcentered$R^{2}$.
+\end{exercise}
+
+
+\subsection*{Spherical triangles}
+
+If a triangle on the sphere of radius $R$ has interior angles with radian
+measures $\alpha$, $\beta$, and $\gamma$, it can be covered three times by
+lunes as shown in the figure below.%
+\[%
+%TCIMACRO{\FRAME{itbpF}{1.1865in}{1.4425in}{0pt}{}{}{Figure}%
+%{\special{ language "Scientific Word";  type "GRAPHIC";
+%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
+%width 1.1865in;  height 1.4425in;  depth 0pt;  original-width 5.0548in;
+%original-height 6.154in;  cropleft "0";  croptop "1";  cropright "1";
+%cropbottom "0";  tempfilename 'MXAJBZ0J.png';tempfile-properties "XPR";}}}%
+%BeginExpansion
+\raisebox{-0pt}{\includegraphics[
+natheight=6.154000in,
+natwidth=5.054800in,
+height=1.4425in,
+width=1.1865in
+]%
+{MXAJBZ0J.png}%
+}%
+%EndExpansion
+\]
+Notice that each lune has one vertex at a vertex of the triangle and angle
+equal to that interior angle of the triangle. The other vertices of each lune
+are vertices of an `opposite' triangle that has the same area as the given one
+since it is just the image of the given one under the rigid motion%
+\[
+\left(  \underline{\hat{x}},\underline{\hat{y}},\underline{\hat{z}}\right)
+=\left(  \hat{x},\hat{y},\hat{z}\right)  \cdot\left(
+\begin{array}
+[c]{ccc}%
+-1 & 0 & 0\\
+0 & -1 & 0\\
+0 & 0 & -1
+\end{array}
+\right)  .
+\]
+(See, for example, the formula $\left(  \ref{68}\right)  $.) The three lunes
+cover the triangle three times. The three opposite lunes cover the opposite
+triangle three times. If you take all six lunes together, they cover each of
+the two triangles three times and everything else exactly once.
+
+\begin{exercise}
+(\textbf{SG}) a) Show that the area of the spherical triangle is given by the
+formula%
+\[
+R^{2}\left(  \left(  \alpha+\beta+\gamma\right)  -\pi\right)  ,
+\]
+that is,%
+\[
+\left\vert K\right\vert ^{-1}\left(  \left(  \alpha+\beta+\gamma\right)
+-\pi\right)  .
+\]
+
+
+Hint: Use Exercise \ref{67} to turn the sentence just preceding the Exercise
+into an equation.
+
+b) Give a formula for the area of any spherical $n$-gon.
+
+Hint: Divide the spherical $n$-gon into spherical triangles.
+\end{exercise}
