@@ -1,0 +1,377 @@
+\shortdescription{Here we dig deeper to understand our different coordinates.}
+\activitytitle{Uniform coordinates for the two-dimensional geometries}
+
+
+\subsection*{The two-dimensional geometries in $\left(x,y,z\right)
+$-coordinates}
+
+
+At the beginning of this book we changed the coordinates on Euclidean
+three-space so that the equations for the sphere of radius $R$ became%
+\begin{equation}
+1=K\left(  x^{2}+y^{2}\right)  +z^{2} \label{29}%
+\end{equation}
+where%
+\[
+K=\frac{1}{R^{2}}.
+\]
+In these new $\left(  x,y,z\right)  $-coordinates, the set of points $\left(
+x,y,z\right)  $ satisfying $\left(  \ref{29}\right)  $ when $K>0$ matched up
+in $1-1$ fashion with the $R$-sphere%
+\[
+\left\{  \left(  \hat{x},\hat{y},\hat{z}\right)  \in\mathbb{R}^{3}:\hat{x}%
+^{2}+\hat{y}^{2}+\hat{z}^{2}=R^{2}\right\}
+\]
+in the usual coordinates $\left(  \hat{x},\hat{y},\hat{z}\right)  $ of
+$3$-dimensional Euclidean space.
+
+If we have a curve $\left(  \hat{x}\left(  t\right)  ,\hat{y}\left(  t\right)
+,\hat{z}\left(  t\right)  \right)  $ lying in the $R$-sphere in Euclidean
+space, then for all $t\in\left[  b,e\right]  $,%
+\[
+\hat{x}\left(  t\right)  ^{2}+\hat{y}\left(  t\right)  ^{2}+\hat{z}\left(
+t\right)  ^{2}=R^{2}.
+\]
+Differentiating both sides with respect to $t$ we obtain%
+\[
+2\hat{x}\left(  t\right)  \frac{d\hat{x}}{dt}+2\hat{y}\left(  t\right)
+\frac{d\hat{y}}{dt}+2\hat{z}\left(  t\right)  \frac{d\hat{z}}{dt}=0
+\]
+which we can rewrite as%
+\[
+\left(  \hat{x}\left(  t\right)  ,\hat{y}\left(  t\right)  ,\hat{z}\left(
+t\right)  \right)  \bullet\frac{d\hat{X}\left(  t\right)  }{dt}=0.
+\]
+[DS,105ff] Said another way, vectors $\hat{V}$ are tangent to the $R$-sphere
+at $\hat{X}\left(  t\right)  $ if and only if%
+\[
+\hat{X}\left(  t\right)  \bullet\hat{V}=0.
+\]
+[DS,106,109]
+
+Repeating the same calculation in $\left(  x,y,z\right)  $-coordinates, the
+corresponding curve $\left(  x\left(  t\right)  ,y\left(  t\right)  ,z\left(
+t\right)  \right)  $ lies in the set $\left(  \ref{29}\right)  $ so that%
+\begin{align*}
+1  &  =K\left(  x\left(  t\right)  ^{2}+y\left(  t\right)  ^{2}\right)
++z\left(  t\right)  ^{2}\\
+0  &  =K\left(  2x\left(  t\right)  \frac{dx}{dt}+2y\left(  t\right)
+\frac{dy}{dt}\right)  +2z\left(  t\right)  \frac{dz}{dt}.
+\end{align*}
+That is, a vector $V=\left(  a,b,c\right)  $ is tangent to the set $\left(
+\ref{29}\right)  $ if and only if%
+\begin{equation}
+\left(  x\left(  t\right)  ,y\left(  t\right)  ,z\left(  t\right)  \right)
+\cdot\left(
+\begin{array}
+[c]{ccc}%
+2K & 0 & 0\\
+0 & 2K & 0\\
+0 & 0 & 2
+\end{array}
+\right)  \cdot V^{t}=0. \label{56}%
+\end{equation}
+
+
+\begin{exercise}
+\label{82}For $K\neq0$, show that the condition $\left(  \ref{56}\right)  $ on
+$V$ is exactly the same condition as%
+\[
+\left(  x\left(  t\right)  ,y\left(  t\right)  ,z\left(  t\right)  \right)
+\bullet_{K}V=0.
+\]
+
+\end{exercise}
+
+We will call the set of $\left(  x,y,z\right)  $ satisfying $\left(
+\ref{29}\right)  $ $K$-geometry. Its tangent vectors at a point $\left(
+x,y,z\right)  $ in the set are the vectors $V=\left(  a,b,c\right)  $ such
+that%
+\[
+\left(  x,y,z\right)  \bullet_{K}V=0.
+\]
+
+
+If you get nervous using these weird coordinates to compute things
+that are clearer in $\left( \hat{x},\hat{y},\hat{z}\right)
+$-coordinates, just go through each construction with the special case
+of $K=1$ first.  In that special case
+\[
+\left(  x,y,z\right)  =\left(  \hat{x},\hat{y},\hat{z}\right)
+\]
+and your calculations reduce to the usual ones on the unit sphere in ordinary
+Euclidean $3$-space.
+
+\subsection*{Rigid motions in $\left(  x,y,z\right)  $-coordinates}
+
+We are now going to study $K$-geometry using only $\left(  x,y,z\right)
+$-coordinates. If we have a curve $X\left(  t\right)  =\left(  x\left(
+t\right)  ,y\left(  t\right)  ,z\left(  t\right)  \right)  $ on the surface
+given in $K$-coordinates as%
+\begin{equation}
+1=K\left(  x^{2}+y^{2}\right)  +z^{2}, \label{86}%
+\end{equation}
+we have seen that we measure its length $L$ by the formula%
+\begin{equation}
+L=%
+%TCIMACRO{\dint \nolimits_{b}^{e}}%
+%BeginExpansion
+{\displaystyle\int\nolimits_{b}^{e}}
+%EndExpansion
+l\left(  t\right)  dt \label{60}%
+\end{equation}
+where
+\begin{equation}
+l\left(  t\right)  ^{2}=\frac{dX}{dt}\bullet_{K}\frac{dX}{dt} \label{61}%
+\end{equation}
+and that we measure angles $\theta$ between tangent vectors $V_{1}$ and
+$V_{2}$ at a point on the surface by the formula%
+\[
+\theta=\arccos\left(  \frac{V_{1}\bullet_{K}V_{2}}{\left\vert
+V_{1}\right\vert _{K}\cdot\left\vert V_{2}\right\vert
+_{K}}\right)
+\]
+where%
+\[
+\left\vert V\right\vert _{K}^{2}=V\bullet_{K}V.
+\]
+
+
+We now want to explore the condition that a transformation%
+\[
+\left(  \underline{x},\underline{y},\underline{z}\right)  =\left(
+x,y,z\right)  \cdot M
+\]
+take the surface $\left(  \ref{86}\right)  $ to itself and preserve the length
+of any curve $\left(  x\left(  t\right)  ,y\left(  t\right)  ,z\left(
+t\right)  \right)  $ lying on the surface. Rewriting the transformation as%
+\[
+\left(  \underline{X}\right)  =\left(  X\right)  \cdot M
+\]
+the formulas $\left(  \ref{60}\right)  $ and $\left(  \ref{61}\right)  $ show
+that all we have to worry about is that%
+\[
+\frac{d\underline{X}}{dt}\bullet_{K}\frac{d\underline{X}}{dt}=\frac{dX}%
+{dt}\bullet_{K}\frac{dX}{dt}%
+\]
+for all values $t$ of the parameter of the curve. But%
+\[
+\left(  \frac{d\underline{X}}{dt}\right)  =\left(  \frac{dX}{dt}\right)  \cdot
+M
+\]
+by the product rule since $M$ is a constant matrix. So the transformation
+given by the matrix $\hat{M}$ will preserve the length of any path and will
+preserve the measure of any angle if%
+\begin{equation}
+\left(  \frac{dX}{dt}\right)  \cdot M\cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  \cdot\left(  \left(  \frac{dX}{dt}\right)  \cdot M\right)
+^{t}=\left(  \frac{dX}{dt}\right)  \cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  \cdot\left(  \frac{dX}{dt}\right)  ^{t}. \label{89}%
+\end{equation}
+
+
+\begin{exercise}\hfil
+\label{87}
+\begin{enumerate}
+\item  Show that this last equality is always true if%
+\begin{equation}
+M\cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  \cdot M^{t}=\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  . \label{new89}%
+\end{equation}
+
+\item Show that, if $M$ satisfies the identity \ref{new89},then the
+transformation $\left(  \underline{x},\underline{y},\underline{z}\right)
+=\left(  x,y,z\right)  \cdot M$ takes the set of points $\left(  x,y,z\right)
+$ such that%
+\[
+1=K\left(  x^{2}+y^{2}\right)  +z^{2},
+\]
+to the set of points $\left(  \underline{x},\underline{y},\underline
+{z}\right)  $ such that%
+\[
+1=K\left(  \underline{x}^{2}+\underline{y}^{2}\right)  +\underline{z}^{2}.
+\]
+That is, $M$ gives a $1-1$, onto mapping of $K$-geometry to itself.
+
+Hint: For $K\neq0$, write the equation $1=K\left(  \underline{x}%
+^{2}+\underline{y}^{2}\right)  +\underline{z}^{2}$ in matrix notation as%
+\[
+\left(
+\begin{array}
+[c]{ccc}%
+\underline{x} & \underline{y} & \underline{z}%
+\end{array}
+\right)  \cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  \cdot\left(
+\begin{array}
+[c]{c}%
+\underline{x}\\
+\underline{y}\\
+\underline{z}%
+\end{array}
+\right)  =\frac{1}{K}.
+\]
+\end{enumerate}
+\end{exercise}
+
+\begin{definition}
+\label{88}A $3\times3$ matrix $M$ is called $K$-orthogonal if
+\[
+M\cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  \cdot M^{t}=\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  .
+\]
+
+\end{definition}
+
+\begin{definition}
+A $K$-distance-preserving transformation of $K$-geometry is called a
+$K$\textbf{-rigid motion} or a $K$\textbf{-congruence}.
+\end{definition}
+
+So $K$-orthogonal matrices give $K$-rigid motions.
+
+\begin{exercise}
+For $K\neq0$, show that the set of $K$-orthogonal matrices $M$ form a group.
+That is, show that
+\begin{enumerate}
+\item the product of two $K$-orthogonal matrices is $K$-orthogonal,
+
+\item the identity matrix is $K$-orthogonal,
+
+\item the inverse matrix $M^{-1}$ of a $K$-orthogonal matrix $M$ is $K$-orthogonal.
+Hint: Write%
+\[
+M\cdot M^{-1}=I=M\cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  \cdot M^{t}\cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K
+\end{array}
+\right)
+\]
+and use matrix multiplication to reduce to showing that
+\[
+\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  \cdot M^{t}\cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K
+\end{array}
+\right)
+\]
+is $K$-orthogonal.
+\end{enumerate}
+\end{exercise}
+
+\subsection*{Why use $K$-coordinates?}
+
+We saw that we could measure the usual Euclidean lengths of curves $\hat
+{X}\left(  t\right)  $ on the usual Euclidean $R$-sphere just in terms of the
+formulas $X\left(  t\right)  $ for their paths in $\left(  x,y,z\right)
+$-coordinates using the $K$-dot product, since lengths depended only on
+lengths of tangent vectors and%
+\[
+\frac{d\hat{X}\left(  t\right)  }{dt}\bullet\frac{d\hat{X}\left(  t\right)
+}{dt}=\frac{dX\left(  t\right)  }{dt}\bullet_{K}\frac{dX\left(  t\right)
+}{dt}%
+\]
+where%
+\[
+\frac{dX\left(  t\right)  }{dt}\bullet_{K}\frac{dX\left(  t\right)  }%
+{dt}=\left(  \frac{dX\left(  t\right)  }{dt}\right)  \cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  \cdot\left(  \frac{dX\left(  t\right)  }{dt}\right)  ^{t}.
+\]
+In other words, the usual geometry of the sphere of radius $R$ is simply the
+geometry of the set $\left(  \ref{29}\right)  $ with $K=1/R^{2}$ and with
+lengths (and areas) given by the $K$-dot product. Said another way, we can do
+all of spherical geometry in $\left(  x,y,z\right)  $-coordinates. All we need
+is the set $\left(  \ref{29}\right)  $ and the $K$-dot product. But the set
+$\left(  \ref{29}\right)  $ continues to exist even if $K=0$ or $K<0$, and the
+$K$-dot product formula continues to make sense even if $K<0$. In short we
+have the following table:
+\begin{equation}%
+\begin{tabular}
+[c]{ccc}%
+Spherical ($K>0$) & Euclidean ($K=0$) & Hyperbolic ($K<0$)\\
+$\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=R^{2}$ &  & \\
+$\hat{V}\bullet\hat{V}$ &  & \\
+$1=K\left(  x^{2}+y^{2}\right)  +z^{2}$ & $1=K\left(  x^{2}+y^{2}\right)
++z^{2}$ & $1=K\left(  x^{2}+y^{2}\right)  +z^{2}$\\
+$V_{1}\bullet_{K}V_{2}$ &  & $V_{1}\bullet_{K}V_{2}$%
+\end{tabular}
+\ \ \ \ \label{66}%
+\end{equation}
+This table tells us that `there is something else out there,' that is, some
+other type of two-dimensional geometry beyond plane geometry and spherical
+geometry. But the gap in the bottom row of the table is a bit disturbing. If
+we can't express the usual dot-product in plane geometry as the $K$-dot
+product for $K=0$, we can't pass smoothly from spherical through plane
+geometry to hyperbolic geometry using $\left(  x,y,z\right)  $-coordinates. We
+now examine two ways to produce coordinates uniformly for spherical, plane and
+hyperbolic geometry that overcome this difficulty.
