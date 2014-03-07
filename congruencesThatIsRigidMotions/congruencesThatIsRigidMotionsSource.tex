@@ -1,0 +1,444 @@
+\shortdescription{We explore rigid motions as matrix multiplication.}
+\activitytitle{Congruences, that is, rigid motions}
+
+\subsection*{Transformations of Euclidean $3$-space}
+
+Consider the following mapping of Euclidean $3$-space to itself:%
+\begin{equation}
+\left(
+\begin{array}
+[c]{ccc}%
+\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{ccc}%
+\hat{x} & \hat{y} & \hat{z}%
+\end{array}
+\right)  \cdot\hat{M} \label{12}%
+\end{equation}
+where $\hat{M}$ is an invertible $3\times3$ matrix. Then by matrix
+multiplication%
+\[
+\left(
+\begin{array}
+[c]{ccc}%
+\hat{x} & \hat{y} & \hat{z}%
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{ccc}%
+\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
+\end{array}
+\right)  \cdot\hat{M}^{-1}%
+\]
+so that this mapping is $1-1$ and onto.
+
+\begin{definition}
+The mapping of Euclidean $3$-space to itself given by the rule $\left(
+\ref{12}\right)  $ is called a rigid motion if the distance between any two
+points in Euclidean $3$-space is left unchanged by the mapping, that is, for
+any two points, $\hat{X}_{1}$ and $\hat{X}_{2}$ in Euclidean $3$-space%
+\[
+d\left( \hat{X}_{1}  \cdot\hat{M},\hat{X}_{2}
+\cdot\hat{M}\right)  =d\left(  \hat{X}_{1},\hat{X}_{2}\right)  .
+\]
+
+\end{definition}
+
+We saw in formula $\left(  \ref{13}\right)  $ that the square of the distance
+between $\hat{X}_{1}$ and $\hat{X}_{1}$ is just the dot-product of the vector%
+\[
+\hat{V}=\hat{X}_{2}-\hat{X}_{1}%
+\]
+with itself. So the transformation given by the matrix $\hat{M}$ will leave
+distances unchanged if and only if, for all vectors $\hat{V}$,%
+\[
+\left(  \hat{V}  \cdot\hat{M}\right)  \bullet\left(
+\hat{V}  \cdot\hat{M}\right)  =\hat{V}\bullet\hat{V}%
+\]
+that is%
+\[
+\left( \hat{V}  \cdot\hat{M}\right)  \cdot\left(
+\hat{V}  \cdot\hat{M}\right)  ^{t}=\hat{V}  \cdot
+\hat{V}  ^{t}.
+\]
+We can rewrite this requirement as%
+\begin{equation}
+\hat{V}  \cdot\hat{M}\cdot\hat{M}^{t}\cdot  \hat
+{V}  ^{t}=\hat{V}  \cdot\hat{V}  ^{t}
+\label{116}%
+\end{equation}
+for all vectors $\hat{V}$. Condition $\left(  \ref{116}\right)  $ is certainly
+satisfied for all vectors $\hat{V}$ if
+\begin{equation}
+\hat{M}\cdot\hat{M}^{t}=I=\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{array}
+\right)  . \label{16}%
+\end{equation}
+
+
+\begin{exercise}
+Suppose $\hat{M}$ is such that%
+\[
+\hat{M}\cdot\hat{M}^{t}=\left(
+\begin{array}
+[c]{ccc}%
+1 & 2 & 0\\
+2 & 1 & 0\\
+0 & 0 & 1
+\end{array}
+\right)  .
+\]
+Find a vector $\hat{V}=\left(  \hat{a},\hat{b},\hat{c}\right)  $ such that%
+\[
+\hat{V} \cdot\hat{M}\cdot\hat{M}^{t}\cdot\hat{V}  ^{t}\neq\hat{V}  \cdot\hat{V}
+^{t}.
+\]
+
+\end{exercise}
+
+In fact, reasoning as in this last Exercise, one can show that, if a matrix
+$\hat{M}$ satisfies the condition $\left(  \ref{116}\right)  $ for
+\textit{all} vectors $\hat{V}$, then the matrix $\hat{M}$ also satisfies
+$\left(  \ref{16}\right)  $. A matrix $\hat{M}$ satisfying $\left(
+\ref{16}\right)  $ is called an \textit{orthogonal matrix}. [DS,316-321]
+
+\begin{exercise}
+\label{14} Show that the matrix%
+\[
+\hat{M}=\left(
+\begin{array}
+[c]{ccc}%
+\cos\theta & \sin\theta & 0\\
+-\sin\theta & \cos\theta & 0\\
+0 & 0 & 1
+\end{array}
+\right)
+\]
+is orthogonal. Can you describe geometrically what this rigid motion is doing
+to the points in Euclidean $3$-space?
+\end{exercise}
+
+\begin{exercise}
+Show that the matrix%
+\[
+\hat{M}=\left(
+\begin{array}
+[c]{ccc}%
+\cos\psi & 0 & \sin\psi\\
+0 & 1 & 0\\
+-\sin\psi & 0 & \cos\psi
+\end{array}
+\right)
+\]
+is orthogonal. Can you describe geometrically what this rigid motion is doing
+to the points in Euclidean $3$-space?
+\end{exercise}
+
+For any curve%
+\[
+\hat{X}\left(  t\right)  =\left(  \hat{x}\left(  t\right)  ,\hat{y}\left(
+t\right)  ,\hat{z}\left(  t\right)  \right)  ,\;b\leq t\leq e,
+\]
+its length is%
+\[%
+%TCIMACRO{\dint \nolimits_{b}^{e}}%
+%BeginExpansion
+{\displaystyle\int\nolimits_{b}^{e}}
+%EndExpansion
+\sqrt{\left(  \frac{d\hat{X}}{dt}\right)  \cdot\left(  \frac{d\hat{X}}%
+{dt}\right)  ^{t}}dt.
+\]
+Suppose now that the curve is moved by a transformation given by an orthogonal
+matrix $\hat{M}$. After it is moved, its length is given by%
+\[%
+%TCIMACRO{\dint \nolimits_{b}^{e}}%
+%BeginExpansion
+{\displaystyle\int\nolimits_{b}^{e}}
+%EndExpansion
+\sqrt{\left(  \frac{d\left(  \hat{X}\cdot\hat{M}\right)  }{dt}\right)
+\cdot\left(  \frac{d\left(  \hat{X}\cdot\hat{M}\right)  }{dt}\right)  ^{t}%
+}dt.
+\]
+But%
+\begin{align*}%
+%TCIMACRO{\dint \nolimits_{b}^{e}}%
+%BeginExpansion
+{\displaystyle\int\nolimits_{b}^{e}}
+%EndExpansion
+\sqrt{\left(  \frac{d\left(  \hat{X}\cdot\hat{M}\right)  }{dt}\right)
+\cdot\left(  \frac{d\left(  \hat{X}\cdot\hat{M}\right)  }{dt}\right)  ^{t}}dt
+&  =%
+%TCIMACRO{\dint \nolimits_{b}^{e}}%
+%BeginExpansion
+{\displaystyle\int\nolimits_{b}^{e}}
+%EndExpansion
+\sqrt{\left(  \frac{d\hat{X}}{dt}\cdot\hat{M}\right)  \cdot\left(  \frac
+{d\hat{X}}{dt}\cdot\hat{M}\right)  ^{t}}dt\\
+&  =%
+%TCIMACRO{\dint \nolimits_{b}^{e}}%
+%BeginExpansion
+{\displaystyle\int\nolimits_{b}^{e}}
+%EndExpansion
+\sqrt{\left(  \frac{d\hat{X}}{dt}\cdot\hat{M}\right)  \cdot\left(  \hat{M}%
+^{t}\cdot\frac{d\hat{X}}{dt}^{t}\right)  }dt\\
+&  =%
+%TCIMACRO{\dint \nolimits_{b}^{e}}%
+%BeginExpansion
+{\displaystyle\int\nolimits_{b}^{e}}
+%EndExpansion
+\sqrt{\left(  \frac{d\hat{X}}{dt}\right)  \cdot\left(  \frac{d\hat{X}}%
+{dt}\right)  ^{t}}dt.
+\end{align*}
+
+
+\begin{corollary}
+If a curve
+\[
+\hat{X}\left(  t\right)  =\left(  \hat{x}\left(  t\right)  ,\hat{y}\left(
+t\right)  ,\hat{z}\left(  t\right)  \right)  ,\;b\leq t\leq e
+\]
+is moved by a transformation given by an orthogonal matrix $\hat{M}$, its
+length is unchanged.\pagebreak
+\end{corollary}
+
+\subsection*{Formula in $\left(  x,y,z\right)  $-coordinates for rigid motions
+of Euclidean $3$-space}
+
+We now wish to figure out how to write the transformation $\left(
+\ref{12}\right)  $ in $\left(  x,y,z\right)  $-coordinates. This is a simple
+substitution problem:%
+\begin{equation}
+\left(
+\begin{array}
+[c]{ccc}%
+\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{ccc}%
+\hat{x} & \hat{y} & \hat{z}%
+\end{array}
+\right)  \cdot\hat{M} \label{100}%
+\end{equation}%
+\begin{gather*}
+\left(
+\begin{array}
+[c]{ccc}%
+\hat{x} & \hat{y} & \hat{z}%
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{ccc}%
+x & y & Rz
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{ccc}%
+x & y & z
+\end{array}
+\right)  \cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{array}
+\right) \\
+\left(
+\begin{array}
+[c]{ccc}%
+\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{ccc}%
+\underline{x} & \underline{y} & R\underline{z}%
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{ccc}%
+\underline{x} & \underline{y} & \underline{z}%
+\end{array}
+\right)  \cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{array}
+\right)
+\end{gather*}
+So we have the diagram%
+\begin{image}
+\begin{tikzpicture}
+  \node (xyzHat) {$\left(\begin{array}[c]{ccc}\hat{x} & \hat{y} & \hat{z}\end{array}\right)\in\mathbb{R}^3$};
+  \node (xyzHatBar) [node distance=2cm,below of=xyzHat] {$\left(\begin{array}[c]{ccc}\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}\end{array}\right)$};
+  \node (xyz) [node distance=6cm,right of=xyzHat] {$\left(\begin{array}[c]{ccc}x & y & z\end{array}\right)\in\mathbb{R}^3$};
+  \node (xyzBar) [node distance=6cm,right of=xyzHatBar] {$\left(\begin{array}[c]{ccc}\underline{x} & \underline{y} & \underline{z}\end{array}\right)$};
+  \draw[->] (xyz) to node[above] {$\cdot\left(\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R\end{smallmatrix}\right)$} (xyzHat);
+  \draw[->] (xyz) to node[right] {$\cdot M = \text{?}$} (xyzBar);
+  \draw[->] (xyzHat) to node[right] {$\cdot\hat{M}$} (xyzHatBar);
+  \draw[->] (xyzHatBar) to node [above] {$\cdot\left(\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R^{-1}\end{smallmatrix}\right)$} (xyzBar);
+\end{tikzpicture}
+\end{image}
+\begin{exercise}
+Starting from the equality $\left(  \ref{100}\right)  $ describing the
+transformation in Euclidean coordinates, explain why%
+\[
+\left(
+\begin{array}
+[c]{ccc}%
+\underline{x} & \underline{y} & \underline{z}%
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{ccc}%
+x & y & z
+\end{array}
+\right)  \cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{array}
+\right)  \cdot\hat{M}\cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R^{-1}%
+\end{array}
+\right)  .
+\]
+
+\end{exercise}
+
+So, if we let%
+\[
+M=\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{array}
+\right)  \cdot\hat{M}\cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R^{-1}%
+\end{array}
+\right)  ,
+\]
+then%
+\begin{equation}
+\left(
+\begin{array}
+[c]{ccc}%
+\underline{x} & \underline{y} & \underline{z}%
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{ccc}%
+x & y & z
+\end{array}
+\right)  \cdot M, \label{15}%
+\end{equation}
+that is $M$ is the matrix that gives the transformation $\left(
+\ref{12}\right)  $ in $\left(  x,y,z\right)  $-coordinates.
+
+So how would we check whether a transformation given in $\left(  x,y,z\right)
+$-coordinates by a matrix $M$ preserves distances in Euclidean $3$-space?
+Again, starting from $\left(  \ref{16}\right)  $ this is just a substitution
+problem:%
+\begin{gather*}
+\hat{M}\cdot\hat{M}^{t}=I\\
+M=\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{array}
+\right)  \cdot\hat{M}\cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R^{-1}%
+\end{array}
+\right) \\
+\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R^{-1}%
+\end{array}
+\right)  \cdot M\cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{array}
+\right)  =\hat{M}%
+\end{gather*}
+
+
+\begin{exercise}
+Finish the matrix algebra computations just above to show that the condition
+that a transformation $M$ in $\left(  x,y,z\right)  $-coordinates preserves
+distances in Euclidean $3$-space is the condition that%
+\begin{equation}
+M\cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  \cdot M^{t}=\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  . \label{17}%
+\end{equation}
+
+\end{exercise}
+
+This is the condition (in $\left(  x,y,z\right)  $-coordinates) which affirms
+that the transformation which takes the path $\left(  x(t),y(t),z(t)\right)  $
+to the path $\left(  x(t),y(t),z(t)\right)  \cdot M$ preserves lengths of
+tangent vectors at corresponding points. Therefore, by integrating, the
+(total) length of the curve $\left\{  \left(  x(t),y(t),z(t)\right)  \cdot
+M:b\leq t\leq e\right\}  $ is the same as the total length of the curve
+$\left\{  \left(  x(t),y(t),z(t)\right)  :b\leq t\leq e\right\}  $.
+
+\begin{exercise}
+Check that $\left(  \ref{17}\right)  $ is the correct condition by showing
+that any $3\times3$ matrix $M$ that satisfies $\left(  \ref{17}\right)  $ also
+satisfies%
+\[
+\left(   V  \cdot M\right)  \bullet_{K}\left(   V
+\cdot M\right)  =V\bullet_{K}V
+\]
+where%
+\[
+V=X_{2}-X_{1}.
+\]
+That is, the transformation given in $\left(  x,y,z\right)  $-coordinates by a
+matrix $M$ that satisfies $\left(  \ref{17}\right)  $ preserves the $K$-dot product.
+\end{exercise}

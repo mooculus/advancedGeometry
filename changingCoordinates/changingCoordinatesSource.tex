@@ -1,0 +1,383 @@
+\shortdescription{Now we will look at rigid motions in three-space.}
+\activitytitle{Changing coordinates}
+
+\subsection*{Bringing the North Pole of the $R$-sphere to $\left(
+0,0,1\right)  $}
+
+We are now ready to introduce a slightly different set of coordinates for
+$\mathbb{R}^{3}$, three-dimensional euclidean space. To see why we do this,
+suppose we are standing at the North Pole%
+\[
+N=\left(  0,0,R\right)
+\]
+of the sphere%
+\begin{equation}
+\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=R^{2} \label{4}%
+\end{equation}
+of radius $R$. As $R$ increases (but we stay our same size, the sphere around
+us becomes more and more like a flat, plane surface. However it can never get
+completely flat because we are zooming out the positive $\hat{z}$-axis and we
+would have to be `at infinity' for our surface to become exactly flat. We
+remedy that unfortunate situation by considering another copy of
+$\mathbb{R}^{3}$, whose coordinates we denote as $\left(  x,y,z\right)  $ and
+make the following rule in order to pass between the two $\mathbb{R}^{3}$'s:%
+\begin{align}
+\hat{x}  &  =x\label{105}\\
+\hat{y}  &  =y\nonumber\\
+\hat{z}  &  =Rz.\nonumber
+\end{align}
+We think of the $\left(  x,y,z\right)  $-coordinates as simply being a
+different set of addresses for the points in euclidean $3$-space, for example,%
+\[
+\left(  x,y,z\right)  =\left(  0,0,1\right)
+\]
+tells me that the point in euclidean $3$-space that I'm referring to is%
+\[
+\left(  \hat{x},\hat{y},\hat{z}\right)  =\left(  0,0,R\right)  =N,
+\]
+and the sphere of radius $R$ in euclidean $3$-space is given by%
+\begin{align*}
+R^{2}  &  =\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}\\
+&  =x^{2}+y^{2}+R^{2}z^{2}%
+\end{align*}
+that is, by the equation%
+\begin{equation}
+1=\frac{1}{R^{2}}\left(  x^{2}+y^{2}\right)  +z^{2}. \label{5}%
+\end{equation}
+The quantity%
+\[
+K=\frac{1}{R^{2}}%
+\]
+is called the curvature of the $R$-sphere. So in $\left(  x,y,z\right)
+$-coordinates, as $R$ goes to infinity, $K$ goes to $0$. The formula $\left(
+\ref{5}\right)  $ is rewritten as%
+\begin{equation}
+1=K\left(  x^{2}+y^{2}\right)  +z^{2}, \label{7}%
+\end{equation}
+and so goes to%
+\[
+1=z^{2}%
+\]
+as $R$ goes to infinity. So, in the $\left(  x,y,z\right)  $-coordinates, our
+`$R$-geometry' does indeed go to something finite and flat as $R$ goes to
+infinity, namely the set given by the formula%
+\[
+z=\pm1
+\]
+which is in fact (two copies of) a plane!
+
+\begin{exercise}\hfil
+\begin{enumerate}
+\item Sketch the solution set in $\left(  x,y,z\right)  $-coordinates
+representing the sphere%
+\[
+R^{2}=\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=2^{2}%
+\]
+of radius $2$ in euclidean three-space.
+
+\item Sketch the solution set in the same $\left(  x,y,z\right)  $-coordinates
+representing the sphere%
+\[
+R^{2}=\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=10^{2}%
+\]
+of radius $10$ in euclidean three-space.
+
+\item Sketch the solution set in the same $\left(  x,y,z\right)  $-coordinates
+representing the sphere%
+\[
+R^{2}=\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=10^{-2}%
+\]
+of radius $10^{-1}$ in euclidean three-space.
+\end{enumerate}
+\end{exercise}
+
+\subsection*{$K$-geometry: Formulas for euclidean lengths and angles in terms
+of $\left(  x,y,z\right)  $-coordinates}
+
+To prepare ourselves to do hyperbolic geometry, which has no satisfactory
+model in euclidean three-space, we will `practice' by doing spherical geometry
+(which \textit{does} have a completely satisfactory model in euclidean
+three-space) using these `slightly strange' $\left(  x,y,z\right)
+$-coordinates. Gradually throughout this course we will discover that the same
+rules that govern spherical geometry, expressed in $\left(  x,y,z\right)
+$-coordinates, also govern flat and hyperbolic geometry! In all three cases,
+the space in $\left(  x,y,z\right)  $-coordinates that we will study is%
+\begin{equation}
+1=K\left(  x^{2}+y^{2}\right)  +z^{2}. \label{11}%
+\end{equation}
+If $K>0$, the geometry we will be studying is the geometry of the the
+euclidean sphere of radius%
+\[
+R=\frac{1}{\sqrt{K}}.
+\]
+If $K=0$ we will be studying flat (plane) geometry. If $K<0$, we will be
+studying hyperbolic geometry. The number $K$, in all cases, is called the
+\textit{curvature} of the geometry.
+
+In short, we want to use $\left(  x,y,z\right)  $-coordinates to compute with,
+but we want lengths and angles to be the usual euclidean ones in $\left(
+\hat{x},\hat{y},\hat{z}\right)  $-coordinates.
+
+\begin{exercise}
+a) Suppose we have functions%
+\[
+\left(  \hat{x}\left(  x,y,z\right)  ,\hat{y}\left(  x,y,z\right)  ,\hat
+{z}\left(  x,y,z\right)  \right)
+\]
+where%
+\begin{align*}
+x  &  =f\left(  t\right) \\
+y  &  =g\left(  t\right) \\
+z  &  =h\left(  t\right)  .
+\end{align*}
+State the Chain Rule for%
+\begin{align*}
+\frac{d\hat{x}}{dt}  &  =\\
+\frac{d\hat{y}}{dt}  &  =\\
+\frac{d\hat{z}}{dt}  &  =.
+\end{align*}
+
+
+b) Rewrite the Chain Rule in matrix notation%
+\[
+\left(
+\begin{array}
+[c]{ccc}%
+\frac{d\hat{x}}{dt} & \frac{d\hat{y}}{dt} & \frac{d\hat{z}}{dt}%
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{ccc}%
+\frac{dx}{dt} & \frac{dy}{dt} & \frac{dz}{dt}%
+\end{array}
+\right)  \cdot\left(
+\begin{array}
+[c]{ccc}
+&  & \\
+&  & \\
+&  &
+\end{array}
+\right)  .
+\]
+
+\end{exercise}
+
+\begin{exercise}
+\label{8} Recalling that $R$ is a positive constant, use $\left(
+\ref{105}\right)  $ and the Chain Rule to show that, for any path $\hat
+{X}\left(  t\right)  =\left(  \hat{x}\left(  t\right)  ,\hat{y}\left(
+t\right)  ,\hat{z}\left(  t\right)  \right)  $ in euclidean $3$-space,%
+\begin{align*}
+\frac{d\hat{x}}{dt}  &  =\frac{dx}{dt}\\
+\frac{d\hat{y}}{dt}  &  =\frac{dy}{dt}\\
+\frac{d\hat{z}}{dt}  &  =R\frac{dz}{dt}.
+\end{align*}
+
+\end{exercise}
+
+\begin{exercise}
+Use matrix multiplication [DS,307] and Exercise \ref{8} to show that%
+\begin{align*}
+\frac{d\hat{X}\left(  t\right)  }{dt}  &  =\left(  \frac{dX\left(  t\right)
+}{dt}\right)  \left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{array}
+\right) \\
+\frac{dX\left(  t\right)  }{dt}  &  =\left(  \frac{d\hat{X}\left(  t\right)
+}{dt}\right)  \left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R^{-1}%
+\end{array}
+\right)  .
+\end{align*}
+
+\end{exercise}
+
+\textit{NB}: This last computation shows that, if
+\begin{align*}
+\hat{V}_{1}  &  =\left(  \hat{a}_{1},\hat{b}_{1},\hat{c}_{1}\right) \\
+\hat{V}_{2}  &  =\left(  \hat{a}_{2},\hat{b}_{2},\hat{c}_{2}\right)
+\end{align*}
+are tangent vectors in $\left(  \hat{x},\hat{y},\hat{z}\right)  $-coordinates
+and%
+\begin{align*}
+V_{1}  &  =\left(  a_{1},b_{1},c_{1}\right) \\
+V_{2}  &  =\left(  a_{2},b_{2},c_{2}\right)
+\end{align*}
+are their transformations into $\left(  x,y,z\right)  $-coordinates, then%
+\begin{align*}
+\hat{V}_{1}  &  =\left(  V_{1}\right)  \left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{array}
+\right) \\
+\hat{V}_{2}  &  =\left(  V_{2}\right)  \left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{array}
+\right)
+\end{align*}
+and%
+\begin{align*}
+\hat{V}_{1}\bullet\hat{V}_{2}  &  =\left(  \hat{V}_{1}\right)  \cdot\left(
+\hat{V}_{2}\right)  ^{t}\\
+&  =\left(  V_{1}\right)  \left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{array}
+\right)  \left(  \left(  V_{2}\right)  \left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{array}
+\right)  \right)  ^{t}\\
+&  =\left(  V_{1}\right)  \left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{array}
+\right)  \left(  V_{2}\right)  ^{t}\\
+&  =\left(  V_{1}\right)  \left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  \left(  V_{2}\right)  ^{t}.
+\end{align*}
+This last computation says that we can compute the euclidean dot $\hat{V}%
+_{1}\bullet\hat{V}_{2}$ without ever referring to euclidean coordinates. We
+incorporate that fact into the following definition.
+
+\begin{definition}
+\textquotedblleft$K$-dot-product\textquotedblright\ of vectors:%
+\begin{align}
+V_{1}\bullet_{K}V_{2}  &  =\left(  V_{1}\right)  \left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  \left(  V_{2}\right)  ^{t}\label{10}\\
+&  =\left(
+\begin{array}
+[c]{ccc}%
+a_{1} & b_{1} & c_{1}%
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{c}%
+a_{2}\\
+b_{2}\\
+c_{2}%
+\end{array}
+\right)  .\nonumber
+\end{align}
+
+\end{definition}
+
+So, suppose we have a curve on the $R$-sphere in euclidean $3$-space but it is
+given to us in $X\left(  t\right)  =\left(  x\left(  t\right)  ,y\left(
+t\right)  ,z\left(  t\right)  \right)  $-coordinates. Then the length of that
+curve in euclidean $3$-space is%
+\[%
+%TCIMACRO{\dint \nolimits_{b}^{e}}%
+%BeginExpansion
+{\displaystyle\int\nolimits_{b}^{e}}
+%EndExpansion
+\sqrt{\frac{dX}{dt}\bullet_{K}\frac{dX}{dt}}dt.
+\]
+
+
+\begin{exercise}
+\label{222}Use Exercise \ref{9} to show that, if we have any two vectors in
+euclidean three-space that are tangent to the $R$-sphere at some point on it,
+but the two vectors are given to us in $\left(  x,y,z\right)  $-coordinates as%
+\begin{align*}
+V_{1}  &  =\left(  a_{1},b_{1},c_{1}\right) \\
+V_{2}  &  =\left(  a_{2},b_{2},c_{2}\right)  ,
+\end{align*}
+then the area of the parallelogram spanned by those two vectors in euclidean
+$3$-space is%
+\[
+\sqrt{\left\vert
+\begin{array}
+[c]{cc}%
+V_{1}\bullet_{K}V_{1} & V_{2}\bullet_{K}V_{1}\\
+V_{1}\bullet_{K}V_{2} & V_{2}\bullet_{K}V_{2}%
+\end{array}
+\right\vert }=\sqrt{\left\vert \left(
+\begin{array}
+[c]{c}%
+\left(  V_{1}\right) \\
+\left(  V_{2}\right)
+\end{array}
+\right)  \cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  \cdot\left(
+\begin{array}
+[c]{cc}%
+\left(  V_{1}\right)  ^{t} & \left(  V_{2}\right)  ^{t}%
+\end{array}
+\right)  \right\vert }.
+\]
+
+\end{exercise}
+
+\textit{Moral of the story:} The dot-product rules! That is, if you know the
+dot-product you know everything there is to know about a geometry, lengths,
+areas, angles, everything. And the set $\left(  \ref{11}\right)  $ continues
+to make sense even when $K$ is negative. And as we will see later on, the
+definition of the $K$-dot product also makes sense for tangent vectors to that
+set when $K$ is negative.The geometry we get, when the constant $K$ is chosen
+to be negative is called a hyperbolic geometry. The geometry we get, when the
+constant $K$ is just chosen to be non-zero is called a non-euclidean geometry.
+In fact all the non-euclidean $2$-dimensional geometries are either spherical
+or hyperbolic.
+
+\textit{Coming attractions:} A big idea is that in hyperbolic geometry
+$K^{-1}$ in $\left(  \ref{10}\right)  $ becomes negative, so that the third
+coordinate of velocity, that is, the $c$-direction, actually
+\textit{contracts} lengths. It was the understanding of this mysterious fact
+that allowed Einstein to discover (special) relativity.

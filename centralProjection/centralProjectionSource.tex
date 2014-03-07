@@ -1,0 +1,540 @@
+\shortdescription{Here we start to develop a model for our geometry.}
+\activitytitle{Central projection}
+
+\subsection*{Central projection coordinates}
+
+Let's project $K$-geometry, that is, the set
+\begin{equation}
+1=K\left(  x^{2}+y^{2}\right)  +z^{2} \label{30}%
+\end{equation}
+onto the set%
+\[
+z=1
+\]
+using the origin%
+\[
+O=\left(  0,0,0\right)
+\]
+as the center of projection:%
+
+\begin{tabular}
+[c]{cc}%
+\includegraphics[
+natheight=2.648100in,
+natwidth=5.274500in,
+height=1.3543in,
+width=2.6852in
+]%
+{MXAJBZ0K.jpg}%
+ &
+\includegraphics[
+natheight=3.472200in,
+natwidth=5.736300in,
+height=1.6345in,
+width=2.6913in
+]%
+{MXAJBZ0L.jpg}%
+\end{tabular}
+
+
+That is,%
+\begin{equation}
+r\text{\textperiodcentered}\left(  x_{c},y_{c},1\right)  =\left(
+x,y,z\right)  . \label{131}%
+\end{equation}
+So%
+\[
+r=z
+\]
+and, from the equation $\left(  \ref{30}\right)  $%
+\begin{gather*}
+K\left(  \left(  rx_{c}\right)  ^{2}+\left(  ry_{c}\right)  ^{2}\right)
++r^{2}=1\\
+r^{2}=\frac{1}{K\left(  x_{c}^{2}+y_{c}^{2}\right)  +1}.
+\end{gather*}
+Notice that, when $K<0$ this last formula only makes sense when%
+\begin{gather}
+K\left(  x_{c}^{2}+y_{c}^{2}\right)  >-1\label{75}\\
+x_{c}^{2}+y_{c}^{2}<\frac{-1}{K}.\nonumber
+\end{gather}
+
+
+\begin{exercise}\label{31}\hfil
+\begin{enumerate}
+\item  For the projection of the set $\left(  \ref{30}\right)  $ onto
+the $z=1$ plane with center of projection $O$, write $\left(  x_{c}%
+,y_{c}\right)  $ as a function of $\left(  x,y,z\right)  $.
+
+\item For the projection of the set $\left(  \ref{30}\right)  $ onto the $z=1$
+plane with center of projection $O$, write $\left(  x,y,z\right)  $ as a
+function of $\left(  x_{c},y_{c}\right)  $.
+\end{enumerate}
+\end{exercise}
+
+\subsection*{Rigid motion in central projection coordinates}
+
+Suppose now we have a $K$-rigid motion%
+\[
+\left(  \underline{x},\underline{y},\underline{z}\right)  =\left(
+x,y,z\right)  \cdot M
+\]
+of $K$-geometry, given by a $K$-orthogonal matrix%
+\[
+M=\left(
+\begin{array}
+[c]{ccc}%
+m_{11} & m_{12} & m_{13}\\
+m_{21} & m_{22} & m_{23}\\
+m_{31} & m_{32} & m_{33}%
+\end{array}
+\right)  .
+\]
+To see what this $K$-rigid motion looks like in central projection coordinates
+we simply do the matrix multiplication%
+\begin{gather*}
+\left(  \underline{x},\underline{y},\underline{z}\right)  =\left(
+x,y,z\right)  \cdot\left(
+\begin{array}
+[c]{ccc}%
+m_{11} & m_{12} & m_{13}\\
+m_{21} & m_{22} & m_{23}\\
+m_{31} & m_{32} & m_{33}%
+\end{array}
+\right) \\
+=\left(  \left(  m_{11}x+m_{21}y+m_{31}z\right)  ,\left(  m_{12}%
+x+m_{22}y+m_{32}z\right)  ,\left(  m_{13}x+m_{23}y+m_{33}z\right)  \right)  .
+\end{gather*}
+Then%
+\begin{align}
+\underline{x_{c}}  &  =\frac{\underline{x}}{\underline{z}}\label{77}\\
+&  =\frac{m_{11}x+m_{21}y+m_{31}z}{m_{13}x+m_{23}y+m_{33}z}\nonumber\\
+&  =\frac{m_{11}\left(  x/z\right)  +m_{21}\left(  y/z\right)  +m_{31}}%
+{m_{13}\left(  x/z\right)  +m_{23}\left(  y/z\right)  +m_{33}}\nonumber\\
+&  =\frac{m_{11}x_{c}+m_{21}y_{c}+m_{31}}{m_{13}x_{c}+m_{23}y_{c}+m_{33}%
+}\nonumber
+\end{align}
+and similarly%
+\[
+\underline{y_{c}}=\frac{m_{12}x_{c}+m_{22}y_{c}+m_{32}}{m_{13}x_{c}%
++m_{23}y_{c}+m_{33}}.
+\]
+So we write%
+\begin{gather*}
+\left(  \underline{x_{c}},\underline{y_{c}}\right)  =M_{c}\left(  x_{c}%
+,y_{c}\right) \\
+=\left(  \frac{m_{11}x_{c}+m_{21}y_{c}+m_{31}}{m_{13}x_{c}+m_{23}y_{c}+m_{33}%
+},\frac{m_{12}x_{c}+m_{22}y_{c}+m_{32}}{m_{13}x_{c}+m_{23}y_{c}+m_{33}%
+}\right)  .
+\end{gather*}
+
+
+
+
+\subsection*{Length and angle in central projection coordinates}
+
+\begin{exercise}
+\label{33}For the $K$-geometry coordinates%
+\[
+X=\left(  x,y,z\right)
+\]
+use the formulas you derived in Exercise \ref{31}b) to calculate%
+\[
+dX=\left(  \frac{\partial X}{\partial x_{c}}\right)  dx_{c}+\left(
+\frac{\partial X}{\partial y_{c}}\right)  dy_{c}%
+\]
+That is, calculate the $2\times3$ matrix%
+\[
+D_{c}=\left(
+\begin{array}
+[c]{ccc}%
+\frac{\partial x}{\partial x_{c}} & \frac{\partial y}{\partial x_{c}} &
+\frac{\partial z}{\partial x_{c}}\\
+\frac{\partial x}{\partial y_{c}} & \frac{\partial y}{\partial y_{c}} &
+\frac{\partial z}{\partial y_{c}}%
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{c}%
+\left(  \frac{\partial X}{\partial x_{c}}\right) \\
+\left(  \frac{\partial X}{\partial y_{c}}\right)
+\end{array}
+\right)  .
+\]
+Hint: Use logarithmic differentiation:%
+\begin{align*}
+dx  &  =d\left(  rx_{c}\right)  =x_{c}dr+rdx_{c}\\
+r^{-1}dx  &  =x_{c}d\ln\left(  r\right)  +dx_{c}%
+\end{align*}
+and similarly for $y$ and $z$ since it is easier to compute $r^{-1}\left(
+\frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right)  $ than $\left(  \frac
+{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right)  $. Next use that%
+\begin{align*}
+2d\ln\left(  r\right)   &  =d\ln\left(  r^{2}\right)
+=-d\ln\left(  K\left(  x_{c}^{2}+y_{c}^{2}\right)  +1\right) \\
+&  =-\frac{1}{K\left(  x_{c}^{2}+y_{c}^{2}\right)  +1}d\left(  K\left(
+x_{c}^{2}+y_{c}^{2}\right)  +1\right) \\
+&  =-r^{2}K\left(  2x_{c}dx_{c}+2y_{c}dy_{c}\right)  .
+\end{align*}
+
+\end{exercise}
+
+\begin{exercise}
+\label{prev}Now suppose we have a path,%
+\[
+\left(  x_{c}\left(  t\right)  ,y_{c}\left(  t\right)  \right)  ,\;a\leq t\leq
+b
+\]
+in the $\left(  x_{c},y_{c}\right)  $-plane, that is, in the central
+projection plane%
+\[
+\left(  x_{c},y_{c},1\right)  .
+\]
+Use the formula you derived in Exercise \ref{31}b) to write the corresponding
+path%
+\[
+x\left(  x_{c}\left(  t\right)  ,y_{c}\left(  t\right)  \right)  ,y\left(
+x_{c}\left(  t\right)  ,y_{c}\left(  t\right)  \right)  ,z\left(  x_{c}\left(
+t\right)  ,y_{c}\left(  t\right)  \right)
+\]
+in the $K$-geometry space of $\left(  x,y,z\right)  $ such that $K\left(
+x^{2}+y^{2}\right)  +z^{2}=1$.
+\end{exercise}
+
+\begin{exercise}
+For the path $\left(  x\left(  t\right)  ,y\left(  t\right)  ,z\left(
+t\right)  \right)  $ in Exercise \ref{prev} lying on the set $\left(
+\ref{30}\right)  $, use the Chain Rule from calculus of several variables to
+compute%
+\[
+\left(  \frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right)  =\left(
+\frac{dx_{c}\left(  t\right)  }{dt},\frac{dy_{c}\left(  t\right)  }%
+{dt}\right)  \cdot D_{c}.
+\]
+
+\end{exercise}
+
+This last Exercise allows us to do something very nice. Namely now, not only
+can we use the coordinates $\left(  x_{c},y_{c}\right)  $ for our geometry but
+we can also compute the $K$-dot product in terms of these coordinates. By the
+Chain Rule from calculus of several variables%
+\[
+\left(  \frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right)  =\left(
+\frac{dx_{c}}{dt},\frac{dy_{c}}{dt}\right)  \cdot D_{c}.
+\]
+So%
+\begin{align*}
+\left(  \frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right)  \bullet_{K}\left(
+\frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right)   &  =\left(
+\begin{array}
+[c]{ccc}%
+\frac{dx}{dt} & \frac{dy}{dt} & \frac{dz}{dt}%
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{c}%
+\frac{dx}{dt}\\
+\frac{dy}{dt}\\
+\frac{dz}{dt}%
+\end{array}
+\right) \\
+&  =\left(
+\begin{array}
+[c]{cc}%
+\frac{dx_{c}}{dt} & \frac{dy_{c}}{dt}%
+\end{array}
+\right)  \cdot D_{c}\cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  \cdot D_{c}^{t}\cdot\left(
+\begin{array}
+[c]{c}%
+\frac{dx_{c}}{dt}\\
+\frac{dy_{c}}{dt}%
+\end{array}
+\right)  ,
+\end{align*}
+
+
+\begin{exercise}
+\label{32}Compute the $2\times2$ matrix%
+\[
+P_{c}=D_{c}\cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  \cdot D_{c}^{t},
+\]
+that that gives the $K$-dot product in $\left(  x_{c},y_{c}\right)
+$-coordinates. That is, use matrix multiplication to show that%
+\[
+P_{c}=\left(
+\begin{array}
+[c]{cc}%
+r^{2}\left(  1-r^{2}Kx_{c}^{2}\right)  & -r^{4}Kx_{c}y_{c}\\
+-r^{4}Kx_{c}y_{c} & r^{2}\left(  1-r^{2}Ky_{c}^{2}\right)
+\end{array}
+\right)  .
+\]
+
+
+Hint: For example%
+\begin{align*}
+\frac{\partial x}{\partial x_{c}}  &  =r\left(  x_{c}\frac{\partial \ln\left(
+r\right)  }{\partial x_{c}}+1\right)  =-r^{3}Kx_{c}^{2}+r\\
+\frac{\partial y}{\partial x_{c}}  &  =r\left(  y_{c}\frac{\partial \ln\left(
+r\right)  }{\partial x_{c}}\right)  =-r^{3}Kx_{c}y_{c}\\
+\frac{\partial z}{\partial x_{c}}  &  =r\left(  \frac{\partial \ln\left(
+r\right)  }{\partial x_{c}}\right)  =-r^{3}Kx_{c}%
+\end{align*}
+so that%
+\begin{align*}
+&  \left(  \frac{\partial x}{\partial x_{c}},\frac{\partial y}{\partial x_{c}%
+},\frac{\partial z}{\partial x_{c}}\right)  \bullet_{K}\left(  \frac{\partial
+x}{\partial x_{c}},\frac{\partial y}{\partial x_{c}},\frac{\partial
+z}{\partial x_{c}}\right) \\
+&  =r^{6}K^{2}x_{c}^{4}-2r^{4}Kx_{c}^{2}+r^{2}+r^{6}K^{2}x_{c}^{2}y_{c}%
+^{2}+r^{6}Kx_{c}^{2}\\
+&  =\left(  r^{6}K^{2}x_{c}^{4}+r^{6}K^{2}x_{c}^{2}y_{c}^{2}+r^{6}Kx_{c}%
+^{2}\right)  -2r^{4}Kx_{c}^{2}+r^{2}\\
+&  =r^{4}Kx_{c}^{2}-2r^{4}Kx_{c}^{2}+r^{2}=r^{2}\left(  1-r^{2}Kx_{c}%
+^{2}\right)  .
+\end{align*}
+
+\end{exercise}
+
+So, if, if $K>0$ and you have a path on the sphere of radius $R=K^{-1/2}$ in
+euclidean $3$-space given in $\left(  x_{c},y_{c}\right)  $-coordinates as
+$\left(  x_{c}\left(  t\right)  ,y_{c}\left(  t\right)  \right)  $ for
+$t\in\left[  b,e\right]  $, you can trace back everything we have done with
+coordinate changes to see that the length of the path on the sphere of radius
+$R=K^{-1/2}$ in euclidean $3$-space is given by%
+\[%
+%TCIMACRO{\dint \nolimits_{b}^{e}}%
+%BeginExpansion
+{\displaystyle\int\nolimits_{b}^{e}}
+%EndExpansion
+l\left(  t\right)  dt
+\]
+where%
+\begin{align*}
+l\left(  t\right)  ^{2}  &  =\left(  \frac{dx_{c}}{dt},\frac{dy_{c}}%
+{dt}\right)  \bullet_{c}\left(  \frac{dx_{c}}{dt},\frac{dy_{c}}{dt}\right) \\
+&  =\left(
+\begin{array}
+[c]{cc}%
+\frac{dx_{c}}{dt} & \frac{dy_{c}}{dt}%
+\end{array}
+\right)  \cdot P_{c}\cdot\left(
+\begin{array}
+[c]{c}%
+\frac{dx_{c}}{dt}\\
+\frac{dy_{c}}{dt}%
+\end{array}
+\right)  .
+\end{align*}
+Notice that the matrix $P_{c}$ still makes sense when $K=0$ and when $K$
+becomes negative. So we do have%
+\[{\renewcommand{\arraystretch}{1.6}
+\frame{%
+\begin{tabular}
+[c]{c|c|c}%
+\textit{Spherical} ($K>0$) & \textit{Euclidean} ($K=0$) & \textit{Hyperbolic}
+($K<0$)\\\hline
+$\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=R^{2}$ &  & \\ \hline
+$\hat{V}\bullet\hat{V}$ &  & \\ \hline
+$1=K\left(  x^{2}+y^{2}\right)  +z^{2}$ & $1=K\left(  x^{2}+y^{2}\right)
++z^{2}$ & $1=K\left(  x^{2}+y^{2}\right)  +z^{2}$\\ \hline
+$V_{1}\bullet_{K}V_{2}$ &  & $V_{1}\bullet_{K}V_{2}$\\ \hline
+$V_{1}^{c}\bullet_{c}V_{2}^{c}$ & $V_{1}^{c}\bullet_{c}V_{2}^{c}$ & $V_{1}%
+^{c}\bullet_{c}V_{2}^{c}$%
+\end{tabular}
+}}
+\]
+where%
+\[
+V_{1}^{c}\bullet_{c}V_{2}^{c}=\left(  V_{1}^{c}\right)  \cdot P_{c}%
+\cdot\left(  V_{2}^{c}\right)  ^{t}.
+\]
+Of course if $K>0$, we again have euclidean angles $\theta$ between vectors
+$\hat{V}_{1}$ and $\hat{V}_{2}$ tangent to the $R$-sphere at some point
+computed by%
+\begin{align*}
+\hat{V}_{1}\bullet\hat{V}_{2}  &  =\left\vert \hat{V}_{1}\right\vert
+\text{\textperiodcentered}\left\vert \hat{V}_{2}\right\vert
+\text{\textperiodcentered\textrm{cos}}\left(  \theta\right) \\
+&  =V_{1}^{c}\bullet_{c}V_{2}^{c}.
+\end{align*}
+
+
+\subsection*{Area in central projection coordinates}
+
+Suppose you were given a region $G_{c}$ in the $\left(  x_{c},y_{c}\right)
+$-coordinate plane. Also suppose that $K>0$. If you trace back everything we
+have done with coordinate changes, you can see how $G_{c}$ gives you a region
+$\hat{G}$ on the sphere of radius $R=K^{-1/2}$ in euclidean $3$-space via the
+formulas%
+\begin{align*}
+\left(  \hat{x},\hat{y},\hat{z}\right)   &  =\left(  x,y,Rz\right) \\
+&  =r\text{\textperiodcentered}\left(  x_{c},y_{c},R\right) \\
+&  =\left(  \frac{x_{c}}{\sqrt{K\left(  x_{c}^{2}+y_{c}^{2}\right)  +1}}%
+,\frac{y_{c}}{\sqrt{K\left(  x_{c}^{2}+y_{c}^{2}\right)  +1}},\frac{R}%
+{\sqrt{K\left(  x_{c}^{2}+y_{c}^{2}\right)  +1}}\right)  .
+\end{align*}
+Now there is a formula in several variable calculus for computing the area of
+the region $\hat{G}$ on the sphere of radius $R$ in euclidean $3$-space in
+terms of the parameters $\left(  x_{c},y_{c}\right)  $. [DS,49,231]. It is
+\begin{equation}%
+%TCIMACRO{\dint \nolimits_{G_{c}}}%
+%BeginExpansion
+{\displaystyle\int\nolimits_{G_{c}}}
+%EndExpansion
+\hat{a}\left(  \frac{d\hat{X}}{dx_{c}},\frac{d\hat{X}}{dy_{c}}\right)
+dx_{c}dy_{c} \label{68}%
+\end{equation}
+where $\hat{a}\left(  \frac{d\hat{X}}{dx_{c}},\frac{d\hat{X}}{dy_{c}}\right)
+$ is the (euclidean) area of the parallelogram spanned by the two vectors
+$\frac{d\hat{X}}{dx_{c}}$ and $\frac{d\hat{X}}{dy_{c}}$ in euclidean
+$3$-space. Thus%
+\[
+\hat{a}\left(  \frac{d\hat{X}}{dx_{c}},\frac{d\hat{X}}{dy_{c}}\right)
+=\left\vert \frac{d\hat{X}}{dx_{c}}\right\vert \text{\textperiodcentered
+}\left\vert \frac{d\hat{X}}{dy_{c}}\right\vert \text{\textperiodcentered
+}\mathrm{sin}\left(  \theta\right)
+\]
+where $\theta$ is the angle between the two vectors.
+
+\begin{exercise}
+Using Exercise 7.\ref{9} and Exercise 8.\ref{222} show that%
+\begin{align*}
+\hat{a}\left(  \frac{d\hat{X}}{dx_{c}},\frac{d\hat{X}}{dy_{c}}\right)  ^{2}
+&  =\left\vert
+\begin{array}
+[c]{cc}%
+\frac{d\hat{X}}{dx_{c}}\bullet\frac{d\hat{X}}{dx_{c}} & \frac{d\hat{X}}%
+{dy_{c}}\bullet\frac{d\hat{X}}{dx_{c}}\\
+\frac{d\hat{X}}{dx_{c}}\bullet\frac{d\hat{X}}{dy_{c}} & \frac{d\hat{X}}%
+{dy_{c}}\bullet\frac{d\hat{X}}{dy_{c}}%
+\end{array}
+\right\vert \\
+&  =\left\vert
+\begin{array}
+[c]{cc}%
+\frac{dX}{dx_{c}}\bullet_{K}\frac{dX}{dx_{c}} & \frac{dX}{dy_{c}}\bullet
+_{K}\frac{dX}{dx_{c}}\\
+\frac{dX}{dx_{c}}\bullet_{K}\frac{dX}{dy_{c}} & \frac{dX}{dy_{c}}\bullet
+_{K}\frac{dX}{dy_{c}}%
+\end{array}
+\right\vert \\
+&  =\left\vert \left(
+\begin{array}
+[c]{c}%
+\left(  \frac{dX}{dx_{c}}\right) \\
+\left(  \frac{dX}{dy_{c}}\right)
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{cc}%
+\left(  \frac{dX}{dx_{c}}\right)  ^{t} & \left(  \frac{dX}{dy_{c}}\right)
+^{t}%
+\end{array}
+\right)  \right\vert \\
+&  =\left\vert P_{c}\right\vert .
+\end{align*}
+
+\end{exercise}
+
+\begin{exercise}
+\label{79}Use Exercise \ref{32} to show that%
+\[
+\hat{a}\left(  \frac{d\hat{X}}{dx_{c}},\frac{d\hat{X}}{dy_{c}}\right)
+^{2}=r^{6}=\frac{1}{\left(  K\left(  x_{c}^{2}+y_{c}^{2}\right)  +1\right)
+^{3}}%
+\]
+as a function of $\left(  x_{c},y_{c}\right)  $.
+
+Hint: Notice that the matrix $D_{c}$ in Exercise \ref{33} is simply the
+$2\times3$ matrix whose rows are the vectors $\frac{dX}{dx_{c}}$ and $\frac
+{dX}{dy_{c}}$. So referring to Exercise \ref{32}, we know that%
+\[
+\left(
+\begin{array}
+[c]{cc}%
+\frac{d\hat{X}}{dx_{c}}\bullet\frac{d\hat{X}}{dx_{c}} & \frac{d\hat{X}}%
+{dy_{c}}\bullet\frac{d\hat{X}}{dx_{c}}\\
+\frac{d\hat{X}}{dx_{c}}\bullet\frac{d\hat{X}}{dy_{c}} & \frac{d\hat{X}}%
+{dy_{c}}\bullet\frac{d\hat{X}}{dy_{c}}%
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{cc}%
+r^{2}\left(  1-r^{2}Kx_{c}^{2}\right)  & -r^{4}Kx_{c}y_{c}\\
+-r^{4}Kx_{c}y_{c} & r^{2}\left(  1-r^{2}Ky_{c}^{2}\right)
+\end{array}
+\right)  .
+\]
+
+\end{exercise}
+
+Since all these computations can be extended to $K$-geometry for all $K$, we
+define the $K$-area of a region $G_{c}$ in the $\left(  x_{c},y_{c}\right)
+$-coordinate plane by first computing the $K$-area of the parallelogram
+spanned by $\frac{dX}{dx_{c}}$ and $\frac{dX}{dy_{c}}$ at each point of
+$G_{c}$ as%
+\begin{align*}
+a_{K}\left(  \frac{dX}{dx_{c}},\frac{dY}{dy_{c}}\right)   &  =\left\vert
+\frac{dX}{dx_{c}}\right\vert _{K}\cdot\left\vert \frac{dX}{dy_{c}}\right\vert
+_{K}\cdot\mathrm{sin}\left(  \theta_{K}\right) \\
+&  =\sqrt{\left\vert
+\begin{array}
+[c]{cc}%
+\frac{dX}{dx_{c}}\bullet_{K}\frac{dX}{dx_{c}} & \frac{dX}{dy_{c}}\bullet
+_{K}\frac{dX}{dx_{c}}\\
+\frac{dX}{dx_{c}}\bullet_{K}\frac{dX}{dy_{c}} & \frac{dX}{dy_{c}}\bullet
+_{K}\frac{dX}{dy_{c}}%
+\end{array}
+\right\vert }%
+\end{align*}
+and then integrating this area over $G_{c}$ to get%
+\begin{align*}
+A_{K}\left(  G_{c}\right)   &  =%
+%TCIMACRO{\dint \nolimits_{G_{c}}}%
+%BeginExpansion
+{\displaystyle\int\nolimits_{G_{c}}}
+%EndExpansion
+a_{K}\left(  \frac{dX}{dx_{c}},\frac{dY}{dy_{c}}\right)  dx_{c}dy_{c}\\
+&  =%
+%TCIMACRO{\dint \nolimits_{G_{c}}}%
+%BeginExpansion
+{\displaystyle\int\nolimits_{G_{c}}}
+%EndExpansion
+\sqrt{\left\vert
+\begin{array}
+[c]{cc}%
+\frac{dX}{dx_{c}}\bullet_{K}\frac{dX}{dx_{c}} & \frac{dX}{dy_{c}}\bullet
+_{K}\frac{dX}{dx_{c}}\\
+\frac{dX}{dx_{c}}\bullet_{K}\frac{dX}{dy_{c}} & \frac{dX}{dy_{c}}\bullet
+_{K}\frac{dX}{dy_{c}}%
+\end{array}
+\right\vert }dx_{c}dy_{c}.
+\end{align*}
