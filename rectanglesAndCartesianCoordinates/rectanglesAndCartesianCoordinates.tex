@@ -1,9 +1,433 @@
-\documentclass{../ximera}
+\documentclass{ximera}
 
-\input{../preamble.tex}
+\preambleinput{../preamble.tex}
 
+\prerequisites{geometry}
+\outcomes{euclideanGeometry,parallelPostulate}
+
+\title{Rectangles and cartesian coordinates}
 \begin{document}
+\begin{abstract}
+In this activity we explore some consequences of Euclid's fifth axiom.
+\end{abstract}
+\maketitle
 
-\input{./rectanglesAndCartesianCoordinatesSource.tex}
+
+
+\subsection*{Euclid's fifth axiom, the parallel postulate}
+
+We are finally ready to introduce Euclid's fifth and final axiom, the
+so-called \textit{Parallel Postulate}.
+
+\begin{axiom}
+(E5) Through a point not on a line there passes a unique parallel line.
+\end{axiom}
+
+\textbf{NG} together with E5 is called Euclidean geometry (\textbf{EG}). As
+mentioned above, we will see later that there is another geometry
+(\textbf{HG}) that satisfies all the postulates of \textbf{NG} but not E5. In
+it, the sum of the interior angles of a triangle will \textit{always} be less
+than $180^\circ$! [MJG,134]
+
+\begin{question}
+\label{24} Show that, if two parallel lines are cut by a
+transversal line, opposite interior angles are equal.
+\end{question}
+
+We will call the set of points on a line which lie on one side of a given
+point a \textit{ray}. We call the given point the \textit{origin} of the ray.
+
+We call two rays in the plane parallel if they lie on parallel lines and they
+both lie on the same side of the transversal line passing through their origins.
+
+Strictly speaking, an angle in the plane is the union of two ordered rays with
+common origin and choice of one of the two connected regions into which the
+union of the rays divides the plane. We often denote angles by $\angle BAC$
+where $A$ is the common origin and $B$ a point along one of the rays, called
+the initial ray, and $C$ is a point along the other ray, called the final ray.
+The choice of the region is either clear from the context or explicitly given.
+
+\begin{question}\hfil
+\begin{enumerate}
+\item Given an angle $\angle BAC$ show by drawings the two regions into
+which it divides the plane. Show how the (signed) measure of the angle
+depends on which region you pick and on which is the initial ray and
+which is the final ray of the angle.
+\item Show that angles $\angle BAC$ and $\angle B^{\prime}A^{\prime}C^{\prime}$
+in the Euclidean plane are equal (i.e. have the same measure) if
+corresponding rays are parallel. Hence if $\angle
+B^{\prime}A^{\prime}C^{\prime}$ can be rotated around $A^{\prime}$ to
+obtain an angle $\angle B^{\prime\prime }A^{\prime}C^{\prime\prime}$
+with corresponding rays parallel to those of $\angle BAC$, then
+$\angle BAC$ and $\angle B^{\prime}A^{\prime}C^{\prime}$ are equal.
+\end{enumerate}
+\end{question}
+
+\begin{question}
+Use the `uniqueness' assertion in E5 together with what we have
+established about Neutral Geometry to show that in \textbf{EG} the sum
+of the interior angles of any triangle is $180^\circ$.
+\end{question}
+
+\begin{question}
+Show that in \textbf{EG} the sum of the interior angles of a
+quadrilateral is $360^\circ$.
+\end{question}
+
+\begin{question}\label{112} 
+Show in \textbf{EG} that, given any positive real numbers $a$ and $b$,
+there exist rectangles with adjacent side of lengths $a$ and $b$.
+
+Hint: To show that opposite sides are of equal length, suppose
+not. For example, suppose the top of the rectangle has length
+$a^{\prime}$ and the bottom has length $a$ and, for example,
+$a^{\prime}>a$. Mark the point at length $a$ along the top, starting
+at the left-hand vertex. Connect that point to the right-hand bottom
+vertex. Find a triangle that contradicts the fact that in \textbf{NG}
+an exterior angle is greater than either remote interior angles.
+\end{question}
+
+\begin{question}
+Show that there is a cartesian coordinate system on \textbf{EG}, that
+is, the set of points of \textbf{EG} are in one-to-one correspondence
+with the set of pairs of real numbers.
+\end{question}
+
+\pagebreak
+
+\subsection*{The distance formula in \textbf{EG}}
+
+It is the existence of a cartesian coordinate system in \textbf{EG} that
+allows us to define distance between points%
+\begin{equation}
+d\left(  \left(  a_{1},b_{1}\right)  ,\left(  a_{2},b_{2}\right)  \right)
+=\sqrt{\left(  a_{2}-a_{1}\right)  ^{2}+\left(  b_{2}-b_{1}\right)  ^{2}}
+\label{113}%
+\end{equation}
+and so gives rigorous mathematical meaning to a concept that the ancient
+Greeks were never able to describe precisely, namely the similarity of figures
+in \textbf{EG}. For that we will require the notion of a dilation or
+magnification in \textbf{EG}. And we need a cartesian coordinate system to
+describe dilation precisely, a reality backed up by the fact that similarities
+do not exist in \textbf{HG} or \textbf{SG}. (Try drawing two triangles that
+are similar but not congruent on a perfectly spherical balloon!)
+
+\begin{question}
+State the Pythagorean theorem in \textbf{EG} and use Question
+\ref{112} to prove it.
+
+Hint: In the cartesian plane, construct a square with vertices 
+\[
+\left(0,0\right),\qquad \left(a+b,0\right),\qquad \left(0,a+b\right), \qquad \left( a+b,a+b\right).
+\] 
+Inside that square, construct the square with vertices 
+\[
+\left(a,0\right),\qquad \left(a+b,a\right),\qquad \left(b,a+b\right), \qquad \left(0,b\right).
+\]
+Show that the area of the big square is the area of the little square
+plus the area of $4$ right triangles, each of area $\frac{ab}{2}$.
+\end{question}
+
+\begin{question}
+Use the Pythagorean theorem to justify the Euclidean distance formula,
+see $\left(\ref{113}\right)$.
+\end{question}
+
+\pagebreak
+
+\subsection*{Dilations in \textbf{EG}}
+
+\begin{definition}
+A \textbf{dilation} is a one-to-one onto transformation of the
+cartesian plane to itself that
+\begin{enumerate}
+\item fixes one point called the center of the dilation,
+\item takes each line through the fixed point to itself,
+\item multiplies all distances by a fixed positive real number called the
+magnification factor of the dilation.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+Given a point $\left(  x_{0},y_{0}\right)  $ in the (cartesian) plane and a
+positive real number $r$, we define a mapping $D$ with center $\left(
+x_{0},y_{0}\right)  $ and magnification factor $r$ by the formula%
+\begin{equation}
+D\left(  x,y\right)  =\left(  x_{0},y_{0}\right)  +r\left(  x-x_{0}%
+,y-y_{0}\right)  . \label{23}%
+\end{equation}
+We will also denote the output $D\left(  x,y\right)  $ of the dilation as
+$\left(  \underline{x},\underline{y}\right)  $.
+\end{definition}
+
+\begin{question}
+Using cartesian coordinates for the plane, show that the mapping
+$D$ defined in $\left(  \ref{23}\right)  $ is a dilation with magnification
+factor $r$ and center $\left(  x_{0},y_{0}\right)  $.
+\end{question}
+
+\begin{question}
+Show (using several-variable calculus if you wish) that a
+dilation with magnification factor $r$ multiplies all areas by a factor of
+$r^{2}$.
+\end{question}
+
+\begin{question}\hfil
+\begin{enumerate}
+\item Show that the inverse mapping of a dilation is again a
+dilation with the same center but with magnification factor $r^{-1}$.
+\item Show that a dilation takes lines to lines.
+\end{enumerate}
+Hint: For a)\ solve for $\left(  x,y\right)  $ in terms of $\left(
+\underline{x},\underline{y}\right)  $. For b) write the equation%
+\[
+ax+by=c
+\]
+for the given line. Then substitute for $\left(  x,y\right)  $ its expression
+in terms of $\left(  \underline{x},\underline{y}\right)$.
+\end{question}
+
+\begin{question}
+Show that a dilation takes any line to a line parallel (or
+equal) to itself.
+
+Hint: Compute slopes.
+\end{question}
+
+\begin{question}
+Show that a dilation by a factor of $r$ takes any vector to $r$
+times itself.
+
+Hint: Realize the vector as the difference of two points.
+\end{question}
+
+\begin{question}
+Show that a dilation of the plane preserves angles.
+
+Hint: Use the dot product of vectors emanating from the same point to measure
+angles
+\end{question}
+
+\newpage
+
+\subsection*{Similarity in \textbf{EG}}
+
+\begin{definition}
+Two triangles are \textbf{similar} if there is a dilation of the
+plane that takes one to a triangle which is congruent to the other. We write%
+\[
+\triangle ABC\sim\triangle A^{\prime}B^{\prime}C^{\prime}%
+\]
+to denote that these two triangles are similar (where the order of the
+vertices tells us which vertices correspond).
+\end{definition}
+
+\begin{question}
+\begin{enumerate}
+\item Show that, if two triangles are similar, then corresponding
+sides are proportional.
+
+Hint: You have to start from the supposition that the two triangles satisfy
+the definition of similar triangles.
+
+\item Show that, if corresponding sides of two triangles are proportional, then
+the two triangles are similar.
+
+Hint: You have to start from the supposition that corresponding sides of the
+two triangles are proportional and use SSS to show that there is a dilation of
+$\triangle ABC$ is congruent to $\triangle A^{\prime}B^{\prime}C^{\prime}$.
+\end{enumerate}
+\end{question}
+
+\begin{question}
+\begin{enumerate}
+\item Show that, if two triangles are similar, then corresponding
+angles are equal.
+
+Hint: You have to start from the supposition that the two triangles satisfy
+the definition of similar triangles.
+
+\item Show that, if corresponding angles of two triangles are equal, then the two
+triangles are similar.
+
+Hint: You have to start from the supposition that corresponding angles of the
+two triangles are equal, then use a dilation with $r=|A^{\prime}B^{\prime
+}|/|AB|$ and ASA to show that the dilation of one triangle that is congruent
+to the other.
+\end{enumerate}
+\end{question}
+
+\begin{question}
+\label{39} Show that two triangles are similar if corresponding
+sides are parallel.
+
+Hint: Use the fact that angles are equal if corresponding rays are
+parallel.
+\end{question}
+
+\begin{question}
+Show that two triangles are similar if corresponding sides are perpendicular.
+
+Hint: Extend one of the rays of the first angle until it crosses the
+corresponding ray of the second angle.
+\end{question}
+
+\pagebreak
+
+\subsection*{Concurrence theorems in \textbf{EG}, Ceva's theorem}
+
+Before leaving (plane) Euclidean Geometry, we will visit two more of
+its many sets of memorable properties, one's that you may or may not
+have seen in high school. The first of these comes under the name of
+concurrence theorems--these theorems relate the measures of the three
+sides (or angles) of a triangle to the measure of quantities
+constructed from those sides by some uniform rule.
+
+\begin{question}
+\label{25} Denote the measure or area of a triangle $\triangle
+ABC$ as $\left\vert \triangle ABC\right\vert $. Show that, in the
+diagram below,
+\[
+\frac{\left\vert AF\right\vert }{\left\vert FB\right\vert }=\frac{\left\vert
+\triangle AFC\right\vert }{\left\vert \triangle CFB\right\vert }%
+=\frac{\left\vert \triangle AFX\right\vert }{\left\vert \triangle
+XFB\right\vert }.
+\]
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,3){C}
+\tkzDefPoint(8,0){B}
+\tkzDefPoint(4.79,1.33){X}
+\tkzDefPoint(4.63,0){F}
+\tkzDefPoint(6.26,1.74){D}
+\tkzDefPoint(3.27,1.96){E}
+\draw (A)--(B)--(C)--cycle;
+\draw (A)--(D);
+\draw (F)--(C);
+\draw (B)--(E);
+
+
+\tkzLabelPoints[above](C)
+\tkzLabelPoints[above right](X)
+\tkzLabelPoints[below](A,B,F)
+\tkzLabelPoints[above left](E)
+\tkzLabelPoints[right](D)
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+\end{question}
+
+\begin{question}
+\label{26} Use Question \ref{25} to show by pure algebra that%
+\begin{equation}
+\frac{\left\vert AF\right\vert }{\left\vert FB\right\vert }=\frac{\left\vert
+\triangle AXC\right\vert }{\left\vert \triangle CXB\right\vert }. \label{27}%
+\end{equation}
+
+\end{question}
+
+\begin{question}
+\label{28}  For three concurrent segments $\overline{AD}$,
+$\overline{BE}$ and $\overline{CF}$ as given in Question \ref{25}, use
+Question \ref{26} to show that%
+\[
+\frac{\left\vert AF\right\vert }{\left\vert FB\right\vert }%
+\text{\textperiodcentered}\frac{\left\vert BD\right\vert }{\left\vert
+DC\right\vert }\text{\textperiodcentered}\frac{\left\vert CE\right\vert
+}{\left\vert EA\right\vert }=1.
+\]
+
+
+Hint: Use Question \ref{25} repeadetly. 
+%% Hint: Use Question \ref{27} with side $\overline{BC}$ replacing
+%% $\overline{AB}$, and $\left( \ref{27}\right)$ with side
+%% $\overline{CA}$ replacing $\overline{AB}$.
+\end{question}
+
+This last result with its converse, which you will show in the next Question,
+is called \textit{Ceva's Theorem}. [MJG,287-288]
+
+\begin{question}
+Show the converse of the result in Question \ref{28}, namely
+that, if%
+\[
+\frac{\left\vert AF\right\vert }{\left\vert FB\right\vert }%
+\text{\textperiodcentered}\frac{\left\vert BD\right\vert }{\left\vert
+DC\right\vert }\text{\textperiodcentered}\frac{\left\vert CE\right\vert
+}{\left\vert EA\right\vert }=1
+\]
+then the lines $AD$, $BE$, and $CF$ pass through a common point.
+
+Hint: Suppose that they do not pass through a common point.
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,3){C}
+\tkzDefPoint(8,0){B}
+\tkzDefPoint(5,0){F}
+\tkzDefPoint(6.26,1.74){D}
+\tkzDefPoint(2.75,1.65){E}
+\draw (A)--(B)--(C)--cycle;
+\draw (A)--(D);
+\draw (F)--(C);
+\draw (B)--(E);
+
+
+\tkzLabelPoints[above](C)
+\tkzLabelPoints[below](A,B,F)
+\tkzLabelPoints[above left](E)
+\tkzLabelPoints[right](D)
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+Notice that if, for example, $F$ moves along the segment
+$\overline{AB}$, then $\frac{\left\vert AF\right\vert }{\left\vert
+FB\right\vert }$ is a strictly increasing function of $\left\vert
+AF\right\vert $. Now use Question \ref{28} to determine a position
+$F^{\prime}$ for $F$ along the segment $\overline{AB}$ at which
+\[
+\frac{\left\vert AF^{\prime}\right\vert }{\left\vert F^{\prime}B\right\vert
+}\text{\textperiodcentered}\frac{\left\vert BD\right\vert }{\left\vert
+DC\right\vert }\text{\textperiodcentered}\frac{\left\vert CE\right\vert
+}{\left\vert EA\right\vert }=1.
+\]
+\end{question}
+
+\begin{question}
+A \textbf{median} of a triangle is a line segment from a vertex
+to the midpoint of the opposite side. Show that the medians of any triangle
+meet in a common point.
+
+Hint: Use Ceva's Theorem.
+\end{question}
+
+\begin{question}
+Use Ceva's theorem to show that the three altitudes of a
+triangle are concurrent.
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,4){C}
+\tkzDefPoint(6.5,0){B}
+\tkzDefPoint(5,0){F}
+\tkzDefPoint(5.54,2.56){D}
+\tkzDefPoint(3.98,3.18){E}
+\draw (A)--(B)--(C)--cycle;
+\draw (A)--(D);
+\draw (F)--(C);
+\draw (B)--(E);
+
+
+\tkzLabelPoints[above](C)
+\tkzLabelPoints[below](A,B,F)
+\tkzLabelPoints[above left](E)
+\tkzLabelPoints[right](D)
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+Hint: Use all three similarities of the form $\triangle
+CEB\sim\triangle CDA$ and then apply Ceva's theorem.
+\end{question}
 
 \end{document}
