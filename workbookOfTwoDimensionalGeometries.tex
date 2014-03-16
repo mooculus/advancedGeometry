@@ -1,26 +1,40 @@
-\documentclass[newpage]{ximera}
+\documentclass[newpage,numbers,handout]{ximera}
 %% handout
 %% nohints
 %% newpage
 
 \input{preamble.tex}
 
+\let\masterdocument\document
+\let\endmasterdocument\enddocument
 
-\begin{document}
-\title{Workbook of two-dimensional geometries}
-\author{C.\ Herbert Clemens}
-\maketitle
+\begin{masterdocument}
+\begin{titlepage}
+    \vspace*{1in}
+    \begin{center}
+      {\Huge \bfseries Workbook of two-dimensional geometries}\\[0.5cm]
+      {\Large C.\ Herbert Clemens}\\[0.4cm]
+      This document was typeset on \today.
+    \end{center}
+    %\vspace*{\fill}
+  \end{titlepage}
+
 \tableofcontents
-\input{./introduction/introductionSource.tex}
-\input{./euclidsPostulatesForPlaneGeometry/euclidsPostulatesForPlaneGeometrySource.tex}
-\input{./rectanglesAndCartesianCoordinates/rectanglesAndCartesianCoordinatesSource.tex} 
-\input{./propertiesOfCirclesInEG/propertiesOfCirclesInEGSource.tex}
-\input{./surfaceAreaAndVolumeOfTheRSphereInEuclidean3Space/surfaceAreaAndVolumeOfTheRSphereInEuclidean3SpaceSource.tex}
-\input{./areasOnSpheresInEuclidean3Space/areasOnSpheresInEuclidean3SpaceSource.tex}
-\input{./euclideanThreeSpaceAsAMetricSpace/euclideanThreeSpaceAsAMetricSpaceSource.tex}
-\input{./changingCoordinates/changingCoordinatesSource.tex}
-\input{./congruencesThatIsRigidMotions/congruencesThatIsRigidMotionsSource.tex}
-\input{./uniformCoordinatesForTheTwoDimensionalGeometries/uniformCoordinatesForTheTwoDimensionalGeometriesSource.tex}
-\input{./centralProjection/centralProjectionSource.tex}
-\input{./stereographicProjection/stereographicProjectionSource.tex}
-\end{document}
+
+\renewcommand{\documentclass}{\setbox0\vbox}
+\renewcommand{\preambleinput}{\setbox0\vbox}
+\renewenvironment{document}{}{}
+
+\input{./introduction/introduction.tex}
+\input{./euclidsPostulatesForPlaneGeometry/euclidsPostulatesForPlaneGeometry.tex}
+\input{./rectanglesAndCartesianCoordinates/rectanglesAndCartesianCoordinates.tex} 
+\input{./propertiesOfCirclesInEG/propertiesOfCirclesInEG.tex}
+\input{./surfaceAreaAndVolumeOfTheRSphereInEuclidean3Space/surfaceAreaAndVolumeOfTheRSphereInEuclidean3Space.tex}
+\input{./areasOnSpheresInEuclidean3Space/areasOnSpheresInEuclidean3Space.tex}
+\input{./euclideanThreeSpaceAsAMetricSpace/euclideanThreeSpaceAsAMetricSpace.tex}
+\input{./changingCoordinates/changingCoordinates.tex}
+\input{./congruencesThatIsRigidMotions/congruencesThatIsRigidMotions.tex}
+\input{./uniformCoordinatesForTheTwoDimensionalGeometries/uniformCoordinatesForTheTwoDimensionalGeometries.tex}
+\input{./centralProjection/centralProjection.tex}
+\input{./stereographicProjection/stereographicProjection.tex}
+\end{masterdocument}
