@@ -1,0 +1,148 @@
+\documentclass{ximera}
+
+\preambleinput{../preamble.tex}
+
+\title{Relationship between central and stereographic projection
+  coordinates}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\subsection*{Two addresses for the same point in $K$-geometry}
+
+Finally we should compare the relationship between the two kinds of
+coordinates for the set%
+\begin{equation}
+\left\{  \left(  x,y,z\right)  \in\mathbb{R}^{3}:1=K\left(  x^{2}%
++y^{2}\right)  +z^{2}\right\}  \label{40}%
+\end{equation}
+that we have been exploring, namely central projection coordinates%
+\begin{align}
+x_{c}  &  =\frac{x}{z}\label{70}\\
+y_{c}  &  =\frac{y}{z}\nonumber
+\end{align}
+and stereographic projection coordinates%
+\begin{align}
+x_{s}  &  =\frac{2x}{z+1}\label{71}\\
+y_{s}  &  =\frac{2y}{z+1}.\nonumber
+\end{align}
+To do this we use the Exercises in which we wrote $\left(  x,y,z\right)  $ in
+the set $\left(  \ref{40}\right)  $ as functions of $\left(  x_{c}%
+,y_{c}\right)  $ and $\left(  x_{s},y_{s}\right)  $ respectively. Namely%
+\begin{align*}
+x  &  =\frac{x_{c}}{\sqrt{K\left(  x_{c}^{2}+y_{c}^{2}\right)  +1}}\\
+y  &  =\frac{y_{c}}{\sqrt{K\left(  x_{c}^{2}+y_{c}^{2}\right)  +1}}\\
+z  &  =\frac{1}{\sqrt{K\left(  x_{c}^{2}+y_{c}^{2}\right)  +1}}%
+\end{align*}
+and%
+\begin{align*}
+x  &  =\frac{x_{s}}{1+\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  }\\
+y  &  =\frac{y_{s}}{1+\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  }\\
+z  &  =\frac{1-\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  }{1+\frac{K}%
+{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  }.
+\end{align*}
+The rest is simple algebra. [MJG,258]
+
+\begin{exercise}
+Do the algebra to write the explicit formulas for%
+\[
+\left(  x_{s}\left(  x_{c},y_{c}\right)  ,y_{s}\left(  x_{c},y_{c}\right)
+\right)
+\]
+and%
+\[
+\left(  x_{c}\left(  x_{s},y_{s}\right)  ,y_{c}\left(  x_{s},y_{s}\right)
+\right)  .
+\]
+
+\end{exercise}
+
+\subsection*{Plane sections of $K$-geometry}
+
+\begin{exercise}
+\label{73}Suppose we intersect $K$-geometry $\left(  \ref{40}\right)  $ with a
+plane%
+\[
+ax+by+z=0.
+\]
+
+
+a) Find the equation for the resulting path in central projection coordinates.
+
+b) Show that the equation for the resulting path in stereographic projection
+coordinates is%
+\[
+\left(  x_{s}-\frac{2a}{K}\right)  ^{2}+\left(  y_{s}-\frac{2b}{K}\right)
+^{2}=\frac{4\left(  K+a^{2}+b^{2}\right)  }{K^{2}}.
+\]
+
+
+c) What is the equation for the resulting path in stereographic projection
+coordinates if we intersect the $K$-geometry with a plane given by%
+\[
+ax+by=0,
+\]
+that is, a plane containing the $z$-axis?
+\end{exercise}
+
+\subsection*{When $K$ is negative, there are asymptotic cones}
+
+Notice that, if $K<0$, the equation of $K$-geometry becomes%
+\[
+z^{2}-\left\vert K\right\vert \left(  x^{2}+y^{2}\right)  =1.
+\]
+Thus $K$-geometry forms a $2$-sheeted hyperboloid with the $z$-axis as major
+axis. The hyerboloid is obtained by rotating the hyperbola%
+\begin{equation}
+z^{2}-\left\vert K\right\vert x^{2}=1 \label{hyp}%
+\end{equation}
+in the $\left(  x,z\right)  $-plane around the $z$-axis. We will only consider
+the sheet on which $z$ is positive as forming the $K$-geometry.
+
+Now the asymptotes of this last hyperbola are the pair of lines%
+\[
+\left(  z+\left\vert K\right\vert ^{1/2}x\right)  \left(  z+\left\vert
+K\right\vert ^{1/2}x\right)  =z^{2}-\left\vert K\right\vert x^{2}=0.
+\]
+Rotating the asymptotes around the $z$-axis we obtain the \textit{asymptotic
+cone}%
+\[
+z^{2}-\left\vert K\right\vert \left(  x^{2}+y^{2}\right)  =0
+\]
+for $K$-geometry.
+
+Since the entire $K$-geometry lies inside the asymptotic cone, the central
+projection coordinates $\left(  x_{c},y_{c}\right)  $ only correspond to
+points in $K$-geometry when $\left(  x_{c},y_{c},1\right)  $ lies
+\textit{inside} the asymptotic cone, that is, when%
+\[
+1-\left\vert K\right\vert \left(  x^{2}+y^{2}\right)  >0.
+\]
+Said otherwise, the disk of radius $\left\vert K\right\vert ^{-1/2}$ around
+$\left(  0,0\right)  $ in the $\left(  x_{c},y_{c}\right)  $-plane captures
+all the points $\left(  x,y,z\right)  $ of $K$-geometry under central projection.
+
+\begin{exercise}
+a) Show that the slopes of the asymptotes to the hyperbola $\left(
+\ref{hyp}\right)  $ are the limits as $x$ goes to $\pm\infty$ of the slopes of
+the lines through $\left(  0,0\right)  $ and the point $\left(  x,z\right)  $
+on the hyperbola.
+
+b) Show that the slopes of the asymptotes to the hyperbola $\left(
+\ref{hyp}\right)  $ are the limits as $x$ goes to $\pm\infty$ of the slopes of
+the lines through $\left(  0,-1\right)  $ and the point $\left(  x,z\right)  $
+on the hyperbola.
+
+c) Use b) to compute the radius of the disk around $\left(  0,0\right)  $ in
+the $\left(  x_{s},y_{s}\right)  $-plane that captures all the points $\left(
+x,y,z\right)  $ of $K$-geometry under stereographic projection. 
+\end{exercise}
+
+
+\end{document}
+
+
+
