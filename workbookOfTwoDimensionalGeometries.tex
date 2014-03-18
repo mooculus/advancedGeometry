@@ -7,6 +7,7 @@
 
 \let\masterdocument\document
 \let\endmasterdocument\enddocument
+\let\masterinput\input
 
 \begin{masterdocument}
 \begin{titlepage}
@@ -22,20 +23,20 @@
 \tableofcontents
 
 \renewcommand{\documentclass}{\setbox0\vbox}
-\renewcommand{\preambleinput}{\setbox0\vbox}
+\renewcommand{\input}{\setbox0\vbox}
 \renewenvironment{document}{}{}
 
-\input{./introduction/introduction.tex}
-\input{./euclidsPostulatesForPlaneGeometry/euclidsPostulatesForPlaneGeometry.tex}
-\input{./rectanglesAndCartesianCoordinates/rectanglesAndCartesianCoordinates.tex} 
-\input{./propertiesOfCirclesInEG/propertiesOfCirclesInEG.tex}
-\input{./surfaceAreaAndVolumeOfTheRSphereInEuclidean3Space/surfaceAreaAndVolumeOfTheRSphereInEuclidean3Space.tex}
-\input{./areasOnSpheresInEuclidean3Space/areasOnSpheresInEuclidean3Space.tex}
-\input{./euclideanThreeSpaceAsAMetricSpace/euclideanThreeSpaceAsAMetricSpace.tex}
-\input{./changingCoordinates/changingCoordinates.tex}
-\input{./congruencesThatIsRigidMotions/congruencesThatIsRigidMotions.tex}
-\input{./uniformCoordinatesForTheTwoDimensionalGeometries/uniformCoordinatesForTheTwoDimensionalGeometries.tex}
-\input{./centralProjection/centralProjection.tex}
-\input{./stereographicProjection/stereographicProjection.tex}
-\input{./relationshipBetweenCentralAndStereographicProjectionCoordinates/relationshipBetweenCentralAndStereographicProjectionCoordinates.tex}
+\masterinput{./introduction/introduction.tex}
+\masterinput{./euclidsPostulatesForPlaneGeometry/euclidsPostulatesForPlaneGeometry.tex}
+\masterinput{./rectanglesAndCartesianCoordinates/rectanglesAndCartesianCoordinates.tex} 
+\masterinput{./propertiesOfCirclesInEG/propertiesOfCirclesInEG.tex}
+\masterinput{./surfaceAreaAndVolumeOfTheRSphereInEuclidean3Space/surfaceAreaAndVolumeOfTheRSphereInEuclidean3Space.tex}
+\masterinput{./areasOnSpheresInEuclidean3Space/areasOnSpheresInEuclidean3Space.tex}
+\masterinput{./euclideanThreeSpaceAsAMetricSpace/euclideanThreeSpaceAsAMetricSpace.tex}
+\masterinput{./changingCoordinates/changingCoordinates.tex}
+\masterinput{./congruencesThatIsRigidMotions/congruencesThatIsRigidMotions.tex}
+\masterinput{./uniformCoordinatesForTheTwoDimensionalGeometries/uniformCoordinatesForTheTwoDimensionalGeometries.tex}
+\masterinput{./centralProjection/centralProjection.tex}
+\masterinput{./stereographicProjection/stereographicProjection.tex}
+\masterinput{./relationshipBetweenCentralAndStereographicProjectionCoordinates/relationshipBetweenCentralAndStereographicProjectionCoordinates.tex}
 \end{masterdocument}
