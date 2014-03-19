@@ -1,0 +1,241 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+\title{Rigid motions in spherical geometry}
+\begin{document}
+\begin{abstract}
+Here we begin to extend the idea of congruence to spherical geometry.
+\end{abstract}
+\maketitle
+
+\subsection*{Rigid motions in euclidean coordinates}
+
+If we have a curve $\hat{X}\left(  t\right)  =\left(  \hat{x}\left(  t\right)
+,\hat{y}\left(  t\right)  ,\hat{z}\left(  t\right)  \right)  $ on the
+$R$-sphere, we have seen that we measure its length $L$ by the formula%
+\begin{equation}
+L=%
+%TCIMACRO{\dint \nolimits_{b}^{e}}%
+%BeginExpansion
+{\displaystyle\int\nolimits_{b}^{e}}
+%EndExpansion
+\l\left(  t\right)  \d t \label{54}%
+\end{equation}
+where
+\begin{equation}
+\l\left(  t\right)  ^{2}=\frac{d\hat{X}}{dt}\bullet\frac{d\hat{X}}{dt}%
+=\frac{dX}{dt}\bullet_{K}\frac{dX}{dt} \label{53}%
+\end{equation}
+and that we measure angles $\theta$ between tangent vectors $\hat{V}_{1}$ and
+$\hat{V}_{2}$ at a point on the $R$-sphere by the formula%
+\[
+\theta=\arccos \left(  \frac{\hat{V}_{1}\bullet\hat{V}_{2}}{\left\vert
+\hat{V}_{1}\right\vert \cdot \left\vert \hat{V}%
+_{2}\right\vert }\right)  =\arccos \left(  \frac{V_{1}\bullet_{K}V_{2}%
+}{\left\vert V_{1}\right\vert _{K}\cdot \left\vert
+V_{2}\right\vert _{K}}\right)
+\]
+where%
+\[
+\left\vert V\right\vert _{K}^{2}=V\bullet_{K}V.
+\]
+
+
+Let $\hat{M}$ denote an invertible $3\times3$ matrix. We begin by noting the
+condition that a transformation%
+\[
+\left(  \underline{\hat{x}},\underline{\hat{y}},\underline{\hat{z}}\right)
+=\left(  \hat{x},\hat{y},\hat{z}\right)  \cdot\hat{M}%
+\]
+preserve the length of any curve lying on the $R$-sphere. Rewriting the
+transformation as%
+\begin{equation}
+\underline{\hat{X}}=\hat{X}\cdot\hat{M} \label{trans1}%
+\end{equation}
+the formulas $\left(  \ref{54}\right)  $ and $\left(  \ref{53}\right)  $ show
+that all we have to worry about is that%
+\[
+\frac{d\underline{\hat{X}}}{dt}\bullet\frac{d\underline{\hat{X}}}{dt}%
+=\frac{d\hat{X}}{dt}\bullet\frac{d\hat{X}}{dt}%
+\]
+for all values $t$ of the parameter of the curve. But%
+\begin{equation}
+\frac{d\underline{\hat{X}}}{dt}=\frac{d\hat{X}}{dt}\cdot\hat{M} \label{trans2}%
+\end{equation}
+by the product rule since $\hat{M}$ is a constant matrix. So the
+transformation given by the matrix $\hat{M}$ will preserve the length of any
+path and will preserve the measure of any angle if%
+\begin{equation}
+\frac{d\hat{X}}{dt}\cdot\hat{M}\cdot\left(  \frac{d\hat{X}}{dt}\cdot\hat
+{M}\right)  ^{t}=\frac{d\hat{X}}{dt}\cdot\left(  \frac{d\hat{X}}{dt}\right)
+^{t}. \label{trans3}%
+\end{equation}
+
+
+\begin{exercise}\hfil
+\label{trans} 
+\begin{enumerate}
+\item Show that the transformation $\left(
+\ref{trans1}\right)  $ takes the $R$-sphere to itself if%
+\[
+\hat{M}\cdot\hat{M}^{t}=I
+\]
+where $I$ is the $3\times3$ identity matrix. (A matrix $\hat{M}$ satisfying
+this condition is called an orthogonal matrix.)
+
+\item Show that $\left(  \ref{trans3}\right)  $ also holds if $\hat{M}$ is orthogonal.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+ Show that the matrix%
+\[
+\left(
+\begin{array}
+[c]{ccc}%
+\cos \theta & \sin \theta & 0\\
+-\sin \theta & \cos \theta & 0\\
+0 & 0 & 1
+\end{array}
+\right)
+\]
+is orthogonal. Describe geometrically what this transformation is doing to the
+$R$-sphere. [DS,316ff]
+\end{exercise}
+
+\begin{exercise}
+ Show that the matrix%
+\[
+\left(
+\begin{array}
+[c]{ccc}%
+\cos \varphi & 0 & \sin \varphi\\
+0 & 1 & 0\\
+-\sin \varphi & 0 & \cos \varphi
+\end{array}
+\right)
+\]
+is orthogonal. Describe geometrically what this transformation is doing to the
+$R$-sphere.
+\end{exercise}
+
+\begin{definition}
+A distance-preserving transformation of a space or geometry is called a
+\textbf{rigid motion} or a \textbf{congruence}.
+\end{definition}
+
+So, by Exercise \ref{trans}, every orthogonal matrix $\hat{M}$ corresponds to
+a rigid motion of the $R$-sphere. (It can be shown that every rigid motion of
+the $R$-sphere is given by an orthogonal matrix, but we will not treat that
+subtlety in this book.)
+
+\begin{exercise}
+ Show that the set of orthogonal matrices $\hat{M}$ form a group.
+That is, show that
+\begin{enumerate}
+\item the product of two orthogonal matrices is orthogonal,
+
+\item the identity matrix is orthogonal,
+
+\item the inverse matrix $\hat{M}^{-1}$ of an orthogonal matrix $\hat{M}$ is orthogonal.
+
+Hint: Write%
+\[
+\hat{M}\cdot\hat{M}^{-1}=I=\hat{M}\cdot\hat{M}^{t}%
+\]
+and use matrix multiplication to reduce to showing that the transpose of an
+orthogonal matrix is orthogonal.) [MJG,311]
+
+\end{enumerate}
+\end{exercise}
+
+Our conclusion from this exercise is that the set of rigid motions of the
+euclidean $R$-sphere form a group.
+
+\subsection*{Orthogonal and $K$-orthogonal matrices}
+
+Recalling again the fact that the euclidean $R$-sphere is a $K$-geometry with
+$K=1/R^{2}$ we should compare the $K$-orthogonal transformations $M$ in
+Definition \ref{88} with the orthogonal ones just above.
+
+\begin{exercise}
+ Referring to Definition \ref{88}, show that the transformations%
+\[
+\left(  \underline{\hat{x}},\underline{\hat{y}},\underline{\hat{z}}\right)
+=\left(  \hat{x},\hat{y},\hat{z}\right)  \cdot\hat{M}%
+\]
+and%
+\[
+\left(  \underline{x},\underline{y},\underline{z}\right)  =\left(
+x,y,z\right)  \cdot M
+\]
+give the same rigid motion of the $R$-sphere if
+\[
+M=\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{array}
+\right)  \cdot\hat{M}\cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R^{-1}%
+\end{array}
+\right)  .
+\]
+
+\end{exercise}
+
+\begin{exercise}
+ Show that the matrix%
+\[
+\left(
+\begin{array}
+[c]{ccc}%
+\cos \theta & \sin \theta & 0\\
+-\sin \theta & \cos \theta & 0\\
+0 & 0 & 1
+\end{array}
+\right)
+\]
+is both orthogonal and $K$-orthogonal and gives the same transformation of the
+euclidean $R$-sphere. Describe geometrically what this transformation is doing
+to the $R$-sphere.
+\end{exercise}
+
+\begin{exercise}
+ Show that the matrix%
+\[
+\hat{M}=\left(
+\begin{array}
+[c]{ccc}%
+\cos \varphi & 0 & \sin \varphi\\
+0 & 1 & 0\\
+-\sin \varphi & 0 & \cos \varphi
+\end{array}
+\right)
+\]
+is orthogonal and that the matrix%
+\[
+M=\left(
+\begin{array}
+[c]{ccc}%
+\cos \varphi & 0 & R^{-1}\cdot \sin %
+\varphi\\
+0 & 1 & 0\\
+-R\cdot \sin \varphi & 0 & \cos \varphi
+\end{array}
+\right)
+\]
+is the $K$-orthogonal matrix describing the same transformation of the
+$R$-sphere. Describe geometrically what this transformation is doing to the
+$R$-sphere.
+\end{exercise}
+
+
+\end{document}

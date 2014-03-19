@@ -1,0 +1,198 @@
+\documentclass{ximera}
+
+\input{../preamble}
+
+\title{Spherical geometry is homogeneous}
+\begin{document}
+\begin{abstract}
+
+\end{abstract}
+\maketitle
+
+
+
+\subsection*{Moving a point to the North Pole by a rigid motion}
+
+As the heading suggests, we are next going to move any point on the
+$R$-sphere to the North Pole by a rigid motion. However, we are going
+to describe the entire process in $\left( x,y,z\right) $-coordinates,
+that is, in $K$-geometry. This will allow us to use all the
+computations we did with $K$-geometry since \textbf{SG} is a
+$K$-geometry.  Recll that, in $\left( x,y,z\right) $-coordinates, the
+equation for the $R$-sphere becomes%
+\begin{equation}
+K\left(  x^{2}+y^{2}\right)  +z^{2}=1 \label{72}%
+\end{equation}
+with%
+\[
+K=\frac{1}{R^{2}}%
+\]
+and the Euclidean dot product is given by the $K$-dot product. Again, if you
+get nervous using these weird coordinates to compute things that are clearer
+in $\left(  \hat{x},\hat{y},\hat{z}\right)  $-coordinates, just go through the
+constructions in the case $K=1$ first. In that special case
+\[
+\left(  x,y,z\right)  =\left(  \hat{x},\hat{y},\hat{z}\right)
+\]
+and your calculations (as well as all those in $K$-geometry above reduce to
+the usual ones on the unit sphere in ordinary Euclidean $3$-space.
+
+So, first of all, in $\left(  x,y,z\right)  $-coordinates the North Pole is
+the point%
+\[
+N=\left(  0,0,1\right)  .
+\]
+Suppose we start with a point%
+\[
+X_{0}=\left(  x_{0},y_{0},z_{0}\right)
+\]
+in the geometry, that is, satisfying the equation $\left(  \ref{72}\right)  $.
+
+\begin{exercise}
+ Write an explicit $K$-rigid motion%
+\[
+M_{1}=\left(
+\begin{array}
+[c]{ccc}%
+\cos\theta & \sin \theta & 0\\
+-\sin \theta & \cos\theta & 0\\
+0 & 0 & 1
+\end{array}
+\right)
+\]
+that takes the point $X_{0}$ to a point $X_{1}=\left(  x_{1},0,z_{0}\right)  $.
+
+Hint: Start from the identity%
+\[
+\frac{-y_{0}}{\sqrt{x_{0}^{2}+y_{0}^{2}}}\cdot x_{0}%
++\frac{x_{0}}{\sqrt{x_{0}^{2}+y_{0}^{2}}}\cdot y_{0}=0
+\]%
+\[
+\sin \theta\cdot x_{0}+\cos\theta
+\cdot y_{0}=0
+\]
+and then show that there is a $\theta$ so that%
+\begin{align*}
+\cos\theta &  =\frac{x_{0}}{\sqrt{x_{0}^{2}+y_{0}^{2}}}\\
+\sin \theta &  =\frac{-y_{0}}{\sqrt{x_{0}^{2}+y_{0}^{2}}}.
+\end{align*}
+
+\end{exercise}
+
+\begin{exercise}
+ Write an explicit $K$-rigid motion%
+\[
+M_{2}=\left(
+\begin{array}
+[c]{ccc}%
+\cos\varphi & 0 & R^{-1}\cdot \sin %
+\varphi\\
+0 & 1 & 0\\
+-R\cdot \sin \varphi & 0 & \cos\varphi
+\end{array}
+\right)
+\]
+that takes the point $X_{1}=\left(  x_{1},0,z_{0}\right)  $ to $N=\left(
+0,0,1\right)  $.
+\end{exercise}
+
+Using these last two Exercises we conclude that the transformation%
+\[
+\left(  \underline{x},\underline{y},\underline{z}\right)  =\left(
+x,y,z\right)  \cdot\left(  M_{1}\cdot M_{2}\right)
+\]
+is a $K$-rigid motion (why?) and that%
+\[
+N=\left(  x_{0},y_{0},z_{0}\right)  \cdot\left(  M_{1}\cdot M_{2}\right)
+\]
+(why?).
+
+
+
+\subsection*{Moving a (point, direction) to any other (point, direction) by a
+rigid motion}
+
+Let
+\[
+V_{2}=\left(  a_{2},b_{2},0\right)
+\]
+be a tangent vector to $K$-geometry at the North Pole $N$.
+
+\begin{exercise}
+ Write an explicit $K$-rigid motion%
+\[
+M_{3}=\left(
+\begin{array}
+[c]{ccc}%
+\cos\theta' & \sin \theta' & 0\\
+-\sin \theta' & \cos\theta' & 0\\
+0 & 0 & 1
+\end{array}
+\right)
+\]
+that takes $V_{2}$ to the vector%
+\[
+\left(  \sqrt{a_{2}^{2}+b_{2}^{2}},0,0\right)  =\left(  \sqrt{V_{2}\bullet
+_{K}V_{2}},0,0\right)  .
+\]
+Why does the transformation given by $M_{3}$ leave the North Pole $N$ fixed?
+\end{exercise}
+
+Now suppose we have any point%
+\[
+X_{0}=\left(  x_{0},y_{0},z_{0}\right)
+\]
+in $K$-geometry and any $K$-tangent vector%
+\[
+V_{0}=\left(  a_{0},b_{0},c_{0}\right)
+\]
+at that point.
+
+\begin{exercise}
+ Explain why the $K$-rigid motion%
+\[
+\left(  \underline{x},\underline{y},\underline{z}\right)  =\left(
+x,y,z\right)  \cdot\left(  M_{1}\cdot M_{2}\cdot M_{3}\right)
+\]
+constructed over the last couple of sections takes the point $X_{0}$ to $N$
+and the tangent vector $V_{0}$ to $\left(  \sqrt{V_{0}\bullet_{K}V_{0}%
+},0,0\right)  $
+\end{exercise}
+
+Now suppose that $\left(  X_{0},V_{0}\right)  $ gives a point $X_{0}$ in
+$K$-geometry and a tangent direction $V_{0}$ to $K$-geometry at $X_{0}$.
+Suppose that $\left(  X_{0}',V_{0}'\right)  $ gives another
+point in $K$-geometry and a tangent direction to $K$-geometry at
+$X_{0}'$. Finally suppose that%
+\[
+V_{0}\bullet_{K}V_{0}=V_{0}'\bullet_{K}V_{0}'.
+\]
+As above, find a $K$-rigid motion given by%
+\[
+M=\left(  M_{1}\cdot M_{2}\cdot M_{3}\right)
+\]
+taking $X_{0}$ to the North Pole and $V_{0}$ to $\left(  \sqrt{V_{0}%
+\bullet_{K}V_{0}},0,0\right)  $. Similarly find a $K$-rigid motion given by%
+\[
+M'=\left(  M_{1}'\cdot M_{2}'\cdot M_{3}^{\prime
+}\right)
+\]
+taking $X_{0}'$ to the North Pole and $V_{0}'$ to $\left(
+\sqrt{V_{0}'\bullet_{K}V_{0}'},0,0\right)  .$
+
+\begin{exercise}
+\label{64} Explain why the $K$-rigid motion given by%
+\[
+M\cdot\left(  M'\right)  ^{-1}%
+\]
+takes $\left(  X_{0},V_{0}\right)  $ to $\left(  X_{0}',\left(
+\frac{\left\vert V_{0}\right\vert _{K}}{\left\vert V_{0}'\right\vert
+_{K}}\right)  \cdot V_{0}'\right)  $.
+\end{exercise}
+
+By completing this Exercise we have shown that $K$-geometry looks the same at
+each point and in each direction at that point. That is, we have shown that
+each $K$-geometry is homogeneous.
+
+
+\end{document}
