@@ -63,16 +63,16 @@ $\left(  \sigma,\tau\right)  $-plane we are going to need to figure out the
 $K$-dot product in $\left(  \sigma,\tau\right)  $-coordinates so that we can
 compute the lengths of paths in these coordinates.
 
-\begin{exercise}
-\label{3333} \begin{enumerate}
-\item Referring to $\left(  \ref{133}\right)  $compute
-the $2\times3$ matrix
+\begin{exercise}\label{3333} 
+\begin{enumerate}
+\item Referring to $\left(\ref{133}\right)$ compute the $2\times3$
+  matrix
 \[
 D_{sph}=\left(
 \begin{array}
 [c]{ccc}%
-\frac{dx}{d\sigma} & \frac{dy}{d\sigma} & \frac{dz}{d\sigma}\\
-\frac{dx}{d\tau} & \frac{dy}{d\tau} & \frac{dz}{d\tau}%
+\frac{\partial x}{\partial \sigma} & \frac{\partial y}{\partial \sigma} & \frac{\partial z}{\partial \sigma}\\
+\frac{\partial x}{\partial \tau} & \frac{\partial y}{\partial \tau} & \frac{\partial z}{\partial \tau}%
 \end{array}
 \right)  .
 \]
@@ -93,7 +93,7 @@ t\right)  ,\tau_{2}\left(  t\right)  \right)  $ in the $\left(  \sigma
 ,\tau\right)  $-plane, use a) and b) to show that
 \begin{gather*}
 \left(  \frac{d\hat{x}_{1}}{dt},\frac{d\hat{y}_{1}}{dt},\frac{d\hat{z}_{1}%
-}{dt}\right)  \cdot\left(  \frac{dx_{2}}{dt},\frac{d\hat{y}_{2}}{dt}%
+}{dt}\right)  \cdot\left(  \frac{d\hat{x}_{2}}{dt},\frac{d\hat{y}_{2}}{dt}%
 ,\frac{d\hat{z}_{2}}{dt}\right)  ^{t}=\\
 \left(  \frac{dx_{1}}{dt},\frac{dy_{1}}{dt},\frac{dz_{1}}{dt}\right)
 \cdot\left(
@@ -105,26 +105,45 @@ t\right)  ,\tau_{2}\left(  t\right)  \right)  $ in the $\left(  \sigma
 \end{array}
 \right)  \cdot\left(  \frac{dx_{2}}{dt},\frac{dy_{2}}{dt},\frac{dz_{2}}%
 {dt}\right)  ^{t}=\\
-\left(  \frac{d\sigma_{1}}{dt},\frac{d\tau_{1}}{dt}\right)  \cdot\left(
-\begin{array}
-[c]{cc}%
-K^{-1} & 0\\
-0 & K^{-1}\sin^{2}\sigma
-\end{array}
-\right)  \cdot\left(  \frac{d\sigma_{2}}{dt},\frac{d\tau_{2}}{dt}\right)  ^{t}%
+\left(  \frac{d\sigma_{1}}{dt},\frac{d\tau_{1}}{dt}\right)  \cdot
+\left({\tiny
+\begin{array}{cc}
+ \frac{\cos \left(\sigma _1\right) \cos \left(\sigma _2\right) \cos
+   \left(\tau _1-\tau _2\right)+\sin \left(\sigma _1\right) \sin
+   \left(\sigma _2\right)}{K} & \frac{\sin \left(\sigma _2\right)
+   \cos \left(\sigma _1\right) \sin \left(\tau _1-\tau
+   _2\right)}{K} \\
+ -\frac{\sin \left(\sigma _1\right) \cos \left(\sigma _2\right)
+   \sin \left(\tau _1-\tau _2\right)}{K} & \frac{\sin \left(\sigma
+   _1\right) \sin \left(\sigma _2\right) \cos \left(\tau _1-\tau
+   _2\right)}{K} \\
+\end{array}}
+\right)
+\cdot\left(  \frac{d\sigma_{2}}{dt},\frac{d\tau_{2}}{dt}\right)  ^{t}%
 \end{gather*}
 
 \item Explain why the definition%
 \[
 \left(  \frac{d\sigma_{1}}{dt},\frac{d\tau_{1}}{dt}\right)  \bullet
-_{sph}\left(  \frac{d\sigma_{2}}{dt},\frac{d\tau_{2}}{dt}\right)  =\left(
-\frac{d\sigma_{1}}{dt},\frac{d\tau_{1}}{dt}\right)  \cdot\left(
-\begin{array}
-[c]{cc}%
-K^{-1} & 0\\
-0 & K^{-1}\sin^{2}\sigma
-\end{array}
-\right)  \cdot\left(  \frac{d\sigma_{2}}{dt},\frac{d\tau_{2}}{dt}\right)  ^{t}%
+_{sph}\left(  \frac{d\sigma_{2}}{dt},\frac{d\tau_{2}}{dt}\right)  =
+\]
+\[
+\left(
+\frac{d\sigma_{1}}{dt},\frac{d\tau_{1}}{dt}\right)  \cdot
+\left({\tiny
+\begin{array}{cc}
+ \frac{\cos \left(\sigma _1\right) \cos \left(\sigma _2\right) \cos
+   \left(\tau _1-\tau _2\right)+\sin \left(\sigma _1\right) \sin
+   \left(\sigma _2\right)}{K} & \frac{\sin \left(\sigma _2\right)
+   \cos \left(\sigma _1\right) \sin \left(\tau _1-\tau
+   _2\right)}{K} \\
+ -\frac{\sin \left(\sigma _1\right) \cos \left(\sigma _2\right)
+   \sin \left(\tau _1-\tau _2\right)}{K} & \frac{\sin \left(\sigma
+   _1\right) \sin \left(\sigma _2\right) \cos \left(\tau _1-\tau
+   _2\right)}{K} \\
+\end{array}}
+\right)
+\cdot\left(  \frac{d\sigma_{2}}{dt},\frac{d\tau_{2}}{dt}\right)  ^{t}%
 \]
 allows us to compute the dot product of two tangent vectors to the $R$-sphere
 in Euclidean space if we just know the values of the two corresponding vectors
@@ -163,7 +182,7 @@ L=R%
 \]
 
 
-Hint: Use Exercise \ref{3333} with $t=\sigma$.
+Hint: Use the previous exercise with $t=\sigma$.
 \end{exercise}
 
 This last formula for $L$ lets us figure out the shortest path from $N=\left(
@@ -202,11 +221,11 @@ in the plane $y=0$.
 
 \subsection*{Shortest path between any two points}
 
-We next prove the theorem that shows that shortest path on the surface of the
-Earth from Rio de Janeiro to Los Angeles is the one cut on the surface of the
-Earth by the plane that passes through the center of the Earth and through Rio
-and through Los Angeles. That is usually the route an airplane would take when
-flying between the two cities.
+We next prove the theorem that shows that shortest path on the surface
+of the Earth from Rio de Janeiro to Los Angeles is the one cut on the
+surface of the Earth by the plane that passes through the center of
+the Earth and through Rio and through Los Angeles. That is usually the
+route an airplane would take when flying between the two cities.
 
 \begin{theorem}
 Given any two points $X_{1}=\left(  x_{1},y_{1},z_{1}\right)  $
@@ -229,8 +248,8 @@ that is, the plane containing $\left(  0,0,0\right)  $ and $X_{1}$ and $X_{2}$.
 \end{theorem}
 
 \begin{proof}
-By Exercise \ref{64} there is a $K$-rigid motion $M$ that takes $X_{1}$ to the
-North Pole $N$ and $X_{2}$ to $\left(  K^{-1/2}sin\varepsilon,0,cos\varepsilon
+By a previous exercise there is a $K$-rigid motion $M$ that takes $X_{1}$ to the
+North Pole $N$ and $X_{2}$ to $\left(  K^{-1/2}\sin\varepsilon,0,\cos\varepsilon
 \right)  $ for some $\varepsilon$. That is%
 \[
 X_{2}\cdot M=\left(  R\cdot \sin \varepsilon
@@ -245,7 +264,7 @@ for some $\varepsilon$ since all points in $K$-geometry with \underline{$y$%
 [c]{ccc}%
 \underline{x} & \underline{y} & \underline{z}\\
 0 & 0 & 1\\
-K^{-1/2}sin\varepsilon & 0 & cos\varepsilon
+K^{-1/2}\sin\varepsilon & 0 & \cos\varepsilon
 \end{array}
 \right)  \right\vert  &  =\left\vert \left(
 \begin{array}
@@ -264,7 +283,7 @@ x_{2} & y_{2} & z_{2}%
 \end{array}
 \right)  \right\vert \cdot\left\vert M\right\vert =0,
 \end{align*}
-Since $\left\vert M\right\vert \neq0$ and $K^{-1/2}sin\varepsilon\neq0$ if
+Since $\left\vert M\right\vert \neq0$ and $K^{-1/2}\sin\varepsilon\neq0$ if
 $\varepsilon<\pi$, $\left(  x,y,z\right)  $ lies in the plane $\left(
 \ref{63}\right)  $ if and only if
 \[
