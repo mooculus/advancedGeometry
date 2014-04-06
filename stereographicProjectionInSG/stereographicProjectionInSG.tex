@@ -1,0 +1,138 @@
+\documentclass{ximera}
+
+\title{Stereographic projection in \textbf{SG}}
+
+\begin{document}
+\begin{abstract}
+Here we see that stereographic projection preserves angles and we
+explore and what this implies. 
+\end{abstract}
+\maketitle
+
+
+\subsection*{Stereographic projection preserves angles}
+
+We now turn to a simple way to make a map of the $R$-sphere in such a
+way that the measure of any angle on the map is exactly the same as
+the measure of the corresponding angle on the $R$-sphere. The map
+coordinates that do the job are our old friends (or enemies?) the
+\textit{stereographic projection coordinates}.
+
+\begin{exercise}\hfil
+\begin{enumerate}
+\item Compute the stereographic projection of a point on the
+  $R$-sphere in $\left( \hat{x},\hat{y},\hat{z}\right) $-space to the
+  plane $\hat{z}=R$.
+
+\item Show that the coordinates $\left( \hat{x}_{s},\hat{y}_{s}\right)
+  $ of the stereographic projection of a point on the $R$-sphere in
+  $\left( \hat{x},\hat{y},\hat{z}\right) $-space to the plane
+  $\hat{z}=R$ are the same as the coordinates $\left(
+  x_{s},y_{s}\right) $ of the stereographic projection of the
+  corresponding point in $\left( x,y,z\right) $-coordinates to the
+  plane $z=1$.
+
+Hint: Reduce to showing that%
+\[
+R\left(  \frac{2\hat{x}}{\hat{z}+R},\frac{2\hat{y}}{\hat{z}+R}\right)
+=\left(  \frac{2x}{z+1},\frac{2y}{z+1}\right)  .
+\]
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}\hfil
+\begin{enumerate}
+\item Show that stereographic projection is conformal, that is, that
+  the angle between two paths through a point on the $R$-sphere in
+  $\left( \hat{x},\hat{y},\hat{z}\right)$-space is the same as the
+  usual (euclidean) angle between the corresponding two paths through
+  the corresponding point in the $\left( x_{s},y_{s}\right) $-plane.
+
+Hint: From a previous exercise, we know that for tangent vectors
+$\hat{V}_{1}$ and $\hat{V}_{2}$ emanating from the same point on the
+$R$-sphere
+\begin{align*}
+\hat{V}_{1}\bullet\hat{V}_{2}  &  =V_{1}\bullet_{K}V_{2}\\
+&  =V_{1}^{s}\bullet_{s}V_{2}^{s}\\
+&  =\left(  V_{1}^{s}\right)  \cdot\left(
+\begin{array}
+[c]{cc}%
+\rho^{2} & 0\\
+0 & \rho^{2}%
+\end{array}
+\right)  \cdot\left(  V_{2}^{s}\right)  ^{t}
+\end{align*}
+where $\rho =\frac{z+1}{2}$. 
+
+
+
+\item Draw a picture of an angle between two paths through a point on
+  the Euclidean $R$-sphere and the stereographic projection of that
+  angle onto the plane $\hat{z}=R$. Try to give an intuitive geometric
+  explanation for why it should have the same measure as the original
+  angle.
+\end{enumerate}
+\end{exercise}
+
+\subsection*{Areas of spherical triangles in stereographic projection
+coordinates}
+
+We know that lines in \textbf{SG} become circles under stereographic
+projection unless the line in \textbf{SG} passes through the North
+Pole (in which case it corresponds to a line through $\left(
+x_{s},y_{s}\right) =\left( 0,0\right) $ in the $\left(
+x_{s},y_{s}\right) $-plane). Specifically, we know that if we intersect 
+$K$-geometry
+\[
+\left\{  \left(  x,y,z\right)  \in\mathbb{R}^{3}:1=K\left(  x^{2}%
++y^{2}\right)  +z^{2}\right\}
+\]
+with the plane
+\[
+ax+by+z = 0
+\]
+we find the circle
+\[
+\left(  x_{s}-\frac{2a}{K}\right)  ^{2}+\left(  y_{s}-\frac{2b}{K}\right)
+^{2}=\frac{4\left(  K+a^{2}+b^{2}\right)  }{K^{2}}.
+\]
+
+
+Suppose a spherical triangle $T$ corresponds to a region $T_{s}$ in
+$\left( x_{s},y_{s}\right) $-coordinates and the vertices of $T$
+correspond to $\left( x_{s},y_{s}\right) =\left( -2,0\right) $,
+$\left( x_{s} ,y_{s}\right) =\left( 2,0\right) $, and $\left(
+x_{s},y_{s}\right) =\left( 0,2\right) $. So one side of $T_{s}$ lies
+on the line $y_{s}=0$.
+
+\begin{exercise}\label{st}\hfil
+\begin{enumerate}
+\item Compute the equations for the other two sides of $T_{s}$.
+\item In the $\left( x_{s},y_{s}\right) $-plane, draw $T_{s}$ as
+  accurately as you can when $K=4$, then then when $K=\frac{1}{4}$.
+\item Compute the area of $T$ in both cases in b).
+Hint: You will need the radian measure of the angle at each of the
+vertices of $T_{s}$. Why? To calculate these angles, calculate
+$\frac{dy_{s}}{dx_{s}}$ by implicit differentiation of the equations
+in a), then take $\arctan\left( \frac{dy_{s}}{dx_{s}}\right)
+$ in radians. Your job will be easier if you notice that the
+$y_{s}$-axis divides $T_{s}$ into two congruent isosceles triangles.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Explain why we know from an exercise before that in all of
+the cases in the previous exercise %\ref{st}
+the area of the spherical triangle $T$
+is also given by the formula%
+\[%
+\int_{T_{s}}
+\frac{1}{\left(  1+\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  \right)
+^{2}}dx_{s}dy_{s}.
+\]
+
+\end{exercise}
+
+
+
+\end{document}

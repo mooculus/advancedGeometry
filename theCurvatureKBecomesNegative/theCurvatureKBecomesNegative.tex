@@ -1,0 +1,160 @@
+\documentclass{ximera}
+
+\title{The curvature $K$ becomes negative}
+
+\begin{document}
+\begin{abstract}
+Here we start to focus on hyperbolic geometry.
+\end{abstract}
+\maketitle
+
+\subsection*{The world sheet and the light cone}
+
+We now turn to the case in which the radius $R$ of the Euclidean
+$R$-sphere goes to infinity and beyond! Of course that doesn't make
+any sense in $\left( \hat{x},\hat{y},\hat{z}\right) $-space but if we
+look at the $R$-sphere in $\left( x,y,z\right) $-coordinates, it makes
+perfect sense because there the equation of the $R$-sphere is%
+\begin{equation}
+K\left(  x^{2}+y^{2}\right)  +z^{2}=1 \label{81}%
+\end{equation}
+for $K=\frac{1}{R^{2}}$ so that $R$ going to infinity means that $K$
+goes to $0$ and `beyond' simply means that $K$ becomes negative. We
+have seen that all we need to have a geometry with lengths, angles,
+areas and congruences is to have a smooth set and a dot-product
+between vectors tangent to that set. Now if $K$ becomes negative, our
+geometry becomes a hyperboloid of two sheets (obtained by rotating a
+hyperbola in the $\left( x,z\right) $-plane with major axis the
+$z$-axis around that axis). So that we have a connected universe, we
+will only consider the `top' sheet (where $z>0$) as our
+$K$-geometry. (In special relativity, this sheet might be called
+something like the `world sheet.') If, instead of rotating a hyperbola
+around the $z$-axis we rotate the asymptotes of the hyperbola around
+the $z$-axis, we obtain a cone given by the equation%
+\[
+K\left(  x^{2}+y^{2}\right)  +z^{2}=0.
+\]
+(Again this might be called something like the `light cone.')
+
+There is one potential problem we need to worry about when $K<0$, and it is
+regarding the length of tangent vectors. Namely, our formulas for lengths
+invove taking square roots of dot products of tangent vectors with themselves,
+so those dot-products had better be positive (and only zero if the tangent
+vector itself is the zero-vector.) Our $K$-dot product is given by the formula%
+\[
+\left(
+\begin{array}
+[c]{ccc}%
+a & b & c
+\end{array}
+\right)  \cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  \cdot\left(
+\begin{array}
+[c]{c}%
+a\\
+b\\
+c
+\end{array}
+\right)  .
+\]
+So, when $K<0$, it seems entirely possible that some tangent vector $V$ has
+the property that $V\bullet_{K}V<0$. (Indeed that will always happen if $c$ is
+sufficiently big and $x$ and $y$ are sufficiently small.
+[MJG,241-242]
+
+\subsection*{Non-zero tangent vectors in \textbf{HG} have positive length}
+
+\begin{exercise}
+Suppose that $V$ emanates from $\left(  0,0,0\right)  $ in $\left(
+x,y,z\right)  $-space.
+\begin{enumerate}
+\item Show that $V\bullet_{K}V=0$ if and only if $V$ points in a direction of the
+light cone.
+
+\item Show that $V\bullet_{K}V<0$ if and only if $V$ points in a direction inside
+the light cone.
+
+Hint: Use that the (Euclidean) angle $\theta$ that the light cone makes with
+the plane $z=0$ is given by taking any point $\left(  x,y,z\right)  $ on the
+light cone with $z>0$ and computing%
+\[
+\mathrm{tan}\left(  \theta\right)  =\frac{z}{\sqrt{x^{2}+y^{2}}}=\left\vert
+K\right\vert ^{1/2}.
+\]
+Compute the angle that $V$ makes with the plane $z=0$ in a similar way.
+\end{enumerate}
+\end{exercise}
+
+Now our world sheet lies \textit{inside} the light cone but tangent vectors to
+it point \textit{outside} the light cone. That is what saves our $K$-dot
+product, as we see in the next Lemma.
+
+\begin{lemma}
+Let $V=\left(  a,b,c\right)  $ denote a vector that is tangent
+to our $K$-geometry, that is, to the set $\left(  \ref{81}\right)  $. Then%
+\[
+V\bullet_{K}V\geq0
+\]
+and $V\bullet_{K}V=0$ if and only if $V=0$.
+\end{lemma}
+
+\begin{proof}
+If $c=0$, then the assertion of the Lemma is obviously true. So we can assume
+$c\neq0$. Notice, since $V$ is assumed to be a tangent vector at $\left(
+x,y,z\right)  $, this means that $\left(  x,y,z\right)  $ is not the North
+Pole so that
+\[
+x^{2}+y^{2}>0.
+\]
+
+
+Next replacing $V$ with $\frac{1}{c}\left(  V\right)  $ just multiplies
+$V\bullet_{K}V$ by $\frac{1}{c^{2}}$ so it suffices to consider the case in
+which%
+\[
+V=\left(  a,b,1\right)
+\]
+and we must show that%
+\[
+\left(  a^{2}+b^{2}\right)  +K^{-1}>0.
+\]
+Since $V$ is tangent to our $K$-geometry at some point $\left(  x,y,z\right)
+$, we know by Exercise \ref{82} that $\left(  x,y,z\right)  \bullet_{K}V=0$,
+that is,%
+\[
+ax+by+\frac{z}{K}=0.
+\]
+On the other hand%
+\[
+K\left(  x^{2}+y^{2}\right)  +z^{2}=1.
+\]
+Substituting this becomes%
+\[
+K\left(  x^{2}+y^{2}\right)  +K^{2}\left(  ax+by\right)  ^{2}=1.
+\]
+On the other hand%
+\begin{align*}
+\left(  ay-bx\right)  ^{2}  &  \geq0\\
+\left(  ay\right)  ^{2}+\left(  bx\right)  ^{2}  &  \geq2abxy
+\end{align*}
+so that%
+\begin{gather*}
+K\left(  x^{2}+y^{2}\right)  +K^{2}\left(  \left(  ax\right)  ^{2}+\left(
+by\right)  ^{2}+\left(  ay\right)  ^{2}+\left(  bx\right)  ^{2}\right)
+\geq1\\
+K\left(  x^{2}+y^{2}\right)  +K^{2}\left(  a^{2}+b^{2}\right)  \left(
+x^{2}+y^{2}\right)  \geq1\\
+K^{-1}+\left(  a^{2}+b^{2}\right)  \geq\frac{1}{K^{2}\left(  x^{2}%
++y^{2}\right)  }.
+\end{gather*}
+
+\end{proof}
+
+
+\end{document}
