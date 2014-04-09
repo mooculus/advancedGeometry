@@ -1,0 +1,298 @@
+\documentclass{ximera}
+
+\title{Lines in hyperbolic geometry}
+
+\begin{document}
+\begin{abstract}
+Here we examine ``lines'' in hyperbolic geometry.
+\end{abstract}
+\maketitle
+
+\subsection*{Hyperbolic coordinates, a shortest path from the North Pole}
+
+We next will figure out what is the shortest path you can take between
+two points in \textbf{HG}. Again we will do our calculation using only
+$\left( x,y,z\right) $-coordinates (since, as we have seen we don't
+have $\left( \hat{x},\hat{y},\hat{z}\right) $-coordinates). The
+$\left( x,y,z\right) $-coordinates for \textbf{SG}, namely
+\begin{align*}
+x\left(  \sigma,\tau\right)   &  =R\cdot \sin %
+\sigma\cdot \cos \tau\\
+y\left(  \sigma,\tau\right)   &  =R\cdot \sin %
+\sigma\cdot \sin \tau\\
+z\left(  \sigma,\tau\right)   &  =\cos \sigma
+\end{align*}
+won't work this time because they involve $R$ which has gone off to infinity.
+Fortunately there are hyperbolic coordinates%
+\[
+\left(  \cosh \sigma=\frac{e^{\sigma}+e^{-\sigma}}{2},\sinh %
+\sigma=\frac{e^{\sigma}-e^{-\sigma}}{2}\right)
+\]
+that parametrize the `unit' hyperbola just like $\left(  \cos %
+\sigma,\sin \sigma\right)  $ parametrize the unit circle. So we define%
+\begin{align*}
+x\left(  \sigma,\tau\right)   &  =\left\vert K\right\vert ^{-1/2}%
+\cdot \sinh \sigma\cdot\cos \tau\\
+y\left(  \sigma,\tau\right)   &  =\left\vert K\right\vert ^{-1/2}%
+\cdot \sinh \sigma\cdot\sin \tau\\
+z\left(  \sigma,\tau\right)   &  =\cosh \sigma
+\end{align*}
+
+
+\begin{exercise}
+Show that these hyperbolic coordinates do actually parametrize
+the $K$-geometry, that is, that%
+\[
+K\left(  x\left(  \sigma,\tau\right)  ^{2}+y\left(  \sigma,\tau\right)
+^{2}\right)  +z\left(  \sigma,\tau\right)  ^{2}\equiv1
+\]
+for all $\left(  \sigma,\tau\right)  $.
+\end{exercise}
+
+Again notice that you can write a path on the $R$-sphere by giving a path
+$\left(  \sigma\left(  t\right)  ,\tau\left(  t\right)  \right)  $ in the
+$\left(  \sigma,\tau\right)  $-plane. In fact, you can use $\sigma$ as the
+parameter $t$ and just write
+\[
+\left(  \sigma,\tau\left(  \sigma\right)  \right)
+\]
+where $\tau$ is a function of $\sigma$. To write a path that starts at the
+North Pole, just write%
+\[
+\left(  \sigma,\tau\left(  \sigma\right)  \right)  ,\;0\leq\sigma
+\leq\varepsilon
+\]
+and demand that%
+\[
+\tau\left(  0\right)  =0.
+\]
+If you want the path to end on the plane $y=0$, demand additionally that%
+\[
+\tau\left(  \varepsilon\right)  =0.
+\]
+But if we are going to describe paths on \textbf{HG} by paths in the $\left(
+\sigma,\tau\right)  $-plane we are going to need to figure out the $K$-dot
+product in $\left(  \sigma,\tau\right)  $-coordinates so that we can compute
+the lengths of paths in these coordinates.
+
+\begin{exercise}\hfil
+\begin{enumerate}
+\item Compute the $2\times3$ matrix $D_{hyp}$ such that%
+\[
+\left(  \frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right)  =\left(
+\frac{d\sigma}{dt},\frac{d\tau}{dt}\right)  \cdot D_{hyp}%
+\]
+when a path in $K$-geometry is given by a path in the $\left(\sigma,\tau\right)  $-plane.
+
+Hint: By the Chain Rule from several variable calculus%
+\[
+D_{hyp}=\left(
+\begin{array}
+[c]{ccc}%
+\frac{dx}{d\sigma} & \frac{dy}{d\sigma} & \frac{dz}{d\sigma}\\
+\frac{dx}{d\tau} & \frac{dy}{d\tau} & \frac{dz}{d\tau}%
+\end{array}
+\right)  .
+\]
+\item Use a) to compute the $K$-dot product in $\left(  \sigma,\tau\right)
+$-coordinates, namely compute the matrix $P_{hyp}$ in the equation%
+\begin{align*}
+\left(  \frac{d\sigma_{1}}{dt},\frac{d\tau_{1}}{dt}\right)  \bullet
+_{hyp}\left(  \frac{d\sigma_{2}}{dt},\frac{d\tau_{2}}{dt}\right)   &  =\left(
+\frac{dx_{1}}{dt},\frac{dy_{1}}{dt},\frac{dz_{1}}{dt}\right)  \bullet
+_{K}\left(  \frac{dx_{2}}{dt},\frac{dy_{2}}{dt},\frac{dz_{2}}{dt}\right) \\
+&  =\left(  \frac{dx_{1}}{dt},\frac{dy_{1}}{dt},\frac{dz_{1}}{dt}\right)
+\cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  \cdot\left(  \frac{dx_{2}}{dt},\frac{dy_{2}}{dt},\frac{dz_{2}}%
+{dt}\right)  ^{t}\\
+&  =\left(  \frac{d\sigma_{1}}{dt},\frac{d\tau_{1}}{dt}\right)  \cdot
+D_{hyp}\cdot\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{array}
+\right)  \cdot D_{hyp}^{t}\cdot\left(  \frac{d\sigma_{1}}{dt},\frac{d\tau_{1}%
+}{dt}\right)  ^{t}\\
+&  =\left(  \frac{d\sigma_{1}}{dt},\frac{d\tau_{1}}{dt}\right)  \cdot
+P_{hyp}\cdot\left(  \frac{d\sigma_{1}}{dt},\frac{d\tau_{1}}{dt}\right)  ^{t}.
+\end{align*}
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Show that the length $L$ of any path in our $K$-geometry is
+given by%
+\[
+\left(  \sigma,\tau\left(  \sigma\right)  \right)  ,\;0\leq\sigma
+\leq\varepsilon
+\]
+with%
+\[
+\tau\left(  0\right)  =0.
+\]
+and%
+\[
+\tau\left(  \varepsilon\right)  =0
+\]
+is given by the formula%
+\[
+L=\left\vert K\right\vert ^{-1/2}%
+%TCIMACRO{\dint \nolimits_{0}^{\varepsilon}}%
+%BeginExpansion
+{\displaystyle\int\nolimits_{0}^{\varepsilon}}
+%EndExpansion
+\sqrt{\left(  1,\frac{d\tau}{d\sigma}\right)  \cdot\left(
+\begin{array}
+[c]{cc}%
+1 & 0\\
+0 & \sinh ^{2}\sigma
+\end{array}
+\right)  \cdot\left(  1,\frac{d\tau}{d\sigma}\right)  ^{t}}d\sigma.
+\]
+
+\end{exercise}
+
+This last formula for $L$ lets us figure out the shortest path from 
+\[
+N=\left(\sinh 0\cdot \cos 0,R\cdot \sinh 0\cdot\sin 0,\cosh 0\right)
+\]
+to
+\[
+\left( \left\vert K\right\vert ^{-1/2}\cdot \sinh \varepsilon,0,\cosh
+\varepsilon\right) =
+\left( \left\vert K\right\vert ^{-1/2} \cdot
+\sinh\varepsilon\cdot\cos 0,\left\vert K\right\vert
+^{-1/2}\cdot\sinh 0\cdot \sin 0,\cosh  \varepsilon\right).
+\]
+Since%
+\[
+L=\left\vert K\right\vert ^{-1/2}\cdot %
+%TCIMACRO{\dint \nolimits_{0}^{\varepsilon}}%
+%BeginExpansion
+{\displaystyle\int\nolimits_{0}^{\varepsilon}}
+%EndExpansion
+\sqrt{1+\sinh ^{2}\sigma\cdot \left(  \frac{d\tau
+}{d\sigma}\right)  ^{2}}d\sigma
+\]
+and $\sinh ^{2}\sigma$ is is positive for almost all $\sigma\in\left[
+0,\varepsilon\right]  $, $L$ is minimal only when $\frac{d\tau}{d\sigma}$ is
+identically $0$. But this means that $\tau\left(  \sigma\right)  $ is a
+constant function. Since $\tau\left(  0\right)  =0$, this means that
+$\tau\left(  \sigma\right)  $ is identically $0$. So we have the shown the
+following result.
+
+\begin{theorem}
+The shortest path in $K$-geometry from the North Pole to a point
+$\left( x,y,z\right) =\left( \left\vert K\right\vert ^{-1/2} \cdot
+\sinh \varepsilon,0,\cosh  \varepsilon\right) $ is the path lying in
+the plane $y=0$. The $K$-length of that shortest path is%
+\[
+\left\vert K\right\vert ^{-1/2}\cdot \varepsilon.
+\]
+
+\end{theorem}
+
+\subsection*{Shortest path between any two points}
+
+\begin{theorem}
+Given any two points $X_{1}=\left( x_{1},y_{1},z_{1}\right) $ and
+$X_{2}=\left( x_{2},y_{2},z_{2}\right) $ in $K$-geometry, the shortest
+path between the two points is the path cut out by the two equations%
+\[
+K\left(  x^{2}+y^{2}\right)  +z^{2}=1
+\]
+and the plane%
+\begin{equation}
+\left\vert \left(
+\begin{array}
+[c]{ccc}%
+x & y & z\\
+x_{1} & y_{1} & z_{1}\\
+x_{2} & y_{2} & z_{2}%
+\end{array}
+\right)  \right\vert =0, \label{90}%
+\end{equation}
+that is, the plane containing $\left(  0,0,0\right)  $ and $X_{1}$ and $X_{2}$.
+\end{theorem}
+
+\begin{proof}
+Let $V_{1}=\left(  a_{1},b_{1},c_{1}\right)  $ be the tangent vector at
+$X_{1}$ of $K$-length $1$ that is tangent to the path cut out by the plane
+given by equation $\left(  \ref{90}\right)  $. Then $\left(  x,y,z\right)
+=\left(  a_{1},b_{1},c_{1}\right)  $ also satisfies equation $\left(
+\ref{90}\right)  $ and so the equation for that plane can also be written%
+\begin{equation}
+\left\vert \left(
+\begin{array}
+[c]{ccc}%
+x & y & z\\
+x_{1} & y_{1} & z_{1}\\
+a_{1} & b_{1} & c_{1}%
+\end{array}
+\right)  \right\vert =0. \label{91}%
+\end{equation}
+By a previous exercise, there is a $K$-rigid motion $M$ that takes
+$X_{1}$ to the North Pole $N$ and $V_{1}$ to $\left( 1,0,0\right)
+$. So $M$ takes the plane $\left( \ref{91}\right) $ to the plane given
+by the equation%
+\[
+\left\vert \left(
+\begin{array}
+[c]{ccc}%
+x & y & z\\
+0 & 0 & 1\\
+1 & 0 & 0
+\end{array}
+\right)  \right\vert =0,
+\]
+namely the plane.%
+\[
+y=0.
+\]
+So $X_{2}\cdot M$ must also line in this plane since $X_{2}$ lies in the plane
+$\left(  \ref{91}\right)  $. So%
+\[
+X_{2}\cdot M=\left(  \left\vert K\right\vert ^{-1/2}\cdot\sinh \varepsilon,0,\cosh \varepsilon\right)
+\]
+for some $\varepsilon$ since all points in $K$-geometry with $y=0$ can
+be written as $\left( \left\vert K\right\vert
+^{-1/2}\cdot\sinh \varepsilon,0,\cosh \varepsilon\right) $ for some
+$\varepsilon$. Since $M$ is a $K$-rigid motion it must take the
+shortest path from $X_{1}$ to $X_{2}$ to the shortest path from
+$X_{1}\cdot M=N$ to $X_{2}\cdot M=\left( \left\vert K\right\vert
+^{-1/2}\cdot \sinh \varepsilon,0,\cosh \varepsilon\right) $. But we
+already know that the shortest path from $X_{1}\cdot M$ to $X_{2}\cdot
+M$ is the one cut out by the plane $y=0$. But that path comes from the
+path cut out by the plane given by equation $\left( \ref{91}\right) $,
+or, what is the same thing, the plane given by the equation $\left(
+\ref{90}\right) $. This path is called the \textit{great hyperbolic
+  arc} between $X_{1}$ and $X_{2}$.
+\end{proof}
+
+\begin{definition}
+A \textbf{line} in \textbf{HG} will be a curve that extends infinitely
+in each direction and has the property that, given any two points
+$X_{1}$ and $X_{2}$ on the path, the shortest path between $X_{1}$ and
+$X_{2}$ lies along that curve. Lines in \textbf{HG} are the
+intersections of the $K$-geometry with planes through $\left(
+0,0,0\right) $. The length of the shortest path between two points in
+$K$-geometry will be called the $K$-distance.
+\end{definition}
+
+
+
+
+
+
+
+
+
+\end{document}
