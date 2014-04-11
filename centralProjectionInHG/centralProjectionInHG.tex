@@ -1,0 +1,489 @@
+\documentclass{ximera}
+
+\title{Central projection in \textbf{HG}}
+
+\begin{document}
+\begin{abstract}
+Here we explore the hyperbolic geometry we find with central projection. 
+\end{abstract}
+\maketitle
+
+
+\subsection*{The edge of the universe}
+
+Again \textbf{HG} is a $K$-geometry in the sense of Part \ref{III} since, in
+$\left(  x,y,z\right)  $-coordinates, the equation for the $K$-geometry
+\begin{equation}
+K\left(  x^{2}+y^{2}\right)  +z^{2}=1 \label{74}%
+\end{equation}
+with%
+\[
+K<0
+\]
+and the $K$-dot product. So all the calculations in Part \ref{III} hold, in
+particular $\left(  \ref{75}\right)  $. So the $\left(  x_{c},y_{c}\right)
+$-coordinates that parametrize the entire $K$-geometry are the $\left(
+x_{c},y_{c}\right)  $ such that%
+\[
+x_{c}^{2}+y_{c}^{2}<\frac{1}{\left\vert K\right\vert }.
+\]
+So we will call the circle%
+\[
+x_{c}^{2}+y_{c}^{2}=\frac{1}{\left\vert K\right\vert }%
+\]
+the \textit{edge of the universe}. (The $\left(  x_{c},y_{c}\right)
+$-coordinates are called Klein coordinates for hyperbolic geometry and the
+disk of radius $\left\vert K\right\vert ^{-1/2}$ is called the \textit{Klein
+model} for \textbf{HG} in honor of the famous German geometer, Felix
+Klein.)
+
+\subsection*{Lines go to chords}
+
+Again all the calculations in Part \ref{III} hold, in particular Exercise
+\ref{73}a). We conclude that lines in \textbf{HG} correspond to chords on the
+Klein $\left(  x_{c},y_{c}\right)  $-disk that connect two points on the edge
+of the universe.lines in the $\left(  x_{c},y_{c}\right)  $-disk.
+
+\begin{exercise}\hfil
+\begin{enumerate}
+\item Explain why the $K$-line $y=0$ is given by the $x_{c}$-axis
+and the North Pole $N$ is given by $\left(  x_{c},y_{c}\right)  =\left(
+0,0\right)  $.
+\item Explain why the point $\left(  \left\vert K\right\vert ^{-1/2}%
+\cdot \sinh \varepsilon,0,\cosh %
+\varepsilon\right)  $ in $K$-geometry is given by the point%
+\[
+\left(  x_{c},y_{c}\right)  =\left(  \left\vert K\right\vert ^{-1/2}%
+\cdot \frac{e^{\varepsilon}-e^{-\varepsilon}%
+}{e^{\varepsilon}+e^{-\varepsilon}},0\right)  .
+\]
+
+
+\item Explain why the $K$-distance between $\left(  x_{c},y_{c}\right)  =\left(
+0,0\right)  $ and $\left(  x_{c},y_{c}\right)  =\left(  \left\vert
+K\right\vert ^{-1/2}\cdot \frac{e^{\varepsilon
+}-e^{-\varepsilon}}{e^{\varepsilon}+e^{-\varepsilon}},0\right)  $ is
+$\left\vert K\right\vert ^{-1/2}\cdot\varepsilon$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+ Explain why lines in \textbf{HG} extend infinitely in each direction.
+
+Hint: There is a $K$-rigid motion that takes any two points to $\left(
+0,0\right)  $ and $\left(  \left\vert K\right\vert ^{-1/2}%
+\cdot \frac{e^{\varepsilon}-e^{-\varepsilon}%
+}{e^{\varepsilon}+e^{-\varepsilon}},0\right)  $ for some $\varepsilon
+>0$.
+\end{exercise}
+
+\subsection*{$K$-perpendicularity in the Klein model for \textbf{HG}}
+
+Suppose we are given any three distinct points $P^{\prime}$, $R^{\prime}$ and
+$Q^{\prime}$ on the edge of the universe of the Klein $K$-disk. We construct
+the line $L^{\prime}$ through $P^{\prime}$ and $Q^{\prime}$ and mark a point
+$A^{\prime}$ on it as shown in the figure below.
+\[%
+%TCIMACRO{\FRAME{itbpF}{1.1225in}{0.9954in}{0pt}{}{}{Figure}%
+%{\special{ language "Scientific Word";  type "GRAPHIC";
+%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
+%width 1.1225in;  height 0.9954in;  depth 0pt;  original-width 8.1759in;
+%original-height 7.2523in;  cropleft "0";  croptop "1";  cropright "1";
+%cropbottom "0";  tempfilename 'MXAJC00O.jpg';tempfile-properties "XPR";}}}%
+%BeginExpansion
+\raisebox{-0pt}{\includegraphics[
+natheight=7.252300in,
+natwidth=8.175900in,
+height=0.9954in,
+width=1.1225in
+]%
+{MXAJC00O.jpg}%
+}%
+%EndExpansion
+\]
+
+
+We know that there is a $K$-rigid motion $M_{c}$ that takes $A^{\prime}$ to
+$\left(  0,0\right)  $ and $L^{\prime}$ to the $x_{c}$-axis. (Why?) Viewed as
+a transformation
+\begin{gather*}
+\left(  \underline{x_{c}},\underline{y_{c}}\right)  =M_{c}\left(  x_{c}%
+,y_{c}\right) \\
+=\left(  \frac{m_{11}x_{c}+m_{21}y_{c}+m_{31}}{m_{13}x_{c}+m_{23}y_{c}+m_{33}%
+},\frac{m_{12}x_{c}+m_{22}y_{c}+m_{32}}{m_{13}x_{c}+m_{23}y_{c}+m_{33}%
+}\right)  .
+\end{gather*}
+of the entire $\left(  x_{c},y_{c}\right)  $-plane, this transformation takes
+the tangent line to the edge of the universe at $P^{\prime}$ to the tangent
+line $T_{-}$ to the edge of the universe at $\left(  -\left\vert K\right\vert
+^{-1/2},0\right)  $ and the tangent line to the edge of the universe at
+$Q^{\prime}$ to the tangent line $T_{+}$ to the edge of the universe at
+$\left(  \left\vert K\right\vert ^{-1/2},0\right)  $. Since the tangent lines
+at $\left(  -\left\vert K\right\vert ^{-1/2},0\right)  $ and $\left(
+\left\vert K\right\vert ^{-1/2},0\right)  $ are vertical, the point
+$S^{\prime}$must have gone to infinity under the $K$-rigid motion. So the line
+through $A^{\prime}$ and $R^{\prime}$ must go to a line that goes through
+$\left(  0,0\right)  $ and that lies between $T_{-}$ and $T_{+}$. But here is
+only one such line, namely the $y_{c}$-axis.
+
+\begin{exercise}
+\label{99}Explain why there is a $K$-rigid motion $M_{c}$ that takes any three
+points $P^{\prime}$, $R^{\prime}$ and $Q^{\prime}$ in order along the edge of
+the universe to any other three points $P^{\prime\prime}$, $R^{\prime\prime}$
+and $Q^{\prime\prime}$ in order along the edge of the universe.
+
+Hint: Use that the set of $K$-rigid motions form a group under the composition operation.
+\end{exercise}
+
+\begin{exercise}
+ Explain why the above discussion implies that the angles $\angle
+P^{\prime}A^{\prime}R^{\prime}$ and $\angle Q^{\prime}A^{\prime}R^{\prime}$
+must both be $K$-right angles, that is, their $K$-measures must each be
+$90^{\circ}$. So the line segments $\overline{P^{\prime}Q^{\prime}}$ and
+$\overline{A^{\prime}R^{\prime}}$ are $K$-perpendicular. [MJG,238-239]
+
+Hint: You may need to use the fact that, since there is a $K$-rigid motion
+that interchanges $\left(  -\left\vert K\right\vert ^{-1/2},0\right)  $ and
+$\left(  \left\vert K\right\vert ^{-1/2},0\right)  $ and leaves $\left(
+0,0\right)  $ fixed, the $x_{c}$-axis and the $y_{c}$-axis are $K$-perpendicular.
+\end{exercise}
+
+\begin{exercise}
+ Use the previous Exercise and the fact that $A^{\prime}$ can be
+any point along the chord $\overline{P^{\prime}Q^{\prime}}$ in the figure
+above to explain why the Klein model is not conformal, that is, it does not
+faithfully represent the measure of angles in \textbf{HG}.
+\end{exercise}
+
+\subsection*{Quadrilaterals in HG, in fact, in any NG}
+
+\begin{exercise}
+ Use $\left( x_{c},y_{c}\right) $-coordinates to show that \textbf{HG}
+ satisfies the four Euclidean postulates E1, E2, E3, and E4.Thus
+ hyperbolic geometry is a Neutral Geometry.
+\end{exercise}
+
+The next Exercise will help us appreciate some important properties of
+\textbf{HG} that are properties of any Neutral Geometry. So do the Exercise
+assuming that the context is any Neutral Geometry, that is, any
+two-dimensional geometry satisfying E1-E4.
+
+\begin{exercise}
+Let $ABCD$ be a quadrilateral with $\angle ABC=\angle BCD$
+right angles. (We denote polygons by naming their vertices in counterclockwise
+order.) [MJG,164-165]
+\begin{enumerate}
+\item Show in \textbf{NG} that
+
+$\left\vert AB\right\vert =\left\vert CD\right\vert $ implies that $\angle
+BAD=\angle ADC$,
+
+$\left\vert AB\right\vert >\left\vert CD\right\vert $ implies that $\angle
+BAD<\angle ADC$,
+
+$\left\vert AB\right\vert <\left\vert CD\right\vert $ implies that $\angle
+BAD>\angle ADC$.
+
+\item Use a) and pure logic to show that
+
+$\angle BAD<\angle ADC$ implies that $\left\vert AB\right\vert >\left\vert
+CD\right\vert $,
+
+$\angle BAD=\angle ADC$ implies that $\left\vert AB\right\vert =\left\vert
+CD\right\vert $,
+
+$\angle BAD>\angle ADC$ implies that $\left\vert AB\right\vert <\left\vert
+CD\right\vert $.
+
+Hint: For the first implication in a) show that quadrilateral $ABCD$ is
+(self-)congruent to the quadrilateral $DCBA$. Now suppose that the second
+implication in a) is false for some quadrilateral $ABCD$. Construct
+$A^{\prime}$ on $\overline{AB}$ so that $\left\vert A^{\prime}B\right\vert
+=\left\vert CD\right\vert $. $B$y Exercise \ref{18}%
+\[
+\angle BAD<\angle BA^{\prime}D.
+\]
+By the (already proved) first implication%
+\[
+\angle BA^{\prime}D=\angle CDA^{\prime}.
+\]
+Finally%
+\[
+\angle A^{\prime}DC<\angle ADC
+\]
+since the segment $DA^{\prime}$ lies between the segment $DA$ and the segment
+$DC$. The proof of the third implication in a) is the same as the proof of
+the second implication--just interchange $A$ and $D$ and interchange $B$ and
+$C$.
+
+For b), just use pure logic: If the first implication is false, then $\angle
+BAD<\angle ADC$ and either $\left\vert AB\right\vert <\left\vert CD\right\vert
+$ or $\left\vert AB\right\vert =\left\vert CD\right\vert $. If $\left\vert
+AB\right\vert <\left\vert CD\right\vert $, then by a)%
+\[
+\angle BAD>\angle ADC.
+\]
+Contradiction! Etc., etc.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Use $\left(  x_{c},y_{c}\right)  $-coordinates to show that \textbf{HG} does
+not satisfy Euclid's postulate E5.That is, through a point not on a line, it
+is not true that there passes a unique parallel (i.e. non-intersecting) line.
+\end{exercise}
+
+
+
+\subsection*{Computing $K$-distances in Klein coordinates}
+
+In fact the tool that will let us compute all $K$-distances in $\left(
+x_{c},y_{c}\right)  $-coordinates is the cross-ratio from Definition \ref{44}.
+Let $d_{K}\left(  A_{c},B_{c}\right)  $ denote the $K$-distance between two
+points $A_{c}$ and $B_{c}$ in the Klein $K$-disk. Now we know that
+\[
+d_{K}\left(  \left(  0,0\right)  ,\left(  \left\vert K\right\vert
+^{-1/2}\cdot \frac{e^{\varepsilon}-e^{-\varepsilon}%
+}{e^{\varepsilon}+e^{-\varepsilon}},0\right)  \right)  =\left\vert
+K\right\vert ^{-1/2}\cdot \varepsilon.
+\]
+To see what this has to do with cross-ratio, we begin by computing the cross
+ratio%
+\[
+\left(  0:-\left\vert K\right\vert ^{-1/2}:\left\vert K\right\vert
+^{-1/2}\cdot \frac{e^{\varepsilon}-e^{-\varepsilon}%
+}{e^{\varepsilon}+e^{-\varepsilon}}:\left\vert K\right\vert ^{-1/2}\right)
+\]
+given by the two points $\left(  0,0\right)  $, $\left(  \left\vert
+K\right\vert ^{-1/2}\cdot \frac{e^{\varepsilon
+}-e^{-\varepsilon}}{e^{\varepsilon}+e^{-\varepsilon}},0\right)  $ and the two
+points $\left(  -\left\vert K\right\vert ^{-1/2},0\right)  $ and $\left(
+\left\vert K\right\vert ^{-1/2},0\right)  $ where the $x_{c}$-axis intersects
+the edge of the universe.
+
+\begin{exercise}\hfil
+\begin{enumerate}
+\item Draw a picture of the Klein $K$-disk, the edge of the universe,
+  and the four points on the $x_{c}$-axis.
+\item Show that%
+\[
+\left(  0:-\left\vert K\right\vert ^{-1/2}:\left\vert K\right\vert
+^{-1/2}\cdot \frac{e^{\varepsilon}-e^{-\varepsilon}%
+}{e^{\varepsilon}+e^{-\varepsilon}}:\left\vert K\right\vert ^{-1/2}\right)
+=\left(  0:-1:\cdot \frac{e^{\varepsilon}-e^{-\varepsilon
+}}{e^{\varepsilon}+e^{-\varepsilon}}:1\right)  .
+\]
+In particular, notice that the computation doesn't depend on $K$.
+
+\item Show that%
+\[
+\left(  0:-1:\cdot \frac{e^{\varepsilon}-e^{-\varepsilon}%
+}{e^{\varepsilon}+e^{-\varepsilon}}:1\right)  =e^{-2\varepsilon}.
+\]
+\end{enumerate}
+\end{exercise}
+
+From these two Exercises we conclude that%
+\begin{equation}
+d_{K}\left(  \left(  0,0\right)  ,\left(  \left\vert K\right\vert
+^{-1/2}\cdot \frac{e^{\varepsilon}-e^{-\varepsilon}%
+}{e^{\varepsilon}+e^{-\varepsilon}},0\right)  \right)  =\frac{\left\vert
+K\right\vert ^{-1/2}}{2}\cdot \left\vert \ln %
+\left(  0:-\left\vert K\right\vert ^{-1/2}:\left\vert K\right\vert
+^{-1/2}\cdot \frac{e^{\varepsilon}-e^{-\varepsilon}%
+}{e^{\varepsilon}+e^{-\varepsilon}}:\left\vert K\right\vert ^{-1/2}\right)
+\right\vert . \label{78}%
+\end{equation}
+
+
+Now suppose we are given any two $A_{c}$ and $B_{c}$ in the Klein $K$-disk.
+They determine a line
+\begin{equation}
+\alpha x_{c}+\beta y_{c}+\gamma=0 \label{76}%
+\end{equation}
+and so points $P_{c}$ and $Q_{c}$ where that line meets the edge of the
+universe as shown in the figure below.
+\[%
+%TCIMACRO{\FRAME{itbpF}{1.6942in}{1.5748in}{0in}{}{}{Figure}%
+%{\special{ language "Scientific Word";  type "GRAPHIC";
+%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
+%width 1.6942in;  height 1.5748in;  depth 0in;  original-width 9.89in;
+%original-height 9.1869in;  cropleft "0";  croptop "1";  cropright "1";
+%cropbottom "0";  tempfilename 'MXAJC00P.jpg';tempfile-properties "XPR";}}}%
+%BeginExpansion
+{\includegraphics[
+natheight=9.186900in,
+natwidth=9.890000in,
+height=1.5748in,
+width=1.6942in
+]%
+{MXAJC00P.jpg}%
+}%
+%EndExpansion
+\]
+We are now ready to prove the following Theorem.
+
+\begin{theorem}
+ For any two points $A_{c}$ and $B_{c}$ on the Klein $K$-disk,
+the $K$-distance between them $d_{K}\left(  A_{c},B_{c}\right)  $ is given by
+the formula%
+\[
+d_{K}\left(  A_{c},B_{c}\right)  =\frac{\left\vert K\right\vert ^{-1/2}}%
+{2}\cdot \left\vert \ln \left(  x_{c}\left(
+A_{c}\right)  :x_{c}\left(  P_{c}\right)  :x_{c}\left(  B_{c}\right)
+:x_{c}\left(  Q_{c}\right)  \right)  \right\vert
+\]
+where $P_{c}$ and $Q_{c}$ are the endpoints of the chord through $A_{c}$ and
+$B_{c}$. (Compare with [MJG,268].)
+\end{theorem}
+
+\begin{proof}
+We know that there is a $K$-rigid motion $\left(  \underline{x_{c}}%
+,\underline{y_{c}}\right)  =M_{c}\left(  x_{c},y_{c}\right)  $ of the Klein
+disk that takes $A_{c}$ to $\left(  0,0\right)  $ and $B_{c}$ to some point
+$\left(  \left\vert K\right\vert ^{-1/2}\cdot %
+\frac{e^{\varepsilon}-e^{-\varepsilon}}{e^{\varepsilon}+e^{-\varepsilon}%
+},0\right)  $ on the positive $x_{c}$-axis. From $\left(  \ref{77}\right)  $
+we know that%
+\[
+\underline{x_{c}}=\frac{m_{11}x_{c}+m_{21}y_{c}+m_{31}}{m_{13}x_{c}%
++m_{23}y_{c}+m_{33}}.
+\]
+But from $\left(  \ref{76}\right)  $ we know that for our four points $A_{c}$,
+$B_{c}$, $P_{c}$, and $Q_{c}$
+\begin{gather*}
+\alpha x_{c}+\beta y_{c}+\gamma=0\\
+y_{c}=\frac{-\alpha x_{c}-\gamma}{\beta}.
+\end{gather*}
+So if we calculate $M_{c}$ only for these four points we have%
+\begin{align*}
+\underline{x_{c}}  &  =\frac{m_{11}x_{c}+m_{21}\left(  \frac{-\alpha
+x_{c}-\gamma}{\beta}\right)  +m_{31}}{m_{13}x_{c}+m_{23}\left(  \frac{-\alpha
+x_{c}-\gamma}{\beta}\right)  +m_{33}}\\
+&  =\frac{\left(  m_{11}-\frac{m_{21}\alpha}{\beta}\right)  x_{c}+\left(
+m_{31}-\frac{m_{21}\gamma}{\beta}\right)  }{\left(  m_{13}-\frac{m_{23}\alpha
+}{\beta}\right)  x_{c}+\left(  m_{33}-\frac{m_{23}\gamma}{\beta}\right)  .}%
+\end{align*}
+That is, the function $x_{c}\mapsto\underline{x_{c}}$ is a linear fractional
+transformation! So by Exercise \ref{42}%
+\begin{align*}
+\left(  x_{c}\left(  A_{c}\right)  :x_{c}\left(  P_{c}\right)  :x_{c}\left(
+B_{c}\right)  :x_{c}\left(  Q_{c}\right)  \right)   &  =\left(  \underline
+{x_{c}}\left(  A_{c}\right)  :\underline{x_{c}}\left(  P_{c}\right)
+:\underline{x_{c}}\left(  B_{c}\right)  :\underline{x_{c}}\left(
+Q_{c}\right)  \right) \\
+&  =\left(  0:-\left\vert K\right\vert ^{-1/2}:\left\vert K\right\vert
+^{-1/2}\cdot \frac{e^{\varepsilon}-e^{-\varepsilon}%
+}{e^{\varepsilon}+e^{-\varepsilon}}:\left\vert K\right\vert ^{-1/2}\right) \\
+&  =e^{-2\varepsilon}.
+\end{align*}
+Therefore%
+\begin{align*}
+d_{K}\left(  A_{c},B_{c}\right)   &  =d_{K}\left(  \left(  0,0\right)
+,\left(  \left\vert K\right\vert ^{-1/2}\cdot %
+\frac{e^{\varepsilon}-e^{-\varepsilon}}{e^{\varepsilon}+e^{-\varepsilon}%
+},0\right)  \right) \\
+&  =\frac{\left\vert K\right\vert ^{-1/2}}{2}\cdot \left\vert \ln \left(  0:-\left\vert K\right\vert ^{-1/2}:\left\vert
+K\right\vert ^{-1/2}\cdot \frac{e^{\varepsilon
+}-e^{-\varepsilon}}{e^{\varepsilon}+e^{-\varepsilon}}:\left\vert K\right\vert
+^{-1/2}\right)  \right\vert \\
+&  =\frac{\left\vert K\right\vert ^{-1/2}}{2}\cdot \left\vert \ln \left(  x_{c}\left(  A_{c}\right)  :x_{c}\left(
+P_{c}\right)  :x_{c}\left(  B_{c}\right)  :x_{c}\left(  Q_{c}\right)  \right)
+\right\vert .
+\end{align*}
+
+\end{proof}
+
+\begin{exercise}
+For $K=-1$, calculate the $K$-distance between the two points given in
+$\left(  x_{c},y_{c}\right)  $-coordinates by $\left(  0,0\right)  $ and
+$\left(  1/2,0\right)  $
+\end{exercise}
+
+\subsection*{Areas of hyperbolic lunes}
+
+Finally there is one $K$-area computation that it is convenient to do in Klein
+coordinates. Namely suppose that we take the ordinary triangle $T_{c}$ in the
+$\left(  x_{c},y_{c}\right)  $-plane with vertices $\left(  0,0\right)  $,
+$\left(  \left\vert K\right\vert ^{-1/2}\cos \beta,\left\vert
+K\right\vert ^{-1/2}\sin \beta\right)  $ and $\left(  \left\vert
+K\right\vert ^{-1/2}\cos \beta,-\left\vert K\right\vert ^{-1/2}%
+\sin \beta\right)  $. Notice that two of the three vertices lie on the
+edge of the universe of the Klein $K$-disk and that the $K$-angle at the third
+vertex is%
+\[
+\alpha=2\beta.
+\]
+(In fact $\left(  0,0\right)  $ is the \textit{one} point in the Klein
+$K$-disk where $K$-angels \textit{are} faithfully represented. (Why?)) We will
+call the interior of this triangle, or any $K$-rigid motion of it, an $\alpha
+$\textbf{-lune}. So we wish to compute the $K$-area of an $\alpha$-lune. Since
+\textbf{HG} is a $K$-geometry we know from Exercise \ref{79} that this area
+$A_{K}\left(  \alpha\right)  $ is given by the formula%
+\[
+A_{K}\left(  \alpha\right)  =%
+%TCIMACRO{\dint \nolimits_{T_{c}}}%
+%BeginExpansion
+{\displaystyle\int\nolimits_{T_{c}}}
+%EndExpansion
+\frac{1}{\left(  1-\left\vert K\right\vert \left(  x_{c}^{2}+y_{c}^{2}\right)
+\right)  ^{3/2}}dx_{c}dy_{c}.
+\]
+
+
+\begin{exercise}
+\label{97}Show that%
+\[
+A_{K}\left(  \alpha\right)  =\left\vert K\right\vert ^{-1}\left(  \pi
+-\alpha\right)  .
+\]
+
+
+Hint: Use the substitution%
+\begin{align*}
+\underline{x_{c}}  &  =\left\vert K\right\vert ^{1/2}x_{c}\\
+\underline{y_{c}}  &  =\left\vert K\right\vert ^{1/2}y_{c}%
+\end{align*}
+to reduce the computation to the computation in the case that $\left\vert
+K\right\vert =1$. Then use polar coordinates to get
+\[
+A_{K}\left(  \alpha\right)  =\left\vert K\right\vert ^{-1}%
+%TCIMACRO{\dint \nolimits_{\theta=-\beta}^{\theta=\beta}}%
+%BeginExpansion
+{\displaystyle\int\nolimits_{\theta=-\beta}^{\theta=\beta}}
+%EndExpansion%
+%TCIMACRO{\dint \nolimits_{r=0}^{r=\frac{\cos \beta}{\cos \theta
+%}}}%
+%BeginExpansion
+{\displaystyle\int\nolimits_{r=0}^{r=\frac{\cos \beta}{\cos %
+\theta}}}
+%EndExpansion
+\frac{1}{\left(  1-r^{2}\right)  ^{3/2}}rdrd\theta
+\]
+Then do the substitution%
+\begin{align*}
+u  &  =1-r^{2}\\
+du  &  =-2rdr
+\end{align*}
+to compute
+\[%
+%TCIMACRO{\dint \nolimits_{r=0}^{r=\frac{\cos \beta}{\cos \theta
+%}}}%
+%BeginExpansion
+{\displaystyle\int\nolimits_{r=0}^{r=\frac{\cos \beta}{\cos %
+\theta}}}
+%EndExpansion
+\frac{1}{\left(  1-r^{2}\right)  ^{3/2}}rdr.
+\]
+In the final step use the substitution%
+\[
+t=\sin \left(  \theta\right)  .
+\]
+
+\end{exercise}
+
+
+
+
+
+\end{document}
