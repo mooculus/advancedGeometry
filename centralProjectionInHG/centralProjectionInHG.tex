@@ -11,19 +11,18 @@ Here we explore the hyperbolic geometry we find with central projection.
 
 \subsection*{The edge of the universe}
 
-Again \textbf{HG} is a $K$-geometry in the sense of Part \ref{III} since, in
-$\left(  x,y,z\right)  $-coordinates, the equation for the $K$-geometry
+Again \textbf{HG} is a $K$-geometry with
+%in the sense of Part \ref{III} since, in $\left(  x,y,z\right)  $-coordinates, the equation for the $K$-geometry
 \begin{equation}
-K\left(  x^{2}+y^{2}\right)  +z^{2}=1 \label{74}%
+K\left(  x^{2}+y^{2}\right)  +z^{2}=1, \label{74}%
 \end{equation}
-with%
 \[
-K<0
+K<0,
 \]
-and the $K$-dot product. So all the calculations in Part \ref{III} hold, in
-particular $\left(  \ref{75}\right)  $. So the $\left(  x_{c},y_{c}\right)
-$-coordinates that parametrize the entire $K$-geometry are the $\left(
-x_{c},y_{c}\right)  $ such that%
+and the $K$-dot product. %So all the calculations in Part \ref{III} hold, 
+In particular %$\left( \ref{75}\right) $. So 
+the $\left( x_{c},y_{c}\right) $-coordinates that parametrize the
+entire $K$-geometry are the $\left( x_{c},y_{c}\right) $ such that%
 \[
 x_{c}^{2}+y_{c}^{2}<\frac{1}{\left\vert K\right\vert }.
 \]
@@ -39,10 +38,10 @@ Klein.)
 
 \subsection*{Lines go to chords}
 
-Again all the calculations in Part \ref{III} hold, in particular Exercise
-\ref{73}a). We conclude that lines in \textbf{HG} correspond to chords on the
-Klein $\left(  x_{c},y_{c}\right)  $-disk that connect two points on the edge
-of the universe.lines in the $\left(  x_{c},y_{c}\right)  $-disk.
+%Again all the calculations in Part \ref{III} hold, in particular Exercise \ref{73}a). We conclude 
+We've shown that lines in \textbf{HG} correspond to chords on the
+Klein $\left( x_{c},y_{c}\right) $-disk that connect two points on the
+edge of the universe.lines in the $\left( x_{c},y_{c}\right) $-disk.
 
 \begin{exercise}\hfil
 \begin{enumerate}
@@ -229,8 +228,8 @@ Contradiction! Etc., etc.
 
 \begin{exercise}
 Use $\left(  x_{c},y_{c}\right)  $-coordinates to show that \textbf{HG} does
-not satisfy Euclid's postulate E5.That is, through a point not on a line, it
-is not true that there passes a unique parallel (i.e. non-intersecting) line.
+not satisfy Euclid's postulate E5. That is, through a point not on a line, it
+is not true that there passes a unique parallel (i.e.\ non-intersecting) line.
 \end{exercise}
 
 
@@ -238,7 +237,12 @@ is not true that there passes a unique parallel (i.e. non-intersecting) line.
 \subsection*{Computing $K$-distances in Klein coordinates}
 
 In fact the tool that will let us compute all $K$-distances in $\left(
-x_{c},y_{c}\right)  $-coordinates is the cross-ratio from Definition \ref{44}.
+x_{c},y_{c}\right)  $-coordinates is the cross-ratio 
+\[
+\left(  t_{1}:t_{2}:t_{3}:t_{4}\right)  =\frac{t_{1}-t_{2}}{t_{3}-t_{2}}%
+\div\frac{t_{1}-t_{4}}{t_{3}-t_{4}}.
+\]
+%from Definition \ref{44}.
 Let $d_{K}\left(  A_{c},B_{c}\right)  $ denote the $K$-distance between two
 points $A_{c}$ and $B_{c}$ in the Klein $K$-disk. Now we know that
 \[
@@ -270,24 +274,27 @@ the edge of the universe.
 \left(  0:-\left\vert K\right\vert ^{-1/2}:\left\vert K\right\vert
 ^{-1/2}\cdot \frac{e^{\varepsilon}-e^{-\varepsilon}%
 }{e^{\varepsilon}+e^{-\varepsilon}}:\left\vert K\right\vert ^{-1/2}\right)
-=\left(  0:-1:\cdot \frac{e^{\varepsilon}-e^{-\varepsilon
+=\left(  0:-1: \frac{e^{\varepsilon}-e^{-\varepsilon
 }}{e^{\varepsilon}+e^{-\varepsilon}}:1\right)  .
 \]
 In particular, notice that the computation doesn't depend on $K$.
 
 \item Show that%
 \[
-\left(  0:-1:\cdot \frac{e^{\varepsilon}-e^{-\varepsilon}%
+\left(  0:-1:\frac{e^{\varepsilon}-e^{-\varepsilon}%
 }{e^{\varepsilon}+e^{-\varepsilon}}:1\right)  =e^{-2\varepsilon}.
 \]
 \end{enumerate}
 \end{exercise}
 
 From these two Exercises we conclude that%
-\begin{equation}
-d_{K}\left(  \left(  0,0\right)  ,\left(  \left\vert K\right\vert
+\[
+d_{K}\left( \left( 0,0\right) ,\left( \left\vert K\right\vert
 ^{-1/2}\cdot \frac{e^{\varepsilon}-e^{-\varepsilon}%
-}{e^{\varepsilon}+e^{-\varepsilon}},0\right)  \right)  =\frac{\left\vert
+}{e^{\varepsilon}+e^{-\varepsilon}},0\right) \right) =
+\]
+\begin{equation}
+\frac{\left\vert
 K\right\vert ^{-1/2}}{2}\cdot \left\vert \ln %
 \left(  0:-\left\vert K\right\vert ^{-1/2}:\left\vert K\right\vert
 ^{-1/2}\cdot \frac{e^{\varepsilon}-e^{-\varepsilon}%
@@ -404,21 +411,23 @@ $\left(  1/2,0\right)  $
 
 Finally there is one $K$-area computation that it is convenient to do in Klein
 coordinates. Namely suppose that we take the ordinary triangle $T_{c}$ in the
-$\left(  x_{c},y_{c}\right)  $-plane with vertices $\left(  0,0\right)  $,
-$\left(  \left\vert K\right\vert ^{-1/2}\cos \beta,\left\vert
-K\right\vert ^{-1/2}\sin \beta\right)  $ and $\left(  \left\vert
+$\left(  x_{c},y_{c}\right)  $-plane with vertices 
+\[
+\left(  0,0\right),\quad \left(  \left\vert K\right\vert ^{-1/2}\cos \beta,\left\vert K\right\vert ^{-1/2}\sin \beta\right),\quad \left(  \left\vert
 K\right\vert ^{-1/2}\cos \beta,-\left\vert K\right\vert ^{-1/2}%
-\sin \beta\right)  $. Notice that two of the three vertices lie on the
-edge of the universe of the Klein $K$-disk and that the $K$-angle at the third
-vertex is%
+\sin \beta\right).
+\]
+Notice that two of the three vertices lie on the edge of the universe
+of the Klein $K$-disk and that the $K$-angle at the third vertex is%
 \[
 \alpha=2\beta.
 \]
-(In fact $\left(  0,0\right)  $ is the \textit{one} point in the Klein
-$K$-disk where $K$-angels \textit{are} faithfully represented. (Why?)) We will
+In fact $\left(  0,0\right)  $ is the \textit{one} point in the Klein
+$K$-disk where $K$-angels \textit{are} faithfully represented. (Why?) We will
 call the interior of this triangle, or any $K$-rigid motion of it, an $\alpha
 $\textbf{-lune}. So we wish to compute the $K$-area of an $\alpha$-lune. Since
-\textbf{HG} is a $K$-geometry we know from Exercise \ref{79} that this area
+\textbf{HG} is a $K$-geometry we know from a previous exercise%Exercise \ref{79}
+that this area
 $A_{K}\left(  \alpha\right)  $ is given by the formula%
 \[
 A_{K}\left(  \alpha\right)  =%
