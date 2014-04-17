@@ -1,0 +1,319 @@
+\documentclass{ximera}
+
+\title{Stereographic projection in \textbf{HG}}
+
+\begin{document}
+\begin{abstract}
+Now we explore the Poincar\'e disk.
+\end{abstract}
+\maketitle
+
+\subsection*{The Poincar\'{e} $K$-disk}
+
+Under stereographic projection, the center of projection is the South Pole
+$\left(  0,0,-1\right)  $. So if $K<0$ a point $\left(  x,0,z\right)  $ on the
+$K$-geometry goes out the hyperboloid to infinity in the $\left(  x,z\right)
+$-plane, the line joining $\left(  0,0,-1\right)  $ to that point becomes
+parallel to an asymptote of the hyperbola%
+\[
+Kx^{2}+z^{2}=1.
+\]
+So the line approaches a line of slope $\pm\left\vert K\right\vert ^{1/2}$ in
+the $\left(  x,z\right)  $-plane, that is the line $z=$ $\pm\left\vert
+K\right\vert ^{1/2}x-1$. So the intersection of that line with the line $z=1$
+in the $\left(  x,z\right)  $-plane approaches the point with $x=\pm
+2\left\vert K\right\vert ^{-1/2}$. Therefore under stereographic projection,
+the edge of the universe is given by the circle%
+\[
+x_{s}^{2}+y_{s}^{2}=4\left\vert K\right\vert ^{-1}.
+\]
+The interior of this circle, that is, the image of $K$-geometry under
+stereographic projection, is called the Poincar\'{e} model of Hyperbolic
+Geometry, of course again after a famous geometer, Henr\'{\i} Poincar\'{e}.
+Again, since \textbf{HG} is a $K$-geometry, all the rules of Part \ref{III}
+apply. So by Exercise \ref{73}b) line in the $K$-geometry are given by circles
+of the form%
+\[
+\left(  x_{s}-\frac{2a}{K}\right)  ^{2}+\left(  y_{s}-\frac{2b}{K}\right)
+^{2}=\frac{4\left(  K+a^{2}+b^{2}\right)  }{K^{2}}%
+\]
+in the Poincar\'{e} $K$-disk. The darker arc below%
+\begin{equation}%
+%TCIMACRO{\FRAME{itbpF}{1.8836in}{1.4961in}{0in}{}{}{Figure}%
+%{\special{ language "Scientific Word";  type "GRAPHIC";
+%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
+%width 1.8836in;  height 1.4961in;  depth 0in;  original-width 11.4726in;
+%original-height 9.0987in;  cropleft "0";  croptop "1";  cropright "1";
+%cropbottom "0";  tempfilename 'MXAJC00Q.jpg';tempfile-properties "XPR";}}}%
+%BeginExpansion
+{\includegraphics[
+natheight=9.098700in,
+natwidth=11.472600in,
+height=1.4961in,
+width=1.8836in
+]%
+{MXAJC00Q.jpg}%
+}%
+%EndExpansion
+\label{92}%
+\end{equation}
+represents the $K$-line%
+\[
+ax+by+1=0
+\]
+in the Poincar\'{e} $K$-disk. 
+
+\subsection*{Stereographic projection preserves angles}
+
+\begin{exercise}\hfil
+\begin{enumerate}
+\item Show that stereographic projection is conformal, that is, that
+  the measure of $K$-angles between $K$-lines on $K$-geometry is just
+  the ordinary Euclidean measure of angles formed.by (the circles that
+  are) their stereographic projections.
+
+Hint: From Exercise \ref{36} we know that, for tangent vectors $V_{1}$ and
+$V_{2}$ emanating from the same point on the $K$-geometry,
+\begin{align*}
+V_{1}\bullet_{K}V_{2}  &  =V_{1}^{s}\bullet_{s}V_{2}^{s}\\
+&  =\left(  V_{1}^{s}\right)  \cdot\left(
+\begin{array}
+[c]{cc}%
+\rho^{2} & 0\\
+0 & \rho^{2}%
+\end{array}
+\right)  \cdot\left(  V_{2}^{s}\right)  ^{t}.
+\end{align*}
+
+
+\item For $K=-1$, construct the $K$-line in $\left( x_{s},y_{s}\right)
+  $-coordinates that meets the $K$-line
+\[
+\left(  x_{s}-2\right)  ^{2}+\left(  y_{s}-2\right)  ^{2}=4
+\]
+perpendicularly in the point $\left(  2-\sqrt{2},2-\sqrt{2}\right)  $.
+\end{enumerate}
+\end{exercise}
+
+To get a more precise idea of what $K$-lines look like under stereographic
+projection, consider the picture $\left(  \ref{92}\right)  $ again. The
+equations of the circles in the picture are%
+\begin{equation}
+x_{s}^{2}+y_{s}^{2}=\frac{4}{\left\vert K\right\vert } \label{93}%
+\end{equation}
+and%
+\begin{equation}
+\left(  x_{s}-\frac{2a}{K}\right)  ^{2}+\left(  y_{s}-\frac{2b}{K}\right)
+^{2}=\frac{4\left(  K+a^{2}+b^{2}\right)  }{K^{2}} \label{94}%
+\end{equation}
+Construct a third circle whose diameter is the line segment from $\left(
+0,0\right)  $ to $\left(  \frac{2a}{K},\frac{2b}{K}\right)  $, namely the
+circle $\left(  x_{s}-\frac{a}{K}\right)  ^{2}+\left(  y_{s}-\frac{b}%
+{K}\right)  ^{2}=\left(  \frac{a}{K}\right)  ^{2}+\left(  \frac{b}{K}\right)
+^{2}$ which can be rewritten%
+\begin{equation}
+x_{s}^{2}+y_{s}^{2}-\frac{2a}{K}x_{s}-\frac{2b}{K}y_{s}=0. \label{95}%
+\end{equation}
+
+
+\begin{lemma}
+The circles $\left(  \ref{93}\right)  $, $\left(  \ref{94}\right)  $, and
+$\left(  \ref{95}\right)  $ all three pass through two common points.
+\end{lemma}
+
+\begin{proof}
+From $\left(  \ref{93}\right)  $ and $\left(  \ref{94}\right)  $ we get by
+addition that%
+\[
+x_{s}^{2}+y_{s}^{2}+\left(  x_{s}-\frac{2a}{K}\right)  ^{2}+\left(
+y_{s}-\frac{2b}{K}\right)  ^{2}=\frac{4}{\left\vert K\right\vert }%
++\frac{4\left(  K+a^{2}+b^{2}\right)  }{K^{2}}.
+\]
+Simplifying this last equation and dividing both sides by $2$ we obtain the
+equation $\left(  \ref{95}\right)  $. So the two points $P^{\prime}$ and
+$Q^{\prime}$ in picture $\left(  \ref{92}\right)  $ that satisfy both
+equations $\left(  \ref{93}\right)  $ and $\left(  \ref{94}\right)  $ also
+satisfy equation $\left(  \ref{95}\right)  $.
+\end{proof}
+
+The Lemma tells us that that the angle formed by the segments $\overline
+{\left(  0,0\right)  P^{\prime}}$ and $\overline{P^{\prime}\left(  \frac
+{2a}{K},\frac{2b}{K}\right)  }$ is a right angle since it is an inscribed
+angle in the circle $\left(  \ref{95}\right)  $ whose associated central angle
+is a diameter of that circle. But $\overline{\left(  0,0\right)  P^{\prime}}$
+is a radius of circle $\left(  \ref{93}\right)  $ and so $\overline{P^{\prime
+}\left(  \frac{2a}{K},\frac{2b}{K}\right)  }$ is tangent to circle $\left(
+\ref{93}\right)  $. Similarly $\overline{P^{\prime}\left(  \frac{2a}{K}%
+,\frac{2b}{K}\right)  }$ is a radius of circle $\left(  \ref{94}\right)  $ and
+so $\overline{\left(  0,0\right)  P^{\prime}}$ is tangent to circle $\left(
+\ref{94}\right)  $. So we conclude the following Theorem.
+
+\begin{theorem}
+ In the Poincar\'{e} model for $K$-geometry, the $K$-lines are
+represesented by circular arcs that meet the edge of the universe
+perpendicularly.
+\end{theorem}
+
+\subsection*{Infinite triangles in the Poincar\'{e} $K$-disk}
+
+By Exercise \ref{73}b) and \ref{73}c), lines in \textbf{HG} become circles
+under stereographic projection unless the line in \textbf{HG} passes through
+the North Pole (in which case it corresponds to a line through $\left(
+x_{s},y_{s}\right)  =\left(  0,0\right)  $ in the $\left(  x_{s},y_{s}\right)
+$-plane). Suppose a hyperbolic triangle $T$ corresponds to a region $T_{s}$ in
+$\left(  x_{s},y_{s}\right)  $-coordinates and the vertices of $T$ correspond
+to $\left(  x_{s},y_{s}\right)  =\left(  -2,0\right)  $, $\left(  x_{s}%
+,y_{s}\right)  =\left(  2,0\right)  $, and $\left(  x_{s},y_{s}\right)
+=\left(  0,2\right)  $. So one side of $T_{s}$ lies on the line $y_{s}=0$.
+
+\begin{exercise}\hfil
+\begin{enumerate}
+\item Use the fact that the equation for lines in stereographic
+  projection of $K$-geometry are given by
+\[
+\left(  x_{s}-\frac{2a}{K}\right)  ^{2}+\left(  y_{s}-\frac{2b}{K}\right)
+^{2}=\frac{4\left(  K+a^{2}+b^{2}\right)  }{K^{2}}.
+\]
+to compute the equations for the other two sides of $T_{s}$.
+
+\item In the $\left( x_{s},y_{s}\right) $-plane, draw $T_{s}$ as
+  accurately as you can when $K=-\frac{1}{4}$, then when $K=-1$.
+\end{enumerate}
+\end{exercise}
+
+The area of a hyperbolic triangle $T$ is given by the formula%
+\[%
+%TCIMACRO{\dint \nolimits_{T_{s}}}%
+%BeginExpansion
+{\displaystyle\int\nolimits_{T_{s}}}
+%EndExpansion
+\frac{1}{\left(  1+\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  \right)
+^{2}}dx_{s}dy_{s}.
+\]
+However we do not as yet have a way to calculate the area numerically for any
+given triangle $T$. The last topic in this book will remedy that situation.
+Analogously to the case of spherical triangles, we start from the fact that we
+do know the area of $\alpha$-lunes. From Exercise \ref{97} the $K$-area of one
+an $\alpha$-lune with vertex at $\left(  0,0\right)  $ in $\left(  x_{c}%
+,y_{c}\right)  $-coordinates is%
+\[
+\left\vert K\right\vert ^{-1}\left(  \pi-\alpha\right)  .
+\]
+Since rotation of the $\left(  x_{c},y_{c}\right)  $-plane around $\left(
+0,0\right)  $ is a $K$-rigid motion, this formula holds for any $K$-lune with
+vertex at $\left(  0,0\right)  $. Now represent the \textit{same} lunes in the
+$\left(  x_{s},y_{s}\right)  $-plane. Below is a picture in the $\left(
+x_{s},y_{s}\right)  $-plane of some of these $K$-lunes.%
+\begin{equation}%
+%TCIMACRO{\FRAME{itbpF}{1.6137in}{1.4978in}{0in}{}{}{Figure}%
+%{\special{ language "Scientific Word";  type "GRAPHIC";  display "USEDEF";
+%valid_file "T";  width 1.6137in;  height 1.4978in;  depth 0in;
+%original-width 8.0877in;  original-height 8.0877in;  cropleft "0";
+%croptop "1";  cropright "1";  cropbottom "0";
+%tempfilename 'MXAJC00R.jpg';tempfile-properties "XPR";}}}%
+%BeginExpansion
+{\includegraphics[
+natheight=8.087700in,
+natwidth=8.087700in,
+height=1.4978in,
+width=1.6137in
+]%
+{MXAJC00R.jpg}%
+}%
+%EndExpansion
+\label{98}%
+\end{equation}
+
+
+\begin{exercise}
+ Use Exercise \ref{97} to show that the area in the picture
+$\left(  \ref{98}\right)  $ that lies in the union of the $\alpha$-lune and
+the $\beta$-lune but does not lie in the $\left(  \alpha+\beta\right)  $- lune
+has $K$-area $\left\vert K\right\vert ^{-1}\pi$.
+\end{exercise}
+
+\begin{definition}
+ An infinite $K$-triangle is the figure given in stereographic
+projection coordinates by the stereographic projection of three $K$-lines such
+that any two meet the edge of the universe in a common point.
+\end{definition}
+
+\begin{exercise}
+a)  Use Exercise \ref{99} to show that the area of (the interior
+of) any infinte triangle has $K$-area%
+\[
+\left\vert K\right\vert ^{-1}\cdot\pi.
+\]
+For example, if $K=-1$ we have%
+\[%
+%TCIMACRO{\FRAME{itbpF}{1.6769in}{1.6769in}{0in}{}{}{Figure}%
+%{\special{ language "Scientific Word";  type "GRAPHIC";
+%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
+%width 1.6769in;  height 1.6769in;  depth 0in;  original-width 10.3734in;
+%original-height 10.3734in;  cropleft "0";  croptop "1";  cropright "1";
+%cropbottom "0";  tempfilename 'MXAJC00S.jpg';tempfile-properties "XPR";}}}%
+%BeginExpansion
+{\includegraphics[
+natheight=10.373400in,
+natwidth=10.373400in,
+height=1.6769in,
+width=1.6769in
+]%
+{MXAJC00S.jpg}%
+}%
+%EndExpansion
+\]
+
+
+b) Use a) to give a formula for the $K$-area of any infinite $n$-gon in
+\textbf{HG}, that is, a figure described by a set of $n$ disjoint $K$-lines
+that is the limit of a family of finite $n$-gons, all of whose vertices have
+gone to infinity. In particular, what is the area of any infinite hexagon?
+
+Hint: Divide the infinite $n$-gon into infinite triangles.
+\end{exercise}
+
+\subsection*{Areas of polygons in \textbf{HG}}
+
+Consider the picture below in the Poincar\'{e} model for \textbf{HG}. Find six
+lunes that cover an infinte hexagon. Notice that the six lunes cover the
+shaded hyperbolic triangle two extra times.%
+
+\[%
+%TCIMACRO{\FRAME{itbpF}{2.9966in}{1.6734in}{0in}{}{}{Figure}%
+%{\special{ language "Scientific Word";  type "GRAPHIC";
+%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
+%width 2.9966in;  height 1.6734in;  depth 0in;  original-width 16.2637in;
+%original-height 9.0546in;  cropleft "0";  croptop "1";  cropright "1";
+%cropbottom "0";  tempfilename 'MXAJC00T.jpg';tempfile-properties "XPR";}}}%
+%BeginExpansion
+{\includegraphics[
+natheight=9.054600in,
+natwidth=16.263700in,
+height=1.6734in,
+width=2.9966in
+]%
+{MXAJC00T.jpg}%
+}%
+%EndExpansion
+\]
+
+
+\begin{exercise}\hfil
+\begin{enumerate}
+\item Use the picture and remarks just above to explain why the
+$K$-area of the hyperbolic triangle is%
+\[
+\left\vert K\right\vert ^{-1}\cdot\left(  \pi-\left(
+\alpha+\beta+\delta\right)  \right)  .
+\]
+\item Use a) to give a formula for the $K$-area of a hyperbolic $n$-gon.
+\end{enumerate}
+\end{exercise}
+
+
+
+
+
+
+\end{document}
