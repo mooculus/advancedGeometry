@@ -8,7 +8,7 @@
 \title{Euclid's postulates for plane geometry} % the title of the activity
 \begin{document}
 \begin{abstract}
-In this activity we explore neutral geometries.
+We begin with Euclid's assumptions and explore neutral geometries.
 \end{abstract}
 \maketitle
 
@@ -20,45 +20,46 @@ In this activity we explore neutral geometries.
 %% geometry.
 
 In Western civilization, the primary source of our understanding of
-this geometry comes from Euclid's \textit{Elements}. The treatise is
-of transcendant importance well beyond geometry itself, because it is
-among the first, and perhaps the most influential single example of
-organized, formal logical deductive reasoning. Certain fundamentals,
-that are called \textit{axioms}, are postulated or `given,' providing
-the platform on which a `geometry' is built, that is, a mathematical
-entity modeling a physical `reality'. Its properties are arrived at by
-applying the laws of logic to the given fundamentals. Euclid gives
-five axioms for plane geometry, the first four of which seem to be
-`obvious' reflections of physical reality. In paraphrased form, they
-are:
+plane geometry comes from Euclid's \textit{Elements}. The treatise is
+of transcendant importance well beyond geometry itself. It is among
+the first examples of formal logical deductive reasoning. Certain
+fundamentals, that are called \textit{axioms}, are postulated or
+`given,' providing the platform on which a `geometry' is built. This
+creates a mathematical entity modeling a physical `reality.' Its
+properties are arrived at by applying the laws of logic to the given
+fundamentals. Euclid gives five axioms for plane geometry, the first
+four of which seem to be `obvious' reflections of physical reality. In
+paraphrased form, they are:
 
-\begin{axiom}
-(E1) Through any point $P$ and any other point $Q$, there lies a
-unique line.
+\begin{axiom}[E1]
+Through any point $P$ and any other point $Q$, there lies a unique
+line.
 \end{axiom}
 
-\begin{axiom}
-(E2) Given any two segments $\overline{AB}$ and $\overline{CD}$, there
-is a segment $\overline{AE}$ such that $B$ lies on $\overline{AE}$ and
+\begin{axiom}[E2] 
+Given any two segments $\overline{AB}$ and $\overline{CD}$, there is a
+segment $\overline{AE}$ such that $B$ lies on $\overline{AE}$ and
 $\left\vert CD\right\vert =\left\vert BE\right\vert $
 
-(NB: In plane geometry we often use the notation $\left\vert
-CD\right\vert $ to denote the distance between two points $A$ and $B$
-rather than the notation $d\left( A,B\right) $ used previously.
+Note: We will use both $\left\vert AB\right\vert$ and $d(A,B)$ to
+denote the distance between two points $A$ and $B$.
 \end{axiom}
 
-\begin{axiom}
-(E3) Given and point $P$ and any positive real number $r$, there
-exists a (unique) circle of radius $r$ and center $P$. (Said another
-way, if you move away from $P$ along a line in any direction, you will
-encounter a unique point at distance $r$ from $P$.)
+\begin{axiom}[E3]
+Given and point $P$ and any positive real number $r$, there exists a
+(unique) circle of radius $r$ and center $P$. 
+
+Said another way, if you move away from point $P$ along a line in any
+direction, you will encounter a unique point at distance $r$ from $P$.
 \end{axiom}
 
-\begin{axiom}
-(E4) All right angles are congruent. (A right angle is defined as
-follows. Let $C$ be the midpoint on the segment $\overline{AB}$. Let
-$E$ be any point not equal to $C$. The angle $\angle ACE$ is called a
-right angle if $\angle ACE$ is congruent to $\angle BCE$.) [MJG,17-18]
+\begin{axiom}[E4]
+All right angles are congruent. 
+
+Note: A right angle is defined as follows. Let $C$ be the midpoint on
+the segment $\overline{AB}$. Let $E$ be any point not equal to
+$C$. The angle $\angle ACE$ is called a right angle if $\angle ACE$ is
+congruent to $\angle BCE$. [MJG,17-18]
 \end{axiom}
 
 \begin{definition}
@@ -71,40 +72,43 @@ In \textbf{NG}, two distinct lines are called parallel if and only if they
 don't intersect.
 \end{definition}
 
-One implicit assumption of two-dimensional neutral (and Euclidean)
-geometry is the existence of (a group of) rigid motions or
-congruences. That is, it is assumed that given any point $\hat{A}$ and
-any tangent vector $\hat{V}$ emanating from $\hat{A}$ and given any
-second point $\hat{B}$ in the geometry and any tangent vector
-$\hat{W}$ emanating from $\hat{B}$, then there is a transformation
-$\hat{M}$ of the geometry such that
+One implicit assumption of two-dimensional neutral geometry is the
+existence of (a group of) rigid motions or congruences. That is, it is
+assumed that given any point $A$ and any vector
+$V$ emanating from $A$ and given any second point
+$B$ in the geometry and any vector $W$ emanating
+from $B$, then there is a transformation $M$ of the
+geometry such that:
 \begin{enumerate}
-\item $\hat{M}$ takes $\hat{A}$ to $\hat{B}$,
-\item $\hat{M}$ takes $\hat{V}$ and to a positive scalar multiple times $\hat{W}$ to $\hat{M}\left( \hat{V}\right) $,
-\item for all points $\hat{A}^{\prime},\hat{A}^{\prime\prime}$ in the
-geometry, $\hat{M}$ leaves the distance between them unchanged, that
-is,
+\item $M\cdot A=B$.
+\item $M\cdot V$ is a positive scalar multiple of $W$.
+\item For all points $A$ and $B$ in the geometry,
+  $M$ leaves the distance between them unchanged:
 \[
-\left\vert \hat{M}\left(  \hat{A}^{\prime}\right)  \hat{M}\left(  \hat
-{A}^{\prime\prime}\right) \right\vert =\left\vert \hat{A}^{\prime}\hat
-{A}^{\prime\prime}\right\vert ,
+d\left(M\cdot A,  M\cdot A\right) =d\left( A,B\right).
 \]
-\item for any two tangent vectors $\hat{V}^{\prime}$ and
-$\hat{V}^{\prime\prime}$ emanating from $\hat{A}$, the angle between
-$\hat{M}\left( \hat{V}^{\prime }\right) $ and
-$\hat{M}\left( \hat{V}^{\prime\prime}\right) $ is the same as the
-angle between $\hat{V}^{\prime}$ and $\hat{V}^{\prime\prime}$.
+\item For any two vectors $U$ and $V$ emanating from
+  $A$, the angle between $M\cdot U$ and
+  $M\cdot V$ is the same as the angle between $U$
+  and $V$.
 \end{enumerate}
 
 
 \begin{exercise}
 Using a sketch on grid paper \textbf{and} an algebraic formulation in
 the Euclidean plane, give a concrete example of a rigid motion that
-takes $\left( 1,2\right) $ to $\left( 3,5\right) $ and the tangent
-vector $\left( 1,0\right) $ emanating from $\left( 1,2\right) $ to a
-positive multiple of the tangent vector $\left( 0,2\right) $ emanating
-from $\left( 3,5\right)$. Where is the point $(0,0)$ mapped to by this
-rigid motion?
+takes $\left( 1,2\right) $ to $\left( 3,5\right) $ and the vector
+$\left( 1,0\right) $ emanating from $\left( 1,2\right) $ to a positive
+multiple of the vector $\left( 0,2\right) $ emanating from $\left(
+3,5\right)$. 
+\begin{solution}
+WHAT KIND OF SOLUTION IS THIS?
+\end{solution}
+Where is the point $(0,0)$ mapped to by this rigid
+motion?
+\begin{solution}
+
+\end{solution}
 \end{exercise}
 
 \begin{exploration}
@@ -113,6 +117,8 @@ SAS, and ASA. Be very careful with your wording---it had better be
 that triangles can be \textbf{moved onto each other by a rigid motion}
 if and only if they satisfy any one (and hence all) of the three
 properties (SSS, SAS, ASA).
+\begin{solution}
+\end{solution}
 \end{exploration}
 
 \begin{question}
