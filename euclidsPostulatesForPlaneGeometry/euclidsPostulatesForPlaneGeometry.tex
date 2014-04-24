@@ -37,8 +37,8 @@ line.
 \end{axiom}
 
 \begin{axiom}[E2] 
-Given any two segments $\overline{AB}$ and $\overline{CD}$, there is a
-segment $\overline{AE}$ such that $B$ lies on $\overline{AE}$ and
+Given any two segments $\bar{AB}$ and $\bar{CD}$, there is a
+segment $\bar{AE}$ such that $B$ lies on $\bar{AE}$ and
 $\left\vert CD\right\vert =\left\vert BE\right\vert $
 
 Note: We will use both $\left\vert AB\right\vert$ and $d(A,B)$ to
@@ -57,7 +57,7 @@ direction, you will encounter a unique point at distance $r$ from $P$.
 All right angles are congruent. 
 
 Note: A right angle is defined as follows. Let $C$ be the midpoint on
-the segment $\overline{AB}$. Let $E$ be any point not equal to
+the segment $\bar{AB}$. Let $E$ be any point not equal to
 $C$. The angle $\angle ACE$ is called a right angle if $\angle ACE$ is
 congruent to $\angle BCE$. [MJG,17-18]
 \end{axiom}
@@ -94,25 +94,89 @@ d\left(M\cdot A,  M\cdot A\right) =d\left( A,B\right).
 \end{enumerate}
 
 
-\begin{exercise}
-Using a sketch on grid paper \textbf{and} an algebraic formulation in
-the Euclidean plane, give a concrete example of a rigid motion that
-takes $\left( 1,2\right) $ to $\left( 3,5\right) $ and the vector
-$\left( 1,0\right) $ emanating from $\left( 1,2\right) $ to a positive
-multiple of the vector $\left( 0,2\right) $ emanating from $\left(
-3,5\right)$. 
+%% \begin{exercise}
+%% Using a sketch on grid paper \textbf{and} an algebraic formulation in
+%% the Euclidean plane, give a concrete example of a rigid motion that
+%% takes $\left( 1,2\right) $ to $\left( 3,5\right) $ and the vector
+%% $\left( 1,0\right) $ emanating from $\left( 1,2\right) $ to a positive
+%% multiple of the vector $\left( 0,2\right) $ emanating from $\left(
+%% 3,5\right)$. 
+%% \begin{solution}
+%% WHAT KIND OF SOLUTION IS THIS?
+%% \end{solution}
+%% Where is the point $(0,0)$ mapped to by this rigid
+%% motion?
+%% \begin{solution}
+%% The point $(0,0)$ is mapped to 
+%% \begin{matrixanswer}[hello]
+%% hello
+%% \end{matrixanswer}
+%% \end{solution}
+%% \end{exercise}
+
+
+\begin{question}
+Given a point $(2,3)$, find a matrix that will reflect this point
+across the line $y=x$.
 \begin{solution}
-WHAT KIND OF SOLUTION IS THIS?
+  \begin{hint}
+    Be sure to express $(2,3)$ as a column vector.
+  \end{hint}
+  \begin{matrixAnswer}[name=M]
+    correctMatrix = [['0','1'],['1','0']]
+\end{matrixAnswer}
 \end{solution}
-Where is the point $(0,0)$ mapped to by this rigid
-motion?
+Given a point $(2,3)$, find a matrix that will rotate this point
+counterclockwise $90^\circ$.
 \begin{solution}
-The point $(0,0)$ is mapped to 
-\begin{matrixanswer}[hello]
-hello
-\end{matrixanswer}
+  \begin{hint}
+    Be sure to express $(2,3)$ as a column vector.
+  \end{hint}
+  \begin{matrixAnswer}[name=M]
+    correctMatrix = [['0','-1'],['1','0']]
+\end{matrixAnswer}
 \end{solution}
-\end{exercise}
+Can you find a $2\times 2$ matrix that will translate $(0,0)$ to
+$(2,3)$? Explain why or why not.
+\begin{solution}
+\begin{freeResponse}
+If such a matrix exists, it must have the form:
+\[
+M = 
+\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}.
+\]
+If 
+\[
+\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}
+\begin{bmatrix}
+0 \\
+0 
+\end{bmatrix} = 
+\begin{bmatrix}
+2 \\
+3
+\end{bmatrix},
+\]
+then 
+\begin{align*}
+a\cdot 0 + b\cdot 0 &= 2\\
+c\cdot 0 + d\cdot 0 &= 3
+\end{align*}
+but this is impossible, therefore there is no such matrix. From this
+we can see that translations mapping $\R^2\to \R^2$ \textbf{cannot} be
+represented as $2\times 2$ matrices. Instead we should represent them
+as column vectors that we add to points. This seeming difference
+between the rigid motions of rotations, relfections, and translations
+will be alleviated later in this course.
+\end{freeResponse}
+\end{solution}
+\end{question}
 
 \begin{exploration}
 Think back to high school days and write the congruence rules SSS,
@@ -121,21 +185,63 @@ that triangles can be \textbf{moved onto each other by a rigid motion}
 if and only if they satisfy any one (and hence all) of the three
 properties (SSS, SAS, ASA).
 \begin{solution}
+Suppose there is a triangle $\triangle ABC$ and another triangle
+$\triangle DEF$. 
+\begin{freeResponse}
+\paragraph*{SSS}
+If there is a single rigid motion that moves
+\begin{align*}
+\bar{AB} &\mapsto \bar{DE}\\
+\bar{BC} &\mapsto \bar{EF}\\
+\bar{CA} &\mapsto \bar{FD},
+\end{align*}
+then this rigid motion moves $\triangle ABC$ to $\triangle DEF$.
+\paragraph*{SAS}
+If there is a single rigid motion that moves
+\begin{align*}
+\bar{AB} &\mapsto \bar{DE}\\
+\angle{ABC} &\mapsto \angle{DEF}\\
+\bar{CA} &\mapsto \bar{FD},
+\end{align*}
+then this rigid motion moves $\triangle ABC$ to $\triangle DEF$.
+\paragraph*{ASA}
+If there is a single rigid motion that moves
+\begin{align*}
+\angle{ABC} &\mapsto \angle{DEF}\\
+\bar{AB} &\mapsto \bar{DE}\\
+\angle{BAC} &\mapsto \angle{EDF},
+\end{align*}
+then this rigid motion moves $\triangle ABC$ to $\triangle DEF$.
+The upshot is that:
+\begin{center}
+\textbf{Congruence theorems are theorems about rigid motions.}
+\end{center}
+\end{freeResponse}
 \end{solution}
 \end{exploration}
 
 \begin{question}
-Give a counterexample to show that there is no universal SSA law.  Can
-you find a restriction that will allow for an ``SSA-type'' law?
+Give an example to show that there is no universal SSA law.
+\begin{solution}
+\begin{freeResponse}
+Consider:
+HERE HERE
+\end{freeResponse}
+\end{solution}
+Can you find a restriction that will allow for an ``SSA-type'' law?
+\begin{solution}
+Perhaps the simplest restriction is forcing the angle to be a right
+angle.
+\end{solution}
 \end{question}
 
 Although it is a bit tedious to show (and we will not ask you to do it
 here), using only E1--E4 you can derive the usual rules for congruent
 triangles (SSS, SAS, ASA). Thus these laws hold in any neutral
-geometry, that is, in any geometry satisfying E1--E4.
+geometry.
 
 \begin{question}
-\label{18} Suppose, in the diagram below that $\left\vert
+\label{18} In the diagram below, we see the intersection of $\bar{BC}$ and $\bar{AE}$. Suppose that $\left\vert
 BD\right\vert =\left\vert CD\right\vert $ and $\left\vert
 AD\right\vert =\left\vert ED\right\vert $.
 \begin{image}
@@ -162,7 +268,9 @@ First you should explain why $\angle BDA = \angle CDE$.
 \begin{hint}
 Next you should use one of the congruence properties above. 
 \end{hint}
-\answer[free-response]{To start, we claim that $\angle BDA = \angle CDE$. Labeling our diagram above, 
+\begin{freeResponse}
+To start, we claim that $\angle BDA = \angle CDE$. Labeling our
+diagram above,
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
 \coordinate (A) at (0,2);
@@ -197,7 +305,8 @@ This means that $\alpha = \gamma$ and hence $\angle BDA = \angle
 CDE$. Since we know that $\left\vert BD\right\vert =\left\vert
 CD\right\vert $ and $\left\vert AD\right\vert =\left\vert
 ED\right\vert $ we may now apply SAS to prove that triangle $\triangle
-BDA$ and triangle $\triangle CDE$ are congruent.}
+BDA$ and triangle $\triangle CDE$ are congruent.
+\end{freeResponse}
 \end{solution}
 \end{question}
 
