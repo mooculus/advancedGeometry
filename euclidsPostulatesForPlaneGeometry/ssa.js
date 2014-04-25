@@ -80,7 +80,7 @@ circleC1.onMouseDrag = function(event) {
 }
 
 
-
+//////////////////////////////////////////////////////
 //function onMouseDrag(event) {
 //	pointB.position = event.point;
 //}
