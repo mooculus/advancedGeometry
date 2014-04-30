@@ -172,7 +172,7 @@ but this is impossible, therefore there is no such matrix. From this
 we can see that translations mapping $\R^2\to \R^2$ \textbf{cannot} be
 represented as $2\times 2$ matrices. Instead we should represent them
 as column vectors that we add to points. This seeming difference
-between the rigid motions of rotations, relfections, and translations
+between the rigid motions of rotations, reflections, and translations
 will be alleviated later in this course.
 \end{freeResponse}
 \end{solution}
@@ -310,7 +310,7 @@ BDA$ and triangle $\triangle CDE$ are congruent.
 \end{solution}
 \end{question}
 
-\begin{question}
+\begin{question}\hfil
 \label{118} 
 \begin{enumerate}
 \item\label{Exp:ExtAngle} Show in neutral geometry that, for $\triangle ABC$
@@ -336,25 +336,190 @@ BDA$ and triangle $\triangle CDE$ are congruent.
 %\draw[step=.5cm] (0,0) grid (10,5);
 \end{tikzpicture}
 \end{image}
-the exterior angle $\epsilon$ of the triangle at $C$ is greater than either remote interior angle $\alpha$ or $\beta$. [MJG,119]
+the exterior angle $\epsilon$ of the triangle at $C$ is greater than
+either remote interior angle $\alpha$ or $\beta$. [MJG,119]
 \item Use \ref{Exp:ExtAngle} to show that the sum of any two angles of a triangle is less than $180^{\circ}$.
 \end{enumerate}
+\begin{solution}
+\begin{hint}
+Add line segments to the diagram above, and attempt to use the
+previous problem.
+\end{hint}
+\begin{freeResponse} 
+For part (a), consider the midpoint of $\bar{BC}$, call it
+$D$. Considering the segment $\bar{AD}$, extend $\bar{AD}$ so that
+it's length is $2\cdot|AD|$ and call the endpoint $E$. After
+constructing $\bar{CE}$, we have the following:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,2);
+\coordinate (B) at (2,5);
+\coordinate (C) at (6.5,2);
+\coordinate (D) at (4.25,3.5);
+\coordinate (E) at (8.5,5);
+\coordinate (F) at (9,2);
+\draw (A)--(B)--(C)--cycle;
+\draw (C)--(F);
+\draw[thin] (A)--(E);
+\draw[thin] (C)--(E);
+\tkzMarkSegments[mark=|](B,D D,C)
+\tkzMarkSegments[mark=||](A,D D,E)
+\tkzLabelPoints[above](B,D,E)
+\tkzLabelPoints[below](A,C)
+\tkzMarkAngle[size=0.5cm,thin](F,C,B)
+\tkzLabelAngle[pos = 0.25](F,C,B){$\epsilon$}
+
+\tkzMarkAngle[size=0.6cm,thin](A,B,C)
+\tkzLabelAngle[pos = 0.35](A,B,C){$\beta$}
+
+\tkzMarkAngle[size=0.6cm,thin](C,A,B)
+\tkzLabelAngle[pos = 0.35](C,A,B){$\alpha$}
+
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+From our previous work, we know that $\beta = \angle ECD$ and from the
+diagram we can see that $\beta < \epsilon$.
+
+Now starting with our original diagram again, consider the midpoint of
+$\bar{AC}$, call it $D'$. Considering the segment $\bar{BD'}$, extend
+$\bar{BD'}$ so that it's length is $2\cdot|BD'|$ and call the endpoint
+$E'$. After constructing $\bar{CE'}$, we have the following:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,2);
+\coordinate (B) at (2,5);
+\coordinate (C) at (6.5,2);
+\coordinate (D') at (3.25,2);
+\coordinate (E') at (4.5,-1);
+\coordinate (F) at (9,2);
+\draw (A)--(B)--(C)--cycle;
+\draw (C)--(F);
+\draw[thin] (B)--(E');
+\draw[thin] (C)--(E');
+\tkzMarkSegments[mark=|](A,D' D',C)
+\tkzMarkSegments[mark=||](B,D' D',E')
+\tkzLabelPoints[above](B)
+\tkzLabelPoints[below](A,C,E')
+\tkzLabelPoints[below right](D')
+\tkzMarkAngle[size=0.5cm,thin](F,C,B)
+\tkzLabelAngle[pos = 0.25](F,C,B){$\epsilon$}
+
+\tkzMarkAngle[size=0.6cm,thin](A,B,C)
+\tkzLabelAngle[pos = 0.35](A,B,C){$\beta$}
+
+\tkzMarkAngle[size=0.6cm,thin](C,A,B)
+\tkzLabelAngle[pos = 0.35](C,A,B){$\alpha$}
+
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+From our previous work, we know that $\alpha = \angle
+D'CE'$. Finally, extend $\bar{BC}$: 
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,2);
+\coordinate (B) at (2,5);
+\coordinate (C) at (6.5,2);
+\coordinate (D') at (3.25,2);
+\coordinate (E') at (4.5,-1);
+\coordinate (F) at (9,2);
+\coordinate (F') at (8.525,.65);
+\draw (A)--(B)--(C)--cycle;
+\draw (C)--(F);
+\draw (C)--(F');
+\draw[thin] (B)--(E');
+\draw[thin] (C)--(E');
+\tkzMarkSegments[mark=|](A,D' D',C)
+\tkzMarkSegments[mark=||](B,D' D',E')
+\tkzLabelPoints[above](B)
+\tkzLabelPoints[below](A,C,E')
+\tkzLabelPoints[below right](D')
+\tkzMarkAngle[size=0.5cm,thin](F,C,B)
+\tkzLabelAngle[pos = 0.25](F,C,B){$\epsilon$}
+
+\tkzMarkAngle[size=0.6cm,thin](A,B,C)
+\tkzLabelAngle[pos = 0.35](A,B,C){$\beta$}
+
+\tkzMarkAngle[size=0.6cm,thin](C,A,B)
+\tkzLabelAngle[pos = 0.35](C,A,B){$\alpha$}
+
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+Hence, we may use vertical angles to conclude that $\alpha <
+\epsilon$.
+
+For part (b), consider:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,2);
+\coordinate (B) at (2,5);
+\coordinate (C) at (6.5,2);
+\coordinate (F) at (9,2);
+\draw (A)--(B)--(C)--cycle;
+\draw (C)--(F);
+\tkzLabelPoints[above](B)
+\tkzLabelPoints[below](A,C)
+\tkzMarkAngle[size=0.5cm,thin](F,C,B)
+\tkzLabelAngle[pos = 0.25](F,C,B){$\epsilon$}
+
+\tkzMarkAngle[size=0.6cm,thin](A,B,C)
+\tkzLabelAngle[pos = 0.35](A,B,C){$\beta$}
+
+\tkzMarkAngle[size=0.6cm,thin](C,A,B)
+\tkzLabelAngle[pos = 0.35](C,A,B){$\alpha$}
+
+\tkzMarkAngle[size=0.9cm,thin](B,C,A)
+\tkzLabelAngle[pos = 0.7](B,C,A){$\gamma$}
+
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+Write
+\[
+\alpha + \gamma < \epsilon + \gamma = 180^\circ.
+\]
+In a similar fashion,
+\[
+\beta + \gamma < \epsilon + \gamma  = 180^\circ.
+\]
+To consider $\alpha+\beta$, we should repeat the argument from part
+(a) again with the exterior angle at $A$. From this we will see
+$\alpha + \beta < 180^\circ$.
+\end{freeResponse}
+\end{solution}
 \end{question}
 
-\begin{exploration}
+\begin{question}
 Show in \textbf{NG} that, if two lines cut by a transversal line have
 a pair of congruent alternate interior angles, then they are
 parallel. [MJG,117]
+\begin{solution}
+\begin{hint}
+Suppose the assertion is false for some pair of lines. Find a triangle
+that violates the conclusion of the previous question.
+\end{hint}
+Seeking a contradiction, consider the following diagram with
+nonparallel lines $\l$ and $m$:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (m) at (0,2);
+\coordinate (l) at (0,5);
+\coordinate (E) at (8,2);
+\coordinate (F) at (9,2);
+\draw (l)--(E);
+\draw (m)--(F);
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+HERE HERE see image
 
-Hint: Suppose the assertion is false for some pair of lines. Find a
-triangle that violates the conclusion of Exercise \ref{118}
-part \ref{Exp:ExtAngle}.
-\end{exploration}
-
-
-
-
-
+From the diagram we have $\epsilon + \beta = 180^\circ$.  Since we are
+assuming that alternate interior angles are congruent, we see that
+$\alpha+\beta = 180^\circ$. This is a contradiction.
+\end{solution}
+\end{question}
 
 
 
@@ -368,11 +533,11 @@ part \ref{Exp:ExtAngle}.
 For many centuries, mathematicians attempted to prove that the sum of
 the angles in a triangle was $180^{\circ}$ using only E1--E4. However,
 the discovery of \textit{hyperbolic geometry} about two centuries ago,
-proved this to be a futile pursuite. The thing that separates
+proved this to be a futile pursuit. The thing that separates
 hyperbolic geometry from Euclidean (plane) geometry is the sum of
 the angles in a triangle. (If you had a good geometry course in high
 school, you may remember that you had to use Euclid's fifth axiom in
-order to show that the sum of the angles in a triagle was
+order to show that the sum of the angles in a triangle was
 $180^{\circ}.$ But more on that later.)
 
 There is one important fact about the sum of the angles in a triangle that you
