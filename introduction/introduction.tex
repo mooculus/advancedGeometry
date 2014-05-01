@@ -112,48 +112,40 @@ the letters `\textbf{HG}' will always mean Hyperbolic Geometry. One further
 kind of geometry, which we call Neutral Geometry, will be explained in the
 book and denoted by `\textbf{NG}.'
 
-Also, it will often be useful to consider a vector, for example, $V=\left(
-a,b,c\right)  $, as a $1\times3$ matrix and we will write%
+Also, it will often be useful to consider a vector, for example
+$V=\left(a,b,c\right)$, as a $3\times1$ matrix
 \[
-V  =\left[
-\begin{array}
-[c]{ccc}%
-a & b & c
-\end{array}
-\right]
-\]
-or as a $3\times1$ matrix and we will write%
-\[
-V^\transpose=\left[
-\begin{array}
-[c]{c}%
+V  =
+\begin{bmatrix}
 a\\
 b\\
 c
-\end{array}
-\right].
+\end{bmatrix}
 \]
-This will allow us, for example, to write the scalar product of two vectors%
+with
+\[
+V^\transpose=
+\begin{bmatrix}
+a & b & c
+\end{bmatrix}.
+\]
+This will allow us to write the scalar product of two vectors%
 \begin{align*}
-V\bullet V^{\prime}  &  =\left(  a,b,c\right)  \bullet\left(  a^{\prime
-},b^{\prime},c^{\prime}\right) \\
-&  =aa^{\prime}+bb^{\prime}+cc^{\prime}%
+V\bullet W  &  =\left(  a,b,c\right)  \bullet\left(d,e,f\right) \\
+&  =ad+be+cf%
 \end{align*}
 as a product of matrices%
 \[
-V\cdot V^{\prime}=\left[
-\begin{array}
-[c]{ccc}%
+V^\transpose\cdot W=
+\begin{bmatrix}
 a & b & c
-\end{array}
-\right]  \cdot\left[
-\begin{array}
-[c]{c}%
-a^{\prime}\\
-b^{\prime}\\
-c^{\prime}%
-\end{array}
-\right].
+\end{bmatrix} 
+\cdot
+\begin{bmatrix}
+d\\
+e\\
+f
+\end{bmatrix}.
 \]
 
 
