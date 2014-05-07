@@ -15,7 +15,8 @@ geometries.
 
 
 
-\subsection*{Neutral geometry}
+\section*{Neutral geometry}
+
 
 %% We first turn our attention to plane (or `flat') two-dimensional
 %% geometry.
@@ -505,6 +506,7 @@ parallel. [MJG,117]
 Suppose the assertion is false for some pair of lines. Find a triangle
 that violates the conclusion of the previous question.
 \end{hint}
+\begin{freeResponse}
 Seeking a contradiction, consider the following diagram with
 nonparallel lines $\l$ and $m$:
 \begin{image}
@@ -531,14 +533,16 @@ nonparallel lines $\l$ and $m$:
 \tkzMarkAngle[size=0.5cm,thin](G,H,C)
 \tkzLabelAngle[pos = -0.3](G,H,C){$\alpha$}
 
+\tkzMarkAngle[size=0.5cm,thin](B,H,E)
+\tkzLabelAngle[pos = 0.3](B,H,E){$\beta$}
+
 %\draw[thin,step=.5cm] (0,0) grid (10,5);
 \end{tikzpicture}
 \end{image}
-HERE HERE see image
-
-From the diagram we have $\epsilon + \beta = 180^\circ$.  Since we are
-assuming that alternate interior angles are congruent, we see that
-$\alpha+\beta = 180^\circ$. This is a contradiction.
+From the diagram we have $\alpha + \beta = 180^\circ$. This is a
+contradiction since the sum of any two interior angles of a triangle
+is always less than $180^\circ$ in \textbf{NG}.
+\end{freeResponse}
 \end{solution}
 \end{question}
 
@@ -548,18 +552,18 @@ $\alpha+\beta = 180^\circ$. This is a contradiction.
 
 
 
-\subsection*{Sum of angles in a triangle in NG}
+\section*{Sum of angles in a triangle in NG}
 
 
 For many centuries, mathematicians attempted to prove that the sum of
 the angles in a triangle was $180^{\circ}$ using only E1--E4. However,
 the discovery of \textit{hyperbolic geometry} about two centuries ago,
 proved this to be a futile pursuit. The thing that separates
-hyperbolic geometry from Euclidean (plane) geometry is the sum of
-the angles in a triangle. (If you had a good geometry course in high
+hyperbolic geometry from Euclidean (plane) geometry is the sum of the
+angles in a triangle. If you had a good geometry course in high
 school, you may remember that you had to use Euclid's fifth axiom in
 order to show that the sum of the angles in a triangle was
-$180^{\circ}.$ But more on that later.)
+$180^{\circ}$, but more on that later.
 
 There is one important fact about the sum of the angles in a triangle that you
 \textit{can} prove in \textbf{NG}, that is, without invoking Euclid's fifth
@@ -584,6 +588,65 @@ sum of the angles in $\triangle ACB$
 %\draw[step=.5cm] (0,0) grid (10,5);
 \end{tikzpicture}
 \end{image}
+
+\begin{solution}
+\begin{hint}
+Use the previous problems.
+\end{hint}
+\begin{freeResponse}
+By our previous work we see $\triangle ADB \cong \triangle EDC$. Hence we have:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,2);
+\coordinate (B) at (2,5);
+\coordinate (C) at (6.5,.5);
+\coordinate (E) at (8,4);
+\coordinate (D) at (4,3);
+\draw (A)--(B)--(C)--(E)--(D)--cycle;
+\draw (A)--(C);
+\tkzMarkSegments[mark=|](B,D D,C)
+\tkzMarkSegments[mark=||](A,D D,E)
+\tkzLabelPoints[above](B,D,E)
+\tkzLabelPoints[below](A,C)
+
+\tkzMarkAngle[size=0.7cm,thin](D,A,B)
+\tkzLabelAngle[pos = 0.5](D,A,B){$\alpha$}
+
+\tkzMarkAngle[size=0.6cm,thin](A,B,D)
+\tkzLabelAngle[pos = 0.4](A,B,D){$\beta$}
+
+\tkzMarkAngle[size=0.6cm,thin](B,D,A)
+\tkzLabelAngle[pos = -0.4](B,D,A){$\gamma$}
+
+\tkzMarkAngle[size=0.7cm,thin](D,E,C)
+\tkzLabelAngle[pos = 0.5](D,E,C){$\alpha$}
+
+\tkzMarkAngle[size=0.6cm,thin](E,C,D)
+\tkzLabelAngle[pos = 0.4](E,C,D){$\beta$}
+
+\tkzMarkAngle[size=0.6cm,thin](C,D,E)
+\tkzLabelAngle[pos = 0.4](B,D,A){$\gamma$}
+
+\tkzMarkAngle[size=1cm,thin](C,A,D)
+\tkzLabelAngle[pos = 0.8](C,A,D){$\delta$}
+
+\tkzMarkAngle[size=1cm,thin](D,C,A)
+\tkzLabelAngle[pos = 0.8](D,C,A){$\epsilon$}
+
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+So we see that the sum of the interior angles of $\triangle ACE$ is
+\[
+\delta+\beta+\epsilon+\alpha.
+\]
+On the other hand, the sum of the interior angles of $\triangle ACB$ is 
+\[
+\alpha+\delta+\epsilon+\beta.
+\]
+The sums are equal since addition is commutative. 
+\end{freeResponse}
+\end{solution}
 \end{question}
 
 \begin{question}\label{22} 
