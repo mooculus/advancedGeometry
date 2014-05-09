@@ -18,6 +18,7 @@ geometries.
 \section*{Neutral geometry}
 
 
+
 %% We first turn our attention to plane (or `flat') two-dimensional
 %% geometry.
 
@@ -559,7 +560,7 @@ For many centuries, mathematicians attempted to prove that the sum of
 the angles in a triangle was $180^{\circ}$ using only E1--E4. However,
 the discovery of \textit{hyperbolic geometry} about two centuries ago,
 proved this to be a futile pursuit. The thing that separates
-hyperbolic geometry from Euclidean (plane) geometry is the sum of the
+hyperbolic geometry from euclidean (plane) geometry is the sum of the
 angles in a triangle. If you had a good geometry course in high
 school, you may remember that you had to use Euclid's fifth axiom in
 order to show that the sum of the angles in a triangle was
@@ -650,12 +651,28 @@ The sums are equal since addition is commutative.
 \end{question}
 
 \begin{question}\label{22} 
-Suppose that there is a triangle $\triangle ABC$ in
-\textbf{NG} for which the sum of the angles in a triangle $\triangle ABC$ is
-$\left( 180+x\right)^\circ$ with $x>0$. Construct a new triangle,
-$\triangle ACE$ such that the sum of the angles in a triangle is still
-$\left( 180+x\right)^\circ$, but one of the angles of $\triangle ACE$
-is no more than half the size of $\angle BAC$.
+Suppose that there is a triangle $\triangle ABC$ in \textbf{NG} for
+which the sum of the angles in a triangle $\triangle ABC$ is
+$\Delta^\circ$. Construct a new triangle, $\triangle ACE$ such that
+the sum of the angles in a triangle is still $\Delta^\circ$, but one
+of the angles of $\triangle ACE$ is no more than half the size of
+$\angle CAB$.
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,2);
+\coordinate (B) at (2,5);
+\coordinate (C) at (6.5,.5);
+\draw (A)--(B)--(C)--cycle;
+
+\tkzLabelPoints[above](B)
+\tkzLabelPoints[below](A,C)
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+
+
+\begin{solution}
+\begin{hint} Consider the following additions to our diagram above:
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
 \coordinate (A) at (0,2);
@@ -673,38 +690,91 @@ is no more than half the size of $\angle BAC$.
 \tkzMarkAngle[size=1cm,thin](D,A,B)
 \tkzLabelAngle[pos = 0.6](D,A,B){$\alpha_1$}
 
+\tkzMarkAngle[size=1cm,thin](D,E,C)
+\tkzLabelAngle[pos = 0.6](D,E,C){$\alpha_1$}
+
 \tkzMarkAngle[size=1.2cm,thin](C,A,D)
 \tkzLabelAngle[pos = 0.7](C,A,D){$\alpha_2$}
+
+\tkzMarkAngle[size=1.5cm,thin,arc=ll](C,A,B)
 %\draw[step=.5cm] (0,0) grid (10,5);
 \end{tikzpicture}
 \end{image}
 Be sure to carefully explain how points $D$ and $E$ are constructed.
-Note: Despite the diagram above, this new `smaller' angle may or may
-not have vertex $A$. [MJG,125-127]
+%% Note: Despite the diagram above, this new `smaller' angle may or may
+%% not have vertex $A$. [MJG,125-127]
+\end{hint}
+\begin{freeResponse}
+Start like we have before, first find the midpoint of $\bar{BC}$ and
+call it $D$. Next, construct a segment $\bar{AD}$, and double its
+length to obtain point $E$. By our previous work, we now have the
+following diagram:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,2);
+\coordinate (B) at (2,5);
+\coordinate (C) at (6.5,.5);
+\coordinate (E) at (8,4);
+\coordinate (D) at (4,3);
+
+\draw (A)--(B)--(C)--cycle;
+\draw[thin] (A)--(E)--(C);
+
+\tkzLabelPoints[above](B,D,E)
+\tkzLabelPoints[below](A,C)
+
+\tkzMarkAngle[size=1cm,thin](D,A,B)
+\tkzLabelAngle[pos = 0.6](D,A,B){$\alpha_1$}
+
+\tkzMarkAngle[size=1cm,thin](D,E,C)
+\tkzLabelAngle[pos = 0.6](D,E,C){$\alpha_1$}
+
+\tkzMarkAngle[size=1.2cm,thin](C,A,D)
+\tkzLabelAngle[pos = 0.7](C,A,D){$\alpha_2$}
+
+\tkzMarkAngle[size=1.5cm,thin,arc=ll](C,A,B)
+
+\tkzMarkSegments[mark=|](B,D D,C)
+\tkzMarkSegments[mark=||](A,D D,E)
+
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+Hence we see that one of $\alpha_1$ or $\alpha_2$ is at most half of
+$\angle CAB$. Since $\triangle ACE$ contains both of these angles, we
+have completed the proof.
+\end{freeResponse}
+\end{solution}
 \end{question}
 
-\begin{question}
-\label{21} Suppose that there is a triangle $\triangle ABC$ in
-\textbf{NG} for which the sum of the angles in a triangle $\triangle ABC$ is
-$\left( 180+x\right)^\circ$ with $x>0$. Let $\alpha$ denote the
-measure of $\angle BAC$. Repeat the construction in Question \ref{22}
-over and over again $n$-times to construct a triangle with the sum of
-its angles still equal to $\left( 180+x\right)^\circ$ but such that
-one of its angles has size less than%
-\[
-\frac{1}{2^{n}}\alpha.
-\]
-\end{question}
+%% \begin{question}
+%% \label{21} Suppose that there is a triangle $\triangle ABC$ in
+%% \textbf{NG} for which the sum of the angles in a triangle $\triangle ABC$ is
+%% $\left( 180+x\right)^\circ$ with $x>0$. Let $\alpha$ denote the
+%% measure of $\angle BAC$. Repeat the construction in Question \ref{22}
+%% over and over again $n$-times to construct a triangle with the sum of
+%% its angles still equal to $\left( 180+x\right)^\circ$ but such that
+%% one of its angles has size less than%
+%% \[
+%% \frac{1}{2^{n}}\alpha.
+%% \]
+%% \end{question}
 
 \begin{question}
 \label{121} Suppose that there is a triangle $\triangle ABC$ in
-\textbf{NG} for which the sum of the angles in a triangle $\triangle ABC$ is
-$\left( 180+x\right)^\circ$ with $x>0$. Show that there is a positive
-integer $n$ so that, if you repeat the construction in
-Question \ref{22} over and over again $n$-times, the result will be a
-triangle with the sum of its angles still equal to $\left(
-180+x\right)^\circ$ but with one of its angles having measure less
-than $x$. [MJG,125-127]
+\textbf{NG} for which the sum of the angles in a triangle $\triangle
+ABC$ is $\left( 180+x\right)^\circ$ with $x>0$. Show that there is a
+positive integer $n$ so that, if you repeat the construction in the
+previous question over and over again $n$-times, a triangle can be
+found with sum of its angles still equal to $\left(180+x\right)^\circ$
+but with one of its angles having measure less than $x$. [MJG,125-127]
+
+\begin{solution}
+\begin{hint}
+\end{hint}
+\begin{freeRepsonse}
+\end{freeRepsonse}
+\end{solution}
 \end{question}
 
 
