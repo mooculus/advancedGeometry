@@ -771,16 +771,42 @@ but with one of its angles having measure less than $x$. [MJG,125-127]
 
 \begin{solution}
 \begin{hint}
+Explain how we can construct a triangle where the sum of the interior
+angles is $(180+x)^\circ$ but one of this triangles measures is less than
+\[
+\frac{\angle CAB}{2^n}.
+\]
 \end{hint}
-\begin{freeRepsonse}
-\end{freeRepsonse}
+\begin{hint}
+Next, use the fact that for any positive real number $M$,
+\[
+\lim_{n\to \infty}\frac{M}{2^n} = 0.
+\]
+\end{hint}
+\begin{freeResponse}
+By our previous problem we can always find a new triangle with the
+same interior angle sum such that one of its angles is less than half
+of a given angle, say $\angle CAB$. Repeating this construction $n$
+times, we find a new triangle with one of its angles less than or
+equal to
+\[
+\frac{\angle CAB}{2^n}.
+\]
+Since 
+\[
+\lim_{n\to \infty}\frac{\angle CAB}{2^n} = 0,
+\]
+we can find $n$ large enough to make the new angle arbitrarily small, in
+particular we can make it less than $x$.
+\end{freeResponse}
 \end{solution}
 \end{question}
 
 
-On the other hand, by Question \ref{118} (b), you cannot have a
-triangle with two angles summing to more than $180^\circ$. Hence, from
-our work above, we can prove the following theorem:
+On the other hand, by our previous work%by Question \ref{118} (b), 
+you cannot have a triangle with two angles summing to more than
+$180^\circ$. Hence, from our work above, we can prove the following
+theorem:
 
 \begin{theorem}
 In \textbf{NG}, the sum of the interior angles in any triangle is no greater
@@ -788,38 +814,50 @@ than $180^\circ$.
 \end{theorem}
 
 \begin{proof}
-We argue by contradiction. Start with $\triangle ABC$ as in Question \ref{22}
-for which the sum of the angles in a triangle $\triangle ABC$ is $\left(
-180+x\right)^\circ$ with $x>0$. Suppose the measure of the angle at $A$ is denoted by $\alpha$.
-By Question \ref{22} there exists a triangle $\triangle A^{\left(  1\right)
-}B^{\left(  1\right)  }C^{\left(  1\right)  }$ such that the sum of the angles
-in a triangle $\triangle A^{\left(  1\right)  }B^{\left(  1\right)
-}C^{\left(  1\right)  }$ is $\left(  180+x\right)^\circ$ and the measure of the angle at the vertex $A^{\left(  1\right)  }$ is less
-than or equal to $\frac{\alpha}{2}$. By Question \ref{21} there is a triangle
-$\triangle A^{\left(  n\right)  }B^{\left(  n\right)  }C^{\left(  n\right)  }$
-such that the sum of the angles in a triangle $\triangle A^{\left(  n\right)
-}B^{\left(  n\right)  }C^{\left(  n\right)  }$ is $\left(  180+x\right)^\circ$ and the measure $\alpha_{n}$ of the angle at the vertex $A^{\left(
-n\right)  }$ is less than or equal to $\frac{\alpha}{2^{n}}$. If $n$ is
-sufficiently big,%
+Seeking a contradiction, suppose there exists a triangle $\triangle
+ABC$ where the sum of the interior angles is 
 \[
-\frac{\alpha}{2^{n}}<x.
+\left(180+x\right)^\circ
 \]
-So, for that value of $n$, if $\beta_{n}$ is the measure of the angle of
-$\triangle A^{\left(  n\right)  }B^{\left(  n\right)  }C^{\left(  n\right)  }$
-at the vertex $B^{\left(  n\right)  }$ and $\gamma_{n}$ is the measure of the
-angle of $\triangle A^{\left(  n\right)  }B^{\left(  n\right)  }C^{\left(
-n\right)  }$ at the vertex $C^{\left(  n\right)  }$, then we have the two
-relations%
-\begin{gather*}
-\alpha_{n}<\frac{\alpha}{2^{n}}<x\\
-\alpha_{n}+\beta_{n}+\gamma_{n}=180+x.
-\end{gather*}
+with $x>0$. We have seen that we can construct triangle $\triangle
+A'B'C'$ such that the sum of the interior angles is $(180+x)^\circ$,
+and if $\alpha'$, $\beta'$, $\gamma'$ are the measures of the angles
+at $A'$, $B'$, and $C'$ respectively, we can ensure 
+\[
+\alpha' < x.
+\]
+We now have two relations:
+\begin{align*}
+\alpha' + \beta' + \gamma' &= 180 + x,\\
+\alpha' &< x.
+\end{align*}
 So%
-\[
-\beta_{n}+\gamma_{n}=180+\left(  x-\alpha_{n}\right)  >180.
-\]
-But this is impossible by Question \ref{118} (b).
+\begin{align*}
+\beta'+\gamma'&=180+\left(x-\alpha'\right)\\
+&>180.
+\end{align*}
+As we have seen, this is impossible as two interior angles of a
+triangle cannot sum to be greater than $180^\circ$.
 \end{proof}
+
+\begin{question}
+Considering the proof above, give a sketch of the proof. This means
+you should state major steps, but exclude the details.
+\begin{solution}
+\begin{freeResponse}
+  \begin{enumerate}
+  \item Seek a contradiction and start with a triangle whose
+    interior angles sum to $(180+x)^\circ$ where $x>0$.
+  \item Construct a triangle whose interior angles sum to
+    $(180+x)^\circ$, and one angle is less than $x$.
+  \item Now find two interior angles whose sum is greater than
+    $180^\circ$.
+  \end{enumerate}
+\end{freeResponse}
+\end{solution}
+\end{question}
+
+
 
 \begin{question}
 Show the following:
@@ -828,5 +866,14 @@ Show the following:
 \item The sum of the interior angles of an $n$-gon is no greater than
 $\left( n-2\right)\cdot180^\circ$.
 \end{enumerate}
+\begin{solution}
+\begin{hint}
+Given any quadrilateral, we can break it into two triangles. 
+\end{hint}
+\begin{freeResponse}
+Given any quadrilateral, even a nonconvex quadrilateral, we can break
+it into two triangles by connecting appropriate opposite vertices.
+\end{freeResponse}
+\end{solution}
 \end{question}
 \end{document}
