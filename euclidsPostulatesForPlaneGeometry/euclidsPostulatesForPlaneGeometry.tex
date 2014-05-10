@@ -589,7 +589,6 @@ sum of the angles in $\triangle ACB$
 %\draw[step=.5cm] (0,0) grid (10,5);
 \end{tikzpicture}
 \end{image}
-
 \begin{solution}
 \begin{hint}
 Use the previous problems.
@@ -870,12 +869,102 @@ $\left( n-2\right)\cdot180^\circ$.
 \begin{hint}
 Given any quadrilateral, we can break it into two triangles. 
 \end{hint}
+\begin{hint}
+For the second part, use induction.
+\end{hint}
 \begin{freeResponse}
-Given any quadrilateral, even a nonconvex quadrilateral, we can break
-it into two triangles by connecting appropriate opposite vertices.
+For the first part, we note that given any quadrilateral, even a
+nonconvex quadrilateral, we can break it into two triangles by
+connecting appropriate opposite vertices:
 \begin{image}
-HERE
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (2,5);
+\coordinate (B) at (.5,0);
+\coordinate (C) at (2.5,2.5);
+\coordinate (D) at (6,2);
+\draw (A)--(B)--(C)--(D)--cycle;
+\draw[thin,dashed] (A)--(C);
+%\draw[step=.5cm,thin] (0,0) grid (10,5);
+\end{tikzpicture}
 \end{image}
+Labeling angles, we see:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (2,5);
+\coordinate (B) at (.5,0);
+\coordinate (C) at (2.5,2.5);
+\coordinate (D) at (6,2);
+\draw (A)--(B)--(C)--(D)--cycle;
+\draw[thin,dashed] (A)--(C);
+
+\tkzMarkAngle[size=1.1cm,thin](B,A,C)
+\tkzLabelAngle[pos = 0.8](B,A,C){$\alpha$}
+
+\tkzMarkAngle[size=1.2cm,thin](C,B,A)
+\tkzLabelAngle[pos = 0.8](C,B,A){$\beta$}
+
+\tkzMarkAngle[size=.5cm,thin](A,C,B)
+\tkzLabelAngle[pos = -0.3](A,C,B){$\gamma$}
+
+\tkzMarkAngle[size=1.2cm,thin](C,A,D)
+\tkzLabelAngle[pos = 0.8](C,A,D){$\alpha'$}
+
+\tkzMarkAngle[size=1.3cm,thin](A,D,C)
+\tkzLabelAngle[pos = 1](A,D,C){$\beta'$}
+
+\tkzMarkAngle[size=.6cm,thin](D,C,A)
+\tkzLabelAngle[pos = 0.3](D,C,A){$\gamma'$}
+%\draw[step=.5cm,thin] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+Now we have that the sum of the interior angles of this quadrilateral
+is
+\begin{align*}
+\alpha + \beta + \gamma + \alpha'+\beta' + \gamma' &< 180^\circ + 180^\circ\\
+&= 360^\circ. 
+\end{align*}
+
+For the second part, we will use induction on the number of sides of
+the $n$-gon. If $n=3$, then our assertion holds, the sum of the interior angles is no greater than 
+\[
+180^\circ = (3-2) \cdot 180^\circ. 
+\]
+
+Now suppose that our assertion holds for $(n-1)$-gons. We must show
+that it holds for $n$-gons. Given any $n$-gon, we can remove a
+``triangle'' as shown in the diagram below:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (3.5,4.5);
+\coordinate (B) at (3,3);
+\coordinate (C) at (0.5,2.5);
+\coordinate (D) at (3,2);
+\coordinate (E) at (2,0.5);
+\coordinate (F) at (4.5,1);
+\coordinate (G) at (6,2);
+\coordinate (H) at (8,1);
+\coordinate (I) at (9,3);
+\coordinate (J) at (6.5,3.5);
+\coordinate (K) at (6.5,4.5);
+\coordinate (L) at (5,4);
+
+\coordinate (sum1) at (4.5,2.5);
+\coordinate (sum2) at (8,2.5);
+
+\draw (A)--(B)--(C)--(D)--(E)--(F)--(G)--(H)--(I)--(J)--(K)--(L)--cycle;
+\draw[thin,dashed] (H)--(J);
+%\draw[step=.5cm,thin] (0,0) grid (10,5);
+
+\node at (sum1) {$\le((n-1)-2)\cdot 180^\circ$};
+\node at (sum2) {$\le 180^\circ$};
+\end{tikzpicture}
+\end{image}
+Now we may add the maximum values for the sum of the interior angles
+to find that the sum of the interior angles of an $n$-gon is no
+greater than
+\[
+((n-1)-2)\cdot 180^\circ + 180^\circ = (n-2)\cdot 180^\circ.
+\]
 \end{freeResponse}
 \end{solution}
 \end{question}
