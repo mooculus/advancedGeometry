@@ -8,7 +8,7 @@
 \title{Rectangles and cartesian coordinates}
 \begin{document}
 \begin{abstract}
-In this activity we explore some consequences of Euclid's fifth axiom.
+In this activity, we explore some consequences of Euclid's fifth axiom.
 \end{abstract}
 \maketitle
 
@@ -32,11 +32,49 @@ less than $180^\circ$! [MJG,134]
 
 \begin{question}
 \label{24} Show that, if two parallel lines are cut by a
-transversal line, opposite interior angles are equal.
+transversal line, alternate interior angles are equal.
 \begin{solution}
 \begin{hint}
 Draw a picture and seek a contradiction.
 \end{hint}
+\begin{freeResponse}
+Seeking a contradiction, suppose that we have two parallel lines $\l$
+and $m$ cut by a transversal line where the alternate interior angles are
+not equal:
+
+USE GEOGEBRA
+
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,4);
+\coordinate (B) at (10,4);
+\coordinate (C) at (0,1);
+\coordinate (D) at (10,1);
+\coordinate (E) at (3.833,5);
+\coordinate (F) at (2.166,0);
+\coordinate (G) at (2,4);
+\coordinate (H) at (2,1);
+\draw (A)--(B);
+\draw (C)--(D);
+\draw[thin] (E)--(F);
+
+\node[above] at (A) {$\l$};
+\node[above] at (C) {$m$};
+
+
+\tkzMarkAngle[size=0.6cm,thin](F,G,B)
+\tkzLabelAngle[pos = 0.4](F,G,B){$\alpha$}
+
+\tkzMarkAngle[size=0.5cm,thin](G,H,C)
+\tkzLabelAngle[pos = -0.3](G,H,C){$\alpha$}
+
+\tkzMarkAngle[size=0.5cm,thin](B,H,E)
+\tkzLabelAngle[pos = 0.3](B,H,E){$\beta$}
+
+\draw[thin,step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+\end{freeResponse}
 \end{solution}
 \end{question}
 
