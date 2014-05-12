@@ -8,7 +8,8 @@
 \title{Rectangles and cartesian coordinates}
 \begin{document}
 \begin{abstract}
-In this activity, we explore some consequences of Euclid's fifth axiom.
+In this activity, we explore some consequences of Euclid's fifth
+axiom.
 \end{abstract}
 \maketitle
 
@@ -31,49 +32,75 @@ the sum of the interior angles of a triangle will \textit{always} be
 less than $180^\circ$! [MJG,134]
 
 \begin{question}
-\label{24} Show that, if two parallel lines are cut by a
-transversal line, alternate interior angles are equal.
+\label{24} Show that if two parallel lines are cut by a
+transversal line, then alternate interior angles are equal.
 \begin{solution}
 \begin{hint}
 Draw a picture and seek a contradiction.
 \end{hint}
 \begin{freeResponse}
-Seeking a contradiction, suppose that we have two parallel lines $\l$
-and $m$ cut by a transversal line where the alternate interior angles are
-not equal:
-
-USE GEOGEBRA
-
+Seeking a contradiction, suppose that we have two parallel lines cut
+by a transversal line where the alternate interior angles are not
+equal:
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
-\coordinate (A) at (0,4);
-\coordinate (B) at (10,4);
-\coordinate (C) at (0,1);
-\coordinate (D) at (10,1);
-\coordinate (E) at (3.833,5);
-\coordinate (F) at (2.166,0);
-\coordinate (G) at (2,4);
-\coordinate (H) at (2,1);
+\coordinate (A) at (0,4.5);
+\coordinate (B) at (10,4.5);
+\coordinate (C) at (0,1.5);
+\coordinate (D) at (10,1.5);
+\coordinate (E) at (1.5,0);
+\coordinate (F) at (3.5,6);
+\coordinate (G) at (2,1.5);
+\coordinate (H) at (3,4.5);
 \draw (A)--(B);
 \draw (C)--(D);
 \draw[thin] (E)--(F);
 
-\node[above] at (A) {$\l$};
-\node[above] at (C) {$m$};
+\tkzMarkAngle[size=0.6cm,thin](D,G,H)
+\tkzLabelAngle[pos = 0.4](D,G,H){$\alpha$}
+
+\tkzMarkAngle[size=0.5cm,thin](A,H,G)
+\tkzLabelAngle[pos = -0.3](A,H,G){$\epsilon$}
 
 
-\tkzMarkAngle[size=0.6cm,thin](F,G,B)
-\tkzLabelAngle[pos = 0.4](F,G,B){$\alpha$}
-
-\tkzMarkAngle[size=0.5cm,thin](G,H,C)
-\tkzLabelAngle[pos = -0.3](G,H,C){$\alpha$}
-
-\tkzMarkAngle[size=0.5cm,thin](B,H,E)
-\tkzLabelAngle[pos = 0.3](B,H,E){$\beta$}
-
-\draw[thin,step=.5cm] (0,0) grid (10,5);
+%\draw[thin,step=.5cm] (0,0) grid (10,5);
 \end{tikzpicture}
 \end{image}
+Without loss of generality, we may assume that $\epsilon<
+\alpha$. From the vertex of the angle with measure $\epsilon$, add a
+new line that crosses the tranversal line with angle $\alpha$. By E5,
+this new line must cross the lower of the parallel lines:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,4.5);
+\coordinate (B) at (10,4.5);
+\coordinate (C) at (0,1.5);
+\coordinate (D) at (10,1.5);
+\coordinate (E) at (1.5,0);
+\coordinate (F) at (3.5,6);
+\coordinate (G) at (2,1.5);
+\coordinate (H) at (3,4.5);
+\coordinate (I) at (0,5.79);
+\draw (A)--(B);
+\draw (C)--(D);
+\draw[thin] (E)--(F);
+\draw[thin,dashed] (I)--(D);
+
+\tkzMarkAngle[size=0.6cm,thin](D,G,H)
+\tkzLabelAngle[pos = 0.4](D,G,H){$\alpha$}
+
+\tkzMarkAngle[size=0.5cm,thin](I,H,G)
+\tkzLabelAngle[pos = -0.3](I,H,G){$\alpha$}
+
+\tkzMarkAngle[size=0.5cm,thin](G,H,D)
+\tkzLabelAngle[pos = 0.3](G,H,D){$\beta$}
+
+%\draw[thin,step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+Now we have constructed a triangle where two angle sum to $180^\circ$,
+as we have seen, this is impossible. Hence if two parallel lines are
+cut by a transversal line, then alternate interior angles are equal.
 \end{freeResponse}
 \end{solution}
 \end{question}
@@ -90,27 +117,34 @@ parallel lines and they both lie on the same side of the transversal
 line passing through their origins.
 \end{definition}
 
-Strictly speaking, an angle in the plane is the union of two ordered
+\begin{definition} An \textbf{angle} in the plane is the union of two ordered
 rays with common origin and choice of one of the two connected regions
 into which the union of the rays divides the plane. We often denote
 angles by $\angle BAC$ where $A$ is the common origin and $B$ a point
 along one of the rays, called the initial ray, and $C$ is a point
-along the other ray, called the final ray.  The choice of the region
-is either clear from the context or explicitly given.
+along the other ray, called the final ray.
+\end{definition}
 
-\begin{question}\hfil
-\begin{enumerate}
-\item Given an angle $\angle BAC$ show by drawings the two regions
-  into which it divides the plane. Show how the (signed) measure of
-  the angle depends on which region you pick and on which is the
-  initial ray and which is the final ray of the angle.
-\item Show that angles $\angle BAC$ and $\angle B'A'C'$ in the
+
+The choice of the region is either clear from the context or
+explicitly given.
+
+\begin{question}
+Given an angle $\angle BAC$ show by drawings the two regions into
+which it divides the plane. Show how the (signed) measure of the angle
+depends on which region you pick and on which is the initial ray and
+which is the final ray of the angle.
+\begin{solution}
+\end{solution}
+\end{question}
+
+\begin{question}
+Show that angles $\angle BAC$ and $\angle B'A'C'$ in the
   euclidean plane are equal (have the same measure) if corresponding
   rays are parallel. Hence if $\angle B'A'C'$ can be rotated around
   $A'$ to obtain an angle $\angle B''A'C''$ with corresponding rays
   parallel to those of $\angle BAC$, then $\angle BAC$ and $\angle
   B'A'C'$ are equal.
-\end{enumerate}
 \begin{solution}
 \end{solution}
 \end{question}

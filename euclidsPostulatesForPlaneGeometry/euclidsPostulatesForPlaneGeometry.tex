@@ -1,4 +1,4 @@
-\documentclass{ximera}
+\documentclass[handout]{ximera}
 
 \input{../preamble.tex}
 
@@ -57,12 +57,12 @@ direction, you will encounter a unique point at distance $r$ from $P$.
 \end{axiom}
 
 \begin{axiom}[E4]
-All right angles are congruent. 
+All right angles are congruent.
 
 Note: A right angle is defined as follows. Let $C$ be the midpoint on
 the segment $\bar{AB}$. Let $E$ be any point not equal to
 $C$. The angle $\angle ACE$ is called a right angle if $\angle ACE$ is
-congruent to $\angle BCE$. [MJG,17-18]
+congruent to $\angle ECB$. [MJG,17-18]
 \end{axiom}
 
 \begin{definition}
@@ -228,13 +228,30 @@ Give an example to show that there is no universal SSA law.
 \begin{solution}
 \begin{freeResponse}
 Consider:
-HERE HERE
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (1.28,2.72);
+\coordinate (Asub) at (3.22,0.78);
+\coordinate (B) at (0.5,0);
+\coordinate (C) at (4,0);
+\draw (A)--(B);
+\draw (B)--(C);
+\draw[dashed] (C)--(A);
+\draw (Asub)--(B);
+
+\tkzMarkSegments[mark=|](A,B Asub,B)
+\tkzMarkSegments[mark=||](B,C)
+
+\tkzMarkAngle[size=0.5cm,thin](A,C,B)
+\end{tikzpicture}
+\end{image}
+Hence a triangle is not uniquely determined by a side, side, and an angle. 
 \end{freeResponse}
 \end{solution}
 Can you find a restriction that will allow for an ``SSA-type'' law?
 \begin{solution}
-Perhaps the simplest restriction is forcing the angle to be a right
-angle.
+Perhaps the simplest restriction is forcing the angle to be greater
+than or equal to $90^\circ$.
 \end{solution}
 \end{question}
 
@@ -243,10 +260,11 @@ here), using only E1--E4 you can derive the usual rules for congruent
 triangles (SSS, SAS, ASA). Thus these laws hold in any neutral
 geometry.
 
-\begin{question}
-\label{18} In the diagram below, we see the intersection of $\bar{BC}$ and $\bar{AE}$. Suppose that $\left\vert
-BD\right\vert =\left\vert CD\right\vert $ and $\left\vert
-AD\right\vert =\left\vert ED\right\vert $.
+\begin{question}\label{18} 
+In the diagram below, we see the intersection of $\bar{BC}$ and
+$\bar{AE}$. Suppose that $\left\vert BD\right\vert =\left\vert
+CD\right\vert $ and $\left\vert AD\right\vert =\left\vert
+ED\right\vert $.
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
 \coordinate (A) at (0,2);
@@ -341,7 +359,8 @@ BDA$ and triangle $\triangle CDE$ are congruent.
 \end{image}
 the exterior angle $\epsilon$ of the triangle at $C$ is greater than
 either remote interior angle $\alpha$ or $\beta$. [MJG,119]
-\item Use \ref{Exp:ExtAngle} to show that the sum of any two angles of a triangle is less than $180^{\circ}$.
+\item Use the previous part to show that the sum of any two angles of
+  a triangle is less than $180^{\circ}$.
 \end{enumerate}
 \begin{solution}
 \begin{hint}
