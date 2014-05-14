@@ -245,6 +245,7 @@ Show that angles $\angle BAC$ and $\angle B'A'C'$ in the
 Draw your angles and extend their legs so that you have two sets of
 parallel sides.
 \end{hint}
+Start with the given angles and extend their legs so that we now have two sets of parallel lines:
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
 \coordinate (A) at (2,3.5);
@@ -259,13 +260,37 @@ parallel sides.
 \tkzDrawVector (D,E)
 \tkzDrawVector (D,F)
 
+\coordinate (G) at (8,3.5);
+\coordinate (H) at (8,5);
+
 \tkzLabelPoints[below](A,C)
 \tkzLabelPoints[above](B)
 
+\node[below,black] at (D) {$A'$};
+\node[above,black] at (E) {$B'$};
+\node[below,black] at (F) {$C'$}; 
+
+\draw[thin] (-1,3.5)--(G);
+\draw[thin] (-1,1.5)--(8,1.5);
+\draw[thin] (3,0)--(H);
+\draw[thin] (-1,.5)--(B);
+
+\tkzLabelAngle[pos=0.4](C,A,B){$\alpha$}
 \tkzMarkAngle[size=0.6cm,thin](C,A,B)
-\draw[thin,step=.5cm] (0,0) grid (10,5);
+
+\tkzMarkAngle[size=0.7cm,thin](F,D,E)
+\tkzLabelAngle[pos=0.5](E,D,F){$\alpha'$}
+
+\tkzMarkAngle[size=0.8cm,thin](G,E,H)
+\tkzLabelAngle[pos=0.5](G,E,H){$\alpha''$}
+%\draw[thin,step=.5cm] (0,0) grid (10,5);
 \end{tikzpicture}
 \end{image}
+By our previous work,
+\[
+\alpha = \alpha'' \qquad\text{and}\qquad \alpha' = \alpha'',
+\]
+hence $\alpha = \alpha'$.
 \end{solution}
 \end{question}
 
@@ -274,18 +299,137 @@ Use the `uniqueness' assertion in E5 together with what we have
 established about neutral geometry to show that in \textbf{EG} the sum
 of the interior angles of any triangle is $180^\circ$.
 \begin{solution}
+\begin{hint}
+Make two parallel lines, the first being the base of a given triangle
+and the second being the unique parallel line that passes through the
+vertex opposite to the base.
+\end{hint}
+Start by drawing two parallel lines, the first containg the base of a
+given triangle and the second passing through the vertex opposite to
+the base:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,2);
+\coordinate (B) at (2,5);
+\coordinate (C) at (6.5,2);
+\coordinate (F) at (9,2);
+\coordinate (G) at (-1,2);
+\coordinate (H) at (9,5);
+\coordinate (I) at (-1,5);
+
+\draw (A)--(B)--(C)--cycle;
+\draw[thin] (G)--(F);
+\draw[thin] (H)--(I);
+
+\tkzLabelPoints[above](B)
+\tkzLabelPoints[below](A,C)
+
+\tkzMarkAngle[size=0.6cm,thin](A,B,C)
+\tkzLabelAngle[pos = 0.35](A,B,C){$\beta$}
+
+\tkzMarkAngle[size=0.6cm,thin](C,A,B)
+\tkzLabelAngle[pos = 0.35](C,A,B){$\alpha$}
+
+\tkzMarkAngle[size=0.9cm,thin](B,C,A)
+\tkzLabelAngle[pos = 0.7](B,C,A){$\gamma$}
+
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+As we have seen, using E5 we can assert that alternate interior angles
+are equal, hence we may further decorate our diagram as follows: 
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,2);
+\coordinate (B) at (2,5);
+\coordinate (C) at (6.5,2);
+\coordinate (F) at (9,2);
+\coordinate (G) at (-1,2);
+\coordinate (H) at (9,5);
+\coordinate (I) at (-1,5);
+
+\draw (A)--(B)--(C)--cycle;
+\draw[thin] (G)--(F);
+\draw[thin] (H)--(I);
+
+\tkzLabelPoints[above](B)
+\tkzLabelPoints[below](A,C)
+
+\tkzMarkAngle[size=0.7cm,thin](A,B,C)
+\tkzLabelAngle[pos = 0.35](A,B,C){$\beta$}
+
+\tkzMarkAngle[size=0.6cm,thin](C,A,B)
+\tkzLabelAngle[pos = 0.35](C,A,B){$\alpha$}
+
+\tkzMarkAngle[size=0.7cm,thin](I,B,A)
+\tkzLabelAngle[pos = -0.35](I,B,A){$\alpha$}
+
+\tkzMarkAngle[size=0.9cm,thin](B,C,A)
+\tkzLabelAngle[pos = 0.7](B,C,A){$\gamma$}
+
+\tkzMarkAngle[size=0.7cm,thin](C,B,H)
+\tkzLabelAngle[pos = 0.5](C,B,H){$\gamma$}
+\end{tikzpicture}
+\end{image}
+Hence we see $\alpha + \beta+ \gamma = 180^\circ$.
 \end{solution}
 \end{question}
-
-
-%% HERE HERE
-
 
 
 \begin{question}
 Show that in \textbf{EG} the sum of the interior angles of a
 quadrilateral is $360^\circ$.
 \begin{solution}
+As we did before, we note that given any quadrilateral, even a
+nonconvex quadrilateral, we can break it into two triangles by
+connecting appropriate opposite vertices:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (2,5);
+\coordinate (B) at (.5,0);
+\coordinate (C) at (2.5,2.5);
+\coordinate (D) at (6,2);
+\draw (A)--(B)--(C)--(D)--cycle;
+\draw[thin,dashed] (A)--(C);
+%\draw[step=.5cm,thin] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+Labeling angles, we see:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (2,5);
+\coordinate (B) at (.5,0);
+\coordinate (C) at (2.5,2.5);
+\coordinate (D) at (6,2);
+\draw (A)--(B)--(C)--(D)--cycle;
+\draw[thin,dashed] (A)--(C);
+
+\tkzMarkAngle[size=1.1cm,thin](B,A,C)
+\tkzLabelAngle[pos = 0.8](B,A,C){$\alpha$}
+
+\tkzMarkAngle[size=1.2cm,thin](C,B,A)
+\tkzLabelAngle[pos = 0.8](C,B,A){$\beta$}
+
+\tkzMarkAngle[size=.5cm,thin](A,C,B)
+\tkzLabelAngle[pos = -0.3](A,C,B){$\gamma$}
+
+\tkzMarkAngle[size=1.2cm,thin](C,A,D)
+\tkzLabelAngle[pos = 0.8](C,A,D){$\alpha'$}
+
+\tkzMarkAngle[size=1.3cm,thin](A,D,C)
+\tkzLabelAngle[pos = 1](A,D,C){$\beta'$}
+
+\tkzMarkAngle[size=.6cm,thin](D,C,A)
+\tkzLabelAngle[pos = 0.3](D,C,A){$\gamma'$}
+%\draw[step=.5cm,thin] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+Now we have that the sum of the interior angles of this quadrilateral
+is
+\begin{align*}
+\alpha + \beta + \gamma + \alpha'+\beta' + \gamma' &= 180^\circ + 180^\circ\\
+&= 360^\circ. 
+\end{align*}
 \end{solution}
 \end{question}
 
