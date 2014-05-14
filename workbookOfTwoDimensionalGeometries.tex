@@ -18,6 +18,20 @@
       \Huge \bfseries Workbook of two-dimensional geometries\\[0.5cm]
       \mdseries \Large C.\ Herbert Clemens\\[0.4cm]
       \normalsize This document was typeset on \today.
+\begin{image}
+\begin{tikzpicture}[scale=1]
+\tkzInit[xmin=-6,ymin=-6,xmax=6,ymax=6]
+\tkzClip
+\tkzDefPoint(0,0){O}
+\tkzDefPoint(132:5){A}
+\tkzDefPoint(4,0){B}
+\foreach \ang in {5,10,...,360}{%
+\tkzDefPoint(\ang:4){M}
+\tkzDefLine[mediator](A,M)
+\tkzDrawLine[color=blue,
+add= 4 and 4](tkzFirstPointResult,tkzSecondPointResult)}
+\end{tikzpicture}
+\end{image}
     \end{center}
     %\vspace*{\fill}
   \end{titlepage}

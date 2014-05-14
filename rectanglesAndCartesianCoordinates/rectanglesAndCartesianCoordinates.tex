@@ -94,8 +94,6 @@ this new line must cross the lower of the parallel lines:
 
 \tkzMarkAngle[size=0.5cm,thin](G,H,D)
 \tkzLabelAngle[pos = 0.3](G,H,D){$\beta$}
-
-%\draw[thin,step=.5cm] (0,0) grid (10,5);
 \end{tikzpicture}
 \end{image}
 Now we have constructed a triangle where two angle sum to $180^\circ$,
@@ -132,9 +130,106 @@ explicitly given.
 \begin{question}
 Given an angle $\angle BAC$ show by drawings the two regions into
 which it divides the plane. Show how the (signed) measure of the angle
-depends on which region you pick and on which is the initial ray and
-which is the final ray of the angle.
+depends on:
+\begin{enumerate}
+\item Which region you pick as the interior/exterior. 
+\item Which ray is the initial ray and which is the final ray of the
+  angle.
+\end{enumerate}
 \begin{solution}
+We present a summary in the table below:
+\begin{center}
+\begin{tabular}{|c|c|}\hline
+%\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,0);
+\coordinate (B) at (2,2);
+\coordinate (C) at (2.83,0);
+\tkzDrawVector (A,B)
+\tkzDrawVector (A,C)
+
+\tkzLabelPoints[below](A,C)
+\tkzLabelPoints[above](B)
+
+\coordinate (initRay) at (1.42,0);
+\node[below] at (initRay) {initial ray};
+
+\coordinate (int) at (1.6,1);
+\node[below] at (int) {interior};
+
+\tkzMarkAngle[size=0.6cm,thin](C,A,B)
+\end{tikzpicture}
+%\end{image}
+&
+%\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,0);
+\coordinate (B) at (2,2);
+\coordinate (C) at (2.83,0);
+\tkzDrawVector (A,B)
+\tkzDrawVector (A,C)
+
+\tkzLabelPoints[below](A,C)
+\tkzLabelPoints[above](B)
+
+\coordinate (initRay) at (1,1);
+\node[above,rotate=45] at (initRay) {initial ray};
+
+\coordinate (int) at (1.6,1);
+\node[below] at (int) {interior};
+
+\tkzMarkAngle[size=0.6cm,thin](C,A,B)
+\end{tikzpicture}
+%\end{image} 
+\\
+
+$\angle BAC$ is positive & $\angle BAC$ is negative\\\hline
+
+%\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,0);
+\coordinate (B) at (2,2);
+\coordinate (C) at (2.83,0);
+\tkzDrawVector (A,B)
+\tkzDrawVector (A,C)
+
+\tkzLabelPoints[below](A,C)
+\tkzLabelPoints[above](B)
+
+\coordinate (initRay) at (1,1);
+\node[above,rotate=45] at (initRay) {initial ray};
+
+\coordinate (ext) at (1.6,1);
+\node[below] at (ext) {exterior};
+
+\tkzMarkAngle[size=0.6cm,thin](B,A,C)
+\end{tikzpicture}
+%\end{image}
+&
+%\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,0);
+\coordinate (B) at (2,2);
+\coordinate (C) at (2.83,0);
+\tkzDrawVector (A,B)
+\tkzDrawVector (A,C)
+
+\tkzLabelPoints[below](A,C)
+\tkzLabelPoints[above](B)
+
+\coordinate (initRay) at (1.42,0);
+\node[below] at (initRay) {initial ray};
+
+\coordinate (ext) at (1.6,1);
+\node[below] at (ext) {exterior};
+
+\tkzMarkAngle[size=0.6cm,thin](B,A,C)
+\end{tikzpicture}\\
+$\angle BAC$ is positive & $\angle BAC$ is negative\\ \hline
+
+%\end{image}
+\end{tabular}
+\end{center}
 \end{solution}
 \end{question}
 
@@ -146,6 +241,31 @@ Show that angles $\angle BAC$ and $\angle B'A'C'$ in the
   parallel to those of $\angle BAC$, then $\angle BAC$ and $\angle
   B'A'C'$ are equal.
 \begin{solution}
+\begin{hint}
+Draw your angles and extend their legs so that you have two sets of
+parallel sides.
+\end{hint}
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (2,3.5);
+\coordinate (B) at (4,5.5);
+\coordinate (C) at (4.83,3.5);
+\tkzDrawVector (A,B)
+\tkzDrawVector (A,C)
+
+\coordinate (D) at (4.5,1.5);
+\coordinate (E) at (6.5,3.5);
+\coordinate (F) at (7.33,1.5);
+\tkzDrawVector (D,E)
+\tkzDrawVector (D,F)
+
+\tkzLabelPoints[below](A,C)
+\tkzLabelPoints[above](B)
+
+\tkzMarkAngle[size=0.6cm,thin](C,A,B)
+\draw[thin,step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
 \end{solution}
 \end{question}
 
