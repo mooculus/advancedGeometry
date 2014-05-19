@@ -434,22 +434,295 @@ is
 \end{question}
 
 \begin{question}\label{112} 
-Show in \textbf{EG} that, given any positive real numbers $a$ and $b$,
-there exist rectangles with adjacent side of lengths $a$ and $b$.
+Now we will show in \textbf{EG} that given any positive real numbers
+$a$ and $b$, there exist rectangles with adjacent side of lengths $a$
+and $b$. Your task is to fill-in the details of the proof below.
 
-Hint: To show that opposite sides are of equal length, suppose
-not. For example, suppose the top of the rectangle has length
-$a'$ and the bottom has length $a$ and, for example,
-$a'>a$. Mark the point at length $a$ along the top, starting
-at the left-hand vertex. Connect that point to the right-hand bottom
-vertex. Find a triangle that contradicts the fact that in \textbf{NG}
-an exterior angle is greater than either remote interior angles.
+Start by constructing lines $\l_1$ and $\l_2$ with $\l_1$
+perpendicular to $\l_2$ at point $A$. On $\l_1$ add point $B$ so that
+$|AB|=a$. Next construct $\l_3$ perpendicular to $\l_1$ through
+$B$. On $\l_3$ add point $C$ such that $|BC|=b$. Finally add $\l_4$
+through $C$ so that $\l_4$ is perpendicular to $\l_3$. Call the
+intersection of $\l_2$ and $\l_4$ point $D$ and label the two
+remaining sides $a'$ and $b'$.
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (2,1);
+\coordinate (B) at (8,1);
+\coordinate (C) at (8,4);
+\coordinate (D) at (2,4);
+\coordinate (E) at (0,1);
+\coordinate (F) at (10,1);
+\coordinate (G) at (2,0);
+\coordinate (H) at (2,5);
+\coordinate (I) at (8,0);
+\coordinate (J) at (8,5);
+\coordinate (K) at (0,4);
+\coordinate (L) at (10,4);
+
+\draw (E)--(F);
+\draw (G)--(H);
+\draw (I)--(J);
+\draw (K)--(L);
+
+\node[left] at (E) {$\l_1$};
+\node[below] at (G) {$\l_2$};
+\node[below] at (I) {$\l_3$};
+\node[left] at (K) {$\l_4$};
+
+\node[below] at (5,1) {$a$};
+\node[right] at (8,2.5) {$b$};
+\node[above] at (5,4) {$a'$};
+\node[left] at (2,2.5) {$b'$};
+
+\tkzMarkRightAngle(B,A,D)
+\tkzMarkRightAngle(C,B,A)
+\tkzMarkRightAngle(D,C,B)
+
+\tkzLabelPoints[below left](A)
+\tkzLabelPoints[below right](B)
+\tkzLabelPoints[above right](C)
+\tkzLabelPoints[above left](D)
+
+%draw[step=.5cm,thin] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+Explain why $\angle ADC = 90^\circ$.
+\begin{solution}
+\begin{freeResponse}
+Since the sum of the interior angles of any quadrilateral is
+$360^\circ$ and our quadrilateral has three angles of measure
+$90^\circ$, we see that the fourth angle must also have a measure of
+$90^\circ$.
+\end{freeResponse}
+\end{solution}
+Explain why $\l_1$ is parallel to $\l_4$.
+\begin{solution}
+\begin{freeResponse}
+Since alternate interior angles are equal
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (2,1);
+\coordinate (B) at (8,1);
+\coordinate (C) at (8,4);
+\coordinate (D) at (2,4);
+\coordinate (E) at (0,1);
+\coordinate (F) at (10,1);
+\coordinate (G) at (2,0);
+\coordinate (H) at (2,5);
+\coordinate (I) at (8,0);
+\coordinate (J) at (8,5);
+\coordinate (K) at (0,4);
+\coordinate (L) at (10,4);
+
+\draw (E)--(F);
+\draw[thin] (G)--(H);
+\draw (I)--(J);
+\draw (K)--(L);
+
+\node[left] at (E) {$\l_1$};
+\node[below] at (G) {$\l_2$};
+\node[below] at (I) {$\l_3$};
+\node[left] at (K) {$\l_4$};
+
+\node[below] at (5,1) {$a$};
+\node[right] at (8,2.5) {$b$};
+\node[above] at (5,4) {$a'$};
+\node[left] at (2,2.5) {$b'$};
+
+\tkzMarkRightAngle[thin](B,A,D)
+\tkzMarkRightAngle(C,B,A)
+\tkzMarkRightAngle[thin](D,C,B)
+\tkzMarkRightAngle(B,C,L)
+\tkzMarkRightAngle[thin](A,D,C)
+
+\tkzLabelPoints[below left](A)
+\tkzLabelPoints[below right](B)
+\tkzLabelPoints[above right](C)
+\tkzLabelPoints[above left](D)
+
+%draw[step=.5cm,thin] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+we see that $\l_1$ is parallel to $\l_4$. 
+\end{freeResponse}
+\end{solution}
+Explain why $\l_2$ is parallel to $\l_3$.
+\begin{solution}
+Again since alternate interior angles are equal
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (2,1);
+\coordinate (B) at (8,1);
+\coordinate (C) at (8,4);
+\coordinate (D) at (2,4);
+\coordinate (E) at (0,1);
+\coordinate (F) at (10,1);
+\coordinate (G) at (2,0);
+\coordinate (H) at (2,5);
+\coordinate (I) at (8,0);
+\coordinate (J) at (8,5);
+\coordinate (K) at (0,4);
+\coordinate (L) at (10,4);
+
+\draw (E)--(F);
+\draw (G)--(H);
+\draw (I)--(J);
+\draw[thin] (K)--(L);
+
+\node[left] at (E) {$\l_1$};
+\node[below] at (G) {$\l_2$};
+\node[below] at (I) {$\l_3$};
+\node[left] at (K) {$\l_4$};
+
+\node[below] at (5,1) {$a$};
+\node[right] at (8,2.5) {$b$};
+\node[above] at (5,4) {$a'$};
+\node[left] at (2,2.5) {$b'$};
+
+\tkzMarkRightAngle(B,A,D)
+\tkzMarkRightAngle[thin](C,B,A)
+\tkzMarkRightAngle[thin](D,C,B)
+\tkzMarkRightAngle(I,B,F)
+\tkzMarkRightAngle[thin](A,D,C)
+
+\tkzLabelPoints[below left](A)
+\tkzLabelPoints[below right](B)
+\tkzLabelPoints[above right](C)
+\tkzLabelPoints[above left](D)
+
+%draw[step=.5cm,thin] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+we see that $\l_2$ is parallel to $\l_3$. 
+\end{solution}
+Finally, add a segment to our figure and use a triangle congruence
+theorem to explain why $a=a'$ and $b = b'$.
+\begin{solution}
+Add segment $\bar{AC}$ to our figure:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (2,1);
+\coordinate (B) at (8,1);
+\coordinate (C) at (8,4);
+\coordinate (D) at (2,4);
+\coordinate (E) at (0,1);
+\coordinate (F) at (10,1);
+\coordinate (G) at (2,0);
+\coordinate (H) at (2,5);
+\coordinate (I) at (8,0);
+\coordinate (J) at (8,5);
+\coordinate (K) at (0,4);
+\coordinate (L) at (10,4);
+
+\draw (E)--(F);
+\draw (G)--(H);
+\draw (I)--(J);
+\draw (K)--(L);
+\draw (A)--(C);
+
+\node[left] at (E) {$\l_1$};
+\node[below] at (G) {$\l_2$};
+\node[below] at (I) {$\l_3$};
+\node[left] at (K) {$\l_4$};
+
+\node[below] at (5,1) {$a$};
+\node[right] at (8,2.5) {$b$};
+\node[above] at (5,4) {$a'$};
+\node[left] at (2,2.5) {$b'$};
+
+\tkzMarkRightAngle(A,D,C)
+\tkzMarkRightAngle(C,B,A)
+
+\tkzLabelPoints[below left](A)
+\tkzLabelPoints[below right](B)
+\tkzLabelPoints[above right](C)
+\tkzLabelPoints[above left](D)
+
+\tkzMarkAngle[size=.4cm,thin](C,A,D)
+\tkzMarkAngle[size=.4cm,thin](A,C,B)
+\tkzMarkAngle[arc=ll,size=.6cm,thin](B,A,C)
+\tkzMarkAngle[arc=ll,size=.6cm,thin](D,C,A)
+
+%draw[step=.5cm,thin] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+Since alternate interior angles are equal, we have that
+\[
+\angle ACB \cong \angle CAD\qquad\text{and}\qquad \angle CAB \cong \angle DCA.
+\]
+Now by ASA
+\[
+\triangle ACB \cong \triangle CAD.
+\]
+Hence we see that $a = a'$ and $b = b'$. This completes the proof that
+$ABCD$ is a rectangle.
+\end{solution}
 \end{question}
 
+
+
 \begin{question}
-Show that there is a cartesian coordinate system on \textbf{EG}, that
-is, the set of points of \textbf{EG} are in one-to-one correspondence
-with the set of pairs of real numbers.
+Show that there is a cartesian coordinate system on \textbf{EG}. This
+means you must show that there is a bijection between the points in
+\textbf{EG} and elements of $\R^2$, the set of pairs of real numbers.
+\begin{solution}
+\begin{freeResponse}
+Pick any point of \textbf{EG}, call it $A$. Our map will take this
+point to $(0,0)$. By our previous problem, we can construct an
+$a\times b$ rectangle $ABCD$ in \textbf{EG}.
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (2,1);
+\coordinate (B) at (8,1);
+\coordinate (C) at (8,4);
+\coordinate (D) at (2,4);
+\coordinate (E) at (0,1);
+\coordinate (F) at (10,1);
+\coordinate (G) at (2,0);
+\coordinate (H) at (2,5);
+\coordinate (I) at (8,0);
+\coordinate (J) at (8,5);
+\coordinate (K) at (0,4);
+\coordinate (L) at (10,4);
+
+\draw (E)--(F);
+\draw (G)--(H);
+\draw (I)--(J);
+\draw (K)--(L);
+
+\node[left] at (E) {$\l_1$};
+\node[below] at (G) {$\l_2$};
+\node[below] at (I) {$\l_3$};
+\node[left] at (K) {$\l_4$};
+
+\node[below] at (5,1) {$a$};
+\node[right] at (8,2.5) {$b$};
+\node[above] at (5,4) {$a$};
+\node[left] at (2,2.5) {$b$};
+
+\tkzMarkRightAngle(B,A,D)
+\tkzMarkRightAngle(C,B,A)
+\tkzMarkRightAngle(D,C,B)
+\tkzMarkRightAngle(A,D,C)
+
+\tkzLabelPoints[below left](A)
+\tkzLabelPoints[below right](B)
+\tkzLabelPoints[above right](C)
+\tkzLabelPoints[above left](D)
+
+%draw[step=.5cm,thin] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+Our map will take the the point $C$ to $(a,b)$. On the other hand, if
+$B$ was placed to the left of $A$, our map takes $C$ to the point
+$(-a,b)$. If $D$ was placed below $A$, then our map takes $C$ to
+$(a,-b)$. Finally if $B$ was placed to the left of $A$ and $D$ was
+placed below $A$, then our map takes $C$ to $(-a,-b)$.  By
+construction, this map is one-to-one and onto and hence shows that we
+have a cartesian coordinate system in \textbf{EG}.
+\end{freeResponse}
+\end{solution}
 \end{question}
 
 
@@ -457,22 +730,21 @@ with the set of pairs of real numbers.
 
 It is the existence of a cartesian coordinate system in \textbf{EG} that
 allows us to define distance between points%
-\begin{equation}
-d\left(  \left(  a_{1},b_{1}\right)  ,\left(  a_{2},b_{2}\right)  \right)
-=\sqrt{\left(  a_{2}-a_{1}\right)  ^{2}+\left(  b_{2}-b_{1}\right)  ^{2}}
-\label{113}%
-\end{equation}
-and so gives rigorous mathematical meaning to a concept that the ancient
-Greeks were never able to describe precisely, namely the similarity of figures
-in \textbf{EG}. For that we will require the notion of a dilation or
-magnification in \textbf{EG}. And we need a cartesian coordinate system to
-describe dilation precisely, a reality backed up by the fact that similarities
-do not exist in \textbf{HG} or \textbf{SG}. (Try drawing two triangles that
-are similar but not congruent on a perfectly spherical balloon!)
+\[
+d\left( (a_{1},b_{1}), (a_{2},b_{2}) \right)
+=\sqrt{(a_{2}-a_{1})^{2}+(b_{2}-b_{1})^{2}}
+\]
+and so gives rigorous mathematical meaning to a concept that the
+ancient Greeks were never able to describe precisely, namely the
+similarity of figures in \textbf{EG}. For that we will require the
+notion of a \textit{dilation} or \textit{magnification} in
+\textbf{EG}. We need a cartesian coordinate system to describe
+dilation precisely, a reality backed up by the fact that similarities
+do not exist in \textbf{HG} or \textbf{SG}. (Try drawing two triangles
+that are similar but not congruent on a perfectly spherical balloon!)
 
 \begin{question}
-State the Pythagorean theorem in \textbf{EG} and use Question
-\ref{112} to prove it.
+State and prove the Pythagorean theorem in \textbf{EG}.
 
 Hint: In the cartesian plane, construct a square with vertices 
 \[
@@ -484,11 +756,17 @@ Inside that square, construct the square with vertices
 \]
 Show that the area of the big square is the area of the little square
 plus the area of $4$ right triangles, each of area $\frac{ab}{2}$.
+\begin{solution}
+HERE HERE - YOU MAY WANT TO MOVE THESE HINTS AROUND.
+\end{solution}
 \end{question}
 
 \begin{question}
 Use the Pythagorean theorem to justify the euclidean distance formula,
-see $\left(\ref{113}\right)$.
+\[
+d\left( (a_{1},b_{1}), (a_{2},b_{2}) \right)
+=\sqrt{(a_{2}-a_{1})^{2}+(b_{2}-b_{1})^{2}}.
+\]
 \end{question}
 
 
