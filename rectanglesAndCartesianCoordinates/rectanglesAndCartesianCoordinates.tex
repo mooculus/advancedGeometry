@@ -691,11 +691,6 @@ $a\times b$ rectangle $ABCD$ in \textbf{EG}.
 \draw (I)--(J);
 \draw (K)--(L);
 
-\node[left] at (E) {$\l_1$};
-\node[below] at (G) {$\l_2$};
-\node[below] at (I) {$\l_3$};
-\node[left] at (K) {$\l_4$};
-
 \node[below] at (5,1) {$a$};
 \node[right] at (8,2.5) {$b$};
 \node[above] at (5,4) {$a$};
@@ -758,6 +753,33 @@ Show that the area of the big square is the area of the little square
 plus the area of $4$ right triangles, each of area $\frac{ab}{2}$.
 \begin{solution}
 HERE HERE - YOU MAY WANT TO MOVE THESE HINTS AROUND.
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,0);
+\coordinate (B) at (0,4);
+\coordinate (C) at (4,4);
+\coordinate (D) at (4,0);
+\coordinate (E) at (1,0);
+\coordinate (F) at (0,3);
+\coordinate (G) at (3,4);
+\coordinate (H) at (4,1);
+
+\draw (A)--(B)--(C)--(D)--cycle;
+\draw (E)--(F)--(G)--(H)--cycle;
+
+\node[below left] at (A) {$(0,0)$};
+\node[above left] at (B) {$(0,a+b)$};
+\node[above right] at (C) {$(a+b,a+b)$};
+\node[below right] at (D) {$(a+b,0)$};
+
+\node[below] at (E) {$(a,0)$};
+\node[left] at (F) {$(0,b)$};
+\node[above] at (G) {$(b,a+b)$};
+\node[right] at (H) {$(a+b,a)$};
+
+%draw[step=.5cm,thin] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
 \end{solution}
 \end{question}
 
