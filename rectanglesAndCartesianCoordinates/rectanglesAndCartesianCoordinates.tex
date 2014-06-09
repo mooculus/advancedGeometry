@@ -740,8 +740,9 @@ that are similar but not congruent on a perfectly spherical balloon!)
 
 \begin{question}
 State and prove the Pythagorean theorem in \textbf{EG}.
-
-Hint: In the cartesian plane, construct a square with vertices 
+\begin{solution}
+\begin{hint}
+In the cartesian plane, construct a square with vertices
 \[
 \left(0,0\right),\qquad \left(a+b,0\right),\qquad \left(0,a+b\right), \qquad \left( a+b,a+b\right).
 \] 
@@ -749,10 +750,17 @@ Inside that square, construct the square with vertices
 \[
 \left(a,0\right),\qquad \left(a+b,a\right),\qquad \left(b,a+b\right), \qquad \left(0,b\right).
 \]
-Show that the area of the big square is the area of the little square
-plus the area of $4$ right triangles, each of area $\frac{ab}{2}$.
-\begin{solution}
-HERE HERE - YOU MAY WANT TO MOVE THESE HINTS AROUND.
+\end{hint}
+\begin{freeResponse}
+Consider the square in the cartesian plane with vertices
+\[
+\left(0,0\right),\qquad \left(a+b,0\right),\qquad \left(0,a+b\right),
+\qquad \left( a+b,a+b\right)
+\]
+with a second quadrilateral with vertices
+\[
+\left(a,0\right),\qquad \left(a+b,a\right),\qquad \left(b,a+b\right), \qquad \left(0,b\right).
+\]
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
 \coordinate (A) at (0,0);
@@ -780,6 +788,151 @@ HERE HERE - YOU MAY WANT TO MOVE THESE HINTS AROUND.
 %draw[step=.5cm,thin] (0,0) grid (10,5);
 \end{tikzpicture}
 \end{image}
+We should explain why the smaller quadrailateral is in fact a
+square. First note that each side has the same length, as by SAS the
+sides are made of conrguent triangles. Second note that each of the
+interior angles are equal to each other, and since the sum of the
+interior angles of a quadrilateral is $360^\circ$, each interior angle
+must be $90^\circ$.
+
+Now rearrange the figure above as follows:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,0);
+\coordinate (B) at (0,4);
+\coordinate (C) at (4,4);
+\coordinate (D) at (4,0);
+\coordinate (E) at (1,0);
+\coordinate (F) at (0,3);
+\coordinate (G) at (1,4);
+\coordinate (H) at (4,3);
+\coordinate (I) at (1,3);
+
+\draw (A)--(B)--(C)--(D)--cycle;
+\draw (E)--(F);
+\draw (I)--(C);
+\draw (E)--(G);
+\draw (F)--(H);
+
+\node[below left] at (A) {$(0,0)$};
+\node[above left] at (B) {$(0,a+b)$};
+\node[above right] at (C) {$(a+b,a+b)$};
+\node[below right] at (D) {$(a+b,0)$};
+
+\node[below] at (E) {$(a,0)$};
+\node[left] at (F) {$(0,b)$};
+\node[above] at (G) {$(b,a+b)$};
+\node[right] at (H) {$(a+b,a)$};
+
+%draw[step=.5cm,thin] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+Comparing both figures and labeling the ``long side'' $c$, we see:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+%% First square
+\coordinate (A) at (0,0);
+\coordinate (B) at (0,4);
+\coordinate (C) at (4,4);
+\coordinate (D) at (4,0);
+\coordinate (E) at (1,0);
+\coordinate (F) at (0,3);
+\coordinate (G) at (3,4);
+\coordinate (H) at (4,1);
+
+\draw (A)--(B)--(C)--(D)--cycle;
+\draw (E)--(F)--(G)--(H)--cycle;
+
+\node[right] at (.5,1.5) {$c$};
+\node[above] at (2.5,.5) {$c$};
+\node[left] at (3.5,2.5) {$c$};
+\node[below] at (1.5,3.5) {$c$};
+
+%% Second square
+\coordinate (AA) at (6,0);
+\coordinate (BB) at (6,4);
+\coordinate (CC) at (10,4);
+\coordinate (DD) at (10,0);
+\coordinate (EE) at (7,0);
+\coordinate (FF) at (6,3);
+\coordinate (GG) at (7,4);
+\coordinate (HH) at (10,3);
+\coordinate (II) at (7,3);
+
+\draw (AA)--(BB)--(CC)--(DD)--cycle;
+\draw (EE)--(FF);
+\draw (II)--(CC);
+\draw (EE)--(GG);
+\draw (FF)--(HH);
+
+\node[below] at (6.5,3) {$a$};
+\node[right] at (7,3.5) {$a$};
+\node[left] at (6,3.5) {$a$};
+\node[above] at (6.5,4) {$a$};
+
+\node[below] at (8.5,3) {$b$};
+\node[left] at (10,1.5) {$b$};
+\node[right] at (7,1.5) {$b$};
+\node[above] at (8.5,0) {$b$};
+\end{tikzpicture}
+\end{image}
+Since both figures have the same area, they will have the same area
+when all of the triangles are removed:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+%% First square
+\coordinate (E) at (1,0);
+\coordinate (F) at (0,3);
+\coordinate (G) at (3,4);
+\coordinate (H) at (4,1);
+
+\draw (E)--(F)--(G)--(H)--cycle;
+
+\node[right] at (.5,1.5) {$c$};
+\node[above] at (2.5,.5) {$c$};
+\node[left] at (3.5,2.5) {$c$};
+\node[below] at (1.5,3.5) {$c$};
+
+%% Second square
+\coordinate (BB) at (6,4);
+\coordinate (DD) at (10,0);
+\coordinate (EE) at (7,0);
+\coordinate (FF) at (6,3);
+\coordinate (GG) at (7,4);
+\coordinate (HH) at (10,3);
+\coordinate (II) at (7,3);
+
+\draw (EE)--(GG)--(BB)--(FF)--(HH)--(DD)--cycle;
+
+\node[below] at (6.5,3) {$a$};
+\node[right] at (7,3.5) {$a$};
+\node[left] at (6,3.5) {$a$};
+\node[above] at (6.5,4) {$a$};
+
+\node[below] at (8.5,3) {$b$};
+\node[left] at (10,1.5) {$b$};
+\node[right] at (7,1.5) {$b$};
+\node[above] at (8.5,0) {$b$};
+\end{tikzpicture}
+\end{image}
+Hence we see that given a right triangle, 
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,2);
+\coordinate (B) at (0,5);
+\coordinate (C) at (6.5,2);
+\tkzMarkRightAngle(C,A,B)
+\tkzDefMidPoint(A,B) \tkzGetPoint{a}
+\tkzDefMidPoint(A,C) \tkzGetPoint{b}
+\tkzDefMidPoint(B,C) \tkzGetPoint{c}
+\draw (A)--(B)--(C)--cycle;
+\tkzLabelPoints[above](c)
+\tkzLabelPoints[below](b)
+\tkzLabelPoints[left](a)
+\end{tikzpicture}
+\end{image}
+we have that $a^2 + b^2 = c^2.$
+\end{freeResponse}
 \end{solution}
 \end{question}
 
@@ -789,8 +942,20 @@ Use the Pythagorean theorem to justify the euclidean distance formula,
 d\left( (a_{1},b_{1}), (a_{2},b_{2}) \right)
 =\sqrt{(a_{2}-a_{1})^{2}+(b_{2}-b_{1})^{2}}.
 \]
+\begin{solution}
+\begin{freeResponse}
+Plot the points $(a_1,b_1)$ and $(a_2,b_2)$.
+\begin{image}
+HERE
+\end{image}
+We may now construct a right triangle with sides of length $(a_2-a_1)$
+and $(b_2-b_1)$ whose hypotenuse is the shortest path between the two points. By the Pythagorean theorem, the length of this path is given by 
+\[
+\sqrt{(a_{2}-a_{1})^{2}+(b_{2}-b_{1})^{2}}.
+\]
+\end{freeResponse}
+\end{solution}
 \end{question}
-
 
 
 \section*{Dilations in \textbf{EG}}
