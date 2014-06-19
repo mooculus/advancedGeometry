@@ -304,7 +304,7 @@ Make two parallel lines, the first being the base of a given triangle
 and the second being the unique parallel line that passes through the
 vertex opposite to the base.
 \end{hint}
-Start by drawing two parallel lines, the first containg the base of a
+Start by drawing two parallel lines, the first containing the base of a
 given triangle and the second passing through the vertex opposite to
 the base:
 \begin{image}
@@ -788,9 +788,9 @@ with a second quadrilateral with vertices
 %draw[step=.5cm,thin] (0,0) grid (10,5);
 \end{tikzpicture}
 \end{image}
-We should explain why the smaller quadrailateral is in fact a
+We should explain why the smaller quadrilateral is in fact a
 square. First note that each side has the same length, as by SAS the
-sides are made of conrguent triangles. Second note that each of the
+sides are made of congruent triangles. Second note that each of the
 interior angles are equal to each other, and since the sum of the
 interior angles of a quadrilateral is $360^\circ$, each interior angle
 must be $90^\circ$.
@@ -946,10 +946,49 @@ d\left( (a_{1},b_{1}), (a_{2},b_{2}) \right)
 \begin{freeResponse}
 Plot the points $(a_1,b_1)$ and $(a_2,b_2)$.
 \begin{image}
-HERE
+\begin{tikzpicture}[geometryDiagrams]
+	\begin{axis}[
+            xmin=0, xmax=5,ymin=0,ymax=5,
+            axis lines =left, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            xtick={1,3}, xticklabels={$a_1$,$a_2$},
+            ytick={2,3}, yticklabels={$b_1$,$b_2$},
+            axis on top,
+          ]       
+          \addplot[penColor,dashed] plot coordinates {(1,0) (1,2)};
+          \addplot[penColor,dashed] plot coordinates {(0,2) (1,2)};
+          \addplot[penColor,dashed] plot coordinates {(3,0) (3,3)};
+          \addplot[penColor,dashed] plot coordinates {(0,3) (3,3)};
+          \addplot[penColor,only marks,mark=*] coordinates{(1,2)};  %% closed hole          
+          \addplot[penColor,only marks,mark=*] coordinates{(3,3)};  %% closed hole          
+        \end{axis}
+\end{tikzpicture}
 \end{image}
 We may now construct a right triangle with sides of length $(a_2-a_1)$
-and $(b_2-b_1)$ whose hypotenuse is the shortest path between the two points. By the Pythagorean theorem, the length of this path is given by 
+and $(b_2-b_1)$ whose hypotenuse is the shortest path between the two points. 
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+	\begin{axis}[
+            xmin=0, xmax=5,ymin=0,ymax=5,
+            axis lines =left, xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+            xtick={1,3}, xticklabels={$a_1$,$a_2$},
+            ytick={2,3}, yticklabels={$b_1$,$b_2$},
+            axis on top,
+          ]       
+          \node at (axis cs:2,1.75) {$(a_2-a_1)$}; 
+          \node at (axis cs:3.5,2.5) {$(b_2-b_1)$}; 
+          \addplot[dashed] plot coordinates {(1,2) (3,3)};
+          \addplot[penColor] plot coordinates {(1,2) (3,2)};
+          \addplot[penColor] plot coordinates {(3,2) (3,3)};
+          \addplot[penColor,only marks,mark=*] coordinates{(1,2)};  %% closed hole          
+          \addplot[penColor,only marks,mark=*] coordinates{(3,3)};  %% closed hole          
+        \end{axis}
+\end{tikzpicture}
+\end{image}
+By the Pythagorean theorem, the length of this path is given by 
 \[
 \sqrt{(a_{2}-a_{1})^{2}+(b_{2}-b_{1})^{2}}.
 \]
@@ -957,298 +996,5 @@ and $(b_2-b_1)$ whose hypotenuse is the shortest path between the two points. By
 \end{solution}
 \end{question}
 
-
-\section*{Dilations in \textbf{EG}}
-
-\begin{definition}
-A \textbf{dilation} is a one-to-one onto transformation of the
-cartesian plane to itself that
-\begin{enumerate}
-\item fixes one point called the center of the dilation,
-\item takes each line through the fixed point to itself,
-\item multiplies all distances by a fixed positive real number called the
-magnification factor of the dilation.
-\end{enumerate}
-\end{definition}
-
-\begin{definition}
-Given a point $\left(  x_{0},y_{0}\right)  $ in the (cartesian) plane and a
-positive real number $r$, we define a mapping $D$ with center $\left(
-x_{0},y_{0}\right)  $ and magnification factor $r$ by the formula%
-\begin{equation}
-D\left(  x,y\right)  =\left(  x_{0},y_{0}\right)  +r\left(  x-x_{0}%
-,y-y_{0}\right)  . \label{23}%
-\end{equation}
-We will also denote the output $D\left(  x,y\right)  $ of the dilation as
-$\left(  \underline{x},\underline{y}\right)  $.
-\end{definition}
-
-\begin{question}
-Using cartesian coordinates for the plane, show that the mapping
-$D$ defined in $\left(  \ref{23}\right)  $ is a dilation with magnification
-factor $r$ and center $\left(  x_{0},y_{0}\right)  $.
-\end{question}
-
-\begin{question}
-Show (using several-variable calculus if you wish) that a
-dilation with magnification factor $r$ multiplies all areas by a factor of
-$r^{2}$.
-\end{question}
-
-\begin{question}\hfil
-\begin{enumerate}
-\item Show that the inverse mapping of a dilation is again a
-dilation with the same center but with magnification factor $r^{-1}$.
-\item Show that a dilation takes lines to lines.
-\end{enumerate}
-Hint: For a)\ solve for $\left(  x,y\right)  $ in terms of $\left(
-\underline{x},\underline{y}\right)  $. For b) write the equation%
-\[
-ax+by=c
-\]
-for the given line. Then substitute for $\left(  x,y\right)  $ its expression
-in terms of $\left(  \underline{x},\underline{y}\right)$.
-\end{question}
-
-\begin{question}
-Show that a dilation takes any line to a line parallel (or
-equal) to itself.
-
-Hint: Compute slopes.
-\end{question}
-
-\begin{question}
-Show that a dilation by a factor of $r$ takes any vector to $r$
-times itself.
-
-Hint: Realize the vector as the difference of two points.
-\end{question}
-
-\begin{question}
-Show that a dilation of the plane preserves angles.
-
-Hint: Use the dot product of vectors emanating from the same point to measure
-angles
-\end{question}
-
-
-
-\section*{Similarity in \textbf{EG}}
-
-\begin{definition}
-Two triangles are \textbf{similar} if there is a dilation of the
-plane that takes one to a triangle which is congruent to the other. We write%
-\[
-\triangle ABC\sim\triangle A'B'C'%
-\]
-to denote that these two triangles are similar (where the order of the
-vertices tells us which vertices correspond).
-\end{definition}
-
-\begin{question}
-\begin{enumerate}
-\item Show that, if two triangles are similar, then corresponding
-sides are proportional.
-
-Hint: You have to start from the supposition that the two triangles satisfy
-the definition of similar triangles.
-
-\item Show that, if corresponding sides of two triangles are proportional, then
-the two triangles are similar.
-
-Hint: You have to start from the supposition that corresponding sides of the
-two triangles are proportional and use SSS to show that there is a dilation of
-$\triangle ABC$ is congruent to $\triangle A'B'C'$.
-\end{enumerate}
-\end{question}
-
-\begin{question}
-\begin{enumerate}
-\item Show that, if two triangles are similar, then corresponding
-angles are equal.
-
-Hint: You have to start from the supposition that the two triangles satisfy
-the definition of similar triangles.
-
-\item Show that, if corresponding angles of two triangles are equal, then the two
-triangles are similar.
-
-Hint: You have to start from the supposition that corresponding angles of the
-two triangles are equal, then use a dilation with $r=|A'B'|/|AB|$ and ASA to show that the dilation of one triangle that is congruent
-to the other.
-\end{enumerate}
-\end{question}
-
-\begin{question}
-\label{39} Show that two triangles are similar if corresponding
-sides are parallel.
-
-Hint: Use the fact that angles are equal if corresponding rays are
-parallel.
-\end{question}
-
-\begin{question}
-Show that two triangles are similar if corresponding sides are perpendicular.
-
-Hint: Extend one of the rays of the first angle until it crosses the
-corresponding ray of the second angle.
-\end{question}
-
-
-\section*{Concurrence theorems in \textbf{EG}, Ceva's theorem}
-
-Before leaving (plane) euclidean geometry, we will visit two more of
-its many sets of memorable properties, one's that you may or may not
-have seen in high school. The first of these comes under the name of
-concurrence theorems--these theorems relate the measures of the three
-sides (or angles) of a triangle to the measure of quantities
-constructed from those sides by some uniform rule.
-
-\begin{question}
-\label{25} Denote the measure or area of a triangle $\triangle
-ABC$ as $\left\vert \triangle ABC\right\vert $. Show that, in the
-diagram below,
-\[
-\frac{\left\vert AF\right\vert }{\left\vert FB\right\vert }=\frac{\left\vert
-\triangle AFC\right\vert }{\left\vert \triangle CFB\right\vert }%
-=\frac{\left\vert \triangle AFX\right\vert }{\left\vert \triangle
-XFB\right\vert }.
-\]
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\tkzDefPoint(0,0){A}
-\tkzDefPoint(5,3){C}
-\tkzDefPoint(8,0){B}
-\tkzDefPoint(4.79,1.33){X}
-\tkzDefPoint(4.63,0){F}
-\tkzDefPoint(6.26,1.74){D}
-\tkzDefPoint(3.27,1.96){E}
-\draw (A)--(B)--(C)--cycle;
-\draw (A)--(D);
-\draw (F)--(C);
-\draw (B)--(E);
-
-
-\tkzLabelPoints[above](C)
-\tkzLabelPoints[above right](X)
-\tkzLabelPoints[below](A,B,F)
-\tkzLabelPoints[above left](E)
-\tkzLabelPoints[right](D)
-%\draw[step=.5cm] (0,0) grid (10,5);
-\end{tikzpicture}
-\end{image}
-\end{question}
-
-\begin{question}
-\label{26} Use Question \ref{25} to show by pure algebra that%
-\begin{equation}
-\frac{\left\vert AF\right\vert }{\left\vert FB\right\vert }=\frac{\left\vert
-\triangle AXC\right\vert }{\left\vert \triangle CXB\right\vert }. \label{27}%
-\end{equation}
-
-\end{question}
-
-\begin{question}
-\label{28}  For three concurrent segments $\overline{AD}$,
-$\overline{BE}$ and $\overline{CF}$ as given in Question \ref{25}, use
-Question \ref{26} to show that%
-\[
-\frac{\left\vert AF\right\vert }{\left\vert FB\right\vert }%
-\text{\textperiodcentered}\frac{\left\vert BD\right\vert }{\left\vert
-DC\right\vert }\text{\textperiodcentered}\frac{\left\vert CE\right\vert
-}{\left\vert EA\right\vert }=1.
-\]
-
-
-Hint: Use Question \ref{25} repeadetly. 
-%% Hint: Use Question \ref{27} with side $\overline{BC}$ replacing
-%% $\overline{AB}$, and $\left( \ref{27}\right)$ with side
-%% $\overline{CA}$ replacing $\overline{AB}$.
-\end{question}
-
-This last result with its converse, which you will show in the next Question,
-is called \textit{Ceva's Theorem}. [MJG,287-288]
-
-\begin{question}
-Show the converse of the result in Question \ref{28}, namely
-that, if%
-\[
-\frac{\left\vert AF\right\vert }{\left\vert FB\right\vert }%
-\text{\textperiodcentered}\frac{\left\vert BD\right\vert }{\left\vert
-DC\right\vert }\text{\textperiodcentered}\frac{\left\vert CE\right\vert
-}{\left\vert EA\right\vert }=1
-\]
-then the lines $AD$, $BE$, and $CF$ pass through a common point.
-
-Hint: Suppose that they do not pass through a common point.
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\tkzDefPoint(0,0){A}
-\tkzDefPoint(5,3){C}
-\tkzDefPoint(8,0){B}
-\tkzDefPoint(5,0){F}
-\tkzDefPoint(6.26,1.74){D}
-\tkzDefPoint(2.75,1.65){E}
-\draw (A)--(B)--(C)--cycle;
-\draw (A)--(D);
-\draw (F)--(C);
-\draw (B)--(E);
-
-
-\tkzLabelPoints[above](C)
-\tkzLabelPoints[below](A,B,F)
-\tkzLabelPoints[above left](E)
-\tkzLabelPoints[right](D)
-%\draw[step=.5cm] (0,0) grid (10,5);
-\end{tikzpicture}
-\end{image}
-Notice that if, for example, $F$ moves along the segment
-$\overline{AB}$, then $\frac{\left\vert AF\right\vert }{\left\vert
-FB\right\vert }$ is a strictly increasing function of $\left\vert
-AF\right\vert $. Now use Question \ref{28} to determine a position
-$F'$ for $F$ along the segment $\overline{AB}$ at which
-\[
-\frac{\left\vert AF'\right\vert }{\left\vert F'B\right\vert
-}\text{\textperiodcentered}\frac{\left\vert BD\right\vert }{\left\vert
-DC\right\vert }\text{\textperiodcentered}\frac{\left\vert CE\right\vert
-}{\left\vert EA\right\vert }=1.
-\]
-\end{question}
-
-\begin{question}
-A \textbf{median} of a triangle is a line segment from a vertex
-to the midpoint of the opposite side. Show that the medians of any triangle
-meet in a common point.
-
-Hint: Use Ceva's Theorem.
-\end{question}
-
-\begin{question}
-Use Ceva's theorem to show that the three altitudes of a
-triangle are concurrent.
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\tkzDefPoint(0,0){A}
-\tkzDefPoint(5,4){C}
-\tkzDefPoint(6.5,0){B}
-\tkzDefPoint(5,0){F}
-\tkzDefPoint(5.54,2.56){D}
-\tkzDefPoint(3.98,3.18){E}
-\draw (A)--(B)--(C)--cycle;
-\draw (A)--(D);
-\draw (F)--(C);
-\draw (B)--(E);
-
-
-\tkzLabelPoints[above](C)
-\tkzLabelPoints[below](A,B,F)
-\tkzLabelPoints[above left](E)
-\tkzLabelPoints[right](D)
-%\draw[step=.5cm] (0,0) grid (10,5);
-\end{tikzpicture}
-\end{image}
-Hint: Use all three similarities of the form $\triangle
-CEB\sim\triangle CDA$ and then apply Ceva's theorem.
-\end{question}
 
 \end{document}

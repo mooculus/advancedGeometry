@@ -1,0 +1,378 @@
+\documentclass{ximera}
+
+\title{Dilations, similarity, and concurrence in EG}
+
+\begin{document}
+\begin{abstract}
+Now we explore some properties that are somewhat unique to euclidean
+geometry.
+\end{abstract}
+\maketitle
+
+\section*{Dilations in \textbf{EG}}
+
+\begin{definition}
+A \textbf{dilation} is a one-to-one and onto transformation of the
+cartesian plane to itself that:
+\begin{enumerate}
+\item Fixes one point called the \textbf{center} of the dilation.
+\item Takes each line through the center of the dilation to itself.
+\item Multiplies all distances by a fixed positive real number called
+  the \textbf{magnification factor} of the dilation.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+Given a point $\left(x_{0},y_{0}\right)$ in the plane and a positive
+real number $r$, we define a mapping $D$ with center $\left(
+x_{0},y_{0}\right)$ and magnification factor $r$ by the formula
+\[
+D\left(  x,y\right)  =\left(  x_{0},y_{0}\right)  +r\left(  x-x_{0}%
+,y-y_{0}\right).
+\]
+We will also denote the output $D\left(x,y\right)$ of the dilation
+as $\left(\underline{x},\underline{y}\right)$.
+\end{definition}
+
+\begin{question}
+Using cartesian coordinates for the plane, show that the mapping $D$
+defined above is a dilation with magnification factor $r$ and center
+$\left( x_{0},y_{0}\right) $.
+\begin{solution}
+\begin{freeResponse}
+First we must show that the center of the dilation is fixed, that is we must show that 
+\[
+D(x_0,y_0) = (x_0,y_0).
+\]
+Write
+\begin{align*}
+D(x_0,y_0) &= (x_0,y_0) + r(x_0-x_0,y_0-y_0)\\
+&= (x_0,y_0) + r(0,0)\\
+&=(x_0,y_0).
+\end{align*}
+Next we must show that every line through the fixed point goes to
+itself. To do this, consider the line
+\[
+\l(t) = (x_0,y_0) + t(u,v)
+\]
+that goes through the center of the dilation in the direction of the
+vector $(u,v)$. Write
+\begin{align*}
+D(\l(t)) &= D(x_0+tu,y_0+tv)\\
+&= (x_0,y_0) + r(x_0+tu-x_0,y_0+tv-y_0)\\
+&= (x_0,y_0) + r(tu,tv)\\
+&= (x_0,y_0) + t(ru,rv). 
+\end{align*}
+This is the line that passes through the center of the dilation in the
+direction of $(ru,rv)$, but since $r$ is a positive real number, the
+vector $(u,v)$ goes in the same direction as the vector
+$(ru,rv)$. Hence a dilation maps any line that passes through its
+center to itself.
+
+Finally, we must show that all distances are multiplied by the
+magnification factor of the dilation. Consider two points $(a_1,b_1)$
+and $(a_2,b_2)$.  Write
+\begin{align*}
+D(a_1,b_1) &= (x_0,y_0)+r(a_1-x_0,b_1-y_0)\\
+&=(x_0+ra_1-rx_0,y_0+rb_1-ry_0)\\
+&=(\underline{a_1},\underline{b_1}).
+\end{align*}
+and
+\begin{align*}
+D(a_2,b_2) &= (x_0,y_0)+r(a_2-x_0,b_2-y_0)\\
+&=(x_0+ra_2-rx_0,y_0+rb_2-ry_0)\\
+&=(\underline{a_2},\underline{b_2}).
+\end{align*}
+Now 
+\begin{align*}
+d((\underline{a_1},\underline{b_1}),(\underline{a_2},\underline{b_2})) &=
+\sqrt{(\underline{a_2}-\underline{a_1})^2+(\underline{b_2}-\underline{b_1})^2} \\
+&=\sqrt{(x_0+ra_2-rx_0-x_0-ra_1+rx_0)^2+(y_0+rb_2-ry_0-y_0-rb_1+ry_0)^2} \\
+&=\sqrt{(ra_2-ra_1)^2+(rb_2-rb_1)^2} \\
+&=\sqrt{r^2(a_2-a_1)^2+r^2(b_2-b_1)^2} \\
+&=r\sqrt{(a_2-a_1)^2+(b_2-b_1)^2} \\
+&=r\cdot d((a_1,b_1),(a_2,b_2)).
+\end{align*}
+Hence we see that the distance between any two points is multiplied by
+the magnification factor.
+\end{freeResponse}
+\end{solution}
+\end{question}
+
+\begin{question}
+Show that a dilation by a factor of $r$ takes any vector to $r$
+times itself.
+\begin{solution}
+\begin{hint}
+View the vector as the difference between two points.
+\end{hint}
+Consider the vector with its tip at $(a,b)$ and its tail at
+$(c,d)$. This is vector $(a-c, b-d)$. Now if apply the dilation,
+\begin{align*}
+D(a,b) &= (x_0,y_0) + r(a-x_0, b-y_0)\\
+&= (ra + (1-r)x_0, rb+(1-r)y_0).
+\end{align*}
+Likewise, $D(c,d) = (rc + (1-r)x_0, rd+(1-r)y_0)$. This is vector
+\[
+(ra-rc,rb-rd) = r(a-c,b-d).
+\]
+Hence a dilation takes any vector to $r$ times itself.
+\end{solution}
+\end{question}
+
+\begin{question}
+Show that a dilation takes a line to a line parallel (or equal) to
+itself.
+
+Hint: Compute slopes.
+\end{question}
+
+\begin{question}
+Show that a dilation of the plane preserves angles.
+
+Hint: Use the dot product of vectors emanating from the same point to measure
+angles
+\end{question}
+
+
+\begin{question}\hfil
+\begin{enumerate}
+\item Show that the inverse mapping of a dilation is again a
+dilation with the same center but with magnification factor $r^{-1}$.
+\end{enumerate}
+Hint: For a)\ solve for $\left(  x,y\right)  $ in terms of $\left(
+\underline{x},\underline{y}\right)  $. For b) write the equation%
+\[
+ax+by=c
+\]
+for the given line. Then substitute for $\left(  x,y\right)  $ its expression
+in terms of $\left(  \underline{x},\underline{y}\right)$.
+\end{question}
+
+
+\begin{question}
+Show using several-variable calculus that a dilation with
+magnification factor $r$ multiplies all areas by a factor of $r^{2}$.
+\end{question}
+
+
+
+\section*{Similarity in \textbf{EG}}
+
+\begin{definition}
+Two triangles are \textbf{similar} if there is a dilation of the
+plane that takes one to a triangle which is congruent to the other. We write%
+\[
+\triangle ABC\sim\triangle A'B'C'%
+\]
+to denote that these two triangles are similar (where the order of the
+vertices tells us which vertices correspond).
+\end{definition}
+
+\begin{question}
+\begin{enumerate}
+\item Show that, if two triangles are similar, then corresponding
+sides are proportional.
+
+Hint: You have to start from the supposition that the two triangles satisfy
+the definition of similar triangles.
+
+\item Show that, if corresponding sides of two triangles are proportional, then
+the two triangles are similar.
+
+Hint: You have to start from the supposition that corresponding sides of the
+two triangles are proportional and use SSS to show that there is a dilation of
+$\triangle ABC$ is congruent to $\triangle A'B'C'$.
+\end{enumerate}
+\end{question}
+
+\begin{question}
+\begin{enumerate}
+\item Show that, if two triangles are similar, then corresponding
+angles are equal.
+
+Hint: You have to start from the supposition that the two triangles satisfy
+the definition of similar triangles.
+
+\item Show that, if corresponding angles of two triangles are equal, then the two
+triangles are similar.
+
+Hint: You have to start from the supposition that corresponding angles of the
+two triangles are equal, then use a dilation with $r=|A'B'|/|AB|$ and ASA to show that the dilation of one triangle that is congruent
+to the other.
+\end{enumerate}
+\end{question}
+
+\begin{question}
+\label{39} Show that two triangles are similar if corresponding
+sides are parallel.
+
+Hint: Use the fact that angles are equal if corresponding rays are
+parallel.
+\end{question}
+
+\begin{question}
+Show that two triangles are similar if corresponding sides are perpendicular.
+
+Hint: Extend one of the rays of the first angle until it crosses the
+corresponding ray of the second angle.
+\end{question}
+
+
+\section*{Concurrence theorems in \textbf{EG}, Ceva's theorem}
+
+Before leaving (plane) euclidean geometry, we will visit two more of
+its many sets of memorable properties, one's that you may or may not
+have seen in high school. The first of these comes under the name of
+concurrence theorems--these theorems relate the measures of the three
+sides (or angles) of a triangle to the measure of quantities
+constructed from those sides by some uniform rule.
+
+\begin{question}
+\label{25} Denote the measure or area of a triangle $\triangle
+ABC$ as $\left\vert \triangle ABC\right\vert $. Show that, in the
+diagram below,
+\[
+\frac{\left\vert AF\right\vert }{\left\vert FB\right\vert }=\frac{\left\vert
+\triangle AFC\right\vert }{\left\vert \triangle CFB\right\vert }%
+=\frac{\left\vert \triangle AFX\right\vert }{\left\vert \triangle
+XFB\right\vert }.
+\]
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,3){C}
+\tkzDefPoint(8,0){B}
+\tkzDefPoint(4.79,1.33){X}
+\tkzDefPoint(4.63,0){F}
+\tkzDefPoint(6.26,1.74){D}
+\tkzDefPoint(3.27,1.96){E}
+\draw (A)--(B)--(C)--cycle;
+\draw (A)--(D);
+\draw (F)--(C);
+\draw (B)--(E);
+
+
+\tkzLabelPoints[above](C)
+\tkzLabelPoints[above right](X)
+\tkzLabelPoints[below](A,B,F)
+\tkzLabelPoints[above left](E)
+\tkzLabelPoints[right](D)
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+\end{question}
+
+\begin{question}
+\label{26} Use Question \ref{25} to show by pure algebra that%
+\begin{equation}
+\frac{\left\vert AF\right\vert }{\left\vert FB\right\vert }=\frac{\left\vert
+\triangle AXC\right\vert }{\left\vert \triangle CXB\right\vert }. \label{27}%
+\end{equation}
+
+\end{question}
+
+\begin{question}
+\label{28}  For three concurrent segments $\overline{AD}$,
+$\overline{BE}$ and $\overline{CF}$ as given in Question \ref{25}, use
+Question \ref{26} to show that%
+\[
+\frac{\left\vert AF\right\vert }{\left\vert FB\right\vert }%
+\text{\textperiodcentered}\frac{\left\vert BD\right\vert }{\left\vert
+DC\right\vert }\text{\textperiodcentered}\frac{\left\vert CE\right\vert
+}{\left\vert EA\right\vert }=1.
+\]
+
+
+Hint: Use Question \ref{25} repeatedly. 
+%% Hint: Use Question \ref{27} with side $\overline{BC}$ replacing
+%% $\overline{AB}$, and $\left( \ref{27}\right)$ with side
+%% $\overline{CA}$ replacing $\overline{AB}$.
+\end{question}
+
+This last result with its converse, which you will show in the next Question,
+is called \textit{Ceva's Theorem}. [MJG,287-288]
+
+\begin{question}
+Show the converse of the result in Question \ref{28}, namely
+that, if%
+\[
+\frac{\left\vert AF\right\vert }{\left\vert FB\right\vert }%
+\text{\textperiodcentered}\frac{\left\vert BD\right\vert }{\left\vert
+DC\right\vert }\text{\textperiodcentered}\frac{\left\vert CE\right\vert
+}{\left\vert EA\right\vert }=1
+\]
+then the lines $AD$, $BE$, and $CF$ pass through a common point.
+
+Hint: Suppose that they do not pass through a common point.
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,3){C}
+\tkzDefPoint(8,0){B}
+\tkzDefPoint(5,0){F}
+\tkzDefPoint(6.26,1.74){D}
+\tkzDefPoint(2.75,1.65){E}
+\draw (A)--(B)--(C)--cycle;
+\draw (A)--(D);
+\draw (F)--(C);
+\draw (B)--(E);
+
+
+\tkzLabelPoints[above](C)
+\tkzLabelPoints[below](A,B,F)
+\tkzLabelPoints[above left](E)
+\tkzLabelPoints[right](D)
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+Notice that if, for example, $F$ moves along the segment
+$\overline{AB}$, then $\frac{\left\vert AF\right\vert }{\left\vert
+FB\right\vert }$ is a strictly increasing function of $\left\vert
+AF\right\vert $. Now use Question \ref{28} to determine a position
+$F'$ for $F$ along the segment $\overline{AB}$ at which
+\[
+\frac{\left\vert AF'\right\vert }{\left\vert F'B\right\vert
+}\text{\textperiodcentered}\frac{\left\vert BD\right\vert }{\left\vert
+DC\right\vert }\text{\textperiodcentered}\frac{\left\vert CE\right\vert
+}{\left\vert EA\right\vert }=1.
+\]
+\end{question}
+
+\begin{question}
+A \textbf{median} of a triangle is a line segment from a vertex
+to the midpoint of the opposite side. Show that the medians of any triangle
+meet in a common point.
+
+Hint: Use Ceva's Theorem.
+\end{question}
+
+\begin{question}
+Use Ceva's theorem to show that the three altitudes of a
+triangle are concurrent.
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,4){C}
+\tkzDefPoint(6.5,0){B}
+\tkzDefPoint(5,0){F}
+\tkzDefPoint(5.54,2.56){D}
+\tkzDefPoint(3.98,3.18){E}
+\draw (A)--(B)--(C)--cycle;
+\draw (A)--(D);
+\draw (F)--(C);
+\draw (B)--(E);
+
+
+\tkzLabelPoints[above](C)
+\tkzLabelPoints[below](A,B,F)
+\tkzLabelPoints[above left](E)
+\tkzLabelPoints[right](D)
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+Hint: Use all three similarities of the form $\triangle
+CEB\sim\triangle CDA$ and then apply Ceva's theorem.
+\end{question}
+
+\end{document}
