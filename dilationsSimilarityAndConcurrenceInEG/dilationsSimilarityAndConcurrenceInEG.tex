@@ -123,30 +123,47 @@ Hence a dilation takes any vector to $r$ times itself.
 \begin{question}
 Show that a dilation takes a line to a line parallel (or equal) to
 itself.
-
-Hint: Compute slopes.
+\begin{solution}
+\begin{hint}
+Use the parametric formula for a line.
+\end{hint}
+Using the parametric formula for a line
+\[
+\l(t) = (a,b) + t(u,v)
+\]
+we see that
+\begin{align*}
+D(\l(t)) &=D(a+tu,b+tv)\\
+&= (x_0,y_0) + r(a+tu-x_0,b+tv-y_0)\\
+&= (x_0,y_0) + (ra - rx_0,rb-ry_0)+ r(tu,tv)\\
+&= (x_0(1-r) + ra,y_0(1-r)+rb)) + t(ru,rv). 
+\end{align*}
+This is the line that passes through $(x_0(1-r) + ra,y_0(1-r)+rb))$ in
+the direction of $(ru,rv)$, but since $r$ is a positive real number,
+the vector $(u,v)$ goes in the same direction as the vector
+$(ru,rv)$. Hence a dilation maps any line to a line parallel (or
+equal) to itself.
+\end{solution}
 \end{question}
 
 \begin{question}
 Show that a dilation of the plane preserves angles.
-
-Hint: Use the dot product of vectors emanating from the same point to measure
-angles
+\begin{solution}
+Since an angle can be determined by two vectors, and dilations do not
+change the direction of vectors, dilations of the plane preserve
+angles.
+\end{solution}
 \end{question}
 
 
-\begin{question}\hfil
-\begin{enumerate}
-\item Show that the inverse mapping of a dilation is again a
-dilation with the same center but with magnification factor $r^{-1}$.
-\end{enumerate}
-Hint: For a)\ solve for $\left(  x,y\right)  $ in terms of $\left(
-\underline{x},\underline{y}\right)  $. For b) write the equation%
-\[
-ax+by=c
-\]
-for the given line. Then substitute for $\left(  x,y\right)  $ its expression
-in terms of $\left(  \underline{x},\underline{y}\right)$.
+\begin{question}
+Show that the inverse mapping of a dilation is again a dilation with
+the same center but with magnification factor $r^{-1}$.
+\begin{solution}
+\begin{hint}
+Solve for $(x,y)$ in terms of $(\underline{x},\underline{y})$.
+\end{hint}
+\end{solution}
 \end{question}
 
 
