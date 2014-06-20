@@ -1,5 +1,7 @@
 \documentclass{ximera}
 
+\input{../preamble.tex}
+
 \title{Dilations, similarity, and concurrence in EG}
 
 \begin{document}
@@ -163,6 +165,15 @@ the same center but with magnification factor $r^{-1}$.
 \begin{hint}
 Solve for $(x,y)$ in terms of $(\underline{x},\underline{y})$.
 \end{hint}
+Write
+\begin{align*}
+(\underline{x},\underline{y}) &= (x_{0},y_{0})  +r(x-x_{0},y-y_{0}), \\
+(\underline{x},\underline{y}) &= (x_{0},y_{0})  +r(x,y) -r(x_{0},y_{0}), \\
+r(x_0,y_0) + (\underline{x},\underline{y}) - (x_0,y_0) &= r(x,y), \\
+(x_0,y_0) + r^{-1}(\underline{x}-x_0,\underline{y}-y_0) &= (x,y). \\
+\end{align*}
+Hence the inverse mapping of a dilation is again a dilation with the
+same center but with magnification factor $r^{-1}$.
 \end{solution}
 \end{question}
 
@@ -170,6 +181,58 @@ Solve for $(x,y)$ in terms of $(\underline{x},\underline{y})$.
 \begin{question}
 Show using several-variable calculus that a dilation with
 magnification factor $r$ multiplies all areas by a factor of $r^{2}$.
+\begin{solution}
+\begin{hint}
+Recall that if $R$ is a region in the plane, 
+\[
+\int_{D(R)} f(x,y)  \d xdy = \int_{R} f(D(x,y)) \left|\det J_D(x,y)\right| \d xdy,
+\]
+where
+\[
+J_D(x,y) =
+{\renewcommand\arraystretch{2}
+\begin{bmatrix}
+\pp[D_x]{x} & \pp[D_x]{y} \\
+\pp[D_y]{x} & \pp[D_y]{y}
+\end{bmatrix}}
+\]
+and $D_x$ and $D_y$ are the components of $D(x,y)$.
+\end{hint}
+Let $R$ be the region in the plane. Write
+\[
+\int_{D(R)} 1  \d xdy = \int_{R}  \left|\det J_D(x,y)\right| \d xdy,
+\]
+where
+\[
+J_D(x,y) =
+{\renewcommand\arraystretch{2}
+\begin{bmatrix}
+\pp[D_x]{x} & \pp[D_x]{y} \\
+\pp[D_y]{x} & \pp[D_y]{y}
+\end{bmatrix}} = 
+\begin{bmatrix}
+r & 0 \\
+0 & r
+\end{bmatrix}.
+\]
+Hence $\left|\det J_D(x,y)\right| = r^2$ and so 
+\[
+\int_{D(R)} 1  \d xdy = r^2\cdot \int_R 1\d xdy.
+\]
+This shows that a dilation with magnification factor $r$ multiplies
+all areas by a factor of $r^{2}$.
+\end{solution}
+\end{question}
+
+\begin{question}
+Give an explanation that a middle grades student would understand that
+a dilation with magnification factor $r$ multiplies all areas by a
+factor of $r^{2}$.
+\begin{solution}
+\begin{hint}
+Break the region into rectangles. 
+\end{hint}
+\end{solution}
 \end{question}
 
 
