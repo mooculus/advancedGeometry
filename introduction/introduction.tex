@@ -113,20 +113,20 @@ kind of geometry, which we call Neutral Geometry, will be explained in the
 book and denoted by `\textbf{NG}.'
 
 Also, it will often be useful to consider a vector, for example
-$V=\left(a,b,c\right)$, as a $3\times1$ matrix
+$V=\left(a,b,c\right)$, as a $1\times3$ matrix
 \[
-V  =
+V=
 \begin{bmatrix}
-a\\
-b\\
-c
+a & b & c
 \end{bmatrix}
 \]
 with
 \[
-V^\transpose=
+V^\transpose  =
 \begin{bmatrix}
-a & b & c
+a\\
+b\\
+c
 \end{bmatrix}.
 \]
 This will allow us to write the scalar product of two vectors%
@@ -136,7 +136,7 @@ V\bullet W  &  =\left(  a,b,c\right)  \bullet\left(d,e,f\right) \\
 \end{align*}
 as a product of matrices%
 \[
-V^\transpose\cdot W=
+V\cdot W^\transpose=
 \begin{bmatrix}
 a & b & c
 \end{bmatrix} 

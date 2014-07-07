@@ -232,6 +232,11 @@ factor of $r^{2}$.
 \begin{hint}
 Break the region into rectangles. 
 \end{hint}
+Break an arbitrary region into rectangles. Once we have the
+rectangles, multiply each of the lengths and widths of these
+rectangles by $r$. Now the area of each of these rectangles has
+increased by a factor of $r^2$. Hence, the area of the entire region
+has increased by a factor of $r^2$.
 \end{solution}
 \end{question}
 
@@ -249,38 +254,90 @@ to denote that these two triangles are similar (where the order of the
 vertices tells us which vertices correspond).
 \end{definition}
 
-\begin{question}
+\begin{question}\hfil
 \begin{enumerate}
 \item Show that, if two triangles are similar, then corresponding
-sides are proportional.
+sides are proportional with the same constant of proportionality.
 
-Hint: You have to start from the supposition that the two triangles satisfy
-the definition of similar triangles.
+\item Show that, if corresponding sides of two triangles are
+  proportional with the same constant of proportionality, then the two
+  triangles are similar.
 
-\item Show that, if corresponding sides of two triangles are proportional, then
-the two triangles are similar.
 
-Hint: You have to start from the supposition that corresponding sides of the
-two triangles are proportional and use SSS to show that there is a dilation of
-$\triangle ABC$ is congruent to $\triangle A'B'C'$.
 \end{enumerate}
+\begin{solution}
+\begin{hint}
+For the first part, you have to start from the supposition that the
+two triangles satisfy the definition of similar triangles.
+\end{hint}
+\begin{hint}
+For the second part, you have to start from the supposition that
+corresponding sides of the two triangles are proportional and use SSS
+to show that there is a dilation of $\triangle ABC$ is congruent to
+$\triangle A'B'C'$.
+\end{hint}
+For the first part, suppose that we have two similar triangles. This
+means that there is a dilation that takes one triangle to a triangle
+congruent to the other. Since a dialation with magnification factor
+$r$ takes a vector to $r$ times that vector, and congruence preserves
+lengths, we have that
+\begin{align*}
+|AB| &= r\cdot |A'B'|\\
+|AC| &= r\cdot |A'C'|\\
+|BC| &= r\cdot |B'C'|.
+\end{align*}
+
+
+For the second part, suppose that corresponding sides are proportional
+with the same constant of proportionality. So
+\begin{align*}
+|AB| &= r\cdot |A'B'|\\
+|AC| &= r\cdot |A'C'|\\
+|BC| &= r\cdot |B'C'|.
+\end{align*}
+Now a dilation with magnification factor $r$ will take corresponding
+sides of $\triangle ABC$ to corresponding sides of $\triangle
+A'B'C'$. After this, by SSS we know that the two triangles are
+congruent.
+\end{solution}
 \end{question}
 
-\begin{question}
+\begin{question}\hfil
 \begin{enumerate}
 \item Show that, if two triangles are similar, then corresponding
 angles are equal.
 
-Hint: You have to start from the supposition that the two triangles satisfy
-the definition of similar triangles.
-
 \item Show that, if corresponding angles of two triangles are equal, then the two
 triangles are similar.
-
-Hint: You have to start from the supposition that corresponding angles of the
-two triangles are equal, then use a dilation with $r=|A'B'|/|AB|$ and ASA to show that the dilation of one triangle that is congruent
-to the other.
 \end{enumerate}
+
+\begin{solution}
+\begin{hint}
+For the first part, you have to start from the supposition that the
+two triangles satisfy the definition of similar triangles.
+\end{hint}
+\begin{hint}
+For the second part, you have to start from the supposition that
+corresponding angles of the two triangles are equal, then use a
+dilation with $r=|A'B'|/|AB|$ and ASA to show that the dilation of one
+triangle that is congruent to the other.
+\end{hint}
+For the first part, suppose that we have two similar triangles. This
+means that there is a dilation that takes one triangle to a triangle
+congruent to the other. Since dialations preserve angles,
+corresponding angles must be equal.
+
+For the second part, suppose that corresponding angles of two
+triangles are equal. Set the magnificaiton factor of the dilation $D$
+to be
+\[
+r = \frac{|A'B'|}{|AB|}.
+\]
+In this case, $D$ maps $\bar{AB}$ to a segment conruent to
+$\bar{A'B'}$. Moreover, dilations preserve angles. Hence by ASA, $D$
+maps $\triangle ABC$ to a triangle congruent to $\triangle A'B'C'$,
+and so $\triangle ABC \sim \triangle A'B'C'$.
+\end{solution}
 \end{question}
 
 \begin{question}
