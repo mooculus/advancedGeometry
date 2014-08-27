@@ -77,117 +77,115 @@ don't intersect.
 
 One implicit assumption of two-dimensional neutral geometry is the
 existence of (a group of) rigid motions or congruences. That is, it is
-assumed that given any point $A$ and any vector
-$V$ emanating from $A$ and given any second point
-$B$ in the geometry and any vector $W$ emanating
-from $B$, then there is a transformation $M$ of the
-geometry such that:
+assumed that given any point $A$ and any vector $V$ emanating from $A$
+and given any second point $B$ in the geometry and any vector $W$
+emanating from $B$, then there is a transformation (thought of as a
+matrix that we will multiply on the right) $M$ such that:
 \begin{enumerate}
-\item $M\cdot A=B$.
-\item $M\cdot V$ is a positive scalar multiple of $W$.
-\item For all points $A$ and $B$ in the geometry,
-  $M$ leaves the distance between them unchanged:
+\item $A\cdot M=B$.
+\item $V\cdot M$ is a positive scalar multiple of $W$.
+\item For all points $P$ and $Q$ in the geometry, $M$ leaves the
+  distance between them unchanged:
 \[
-d\left(M\cdot A,  M\cdot A\right) =d\left( A,B\right).
+d\left(P\cdot M,  Q\cdot M\right) =d\left( P,Q\right).
 \]
-\item For any two vectors $U$ and $V$ emanating from
-  $A$, the angle between $M\cdot U$ and
-  $M\cdot V$ is the same as the angle between $U$
-  and $V$.
+\item For any two vectors $U$ and $V$ emanating from $A$, the angle
+  between $U\cdot M$ and $V\cdot M$ is the same as the angle between
+  $U$ and $V$.
 \end{enumerate}
 
 
-%% \begin{exercise}
+%% \begin{problem}
 %% Using a sketch on grid paper \textbf{and} an algebraic formulation in
 %% the Euclidean plane, give a concrete example of a rigid motion that
 %% takes $\left( 1,2\right) $ to $\left( 3,5\right) $ and the vector
 %% $\left( 1,0\right) $ emanating from $\left( 1,2\right) $ to a positive
 %% multiple of the vector $\left( 0,2\right) $ emanating from $\left(
 %% 3,5\right)$. 
-%% \begin{solution}
+%% 
 %% WHAT KIND OF SOLUTION IS THIS?
-%% \end{solution}
+%% 
 %% Where is the point $(0,0)$ mapped to by this rigid
 %% motion?
-%% \begin{solution}
+%% 
 %% The point $(0,0)$ is mapped to 
 %% \begin{matrixanswer}[hello]
 %% hello
 %% \end{matrixanswer}
-%% \end{solution}
-%% \end{exercise}
+%% 
+%% \end{problem}
 
 
-\begin{question}
-Given a point $(2,3)$, find a matrix that will reflect this point
-across the line $y=x$.
-\begin{solution}
-  \begin{hint}
-    Be sure to express $(2,3)$ as a column vector.
-  \end{hint}
-  \begin{matrixAnswer}[name=M]
-    correctMatrix = [['0','1'],['1','0']]
-\end{matrixAnswer}
-\end{solution}
-Given a point $(2,3)$, find a matrix that will rotate this point
-counterclockwise $90^\circ$.
-\begin{solution}
-  \begin{hint}
-    Be sure to express $(2,3)$ as a column vector.
-  \end{hint}
-  \begin{matrixAnswer}[name=M]
-    correctMatrix = [['0','-1'],['1','0']]
-\end{matrixAnswer}
-\end{solution}
-Can you find a $2\times 2$ matrix that will translate $(0,0)$ to
-$(2,3)$? Explain why or why not.
-\begin{solution}
-\begin{freeResponse}
-If such a matrix exists, it must have the form:
-\[
-M = 
-\begin{bmatrix}
-a & b \\
-c & d
-\end{bmatrix}.
-\]
-If 
-\[
-\begin{bmatrix}
-a & b \\
-c & d
-\end{bmatrix}
-\begin{bmatrix}
-0 \\
-0 
-\end{bmatrix} = 
-\begin{bmatrix}
-2 \\
-3
-\end{bmatrix},
-\]
-then 
-\begin{align*}
-a\cdot 0 + b\cdot 0 &= 2\\
-c\cdot 0 + d\cdot 0 &= 3
-\end{align*}
-but this is impossible, therefore there is no such matrix. From this
-we can see that translations mapping $\R^2\to \R^2$ \textbf{cannot} be
-represented as $2\times 2$ matrices. Instead we should represent them
-as column vectors that we add to points. This seeming difference
-between the rigid motions of rotations, reflections, and translations
-will be alleviated later in this course.
-\end{freeResponse}
-\end{solution}
-\end{question}
+%% \begin{problem}
+%% Given a point $(2,3)$, find a matrix that will reflect this point
+%% across the line $y=x$.
 
-\begin{exploration}
+%%   \begin{hint}
+%%     Be sure to express $(2,3)$ as a column vector.
+%%   \end{hint}
+%%   \begin{matrixAnswer}[name=M]
+%%     correctMatrix = [['0','1'],['1','0']]
+%% \end{matrixAnswer}
+
+%% Given a point $(2,3)$, find a matrix that will rotate this point
+%% counterclockwise $90^\circ$.
+
+%%   \begin{hint}
+%%     Be sure to express $(2,3)$ as a column vector.
+%%   \end{hint}
+%%   \begin{matrixAnswer}[name=M]
+%%     correctMatrix = [['0','-1'],['1','0']]
+%% \end{matrixAnswer}
+
+%% Can you find a $2\times 2$ matrix that will translate $(0,0)$ to
+%% $(2,3)$? Explain why or why not.
+
+%% \begin{freeResponse}
+%% If such a matrix exists, it must have the form:
+%% \[
+%% M = 
+%% \begin{bmatrix}
+%% a & b \\
+%% c & d
+%% \end{bmatrix}.
+%% \]
+%% If 
+%% \[
+%% \begin{bmatrix}
+%% a & b \\
+%% c & d
+%% \end{bmatrix}
+%% \begin{bmatrix}
+%% 0 \\
+%% 0 
+%% \end{bmatrix} = 
+%% \begin{bmatrix}
+%% 2 \\
+%% 3
+%% \end{bmatrix},
+%% \]
+%% then 
+%% \begin{align*}
+%% a\cdot 0 + b\cdot 0 &= 2\\
+%% c\cdot 0 + d\cdot 0 &= 3
+%% \end{align*}
+%% but this is impossible, therefore there is no such matrix. From this
+%% we can see that translations mapping $\R^2\to \R^2$ \textbf{cannot} be
+%% represented as $2\times 2$ matrices. Instead we should represent them
+%% as column vectors that we add to points. This seeming difference
+%% between the rigid motions of rotations, reflections, and translations
+%% will be alleviated later in this course.
+%% \end{freeResponse}
+
+%% \end{problem}
+
+\begin{problem}
 Think back to high school days and write the congruence rules SSS,
 SAS, and ASA. Be very careful with your wording---it had better be
 that triangles can be \textbf{moved onto each other by a rigid motion}
 if and only if they satisfy any one (and hence all) of the three
 properties (SSS, SAS, ASA).
-\begin{solution}
+
 Suppose there is a triangle $\triangle ABC$ and another triangle
 $\triangle DEF$. 
 \begin{freeResponse}
@@ -220,12 +218,12 @@ The upshot is that:
 \textbf{Congruence theorems are theorems about rigid motions.}
 \end{center}
 \end{freeResponse}
-\end{solution}
-\end{exploration}
 
-\begin{question}
+\end{problem}
+
+\begin{problem}
 Give an example to show that there is no universal SSA law.
-\begin{solution}
+
 \begin{freeResponse}
 Consider:
 \begin{image}
@@ -247,20 +245,20 @@ Consider:
 \end{image}
 Hence a triangle is not uniquely determined by a side, side, and an angle. 
 \end{freeResponse}
-\end{solution}
+
 Can you find a restriction that will allow for an ``SSA-type'' law?
-\begin{solution}
+\begin{freeResponse}
 Perhaps the simplest restriction is forcing the angle to be greater
 than or equal to $90^\circ$.
-\end{solution}
-\end{question}
+\end{freeResponse}
+\end{problem}
 
 Although it is a bit tedious to show (and we will not ask you to do it
 here), using only E1--E4 you can derive the usual rules for congruent
 triangles (SSS, SAS, ASA). Thus these laws hold in any neutral
 geometry.
 
-\begin{question}\label{18} 
+\begin{problem}\label{18} 
 In the diagram below, we see the intersection of $\bar{BC}$ and
 $\bar{AE}$. Suppose that $\left\vert BD\right\vert =\left\vert
 CD\right\vert $ and $\left\vert AD\right\vert =\left\vert
@@ -282,7 +280,7 @@ ED\right\vert $.
 \end{image}
 Show that triangle $\triangle BDA$ and triangle $\triangle CDE$ are
 congruent. [MJG,138]
-\begin{solution}
+
 \begin{hint}
 First you should explain why $\angle BDA = \angle CDE$.
 \end{hint}
@@ -328,10 +326,10 @@ CD\right\vert $ and $\left\vert AD\right\vert =\left\vert
 ED\right\vert $ we may now apply SAS to prove that triangle $\triangle
 BDA$ and triangle $\triangle CDE$ are congruent.
 \end{freeResponse}
-\end{solution}
-\end{question}
 
-\begin{question}\hfil
+\end{problem}
+
+\begin{problem}\hfil
 \label{118} 
 \begin{enumerate}
 \item\label{Exp:ExtAngle} Show in neutral geometry that, for $\triangle ABC$
@@ -362,7 +360,7 @@ either remote interior angle $\alpha$ or $\beta$. [MJG,119]
 \item Use the previous part to show that the sum of any two angles of
   a triangle is less than $180^{\circ}$.
 \end{enumerate}
-\begin{solution}
+
 \begin{hint}
 Add line segments to the diagram above, and attempt to use the
 previous problem.
@@ -514,17 +512,17 @@ To consider $\alpha+\beta$, we should repeat the argument from part
 (a) again with the exterior angle at $A$. From this we will see
 $\alpha + \beta < 180^\circ$.
 \end{freeResponse}
-\end{solution}
-\end{question}
 
-\begin{question}
+\end{problem}
+
+\begin{problem}
 Show in \textbf{NG} that, if two lines cut by a transversal line have
 a pair of congruent alternate interior angles, then they are
 parallel. [MJG,117]
-\begin{solution}
+
 \begin{hint}
 Suppose the assertion is false for some pair of lines. Find a triangle
-that violates the conclusion of the previous question.
+that violates the conclusion of the previous problem.
 \end{hint}
 \begin{freeResponse}
 Seeking a contradiction, consider the following diagram with
@@ -563,8 +561,8 @@ From the diagram we have $\alpha + \beta = 180^\circ$. This is a
 contradiction since the sum of any two interior angles of a triangle
 is always less than $180^\circ$ in \textbf{NG}.
 \end{freeResponse}
-\end{solution}
-\end{question}
+
+\end{problem}
 
 
 
@@ -589,7 +587,7 @@ There is one important fact about the sum of the angles in a triangle that you
 \textit{can} prove in \textbf{NG}, that is, without invoking Euclid's fifth
 axiom. We will in fact accomplish that in this section.
 
-\begin{question}\label{20}
+\begin{problem}\label{20}
 Show that the sum of the angles in $\triangle ACE$ is the same as the
 sum of the angles in $\triangle ACB$
 \begin{image}
@@ -608,7 +606,7 @@ sum of the angles in $\triangle ACB$
 %\draw[step=.5cm] (0,0) grid (10,5);
 \end{tikzpicture}
 \end{image}
-\begin{solution}
+
 \begin{hint}
 Use the previous problems.
 \end{hint}
@@ -665,10 +663,10 @@ On the other hand, the sum of the interior angles of $\triangle ACB$ is
 \]
 The sums are equal since addition is commutative. 
 \end{freeResponse}
-\end{solution}
-\end{question}
 
-\begin{question}\label{22} 
+\end{problem}
+
+\begin{problem}\label{22} 
 Suppose that there is a triangle $\triangle ABC$ in \textbf{NG} for
 which the sum of the angles in a triangle $\triangle ABC$ is
 $\Delta^\circ$. Construct a new triangle, $\triangle ACE$ such that
@@ -689,7 +687,7 @@ $\angle CAB$.
 \end{image}
 
 
-\begin{solution}
+
 \begin{hint} Consider the following additions to our diagram above:
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
@@ -762,32 +760,32 @@ Hence we see that one of $\alpha_1$ or $\alpha_2$ is at most half of
 $\angle CAB$. Since $\triangle ACE$ contains both of these angles, we
 have completed the proof.
 \end{freeResponse}
-\end{solution}
-\end{question}
 
-%% \begin{question}
+\end{problem}
+
+%% \begin{problem}
 %% \label{21} Suppose that there is a triangle $\triangle ABC$ in
 %% \textbf{NG} for which the sum of the angles in a triangle $\triangle ABC$ is
 %% $\left( 180+x\right)^\circ$ with $x>0$. Let $\alpha$ denote the
-%% measure of $\angle BAC$. Repeat the construction in Question \ref{22}
+%% measure of $\angle BAC$. Repeat the construction in Problem \ref{22}
 %% over and over again $n$-times to construct a triangle with the sum of
 %% its angles still equal to $\left( 180+x\right)^\circ$ but such that
 %% one of its angles has size less than%
 %% \[
 %% \frac{1}{2^{n}}\alpha.
 %% \]
-%% \end{question}
+%% \end{problem}
 
-\begin{question}
+\begin{problem}
 \label{121} Suppose that there is a triangle $\triangle ABC$ in
 \textbf{NG} for which the sum of the angles in a triangle $\triangle
 ABC$ is $\left( 180+x\right)^\circ$ with $x>0$. Show that there is a
 positive integer $n$ so that, if you repeat the construction in the
-previous question over and over again $n$-times, a triangle can be
+previous problem over and over again $n$-times, a triangle can be
 found with sum of its angles still equal to $\left(180+x\right)^\circ$
 but with one of its angles having measure less than $x$. [MJG,125-127]
 
-\begin{solution}
+
 \begin{hint}
 Explain how we can construct a triangle where the sum of the interior
 angles is $(180+x)^\circ$ but one of this triangles measures is less than
@@ -817,11 +815,11 @@ Since
 we can find $n$ large enough to make the new angle arbitrarily small, in
 particular we can make it less than $x$.
 \end{freeResponse}
-\end{solution}
-\end{question}
+
+\end{problem}
 
 
-On the other hand, by our previous work%by Question \ref{118} (b), 
+On the other hand, by our previous work%by Problem \ref{118} (b), 
 you cannot have a triangle with two angles summing to more than
 $180^\circ$. Hence, from our work above, we can prove the following
 theorem:
@@ -858,10 +856,10 @@ As we have seen, this is impossible as two interior angles of a
 triangle cannot sum to be greater than $180^\circ$.
 \end{proof}
 
-\begin{question}
+\begin{problem}
 Considering the proof above, give a sketch of the proof. This means
 you should state major steps, but exclude the details.
-\begin{solution}
+
 \begin{freeResponse}
   \begin{enumerate}
   \item Seek a contradiction and start with a triangle whose
@@ -872,19 +870,19 @@ you should state major steps, but exclude the details.
     $180^\circ$.
   \end{enumerate}
 \end{freeResponse}
-\end{solution}
-\end{question}
+
+\end{problem}
 
 
 
-\begin{question}
+\begin{problem}
 Show the following:
 \begin{enumerate}
 \item The sum of the interior angles in any quadrilateral is no greater than $360^\circ$.
 \item The sum of the interior angles of an $n$-gon is no greater than
 $\left( n-2\right)\cdot180^\circ$.
 \end{enumerate}
-\begin{solution}
+
 \begin{hint}
 Given any quadrilateral, we can break it into two triangles. 
 \end{hint}
@@ -985,15 +983,15 @@ greater than
 ((n-1)-2)\cdot 180^\circ + 180^\circ = (n-2)\cdot 180^\circ.
 \]
 \end{freeResponse}
-\end{solution}
-\end{question}
+
+\end{problem}
 
 
 
-\begin{question}
+\begin{problem}
 Summarize the results from this section. In particular, indicate which
 results follow from the others.
-\end{question}
+\end{problem}
 
 
 \end{document}

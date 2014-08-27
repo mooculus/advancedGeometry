@@ -636,29 +636,30 @@ and we have the situation where the lines in question do not meet at a point:
 \end{tikzpicture}
 \end{image}
 There is an $F'$ such that we have the following diagram:
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\tkzDefPoint(0,0){A}
-\tkzDefPoint(5,3){C}
-\tkzDefPoint(8,0){B}
-\tkzDefPoint(5,0){F}
-\tkzDefPoint(3.76,0){F'}
-\tkzDefPoint(6.26,1.74){D}
-\tkzDefPoint(2.75,1.65){E}
-\draw (A)--(B)--(C)--cycle;
-\draw (A)--(D);
-\draw (F)--(C);
-\draw (B)--(E);
-\draw[dashed] (F')--(C);
+%% BAD BAD
+%% \begin{image}
+%% \begin{tikzpicture}[geometryDiagrams]
+%% \tkzDefPoint(0,0){A}
+%% \tkzDefPoint(5,3){C}
+%% \tkzDefPoint(8,0){B}
+%% \tkzDefPoint(5,0){F}
+%% \tkzDefPoint(3.76,0){F'}
+%% \tkzDefPoint(6.26,1.74){D}
+%% \tkzDefPoint(2.75,1.65){E}
+%% \draw (A)--(B)--(C)--cycle;
+%% \draw (A)--(D);
+%% \draw (F)--(C);
+%% \draw (B)--(E);
+%% \draw[dashed] (F')--(C);
 
 
-\tkzLabelPoints[above](C)
-\tkzLabelPoints[below](A,B,F,F')
-\tkzLabelPoints[above left](E)
-\tkzLabelPoints[right](D)
-%\draw[step=.5cm] (0,0) grid (10,5);
-\end{tikzpicture}
-\end{image}
+%% \tkzLabelPoints[above](C)
+%% \tkzLabelPoints[below](A,B,F,F')
+%% \tkzLabelPoints[above left](E)
+%% \tkzLabelPoints[right](D)
+%% %\draw[step=.5cm] (0,0) grid (10,5);
+%% \end{tikzpicture}
+%% \end{image}
 Note, $F'$ might be on the other side of $F$. Regardless, since
 $\frac{|AF|}{|FB|}$ increases as $|AF|$ increases, we see that
 \[
