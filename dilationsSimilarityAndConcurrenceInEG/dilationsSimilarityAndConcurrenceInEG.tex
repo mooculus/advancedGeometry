@@ -36,11 +36,10 @@ We will also denote the output $D\left(x,y\right)$ of the dilation
 as $\left(\underline{x},\underline{y}\right)$.
 \end{definition}
 
-\begin{question}
+\begin{problem}
 Using cartesian coordinates for the plane, show that the mapping $D$
 defined above is a dilation with magnification factor $r$ and center
 $\left( x_{0},y_{0}\right) $.
-\begin{solution}
 \begin{freeResponse}
 First we must show that the center of the dilation is fixed, that is we must show that 
 \[
@@ -98,16 +97,15 @@ d((\underline{a_1},\underline{b_1}),(\underline{a_2},\underline{b_2})) &=
 Hence we see that the distance between any two points is multiplied by
 the magnification factor.
 \end{freeResponse}
-\end{solution}
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Show that a dilation by a factor of $r$ takes any vector to $r$
 times itself.
-\begin{solution}
 \begin{hint}
 View the vector as the difference between two points.
 \end{hint}
+\begin{freeResponse}
 Consider the vector with its tip at $(a,b)$ and its tail at
 $(c,d)$. This is vector $(a-c, b-d)$. Now if apply the dilation,
 \begin{align*}
@@ -119,16 +117,16 @@ Likewise, $D(c,d) = (rc + (1-r)x_0, rd+(1-r)y_0)$. This is vector
 (ra-rc,rb-rd) = r(a-c,b-d).
 \]
 Hence a dilation takes any vector to $r$ times itself.
-\end{solution}
-\end{question}
+\end{freeResponse}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Show that a dilation takes a line to a line parallel (or equal) to
 itself.
-\begin{solution}
 \begin{hint}
 Use the parametric formula for a line.
 \end{hint}
+\begin{freeResponse}
 Using the parametric formula for a line
 \[
 \l(t) = (a,b) + t(u,v)
@@ -145,26 +143,26 @@ the direction of $(ru,rv)$, but since $r$ is a positive real number,
 the vector $(u,v)$ goes in the same direction as the vector
 $(ru,rv)$. Hence a dilation maps any line to a line parallel (or
 equal) to itself.
-\end{solution}
-\end{question}
+\end{freeResponse}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Show that a dilation of the plane preserves angles.
-\begin{solution}
+\begin{freeResponse}
 Since an angle can be determined by two vectors, and dilations do not
 change the direction of vectors, dilations of the plane preserve
 angles.
-\end{solution}
-\end{question}
+\end{freeResponse}
+\end{problem}
 
 
-\begin{question}
+\begin{problem}
 Show that the inverse mapping of a dilation is again a dilation with
 the same center but with magnification factor $r^{-1}$.
-\begin{solution}
 \begin{hint}
 Solve for $(x,y)$ in terms of $(\underline{x},\underline{y})$.
 \end{hint}
+\begin{freeResponse}
 Write
 \begin{align*}
 (\underline{x},\underline{y}) &= (x_{0},y_{0})  +r(x-x_{0},y-y_{0}), \\
@@ -174,14 +172,13 @@ r(x_0,y_0) + (\underline{x},\underline{y}) - (x_0,y_0) &= r(x,y), \\
 \end{align*}
 Hence the inverse mapping of a dilation is again a dilation with the
 same center but with magnification factor $r^{-1}$.
-\end{solution}
-\end{question}
+\end{freeResponse}
+\end{problem}
 
 
-\begin{question}
+\begin{problem}
 Show using several-variable calculus that a dilation with
 magnification factor $r$ multiplies all areas by a factor of $r^{2}$.
-\begin{solution}
 \begin{hint}
 Recall that if $R$ is a region in the plane, 
 \[
@@ -198,6 +195,7 @@ J_D(x,y) =
 \]
 and $D_x$ and $D_y$ are the components of $D(x,y)$.
 \end{hint}
+\begin{freeResponse}
 Let $R$ be the region in the plane. Write
 \[
 \int_{D(R)} 1  \d xdy = \int_{R}  \left|\det J_D(x,y)\right| \d xdy,
@@ -221,24 +219,24 @@ Hence $\left|\det J_D(x,y)\right| = r^2$ and so
 \]
 This shows that a dilation with magnification factor $r$ multiplies
 all areas by a factor of $r^{2}$.
-\end{solution}
-\end{question}
+\end{freeResponse}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Give an explanation that a middle grades student would understand that
 a dilation with magnification factor $r$ multiplies all areas by a
 factor of $r^{2}$.
-\begin{solution}
 \begin{hint}
 Break the region into rectangles. 
 \end{hint}
+\begin{freeResponse}
 Break an arbitrary region into rectangles. Once we have the
 rectangles, multiply each of the lengths and widths of these
 rectangles by $r$. Now the area of each of these rectangles has
 increased by a factor of $r^2$. Hence, the area of the entire region
 has increased by a factor of $r^2$.
-\end{solution}
-\end{question}
+\end{freeResponse}
+\end{problem}
 
 
 
@@ -254,7 +252,7 @@ to denote that these two triangles are similar (where the order of the
 vertices tells us which vertices correspond).
 \end{definition}
 
-\begin{question}\hfil
+\begin{problem}\hfil
 \begin{enumerate}
 \item Show that, if two triangles are similar, then corresponding
 sides are proportional with the same constant of proportionality.
@@ -265,7 +263,6 @@ sides are proportional with the same constant of proportionality.
 
 
 \end{enumerate}
-\begin{solution}
 \begin{hint}
 For the first part, you have to start from the supposition that the
 two triangles satisfy the definition of similar triangles.
@@ -276,6 +273,7 @@ corresponding sides of the two triangles are proportional and use SSS
 to show that there is a dilation of $\triangle ABC$ is congruent to
 $\triangle A'B'C'$.
 \end{hint}
+\begin{freeResponse}
 For the first part, suppose that we have two similar triangles. This
 means that there is a dilation that takes one triangle to a triangle
 congruent to the other. Since a dilation with magnification factor
@@ -299,10 +297,10 @@ Now a dilation with magnification factor $r$ will take corresponding
 sides of $\triangle ABC$ to corresponding sides of $\triangle
 A'B'C'$. After this, by SSS we know that the two triangles are
 congruent.
-\end{solution}
-\end{question}
+\end{freeResponse}
+\end{problem}
 
-\begin{question}\hfil
+\begin{problem}\hfil
 \begin{enumerate}
 \item Show that, if two triangles are similar, then corresponding
 angles are equal.
@@ -311,7 +309,6 @@ angles are equal.
 triangles are similar.
 \end{enumerate}
 
-\begin{solution}
 \begin{hint}
 For the first part, you have to start from the supposition that the
 two triangles satisfy the definition of similar triangles.
@@ -322,6 +319,7 @@ corresponding angles of the two triangles are equal, then use a
 dilation with $r=|A'B'|/|AB|$ and ASA to show that the dilation of one
 triangle that is congruent to the other.
 \end{hint}
+\begin{freeResponse}
 For the first part, suppose that we have two similar triangles. This
 means that there is a dilation that takes one triangle to a triangle
 congruent to the other. Since dilations preserve angles,
@@ -337,13 +335,12 @@ In this case, $D$ maps $\bar{AB}$ to a segment congruent to
 $\bar{A'B'}$. Moreover, dilations preserve angles. Hence by ASA, $D$
 maps $\triangle ABC$ to a triangle congruent to $\triangle A'B'C'$,
 and so $\triangle ABC \sim \triangle A'B'C'$.
-\end{solution}
-\end{question}
+\end{freeResponse}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 \label{39} Show that two triangles are similar if corresponding
 sides are parallel.
-\begin{solution}
 \begin{hint}
 Use the fact that angles are equal if corresponding rays are parallel.
 \end{hint}
@@ -352,24 +349,25 @@ Since for our triangles, corresponding sides are parallel, the rays of
 the corresponding angles are parallel. This means that corresponding
 angles are equal. Hence the triangles are similar.
 \end{freeResponse}
-\end{solution}
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Show that two triangles are similar if corresponding sides are perpendicular.
-\begin{solution}
 \begin{hint}
-%Extend one of the rays of the first angle until it crosses the
-%corresponding ray of the second angle.
-Rotate the triangle by $90^\circ$.
+Consider the lines that each angle lies within. Find similar triangles
+in this figure.
 \end{hint}
-Rotate one triangle by $90^\circ$. Now the sides are parallel, and we
-see the triangles are similar.
-%% This is an unsatisfactory answer. What really should be done, is
-%% that rotations should be defined, and then we should prove this
-%% analytically.
-\end{solution}
-\end{question}
+\begin{freeResponse}
+It is sufficient to show that given two angles with perpendicular
+legs, then the angles are equal.
+
+Extend the legs of the angles until they cross at right angles. There
+could be several configurations, but all proofs will be similar. Right
+triangles will be formed containing the angle in question. Using the
+fact that right triangles are similar if and only if two nonright
+angles are equal one can show the result for any configuration. 
+\end{freeResponse}
+\end{problem}
 
 
 \section*{Concurrence theorems in \textbf{EG}, Ceva's theorem}
@@ -378,7 +376,7 @@ Let's look at a some \textit{concurrence} theorems. Concurrence
 theorems deal with situations when three or more lines (or curves)
 pass through the same point.
 
-\begin{question}
+\begin{problem}
 \label{25} Denote the measure or area of a triangle $\triangle
 ABC$ as $\left\vert \triangle ABC\right\vert $. Show that, in the
 diagram below,
@@ -411,7 +409,6 @@ XFB\right\vert }.
 %\draw[step=.5cm] (0,0) grid (10,5);
 \end{tikzpicture}
 \end{image}
-\begin{solution}
 \begin{hint}
 Mark the height of the relevant triangles.
 \end{hint}
@@ -445,7 +442,7 @@ and so
 \frac{|\triangle AFC|}{|\triangle CFB|} = \frac{\frac{1}{2} |AF|\cdot h}{\frac{1}{2} |FB|\cdot h} = \frac{|AF|}{|FB|}.
 \]
 
-To get the second equality, again add the height of the triangles in question:
+To get the second equality, again add the height of the triangles in problem:
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
 \tkzDefPoint(0,0){A}
@@ -484,15 +481,13 @@ and so
 \frac{|\triangle AFX|}{|\triangle XFB|} = \frac{\frac{1}{2} |AF|\cdot g}{\frac{1}{2} |FB|\cdot g} = \frac{|AF|}{|FB|}.
 \]
 \end{freeResponse}
-\end{solution}
-\end{question}
+\end{problem}
 
-\begin{question}
-\label{26} Use the previous question to show using pure algebra that%
+\begin{problem}
+\label{26} Use the previous problem to show using pure algebra that%
 \[
 \frac{|AF|}{|FB|}=\frac{|\triangle AXC|}{|\triangle CXB|}. %\label{27}%
 \]
-\begin{solution}
 \begin{freeResponse}
 Write
 \[
@@ -510,12 +505,46 @@ Substituting we find
 &=\frac{|AF|}{|FB|}.
 \end{align*}
 \end{freeResponse}
-\end{solution}
-\end{question}
+\end{problem}
 
-\begin{question}
-\label{28}  For three concurrent segments $\bar{AD}$,
-$\bar{BE}$ and $\bar{CF}$
+
+Now we will present, and you will prove \textit{Ceva's
+  Theorem}. [MJG,287-288]
+
+\begin{theorem}[Ceva's Theorem]
+For three segments $\bar{AD}$, $\bar{BE}$, and $\bar{CF}$
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,3){C}
+\tkzDefPoint(8,0){B}
+\tkzDefPoint(4.79,1.33){X}
+\tkzDefPoint(4.63,0){F}
+\tkzDefPoint(6.26,1.74){D}
+\tkzDefPoint(3.27,1.96){E}
+\draw (A)--(B)--(C)--cycle;
+\draw (A)--(D);
+\draw (F)--(C);
+\draw (B)--(E);
+
+
+\tkzLabelPoints[above](C)
+\tkzLabelPoints[above right](X)
+\tkzLabelPoints[below](A,B,F)
+\tkzLabelPoints[above left](E)
+\tkzLabelPoints[right](D)
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+are concurrent if and only if 
+\[
+\frac{|AF|}{|FB|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|}=1.
+\]
+\end{theorem}
+
+\begin{problem}
+Prove the forward direction of Ceva's theorem: For three concurrent
+segments $\bar{AD}$, $\bar{BE}$ and $\bar{CF}$
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
 \tkzDefPoint(0,0){A}
@@ -543,12 +572,11 @@ show that
 \[
 \frac{|AF|}{|FB|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|}=1.
 \]
-\begin{solution}
 \begin{hint}
-Use the previous question repeatedly.
+Use the previous problem repeatedly.
 \end{hint}
 \begin{freeResponse}
-From the previous question, we see that
+From the previous problem, we see that
 \[
 \frac{|AF|}{|FB|}=\frac{|\triangle AXC|}{|\triangle CXB|},\qquad
 \frac{|BD|}{|DC|}=\frac{|\triangle AXB|}{|\triangle AXC|},\qquad
@@ -562,19 +590,16 @@ So we may write
 \frac{|\triangle CXB|}{|\triangle AXB|} = 1.
 \]
 \end{freeResponse}
-\end{solution}
-\end{question}
+\end{problem}
 
-This last result with its converse, which you will show in the next question,
-is called \textit{Ceva's Theorem}. [MJG,287-288]
 
-\begin{question}
-Show the converse of the previous question, namely that, if%
+
+\begin{problem}
+Prove the reverse direction of Ceva's Theorem: If%
 \[
 \frac{|AF|}{|FB|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|}=1
 \]
 then the lines $AD$, $BE$, and $CF$ pass through a common point.
-\begin{solution}
 \begin{hint}
 Suppose that they do not pass through a common point.
 \begin{image}
@@ -602,8 +627,8 @@ Suppose that they do not pass through a common point.
 \begin{hint}
 Notice that if, for example, $F$ moves along the segment $\bar{AB}$,
 then $\frac{|AF|}{|FB|}$ is a strictly increasing function of
-$|AF|$. Now use Question \ref{28} to determine a position $F'$ for $F$
-along the segment $\bar{AB}$ at which
+$|AF|$. Now use a previous problem to determine a position $F'$ for
+$F$ along the segment $\bar{AB}$ at which
 \[
 \frac{|AF'|}{|F'B|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|}=1.
 \]
@@ -613,7 +638,7 @@ Seeking a contradiction, suppose that
 \[
 \frac{|AF|}{|FB|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|}=1
 \]
-and we have the situation where the lines in question do not meet at a point:
+and we have the situation where the lines in problem do not meet at a point:
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
 \tkzDefPoint(0,0){A}
@@ -636,30 +661,29 @@ and we have the situation where the lines in question do not meet at a point:
 \end{tikzpicture}
 \end{image}
 There is an $F'$ such that we have the following diagram:
-%% BAD BAD
-%% \begin{image}
-%% \begin{tikzpicture}[geometryDiagrams]
-%% \tkzDefPoint(0,0){A}
-%% \tkzDefPoint(5,3){C}
-%% \tkzDefPoint(8,0){B}
-%% \tkzDefPoint(5,0){F}
-%% \tkzDefPoint(3.76,0){F'}
-%% \tkzDefPoint(6.26,1.74){D}
-%% \tkzDefPoint(2.75,1.65){E}
-%% \draw (A)--(B)--(C)--cycle;
-%% \draw (A)--(D);
-%% \draw (F)--(C);
-%% \draw (B)--(E);
-%% \draw[dashed] (F')--(C);
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,3){C}
+\tkzDefPoint(8,0){B}
+\tkzDefPoint(5,0){F}
+\tkzDefPoint(3.76,0){F'}
+\tkzDefPoint(6.26,1.74){D}
+\tkzDefPoint(2.75,1.65){E}
+\draw (A)--(B)--(C)--cycle;
+\draw (A)--(D);
+\draw (F)--(C);
+\draw (B)--(E);
+\draw[dashed] (F')--(C);
 
 
-%% \tkzLabelPoints[above](C)
-%% \tkzLabelPoints[below](A,B,F,F')
-%% \tkzLabelPoints[above left](E)
-%% \tkzLabelPoints[right](D)
-%% %\draw[step=.5cm] (0,0) grid (10,5);
-%% \end{tikzpicture}
-%% \end{image}
+\tkzLabelPoints[above](C)
+\tkzLabelPoints[below](A,B,F,F')
+\tkzLabelPoints[above left](E)
+\tkzLabelPoints[right](D)
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
 Note, $F'$ might be on the other side of $F$. Regardless, since
 $\frac{|AF|}{|FB|}$ increases as $|AF|$ increases, we see that
 \[
@@ -672,18 +696,29 @@ But this means that
 contradicting our previous result! Hence the lines $AD$, $BE$, and $CF$ must
 pass through a common point.
 \end{freeResponse}
-\end{solution}
-\end{question}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 A \textbf{median} of a triangle is a line segment from a vertex
 to the midpoint of the opposite side. Show that the medians of any triangle
 meet in a common point.
 
-Hint: Use Ceva's Theorem.
-\end{question}
+\begin{hint}
+Use Ceva's Theorem.
+\end{hint}
+\begin{freeResponse}
+Since medians connect the midpoint of a side of a triangle to the
+opposite angle, we have
+\begin{align*}
+\frac{|AF|}{|FB|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|} &= 
+\frac{|AB|/2}{|AB|/2}\cdot\frac{|BC|/2}{|BC|/2}\frac{|CA|/2}{|CA|/2}\\
+&= 1.
+\end{align*}
+Hence by Ceva's Theorem, we see that the medians are concurrent. 
+\end{freeResponse}
+\end{problem}
 
-\begin{question}
+\begin{problem}
 Use Ceva's theorem to show that the three altitudes of a
 triangle are concurrent.
 \begin{image}
@@ -707,8 +742,43 @@ triangle are concurrent.
 %\draw[step=.5cm] (0,0) grid (10,5);
 \end{tikzpicture}
 \end{image}
-Hint: Use all three similarities of the form $\triangle
-CEB\sim\triangle CDA$ and then apply Ceva's theorem.
-\end{question}
+\begin{hint}
+Use all three similarities of the form $\triangle CEB\sim\triangle
+CDA$ and then apply Ceva's theorem.
+\end{hint}
+\begin{freeResponse}
+Since altitudes intersect lines containing the opposite sites at right
+angles, see that 
+\[
+\triangle CEB\sim\triangle CDA,\qquad 
+\triangle BFC \sim \triangle BDA,\qquad
+\triangle AFC \sim \triangle AEB.
+\]
+From this we see that 
+\[
+\frac{|AF|}{|EA|}=\frac{|AC|}{|AB|},\qquad
+\frac{|BD|}{|FB|}=\frac{|AB|}{|BC|},\qquad
+\frac{|CE|}{|DC|}=\frac{|BC|}{|AC|}.
+\]
+Now we see that 
+\begin{align*}
+\frac{|AF|}{|FB|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|} &= 
+\frac{|AF|}{|EA|}\cdot\frac{|BD|}{|FB|}\cdot\frac{|CE|}{|DC|}\\
+&=\frac{|AC|}{|AB|}\cdot\frac{|AB|}{|BC|}\cdot\frac{|BC|}{|AC|}\\
+&= 1.
+\end{align*}
+Hence by Ceva's Theorem, we see that the altitudes of a triangle are
+concurrent.
+\end{freeResponse}
+\end{problem}
+
+\begin{problem}
+Summarize the results from this section. In particular, indicate which
+results follow from the others.
+\begin{freeResponse}
+\end{freeResponse}
+\end{problem}
+
+
 
 \end{document}
