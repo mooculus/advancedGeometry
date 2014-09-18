@@ -9,74 +9,91 @@
 
 \begin{document}
 \begin{abstract}
-In this activity we study circles in euclidean geometry.
+In this activity, we study circles in euclidean geometry.
 \end{abstract}
 \maketitle
 
 
-\subsection*{Basics}
+The next topic in euclidean geometry is circles. We include this
+partly for its own interest, and partly because the properties we
+visit here will be useful later on. Again we explore the topic through
+a sequence of problems. We begin with perhaps the most basic fact of
+all about circles in \textbf{EG}.
 
-Our final topic before leaving euclidean geometry is circles. We
-include this partly for its own interest, and partly because the
-properties we visit here will be useful later on. Again we explore the
-topic through a sequence of exercises (with hints to their solutions
-to ease the way). We begin with perhaps the most basic fact of all
-about circles in \textbf{EG}.
-
-\begin{exercise}
+\begin{problem}
 The circle of radius $1$ has (interior) area $\pi$. Use this to reason
 to the fact that the circle of radius $1$ has circumference $2\pi$.%
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
 \draw (0,0) circle (2cm);
-\draw[thin] (0,0)--(2,0);
-\draw[thin] (0,0)--({2*cos(10)},{2*sin(10)});
-\draw[thin] (0,0)--({2*cos(20)},{2*sin(20)});
-\draw[thin] (0,0)--({2*cos(30)},{2*sin(30)});
-\draw[thin] (0,0)--({2*cos(40)},{2*sin(40)});
-\draw[thin] (0,0)--({2*cos(50)},{2*sin(50)});
-\draw[thin] (0,0)--({2*cos(60)},{2*sin(60)});
-\draw[thin] (0,0)--({2*cos(70)},{2*sin(70)});
-\draw[thin] (0,0)--({2*cos(80)},{2*sin(80)});
-\draw[thin] (0,0)--({2*cos(90)},{2*sin(90)});
-\draw[thin] (0,0)--({2*cos(100)},{2*sin(100)});
-\draw[thin] (0,0)--({2*cos(110)},{2*sin(110)});
-\draw[thin] (0,0)--({2*cos(120)},{2*sin(120)});
-\draw[thin] (0,0)--({2*cos(130)},{2*sin(130)});
-\draw[thin] (0,0)--({2*cos(140)},{2*sin(140)});
-\draw[thin] (0,0)--({2*cos(150)},{2*sin(150)});
-\draw[thin] (0,0)--({2*cos(160)},{2*sin(160)});
-\draw[thin] (0,0)--({2*cos(170)},{2*sin(170)});
-\draw[thin] (0,0)--({2*cos(180)},{2*sin(180)});
-\draw[thin] (0,0)--({2*cos(190)},{2*sin(190)});
-\draw[thin] (0,0)--({2*cos(200)},{2*sin(200)});
-\draw[thin] (0,0)--({2*cos(210)},{2*sin(210)});
-\draw[thin] (0,0)--({2*cos(220)},{2*sin(220)});
-\draw[thin] (0,0)--({2*cos(230)},{2*sin(230)});
-\draw[thin] (0,0)--({2*cos(240)},{2*sin(240)});
-\draw[thin] (0,0)--({2*cos(250)},{2*sin(250)});
-\draw[thin] (0,0)--({2*cos(260)},{2*sin(260)});
-\draw[thin] (0,0)--({2*cos(270)},{2*sin(270)});
-\draw[thin] (0,0)--({2*cos(280)},{2*sin(280)});
-\draw[thin] (0,0)--({2*cos(290)},{2*sin(290)});
-\draw[thin] (0,0)--({2*cos(300)},{2*sin(300)});
-\draw[thin] (0,0)--({2*cos(310)},{2*sin(310)});
-\draw[thin] (0,0)--({2*cos(320)},{2*sin(320)});
-\draw[thin] (0,0)--({2*cos(330)},{2*sin(330)});
-\draw[thin] (0,0)--({2*cos(340)},{2*sin(340)});
-\draw[thin] (0,0)--({2*cos(350)},{2*sin(350)});
+\foreach \coeff in {0,10,20,...,350}
+         {
+           \draw[thin] (0,0)--({2*cos(\coeff)},{2*sin(\coeff)});
+         }
 \end{tikzpicture}
 \end{image}
 
-Hint: Approximate a rectangle by rearranging the slices in the picture.
+\begin{hint}
+Approximate a rectangle by rearranging the slices in the picture.
 Compute the area of the ``rectangle.''
-\end{exercise}
+\end{hint}
+\begin{freeResponse}
+Slice up the circle as indicated and rearrange into the following
+``rectangle.'' 
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams] % r= 2cm
+\foreach \coeff in {0,1,2,...,17}
+         {
+           \draw[thin] ({2*\coeff *sin(5)},0)--({(2*\coeff+ 2)* sin(5)},{2*cos(5)});
+           \draw[thin] ({(2*\coeff + 2)*sin(5)},{2*cos(5)})--({(2+2*\coeff)*sin(5)},0); %one too many!
+         }
+         \draw[thin] ({2*18 *sin(5)},0)--({(2*18+ 2)* sin(5)},{2*cos(5)});
+         \draw (0,0)--({2*18 *sin(5)},0);
+         \draw ({2*sin(5)},2)--({2*19 *sin(5)},2);
+\end{tikzpicture}
+\end{image}
+Note, while this is not truly a rectangle, as the slices become finer,
+and finer, the shape will more, and more, closely approximate a
+rectangle. This rectangle has area $\pi$, with the (short) side length
+being $1$. Hence the length of the top and bottom are both $\pi$. From
+this we see that the circumference of the circle is $2\pi$.
+\end{freeResponse}
+\end{problem}
 
 
+Before we turn to some facts about chords in circles and angles
+inscribed in circles, we need the following prelimary fact.
 
-Next we turn to some facts about chords in circles and angels inscribed in circles.
+\begin{problem}
+Prove that given an isoceles triangle, angles opposite the conrguent
+sides are also congruent.
+\begin{hint}
+Use a congruence theorem.
+\end{hint}
+\begin{freeResponse}
+Consider an isoceles triangle and construct a median to the
+``nonequal'' side.
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,0);
+\coordinate (B) at (2,0);
+\coordinate (C) at (1,3);
+\coordinate (D) at (1,0);
+\draw (A)--(B)--(C)--cycle;
+\draw[thin] (C)--(D);
+\tkzMarkSegments[mark=|](A,C B,C)
+\tkzMarkSegments[mark=||](A,D B,D)
+\tkzLabelPoints[above](C)
+\tkzLabelPoints[below](A,D,B)
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+By SSS, we see that triangle $\triangle ADC \cong \triangle
+BDC$. Hence $\angle DAC \cong \angle DBC$.
+\end{freeResponse}
+\end{problem}
 
-\begin{exercise}
+\begin{problem}
 On the circle with center $O$ below,
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
@@ -98,14 +115,44 @@ On the circle with center $O$ below,
 \end{image}
 show that%
 \[
-\angle AXB=(1/2)(\angle AOB).
+\angle BXA=(1/2)(\angle BOA).
 \]
-Hint: $\triangle OAX$ is isosceles.
-\end{exercise}
+\begin{hint}
+$\triangle OAX$ is isosceles.
+\end{hint}
+\begin{freeResponse}
+Since all radii of a circle are equal in length, we have the following
+diagram with an isoceles triangle. 
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (O) at (0,0);
+\coordinate (A) at ({2*cos(40)},{2*sin(40)});
+\coordinate (B) at ({2*cos(350)},{2*sin(350)});
+\coordinate (X) at ({2*cos(170)},{2*sin(170)});
+
+\draw[thin] (A)--(O);
+\draw[thin] (A)--(X);
+\draw[thin] (X)--(B);
+\draw (0,0) circle (2cm);
+
+\tkzLabelPoints[above](O)
+\tkzLabelPoints[left](X)
+\tkzLabelPoints[right](A,B)
+\tkzMarkSegments[mark=|](X,O O,A)
+\end{tikzpicture}
+\end{image}
+Hence by our previous result, $\angle OXA \cong \angle OAX$. From this we see that 
+\begin{align*}
+\angle OXA + \angle OAX + \angle XOA &= \angle BOA + \angle XOA,\\
+2\cdot \angle OXA &= \angle BOA.
+\end{align*}
+Since $\angle OXA = \angle BXA$, we have shown $\angle BXA = (1/2)\angle BOA$.
+\end{freeResponse}
+\end{problem}
 
 
 
-\begin{exercise}
+\begin{problem}
 On the circle with center $O$ below,
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
@@ -129,17 +176,46 @@ On the circle with center $O$ below,
 \end{image}
 show that%
 \[
-\angle AXB=(1/2)(\angle AOB).
+\angle BXA=(1/2)(\angle BOA).
 \]
 
+\begin{hint}
+Draw the diameter through $O$ and $X$ and add.
+\end{hint}
 
-Hint: Draw the diameter through $O$ and $X$ and add.
-\end{exercise}
+\begin{freeResponse}
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (O) at (0,0);
+\coordinate (A) at ({2*cos(40)},{2*sin(40)});
+\coordinate (B) at ({2*cos(290)},{2*sin(290)});
+\coordinate (X) at ({2*cos(170)},{2*sin(170)});
+\coordinate (Y) at ({2*cos(350)},{2*sin(350)});
+
+\draw[thin] (A)--(O);
+\draw[thin] (A)--(X);
+\draw[thin] (X)--(B);
+\draw[thin] (O)--(B);
+\draw[thin] (X)--(Y);
+\draw (0,0) circle (2cm);
+
+\tkzLabelPoints[above](O)
+\tkzLabelPoints[left](X)
+\tkzLabelPoints[right](Y)
+\tkzLabelPoints[right](A)
+\tkzLabelPoints[below](B)
+
+\tkzMarkSegments[mark=|](X,O O,A O,B)
+
+
+\end{tikzpicture}
+\end{image}
+\end{freeResponse}
+\end{problem}
 
 
 
-
-\begin{exercise}
+\begin{problem}
 On the circle with center $O$ below,
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
@@ -163,24 +239,48 @@ On the circle with center $O$ below,
 \end{image}
 show that
 \[
-\angle AXB=(1/2)(\angle AOB).
+\angle BXA=(1/2)(\angle BOA).
 \]
 
+\begin{hint}
+Draw the diameter through $O$ and $X$ and subtract.
+\end{hint}
+\begin{freeResponse}
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (O) at (0,0);
+\coordinate (A) at ({2*cos(60)},{2*sin(60)});
+\coordinate (B) at ({2*cos(20)},{2*sin(20)});
+\coordinate (X) at ({2*cos(170)},{2*sin(170)});
 
-Hint: Draw the diameter through $O$ and $X$ and subtract.
-\end{exercise}
+\draw[thin] (A)--(O);
+\draw[thin] (A)--(X);
+\draw[thin] (X)--(B);
+\draw[thin] (O)--(B);
+\draw (0,0) circle (2cm);
+
+\tkzLabelPoints[below](O)
+\tkzLabelPoints[left](X)
+\tkzLabelPoints[above](A)
+\tkzLabelPoints[right](B)
+
+\end{tikzpicture}
+\end{image}
+\end{freeResponse}
+
+\end{problem}
 
 
 
-We can summarize the results of the last three exercises into the following theorem.
+We can summarize the results of the last three problems into the following theorem.
 
 \begin{theorem}
 \label{43}The measure of any angle inscribed in a circle is one-half of the
 measure of the corresponding central angle.
 \end{theorem}
 
-\begin{exercise}
-Use similar triangles and the previous exercises to show that
+\begin{problem}
+Use similar triangles and the previous problems to show that
 \[
 \left\vert AX\right\vert \cdot \left\vert
 XB\right\vert =\left\vert A'X\right\vert\cdot \left\vert
@@ -206,12 +306,14 @@ in the figure below.%
 
 \end{tikzpicture}
 \end{image}
-Hint: Draw $\overline{AB'}$ and $\overline{A'B}$.
-\end{exercise}
+\begin{hint}
+Draw $\overline{AB'}$ and $\overline{A'B}$.
+\end{hint}
+\end{problem}
 
 
-\begin{exercise}
-Use similar triangles and the previous exercises to show that
+\begin{problem}
+Use similar triangles and the previous problems to show that
 \[
 \left\vert AX\right\vert\cdot\left\vert XB\right\vert
 =\left\vert A'X\right\vert \cdot \left\vert XB'\right\vert
@@ -237,878 +339,36 @@ in the figure below.%
 \end{tikzpicture}
 \end{image}
 
-Hint: Draw $\overline{AB^{\prime}}$ and $\overline{A^{\prime}B}$.
-\end{exercise}
+\begin{hint}
+Draw $\overline{AB^{\prime}}$ and $\overline{A^{\prime}B}$.
+\end{hint}
+\end{problem}
 
 
 
 
-\begin{exercise}
+\begin{problem}
 Show that, given any three non-collinear points in the Euclidean
 plane, there is a unique circle passing through the three points.
 
-Hint: Show that the center of the circle must be the intersection of
+\begin{hint}
+Show that the center of the circle must be the intersection of
 the perpendicular bisectors of any two of the sides of the triangle
 whose vertices are the three given points.
-\end{exercise}
+\end{hint}
+\end{problem}
 
 But how about four points in the plane, no three of which are
 collinear?
 
-\begin{exercise}
-\begin{enumerate}
+\begin{problem}
+\begin{enumerate}\hfil
 \item Draw four points in the Euclidean plane, no $3$ of which are collinear, that cannot lie on a single circle.
 \item Draw four points in the Euclidean plane that do lie on a single
 circle.
 \end{enumerate}
-\end{exercise}
+\end{problem}
 
-The issue we will explore in the next two sections is the question of
-finding a numerical condition about the four points that tells us
-exactly when they all lie on a single circle. For that, we will need a
-very famous mathematical relationship, one very closely related to the
-notion of perspective in painting. That is, how do you faithfully
-render depth on a flat canvas? This relationship is called
-the \textit{cross-ratio} of the four points.
 
-\subsection*{Cross-ratio of points on the number line}
-
-We begin by studying the cross-ratio of four points on a line. Start
-with the set of points on the real number line with coordinate $t$ and
-add one extra point called $t=\infty$. Call the resulting set
-$\overline{\mathbb{R}}$. You could think of the resulting set as the
-set of all lines through the origin in $\mathbb{R}^{2}$ by assigning
-to each line the real number that is its slope and to the $y$-axis the
-slope $\infty$.
-
-\begin{exercise}\hfil
-\begin{enumerate}
-\item Show that the transformation%
-\[
-\left(  x,y\right)  \mapsto\left(  \underline{x},\underline{y}\right)
-=\left(  x,y\right)  \cdot\left(
-\begin{array}
-[c]{cc}%
-d & b\\
-c & a
-\end{array}
-\right)
-\]
-is a one-to-one and onto (linear) transformation of $\mathbb{R}^{2}$ as long as
-\begin{equation}
-\left\vert
-\begin{array}
-[c]{cc}%
-d & b\\
-c & a
-\end{array}
-\right\vert \neq0. \label{52}%
-\end{equation}
-
-\item For the transformation in the previous Exercise, show that every line through the origin in $\left( x,y\right) $-space is sent to a line
-through the origin in $\left( \underline{x},\underline{y}\right)
-$-space. The slope $t$ of the line through $\left( 0,0\right) $ and
-$\left( x,y\right) $ is of course $t=\frac{y}{x}$. What is the
-slope \underline{$t$} of the line through
-$\left( \underline{0},\underline{0}\right) $ and $\left(
-\underline{x},\underline{y}\right)  $? Show that%
-\begin{equation}
-\underline{t}=\frac{at+b}{ct+d} \label{41}%
-\end{equation}
-\end{enumerate}
-\begin{solution}
-\answer[free-response]{
-To show the map is one-to-one, we will provide an explicit inverse
-map, namely:
-\[
-\left(  \underline{x},\underline{y}\right)\mapsto \left(  \underline{x},\underline{y}\right) 
-\frac{1}{ad-bc}\begin{pmatrix}
-a &-b \\
--c& d
-\end{pmatrix}
-\]
-Now apply the given transformation and then its inverse to see
-\[
-(x,y) \cdot \begin{pmatrix}
-d & b \\
-c & d
-\end{pmatrix}\frac{1}{ad-bc}\begin{pmatrix}
-a &-b \\
--c& d
-\end{pmatrix} = (x,y).
-\]
-In fact, the inverse map shows that the original map is onto as well,
- as for any element of $\mathbb{R}^2$, we can find the preimage of
- this element using the inverse.  
-
-To answer the second part, consider the line
-\[
-\l(u) = u\cdot (x,y).
-\]
-Now 
-\[
-\underline{\l}(u) = u\cdot (cy+dx,ay+bx)
-\]
-and this line has slope
-\[
-\frac{ay+bx}{cy+dx}.
-\]
-On the other hand, 
-\begin{align*}
-\frac{at+b}{ct+d} &= \frac{\frac{ay}{x} + b}{\frac{cy}{x}+d} \\
-&= \frac{ay+bx}{cy+dx}.
-\end{align*}
-This is what we needed to show.
-}\end{solution}
-\end{exercise}
-
-
-
-
-\begin{definition}
-Functions $\left( \ref{41}\right) $ for which the condition $\left(
-\ref{52}\right)  $ holds are called \textbf{linear fractional transformations}.
-\end{definition}
-
-
-\begin{exercise}
-Show that a linear fractional transformation%
-\begin{align*}
-\overline{\mathbb{R}} &\rightarrow\overline{\mathbb{R}}\\
-t &\mapsto\underline{t} =\frac{at+b}{ct+d}%
-\end{align*}
-is one-to-one and onto. What is its inverse function? (Your answer should show that
-the inverse function is also a linear fractional transformation.)
-
-Hint: By algebra solve for $t$ in terms of $\underline{t}$. Then graph%
-\[
-\underline{t}=\frac{at+b}{ct+d}%
-\]
-in the $\left(  t,\underline{t}\right)  $-plane. If $c=0$ show that the graph
-is a straight line with non-zero slope and%
-\[
-\infty\mapsto\infty.
-\]
-If $c\neq0$, show that the graph has exactly one horizontal asymptote where
-$t\mapsto\infty$ and one vertical asymptote where $\underline{t}\mapsto\infty$.
-
-\begin{solution}
-\answer[free-response]{
-To show this map is one-to-one and onto, we will again provide an
-explicit inverse map:
-\[
-\underline{t} \mapsto \frac{d \underline{t}-b}{-c \underline{t} +a}
-\]
-If $c= 0$, this is a line with slope $d/a$. Note since $ad-bc \ne 0$,
-we see that this slope is neither $0$ nor undefined. Moreover, by the construction of $\overline{\mathbb{R}}$, we see that $\infty\mapsto\infty$.
-
-If $c\ne0$ we have that
-\[
-\lim_{t\to \infty} \frac{at+b}{ct+d}  = a/c
-\]
-and this is the horizontal asymptote. On the other hand, 
-\[
-\lim_{\underline{t}\to\infty} \frac{d \underline{t}-b}{-c \underline{t} +a} = -d/c
-\]
-this corresponds to the vertical asymptote. 
-}
-\end{solution}
-\end{exercise}
-
-
-
-
-
-
-
-\begin{exercise}
-Show that the set of linear fractional transformations form a group
-under the operation of composition of functions. That is, check
-associativity, identity element and existence of inverses.
-\begin{solution}
-\answer[free-response]{
-To show that the set of linear fractional transformations form a group, we must show that this set is 
-\begin{enumerate}
-\item closed under function composition, 
-\item that functional composition is an associative operation on linear fractional transformations, 
-\item that there is an identity element, and 
-\item that every linear fractional transformation has an inverse that is also a linear fractional transformation. 
-\end{enumerate}
-We will start by showing that the set of linear fractional
-transformations is closed under functional composition. Write
-\begin{align*}
-f:t &\mapsto\frac{at+b}{ct+d}\\
-g:t &\mapsto\frac{mt+n}{pt+q}
-\end{align*}
-where
-\[
-\begin{array}{|cc|}
-d & b\\
-c& a
-\end{array} \ne 0\qquad\text{and}\qquad
-\begin{array}{|cc|}
-q & n\\
-p& m
-\end{array} \ne 0.
-\]
-Now
-\[
-f\circ g : t \mapsto \frac{(am+bp)t+(an+bq)}{(cm+dp)t + (cn+dq)}
-\]
-and note that
-\begin{align*}
-\begin{array}{|cc|}
-cn+dq & an+bq\\
-cm+dp& am+bp
-\end{array}  &= (cn+dq)(am+bp)- (an+bq)(cm+dp)\\
-&= (bc - ad)(np-mq) \\
-&\ne 0.
-\end{align*}
-Hence we see that the composition of linear fractional transformations
-is a linear fractional transformation.  
-
-Now we will show that composition is an associative operation. Note,
-functional composition is \textbf{always} an associative
-operation. However, it is a good exercise to actually show this---so
-we will. Write
-\[
-f:t \mapsto\frac{at+b}{ct+d},\qquad
-g:t \mapsto\frac{mt+n}{pt+q},\qquad
-h:t \mapsto\frac{rt+s}{ut+v}.
-\]
-where
-\[
-\begin{array}{|cc|}
-d & b\\
-c& a
-\end{array} \ne 0,\qquad
-\begin{array}{|cc|}
-q & n\\
-p& m
-\end{array} \ne 0,\qquad
-\begin{array}{|cc|}
-v & s\\
-u& r
-\end{array} \ne 0.
-\]
-Write
-\[
-f\circ g : t \mapsto \frac{(am+bp)t+(an+bq)}{(cm+dp)t + (cn+dq)}
-\]
-and so
-\[
-(f\circ g) \circ h : t\mapsto \frac{(amr+bpr+anu+bqu)t+(ams+bps+anv+bqv)}{(cmr+dpr+cnu+dqu)t+(cms+dps+cnv+dqv)}. 
-\]
-Now
-\[
-g\circ h : t \mapsto \frac{(mr+nu)t+(ms+nv)}{(pr+qu)t + (ps+qv)}
-\]
-and
-\[
-f\circ (g \circ h) : t\mapsto \frac{(amr+bpr+anu+bqu)t+(ams+bps+anv+bqv)}{(cmr+dpr+cnu+dqu)t+(cms+dps+cnv+dqv)}. 
-\]
-From our work above we see that $(f\circ g)\circ h = f\circ(g\circ
- h)$.  
-
-The identity element is
-\[
-t\mapsto \frac{a\cdot t + 0}{0\cdot t + a} = t,
-\]
-where $a$ is a nonzero real number.  Finally, each linear fractional
-transformation has an inverse---we found this in the previous problem.
-}
-\end{solution}
-\end{exercise}
-
-
-
-\begin{exercise}
-\label{59}Show that, for any three distinct points $t_{2},t_{3}$ and $t_{4}$,
-the function of $t$ given by the formula%
-\[
-\underline{t}=\frac{t_{3}-t_{4}}{t_{3}-t_{2}}\frac{t-t_{2}}{t-t_{4}}%
-=\frac{t-t_{2}}{t_{3}-t_{2}}\div\frac{t-t_{4}}{t_{3}-t_{4}}%
-\]
-takes $t_{2}$ to $0$, takes $t_{3}$ to $1$ and takes $t_{4}$ to
-$\infty$. Show that this function is a linear fractional
-transformation, that is, a function of the form
-$\left( \ref{41}\right) $ for which the condition $\left(
-\ref{52}\right)$ holds.
-\begin{solution}
-\answer[free-response]{
-Write
-\begin{align*}
-t_2 &\mapsto \frac{t_3-t_4}{t_3-t_2} \cdot \frac{t_2-t_2}{t_2-t_4} = 0.\\
-t_3 &\mapsto \frac{t_3-t_4}{t_3-t_2} \cdot \frac{t_3-t_2}{t_3-t_4} = 1.\\
-t_4 &\mapsto \frac{t_3-t_4}{t_3-t_2} \cdot \frac{t_4-t_2}{t_4-t_4} = \infty.
-\end{align*}
-With a slight bit of algebra, we can see that this is a linear fractional transformation:
-\[
-\frac{t_{3}-t_{4}}{t_{3}-t_{2}}\frac{t-t_{2}}{t-t_{4}} = \frac{t_3t - t_2t_3-t_4t +t_2t_4}{t_3t-t_3t_4-t_2t+t_2t_4} = \frac{(t_3-t_4)t + (t_2t_4-t_2t_3)}{(t_3-t_2)t + (t_2t_4-t_3t_4)}
-\]
-though we must check the determinant condition:
-\begin{align*}
-\begin{array}{|cc|}
-(t_2t_4 - t_3t_4) & (t_2t_4 - t_2t_3) \\
-(t_3-t_2) & (t_3-t_4)
-\end{array}
-&=
-\begin{array}{|cc|}
-(t_2 - t_3)t_4 & (t_4 - t_3)t_2 \\
-(t_3-t_2) & (t_3-t_4)
-\end{array}\\
-&=(t_2-t_3)(t_3-t_4)t_4 - (t_3-t_2)(t_4-t_3)t_2\\
-&= (t_2-t_3)(t_3-t_4)t_4 - (t_2-t_3)(t_3-t_4)t_2\\
-&= (t_2-t_3)(t_3-t_4)(t_4 -t_2).
-\end{align*}
-Since $t_2$, $t_3$, and $t_4$ are distinct, this cannot be
-zero.
-}
-\end{solution}
-\end{exercise}
-
-
-
-
-
-\begin{exercise}
-\label{57}Show that any linear fractional transformation $\left(
-\ref{41}\right)$ that leaves $0$, $1$, and $\infty$ fixed is the identity map.
-\begin{solution}
-\answer[free-response]{
-Consider an arbitrary linear fractional transformation
-\[
-f:t \mapsto \frac{at +b}{ct+d}.
-\]
-If $f(0)=0$, then we see that $b=0$ and that $d\ne 0$. Proceeding
-along with this information if $f(1) = 1$, then we see that
-\[
-\frac{a}{c+d} = 1
-\]
-If $f(\infty) = \infty$, then we see that $c=0$. Hence, $a=d\ne
-0$. This is the identity map.  }
-\end{solution}
-\end{exercise}
-
-
-
-
-
-
-
-\begin{exercise}
-\label{42}Suppose that you are given a function $\left(  \ref{41}\right)  $
-and four points $t_{1},t_{2},t_{3}$ and $t_{4}$. Let
-\[
-\underline{t_{i}}=\frac{at_{i}+b}{ct_{i}+d}%
-\]
-for $i=1,2,3,4$. Show that%
-\[
-\frac{\underline{t_{1}}-\underline{t_{2}}}{\underline{t_{3}}-\underline{t_{2}%
-}}\div\frac{\underline{t_{1}}-\underline{t_{4}}}{\underline{t_{3}}%
--\underline{t_{4}}}=\frac{t_{1}-t_{2}}{t_{3}-t_{2}}\div\frac{t_{1}-t_{4}%
-}{t_{3}-t_{4}}.
-\]
-[MJG,288]
-
-Hint: Just write out the formula for each side and do the high school
-algebra.  There is a fancier way that uses that the set of linear
-fractional transformations form a group whose operation is
-composition. It goes like this. Use Exercise \ref{59} to show that the
-inverse of the linear fractional transformation
-\[
-t\mapsto\frac{t-t_{2}}{t_{3}-t_{2}}\div\frac{t-t_{4}}{t_{3}-t_{4}}%
-\]
-followed by%
-\[
-t\mapsto\underline{t}%
-\]
-and then followed by
-\[
-t\mapsto\frac{t-\underline{t_{2}}}{\underline{t_{3}}-\underline{t_{2}}}%
-\div\frac{t-\underline{t_{4}}}{\underline{t_{3}}-\underline{t_{4}}}%
-\]
-fixes $0$, $1$, and $\infty$ and so is the identity transformation by Exercise
-\ref{57}. So%
-\[
-t\mapsto\frac{t-t_{2}}{t_{3}-t_{2}}\div\frac{t-t_{4}}{t_{3}-t_{4}}%
-\]
-is the same transformation as%
-\[
-t\mapsto\frac{\underline{t}-\underline{t_{2}}}{\underline{t_{3}}%
--\underline{t_{2}}}\div\frac{\underline{t}-\underline{t_{4}}}{\underline
-{t_{3}}-\underline{t_{4}}}.
-\]
-\begin{solution}
-\answer[free-response]{
-We will use the fancier method of a solution. Start by writing
-\begin{align*}
-\frac{t-t_2}{t_3-t_2} \div \frac{t-t_4}{t_3-t_4}\mapsto t\mapsto \underline{t}\mapsto \frac{\underline{t}-\underline{t_{2}}}{\underline{t_{3}}%
--\underline{t_{2}}}\div\frac{\underline{t}-\underline{t_{4}}}{\underline
-{t_{3}}-\underline{t_{4}}}.
-\end{align*}
-From our work above, we know this is a linear fractional
-transformation. Moreover, from our work above, we can see that this
-map fixes $0$, $1$, and $\infty$, hence this map is the identity
-map. The upshot of this is that the map
-\[
-t\mapsto \frac{t-t_2}{t_3-t_2} \div \frac{t-t_4}{t_3-t_4}
-\]
-is now seen to be identical to the composition of maps
-\[
-t\mapsto \underline{t}\mapsto \frac{\underline{t}-\underline{t_{2}}}{\underline{t_{3}}%
--\underline{t_{2}}}\div\frac{\underline{t}-\underline{t_{4}}}{\underline
-{t_{3}}-\underline{t_{4}}}.
-\]
-Evaluating these maps at $t_1$ gives the desired result. 
-}
-\end{solution}
-\end{exercise}
-
-\begin{definition}
-\label{44}The cross-ratio $\left(  t_{1}:t_{2}:t_{3}:t_{4}\right)  $ of four
-(ordered) points $t_{1},t_{2},t_{3}$ and $t_{4}$ is defined by%
-\[
-\left(  t_{1}:t_{2}:t_{3}:t_{4}\right)  =\frac{t_{1}-t_{2}}{t_{3}-t_{2}}%
-\div\frac{t_{1}-t_{4}}{t_{3}-t_{4}}.
-\]
-
-\end{definition}
-
-Exercise \ref{42} shows that if four points are moved by any function $\left(
-\ref{41}\right)  $ the cross-ratio $\left(  \underline{t_{1}}:\underline
-{t_{2}}:\underline{t_{3}}:\underline{t_{4}}\right)  $ of the output four
-points is the same as the cross-ratio $\left(  t_{1}:t_{2}:t_{3}:t_{4}\right)
-$ of the original four points.
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection*{Cross-ratio of points on a circle}
-
-\begin{exercise}\label{46}
-In the diagram
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\coordinate (O) at ({2*cos(120)},{2*sin(120)});
-\coordinate (A) at ({2*cos(190)},{2*sin(190)});
-\coordinate (B) at ({2*cos(250)},{2*sin(250)});
-\coordinate (C) at ({2*cos(330)},{2*sin(330)});
-
-\draw (0,0) circle (2cm);
-\draw (O) -- (C);
-\draw (A) -- (B);
-\draw (O) -- (B);
-\draw (B) -- (C);
-\draw (O) -- (A);
-
-
-\tkzMarkAngle[size=.9cm,thin](A,O,B)
-\tkzLabelAngle[pos = 0.7](A,O,B){$\alpha$}
-\tkzMarkAngle[arc=ll,size=0.9cm,thin](B,O,C)
-\tkzLabelAngle[pos = 0.7](B,O,C){$\beta$}
-
-\tkzLabelPoints[above](O)
-\tkzLabelPoints[left](A)
-\tkzLabelPoints[below](B)
-\tkzLabelPoints[right](C)
-
-\end{tikzpicture}
-\end{image}
-show that%
-\[
-\frac{\left\vert AB\right\vert }{\left\vert CB\right\vert }=\frac
-{\sin\alpha}{\sin\beta}=\frac{\sin\left(  \angle
-AOB\right)  }{\sin\left(  \angle COB\right)  }.
-\]
-
-
-Hint: Notice that by Theorem \ref{43}
-\[
-m\left(  \angle BAO\right)  +m\left(\angle OCB\right)  =180^{\circ}%
-\]
-so that%
-\[
-\sin\left(  \angle BAO\right)  =\sin\left(\angle  OCB\right)  .
-\]
-Now use the Law of Sines.
-\begin{solution}
-\answer[free-response]{
-By the Law of Sines we have that
-\[
-\frac{|AB|}{\sin\alpha} = \frac{|OB|}{\sin(\angle OAB)}\qquad\text{and}\qquad\frac{|BC|}{\sin\beta} = \frac{|OB|}{\sin(\angle OCB)}.
-\]
-Write 
-\begin{align*}
-m\left(  \angle BAO\right)  +m\left(\angle OCB\right)  &=180^{\circ}\\
-m\left(  \angle BAO\right)  &=180^{\circ}-m\left(\angle OCB\right)  \\
-\sin\left(\angle BAO\right)  &=\sin\left(180^{\circ}-m\left(\angle OCB\right)\right)  \\
-\sin\left(\angle BAO\right)  &=\sin\left(180^{\circ}\right)\cos\left(\angle OCB\right) - \cos\left(180^{\circ}\right)\sin\left(\angle OCB\right)\\ 
-\sin\left(\angle BAO\right)  &=\sin\left(\angle OCB\right).
-\end{align*}
-So  now we have that 
-\[
-\frac{|AB|}{\sin\alpha} = \frac{|OB|}{\sin(\angle OAB)}= \frac{|OB|}{\sin(\angle OCB)}=\frac{|BC|}{\sin\beta}. 
-\]
-Using algebra we find 
-\[
-\frac{\left\vert AB\right\vert }{\left\vert CB\right\vert }=\frac
-{\sin\alpha}{\sin\beta}=\frac{\sin\left(  \angle
-AOB\right)  }{\sin\left(  \angle COB\right)  }.
-\]
-}
-\end{solution}
-\end{exercise}
-
-\begin{exercise}
-\label{47} Show that if, in the above figure, $B$ moves along the
-circle to the other side of $C$, it is still true that%
-\[
-\frac{\left\vert AB\right\vert }{\left\vert CB\right\vert }=\frac
-{\sin\left(  \angle AOB\right)  }{\sin\left(  \angle
-COB\right)  }%
-\]
-\begin{solution}
-\answer[free-response]{
-By the Law of Sines we have that
-\[
-\frac{|AB|}{\sin(\angle AOB)} = \frac{|OB|}{\sin(\angle OAB)}\qquad\text{and}\qquad\frac{|CB|}{\sin(\angle COB)} = \frac{|OB|}{\sin(\angle OCB)}.
-\]
-However, 
-\[
-\angle OAB = \angle OCB
-\]
-So now we have that
-\[
-\frac{|AB|}{\sin(\angle AOB)} =\frac{|CB|}{\sin(\angle COB)}. 
-\]
-Using algebra we find 
-\[
-\frac{\left\vert AB\right\vert }{\left\vert CB\right\vert }=\frac
-{\sin\left(  \angle AOB\right)  }{\sin\left(  \angle
-COB\right)  }.
-\]
-}
-\end{solution}
-\end{exercise}
-
-
-
-
-
-
-\begin{exercise}\label{48}
-In the diagram
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\coordinate (O) at ({2*cos(120)},{2*sin(120)});
-\coordinate (A) at ({2*cos(190)},{2*sin(190)});
-\coordinate (B) at ({2*cos(250)},{2*sin(250)});
-\coordinate (C) at ({2*cos(330)},{2*sin(330)});
-
-\coordinate (A') at (-3.21,-3);
-\coordinate (B') at (-.59,-3);
-\coordinate (C') at (3.73,-3);
-
-\draw (0,0) circle (2cm);
-\draw (O) -- (C');
-\draw (A) -- (B);
-\draw (O) -- (B');
-\draw (B) -- (C);
-\draw (O) -- (A');
-
-\draw (-4,-3) -- (5,-3);
-
-
-\tkzMarkAngle[size=.9cm,thin](A,O,B)
-\tkzLabelAngle[pos = 0.7](A,O,B){$\alpha$}
-\tkzMarkAngle[arc=ll,size=0.9cm,thin](B,O,C)
-\tkzLabelAngle[pos = 0.7](B,O,C){$\beta$}
-
-\tkzMarkAngle[size=0.7cm,thin](B',A',A)
-\tkzLabelAngle[pos = 0.4](B',A',A){$\gamma$}
-
-\tkzMarkAngle[size=0.9cm,thin](C,C',B')
-\tkzLabelAngle[pos = 0.7](C,C',B'){$\delta$}
-
-\tkzLabelPoints[above](O)
-\tkzLabelPoints[left](A)
-\tkzLabelPoints[below left](B)
-\tkzLabelPoints[below](A',B',C')
-\tkzLabelPoints[right](C)
-
-\end{tikzpicture}
-\end{image}
-show that%
-\[
-\frac{\left\vert A'B'\right\vert }{\left\vert C^{\prime
-}B'\right\vert }=\frac{\sin\alpha}{\sin\beta}\div
-\frac{\sin\gamma}{\sin\delta}=\frac{\sin\left(  \angle
-A'OB'\right)  }{\sin\left(  \angle C^{\prime
-}OB'\right)  }\div\frac{\sin\left(  \angle B'%
-A'O\right)  }{\sin\left(  \angle B'C'O\right)
-}.
-\]
-[MJG,266-267]
-\begin{solution}
-\answer[free-response]{
-By the Law of Sines we have that
-\[
-\frac{|A'B'|}{\sin \alpha} = \frac{|OB'|}{\sin \gamma}\qquad\text{and}\qquad\frac{|C'B'|}{\sin \beta} = \frac{|OB'|}{\sin\delta}.
-\]
-We now see that
-\[
-|A'B'| = \frac{|OB'|\sin\alpha}{\sin \gamma}\qquad\text{and}\qquad|C'B'| = \frac{|OB'|\sin\beta}{\sin\delta}.
-\]
-Finally, we see directly that 
-\[
-\frac{\left\vert A'B'\right\vert }{\left\vert C^{\prime
-}B'\right\vert }=\frac{\sin\alpha}{\sin\beta}\div
-\frac{\sin\gamma}{\sin\delta}=\frac{\sin\left(  \angle
-A'OB'\right)  }{\sin\left(  \angle C^{\prime
-}OB'\right)  }\div\frac{\sin\left(  \angle B'%
-A'O\right)  }{\sin\left(  \angle B'C'O\right)
-}.
-\]
-}
-\end{solution}
-\end{exercise}
-
-
-\begin{exercise}\label{49}
-Show that if, in the previous figure, $B'$ moves
-along the line to the other side of $C'$, it is still true that%
-\[
-\frac{\left\vert A'B'\right\vert }{\left\vert C^{\prime
-}B'\right\vert }=\frac{\sin\left(  \angle A'%
-OB'\right)  }{\sin\left(  \angle C'OB'\right)
-}\div\frac{\sin\left(  \angle B'A'O\right)
-}{\sin\left(  \angle B'C'O\right)  }.
-\]
-\begin{solution}
-\answer[free-response]{
-By the Law of Sines we have that
-\[
-\frac{|A'B'|}{\sin(\angle A'OB')} = \frac{|OB'|}{\sin(\angle B'A'O)}\qquad\text{and}\qquad\frac{|C'B'|}{\sin(\angle C'OB')} = \frac{|OB'|}{\sin(\angle B'C'O)}.
-\]
-We now see that
-\[
-|A'B'| = \frac{|OB'|\sin(\angle A'OB')}{\sin(B'A'O)}\qquad\text{and}\qquad|C'B'| = \frac{|OB'|\sin(\angle C'OB')}{\sin(\angle B'C'O)}.
-\]
-Again, we see directly that 
-\[
-\frac{\left\vert A'B'\right\vert }{\left\vert C^{\prime
-}B'\right\vert }=\frac{\sin\left(  \angle A'%
-OB'\right)  }{\sin\left(  \angle C'OB'\right)
-}\div\frac{\sin\left(  \angle B'A'O\right)
-}{\sin\left(  \angle B'C'O\right)  }.
-\]
-}
-\end{solution}
-\end{exercise}
-
-These last two Exercises allow us to define the cross-ratio of four
-points on a circle.
-
-\begin{definition}
-For a sequence of four (ordered) points $A,B,C,$ and $D$ on a circle,
-we define%
-\[
-\left(  A:B:C:D\right)  =\frac{\left\vert AB\right\vert }{\left\vert
-CB\right\vert }\div\frac{\left\vert AD\right\vert }{\left\vert CD\right\vert }%
-\]
-which we call the cross-ratio of the ordered sequence of the four points.
-Similarly for a sequence of four (ordered) points $A',B^{\prime
-},C',$ and $D'$ on a line, we define%
-\[
-\left(  A':B':C':D'\right)  =\frac{\left\vert
-A'B'\right\vert }{\left\vert C'B'\right\vert
-}\div\frac{\left\vert A'D'\right\vert }{\left\vert C^{\prime
-}D'\right\vert }%
-\]
-which we call the cross-ratio of the ordered sequence of the four points.
-\end{definition}
-
-Notice that Definition \ref{44} is just a refinement of the definition
-of $\left( A':B':C':D'\right) $ just above. In Definition \ref{44} we
-are keeping track of the signs of the terms in the quotients whereas
-$\left( A':B':C':D'\right)$ is always non-negative.
-
-\begin{exercise}\label{50}
-Show that, in the figure%
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\coordinate (O) at ({2*cos(120)},{2*sin(120)});
-\coordinate (A) at ({2*cos(190)},{2*sin(190)});
-\coordinate (B) at ({2*cos(250)},{2*sin(250)});
-\coordinate (C) at ({2*cos(310)},{2*sin(310)});
-\coordinate (D) at ({2*cos(340)},{2*sin(340)});
-
-\coordinate (A') at (-3.21,-3);
-\coordinate (B') at (-.59,-3);
-\coordinate (C') at (2.31,-3);
-\coordinate (D') at (4.64,-3);
-
-\draw (0,0) circle (2cm);
-\draw (O) -- (C');
-\draw (A) -- (B);
-\draw (C) -- (D);
-\draw (O) -- (B');
-\draw (B) -- (C);
-\draw (O) -- (A');
-\draw (O) -- (D');
-
-\draw (-4,-3) -- (6,-3); % line projecting on
-
-
-
-\tkzLabelPoints[above](O)
-\tkzLabelPoints[left](A)
-\tkzLabelPoints[below left](B)
-\tkzLabelPoints[below](A',B',C',D')
-\tkzLabelPoints[right](C)
-\tkzLabelPoints[above right](D)
-
-\end{tikzpicture}
-\end{image}
-we have the equality%
-\[
-\left(  A:B:C:D\right)  =\left(A':B':C':D'\right)  .
-\]
-
-
-Hint: Use Exercises \ref{46}--\ref{49}.
-
-What happens in if we move $B$ to the other side of $C$?
-\begin{solution}
-\answer{
-By our previous work, 
-\begin{align*}
-(A':B':C':D') &=\frac{|A'B'|}{|C'B'|}\div \frac{|A'D'|}{|C'D'|}\\
-&=\left(\frac{\sin(\angle A'OB')}{\sin(\angle C'OB')} \div \frac{\sin(\angle B'A'O)}{\sin(\angle B'C'O)}\right) \div \left(\frac{\sin(\angle A'OD')}{\sin(\angle C'OD')}\div\frac{\sin(\angle D'A'O)}{\sin(\angle D'C'O)}\right).
-\end{align*}
-Since 
-\begin{align*}
-m(\angle A'OB') &= m(\angle AOB),\\
-m(\angle C'OB') &= m(\angle COB),\\
-m(\angle A'OD') &= m(\angle AOD),\\
-m(\angle C'OD') &= m(\angle COD),\\
-m(\angle B'A'O) &= m(\angle D'A'O),
-\end{align*}
-and as we have shown several times now, 
-\[
-\sin(\angle B'C'O) = \sin(\angle D'C'O)
-\]
-as 
-\[
-m(\angle B'C'O) + m(\angle D'C'O) = 180^\circ.
-\]
-With all of these substitutions, our ``large'' expression above becomes
-\[
-\frac{\sin(\angle AOB)}{\sin(\angle COB)} \div \frac{\sin(\angle AOD)}{\sin(\angle COD)} = (A:B:C:D). 
-\]
-Since none of the formulas change when $B$ is moved to the other side
-of $C$, we are done.  }
-\end{solution}
-\end{exercise}
-
-We say that ``Cross-ratio is invariant under stereographic
-projection.''
-
-\subsection*{Ptolemy's Theorem}
-
-Given any three non-collinear points in the Euclidean plane, there is
-one and only one circle that passes through the three points. (How do
-you construct it?) You can easily convince yourself with a few
-examples that, given four non-collinear points $A,B,C$ and $D$ in the
-plane, it is not always true that there is a circle that passes
-through all four. A famous theorem of classical Euclidean geometry
-gives the condition that there is a circle that passes through all
-four.
-
-\begin{theorem}[Ptolemy] If the ordered sequence of points $A,B,C$ and $D$ lies on a circle,
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\coordinate (A) at ({2*cos(190)},{2*sin(190)});
-\coordinate (B) at ({2*cos(250)},{2*sin(250)});
-\coordinate (C) at ({2*cos(310)},{2*sin(310)});
-\coordinate (D) at ({2*cos(340)},{2*sin(340)});
-
-\draw (0,0) circle (2cm);
-\draw (A) -- (B);
-\draw (C) -- (D);
-\draw (A) -- (D);
-\draw (B) -- (C);
-
-\tkzLabelPoints[left](A)
-\tkzLabelPoints[below left](B)
-\tkzLabelPoints[right](C)
-\tkzLabelPoints[above right](D)
-
-\end{tikzpicture}
-\end{image}
-then%
-\[
-\left\vert AC\right\vert \cdot\left\vert BD\right\vert
-=\left\vert AD\right\vert \cdot\left\vert BC\right\vert
-+\left\vert AB\right\vert \cdot\left\vert CD\right\vert
-.
-\]
-That is, the product of the diagonals of the quadrilateral $ABCD$ is the sum
-of the products of pairs of opposite sides.
-\end{theorem}
-
-\begin{proof}
-We need to check that%
-\[
-\left\vert AC\right\vert \cdot\left\vert BD\right\vert
-=\left\vert AD\right\vert \cdot\left\vert BC\right\vert
-+\left\vert AB\right\vert \cdot\left\vert CD\right\vert
-\]
-or, what is the same, we need to check that%
-\[
-\frac{\left\vert AC\right\vert \cdot\left\vert
-BD\right\vert }{\left\vert AD\right\vert \cdot\left\vert
-BC\right\vert }=1+\frac{\left\vert AB\right\vert \text{\textperiodcentered
-}\left\vert CD\right\vert }{\left\vert AD\right\vert \text{\textperiodcentered
-}\left\vert BC\right\vert }.
-\]
-That is, we need to check that
-\[
-\left(  A:C:B:D\right)  =1+\left(  A:B:C:D\right)  .
-\]
-But by Exercise \ref{50} this is the same as checking that%
-\[
-\left(  A':C':B':D'\right)  =1+\left(
-A':B':C':D'\right)
-\]
-for the projection of the four points onto a line from a point $O$ on the
-circle. But that is the same thing as showing that
-\[
-\frac{\left\vert A'C'\right\vert \text{\textperiodcentered
-}\left\vert B'D'\right\vert }{\left\vert A'D^{\prime
-}\right\vert \cdot\left\vert B'C^{\prime
-}\right\vert }=1+\frac{\left\vert A'B'\right\vert
-\cdot\left\vert C'D'\right\vert
-}{\left\vert A'D'\right\vert \cdot \left\vert B'C'\right\vert }%
-\]
-which is the same thing as showing that%
-\[
-\left\vert A'C'\right\vert \text{\textperiodcentered
-}\left\vert B'D'\right\vert =\left\vert A'D^{\prime
-}\right\vert \cdot\left\vert B'C^{\prime
-}\right\vert +\left\vert A'B'\right\vert
-\cdot\left\vert C'D'\right\vert .
-\]
-Now check this last equality by high-school algebra.
-\end{proof}
 
 \end{document}
