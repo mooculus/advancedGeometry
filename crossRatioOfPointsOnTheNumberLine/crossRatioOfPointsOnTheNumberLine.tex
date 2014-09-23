@@ -9,45 +9,26 @@
 
 \begin{document}
 \begin{abstract}
-In this activity, we do some basic projective geometry.
+In this activity, we do some basic projective geometry and learn
+Ptolomy's Theorem.
 \end{abstract}
 \maketitle
 
+In this section, we will study some basic ideas of \textit{projective
+  geometry}. The main topic, one closely related to the notion of
+perspective in painting, is called the \textit{cross-ratio}.
 
-
-The issue we will explore in the next two sections is the question of
-finding a numerical condition about the four points that tells us
-exactly when they all lie on a single circle. For that, we will need a
-very famous mathematical relationship, one very closely related to the
-notion of perspective in painting. That is, how do you faithfully
-render depth on a flat canvas? This relationship is called
-the \textit{cross-ratio} of the four points.
-
+In particular, we will use the cross-ratio to prove a famous
+mathematical relationship, \textit{Ptolomy's Theorem}. We will then
+explore several corollaries of Ptolomy's Theorem. Before we start, we will need the \textit{Law of Sines}.
 
 \begin{problem}
-Show that, given any three non-collinear points in the Euclidean
-plane, there is a unique circle passing through the three points.
-
+State and prove the Law of Sines. 
 \begin{hint}
-Show that the center of the circle must be the intersection of
-the perpendicular bisectors of any two of the sides of the triangle
-whose vertices are the three given points.
+Draw an arbitrary triangle, and add an altitude, call it $h$. 
 \end{hint}
-
 \begin{freeResponse}
 \end{freeResponse}
-
-\end{problem}
-
-But how about four points in the plane, no three of which are
-collinear?
-
-\begin{problem}
-\begin{enumerate}\hfil
-\item Draw four points in the Euclidean plane, no $3$ of which are collinear, that cannot lie on a single circle.
-\item Draw four points in the Euclidean plane that do lie on a single
-circle.
-\end{enumerate}
 \end{problem}
 
 
@@ -388,8 +369,8 @@ for $i=1,2,3,4$. Show that%
 Just write out the formula for each side and do the high school
 algebra.  There is a fancier way that uses that the set of linear
 fractional transformations form a group whose operation is
-composition. It goes like this. Use Problem \ref{59} to show that the
-inverse of the linear fractional transformation
+composition. It goes like this. Use a previous problem to show that
+the inverse of the linear fractional transformation
 \[
 t\mapsto\frac{t-t_{2}}{t_{3}-t_{2}}\div\frac{t-t_{4}}{t_{3}-t_{4}}%
 \]
@@ -402,8 +383,7 @@ and then followed by
 t\mapsto\frac{t-\underline{t_{2}}}{\underline{t_{3}}-\underline{t_{2}}}%
 \div\frac{t-\underline{t_{4}}}{\underline{t_{3}}-\underline{t_{4}}}%
 \]
-fixes $0$, $1$, and $\infty$ and so is the identity transformation by Problem
-\ref{57}. So%
+fixes $0$, $1$, and $\infty$ and so is the identity transformation by a previous problem. So%
 \[
 t\mapsto\frac{t-t_{2}}{t_{3}-t_{2}}\div\frac{t-t_{4}}{t_{3}-t_{4}}%
 \]
@@ -439,16 +419,15 @@ Evaluating these maps at $t_1$ gives the desired result.
 \end{problem}
 
 \begin{definition}
-\label{44}The cross-ratio $\left(  t_{1}:t_{2}:t_{3}:t_{4}\right)  $ of four
-(ordered) points $t_{1},t_{2},t_{3}$ and $t_{4}$ is defined by%
+\label{44}Given four ordered points $t_{1},t_{2},t_{3}$ and $t_{4}$, the \textbf{cross-ratio} $\left(t_{1}:t_{2}:t_{3}:t_{4}\right)$ is defined by
 \[
-\left(  t_{1}:t_{2}:t_{3}:t_{4}\right)  =\frac{t_{1}-t_{2}}{t_{3}-t_{2}}%
-\div\frac{t_{1}-t_{4}}{t_{3}-t_{4}}.
+\left( t_{1}:t_{2}:t_{3}:t_{4}\right)
+=\frac{t_{1}-t_{2}}{t_{3}-t_{2}}% \div\frac{t_{1}-t_{4}}{t_{3}-t_{4}}.
 \]
 
 \end{definition}
 
-Problem \ref{42} shows that if four points are moved by any function $\left(
+A previous problem shows that if four points are moved by any function $\left(
 \ref{41}\right)  $ the cross-ratio $\left(  \underline{t_{1}}:\underline
 {t_{2}}:\underline{t_{3}}:\underline{t_{4}}\right)  $ of the output four
 points is the same as the cross-ratio $\left(  t_{1}:t_{2}:t_{3}:t_{4}\right)
@@ -505,7 +484,7 @@ AOB\right)  }{\sin\left(  \angle COB\right)  }.
 
 
 \begin{hint}
-Notice that by Theorem \ref{43}
+Notice that
 \[
 m\left(  \angle BAO\right)  +m\left(\angle OCB\right)  =180^{\circ}%
 \]
@@ -541,35 +520,35 @@ AOB\right)  }{\sin\left(  \angle COB\right)  }.
 \end{freeResponse}
 \end{problem}
 
-\begin{problem}
-\label{47} Show that if, in the above figure, $B$ moves along the
+\begin{remark}
+Note that if, in the above figure, $B$ moves along the
 circle to the other side of $C$, it is still true that%
 \[
 \frac{\left\vert AB\right\vert }{\left\vert CB\right\vert }=\frac
 {\sin\left(  \angle AOB\right)  }{\sin\left(  \angle
 COB\right)  }%
 \]
-\begin{freeResponse}
-By the Law of Sines we have that
-\[
-\frac{|AB|}{\sin(\angle AOB)} = \frac{|OB|}{\sin(\angle OAB)}\qquad\text{and}\qquad\frac{|CB|}{\sin(\angle COB)} = \frac{|OB|}{\sin(\angle OCB)}.
-\]
-However, 
-\[
-\angle OAB = \angle OCB
-\]
-So now we have that
-\[
-\frac{|AB|}{\sin(\angle AOB)} =\frac{|CB|}{\sin(\angle COB)}. 
-\]
-Using algebra we find 
-\[
-\frac{\left\vert AB\right\vert }{\left\vert CB\right\vert }=\frac
-{\sin\left(  \angle AOB\right)  }{\sin\left(  \angle
-COB\right)  }.
-\]
-\end{freeResponse}
-\end{problem}
+%% \begin{freeResponse}
+%% By the Law of Sines we have that
+%% \[
+%% \frac{|AB|}{\sin(\angle AOB)} = \frac{|OB|}{\sin(\angle OAB)}\qquad\text{and}\qquad\frac{|CB|}{\sin(\angle COB)} = \frac{|OB|}{\sin(\angle OCB)}.
+%% \]
+%% However, 
+%% \[
+%% \angle OAB = \angle OCB
+%% \]
+%% So now we have that
+%% \[
+%% \frac{|AB|}{\sin(\angle AOB)} =\frac{|CB|}{\sin(\angle COB)}. 
+%% \]
+%% Using algebra we find 
+%% \[
+%% \frac{\left\vert AB\right\vert }{\left\vert CB\right\vert }=\frac
+%% {\sin\left(  \angle AOB\right)  }{\sin\left(  \angle
+%% COB\right)  }.
+%% \]
+%% \end{freeResponse}
+\end{remark}
 
 
 
@@ -692,22 +671,24 @@ we define%
 \left(  A:B:C:D\right)  =\frac{\left\vert AB\right\vert }{\left\vert
 CB\right\vert }\div\frac{\left\vert AD\right\vert }{\left\vert CD\right\vert }%
 \]
-which we call the cross-ratio of the ordered sequence of the four points.
-Similarly for a sequence of four (ordered) points $A',B^{\prime
-},C',$ and $D'$ on a line, we define%
+which we call the \textbf{cross-ratio of the ordered sequence of four
+  points on a circle}.  Similarly for a sequence of four (ordered) points
+$A',B^{\prime },C',$ and $D'$ on a line, we define%
 \[
 \left(  A':B':C':D'\right)  =\frac{\left\vert
 A'B'\right\vert }{\left\vert C'B'\right\vert
 }\div\frac{\left\vert A'D'\right\vert }{\left\vert C^{\prime
 }D'\right\vert }%
 \]
-which we call the cross-ratio of the ordered sequence of the four points.
+which we call the \textbf{cross-ratio of the ordered sequence of the
+  four points on a line}.
 \end{definition}
 
-Notice that Definition \ref{44} is just a refinement of the definition
-of $\left( A':B':C':D'\right) $ just above. In Definition \ref{44} we
-are keeping track of the signs of the terms in the quotients whereas
-$\left( A':B':C':D'\right)$ is always non-negative.
+Notice that the original definition of a \textit{cross-ratio} is just
+a refinement of the definition of $\left( A':B':C':D'\right)$ just
+above. In the original defintion we are keeping track of the signs of
+the terms in the quotients whereas $\left( A':B':C':D'\right)$ is
+always non-negative.
 
 \begin{problem}\label{50}
 Show that, in the figure%
@@ -753,10 +734,10 @@ we have the equality%
 
 
 \begin{hint}
-Use Problems \ref{46}--\ref{49}.
+Use the previous problems. 
 \end{hint}
 
-What happens in if we move $B$ to the other side of $C$?
+%What happens in if we move $B$ to the other side of $C$?
 \begin{freeResponse}
 By our previous work, 
 \begin{align*}
@@ -771,7 +752,7 @@ m(\angle A'OD') &= m(\angle AOD),\\
 m(\angle C'OD') &= m(\angle COD),\\
 m(\angle B'A'O) &= m(\angle D'A'O),
 \end{align*}
-and as we have shown several times now, 
+and as we have shown, 
 \[
 \sin(\angle B'C'O) = \sin(\angle D'C'O)
 \]
@@ -783,18 +764,25 @@ With all of these substitutions, our ``large'' expression above becomes
 \[
 \frac{\sin(\angle AOB)}{\sin(\angle COB)} \div \frac{\sin(\angle AOD)}{\sin(\angle COD)} = (A:B:C:D). 
 \]
-Since none of the formulas change when $B$ is moved to the other side
-of $C$, we are done.  
+This completes the proof. 
 \end{freeResponse}
 \end{problem}
+
 
 We say that ``Cross-ratio is invariant under stereographic
 projection.''
 
+
+
+
+
+
+
 \section*{Ptolemy's Theorem}
 
-Given any three non-collinear points in the Euclidean plane, there is
-one and only one circle that passes through the three points. (How do
+
+
+(How do
 you construct it?) You can easily convince yourself with a few
 examples that, given four non-collinear points $A,B,C$ and $D$ in the
 plane, it is not always true that there is a circle that passes
@@ -853,7 +841,7 @@ That is, we need to check that
 \[
 \left(  A:C:B:D\right)  =1+\left(  A:B:C:D\right)  .
 \]
-But by Problem \ref{50} this is the same as checking that%
+But by a previous problem this is the same as checking that%
 \[
 \left(  A':C':B':D'\right)  =1+\left(
 A':B':C':D'\right)
@@ -876,7 +864,91 @@ which is the same thing as showing that%
 }\right\vert +\left\vert A'B'\right\vert
 \cdot\left\vert C'D'\right\vert .
 \]
-Now check this last equality by high-school algebra.
 \end{proof}
+
+
+\begin{problem}
+Check the last equality in the proof of Ptolomy's Theorem using high
+school-algebra.
+\begin{freeResponse}
+\end{freeResponse}
+\end{problem}
+
+\begin{problem}
+Use Ptolomy's Theorem to give another proof of the Pythagorean Theorem.
+\begin{hint}
+Let the four points in Ptolomy's Theorem form a rectangle.
+\end{hint}
+\begin{freeResponse}
+\end{freeResponse}
+\end{problem}
+
+
+\begin{problem}
+Prove the addition formula for sine:
+\[
+\sin(\alpha + \beta) = \sin(\alpha)\cos(\beta) +
+\cos(\alpha)\sin(\beta)
+\]
+\end{problem}
+
+
+\begin{problem}
+Prove the subtraction formula for sine:
+\[
+\sin(\alpha - \beta) = \sin(\alpha)\cos(\beta) -
+\cos(\alpha)\sin(\beta)
+\]
+\end{problem}
+
+Both of the above forumlas were very important to Ptolomy. You see,
+Ptolomy wrote a book called the \textit{Almagest}. The
+\textit{Almagest} was a book that contained all the current
+information about the stars, including information on how a potential
+reader could produce their observations. A key technical hurtle that
+needed to be resolved was the computating of sine and cosine. The two
+formulas above, were the key in this endevor. 
+
+
+%% Given any three non-collinear points in the Euclidean plane, there is
+%% one and only one circle that passes through the three points. 
+
+%% \begin{problem}
+%% Show that, given any three non-collinear points in the Euclidean
+%% plane, there is a unique circle passing through the three points.
+
+%% \begin{hint}
+%% Show that the center of the circle must be the intersection of
+%% the perpendicular bisectors of any two of the sides of the triangle
+%% whose vertices are the three given points.
+%% \end{hint}
+
+%% \begin{freeResponse}
+%% \end{freeResponse}
+
+%% \end{problem}
+
+%% But how about four points in the plane, no three of which are
+%% collinear?
+
+%% \begin{problem}
+%% \begin{enumerate}\hfil
+%% \item Draw four points in the Euclidean plane, no $3$ of which are collinear, that cannot lie on a single circle.
+%% \item Draw four points in the Euclidean plane that do lie on a single
+%% circle.
+%% \end{enumerate}
+%% \end{problem}
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
