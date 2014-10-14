@@ -10,7 +10,7 @@
 \begin{document}
 \begin{abstract}
 In this activity, we do some basic projective geometry and learn
-Ptolomy's Theorem.
+Ptolemy's Theorem.
 \end{abstract}
 \maketitle
 
@@ -19,8 +19,9 @@ In this section, we will study some basic ideas of \textit{projective
 perspective in painting, is called the \textit{cross-ratio}.
 
 In particular, we will use the cross-ratio to prove a famous
-mathematical relationship, \textit{Ptolomy's Theorem}. We will then
-explore several corollaries of Ptolomy's Theorem. Before we start, we will need the \textit{Law of Sines}.
+mathematical relationship, \textit{Ptolemy's Theorem}. We will then
+explore several corollaries of Ptolemy's Theorem. Before we start, we
+will need the \textit{Law of Sines}.
 
 \begin{problem}
 State and prove the Law of Sines. 
@@ -284,8 +285,8 @@ transformation has an inverse---we found this in the previous problem.
 \label{59}Show that, for any three distinct points $t_{2},t_{3}$ and $t_{4}$,
 the function of $t$ given by the formula%
 \[
-\underline{t}=\frac{t_{3}-t_{4}}{t_{3}-t_{2}}\frac{t-t_{2}}{t-t_{4}}%
-=\frac{t-t_{2}}{t_{3}-t_{2}}\div\frac{t-t_{4}}{t_{3}-t_{4}}%
+\underline{t}
+=\frac{(t-t_2)(t_3-t_4)}{(t-t_4)(t_3-t_2)}
 \]
 takes $t_{2}$ to $0$, takes $t_{3}$ to $1$ and takes $t_{4}$ to
 $\infty$. Show that this function is a linear fractional
@@ -295,13 +296,13 @@ $\left( \ref{41}\right) $ for which the condition $\left(
 \begin{freeResponse}
 Write
 \begin{align*}
-t_2 &\mapsto \frac{t_3-t_4}{t_3-t_2} \cdot \frac{t_2-t_2}{t_2-t_4} = 0.\\
-t_3 &\mapsto \frac{t_3-t_4}{t_3-t_2} \cdot \frac{t_3-t_2}{t_3-t_4} = 1.\\
-t_4 &\mapsto \frac{t_3-t_4}{t_3-t_2} \cdot \frac{t_4-t_2}{t_4-t_4} = \infty.
+t_2 &\mapsto \frac{(t_2-t_2)(t_3-t_4)}{(t_2-t_4)(t_3-t_2)} = 0.\\
+t_3 &\mapsto \frac{(t_3-t_{2})(t_{3}-t_{4})}{(t_3-t_{4})(t_{3}-t_{2})}= 1.\\
+t_4 &\mapsto \frac{(t_4-t_{2})(t_{3}-t_{4})}{(t_4-t_{4})(t_{3}-t_{2})} = \infty.
 \end{align*}
 With a slight bit of algebra, we can see that this is a linear fractional transformation:
 \[
-\frac{t_{3}-t_{4}}{t_{3}-t_{2}}\frac{t-t_{2}}{t-t_{4}} = \frac{t_3t - t_2t_3-t_4t +t_2t_4}{t_3t-t_3t_4-t_2t+t_2t_4} = \frac{(t_3-t_4)t + (t_2t_4-t_2t_3)}{(t_3-t_2)t + (t_2t_4-t_3t_4)}
+\frac{(t-t_{2})(t_{3}-t_{4})}{(t-t_{4})(t_{3}-t_{2})} = \frac{t_3t - t_2t_3-t_4t +t_2t_4}{t_3t-t_3t_4-t_2t+t_2t_4} = \frac{(t_3-t_4)t + (t_2t_4-t_2t_3)}{(t_3-t_2)t + (t_2t_4-t_3t_4)}
 \]
 though we must check the determinant condition:
 \begin{align*}
@@ -358,10 +359,8 @@ and four points $t_{1},t_{2},t_{3}$ and $t_{4}$. Let
 \]
 for $i=1,2,3,4$. Show that%
 \[
-\frac{\underline{t_{1}}-\underline{t_{2}}}{\underline{t_{3}}-\underline{t_{2}%
-}}\div\frac{\underline{t_{1}}-\underline{t_{4}}}{\underline{t_{3}}%
--\underline{t_{4}}}=\frac{t_{1}-t_{2}}{t_{3}-t_{2}}\div\frac{t_{1}-t_{4}%
-}{t_{3}-t_{4}}.
+\frac{(\underline{t_1}-\underline{t_{2}})(\underline{t_{3}}-\underline{t_{4}})}{(\underline{t_1}-\underline{t_{4}})(\underline{t_{3}}-\underline{t_{2}})}=
+\frac{(t_1-t_{2})(t_{3}-t_{4})}{(t_1-t_{4})(t_{3}-t_{2})}.
 \]
 [MJG,288]
 
@@ -372,7 +371,7 @@ fractional transformations form a group whose operation is
 composition. It goes like this. Use a previous problem to show that
 the inverse of the linear fractional transformation
 \[
-t\mapsto\frac{t-t_{2}}{t_{3}-t_{2}}\div\frac{t-t_{4}}{t_{3}-t_{4}}%
+t\mapsto\frac{(t-t_2)(t_3-t_4)}{(t-t_4)(t_3-t_2)}
 \]
 followed by%
 \[
@@ -380,39 +379,34 @@ t\mapsto\underline{t}%
 \]
 and then followed by
 \[
-t\mapsto\frac{t-\underline{t_{2}}}{\underline{t_{3}}-\underline{t_{2}}}%
-\div\frac{t-\underline{t_{4}}}{\underline{t_{3}}-\underline{t_{4}}}%
+t\mapsto\frac{(t-\underline{t_2})(\underline{t_3}-\underline{t_4})}{(t-\underline{t_4})(\underline{t_3}-\underline{t_2})}
 \]
 fixes $0$, $1$, and $\infty$ and so is the identity transformation by a previous problem. So%
 \[
-t\mapsto\frac{t-t_{2}}{t_{3}-t_{2}}\div\frac{t-t_{4}}{t_{3}-t_{4}}%
+t\mapsto\frac{(t-t_2)(t_3-t_4)}{(t-t_4)(t_3-t_2)}
 \]
 is the same transformation as%
 \[
-t\mapsto\frac{\underline{t}-\underline{t_{2}}}{\underline{t_{3}}%
--\underline{t_{2}}}\div\frac{\underline{t}-\underline{t_{4}}}{\underline
-{t_{3}}-\underline{t_{4}}}.
+t\mapsto\frac{(\underline{t}-\underline{t_2})(\underline{t_3}-\underline{t_4})}{(\underline{t}-\underline{t_4})(\underline{t_3}-\underline{t_2})}.
 \]
 \end{hint}
 \begin{freeResponse}
 We will use the fancier method of a solution. Start by writing
 \begin{align*}
-\frac{t-t_2}{t_3-t_2} \div \frac{t-t_4}{t_3-t_4}\mapsto t\mapsto \underline{t}\mapsto \frac{\underline{t}-\underline{t_{2}}}{\underline{t_{3}}%
--\underline{t_{2}}}\div\frac{\underline{t}-\underline{t_{4}}}{\underline
-{t_{3}}-\underline{t_{4}}}.
+\frac{(t-t_2)(t_3-t_4)}{(t-t_4)(t_3-t_2)}
+\mapsto t\mapsto \underline{t}\mapsto 
+\frac{(\underline{t}-\underline{t_2})(\underline{t_3}-\underline{t_4})}{(\underline{t}-\underline{t_4})(\underline{t_3}-\underline{t_2})}.
 \end{align*}
 From our work above, we know this is a linear fractional
 transformation. Moreover, from our work above, we can see that this
 map fixes $0$, $1$, and $\infty$, hence this map is the identity
 map. The upshot of this is that the map
 \[
-t\mapsto \frac{t-t_2}{t_3-t_2} \div \frac{t-t_4}{t_3-t_4}
+t\mapsto\frac{(t-t_2)(t_3-t_4)}{(t-t_4)(t_3-t_2)}
 \]
 is now seen to be identical to the composition of maps
 \[
-t\mapsto \underline{t}\mapsto \frac{\underline{t}-\underline{t_{2}}}{\underline{t_{3}}%
--\underline{t_{2}}}\div\frac{\underline{t}-\underline{t_{4}}}{\underline
-{t_{3}}-\underline{t_{4}}}.
+t\mapsto \underline{t}\mapsto \frac{(\underline{t}-\underline{t_2})(\underline{t_3}-\underline{t_4})}{(\underline{t}-\underline{t_4})(\underline{t_3}-\underline{t_2})}.
 \]
 Evaluating these maps at $t_1$ gives the desired result. 
 \end{freeResponse}
@@ -686,7 +680,7 @@ which we call the \textbf{cross-ratio of the ordered sequence of the
 
 Notice that the original definition of a \textit{cross-ratio} is just
 a refinement of the definition of $\left( A':B':C':D'\right)$ just
-above. In the original defintion we are keeping track of the signs of
+above. In the original definition we are keeping track of the signs of
 the terms in the quotients whereas $\left( A':B':C':D'\right)$ is
 always non-negative.
 
@@ -780,15 +774,11 @@ projection.''
 
 \section*{Ptolemy's Theorem}
 
-
-
-(How do
-you construct it?) You can easily convince yourself with a few
-examples that, given four non-collinear points $A,B,C$ and $D$ in the
-plane, it is not always true that there is a circle that passes
-through all four. A famous theorem of classical Euclidean geometry
-gives the condition that there is a circle that passes through all
-four.
+You can easily convince yourself with a few examples that, given four
+non-collinear points $A,B,C$ and $D$ in the plane, it is not always
+true that there is a circle that passes through all four. A famous
+theorem of classical Euclidean geometry gives a condition when there
+is a circle that passes through all four.
 
 \begin{theorem}[Ptolemy] If the ordered sequence of points $A,B,C$ and $D$ lies on a circle,
 \begin{image}
@@ -803,6 +793,9 @@ four.
 \draw (C) -- (D);
 \draw (A) -- (D);
 \draw (B) -- (C);
+
+\draw[thin] (A) -- (C);
+\draw[thin] (B) -- (D);
 
 \tkzLabelPoints[left](A)
 \tkzLabelPoints[below left](B)
@@ -868,16 +861,16 @@ which is the same thing as showing that%
 
 
 \begin{problem}
-Check the last equality in the proof of Ptolomy's Theorem using high
+Check the last equality in the proof of Ptolemy's Theorem using high
 school-algebra.
 \begin{freeResponse}
 \end{freeResponse}
 \end{problem}
 
 \begin{problem}
-Use Ptolomy's Theorem to give another proof of the Pythagorean Theorem.
+Use Ptolemy's Theorem to give another proof of the Pythagorean Theorem.
 \begin{hint}
-Let the four points in Ptolomy's Theorem form a rectangle.
+Let the four points in Ptolemy's Theorem form a rectangle.
 \end{hint}
 \begin{freeResponse}
 \end{freeResponse}
@@ -890,6 +883,39 @@ Prove the addition formula for sine:
 \sin(\alpha + \beta) = \sin(\alpha)\cos(\beta) +
 \cos(\alpha)\sin(\beta)
 \]
+\begin{hint}
+Consider this setup, 
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at ({2*cos(80)},{2*sin(80)});
+\coordinate (B) at ({2*cos(180)},{2*sin(180)});
+\coordinate (C) at ({2*cos(270)},{2*sin(270)});
+\coordinate (D) at ({2*cos(0)},{2*sin(0)});
+
+\draw (0,0) circle (2cm);
+\draw (A) -- (B);
+\draw (C) -- (D);
+\draw (A) -- (D);
+\draw (B) -- (C);
+
+\draw[thin] (A) -- (C);
+\draw[thin] (B) -- (D);
+
+\tkzLabelPoints[above](A)
+\tkzLabelPoints[left](B)
+\tkzLabelPoints[below](C)
+\tkzLabelPoints[right](D)
+
+\tkzMarkAngle[size=0.7cm,thin](D,B,A)
+\tkzLabelAngle[pos = 0.5](D,B,A){$\alpha$}
+
+\tkzMarkAngle[arc=ll,size=0.8cm,thin](C,B,D)
+\tkzLabelAngle[pos = 0.6](C,B,D){$\beta$}
+
+\end{tikzpicture}
+\end{image}
+where $\bar{BD}$ is a unit diameter for the circle.
+\end{hint}
 \end{problem}
 
 
@@ -899,15 +925,48 @@ Prove the subtraction formula for sine:
 \sin(\alpha - \beta) = \sin(\alpha)\cos(\beta) -
 \cos(\alpha)\sin(\beta)
 \]
+\begin{hint}
+Consider this setup, 
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at ({2*cos(110)},{2*sin(110)});
+\coordinate (B) at ({2*cos(180)},{2*sin(180)});
+\coordinate (C) at ({2*cos(0)},{2*sin(0)});
+\coordinate (D) at ({2*cos(65)},{2*sin(65)});
+
+\draw (0,0) circle (2cm);
+\draw (A) -- (B);
+\draw (C) -- (D);
+\draw (A) -- (D);
+\draw (B) -- (C);
+
+\draw[thin] (A) -- (C);
+\draw[thin] (B) -- (D);
+
+\tkzLabelPoints[above](A)
+\tkzLabelPoints[left](B)
+\tkzLabelPoints[right](C)
+\tkzLabelPoints[above](D)
+
+\tkzMarkAngle[size=0.7cm,thin](C,B,A)
+\tkzLabelAngle[pos = 0.5](C,B,A){$\alpha$}
+
+\tkzMarkAngle[arc=ll,size=1.1cm,thin](C,B,D)
+\tkzLabelAngle[pos = 0.9](C,B,D){$\beta$}
+
+\end{tikzpicture}
+\end{image}
+where $\bar{BC}$ is a unit diameter for the circle.
+\end{hint}
 \end{problem}
 
-Both of the above forumlas were very important to Ptolomy. You see,
-Ptolomy wrote a book called the \textit{Almagest}. The
+Both of the above formulas were very important to Ptolemy. You see,
+Ptolemy wrote a book called the \textit{Almagest}. The
 \textit{Almagest} was a book that contained all the current
 information about the stars, including information on how a potential
-reader could produce their observations. A key technical hurtle that
-needed to be resolved was the computating of sine and cosine. The two
-formulas above, were the key in this endevor. 
+reader could reproduce their observations and conclusions. A key
+technical hurtle that needed to be resolved was the computation of
+sine and cosine. The two formulas above, were the key in this endeavor.
 
 
 %% Given any three non-collinear points in the Euclidean plane, there is
@@ -942,6 +1001,12 @@ formulas above, were the key in this endevor.
 
 
 
+\begin{problem}
+Summarize the results from this section. In particular, indicate which
+results follow from the others.
+\begin{freeResponse}
+\end{freeResponse}
+\end{problem}
 
 
 
