@@ -22,14 +22,14 @@ euclidean $3$-space.%
 
 
 The lune has two vertices. They are at opposite (antipodal) points on the
-$R$-sphere, that is, the line in Eucludean $3$-space that joins the two
+$R$-sphere, that is, the line in euclidean $3$-space that joins the two
 vertices runs through the center of the sphere. The angle at a vertex of the
 lune is $\alpha$ radians.
 
-\begin{exercise}
+\begin{problem}
 \label{67} Explain why the area of the $\alpha$-lune is $2\alpha
 \cdot R^{2}$.
-\end{exercise}
+\end{problem}
 
 
 \subsection*{Spherical triangles}
@@ -46,33 +46,46 @@ are vertices of an `opposite' triangle that has the same area as the given one
 since it is just the image of the given one under the rigid motion%
 \[
 \left(  \underline{\hat{x}},\underline{\hat{y}},\underline{\hat{z}}\right)
-=\left(  \hat{x},\hat{y},\hat{z}\right)  \cdot\left(
-\begin{array}
-[c]{ccc}%
+=
+\begin{bmatrix}
+  \hat{x} & \hat{y} &\hat{z}
+\end{bmatrix}  
+\begin{bmatrix}
 -1 & 0 & 0\\
 0 & -1 & 0\\
 0 & 0 & -1
-\end{array}
-\right)  .
+\end{bmatrix}.
 \]
 The three lunes cover the triangle three times. The three opposite
 lunes cover the opposite triangle three times. If you take all six
 lunes together, they cover each of the two triangles three times and
 everything else exactly once.
 
-\begin{exercise}\hfil
-\begin{enumerate}
-\item Show that the area of the spherical triangle is given by the
+\begin{problem}
+Show that the area of the spherical triangle is given by the
 formula%
 \[
 R^{2}\left(  \left(  \alpha+\beta+\gamma\right)  -\pi\right).
 \]
-Hint: Use Exercise \ref{67} to turn the sentence just preceding the Exercise
-into an equation.
+\begin{hint}
+Use the previous problem.
+\end{hint}
+\end{problem}
 
-\item Give a formula for the area of any spherical $n$-gon.
 
-Hint: Divide the spherical $n$-gon into spherical triangles.
-\end{enumerate}
-\end{exercise}
+\begin{problem}
+Give a formula for the area of any spherical $n$-gon.
+\begin{hint}
+Divide the spherical $n$-gon into spherical triangles.
+\end{hint}
+\end{problem}
+
+
+\begin{problem}
+Summarize the results from this section. In particular, indicate which
+results follow from the others.
+\begin{freeResponse}
+\end{freeResponse}
+\end{problem}
+
 \end{document}
