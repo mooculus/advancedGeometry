@@ -5,7 +5,7 @@
 \title{Changing coordinates}
 \begin{document}
 \begin{abstract}
-Now we will look at rigid motions in three-space.
+Now we will change coordiantes.
 \end{abstract}
 \maketitle
 
@@ -75,7 +75,7 @@ z=\pm1
 \]
 which is in fact (two copies of) a plane!
 
-\begin{exercise}\hfil
+\begin{problem}\hfil
 \begin{enumerate}
 \item Sketch the solution set in $\left(  x,y,z\right)  $-coordinates
 representing the sphere%
@@ -84,21 +84,21 @@ R^{2}=\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=2^{2}%
 \]
 of radius $2$ in euclidean three-space.
 
-\item Sketch the solution set in the same $\left(  x,y,z\right)  $-coordinates
+\item Sketch the solution set in the $\left(  x,y,z\right)  $-coordinates
 representing the sphere%
 \[
 R^{2}=\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=10^{2}%
 \]
 of radius $10$ in euclidean three-space.
 
-\item Sketch the solution set in the same $\left(  x,y,z\right)  $-coordinates
+\item Sketch the solution set in the $\left(  x,y,z\right)  $-coordinates
 representing the sphere%
 \[
 R^{2}=\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=10^{-2}%
 \]
 of radius $10^{-1}$ in euclidean three-space.
 \end{enumerate}
-\end{exercise}
+\end{problem}
 
 \subsection*{$K$-geometry: Formulas for euclidean lengths and angles in terms
 of $\left(  x,y,z\right)  $-coordinates}
@@ -121,14 +121,15 @@ R=\frac{1}{\sqrt{K}}.
 \]
 If $K=0$ we will be studying flat (plane) geometry. If $K<0$, we will be
 studying hyperbolic geometry. The number $K$, in all cases, is called the
-\textit{curvature} of the geometry.
+\textbf{curvature} of the geometry.
 
 In short, we want to use $\left(  x,y,z\right)  $-coordinates to compute with,
 but we want lengths and angles to be the usual euclidean ones in $\left(
 \hat{x},\hat{y},\hat{z}\right)  $-coordinates.
 
-\begin{exercise}
-a) Suppose we have functions%
+\begin{problem}\hfil
+\begin{enumerate}
+\item Suppose we have functions%
 \[
 \left(  \hat{x}\left(  x,y,z\right)  ,\hat{y}\left(  x,y,z\right)  ,\hat
 {z}\left(  x,y,z\right)  \right)
@@ -147,31 +148,25 @@ State the Chain Rule for%
 \end{align*}
 
 
-b) Rewrite the Chain Rule in matrix notation%
+\item Rewrite the Chain Rule in matrix notation%
 \[
-\left(
-\begin{array}
-[c]{ccc}%
+\begin{bmatrix}
 \frac{d\hat{x}}{dt} & \frac{d\hat{y}}{dt} & \frac{d\hat{z}}{dt}%
-\end{array}
-\right)  =\left(
-\begin{array}
-[c]{ccc}%
+\end{bmatrix}
+=
+\begin{bmatrix}
 \frac{dx}{dt} & \frac{dy}{dt} & \frac{dz}{dt}%
-\end{array}
-\right)  \cdot\left(
-\begin{array}
-[c]{ccc}
+\end{bmatrix}
+\begin{bmatrix}
 &  & \\
 &  & \\
 &  &
-\end{array}
-\right)  .
+\end{bmatrix}.
 \]
+\end{enumerate}
+\end{problem}
 
-\end{exercise}
-
-\begin{exercise}
+\begin{problem}
 \label{8} Recalling that $R$ is a positive constant, use $\left(
 \ref{105}\right)  $ and the Chain Rule to show that, for any path $\hat
 {X}\left(  t\right)  =\left(  \hat{x}\left(  t\right)  ,\hat{y}\left(
@@ -182,34 +177,29 @@ t\right)  ,\hat{z}\left(  t\right)  \right)  $ in euclidean $3$-space,%
 \frac{d\hat{z}}{dt}  &  =R\frac{dz}{dt}.
 \end{align*}
 
-\end{exercise}
+\end{problem}
 
-\begin{exercise}
-Use matrix multiplication [DS,307] and Exercise \ref{8} to show that%
+\begin{problem}
+Use matrix multiplication [DS,307] and Problem \ref{8} to show that%
 \begin{align*}
-\frac{d\hat{X}\left(  t\right)  }{dt}  &  =\left(  \frac{dX\left(  t\right)
-}{dt}\right)  \left(
-\begin{array}
-[c]{ccc}%
+\frac{d\hat{X}\left(  t\right)  }{dt}  &  =\frac{dX(t)}{dt}
+\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & R
-\end{array}
-\right) \\
-\frac{dX\left(  t\right)  }{dt}  &  =\left(  \frac{d\hat{X}\left(  t\right)
-}{dt}\right)  \left(
-\begin{array}
-[c]{ccc}%
+\end{bmatrix} \\
+\frac{dX(t)}{dt}  &=\frac{d\hat{X}(t)
+}{dt}
+\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & R^{-1}%
-\end{array}
-\right)  .
+\end{bmatrix}.
 \end{align*}
 
-\end{exercise}
+\end{problem}
 
-\textit{NB}: This last computation shows that, if
+This last computation shows that, if
 \begin{align*}
 \hat{V}_{1}  &  =\left(  \hat{a}_{1},\hat{b}_{1},\hat{c}_{1}\right) \\
 \hat{V}_{2}  &  =\left(  \hat{a}_{2},\hat{b}_{2},\hat{c}_{2}\right)
@@ -222,122 +212,99 @@ V_{2}  &  =\left(  a_{2},b_{2},c_{2}\right)
 \end{align*}
 are their transformations into $\left(  x,y,z\right)  $-coordinates, then%
 \begin{align*}
-\hat{V}_{1}  &  =\left(  V_{1}\right)  \left(
-\begin{array}
-[c]{ccc}%
+\hat{V}_{1}  &  =V_{1}
+\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & R
-\end{array}
-\right) \\
-\hat{V}_{2}  &  =\left(  V_{2}\right)  \left(
-\begin{array}
-[c]{ccc}%
+\end{bmatrix}
+ \\
+\hat{V}_{2}  &  =V_{2} 
+\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & R
-\end{array}
-\right)
+\end{bmatrix}
 \end{align*}
 and%
 \begin{align*}
-\hat{V}_{1}\bullet\hat{V}_{2}  &  =\left(  \hat{V}_{1}\right)  \cdot\left(
-\hat{V}_{2}\right)  ^{t}\\
-&  =\left(  V_{1}\right)  \left(
-\begin{array}
-[c]{ccc}%
+\hat{V}_{1}\bullet\hat{V}_{2} &= \hat{V}_{1}\cdot \hat{V}_{2}^\transpose\\
+&=V_{1}
+\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & R
-\end{array}
-\right)  \left(  \left(  V_{2}\right)  \left(
-\begin{array}
-[c]{ccc}%
+\end{bmatrix}
+\left(V_{2}
+\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & R
-\end{array}
-\right)  \right)  ^{t}\\
-&  =\left(  V_{1}\right)  \left(
-\begin{array}
-[c]{ccc}%
+\end{bmatrix}\right)^\transpose\\
+&=V_{1}
+\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & R
-\end{array}
-\right)  \left(
-\begin{array}
-[c]{ccc}%
+\end{bmatrix}
+\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & R
-\end{array}
-\right)  \left(  V_{2}\right)  ^{t}\\
-&  =\left(  V_{1}\right)  \left(
-\begin{array}
-[c]{ccc}%
+\end{bmatrix}
+V_{2}^\transpose\\
+&=V_{1}
+\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
-\end{array}
-\right)  \left(  V_{2}\right)  ^{t}.
+\end{bmatrix}
+V_{2}^\transpose.
 \end{align*}
 This last computation says that we can compute the euclidean dot $\hat{V}%
 _{1}\bullet\hat{V}_{2}$ without ever referring to euclidean coordinates. We
 incorporate that fact into the following definition.
 
 \begin{definition}
-\textquotedblleft$K$-dot-product\textquotedblright\ of vectors:%
+The \textbf{$\boldsymbol{K}$-dot-product} of vectors:%
 \begin{align}
-V_{1}\bullet_{K}V_{2}  &  =\left(  V_{1}\right)  \left(
-\begin{array}
-[c]{ccc}%
+V_{1}\bullet_{K}V_{2}  &=V_{1} 
+\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
-\end{array}
-\right)  \left(  V_{2}\right)  ^{t}\label{10}\\
-&  =\left(
-\begin{array}
-[c]{ccc}%
+\end{bmatrix}
+V_{2}^\transpose\label{10}\\
+&=
+\begin{bmatrix}
 a_{1} & b_{1} & c_{1}%
-\end{array}
-\right)  \left(
-\begin{array}
-[c]{ccc}%
+\end{bmatrix}
+\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
-\end{array}
-\right)  \left(
-\begin{array}
-[c]{c}%
+\end{bmatrix}
+\begin{bmatrix}
 a_{2}\\
 b_{2}\\
 c_{2}%
-\end{array}
-\right)  .\nonumber
+\end{bmatrix}.
 \end{align}
 
 \end{definition}
 
-So, suppose we have a curve on the $R$-sphere in euclidean $3$-space but it is
-given to us in $X\left(  t\right)  =\left(  x\left(  t\right)  ,y\left(
-t\right)  ,z\left(  t\right)  \right)  $-coordinates. Then the length of that
-curve in euclidean $3$-space is%
-\[%
-%TCIMACRO{\dint \nolimits_{b}^{e}}%
-%BeginExpansion
-{\displaystyle\int\nolimits_{b}^{e}}
-%EndExpansion
-\sqrt{\frac{dX}{dt}\bullet_{K}\frac{dX}{dt}}dt.
+So, suppose we have a curve on the $R$-sphere in euclidean $3$-space
+but it is given to us in $X(t)=(x(t),y(t),z(t))$-coordinates. Then the
+length of that curve in euclidean $3$-space is
+\[
+\int_{b}^{e}\sqrt{\frac{dX}{dt}\bullet_{K}\frac{dX}{dt}}\,dt.
 \]
 
 
-\begin{exercise}
-\label{222}Use Exercise \ref{9} to show that, if we have any two vectors in
+\begin{problem}
+\label{222}Use Problem \ref{9} to show that, if we have any two vectors in
 euclidean three-space that are tangent to the $R$-sphere at some point on it,
-but the two vectors are given to us in $\left(  x,y,z\right)  $-coordinates as%
+but the two vectors are given to us in $(x,y,z)$-coordinates as%
 \begin{align*}
 V_{1}  &  =\left(  a_{1},b_{1},c_{1}\right) \\
 V_{2}  &  =\left(  a_{2},b_{2},c_{2}\right)  ,
@@ -345,34 +312,28 @@ V_{2}  &  =\left(  a_{2},b_{2},c_{2}\right)  ,
 then the area of the parallelogram spanned by those two vectors in euclidean
 $3$-space is%
 \[
-\sqrt{\left\vert
-\begin{array}
-[c]{cc}%
+\sqrt{\det
+\begin{bmatrix}
 V_{1}\bullet_{K}V_{1} & V_{2}\bullet_{K}V_{1}\\
 V_{1}\bullet_{K}V_{2} & V_{2}\bullet_{K}V_{2}%
-\end{array}
-\right\vert }=\sqrt{\left\vert \left(
-\begin{array}
-[c]{c}%
-\left(  V_{1}\right) \\
-\left(  V_{2}\right)
-\end{array}
-\right)  \cdot\left(
-\begin{array}
-[c]{ccc}%
+\end{bmatrix}}
+=\sqrt{\det\left( 
+\begin{bmatrix}
+V_{1} \\
+V_{2}
+\end{bmatrix}
+\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
-\end{array}
-\right)  \cdot\left(
-\begin{array}
-[c]{cc}%
-\left(  V_{1}\right)  ^{t} & \left(  V_{2}\right)  ^{t}%
-\end{array}
-\right)  \right\vert }.
+\end{bmatrix}
+\begin{bmatrix}
+V_{1}^\transpose & V_{2}^\transpose%
+\end{bmatrix}
+\right) }.
 \]
 
-\end{exercise}
+\end{problem}
 
 \textit{Moral of the story:} The dot-product rules! That is, if you know the
 dot-product you know everything there is to know about a geometry, lengths,

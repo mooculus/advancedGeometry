@@ -123,14 +123,15 @@ Now we will prove this lemma. Your task is to fill-in the details of
 the proof below.
 
 \begin{problem}
-Start by noting that without loss of generality we can assume that $\left\vert \hat{V}%
-_{1}\right\vert \leq\left\vert \hat{V}_{2}\right\vert$. Consider the
-triangle with one side given by the interval from $O=\left(
-0,0,0\right) $ to the endpoint $P_{1}$ of $\hat{V}_{1}$, with a second
-side $S_{2}$ given by the interval from $O$ to the endpoint $P_{2}$ of
-$\hat{V}_{2}$ and with the third side given by the interval joining
-$P_{1}$ and $P_{2}$. Let $P$ be the point on $S_{2}$ so that the
-interval between $P_{1}$ and $P$ is perpendicular to $S_{2}$. 
+Start by noting that without loss of generality we can assume that
+$\left\vert \hat{V}% _{1}\right\vert \leq\left\vert
+\hat{V}_{2}\right\vert$. Consider the triangle with one side given by
+the segment from $O=\left( 0,0,0\right) $ to the endpoint $P_{1}$ of
+$\hat{V}_{1}$, with a second side $S_{2}$ given by the segment from
+$O$ to the endpoint $P_{2}$ of $\hat{V}_{2}$ and with the third side
+given by the segment joining $P_{1}$ and $P_{2}$. Let $P$ be the
+point on $S_{2}$ so that the segment between $P_{1}$ and $P$ is
+perpendicular to $S_{2}$.
 \begin{itemize}
 \item Illustrate the diagram described above. 
 \end{itemize}
@@ -384,7 +385,6 @@ both $V_{1}$ and $V_{2}$. So we see
 _{2}\right\vert \cdot\sin\theta\right)  \cdot\left\vert \hat{V}%
 _{1}\times\hat{V}_{2}\right\vert =\left\vert
 \det\begin{bmatrix}
-[c]{c}%
 \hat{V}_{1} \\
 \hat{V}_{2} \\
 \hat{V}_{1}\times\hat{V}_{2}
@@ -414,8 +414,8 @@ is given by a differentiable mapping%
 t\mapsto\left(  \hat{x}\left(  t\right)  ,\hat{y}\left(  t\right)  ,\hat
 {z}\left(  t\right)  \right)
 \end{gather*}
-\hspace{5mm} \hspace{5mm} \hspace{5mm} \hspace{5mm} from an interval $\left[
-b,e\right]  $ on the real line. We shall sometimes use the notation%
+from an interval $\left[ b,e\right] $ on the real line. We shall
+sometimes use the notation%
 \[
 \left(  \hat{x}\left(  t\right)  ,\hat{y}\left(  t\right)  ,\hat{z}\left(
 t\right)  \right)  =\hat{X}\left(  t\right)  .
@@ -427,8 +427,7 @@ the tangent vector
 t\right)  \right)  =\left(  \frac{d\hat{x}}{dt},\frac{d\hat{y}}{dt}%
 ,\frac{d\hat{z}}{dt}\right)  =\frac{d\hat{X}}{dt}%
 \]
-\hspace{5mm} \hspace{5mm} is not the zero vector for any $t$ in $\left[
-b,e\right]  $.
+is not the zero vector for any $t$ in $\left[ b,e\right] $.
 \end{definition}
 
 \begin{problem}\hfil
@@ -476,7 +475,7 @@ In matrix notation we can think of
 \hat{X}_{2}-\hat{X}_{1}=\left(  \hat{x}_{2}-\hat{x}_{1},\hat{y}_{2}-\hat
 {y}_{1},\hat{z}_{2}-\hat{z}_{1}\right)
 \]
-as a $1\times3$ matrix $\left(  \hat{X}_{2}-\hat{X}_{1}\right)  $. Then we can
+as a $1\times3$ matrix $\left[\hat{X}_{2}-\hat{X}_{1}\right]$. Then we can
 write the formula for the distance between two points $\hat{X}_{1}$ and
 $\hat{X}_{2}$ in euclidean $3$-space in terms of the dot-product%
 \begin{equation}
@@ -485,9 +484,9 @@ d\left(  \hat{X}_{1},\hat{X}_{2}\right)  =\sqrt{\left(  \hat{X}_{2}-\hat
 \end{equation}
 or in terms of the matrix product%
 \[
-d\left(  \hat{X}_{1},\hat{X}_{2}\right)  
-=\sqrt{\left( \hat{X}_{2}-\hat{X}_{1} \right)  \cdot\left(\hat{X}_{2}-\hat{X}%
-_{1}\right)  ^\transpose }.
+d\left( \hat{X}_{1},\hat{X}_{2}\right) =\sqrt{\left[
+  \hat{X}_{2}-\hat{X}_{1} \right] \cdot\left[\hat{X}_{2}-\hat{X}%
+  _{1}\right]^\transpose }.
 \]
 
 
