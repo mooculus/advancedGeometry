@@ -70,19 +70,20 @@ t\right)  \right)  $ lies in the set $\left(  \ref{29}\right)  $ so that%
 That is, a vector $V=\left(  a,b,c\right)  $ is tangent to the set $\left(
 \ref{29}\right)  $ if and only if%
 \begin{equation}
-\left(  x\left(  t\right)  ,y\left(  t\right)  ,z\left(  t\right)  \right)
-\cdot\left(
-\begin{array}
-[c]{ccc}%
+\begin{bmatrix}
+x(t) & y(t) & z(t)
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
 2K & 0 & 0\\
 0 & 2K & 0\\
 0 & 0 & 2
-\end{array}
-\right)  \cdot V^{t}=0. \label{56}%
+\end{bmatrix}
+\cdot V^\transpose=0. \label{56}%
 \end{equation}
 
 
-\begin{exercise}
+\begin{problem}
 \label{82}For $K\neq0$, show that the condition $\left(  \ref{56}\right)  $ on
 $V$ is exactly the same condition as%
 \[
@@ -90,12 +91,12 @@ $V$ is exactly the same condition as%
 \bullet_{K}V=0.
 \]
 
-\end{exercise}
+\end{problem}
 
-We will call the set of $\left(  x,y,z\right)  $ satisfying $\left(
-\ref{29}\right)  $ $K$-geometry. Its tangent vectors at a point $\left(
-x,y,z\right)  $ in the set are the vectors $V=\left(  a,b,c\right)  $ such
-that%
+We will call the set of $\left( x,y,z\right) $ satisfying $\left(
+\ref{29}\right) $ $K$-geometry. Its tangent vectors at a point $\left(
+x,y,z\right) $ in the set are the vectors $V=\left( a,b,c\right) $
+such that%
 \[
 \left(  x,y,z\right)  \bullet_{K}V=0.
 \]
@@ -108,30 +109,25 @@ of $K=1$ first.  In that special case
 \[
 \left(  x,y,z\right)  =\left(  \hat{x},\hat{y},\hat{z}\right)
 \]
-and your calculations reduce to the usual ones on the unit sphere in ordinary
-Euclidean $3$-space.
+and your calculations reduce to the usual ones on the unit sphere in
+ordinary euclidean $3$-space.
 
 \subsection*{Rigid motions in $\left(  x,y,z\right)  $-coordinates}
 
-We are now going to study $K$-geometry using only $\left(  x,y,z\right)
-$-coordinates. If we have a curve $X\left(  t\right)  =\left(  x\left(
-t\right)  ,y\left(  t\right)  ,z\left(  t\right)  \right)  $ on the surface
+We are now going to study $K$-geometry using only $\left( x,y,z\right)
+$-coordinates. If we have a curve $X\left( t\right) =\left( x\left(
+t\right) ,y\left( t\right) ,z\left( t\right) \right) $ on the surface
 given in $K$-coordinates as%
 \begin{equation}
 1=K\left(  x^{2}+y^{2}\right)  +z^{2}, \label{86}%
 \end{equation}
 we have seen that we measure its length $L$ by the formula%
 \begin{equation}
-L=%
-%TCIMACRO{\dint \nolimits_{b}^{e}}%
-%BeginExpansion
-{\displaystyle\int\nolimits_{b}^{e}}
-%EndExpansion
-l\left(  t\right)  dt \label{60}%
+L= \int_{b}^{e}\l(t)\d t \label{60}%
 \end{equation}
 where
 \begin{equation}
-l\left(  t\right)  ^{2}=\frac{dX}{dt}\bullet_{K}\frac{dX}{dt} \label{61}%
+\l(t)^{2}=\frac{dX}{dt}\bullet_{K}\frac{dX}{dt} \label{61}%
 \end{equation}
 and that we measure angles $\theta$ between tangent vectors $V_{1}$ and
 $V_{2}$ at a point on the surface by the formula%
@@ -148,14 +144,17 @@ where%
 
 We now want to explore the condition that a transformation%
 \[
-\left(  \underline{x},\underline{y},\underline{z}\right)  =\left(
-x,y,z\right)  \cdot M
+\left(  \underline{x},\underline{y},\underline{z}\right)  =
+\begin{bmatrix}
+x & y & z
+\end{bmatrix}M
 \]
-take the surface $\left(  \ref{86}\right)  $ to itself and preserve the length
-of any curve $\left(  x\left(  t\right)  ,y\left(  t\right)  ,z\left(
-t\right)  \right)  $ lying on the surface. Rewriting the transformation as%
+take the surface $\left( \ref{86}\right) $ to itself and preserve the
+length of any curve $\left( x\left( t\right) ,y\left( t\right)
+,z\left( t\right) \right) $ lying on the surface. Rewriting the
+transformation as%
 \[
-\left(  \underline{X}\right)  =\left(  X\right)  \cdot M
+\left( \underline{X}\right) =\left( X\right) \cdot M
 \]
 the formulas $\left(  \ref{60}\right)  $ and $\left(  \ref{61}\right)  $ show
 that all we have to worry about is that%
@@ -172,45 +171,38 @@ by the product rule since $M$ is a constant matrix. So the transformation
 given by the matrix $\hat{M}$ will preserve the length of any path and will
 preserve the measure of any angle if%
 \begin{equation}
-\left(  \frac{dX}{dt}\right)  \cdot M\cdot\left(
-\begin{array}
-[c]{ccc}%
+\left(  \frac{dX}{dt}\right)  \cdot M\cdot\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
-\end{array}
-\right)  \cdot\left(  \left(  \frac{dX}{dt}\right)  \cdot M\right)
-^{t}=\left(  \frac{dX}{dt}\right)  \cdot\left(
-\begin{array}
-[c]{ccc}%
+\end{bmatrix}
+\cdot\left(  \left(  \frac{dX}{dt}\right)  \cdot M\right)
+^\transpose=\left(  \frac{dX}{dt}\right)  \cdot
+\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
-\end{array}
-\right)  \cdot\left(  \frac{dX}{dt}\right)  ^{t}. \label{89}%
+\end{bmatrix}
+\cdot\left(  \frac{dX}{dt}\right)  ^\transpose. \label{89}%
 \end{equation}
 
 
-\begin{exercise}\hfil
+\begin{problem}\hfil
 \label{87}
 \begin{enumerate}
 \item  Show that this last equality is always true if%
 \begin{equation}
-M\cdot\left(
-\begin{array}
-[c]{ccc}%
+M\cdot\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
-\end{array}
-\right)  \cdot M^{t}=\left(
-\begin{array}
-[c]{ccc}%
+\end{bmatrix}
+\cdot M^\transpose=
+\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
-\end{array}
-\right)  . \label{new89}%
+\end{bmatrix}. \label{new89}%
 \end{equation}
 
 \item Show that, if $M$ satisfies the identity \ref{new89},then the
@@ -230,48 +222,34 @@ That is, $M$ gives a $1-1$, onto mapping of $K$-geometry to itself.
 Hint: For $K\neq0$, write the equation $1=K\left(  \underline{x}%
 ^{2}+\underline{y}^{2}\right)  +\underline{z}^{2}$ in matrix notation as%
 \[
-\left(
-\begin{array}
-[c]{ccc}%
+\begin{bmatrix}
 \underline{x} & \underline{y} & \underline{z}%
-\end{array}
-\right)  \cdot\left(
-\begin{array}
-[c]{ccc}%
+\end{bmatrix}  \cdot\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
-\end{array}
-\right)  \cdot\left(
-\begin{array}
-[c]{c}%
+\end{bmatrix}  \cdot
+\begin{bmatrix}
 \underline{x}\\
 \underline{y}\\
 \underline{z}%
-\end{array}
-\right)  =\frac{1}{K}.
+\end{bmatrix}  =\frac{1}{K}.
 \]
 \end{enumerate}
-\end{exercise}
+\end{problem}
 
 \begin{definition}
 \label{88}A $3\times3$ matrix $M$ is called $K$-orthogonal if
 \[
-M\cdot\left(
-\begin{array}
-[c]{ccc}%
+M\cdot\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
-\end{array}
-\right)  \cdot M^{t}=\left(
-\begin{array}
-[c]{ccc}%
+\end{bmatrix}  \cdot M^\transpose=\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
-\end{array}
-\right)  .
+\end{bmatrix}  .
 \]
 
 \end{definition}
@@ -283,7 +261,7 @@ $K$\textbf{-rigid motion} or a $K$\textbf{-congruence}.
 
 So $K$-orthogonal matrices give $K$-rigid motions.
 
-\begin{exercise}
+\begin{problem}
 For $K\neq0$, show that the set of $K$-orthogonal matrices $M$ form a group.
 That is, show that
 \begin{enumerate}
@@ -294,43 +272,31 @@ That is, show that
 \item the inverse matrix $M^{-1}$ of a $K$-orthogonal matrix $M$ is $K$-orthogonal.
 Hint: Write%
 \[
-M\cdot M^{-1}=I=M\cdot\left(
-\begin{array}
-[c]{ccc}%
+M\cdot M^{-1}=I=M\cdot\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
-\end{array}
-\right)  \cdot M^{t}\cdot\left(
-\begin{array}
-[c]{ccc}%
+\end{bmatrix}  \cdot M^\transpose\cdot\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K
-\end{array}
-\right)
+\end{bmatrix}
 \]
 and use matrix multiplication to reduce to showing that
 \[
-\left(
-\begin{array}
-[c]{ccc}%
+\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
-\end{array}
-\right)  \cdot M^{t}\cdot\left(
-\begin{array}
-[c]{ccc}%
+\end{bmatrix}  \cdot M^\transpose\cdot\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K
-\end{array}
-\right)
+\end{bmatrix}
 \]
 is $K$-orthogonal.
 \end{enumerate}
-\end{exercise}
+\end{problem}
 
 \subsection*{Why use $K$-coordinates?}
 
@@ -347,14 +313,11 @@ lengths of tangent vectors and%
 where%
 \[
 \frac{dX\left(  t\right)  }{dt}\bullet_{K}\frac{dX\left(  t\right)  }%
-{dt}=\left(  \frac{dX\left(  t\right)  }{dt}\right)  \cdot\left(
-\begin{array}
-[c]{ccc}%
+{dt}=\left(  \frac{dX\left(  t\right)  }{dt}\right)  \cdot\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
-\end{array}
-\right)  \cdot\left(  \frac{dX\left(  t\right)  }{dt}\right)  ^{t}.
+\end{bmatrix}  \cdot\left(  \frac{dX\left(  t\right)  }{dt}\right)  ^\transpose.
 \]
 In other words, the usual geometry of the sphere of radius $R$ is simply the
 geometry of the set $\left(  \ref{29}\right)  $ with $K=1/R^{2}$ and with
@@ -377,13 +340,22 @@ $V_{1}\bullet_{K}V_{2}$ &  & $V_{1}\bullet_{K}V_{2}$%
 \end{tabular}}
 \ \ \ \ \label{66}%
 \end{equation}
-This table tells us that `there is something else out there,' that is, some
-other type of two-dimensional geometry beyond plane geometry and spherical
-geometry. But the gap in the bottom row of the table is a bit disturbing. If
-we can't express the usual dot-product in plane geometry as the $K$-dot
-product for $K=0$, we can't pass smoothly from spherical through plane
-geometry to hyperbolic geometry using $\left(  x,y,z\right)  $-coordinates. We
-now examine two ways to produce coordinates uniformly for spherical, plane and
-hyperbolic geometry that overcome this difficulty.
+This table tells us that `there is something else out there,' that is,
+some other type of two-dimensional geometry beyond plane geometry and
+spherical geometry. But the gap in the bottom row of the table is a
+bit disturbing. If we can't express the usual dot-product in plane
+geometry as the $K$-dot product for $K=0$, we can't pass smoothly from
+spherical through plane geometry to hyperbolic geometry using $\left(
+x,y,z\right) $-coordinates. We now examine two ways to produce
+coordinates uniformly for spherical, plane and hyperbolic geometry
+that overcome this difficulty.
+
+
+\begin{problem}
+Summarize the results from this section. In particular, indicate which
+results follow from the others.
+\begin{freeResponse}
+\end{freeResponse}
+\end{problem}
 
 \end{document}
