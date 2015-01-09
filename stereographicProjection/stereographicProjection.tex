@@ -14,7 +14,7 @@ Here we start to develop another model for our geometry.
 
 On the other hand we can project the set
 \[
-1=K\left(  x^{2}+y^{2}\right)  +z^{2}%
+K\left(  x^{2}+y^{2}\right)  +z^{2}=1
 \]
 onto the set%
 \[
@@ -74,55 +74,68 @@ So%
 \rho &  =\frac{z+1}{2}\\
 z  &  =2\rho-1
 \end{align*}
-and, from the equation $\left(  \ref{30}\right)  $%
-\begin{gather*}
-K\left(  \left(  \rho x_{s}\right)  ^{2}+\left(  \rho y_{s}\right)
-^{2}\right)  +\left(  2\rho-1\right)  ^{2}=1\\
-K\left(  \left(  \rho x_{s}\right)  ^{2}+\left(  \rho y_{s}\right)
-^{2}\right)  +4\rho^{2}-4\rho=0\\
-\rho K\left(  x_{s}^{2}+y_{s}^{2}\right)  +4\rho=4\\
+and, from the equation
+\[
+K\left(  x^{2}+y^{2}\right)  +z^{2}=1%
+\]
+we may write
+\begin{align*}
+K\left((\rho x_{s})^{2}+(\rho y_{s})^{2}\right)+(2\rho-1)^{2} &=1\\
+K\left((\rho x_{s})^{2}+(\rho y_{s})^{2}\right)+4\rho^{2}-4\rho &=0\\
+\rho K\left(x_{s}^{2}+y_{s}^{2}\right)+4\rho &=4
+\end{align*}
+and so
+\[
 \rho=\frac{1}{\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  +1}.
-\end{gather*}
+\]
 Notice that, when $K<0$ this last formula only makes sense when%
-\begin{gather*}
-\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  >-1\\
-x_{s}^{2}+y_{s}^{2}<\frac{-4}{K}.
-\end{gather*}
+\begin{align*}
+\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  &> -1\\
+x_{s}^{2}+y_{s}^{2} &<\frac{-4}{K}.
+\end{align*}
 
 
-\begin{exercise}\label{35}\hfil
+\begin{problem}\label{35}\hfil
 \begin{enumerate}
-\item For the projection of the set $\left(  \ref{30}\right)  $ onto
-the $z=1$ plane with center of projection $S$, write $\left(  x_{s}%
-,y_{s}\right)  $ as a function of $\left(  x,y,z\right)  $.
-\item For the projection of the set $\left(  \ref{30}\right)  $ onto the $z=1$
-plane with center of projection $S$, write $\left(  x,y,z\right)  $ as a
-function of $\left(  x_{s},y_{s}\right)  $.
+\item For the projection of the set
+\[
+1=K\left( x^{2}+y^{2}\right) +z^{2}
+\]
+onto the $z=1$ plane with center of projection $S$, write $\left(x_{s}
+,y_{s}\right)$ as a function of $\left( x,y,z\right) $.
+\item For the projection of the set
+\[
+1=K\left( x^{2}+y^{2}\right) +z^{2}
+\]
+onto the $z=1$ plane with center of projection $S$, write $\left(
+x,y,z\right) $ as a function of $\left( x_{s},y_{s}\right) $.
 \end{enumerate}
-\end{exercise}
+\end{problem}
 
 \subsection*{Length and angle in stereographic projection coordinates}
 
-\begin{exercise}
-\label{37}Suppose we have a path%
+\begin{problem}
+Suppose we have a path%
 \[
 X\left(  x_{s}\left(  t\right)  ,y_{s}\left(  t\right)  \right)  =\left(
 x\left(  x_{s}\left(  t\right)  ,y_{s}\left(  t\right)  \right)  ,y\left(
 x_{s}\left(  t\right)  ,y_{s}\left(  t\right)  \right)  ,z\left(  x_{s}\left(
 t\right)  ,y_{s}\left(  t\right)  \right)  \right)
 \]
-lying on the set $\left(  \ref{30}\right)  $ given in terms of its projection
-$\left(  x_{s}\left(  t\right)  ,y_{s}\left(  t\right)  \right)  $ in the
-plane $z=1$. Use the formula you derived in Exercise \ref{35}b) and the Chain
-Rule from calculus of several variables to find the $2\times3$ matrix%
+lying on the set 
 \[
-D_{s}=\left(
-\begin{array}
-[c]{c}%
-\left(  \frac{\partial X}{\partial x_{s}}\right) \\
-\left(  \frac{\partial X}{\partial y_{s}}\right)
-\end{array}
-\right)
+1=K\left( x^{2}+y^{2}\right) +z^{2}
+\]
+given in terms of its projection $\left( x_{s}\left( t\right)
+,y_{s}\left( t\right) \right) $ in the plane $z=1$. Use the formula
+you derived in a previous problem and the Chain Rule from calculus of
+several variables to find the $2\times3$ matrix%
+\[
+D_{s}=
+\begin{bmatrix}
+\frac{\partial X}{\partial x_{s}} \\
+\frac{\partial X}{\partial y_{s}}
+\end{bmatrix}
 \]
 such that%
 \[
@@ -130,25 +143,37 @@ such that%
 \frac{dx_{s}\left(  t\right)  }{dt},\frac{dy_{s}\left(  t\right)  }%
 {dt}\right)  \cdot D_{s}.
 \]
-Hint: Use logarithmic differentiation:%
-\begin{gather*}
-dx=d\left(  \rho x_{s}\right)  =x_{s}d\rho+\rho dx_{s}\\
-\rho^{-1}dx=x_{s}d\mathrm{ln}\left(  \rho\right)  +dx_{s}%
-\end{gather*}
-and similarly for $y$. Also%
-\begin{align*}
-d\mathrm{ln}\left(  \rho\right)   &  =-d\mathrm{ln}\left(  \frac{K}{4}\left(
-x_{s}^{2}+y_{s}^{2}\right)  +1\right) \\
-&  =-\frac{1}{\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  +1}d\left(
-\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  +1\right) \\
-&  =-\rho\frac{K}{4}\left(  2x_{s}dx_{s}+2y_{s}dy_{s}\right)  .
-\end{align*}
+\begin{hint}
+Recall 
+\[
+x = x_s \rho,
+\]
+hence 
+\[
+\pp[x]{x_s} = \rho + x_s\cdot \pp[\rho]{x_s}.
+\]
+Now compute $\pp[\rho]{x_s}$ and express it in terms of $\rho$, $K$,
+and $x_s$.
+%% Hint: Use logarithmic differentiation:%
+%% \begin{gather*}
+%% dx=d\left(  \rho x_{s}\right)  =x_{s}d\rho+\rho dx_{s}\\
+%% \rho^{-1}dx=x_{s}d\mathrm{ln}\left(  \rho\right)  +dx_{s}%
+%% \end{gather*}
+%% and similarly for $y$. Also%
+%% \begin{align*}
+%% d\mathrm{ln}\left(  \rho\right)   &  =-d\mathrm{ln}\left(  \frac{K}{4}\left(
+%% x_{s}^{2}+y_{s}^{2}\right)  +1\right) \\
+%% &  =-\frac{1}{\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  +1}d\left(
+%% \frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  +1\right) \\
+%% &  =-\rho\frac{K}{4}\left(  2x_{s}dx_{s}+2y_{s}dy_{s}\right)  .
+%% \end{align*}
+\end{hint}
+\end{problem}
 
-\end{exercise}
-
-This last Exercise allows us to do something very nice. Namely now, not only
-can we use the coordinates $\left(  x_{s},y_{s}\right)  $ for our geometry but
-we can also compute the $K$-dot product in terms of these coordinates:%
+This last Problem allows us to do something very nice. Namely now, not
+only can we use the coordinates $\left( x_{s},y_{s}\right) $ for our
+geometry but we can also compute the $K$-dot product in terms of these
+coordinates:%
 \[
 \left(  \frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right)  =\left(
 \frac{dx_{s}}{dt},\frac{dy_{s}}{dt}\right)  \cdot D_{s}%
@@ -156,94 +181,76 @@ we can also compute the $K$-dot product in terms of these coordinates:%
 so that%
 \begin{align*}
 \left(  \frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right)  \bullet_{K}\left(
-\frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right)   &  =\left(
-\begin{array}
-[c]{ccc}%
+\frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right)   &=
+\begin{bmatrix}
 \frac{dx}{dt} & \frac{dy}{dt} & \frac{dz}{dt}%
-\end{array}
-\right)  \left(
-\begin{array}
-[c]{ccc}%
+\end{bmatrix}
+\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
-\end{array}
-\right)  \left(
-\begin{array}
-[c]{c}%
+\end{bmatrix}
+\begin{bmatrix}
 \frac{dx}{dt}\\
 \frac{dy}{dt}\\
 \frac{dz}{dt}%
-\end{array}
-\right) \\
-&  =\left(
-\begin{array}
-[c]{cc}%
+\end{bmatrix}\\
+&=
+\begin{bmatrix}
 \frac{dx_{s}}{dt} & \frac{dy_{s}}{dt}%
-\end{array}
-\right)  \cdot D_{s}\cdot\left(
-\begin{array}
-[c]{ccc}%
+\end{bmatrix}
+\cdot D_{s}\cdot
+\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
-\end{array}
-\right)  \cdot D_{s}^{t}\cdot\left(
-\begin{array}
-[c]{c}%
+\end{bmatrix}
+\cdot D_{s}^{t}\cdot
+\begin{bmatrix}
 \frac{dx_{s}}{dt}\\
 \frac{dy_{s}}{dt}%
-\end{array}
-\right)  ,
+\end{bmatrix},
 \end{align*}
 
 
-\begin{exercise}
+\begin{problem}
 \label{36}Use matrix multiplication to compute the $2\times2$ matrix%
 \[
-P_{s}=D_{s}\cdot\left(
-\begin{array}
-[c]{ccc}%
+P_{s}=D_{s}\cdot
+\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
-\end{array}
-\right)  \cdot D_{s}^{t},
+\end{bmatrix}\cdot D_{s}^{t},
 \]
-that is, to compute the $K$-dot product in $\left(  x_{s},y_{s}\right)
-$-coordinates. (You may be surprised at the answer! It is quite simple and
-only involves the quantity $\rho$.)
-\end{exercise}
+that is, to compute the $K$-dot product in $\left( x_{s},y_{s}\right)
+$-coordinates. (You may be surprised at the answer! It is quite simple
+and only involves the quantity $\rho$.)
+\end{problem}
 
-So, if, if $K>0$ and you have a path on the sphere of radius $R=K^{-1/2}$ in
-Euclidean $3$-space given in $\left(  x_{s},y_{s}\right)  $-coordinates as
-$\left(  x_{s}\left(  t\right)  ,y_{s}\left(  t\right)  \right)  $ for
-$t\in\left[  b,e\right]  $, you can trace back everything we have done with
-coordinate changes to see that the length of the path on the sphere of radius
-$R=K^{-1/2}$ in Euclidean $3$-space is given by%
-\[%
-%TCIMACRO{\dint \nolimits_{b}^{e}}%
-%BeginExpansion
-{\displaystyle\int\nolimits_{b}^{e}}
-%EndExpansion
-l\left(  t\right)  dt
+So, if, if $K>0$ and you have a path on the sphere of radius
+$R=K^{-1/2}$ in euclidean space given in $\left( x_{s},y_{s}\right)
+$-coordinates as $\left( x_{s}\left( t\right) ,y_{s}\left( t\right)
+\right) $ for $t\in\left[ b,e\right] $, you can trace back everything
+we have done with coordinate changes to see that the length of the
+path on the sphere of radius $R=K^{-1/2}$ in euclidean space is given
+by
+\[
+\int_b^e\l(t)\d t
 \]
 where%
 \begin{align*}
-l\left(  t\right)  ^{2}  &  =\left(  \frac{dx_{s}}{dt},\frac{dy_{s}}%
+\l(t)^{2} &=\left(  \frac{dx_{s}}{dt},\frac{dy_{s}}%
 {dt}\right)  \bullet_{s}\left(  \frac{dx_{s}}{dt},\frac{dy_{s}}{dt}\right) \\
-&  =\left(
-\begin{array}
-[c]{cc}%
+&=
+\begin{bmatrix}
 \frac{dx_{s}}{dt} & \frac{dy_{s}}{dt}%
-\end{array}
-\right)  \cdot P_{s}\cdot\left(
-\begin{array}
-[c]{c}%
+\end{bmatrix}
+\cdot P_{s}\cdot
+\begin{bmatrix}
 \frac{dx_{s}}{dt}\\
 \frac{dy_{s}}{dt}%
-\end{array}
-\right)
+\end{bmatrix}
 \end{align*}
 and that the measure $\theta$ of an angle between vectors $\hat{V}_{1}$ and
 $\hat{V}_{2}$ on the $R$-sphere is computed by%
@@ -254,44 +261,57 @@ $\hat{V}_{2}$ on the $R$-sphere is computed by%
 \]
 
 
-Notice that the matrix $P_{s}$ still makes sense when $K=0$ and when $K$
-becomes negative.
+Notice that the matrix $P_{s}$ still makes sense when $K=0$ and when
+$K$ becomes negative.
 
-\begin{exercise}
+\begin{problem}
 Write the formula for the $K$-dot product $\left(  x_{s},y_{s}\right)
 $-coordinates when $K=0$. Does it look familiar?
-\end{exercise}
+\end{problem}
 
-So we do have%
-\[%
-{\renewcommand{\arraystretch}{2}
-\begin{tabular}
-[c]{c|c|c}%
-Spherical ($K>0$) & Euclidean ($K=0$) & Hyperbolic ($K<0$)\\\hline
-$\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=R^{2}$ &  & \\\hline
-$\hat{V}\bullet\hat{V}$ &  & \\\hline
-$1=K\left(  x^{2}+y^{2}\right)  +z^{2}$ & $1=K\left(  x^{2}+y^{2}\right)
-+z^{2}$ & $1=K\left(  x^{2}+y^{2}\right)  +z^{2}$\\\hline
-$V_{1}\bullet_{K}V_{2}$ &  & $V_{1}\bullet_{K}V_{2}$\\\hline
-$V_{1}^{c}\bullet_{c}V_{2}^{c}$ & $V_{1}^{c}\bullet_{c}V_{2}^{c}$ & $V_{1}%
-^{c}\bullet_{c}V_{2}^{c}$\\\hline
-$V_{1}^{s}\bullet_{s}V_{2}^{s}$ & $V_{1}^{s}\bullet_{s}V_{2}^{s}$ & $V_{1}%
-^{s}\bullet_{s}V_{2}^{s}$%
+We now have%
+\[
+{\renewcommand{\arraystretch}{2.5}
+\begin{tabular}{|c||c|c|c|}\hline
+                & Spherical ($K>0$) & Euclidean ($K=0$) & Hyperbolic ($K<0$)\\\hline\hline
+Surface in euclidean space & $\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=R^{2}$ & DNE  & DNE \\\hline
+Euclidean dot product & $\hat{V}\cdot \hat{V}^\transpose$ & DNE  & DNE\\\hline
+Surface in $K$-space & $1=K\left(  x^{2}+y^{2}\right)  +z^{2}$ & $1=K\left(  x^{2}+y^{2}\right)+z^{2}$ & $1=K\left(  x^{2}+y^{2}\right)  +z^{2}$\\\hline
+$K$-dot product & $V_{1}\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & K^{-1}\end{smallmatrix}\right] V_{2}^\transpose$ &  DNE & $V_{1}\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & K^{-1}\end{smallmatrix}\right]V_{2}^\transpose$\\\hline
+Central dot product & 
+$V_{1}^{c}\cdot  
+P_c\cdot
+  {V_{2}^{c}}^\transpose$ 
+&
+$V_{1}^{c}\cdot  
+P_c\cdot
+  {V_{2}^{c}}^\transpose$ 
+&
+$V_{1}^{c}\cdot  
+P_c\cdot
+  {V_{2}^{c}}^\transpose$ 
+    \\\hline
+Stereographic dot product & $V_{1}^{s}\left[\begin{smallmatrix}\rho^2 & 0 \\  0 & \rho^2\end{smallmatrix}\right](V_{2}^{s})^\transpose$ & 
+ $V_{1}^{s}\left[\begin{smallmatrix}\rho^2 & 0 \\  0 & \rho^2\end{smallmatrix}\right](V_{2}^{s})^\transpose$ &
+ $V_{1}^{s}\left[\begin{smallmatrix}\rho^2 & 0 \\  0 & \rho^2\end{smallmatrix}\right](V_{2}^{s})^\transpose$\\\hline
 \end{tabular}}
 \]
-where%
+where
+
 \[
-V_{1}^{s}\bullet_{s}V_{2}^{s}=\left(  V_{1}^{s}\right)  \cdot P_{s}%
-\cdot\left(  V_{2}^{s}\right)  ^{t}.
+P_c = \begin{bmatrix}
+r^{2}\left(  1-r^{2}Kx_{c}^{2}\right)  & -r^{4}Kx_{c}y_{c}\\
+-r^{4}Kx_{c}y_{c} & r^{2}\left(  1-r^{2}Ky_{c}^{2}\right)
+\end{bmatrix}.
 \]
-Of course if $K>0$, we again have Euclidean angles $\theta$ between vectors
+Of course if $K>0$, we again have euclidean angles $\theta$ between vectors
 $\hat{V}_{1}$ and $\hat{V}_{2}$ tangent to the $R$-sphere at some point
 computed by%
 \begin{align*}
 \hat{V}_{1}\bullet\hat{V}_{2}  &  =\left\vert \hat{V}_{1}\right\vert
-\text{\textperiodcentered}\left\vert \hat{V}_{2}\right\vert
-\text{\textperiodcentered\textrm{cos}}\left(  \theta\right) \\
-&  =V_{1}^{s}\bullet_{s}V_{2}^{s}.
+\cdot\left\vert \hat{V}_{2}\right\vert
+\cdot\cos(\theta) \\
+&=V_{1}^{s}\bullet_{s}V_{2}^{s}.
 \end{align*}
 
 
@@ -300,11 +320,11 @@ computed by%
 Suppose you were given a region $G_{s}$ in the $\left(  x_{s},y_{s}\right)
 $-coordinate plane. Also suppose that $K>0$. If you trace back everything we
 have done with coordinate changes, you can see how $G_{s}$ gives you a region
-$\hat{G}$ on the sphere of radius $R=K^{-1/2}$ in Euclidean $3$-space via the
+$\hat{G}$ on the sphere of radius $R=K^{-1/2}$ in euclidean space via the
 formulas%
 \begin{align*}
 \left(  \hat{x},\hat{y},\hat{z}\right)   &  =\left(  x,y,Rz\right) \\
-&  =\rho\text{\textperiodcentered}\left(  x_{s},y_{s},R\left(  2\rho-1\right)
+&  =\rho\cdot\left(  x_{s},y_{s},R\left(  2\rho-1\right)
 \right) \\
 &  =\left(  \frac{x_{s}}{\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)
 +1},\frac{y_{s}}{\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  +1}%
@@ -312,7 +332,7 @@ formulas%
 }{1+\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  }\right)  .
 \end{align*}
 Now there is a formula in several variable calculus for computing the area of
-the region $\hat{G}$ on the sphere of radius $R$ in Euclidean $3$-space in
+the region $\hat{G}$ on the sphere of radius $R$ in euclidean space in
 terms of the parameters $\left(  x_{s},y_{s}\right)  $. [DS,49,231]. It is
 \[%
 %TCIMACRO{\dint \nolimits_{G_{c}}}%
@@ -323,55 +343,61 @@ terms of the parameters $\left(  x_{s},y_{s}\right)  $. [DS,49,231]. It is
 dx_{s}dy_{s}%
 \]
 where $\hat{a}\left(  \frac{d\hat{X}}{dx_{s}},\frac{d\hat{X}}{dy_{s}}\right)
-$ is the (Euclidean) area of the parallelogram spanned by the two vectors
-$\frac{d\hat{X}}{dx_{s}}$ and $\frac{d\hat{X}}{dy_{s}}$ in Euclidean
-$3$-space. That is%
+$ is the (euclidean) area of the parallelogram spanned by the two vectors
+$\frac{d\hat{X}}{dx_{s}}$ and $\frac{d\hat{X}}{dy_{s}}$ in euclidean
+space. That is%
 \[
 \hat{a}\left(  \frac{d\hat{X}}{dx_{s}},\frac{d\hat{X}}{dy_{s}}\right)
-=\left\vert \frac{d\hat{X}}{dx_{s}}\right\vert \text{\textperiodcentered
-}\left\vert \frac{d\hat{X}}{dy_{s}}\right\vert \text{\textperiodcentered
-}\mathrm{sin}\left(  \theta\right)
+=\left\vert \frac{d\hat{X}}{dx_{s}}\right\vert \cdot \left\vert \frac{d\hat{X}}{dy_{s}}\right\vert \cdot\sin(\theta)
 \]
 where $\theta$ is the angle between the two vectors $\frac{d\hat{X}}{dx_{s}}$
 and $\frac{d\hat{X}}{dy_{s}}$.
 
-\begin{exercise}
-As in Exercise \ref{9} show that%
+\begin{problem}
+As in a previous problem show that%
 \begin{align*}
 \hat{a}\left(  \frac{d\hat{X}}{dx_{s}},\frac{d\hat{X}}{dy_{s}}\right)  ^{2}
 &  =\left\vert
-\begin{array}
-[c]{cc}%
+\det
+\begin{bmatrix}
 \frac{d\hat{X}}{dx_{s}}\bullet\frac{d\hat{X}}{dx_{s}} & \frac{d\hat{X}}%
 {dy_{s}}\bullet\frac{d\hat{X}}{dx_{s}}\\
 \frac{d\hat{X}}{dx_{s}}\bullet\frac{d\hat{X}}{dy_{s}} & \frac{d\hat{X}}%
 {dy_{s}}\bullet\frac{d\hat{X}}{dy_{s}}%
-\end{array}
+\end{bmatrix}
 \right\vert \\
 &  =\left\vert
-\begin{array}
-[c]{cc}%
+\det
+\begin{bmatrix}
 \frac{dX}{dx_{s}}\bullet_{K}\frac{dX}{dx_{s}} & \frac{dX}{dy_{s}}\bullet
 _{K}\frac{dX}{dx_{s}}\\
 \frac{dX}{dx_{s}}\bullet_{K}\frac{dX}{dy_{s}} & \frac{dX}{dy_{s}}\bullet
 _{K}\frac{dX}{dy_{s}}%
-\end{array}
+\end{bmatrix}
 \right\vert
 \end{align*}
 
-\end{exercise}
+\end{problem}
 
-Now notice the matrix $D_{s}$ in Exercise \ref{37} is simply the $2\times3$
-matrix whose rows are the vectors $\frac{dX}{dx_{s}}$ and $\frac{dX}{dy_{s}}$.
+Now notice the matrix $D_{s}$ is simply the $2\times3$ matrix whose
+rows are the vectors $\frac{dX}{dx_{s}}$ and $\frac{dX}{dy_{s}}$.
 
-\begin{exercise}
-Use Exercise \ref{36} to show that%
+\begin{problem}
+Use a previous problem to show that%
 \[
 \hat{a}\left(  \frac{d\hat{X}}{dx_{s}},\frac{d\hat{X}}{dy_{s}}\right)
 ^{2}=\rho^{4}=\frac{1}{\left(  \frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)
 +1\right)  ^{4}}.
 \]
+\end{problem}
 
-\end{exercise}
+
+\begin{problem}
+Summarize the results from this section. In particular, indicate which
+results follow from the others.
+\begin{freeResponse}
+\end{freeResponse}
+\end{problem}
+
 
 \end{document}

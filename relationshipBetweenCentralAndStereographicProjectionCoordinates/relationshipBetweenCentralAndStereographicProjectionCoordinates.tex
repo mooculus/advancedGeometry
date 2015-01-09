@@ -7,7 +7,7 @@
 
 \begin{document}
 \begin{abstract}
-Now we compare central and stereographic projection.
+Now we study how to move between central and stereographic projection.
 \end{abstract}
 \maketitle
 
@@ -16,23 +16,28 @@ Now we compare central and stereographic projection.
 
 Finally we should compare the relationship between the two kinds of
 coordinates for the set%
-\begin{equation}
+\[
 \left\{  \left(  x,y,z\right)  \in\mathbb{R}^{3}:1=K\left(  x^{2}%
-+y^{2}\right)  +z^{2}\right\}  \label{40}%
-\end{equation}
++y^{2}\right)  +z^{2}\right\}
+\]
 that we have been exploring, namely central projection coordinates%
-\begin{align}
-x_{c}  &  =\frac{x}{z}\label{70}\\
-y_{c}  &  =\frac{y}{z}\nonumber
-\end{align}
+\begin{align*}
+x_{c}  &  =\frac{x}{z}\\
+y_{c}  &  =\frac{y}{z}
+\end{align*}
 and stereographic projection coordinates%
-\begin{align}
-x_{s}  &  =\frac{2x}{z+1}\label{71}\\
-y_{s}  &  =\frac{2y}{z+1}.\nonumber
-\end{align}
-To do this we use the Exercises in which we wrote $\left(  x,y,z\right)  $ in
-the set $\left(  \ref{40}\right)  $ as functions of $\left(  x_{c}%
-,y_{c}\right)  $ and $\left(  x_{s},y_{s}\right)  $ respectively. Namely%
+\begin{align*}
+x_{s}  &  =\frac{2x}{z+1}\\
+y_{s}  &  =\frac{2y}{z+1}.
+\end{align*}
+To do this we use the Problems in which we wrote $\left(  x,y,z\right)  $ in
+the set
+\[
+\left\{ \left( x,y,z\right) \in\mathbb{R}^{3}:1=K\left( x^{2}%
++y^{2}\right) +z^{2}\right\}
+\] 
+as functions of $\left(x_{c},y_{c}\right)$ and
+$\left(x_{s},y_{s}\right)$ respectively. Namely
 \begin{align*}
 x  &  =\frac{x_{c}}{\sqrt{K\left(  x_{c}^{2}+y_{c}^{2}\right)  +1}}\\
 y  &  =\frac{y_{c}}{\sqrt{K\left(  x_{c}^{2}+y_{c}^{2}\right)  +1}}\\
@@ -47,7 +52,7 @@ z  &  =\frac{1-\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  }{1+\frac{K}%
 \end{align*}
 The rest is simple algebra. [MJG,258]
 
-\begin{exercise}
+\begin{problem}
 Do the algebra to write the explicit formulas for%
 \[
 \left(  x_{s}\left(  x_{c},y_{c}\right)  ,y_{s}\left(  x_{c},y_{c}\right)
@@ -59,21 +64,24 @@ and%
 \right)  .
 \]
 
-\end{exercise}
+\end{problem}
 
 \subsection*{Plane sections of $K$-geometry}
 
-\begin{exercise}
-\label{73}Suppose we intersect $K$-geometry $\left(  \ref{40}\right)  $ with a
-plane%
+\begin{problem}
+Suppose we intersect $K$-geometry
+\[
+\left\{ \left( x,y,z\right) \in\mathbb{R}^{3}:1=K\left( x^{2}
++y^{2}\right) +z^{2}\right\}
+\]
+with a plane
 \[
 ax+by+z=0.
 \]
-
 \begin{enumerate}
 \item Find the equation for the resulting path in central projection coordinates.
-\item Show that the equation for the resulting path in stereographic projection
-coordinates is%
+\item Show the equation the resulting path in stereographic projection
+  coordinates is%
 \[
 \left(  x_{s}-\frac{2a}{K}\right)  ^{2}+\left(  y_{s}-\frac{2b}{K}\right)
 ^{2}=\frac{4\left(  K+a^{2}+b^{2}\right)  }{K^{2}}.
@@ -85,7 +93,7 @@ ax+by=0,
 \]
 that is, a plane containing the $z$-axis?
 \end{enumerate}
-\end{exercise}
+\end{problem}
 
 \subsection*{When $K$ is negative, there are asymptotic cones}
 
@@ -95,9 +103,9 @@ z^{2}-\left\vert K\right\vert \left(  x^{2}+y^{2}\right)  =1.
 \]
 Thus $K$-geometry forms a $2$-sheeted hyperboloid with the $z$-axis as major
 axis. The hyerboloid is obtained by rotating the hyperbola%
-\begin{equation}
-z^{2}-\left\vert K\right\vert x^{2}=1 \label{hyp}%
-\end{equation}
+\[
+z^{2}-\left\vert K\right\vert x^{2}= 1
+\]
 in the $\left(  x,z\right)  $-plane around the $z$-axis. We will only consider
 the sheet on which $z$ is positive as forming the $K$-geometry.
 
@@ -124,24 +132,30 @@ Said otherwise, the disk of radius $\left\vert K\right\vert ^{-1/2}$ around
 $\left(  0,0\right)  $ in the $\left(  x_{c},y_{c}\right)  $-plane captures
 all the points $\left(  x,y,z\right)  $ of $K$-geometry under central projection.
 
-\begin{exercise}\hfil
+\begin{problem}\hfil
 \begin{enumerate}
-\item Show that the slopes of the asymptotes to the hyperbola $\left(
-  \ref{hyp}\right) $ are the limits as $x$ goes to $\pm\infty$ of the
-  slopes of the lines through $\left( 0,0\right) $ and the point
-  $\left( x,z\right) $ on the hyperbola.
+\item Show that the slopes of the asymptotes to the hyperbola 
+\[
+z^{2}-\left\vert K\right\vert x^{2}=1 
+\]
+are the limits as $x$ goes to $\pm\infty$ of the slopes of the lines
+through $\left( 0,0\right) $ and the point $\left( x,z\right) $ on the
+hyperbola.
 
-\item Show that the slopes of the asymptotes to the hyperbola $\left(
-  \ref{hyp}\right) $ are the limits as $x$ goes to $\pm\infty$ of the
-  slopes of the lines through $\left( 0,-1\right) $ and the point
-  $\left( x,z\right) $ on the hyperbola.
+\item Show that the slopes of the asymptotes to the hyperbola
+\[
+z^{2}-\left\vert K\right\vert x^{2}=1 
+\]
+are the limits as $x$ goes to $\pm\infty$ of the slopes of the lines
+through $\left( 0,-1\right) $ and the point $\left( x,z\right) $ on
+the hyperbola.
 
 \item Use b) to compute the radius of the disk around $\left(
   0,0\right) $ in the $\left( x_{s},y_{s}\right) $-plane that captures
   all the points $\left( x,y,z\right) $ of $K$-geometry under
   stereographic projection.
 \end{enumerate}
-\end{exercise}
+\end{problem}
 
 
 \end{document}
