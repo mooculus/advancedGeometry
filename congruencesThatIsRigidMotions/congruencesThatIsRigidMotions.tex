@@ -258,18 +258,18 @@ x & y & z
 \end{bmatrix}
 \end{gather*}
 So we have the diagram%
-%% \begin{image}
-%% \begin{tikzpicture}
-%%   \node (xyzHat) {$\begin{bmatrix}\hat{x} & \hat{y} & \hat{z}\end{bmatrix}\in\mathbb{R}^3$};
-%%   \node (xyzHatBar) [node distance=2cm,below of=xyzHat] {$\begin{bmatrix}\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}\end{bmatrix}$};
-%%   \node (xyz) [node distance=6cm,right of=xyzHat] {$\begin{bmatrix}x & y & z\end{bmatrix}\in\mathbb{R}^3$};
-%%   \node (xyzBar) [node distance=6cm,right of=xyzHatBar] {$\begin{bmatrix}\underline{x} & \underline{y} & \underline{z}\end{bmatrix}$};
-%%   \draw[->] (xyz) to node[above] {$\cdot\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R\end{smallmatrix}\right]$} (xyzHat);
-%%   \draw[->] (xyz) to node[right] {$\cdot M = \text{?}$} (xyzBar);
-%%   \draw[->] (xyzHat) to node[right] {$\cdot\hat{M}$} (xyzHatBar);
-%%   \draw[->] (xyzHatBar) to node [above] {$\cdot\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R^{-1}\end{smallmatrix}\right]$} (xyzBar);
-%% \end{tikzpicture}
-%% \end{image}
+\begin{image}
+\begin{tikzpicture}
+  \node (xyzHat) {$\begin{bmatrix}\hat{x} & \hat{y} & \hat{z}\end{bmatrix}\in\mathbb{R}^3$};
+  \node (xyzHatBar) [node distance=2cm,below of=xyzHat] {$\begin{bmatrix}\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}\end{bmatrix}$};
+  \node (xyz) [node distance=6cm,right of=xyzHat] {$\begin{bmatrix}x & y & z\end{bmatrix}\in\mathbb{R}^3$};
+  \node (xyzBar) [node distance=6cm,right of=xyzHatBar] {$\begin{bmatrix}\underline{x} & \underline{y} & \underline{z}\end{bmatrix}$};
+  \draw[->] (xyz) to node[above] {$\cdot\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R\end{smallmatrix}\right]$} (xyzHat);
+  \draw[->] (xyz) to node[right] {$\cdot M = \text{?}$} (xyzBar);
+  \draw[->] (xyzHat) to node[right] {$\cdot\hat{M}$} (xyzHatBar);
+  \draw[->] (xyzHatBar) to node [above] {$\cdot\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R^{-1}\end{smallmatrix}\right]$} (xyzBar);
+\end{tikzpicture}
+\end{image}
 \begin{problem}
 Starting from the equality $\left(\ref{100}\right)$ describing the
 transformation in Euclidean coordinates, explain why%

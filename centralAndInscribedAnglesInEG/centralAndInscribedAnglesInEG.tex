@@ -1,0 +1,543 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+%% \prerequisites{euclideanGeometry}
+%% \outcome{circles}
+
+\title{Central and inscribed angles in euclidean geometry}
+
+\begin{document}
+\begin{abstract}
+In this activity, we study central and inscribed angles in euclidean
+geometry.
+\end{abstract}
+\maketitle
+
+\section{Some basic facts}
+Now we prove a basic fact about isosceles triangles.
+
+
+\begin{problem}
+Prove that given an isosceles triangle, angles opposite the congruent
+sides are also congruent.
+\begin{hint}
+Use a congruence theorem.
+\end{hint}
+\begin{freeResponse}
+Consider an isosceles triangle and construct a median to the
+``nonequal'' side.
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,0);
+\coordinate (B) at (2,0);
+\coordinate (C) at (1,3);
+\coordinate (D) at (1,0);
+\draw (A)--(B)--(C)--cycle;
+\draw[thin] (C)--(D);
+\tkzMarkSegments[mark=|](A,C B,C)
+\tkzMarkSegments[mark=||](A,D B,D)
+\tkzLabelPoints[above](C)
+\tkzLabelPoints[below](A,D,B)
+%\draw[step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+By SSS, we see that triangle $\triangle ADC \cong \triangle
+BDC$. Hence $\angle DAC \cong \angle DBC$.
+\end{freeResponse}
+\end{problem}
+
+
+\section{Central and inscribed angles}
+
+The next topic in euclidean geometry concerns central and inscribed
+angles in circles. We include this partly for its own interest, and
+partly because the properties we visit here will be useful later on.
+
+\begin{problem}
+On the circle with center $O$ below,
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (O) at (0,0);
+\coordinate (A) at ({2*cos(40)},{2*sin(40)});
+\coordinate (B) at ({2*cos(350)},{2*sin(350)});
+\coordinate (X) at ({2*cos(170)},{2*sin(170)});
+
+\draw[thin] (A)--(O);
+\draw[thin] (A)--(X);
+\draw[thin] (X)--(B);
+\draw (0,0) circle (2cm);
+
+\tkzLabelPoints[above](O)
+\tkzLabelPoints[left](X)
+\tkzLabelPoints[right](A,B)
+
+\end{tikzpicture}
+\end{image}
+show that%
+\[
+\angle BXA=(1/2)(\angle BOA).
+\]
+\begin{hint}
+$\triangle OAX$ is isosceles.
+\end{hint}
+\begin{freeResponse}
+Since all radii of a circle are equal in length, we have the following
+diagram with an isosceles triangle. 
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (O) at (0,0);
+\coordinate (A) at ({2*cos(40)},{2*sin(40)});
+\coordinate (B) at ({2*cos(350)},{2*sin(350)});
+\coordinate (X) at ({2*cos(170)},{2*sin(170)});
+
+\draw[thin] (A)--(O);
+\draw[thin] (A)--(X);
+\draw[thin] (X)--(B);
+\draw (0,0) circle (2cm);
+
+\tkzLabelPoints[above](O)
+\tkzLabelPoints[left](X)
+\tkzLabelPoints[right](A,B)
+\tkzMarkSegments[mark=|](X,O O,A)
+\end{tikzpicture}
+\end{image}
+Hence by our previous result, $\angle AXO \cong \angle OAX$. From this we see that 
+\begin{align*}
+\angle OXA + \angle XAO + \angle AOX &= \angle BOA + \angle AOX,\\
+2\cdot \angle OXA &= \angle BOA.
+\end{align*}
+Since $\angle OXA = \angle BXA$, we have shown $\angle BXA =
+(1/2)\angle BOA$.
+\end{freeResponse}
+\end{problem}
+
+
+
+\begin{problem}
+On the circle with center $O$ below,
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (O) at (0,0);
+\coordinate (A) at ({2*cos(40)},{2*sin(40)});
+\coordinate (B) at ({2*cos(290)},{2*sin(290)});
+\coordinate (X) at ({2*cos(170)},{2*sin(170)});
+
+\draw[thin] (A)--(O);
+\draw[thin] (A)--(X);
+\draw[thin] (X)--(B);
+\draw[thin] (O)--(B);
+\draw (0,0) circle (2cm);
+
+\tkzLabelPoints[above](O)
+\tkzLabelPoints[left](X)
+\tkzLabelPoints[right](A)
+\tkzLabelPoints[below](B)
+
+\end{tikzpicture}
+\end{image}
+show that%
+\[
+\angle BXA=(1/2)(\angle BOA).
+\]
+
+\begin{hint}
+Draw the diameter through $O$ and $X$ and add.
+\end{hint}
+
+\begin{freeResponse}
+Construct the diameter through $O$ and $X$:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (O) at (0,0);
+\coordinate (A) at ({2*cos(40)},{2*sin(40)});
+\coordinate (B) at ({2*cos(290)},{2*sin(290)});
+\coordinate (X) at ({2*cos(170)},{2*sin(170)});
+\coordinate (Y) at ({2*cos(350)},{2*sin(350)});
+
+\draw[thin] (A)--(O);
+\draw[thin] (A)--(X);
+\draw[thin] (X)--(B);
+\draw[thin] (O)--(B);
+\draw[thin] (X)--(Y);
+\draw (0,0) circle (2cm);
+
+\tkzLabelPoints[above](O)
+\tkzLabelPoints[left](X)
+\tkzLabelPoints[right](Y)
+\tkzLabelPoints[right](A)
+\tkzLabelPoints[below](B)
+
+\end{tikzpicture}
+\end{image}
+Now by our previous problem
+\[
+\angle OXA = (1/2)(\angle YOA) \qquad and \qquad \angle OXB = (1/2)(\angle BOY).
+\]
+However, 
+\[
+\angle OXA + \angle OXB = \angle BXA
+\]
+and 
+\begin{align*}
+(1/2)(\angle YOA) + (1/2)(\angle BOY) &= (1/2)(\angle YOA + \angle BOY)\\ 
+&= (1/2)(\angle BOA).
+\end{align*}
+Hence $\angle BXA=(1/2)(\angle BOA)$.
+\end{freeResponse}
+\end{problem}
+
+
+
+\begin{problem}
+On the circle with center $O$ below,
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (O) at (0,0);
+\coordinate (A) at ({2*cos(60)},{2*sin(60)});
+\coordinate (B) at ({2*cos(20)},{2*sin(20)});
+\coordinate (X) at ({2*cos(170)},{2*sin(170)});
+
+\draw[thin] (A)--(O);
+\draw[thin] (A)--(X);
+\draw[thin] (X)--(B);
+\draw[thin] (O)--(B);
+\draw (0,0) circle (2cm);
+
+\tkzLabelPoints[below](O)
+\tkzLabelPoints[left](X)
+\tkzLabelPoints[above](A)
+\tkzLabelPoints[right](B)
+
+\end{tikzpicture}
+\end{image}
+show that
+\[
+\angle BXA=(1/2)(\angle BOA).
+\]
+
+\begin{hint}
+Draw the diameter through $O$ and $X$ and subtract.
+\end{hint}
+\begin{freeResponse}
+Construct the diameter through $O$ and $X$:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (O) at (0,0);
+\coordinate (A) at ({2*cos(60)},{2*sin(60)});
+\coordinate (B) at ({2*cos(20)},{2*sin(20)});
+\coordinate (X) at ({2*cos(170)},{2*sin(170)});
+\coordinate (Y) at ({2*cos(350)},{2*sin(350)});
+
+\draw[thin] (A)--(O);
+\draw[thin] (A)--(X);
+\draw[thin] (X)--(B);
+\draw[thin] (O)--(B);
+\draw[thin] (X)--(Y);
+\draw (0,0) circle (2cm);
+
+\tkzLabelPoints[below](O)
+\tkzLabelPoints[left](X)
+\tkzLabelPoints[above](A)
+\tkzLabelPoints[right](B,Y)
+\end{tikzpicture}
+\end{image}
+
+Now by our previous problem
+\[
+\angle OXA = (1/2)(\angle YOA) \qquad and \qquad \angle OXB = (1/2)(\angle YOB).
+\]
+However, 
+\[
+\angle OXA - \angle OXB = \angle BXA
+\]
+and 
+\begin{align*}
+(1/2)(\angle YOA) - (1/2)(\angle YOB) &= (1/2)(\angle YOA + \angle YOB)\\ 
+&= (1/2)(\angle BOA).
+\end{align*}
+Hence $\angle BXA=(1/2)(\angle BOA)$.
+\end{freeResponse}
+\end{problem}
+
+
+
+We can summarize the results of the last three problems into the following theorem.
+
+\begin{theorem}
+\label{43}The measure of any angle inscribed in a circle is one-half of the
+measure of the corresponding central angle.
+\end{theorem}
+
+
+
+
+\section{The Law of Sines}
+
+
+Recall the (extended) Law of Sines:
+
+\begin{theorem}[Law of Sines]
+Given a triangle with angles $\alpha$, $\beta$, and $\gamma$, with
+side $a$ opposite $\alpha$, side $b$ opposite $\beta$, and side $c$
+opposite $\gamma$, we have
+\[
+\frac{a}{\sin(\alpha)} = \frac{b}{\sin(\beta)} = \frac{c}{\sin(\gamma)} = 2R  
+\]
+where $R$ is the radius of a circle circumscribing the triangle.
+\end{theorem}
+
+To prove this theorem, we must check several things. 
+
+\begin{definition}
+The \textbf{midset} of two given points is the set of points
+equidistant from the given points.
+\end{definition}
+
+\begin{problem}
+Show that in \textbf{EG}, the midset of two points is given by the
+perpendicular bisector of the segment connecting the two given points.
+\begin{freeResponse}
+Consider the perpendicular bisector of a segment $\bar{AB}$.
+\begin{image}
+IMAGE HERE
+\end{image}
+Constructing a triangle to any point (say $C$) on the perpendicular
+bisector, we see by SAS that $|AC|=|BC|$.
+\end{freeResponse}
+\end{problem}
+
+
+\begin{problem}
+Explain why every triangle can be circumscribed by a circle.
+\begin{hint}
+Consider the intersection of the perpendicular bisectors of the sides.
+\end{hint}
+\end{problem}
+
+
+\begin{problem}
+Prove the Law of Sines.
+\begin{hint}
+Start by circumscribing the triangle. 
+\end{hint}
+\begin{hint}
+Next, construct two (congruent) right triangles using the center of circle and two vertices of the triangle.
+\end{hint}
+\begin{hint}
+Finally, use the definition of sine.
+\end{hint}
+\end{problem}
+
+
+
+
+%% \begin{problem}
+%% Use similar triangles and the previous problems to show that
+%% \[
+%% | AX| \cdot |XB| =| A'X|\cdot |XB'|
+%% \]
+%% in the figure below.%
+%% \begin{image}
+%% \begin{tikzpicture}[geometryDiagrams]
+%% \coordinate (X) at (-.02,1.02);
+%% \coordinate (B') at ({2*cos(60)},{2*sin(60)});
+%% \coordinate (B) at ({2*cos(20)},{2*sin(20)});
+%% \coordinate (A) at ({2*cos(140)},{2*sin(140)});
+%% \coordinate (A') at ({2*cos(190)},{2*sin(190)});
+
+%% \draw[thin] (A)--(B);
+%% \draw[thin] (A')--(B');
+%% \draw (0,0) circle (2cm);
+
+%% \tkzLabelPoints[left](A,A')
+%% \tkzLabelPoints[right](B)
+%% \tkzLabelPoints[above](B')
+%% \tkzLabelPoints[above](X)
+
+%% \end{tikzpicture}
+%% \end{image}
+%% \begin{hint}
+%% Draw $\overline{AB'}$ and $\overline{A'B}$.
+%% \end{hint}
+
+%% \begin{hint}
+%% Draw the center of the circle and use the previous theorem.
+%% \end{hint}
+
+%% \begin{freeResponse}
+%% Construct $\overline{AB'}$ and $\overline{A'B}$, and add the center of
+%% the circle.
+%% \begin{image}
+%% \begin{tikzpicture}[geometryDiagrams]
+%% \coordinate (O) at (0,0);
+%% \coordinate (X) at (-.02,1.02);
+%% \coordinate (B') at ({2*cos(60)},{2*sin(60)});
+%% \coordinate (B) at ({2*cos(20)},{2*sin(20)});
+%% \coordinate (A) at ({2*cos(140)},{2*sin(140)});
+%% \coordinate (A') at ({2*cos(190)},{2*sin(190)});
+
+%% \draw[thin] (A)--(B);
+%% \draw[thin] (A')--(B');
+%% \draw[thin] (A)--(B');
+%% \draw[thin] (A')--(B);
+%% \draw[thin,dashed] (O)--(B);
+%% \draw[thin,dashed] (O)--(B');
+%% \draw (0,0) circle (2cm);
+
+%% \tkzLabelPoints[left](A,A')
+%% \tkzLabelPoints[right](B)
+%% \tkzLabelPoints[above](B')
+%% \tkzLabelPoints[above](X)
+%% \tkzLabelPoints[below](O)
+%% \end{tikzpicture}
+%% \end{image}
+%% Since $\angle BAB'$ and $\angle BA'B'$ share the same central angle,
+%% they are congruent. Moreover, decorating our diagram slightly differently, 
+%% \begin{image}
+%% \begin{tikzpicture}[geometryDiagrams]
+%% \coordinate (O) at (0,0);
+%% \coordinate (X) at (-.02,1.02);
+%% \coordinate (B') at ({2*cos(60)},{2*sin(60)});
+%% \coordinate (B) at ({2*cos(20)},{2*sin(20)});
+%% \coordinate (A) at ({2*cos(140)},{2*sin(140)});
+%% \coordinate (A') at ({2*cos(190)},{2*sin(190)});
+
+%% \draw[thin] (A)--(B);
+%% \draw[thin] (A')--(B');
+%% \draw[thin] (A)--(B');
+%% \draw[thin] (A')--(B);
+%% \draw[thin,dashed] (O)--(A);
+%% \draw[thin,dashed] (O)--(A');
+%% \draw (0,0) circle (2cm);
+
+%% \tkzLabelPoints[left](A,A')
+%% \tkzLabelPoints[right](B)
+%% \tkzLabelPoints[above](B')
+%% \tkzLabelPoints[above](X)
+%% \tkzLabelPoints[below](O)
+%% \end{tikzpicture}
+%% \end{image}
+%% since $\angle ABA'$ and $\angle AB'A'$ share the same central angle,
+%% they are congruent. Hence $\triangle AXB'\cong \triangle A'XB'$ are similar. 
+%% This tells us that 
+%% \[
+%% \frac{|AX|}{|XB'|} = \frac{|A'X|}{|XB|}
+%% \]
+%% so we see that $|AX|\cdot|XB|=|A'X|\cdot|XB'|$.
+%% \end{freeResponse}
+%% \end{problem}
+
+
+%% \begin{problem}
+%% Use similar triangles and the previous problems to show that
+%% \[
+%% |AX|\cdot|XB|=|A'X| \cdot| XB'|
+%% \]
+%% in the figure below.%
+%% \begin{image}
+%% \begin{tikzpicture}[geometryDiagrams]
+%% \coordinate (X) at (4.51,.22);
+%% \coordinate (B') at ({2*cos(0)},{2*sin(0)});
+%% \coordinate (B) at ({2*cos(20)},{2*sin(20)});
+%% \coordinate (A) at ({2*cos(140)},{2*sin(140)});
+%% \coordinate (A') at ({2*cos(190)},{2*sin(190)});
+
+%% \draw[thin] (A)--(X);
+%% \draw[thin] (A')--(X);
+%% \draw (0,0) circle (2cm);
+
+%% \tkzLabelPoints[left](A,A')
+%% \tkzLabelPoints[above right](B)
+%% \tkzLabelPoints[below right](B')
+%% \tkzLabelPoints[right](X)
+
+%% \end{tikzpicture}
+%% \end{image}
+
+%% \begin{hint}
+%% Draw $\overline{AB^{\prime}}$ and $\overline{A^{\prime}B}$.
+%% \end{hint}
+
+%% \begin{hint}
+%% Draw the center of the circle and use the previous theorem.
+%% \end{hint}
+
+%% \begin{freeResponse}
+%% Construct $\overline{AB'}$ and $\overline{A'B}$, and add the center of
+%% the circle.
+%% \begin{image}
+%% \begin{tikzpicture}[geometryDiagrams]
+%% \coordinate (O) at (0,0);
+%% \coordinate (X) at (4.51,.22);
+%% \coordinate (B') at ({2*cos(0)},{2*sin(0)});
+%% \coordinate (B) at ({2*cos(20)},{2*sin(20)});
+%% \coordinate (A) at ({2*cos(140)},{2*sin(140)});
+%% \coordinate (A') at ({2*cos(190)},{2*sin(190)});
+
+%% \draw[thin] (A)--(X);
+%% \draw[thin] (A')--(X);
+%% \draw[thin] (A)--(B');
+%% \draw[thin] (A')--(B);
+
+%% \draw[thin,dashed] (O)--(B);
+%% \draw[thin,dashed] (O)--(B');
+
+%% \draw (0,0) circle (2cm);
+
+%% \tkzLabelPoints[left](A,A')
+%% \tkzLabelPoints[above right](B)
+%% \tkzLabelPoints[below right](B')
+%% \tkzLabelPoints[right](X)
+%% \tkzLabelPoints[left](O)
+%% \end{tikzpicture}
+%% \end{image}
+%% Since $\angle BAB'$ and $\angle BA'B'$ share the same central angle,
+%% they are congruent. Moreover, decorating our diagram slightly differently, 
+%% \begin{image}
+%% \begin{tikzpicture}[geometryDiagrams]
+%% \coordinate (O) at (0,0);
+%% \coordinate (X) at (4.51,.22);
+%% \coordinate (B') at ({2*cos(0)},{2*sin(0)});
+%% \coordinate (B) at ({2*cos(20)},{2*sin(20)});
+%% \coordinate (A) at ({2*cos(140)},{2*sin(140)});
+%% \coordinate (A') at ({2*cos(190)},{2*sin(190)});
+
+%% \draw[thin] (A)--(X);
+%% \draw[thin] (A')--(X);
+%% \draw[thin] (A)--(B');
+%% \draw[thin] (A')--(B);
+
+%% \draw[thin,dashed] (O)--(A);
+%% \draw[thin,dashed] (O)--(A');
+
+%% \draw (0,0) circle (2cm);
+
+%% \tkzLabelPoints[left](A,A')
+%% \tkzLabelPoints[above right](B)
+%% \tkzLabelPoints[below right](B')
+%% \tkzLabelPoints[right](X)
+%% \tkzLabelPoints[right](O)
+%% \end{tikzpicture}
+%% \end{image}
+%% since $\angle ABA'$ and $\angle AB'A'$ share the same central angle,
+%% they are congruent. Hence $\triangle AXB'\cong \triangle A'XB'$ are similar. 
+%% This tells us that 
+%% \[
+%% \frac{|AX|}{|XB'|} = \frac{|A'X|}{|XB|}
+%% \]
+%% so we see that $|AX|\cdot|XB|=|A'X|\cdot|XB'|$.
+%% \end{freeResponse}
+%% \end{problem}
+
+
+
+
+\begin{problem}
+Summarize the results from this section. In particular, indicate which
+results follow from the others.
+\begin{freeResponse}
+\end{freeResponse}
+\end{problem}
+
+\end{document}

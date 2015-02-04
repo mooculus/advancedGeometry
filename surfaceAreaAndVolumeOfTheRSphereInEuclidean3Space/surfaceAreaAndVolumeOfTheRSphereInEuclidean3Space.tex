@@ -19,7 +19,161 @@ a factor of $1/2$ in many formulas for areas in $2$-dimensional
 euclidean geometry.
 
 
-\subsection*{Surface area of spheres}
+We begin with perhaps the most basic fact of all about circles in
+\textbf{EG}. We will use calculus to compute the perimeter of a unit
+circle.
+
+
+\begin{problem}
+Consider a unit circle with $n$ inscribed triangles (with one vertex
+at the center of the circle), here we have shown the $n$th triangle:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\draw [domain=-20:65] plot ({4*cos(\x)}, {4*sin(\x)});
+\coordinate (A) at (4,0);
+\coordinate (O) at (0,0);
+\coordinate (C) at (2.83,2.83);
+\draw[thin] (A)--(O)--(C)--(A);
+\node[left] at (3.41,1.41) {$b_n$};
+\node[right] at (4,0) {$(1,0)$};
+\node[left] at (0,0) {$(0,0)$};
+\node[above] at (C) {$P$};
+\tkzMarkAngle[size=0.7cm,thin](A,O,C)
+\tkzLabelAngle[pos = 0.5](A,O,C){$\theta$}
+\end{tikzpicture}
+\end{image}
+Find $P$ and $\theta$, and $b_n$.
+\end{problem}
+
+
+\begin{problem}
+Explain what the limit
+\[
+\lim_{n\to\infty} n\cdot b_n
+\]
+computes and compute the limit.
+\begin{hint}
+You might want to use a half-angle formula
+\[
+\sin(\alpha/2) = \sqrt{\frac{1-\cos(\alpha)}{2}}.
+\]
+\end{hint}
+\end{problem}
+
+
+
+\begin{problem}
+The circle of radius $1$ has circumference $2\pi$. Use this to reason
+that the circle of radius $1$ has area $\pi$.
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\draw (0,0) circle (2cm);
+\foreach \coeff in {0,10,20,...,350}
+         {
+           \draw[thin] (0,0)--({2*cos(\coeff)},{2*sin(\coeff)});
+         }
+\end{tikzpicture}
+\end{image}
+
+\begin{hint}
+Approximate a rectangle by rearranging the slices in the picture.
+Compute the area of the ``rectangle.''
+\end{hint}
+\begin{freeResponse}
+Slice up the circle as indicated and rearrange into the following
+``rectangle.'' 
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams] % r= 2cm
+  \foreach \coeff in {0,1,2,...,17}
+   {
+     \draw[thin] ({2*\coeff *sin(5)},0)--({(2*\coeff+ 2)* sin(5)},{2*cos(5)});
+     \draw[thin] ({(2*\coeff + 2)*sin(5)},{2*cos(5)})--({(2+2*\coeff)*sin(5)},0); %one too many!
+   }
+   \draw[thin] ({2*18 *sin(5)},0)--({(2*18+ 2)* sin(5)},{2*cos(5)});
+   \draw (0,0)--({2*18 *sin(5)},0);
+   \draw ({2*sin(5)},2)--({2*19 *sin(5)},2);
+\end{tikzpicture}
+\end{image}
+Note, while this is not truly a rectangle, as the slices become finer,
+and finer, the shape will more, and more, closely approximate a
+rectangle. This rectangle has perimeter $2+2\pi$, and hence is a
+$1\times \pi$ rectangle. Thus the area of the rectangle is $\pi$ as is
+the area of the initial circle.
+\end{freeResponse}
+\end{problem}
+
+
+Not content to give just one explanation, let's give another. The
+techniques we use in this explanation will be used in later problems.
+
+\begin{problem}
+Again, consider the circle of radius $1$ with circumference $2\pi$.
+Suppose we inscribe $n$ triangles (with one vertex at the center of
+the circle), here we have shown the $n$th triangle:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\draw [domain=-20:65] plot ({4*cos(\x)}, {4*sin(\x)});
+\coordinate (A) at (4,0);
+\coordinate (B) at (3.41,1.41);
+\coordinate (O) at (0,0);
+\coordinate (C) at (2.83,2.83);
+\draw[thin] (A)--(O)--(C)--(A);
+\draw[thin] (B)--(O);
+\node at (2,1.1) {$h_n$};
+\node[below] at (3.1,2) {$b_n$};
+
+\tkzMarkRightAngle[thin](A,B,O)
+
+\end{tikzpicture}
+\end{image}
+In each triangle, label $b_n$ and $h_n$, where $b_n$ is conceptualized
+as a ``base'' and $h_n$ is a ``height.'' Compute
+\[
+\lim_{n\to \infty} h_n
+\]
+and explain your reasoning.
+\begin{freeResponse}
+As $n$ goes to infinity, $h_n$ goes to the radius length of the radius
+of the circle. Hence
+\[
+\lim_{n\to \infty} h_n = 1.
+\]
+\end{freeResponse}
+\end{problem}
+
+\begin{problem}
+Now compute 
+\[
+\lim_{n\to \infty} n\cdot b_n
+\]
+and explain your reasoning.
+\begin{freeResponse}
+As $n$ goes to infinity, $n\cdot b_n$ goes to the circumference of the circle. Hence 
+\[
+\lim_{n\to \infty} n\cdot b_n = 2\pi.
+\]
+\end{freeResponse}
+\end{problem}
+
+\begin{problem}
+Consider the limit
+\[
+\lim_{n\to\infty} \frac{n\cdot b_n\cdot h_n}{2}.
+\]
+Explain what this limit is computing, and compute this limit.
+\begin{freeResponse}
+This limit is computing the sum of the areas of the triangles as $n$
+goes to infinity. This will be the area of the circle of radius
+$1$. From using substitution from our work above, we see
+\begin{align*}
+\lim_{n\to\infty} \frac{n\cdot b_n\cdot h_n}{2} &= \frac{1\cdot 2\pi}{2}\\
+&=\pi.
+\end{align*}
+\end{freeResponse}
+\end{problem}
+
+
+\section{Surface area of spheres}
 
 To compute the surface area of the sphere of radius $R$ in $3$-dimensional
 euclidean space, we will show that its surface area is equal to the surface
@@ -84,13 +238,17 @@ then
 
 
 \begin{problem}
+Let
+\begin{itemize}
+\item $r_b$ be the radius of the circle defining the base of the collar,
+\item $r_t$ be the radius of the circle defining the top of the collar,
+\item $r_a$ be the average of $r_b$ and $r_t$,
+\item $s$ be the slant height of the collar.
+\end{itemize}
 Explain why the area of the collar is%
-\begin{equation}\label{38}
-\pi \cdot \left( r_{b}+r_{t}\right)\cdot s =2\pi\cdot r_{a}\cdot
-s\nonumber
-\end{equation}
-where $r_{b}$ and $r_{t}$ are the radii of the respective circles and
-$r_{a}$ is the average of the two.
+\[
+\pi \cdot \left( r_{b}+r_{t}\right)\cdot s =2\pi\cdot r_{a}\cdot s
+\]
 \end{problem}
 
 
@@ -178,7 +336,7 @@ r_{i}\cdot s_{i}=h_{i}\cdot R.
 
 
 
-\subsection*{Volumes of pyramids and spheres}
+\section{Volumes of pyramids and spheres}
 
 We will start by looking at the volumes of pyramids.
 
@@ -290,7 +448,7 @@ J(\underline{\hat{x}},\underline{\hat{y}},\underline{\hat{z}}) =
 
 \end{problem}
 
-\subsection*{Magnification principle}
+\section{Magnification principle}
 
 \textit{Magnification principle:} If an object in euclidean $n$-space is
 magnified by factors of $r_{1},\ldots,r_{n}$, its $n$-dimensional
@@ -358,38 +516,30 @@ these rectangles. Why is the area $B$ of the base of the pyramid caught
 between $B-\varepsilon$ and $B+\varepsilon$?
 
 \begin{problem}
-Show that the volume $V$ of the pyramid is caught between
-$\left(  1/3\right)  \cdot t\cdot h$ and
-$\left(  1/3\right)  \cdot T\cdot h$.
-\end{problem}
-
-\begin{problem}
-Argue that, given any positive real number $\varepsilon$,
-however small, the volume $V$ of the pyramid is caught between $\left(
-1/3\right)  \cdot \left(  B-\varepsilon\right)  $%
-\textperiodcentered$h$ and $\left(  1/3\right)  \cdot \left(
-B+\varepsilon\right)  \cdot h$.
-\end{problem}
-
-\begin{problem}
-Show that
+Show that the volume $V$ of the pyramid is caught between $\left(
+1/3\right) \cdot t\cdot h$ and $\left( 1/3\right) \cdot T\cdot
+h$. Argue that, given any positive real number $\varepsilon$, however
+small, the volume $V$ of the pyramid is caught between $\left(
+1/3\right) \cdot \left( B-\varepsilon\right)\cdot h$ and $\left(
+1/3\right) \cdot \left( B+\varepsilon\right) \cdot h$. Finally, show that
 \[
 V=\left(  1/3\right)  \cdot B\cdot h.
 \]
 \end{problem}
 
-\subsection*{Relation between volume and surface area of a sphere}
+\section{Relation between volume and surface area of a sphere}
 
-Think of a disco-ball. Its surface is approximately a sphere, but that surface
-is made up of tiny flat mirrors.
+Think of a disco-ball. Its surface is approximately a sphere, but that
+surface is made up of tiny flat mirrors.
 
 \begin{problem}\hfil
 \begin{enumerate}
-\item Why can you think of the disco-ball as being made up of
-pyramids, with each pyramid having base one of the tiny mirrors and vertex at
-the interior point $O$ at the center of the disco-ball.
-\item Argue that the volume of the disco-ball is $\left(  1/3\right)  $ times the
-distance $h$ from a mirror to $O$ times the sum of the areas of all the mirrors.
+\item Explain why you can think of the disco-ball as being made up of
+  pyramids, with each pyramid having base one of the tiny mirrors and
+  vertex at the interior point $O$ at the center of the disco-ball.
+\item Argue that the volume of the disco-ball is $\left( 1/3\right) $
+  times the distance $h$ from a mirror to $O$ times the sum of the
+  areas of all the mirrors.
 \end{enumerate}
 \end{problem}
 
