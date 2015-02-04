@@ -1,0 +1,621 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+%% \prerequisites{euclideanGeometry}
+%% \outcome{circles}
+
+\title{The cross-ratio and Ptolemy's Theorem}
+
+\begin{document}
+\begin{abstract}
+In this activity, we do some basic projective geometry and learn
+Ptolemy's Theorem.
+\end{abstract}
+\maketitle
+
+In this section, we will study some basic ideas of \textit{projective
+  geometry}. The main topic, one closely related to the notion of
+perspective in painting, is called the \textit{cross-ratio}.  In
+particular, we will use the cross-ratio to prove a famous mathematical
+relationship, \textit{Ptolemy's Theorem}. We will then explore several
+corollaries of Ptolemy's Theorem.
+
+
+
+\section{The cross-ratio}
+
+\begin{problem}\label{46}
+In the diagram
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (O) at ({2*cos(120)},{2*sin(120)});
+\coordinate (A) at ({2*cos(190)},{2*sin(190)});
+\coordinate (B) at ({2*cos(250)},{2*sin(250)});
+\coordinate (C) at ({2*cos(330)},{2*sin(330)});
+
+\draw (0,0) circle (2cm);
+\draw (O) -- (C);
+\draw (A) -- (B);
+\draw (O) -- (B);
+\draw (B) -- (C);
+\draw (O) -- (A);
+
+
+\tkzMarkAngle[size=.9cm,thin](A,O,B)
+\tkzLabelAngle[pos = 0.7](A,O,B){$\alpha$}
+\tkzMarkAngle[arc=ll,size=0.9cm,thin](B,O,C)
+\tkzLabelAngle[pos = 0.7](B,O,C){$\beta$}
+
+\tkzLabelPoints[above](O)
+\tkzLabelPoints[left](A)
+\tkzLabelPoints[below](B)
+\tkzLabelPoints[right](C)
+
+\end{tikzpicture}
+\end{image}
+show that
+\[
+\frac{\left\vert AB\right\vert }{\left\vert CB\right\vert }=\frac
+{\sin\alpha}{\sin\beta}=\frac{\sin\left(  \angle
+AOB\right)  }{\sin\left(  \angle COB\right)  }.
+\]
+
+
+\begin{hint}
+Notice that
+\[
+m\left(  \angle BAO\right)  +m\left(\angle OCB\right)  =180^{\circ}%
+\]
+so that%
+\[
+\sin\left(  \angle BAO\right)  =\sin\left(\angle  OCB\right)  .
+\]
+Now use the Law of Sines.
+\end{hint}
+\begin{freeResponse}
+By the Law of Sines we have that
+\[
+\frac{|AB|}{\sin\alpha} = \frac{|OB|}{\sin(\angle OAB)}\qquad\text{and}\qquad\frac{|BC|}{\sin\beta} = \frac{|OB|}{\sin(\angle OCB)}.
+\]
+Write 
+\begin{align*}
+m\left(  \angle BAO\right)  +m\left(\angle OCB\right)  &=180^{\circ}\\
+m\left(  \angle BAO\right)  &=180^{\circ}-m\left(\angle OCB\right)  \\
+\sin\left(\angle BAO\right)  &=\sin\left(180^{\circ}-m\left(\angle OCB\right)\right)  \\
+\sin\left(\angle BAO\right)  &=\sin\left(180^{\circ}\right)\cos\left(\angle OCB\right) - \cos\left(180^{\circ}\right)\sin\left(\angle OCB\right)\\ 
+\sin\left(\angle BAO\right)  &=\sin\left(\angle OCB\right).
+\end{align*}
+So  now we have that 
+\[
+\frac{|AB|}{\sin\alpha} = \frac{|OB|}{\sin(\angle OAB)}= \frac{|OB|}{\sin(\angle OCB)}=\frac{|BC|}{\sin\beta}. 
+\]
+Using algebra we find 
+\[
+\frac{\left\vert AB\right\vert }{\left\vert CB\right\vert }=\frac
+{\sin\alpha}{\sin\beta}=\frac{\sin\left(  \angle
+AOB\right)  }{\sin\left(  \angle COB\right)  }.
+\]
+\end{freeResponse}
+\end{problem}
+
+\begin{remark}
+Note that if, in the above figure, $B$ moves along the
+circle to the other side of $C$, it is still true that%
+\[
+\frac{\left\vert AB\right\vert }{\left\vert CB\right\vert }=\frac
+{\sin\left(  \angle AOB\right)  }{\sin\left(  \angle
+COB\right)  }%
+\]
+%% \begin{freeResponse}
+%% By the Law of Sines we have that
+%% \[
+%% \frac{|AB|}{\sin(\angle AOB)} = \frac{|OB|}{\sin(\angle OAB)}\qquad\text{and}\qquad\frac{|CB|}{\sin(\angle COB)} = \frac{|OB|}{\sin(\angle OCB)}.
+%% \]
+%% However, 
+%% \[
+%% \angle OAB = \angle OCB
+%% \]
+%% So now we have that
+%% \[
+%% \frac{|AB|}{\sin(\angle AOB)} =\frac{|CB|}{\sin(\angle COB)}. 
+%% \]
+%% Using algebra we find 
+%% \[
+%% \frac{\left\vert AB\right\vert }{\left\vert CB\right\vert }=\frac
+%% {\sin\left(  \angle AOB\right)  }{\sin\left(  \angle
+%% COB\right)  }.
+%% \]
+%% \end{freeResponse}
+\end{remark}
+
+
+
+
+
+
+\begin{problem}\label{48}
+In the diagram
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (O) at ({2*cos(120)},{2*sin(120)});
+\coordinate (A) at ({2*cos(190)},{2*sin(190)});
+\coordinate (B) at ({2*cos(250)},{2*sin(250)});
+\coordinate (C) at ({2*cos(330)},{2*sin(330)});
+
+\coordinate (A') at (-3.21,-3);
+\coordinate (B') at (-.59,-3);
+\coordinate (C') at (3.73,-3);
+
+\draw (0,0) circle (2cm);
+\draw (O) -- (C');
+\draw (A) -- (B);
+\draw (O) -- (B');
+\draw (B) -- (C);
+\draw (O) -- (A');
+
+\draw (-4,-3) -- (5,-3);
+
+
+\tkzMarkAngle[size=.9cm,thin](A,O,B)
+\tkzLabelAngle[pos = 0.7](A,O,B){$\alpha$}
+\tkzMarkAngle[arc=ll,size=0.9cm,thin](B,O,C)
+\tkzLabelAngle[pos = 0.7](B,O,C){$\beta$}
+
+\tkzMarkAngle[size=0.7cm,thin](B',A',A)
+\tkzLabelAngle[pos = 0.4](B',A',A){$\gamma$}
+
+\tkzMarkAngle[size=0.9cm,thin](C,C',B')
+\tkzLabelAngle[pos = 0.7](C,C',B'){$\delta$}
+
+\tkzLabelPoints[above](O)
+\tkzLabelPoints[left](A)
+\tkzLabelPoints[below left](B)
+\tkzLabelPoints[below](A',B',C')
+\tkzLabelPoints[right](C)
+
+\end{tikzpicture}
+\end{image}
+show that
+\[
+\frac{\left|A'B'\right|}{\left|C'B'\right|}=
+\frac{\sin\alpha}{\sin\beta}\cdot\frac{\sin\delta}{\sin\gamma}=
+\frac{\sin\left(\angle A'OB'\right)}{\sin\left(\angle C'OB'\right)}\cdot\frac{
+\sin\left( \angle B'C'O\right)}{\sin\left(\angle B'A'O\right)}.
+\]
+[MJG,266-267]
+\begin{freeResponse}
+By the Law of Sines we have that
+\[
+\frac{|A'B'|}{\sin \alpha} = \frac{|OB'|}{\sin \gamma}\qquad\text{and}\qquad\frac{|C'B'|}{\sin \beta} = \frac{|OB'|}{\sin\delta}.
+\]
+We now see that
+\[
+|A'B'| = \frac{|OB'|\sin\alpha}{\sin \gamma}\qquad\text{and}\qquad|C'B'| = \frac{|OB'|\sin\beta}{\sin\delta}.
+\]
+Finally, we see directly that 
+\[
+\frac{\left|A'B'\right|}{\left|C'B'\right|}=
+\frac{\sin\alpha}{\sin\beta}\cdot\frac{\sin\delta}{\sin\gamma}=
+\frac{\sin\left(\angle A'OB'\right)}{\sin\left(\angle C'OB'\right)}\cdot\frac{
+\sin\left( \angle B'C'O\right)}{\sin\left(\angle B'A'O\right)}.
+\]
+\end{freeResponse}
+\end{problem}
+
+
+%% \begin{problem}\label{49}
+%% Show that if, in the previous figure, $B'$ moves
+%% along the line to the other side of $C'$, it is still true that%
+%% \[
+%% \frac{\left\vert A'B'\right\vert }{\left\vert C^{\prime
+%% }B'\right\vert }=\frac{\sin\left(  \angle A'%
+%% OB'\right)  }{\sin\left(  \angle C'OB'\right)
+%% }\div\frac{\sin\left(  \angle B'A'O\right)
+%% }{\sin\left(  \angle B'C'O\right)  }.
+%% \]
+%% \begin{freeResponse}
+%% By the Law of Sines we have that
+%% \[
+%% \frac{|A'B'|}{\sin(\angle A'OB')} = \frac{|OB'|}{\sin(\angle B'A'O)}\qquad\text{and}\qquad\frac{|C'B'|}{\sin(\angle C'OB')} = \frac{|OB'|}{\sin(\angle B'C'O)}.
+%% \]
+%% We now see that
+%% \[
+%% |A'B'| = \frac{|OB'|\sin(\angle A'OB')}{\sin(B'A'O)}\qquad\text{and}\qquad|C'B'| = \frac{|OB'|\sin(\angle C'OB')}{\sin(\angle B'C'O)}.
+%% \]
+%% Again, we see directly that 
+%% \[
+%% \frac{\left\vert A'B'\right\vert }{\left\vert C^{\prime
+%% }B'\right\vert }=\frac{\sin\left(  \angle A'%
+%% OB'\right)  }{\sin\left(  \angle C'OB'\right)
+%% }\div\frac{\sin\left(  \angle B'A'O\right)
+%% }{\sin\left(  \angle B'C'O\right)  }.
+%% \]
+%% \end{freeResponse}
+%% \end{problem}
+
+These last two problems allow us to define the cross-ratio of four
+points on a circle.
+
+\begin{definition}
+For a sequence of four (ordered) points $A,B,C,$ and $D$ on a circle,
+we define%
+\[
+\left(A:B:C:D\right)=
+\frac{\left| AB\right|}{\left|CB\right|}\cdot
+\frac{
+\left|CD\right|
+}{
+\left|AD\right|
+}%
+\]
+which we call the \textbf{cross-ratio of the ordered sequence of four
+  points on a circle}.  Similarly for a sequence of four (ordered) points
+$A',B',C',$ and $D'$ on a line, we define%
+\[
+\left(  A':B':C':D'\right)  =
+\frac{\left| A'B'\right| }{\left| C'B'\right|
+}\cdot
+\frac{
+\left|C'D'\right|
+}{
+\left|A'D'\right|
+}
+\]
+which we call the \textbf{cross-ratio of the ordered sequence of the
+  four points on a line}.
+\end{definition}
+
+%% Notice that the original definition of a \textit{cross-ratio} is just
+%% a refinement of the definition of $\left( A':B':C':D'\right)$ just
+%% above. In the original definition we are keeping track of the signs of
+%% the terms in the quotients whereas $\left( A':B':C':D'\right)$ is
+%% always non-negative.
+
+\begin{problem}\label{50}
+Show that, in the figure%
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (O) at ({2*cos(120)},{2*sin(120)});
+\coordinate (A) at ({2*cos(190)},{2*sin(190)});
+\coordinate (B) at ({2*cos(250)},{2*sin(250)});
+\coordinate (C) at ({2*cos(310)},{2*sin(310)});
+\coordinate (D) at ({2*cos(340)},{2*sin(340)});
+
+\coordinate (A') at (-3.21,-3);
+\coordinate (B') at (-.59,-3);
+\coordinate (C') at (2.31,-3);
+\coordinate (D') at (4.64,-3);
+
+\draw (0,0) circle (2cm);
+\draw (O) -- (C');
+\draw (A) -- (B);
+\draw (C) -- (D);
+\draw (O) -- (B');
+\draw (B) -- (C);
+\draw (O) -- (A');
+\draw (O) -- (D');
+
+\draw (-4,-3) -- (6,-3); % line projecting on
+
+
+
+\tkzLabelPoints[above](O)
+\tkzLabelPoints[left](A)
+\tkzLabelPoints[below left](B)
+\tkzLabelPoints[below](A',B',C',D')
+\tkzLabelPoints[right](C)
+\tkzLabelPoints[above right](D)
+
+\end{tikzpicture}
+\end{image}
+we have the equality%
+\[
+\left(  A:B:C:D\right)  =\left(A':B':C':D'\right)  .
+\]
+
+
+\begin{hint}
+Use the previous problems. 
+\end{hint}
+
+%What happens in if we move $B$ to the other side of $C$?
+\begin{freeResponse}
+By our previous work, 
+\begin{align*}
+(A':B':C':D') &=\frac{|A'B'|}{|C'B'|}\cdot\frac{|C'D'|}{|A'D'|}\\
+&=\left(\frac{\sin(\angle A'OB')}{\sin(\angle C'OB')}\cdot 
+\frac{
+\sin(\angle B'C'O)
+}{
+\sin(\angle B'A'O)
+}\right) 
+\cdot\left(\frac{
+\sin(\angle C'OD')
+}{
+\sin(\angle A'OD')
+}\cdot\frac{\sin(\angle D'A'O)}{\sin(\angle D'C'O)}\right).
+\end{align*}
+Since 
+\begin{align*}
+m(\angle A'OB') &= m(\angle AOB),\\
+m(\angle C'OB') &= m(\angle COB),\\
+m(\angle A'OD') &= m(\angle AOD),\\
+m(\angle C'OD') &= m(\angle COD),\\
+m(\angle B'A'O) &= m(\angle D'A'O),
+\end{align*}
+and as we have shown, 
+\[
+\sin(\angle B'C'O) = \sin(\angle D'C'O)
+\]
+as 
+\[
+m(\angle B'C'O) + m(\angle D'C'O) = 180^\circ.
+\]
+With all of these substitutions, our ``large'' expression above becomes
+\[
+\frac{\sin(\angle AOB)}{\sin(\angle COB)} \cdot\frac{
+\sin(\angle COD)
+}{
+\sin(\angle AOD)
+} = (A:B:C:D). 
+\]
+This completes the proof. 
+\end{freeResponse}
+\end{problem}
+
+
+We say that ``Cross-ratio is invariant under stereographic
+projection.''
+
+
+
+
+
+
+
+\section{Ptolemy's Theorem}
+
+You can easily convince yourself with a few examples that, given four
+non-collinear points $A,B,C$ and $D$ in the plane, it is not always
+true that there is a circle that passes through all four. A famous
+theorem of classical Euclidean geometry gives a condition when there
+is a circle that passes through all four.
+
+\begin{theorem}[Ptolemy] If the ordered sequence of points $A,B,C$ and $D$ lies on a circle,
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at ({2*cos(190)},{2*sin(190)});
+\coordinate (B) at ({2*cos(250)},{2*sin(250)});
+\coordinate (C) at ({2*cos(310)},{2*sin(310)});
+\coordinate (D) at ({2*cos(340)},{2*sin(340)});
+
+\draw (0,0) circle (2cm);
+\draw (A) -- (B);
+\draw (C) -- (D);
+\draw (A) -- (D);
+\draw (B) -- (C);
+
+\draw[thin] (A) -- (C);
+\draw[thin] (B) -- (D);
+
+\tkzLabelPoints[left](A)
+\tkzLabelPoints[below left](B)
+\tkzLabelPoints[right](C)
+\tkzLabelPoints[above right](D)
+
+\end{tikzpicture}
+\end{image}
+then%
+\[
+\left\vert AC\right\vert \cdot\left\vert BD\right\vert
+=\left\vert AD\right\vert \cdot\left\vert BC\right\vert
++\left\vert AB\right\vert \cdot\left\vert CD\right\vert
+.
+\]
+That is, the product of the diagonals of the quadrilateral $ABCD$ is the sum
+of the products of pairs of opposite sides.
+\end{theorem}
+
+\begin{proof}
+We need to check that%
+\[
+\left\vert AC\right\vert \cdot\left\vert BD\right\vert
+=\left\vert AD\right\vert \cdot\left\vert BC\right\vert
++\left\vert AB\right\vert \cdot\left\vert CD\right\vert
+\]
+or, what is the same, we need to check that%
+\[
+\frac{\left\vert AC\right\vert \cdot\left\vert
+BD\right\vert }{\left\vert AD\right\vert \cdot\left\vert
+BC\right\vert }=1+\frac{\left\vert AB\right\vert \text{\textperiodcentered
+}\left\vert CD\right\vert }{\left\vert AD\right\vert \text{\textperiodcentered
+}\left\vert BC\right\vert }.
+\]
+That is, we need to check that
+\[
+\left(  A:C:B:D\right)  =1+\left(  A:B:C:D\right)  .
+\]
+But by a previous problem this is the same as checking that%
+\[
+\left(  A':C':B':D'\right)  =1+\left(
+A':B':C':D'\right)
+\]
+for the projection of the four points onto a line from a point $O$ on the
+circle. But that is the same thing as showing that
+\[
+\frac{\left\vert A'C'\right\vert \text{\textperiodcentered
+}\left\vert B'D'\right\vert }{\left\vert A'D^{\prime
+}\right\vert \cdot\left\vert B'C^{\prime
+}\right\vert }=1+\frac{\left\vert A'B'\right\vert
+\cdot\left\vert C'D'\right\vert
+}{\left\vert A'D'\right\vert \cdot \left\vert B'C'\right\vert }%
+\]
+which is the same thing as showing that%
+\[
+\left\vert A'C'\right\vert \text{\textperiodcentered
+}\left\vert B'D'\right\vert =\left\vert A'D^{\prime
+}\right\vert \cdot\left\vert B'C^{\prime
+}\right\vert +\left\vert A'B'\right\vert
+\cdot\left\vert C'D'\right\vert .
+\]
+\end{proof}
+
+
+\begin{problem}
+Check the last equality in the proof of Ptolemy's Theorem using high
+school-algebra.
+\begin{freeResponse}
+\end{freeResponse}
+\end{problem}
+
+\begin{problem}
+Use Ptolemy's Theorem to give another proof of the Pythagorean Theorem.
+\begin{hint}
+Let the four points in Ptolemy's Theorem form a rectangle.
+\end{hint}
+\begin{freeResponse}
+\end{freeResponse}
+\end{problem}
+
+
+\begin{problem}
+Prove the addition formula for sine:
+\[
+\sin(\alpha + \beta) = \sin(\alpha)\cos(\beta) +
+\cos(\alpha)\sin(\beta)
+\]
+\begin{hint}
+Consider this setup, 
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at ({2*cos(80)},{2*sin(80)});
+\coordinate (B) at ({2*cos(180)},{2*sin(180)});
+\coordinate (C) at ({2*cos(270)},{2*sin(270)});
+\coordinate (D) at ({2*cos(0)},{2*sin(0)});
+
+\draw (0,0) circle (2cm);
+\draw (A) -- (B);
+\draw (C) -- (D);
+\draw (A) -- (D);
+\draw (B) -- (C);
+
+\draw[thin] (A) -- (C);
+\draw[thin] (B) -- (D);
+
+\tkzLabelPoints[above](A)
+\tkzLabelPoints[left](B)
+\tkzLabelPoints[below](C)
+\tkzLabelPoints[right](D)
+
+\tkzMarkAngle[size=0.7cm,thin](D,B,A)
+\tkzLabelAngle[pos = 0.5](D,B,A){$\alpha$}
+
+\tkzMarkAngle[arc=ll,size=0.8cm,thin](C,B,D)
+\tkzLabelAngle[pos = 0.6](C,B,D){$\beta$}
+
+\end{tikzpicture}
+\end{image}
+where $\bar{BD}$ is a unit diameter for the circle.
+\end{hint}
+\end{problem}
+
+
+\begin{problem}
+Prove the subtraction formula for sine:
+\[
+\sin(\alpha - \beta) = \sin(\alpha)\cos(\beta) -
+\cos(\alpha)\sin(\beta)
+\]
+\begin{hint}
+Consider this setup, 
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at ({2*cos(110)},{2*sin(110)});
+\coordinate (B) at ({2*cos(180)},{2*sin(180)});
+\coordinate (C) at ({2*cos(0)},{2*sin(0)});
+\coordinate (D) at ({2*cos(65)},{2*sin(65)});
+
+\draw (0,0) circle (2cm);
+\draw (A) -- (B);
+\draw (C) -- (D);
+\draw (A) -- (D);
+\draw (B) -- (C);
+
+\draw[thin] (A) -- (C);
+\draw[thin] (B) -- (D);
+
+\tkzLabelPoints[above](A)
+\tkzLabelPoints[left](B)
+\tkzLabelPoints[right](C)
+\tkzLabelPoints[above](D)
+
+\tkzMarkAngle[size=0.7cm,thin](C,B,A)
+\tkzLabelAngle[pos = 0.5](C,B,A){$\alpha$}
+
+\tkzMarkAngle[arc=ll,size=1.1cm,thin](C,B,D)
+\tkzLabelAngle[pos = 0.9](C,B,D){$\beta$}
+
+\end{tikzpicture}
+\end{image}
+where $\bar{BC}$ is a unit diameter for the circle.
+\end{hint}
+\end{problem}
+
+Both of the above formulas were very important to Ptolemy. You see,
+Ptolemy wrote a book called the \textit{Almagest}. The
+\textit{Almagest} was a book that contained all the current
+information about the stars, including information on how a potential
+reader could reproduce their observations and conclusions. A key
+technical hurtle that needed to be resolved was the computation of
+sine and cosine. The two formulas above, were the key in this endeavor.
+
+
+%% Given any three non-collinear points in the Euclidean plane, there is
+%% one and only one circle that passes through the three points. 
+
+%% \begin{problem}
+%% Show that, given any three non-collinear points in the Euclidean
+%% plane, there is a unique circle passing through the three points.
+
+%% \begin{hint}
+%% Show that the center of the circle must be the intersection of
+%% the perpendicular bisectors of any two of the sides of the triangle
+%% whose vertices are the three given points.
+%% \end{hint}
+
+%% \begin{freeResponse}
+%% \end{freeResponse}
+
+%% \end{problem}
+
+%% But how about four points in the plane, no three of which are
+%% collinear?
+
+%% \begin{problem}
+%% \begin{enumerate}\hfil
+%% \item Draw four points in the Euclidean plane, no $3$ of which are collinear, that cannot lie on a single circle.
+%% \item Draw four points in the Euclidean plane that do lie on a single
+%% circle.
+%% \end{enumerate}
+%% \end{problem}
+
+
+
+
+\begin{problem}
+Summarize the results from this section. In particular, indicate which
+results follow from the others.
+\begin{freeResponse}
+\end{freeResponse}
+\end{problem}
+
+
+
+
+
+
+
+
+
+\end{document}
