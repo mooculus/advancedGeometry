@@ -17,111 +17,104 @@ We are now ready to introduce a slightly different set of coordinates for
 $\mathbb{R}^{3}$, three-dimensional euclidean space. To see why we do this,
 suppose we are standing at the North Pole%
 \[
-N=\left(  0,0,R\right)
+N=\left(0,0,R\right)
 \]
 of the sphere%
-\begin{equation}
-\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=R^{2} \label{4}%
-\end{equation}
-of radius $R$. As $R$ increases (but we stay our same size, the sphere around
-us becomes more and more like a flat, plane surface. However it can never get
-completely flat because we are zooming out the positive $\hat{z}$-axis and we
-would have to be `at infinity' for our surface to become exactly flat. We
-remedy that unfortunate situation by considering another copy of
-$\mathbb{R}^{3}$, whose coordinates we denote as $\left(  x,y,z\right)  $ and
-make the following rule in order to pass between the two $\mathbb{R}^{3}$'s:%
-\begin{align}
-\hat{x}  &  =x\label{105}\\
-\hat{y}  &  =y\nonumber\\
-\hat{z}  &  =Rz.\nonumber
-\end{align}
-We think of the $\left(  x,y,z\right)  $-coordinates as simply being a
-different set of addresses for the points in euclidean $3$-space, for example,%
 \[
-\left(  x,y,z\right)  =\left(  0,0,1\right)
+\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=R^{2} %\label{4}%
 \]
-tells me that the point in euclidean $3$-space that I'm referring to is%
-\[
-\left(  \hat{x},\hat{y},\hat{z}\right)  =\left(  0,0,R\right)  =N,
-\]
-and the sphere of radius $R$ in euclidean $3$-space is given by%
+of radius $R$. As $R$ increases, but we stay our same size, the sphere
+around us becomes more and more like a flat, plane surface. However it
+can never get completely flat because we are zooming out the positive
+$\hat{z}$-axis and we would have to be `at infinity' for our surface
+to become exactly flat. We remedy that unfortunate situation by
+considering another copy of $\mathbb{R}^{3}$, an \dfn{embedding
+  space}, whose coordinates we denote as $\left( x,y,z\right) $.  We
+make the following rule in order to pass between the two
+$\mathbb{R}^{3}$'s:%
 \begin{align*}
-R^{2}  &  =\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}\\
-&  =x^{2}+y^{2}+R^{2}z^{2}%
+\hat{x}  &  =x\\
+\hat{y}  &  =y\\
+\hat{z}  &  =Rz.
 \end{align*}
-that is, by the equation%
-\begin{equation}
-1=\frac{1}{R^{2}}\left(  x^{2}+y^{2}\right)  +z^{2}. \label{5}%
-\end{equation}
-The quantity%
+We think of the $\left( x,y,z\right) $-coordinates as simply being a
+different set of addresses for the points in euclidean space. For
+example,
 \[
-K=\frac{1}{R^{2}}%
+\left(x,y,z\right)  =\left(0,0,1\right)
 \]
-is called the curvature of the $R$-sphere. So in $\left(  x,y,z\right)
-$-coordinates, as $R$ goes to infinity, $K$ goes to $0$. The formula $\left(
-\ref{5}\right)  $ is rewritten as%
-\begin{equation}
-1=K\left(  x^{2}+y^{2}\right)  +z^{2}, \label{7}%
-\end{equation}
-and so goes to%
+tells me that the point in euclidean space that I'm referring to is%
 \[
-1=z^{2}%
+\left(\hat{x},\hat{y},\hat{z}\right) =\left( 0,0,R\right)= N.
 \]
-as $R$ goes to infinity. So, in the $\left(  x,y,z\right)  $-coordinates, our
-`$R$-geometry' does indeed go to something finite and flat as $R$ goes to
-infinity, namely the set given by the formula%
+Continuing with this ``change of addresses'' the sphere of radius $R$
+in euclidean space is given by
+\begin{align*}
+R^{2} & =\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}\\ &
+=x^{2}+y^{2}+R^{2}z^{2}
+\end{align*}
+that is, by the equation
 \[
-z=\pm1
+1=\frac{1}{R^{2}}\left(  x^{2}+y^{2}\right)  +z^{2}. %\label{5}%
 \]
-which is in fact (two copies of) a plane!
+\begin{definition}
+  For the surface defined by
+  \[
+  1=\frac{1}{R^{2}}\left(  x^{2}+y^{2}\right)  +z^{2}. %\label{5%}
+  \]
+The quantity $K=\frac{1}{R^{2}}$ is called the \dfn{curvature} of the
+$R$-sphere.
+\end{definition}
+
+\begin{problem}
+  What happens to the surface when $K$ goes to $0$? Does this make
+  sense in terms of curvature?
+\end{problem}
 
 \begin{problem}\hfil
 \begin{enumerate}
 \item Sketch the solution set in $\left(  x,y,z\right)  $-coordinates
 representing the sphere%
 \[
-R^{2}=\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=2^{2}%
+R^{2}=\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=2^{2}.
 \]
-of radius $2$ in euclidean three-space.
 
-\item Sketch the solution set in the $\left(  x,y,z\right)  $-coordinates
+\item Sketch the solution set in $\left(  x,y,z\right)  $-coordinates
 representing the sphere%
 \[
-R^{2}=\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=10^{2}%
+R^{2}=\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=10^{2}.
 \]
-of radius $10$ in euclidean three-space.
 
-\item Sketch the solution set in the $\left(  x,y,z\right)  $-coordinates
+\item Sketch the solution set in $\left(  x,y,z\right)  $-coordinates
 representing the sphere%
 \[
-R^{2}=\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=10^{-2}%
+R^{2}=\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=10^{-2}.
 \]
-of radius $10^{-1}$ in euclidean three-space.
 \end{enumerate}
 \end{problem}
 
-\subsection*{$K$-geometry: Formulas for euclidean lengths and angles in terms
+\subsection*{Formulas for euclidean lengths and angles in terms
 of $\left(  x,y,z\right)  $-coordinates}
 
-To prepare ourselves to do hyperbolic geometry, which has no satisfactory
-model in euclidean three-space, we will `practice' by doing spherical geometry
-(which \textit{does} have a completely satisfactory model in euclidean
-three-space) using these `slightly strange' $\left(  x,y,z\right)
-$-coordinates. Gradually throughout this course we will discover that the same
-rules that govern spherical geometry, expressed in $\left(  x,y,z\right)
-$-coordinates, also govern flat and hyperbolic geometry! In all three cases,
-the space in $\left(  x,y,z\right)  $-coordinates that we will study is%
-\begin{equation}
-1=K\left(  x^{2}+y^{2}\right)  +z^{2}. \label{11}%
-\end{equation}
+To prepare ourselves to do hyperbolic geometry, which has no
+satisfactory model in euclidean space, we will `practice' by doing
+spherical geometry (which \textit{does} have a completely satisfactory
+model in euclidean space) using these `slightly strange' $\left(
+x,y,z\right) $-coordinates. Gradually throughout this course we will
+discover that the same rules that govern spherical geometry, expressed
+in $\left( x,y,z\right) $-coordinates, also govern flat and hyperbolic
+geometry! In all three cases, the surface in $\left( x,y,z\right)
+$-coordinates that we will study is%
+\[
+1=K(x^{2}+y^{2})+z^{2}.
+\]
 If $K>0$, the geometry we will be studying is the geometry of the the
 euclidean sphere of radius%
 \[
 R=\frac{1}{\sqrt{K}}.
 \]
 If $K=0$ we will be studying flat (plane) geometry. If $K<0$, we will be
-studying hyperbolic geometry. The number $K$, in all cases, is called the
-\textbf{curvature} of the geometry.
+studying hyperbolic geometry. 
 
 In short, we want to use $\left(  x,y,z\right)  $-coordinates to compute with,
 but we want lengths and angles to be the usual euclidean ones in $\left(
@@ -168,10 +161,15 @@ State the Chain Rule for%
 \end{problem}
 
 \begin{problem}
-\label{8} Recalling that $R$ is a positive constant, use $\left(
-\ref{105}\right)  $ and the Chain Rule to show that, for any path $\hat
+  \label{8} Recalling that $R$ is a positive constant, use
+\begin{align*}
+\hat{x}  &=x\\
+\hat{y}  &=y\\
+\hat{z}  &=Rz.
+\end{align*}
+  and the chain rule to show that, for any path $\hat
 {X}\left(  t\right)  =\left(  \hat{x}\left(  t\right)  ,\hat{y}\left(
-t\right)  ,\hat{z}\left(  t\right)  \right)  $ in euclidean $3$-space,%
+t\right)  ,\hat{z}\left(  t\right)  \right)  $ in euclidean space,%
 \begin{align*}
 \frac{d\hat{x}}{dt}  &  =\frac{dx}{dt}\\
 \frac{d\hat{y}}{dt}  &  =\frac{dy}{dt}\\
@@ -181,7 +179,8 @@ t\right)  ,\hat{z}\left(  t\right)  \right)  $ in euclidean $3$-space,%
 \end{problem}
 
 \begin{problem}
-Use matrix multiplication [DS,307] and Problem \ref{8} to show that%
+  Use matrix multiplication %[DS,307]
+  and the previous problem to show that%
 \begin{align*}
 \frac{d\hat{X}\left(  t\right)  }{dt}  &  =\frac{dX(t)}{dt}
 \begin{bmatrix}
@@ -268,14 +267,14 @@ incorporate that fact into the following definition.
 
 \begin{definition}
 The \textbf{$\boldsymbol{K}$-dot-product} of vectors:%
-\begin{align}
+\begin{align*}
 V_{1}\bullet_{K}V_{2}  &=V_{1} 
 \begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
 \end{bmatrix}
-V_{2}^\transpose\label{10}\\
+V_{2}^\transpose\\
 &=
 \begin{bmatrix}
 a_{1} & b_{1} & c_{1}%
@@ -290,28 +289,28 @@ a_{2}\\
 b_{2}\\
 c_{2}%
 \end{bmatrix}.
-\end{align}
+\end{align*}
 
 \end{definition}
 
-So, suppose we have a curve on the $R$-sphere in euclidean $3$-space
+So, suppose we have a curve on the $R$-sphere in euclidean space
 but it is given to us in $X(t)=(x(t),y(t),z(t))$-coordinates. Then the
-length of that curve in euclidean $3$-space is
+length of that curve in euclidean space is
 \[
 \int_{b}^{e}\sqrt{\frac{dX}{dt}\bullet_{K}\frac{dX}{dt}}\,dt.
 \]
 
 
 \begin{problem}
-\label{222}Use Problem \ref{9} to show that, if we have any two vectors in
-euclidean three-space that are tangent to the $R$-sphere at some point on it,
-but the two vectors are given to us in $(x,y,z)$-coordinates as%
+Show that, if we have any two vectors in euclidean three-space that
+are tangent to the $R$-sphere at some point on it, but the two vectors
+are given to us in $(x,y,z)$-coordinates as%
 \begin{align*}
 V_{1}  &  =\left(  a_{1},b_{1},c_{1}\right) \\
 V_{2}  &  =\left(  a_{2},b_{2},c_{2}\right)  ,
 \end{align*}
 then the area of the parallelogram spanned by those two vectors in euclidean
-$3$-space is%
+space is%
 \[
 \sqrt{\det
 \begin{bmatrix}
@@ -338,8 +337,11 @@ V_{1}^\transpose & V_{2}^\transpose%
 
 \textit{Moral of the story:} The dot-product rules! That is, if you
 know the dot-product you know everything there is to know about a
-geometry, lengths, areas, angles, everything. And the set $\left(
-\ref{11}\right) $ continues to make sense even when $K$ is
+geometry, lengths, areas, angles, everything. And the set
+\[
+1=K(x^2+y^2)+z^2
+\]
+continues to make sense even when $K$ is
 negative. And as we will see later on, the definition of the $K$-dot
 product also makes sense for tangent vectors to that set when $K$ is
 negative.The geometry we get, when the constant $K$ is chosen to be
@@ -348,12 +350,20 @@ the constant $K$ is just chosen to be non-zero is called a
 non-euclidean geometry.  In fact all the non-euclidean $2$-dimensional
 geometries are either spherical or hyperbolic.
 
-\textit{Coming attractions:} A big idea is that in hyperbolic geometry
-$K^{-1}$ in $\left( \ref{10}\right) $ becomes negative, so that the
-third coordinate of velocity, that is, the $c$-direction, actually
-\textit{contracts} lengths. It was the understanding of this
-mysterious fact that allowed Einstein to discover (special)
-relativity.
+%% \textit{Coming attractions:} In hyperbolic geometry, when $K^{-1}$ in
+%% \[
+%% V_{1}\bullet_{K}V_{2}  =V_{1} 
+%% \begin{bmatrix}
+%% 1 & 0 & 0\\
+%% 0 & 1 & 0\\
+%% 0 & 0 & K^{-1}%
+%% \end{bmatrix}
+%% V_{2}^\transpose
+%% \]
+%% becomes negative, so that the third coordinate of velocity, that is,
+%% the $c$-direction, actually \textit{contracts} lengths. It was the
+%% understanding of this mysterious fact that allowed Einstein to
+%% discover (special) relativity.
 
 
 \begin{problem}
