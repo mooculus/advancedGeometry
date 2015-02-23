@@ -9,105 +9,100 @@ We explore rigid motions as matrix multiplication.
 \end{abstract}
 \maketitle
 
-\subsection*{Transformations of Euclidean $3$-space}
+\subsection*{Transformations of euclidean space}
 
-Consider the following mapping of Euclidean $3$-space to itself:%
-\begin{equation}
-\begin{bmatrix}
-%
-\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
-\end{bmatrix}
-  =\begin{bmatrix}
-%
-\hat{x} & \hat{y} & \hat{z}%
-\end{bmatrix}
-  \cdot\hat{M} \label{12}%
-\end{equation}
-where $\hat{M}$ is an invertible $3\times3$ matrix. Then by matrix
-multiplication%
+Consider the following mapping of euclidean space to itself:%
 \[
 \begin{bmatrix}
-%
-\hat{x} & \hat{y} & \hat{z}%
-\end{bmatrix}
-  =\begin{bmatrix}
-%
 \underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
 \end{bmatrix}
-  \cdot\hat{M}^{-1}%
+=
+\begin{bmatrix} \hat{x} & \hat{y} & \hat{z}%
+\end{bmatrix}
+\cdot\hat{M}
 \]
-so that this mapping is $1-1$ and onto.
+where $\hat{M}$ is an invertible $3\times3$ matrix. Since the matrix
+is invertible, this mapping is one-to-one and onto.
 
 \begin{definition}
-The mapping of Euclidean $3$-space to itself given by the rule $\left(
-\ref{12}\right)  $ is called a rigid motion if the distance between any two
-points in Euclidean $3$-space is left unchanged by the mapping, that is, for
-any two points, $\hat{X}_{1}$ and $\hat{X}_{2}$ in Euclidean $3$-space%
+  A mapping of euclidean space to itself given by
+  \[
+\begin{bmatrix}
+\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
+\end{bmatrix}
+=
+\begin{bmatrix} \hat{x} & \hat{y} & \hat{z}%
+\end{bmatrix}
+\cdot\hat{M}
+  \]
+  is called a \dfn{rigid motion} if the distance between any two
+points in euclidean space is left unchanged by the mapping, that is, for
+any two points, $\hat{X}_{1}$ and $\hat{X}_{2}$ in euclidean space%
 \[
 d\left( \hat{X}_{1}  \cdot\hat{M},\hat{X}_{2}
-\cdot\hat{M}\right)  =d\left(  \hat{X}_{1},\hat{X}_{2}\right)  .
+\cdot\hat{M}\right)  =d\left(  \hat{X}_{1},\hat{X}_{2}\right).
 \]
-
 \end{definition}
 
-We saw in formula $\left(  \ref{13}\right)  $ that the square of the distance
-between $\hat{X}_{1}$ and $\hat{X}_{1}$ is just the dot-product of the vector%
-\[
-\hat{V}=\hat{X}_{2}-\hat{X}_{1}%
-\]
-with itself. So the transformation given by the matrix $\hat{M}$ will leave
-distances unchanged if and only if, for all vectors $\hat{V}$,%
-\[
-\left(  \hat{V}  \cdot\hat{M} \right) \bullet\left(
-\hat{V}  \cdot\hat{M}\right)  =\hat{V}\bullet\hat{V}%
-\]
-that is%
-\[
-\left( \hat{V}  \cdot\hat{M} \right) \cdot\left(
-\hat{V}  \cdot\hat{M}\right)  ^\transpose=\hat{V}  \cdot
-\hat{V}  ^\transpose.
-\]
-We can rewrite this requirement as%
-\begin{equation}
-\hat{V}  \cdot\hat{M}\cdot\hat{M}^\transpose\cdot  \hat
-{V}  ^\transpose=\hat{V}  \cdot\hat{V}  ^\transpose
-\label{116}%
-\end{equation}
-for all vectors $\hat{V}$. Condition $\left(  \ref{116}\right)  $ is certainly
-satisfied for all vectors $\hat{V}$ if
-\begin{equation}
-\hat{M}\cdot\hat{M}^\transpose=I=\begin{bmatrix}
-%
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & 1
+It turns out that there is a special class of matricies that give rise
+to rigid motions.
+
+\begin{definition}
+  A matrix $\hat{M}$ satisfying
+  \[
+  \hat{M}\cdot\hat{M}^\transpose=I=\begin{bmatrix}
+  1 & 0 & 0\\
+  0 & 1 & 0\\
+  0 & 0 & 1
+  \end{bmatrix}.
+  \]
+  is called an \dfn{orthogonal} matrix.
+\end{definition}
+
+\begin{problem}
+  Prove that a matrix $\hat{M}$ definies a rigid motion via
+  \[
+\begin{bmatrix}
+\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
 \end{bmatrix}
-  . \label{16}%
-\end{equation}
+=
+\begin{bmatrix} \hat{x} & \hat{y} & \hat{z}%
+\end{bmatrix}
+\cdot\hat{M}
+  \]
+  if and only if it is orthagonal.
+
+  \begin{hint}
+    Note that the square of the distance between $\hat{X}_{1}$ and
+    $\hat{X}_{1}$ is just the dot-product of the vector%
+    \[
+    \hat{V}=\hat{X}_{2}-\hat{X}_{1}%
+    \]
+    with itself. 
+  \end{hint}
+  \begin{hint}
+    Hence we must show that $\hat{M}$ is orthagonal if
+    \[
+    \left(  \hat{V}  \cdot\hat{M} \right) \bullet\left(
+    \hat{V}  \cdot\hat{M}\right)  =\hat{V}\bullet\hat{V}%
+    \]
+  \end{hint}
+\end{problem}
 
 
 \begin{problem}
-To start, let's assure you that orthogonal matrices are ``special'' by examining a nonorthogonal matrix. Suppose $\hat{M}$ is such that%
-\[
-\hat{M}\cdot\hat{M}^\transpose=\begin{bmatrix}
-1 & 2 & 0\\
-2 & 1 & 0\\
-0 & 0 & 1
-\end{bmatrix}.
-\]
-Find a vector $\hat{V}=\left(\hat{a},\hat{b},\hat{c}\right)  $ such that%
-\[
-\hat{V} \cdot\hat{M}\cdot\hat{M}^\transpose\cdot\hat{V}^\transpose\neq\hat{V}  \cdot\hat{V}
-^\transpose.
-\]
-
+  Consider
+  \[
+  \hat{M}=\begin{bmatrix}
+  \cos\theta & \sin\theta & 0\\
+  -\sin\theta & \cos\theta & 0\\
+  0 & 0 & 1
+  \end{bmatrix}
+  \]
+  Can you describe geometrically what this mapping is doing
+  to the points in euclidean space?
 \end{problem}
 
-In fact, reasoning as in this last Problem, one can show that, if a matrix
-$\hat{M}$ satisfies the condition $\left(  \ref{116}\right)  $ for
-\textit{all} vectors $\hat{V}$, then the matrix $\hat{M}$ also satisfies
-$\left(  \ref{16}\right)  $. A matrix $\hat{M}$ satisfying $\left(
-\ref{16}\right)  $ is called an \textit{orthogonal matrix}. [DS,316-321]
 
 \begin{problem}
 \label{14} Show that the matrix%
@@ -118,9 +113,24 @@ $\left(  \ref{16}\right)  $. A matrix $\hat{M}$ satisfying $\left(
 0 & 0 & 1
 \end{bmatrix}
 \]
-is orthogonal. Can you describe geometrically what this rigid motion is doing
-to the points in Euclidean $3$-space?
+is orthogonal. 
 \end{problem}
+
+
+\begin{problem}
+  Consider
+  \[
+  \hat{M}=\begin{bmatrix}
+  %
+  \cos\psi & 0 & \sin\psi\\
+  0 & 1 & 0\\
+  -\sin\psi & 0 & \cos\psi
+  \end{bmatrix}
+  \]
+  Can you describe geometrically what this mapping is doing
+  to the points in euclidean space?
+\end{problem}
+
 
 \begin{problem}
 Show that the matrix%
@@ -132,131 +142,59 @@ Show that the matrix%
 -\sin\psi & 0 & \cos\psi
 \end{bmatrix}
 \]
-is orthogonal. Can you describe geometrically what this rigid motion is doing
-to the points in Euclidean $3$-space?
+is orthogonal.
 \end{problem}
 
-For any curve%
-\[
-\hat{X}\left(  t\right)  =\left(  \hat{x}\left(  t\right)  ,\hat{y}\left(
-t\right)  ,\hat{z}\left(  t\right)  \right)  ,\;b\leq t\leq e,
-\]
-its length is%
-\[%
-%TCIMACRO{\dint \nolimits_{b}^{e}}%
-%BeginExpansion
-\int\nolimits_{b}^{e}
-%EndExpansion
-\sqrt{\left(  \frac{d\hat{X}}{dt}\right)  \cdot\left(  \frac{d\hat{X}}%
-{dt}\right)  ^\transpose}\,dt.
-\]
-Suppose now that the curve is moved by a transformation given by an orthogonal
-matrix $\hat{M}$. After it is moved, its length is given by%
-\[%
-%TCIMACRO{\dint \nolimits_{b}^{e}}%
-%BeginExpansion
-\int\nolimits_{b}^{e}
-\sqrt{\left(  \frac{d\left(  \hat{X}\cdot\hat{M}\right)  }{dt}\right)
-\cdot\left(  \frac{d\left(  \hat{X}\cdot\hat{M}\right)  }{dt}\right)  ^\transpose%
-}\,dt.
-\]
-But%
-\begin{align*}%
-%TCIMACRO{\dint \nolimits_{b}^{e}}%
-%BeginExpansion
-\int_{b}^{e}
-%EndExpansion
-\sqrt{\left(  \frac{d\left(  \hat{X}\cdot\hat{M}\right)  }{dt}\right)
-\cdot\left(  \frac{d\left(  \hat{X}\cdot\hat{M}\right)  }{dt}\right)  ^\transpose}\,dt
-&  =%
-%TCIMACRO{\dint \nolimits_{b}^{e}}%
-%BeginExpansion
-\int_{b}^{e}
-%EndExpansion
-\sqrt{\left(  \frac{d\hat{X}}{dt}\cdot\hat{M}\right)  \cdot\left(  \frac
-{d\hat{X}}{dt}\cdot\hat{M}\right)  ^\transpose}\,dt\\
-&  =%
-%TCIMACRO{\dint \nolimits_{b}^{e}}%
-%BeginExpansion
-\int_{b}^{e}
-%EndExpansion
-\sqrt{\left(  \frac{d\hat{X}}{dt}\cdot\hat{M}\right)  \cdot\left(  \hat{M}%
-^\transpose\cdot\frac{d\hat{X}}{dt}^\transpose\right)  }dt\\
-&  =%
-%TCIMACRO{\dint \nolimits_{b}^{e}}%
-%BeginExpansion
-\int\nolimits_{b}^{e}
-%EndExpansion
-\sqrt{\left(  \frac{d\hat{X}}{dt}\right)  \cdot\left(  \frac{d\hat{X}}%
-{dt}\right)  ^\transpose}\,dt.
-\end{align*}
 
-
-\begin{corollary}
+\begin{problem}
 If a curve
 \[
-\hat{X}\left(  t\right)  =\left(  \hat{x}\left(  t\right)  ,\hat{y}\left(
-t\right)  ,\hat{z}\left(  t\right)  \right)  ,\;b\leq t\leq e
+\hat{X}(t) = \left(\hat{x}(t),\hat{y}(t),\hat{z}(t)\right),\qquad b\le t\le e
 \]
-is moved by a transformation given by an orthogonal matrix $\hat{M}$, its
-length is unchanged.\pagebreak
-\end{corollary}
+is moved by a transformation given by an orthogonal matrix $\hat{M}$,
+show that its length is unchanged.
+\begin{hint}
+  Recall that the length of a curve is given by
+\[
+\int_{b}^{e} \sqrt{\left( \frac{d\hat{X}}{dt}\right) \cdot\left(
+  \frac{d\hat{X}}{dt}\right)^\transpose}\d t.
+\]  
+\end{hint}
+\end{problem}
 
-\subsection*{Formula in $\left(  x,y,z\right)  $-coordinates for rigid motions
-of Euclidean $3$-space}
 
-We now wish to figure out how to write the transformation $\left(
-\ref{12}\right)  $ in $\left(  x,y,z\right)  $-coordinates. This is a simple
-substitution problem:%
-\begin{equation}
+\subsection*{Formula in $(x,y,z)$-coordinates for rigid motions
+of euclidean space}
+
+We now wish to figure out how to convert a transformation
+\[
 \begin{bmatrix}
-%
+
 \underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
 \end{bmatrix}
   =\begin{bmatrix}
-%
 \hat{x} & \hat{y} & \hat{z}%
 \end{bmatrix}
           \cdot\hat{M} \label{100}%
-\end{equation}%
-\begin{gather*}
+\]
+from euclidean space to $(x,y,z)$-coordinates. Recall to convert a
+point from $(x,y,z)$-coordinates to euclidean coordinates, we write
+\[
 \begin{bmatrix}
-%
 \hat{x} & \hat{y} & \hat{z}%
 \end{bmatrix}
 =\begin{bmatrix}
-%
 x & y & Rz
 \end{bmatrix}
 =\begin{bmatrix}
-%
 x & y & z
 \end{bmatrix}
 \cdot\begin{bmatrix}
-%
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & R
-\end{bmatrix}\\
-\begin{bmatrix}
-%
-\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
-\end{bmatrix}
-=\begin{bmatrix}
-%
-\underline{x} & \underline{y} & R\underline{z}%
-\end{bmatrix}
-=\begin{bmatrix}
-%
-\underline{x} & \underline{y} & \underline{z}%
-\end{bmatrix}
-\cdot\begin{bmatrix}
-%
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & R
-\end{bmatrix}
-\end{gather*}
+\end{bmatrix}.
+\]
 So we have the diagram%
 \begin{image}
 \begin{tikzpicture}
@@ -267,12 +205,12 @@ So we have the diagram%
   \draw[->] (xyz) to node[above] {$\cdot\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R\end{smallmatrix}\right]$} (xyzHat);
   \draw[->] (xyz) to node[right] {$\cdot M = \text{?}$} (xyzBar);
   \draw[->] (xyzHat) to node[right] {$\cdot\hat{M}$} (xyzHatBar);
-  \draw[->] (xyzHatBar) to node [above] {$\cdot\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R^{-1}\end{smallmatrix}\right]$} (xyzBar);
+  \draw[->] (xyzBar) to node [above] {$\cdot\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R\end{smallmatrix}\right]$} (xyzHatBar);
 \end{tikzpicture}
 \end{image}
 \begin{problem}
 Starting from the equality $\left(\ref{100}\right)$ describing the
-transformation in Euclidean coordinates, explain why%
+transformation in euclidean coordinates, explain why%
 \[
 \begin{bmatrix}
 \underline{x} & \underline{y} & \underline{z}%
@@ -328,7 +266,7 @@ that is $M$ is the matrix that gives the transformation $\left(
 \ref{12}\right)  $ in $\left(  x,y,z\right)  $-coordinates.
 
 So how would we check whether a transformation given in $\left(  x,y,z\right)
-$-coordinates by a matrix $M$ preserves distances in Euclidean $3$-space?
+$-coordinates by a matrix $M$ preserves distances in euclidean space?
 Again, starting from $\left(  \ref{16}\right)  $ this is just a substitution
 problem:%
 \begin{gather*}
@@ -365,7 +303,7 @@ M=\begin{bmatrix}
 \begin{problem}
 Finish the matrix algebra computations just above to show that the condition
 that a transformation $M$ in $\left(  x,y,z\right)  $-coordinates preserves
-distances in Euclidean $3$-space is the condition that%
+distances in euclidean space is the condition that%
 \begin{equation}
 M\cdot\begin{bmatrix}
 %

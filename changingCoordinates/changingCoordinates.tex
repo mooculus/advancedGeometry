@@ -120,28 +120,33 @@ In short, we want to use $\left(  x,y,z\right)  $-coordinates to compute with,
 but we want lengths and angles to be the usual euclidean ones in $\left(
 \hat{x},\hat{y},\hat{z}\right)  $-coordinates.
 
-\begin{problem}\hfil
-\begin{enumerate}
-\item Suppose we have
+\begin{problem}
+  Suppose we have a curve in euclidean space that is a function of a
+  curve in the embedding space
 \[
-\hat{X}=\left(  \hat{x}\left(  x,y,z\right)  ,\hat{y}\left(  x,y,z\right)  ,\hat
-{z}\left(  x,y,z\right)  \right)
+\hat{X}(x,y,z)=\left(\hat{x}(x,y,z),\hat{y}(x,y,z),\hat{z}(x,y,z)  \right).
 \]
-where%
+Via composition, we can further make the curve $\hat{X}$ a function of $t$,
 \begin{align*}
-x  &  =f\left(  t\right) \\
-y  &  =g\left(  t\right) \\
-z  &  =h\left(  t\right)  .
+x &= f(t) \\
+y &= g(t) \\
+z &= h(t)  .
 \end{align*}
-State the chain rule for%
-\begin{align*}
-\frac{d\hat{x}}{dt}  &  =\\
-\frac{d\hat{y}}{dt}  &  =\\
-\frac{d\hat{z}}{dt}  &  =
-\end{align*}
+Use the chain rule to compute $\frac{d\hat{x}}{dt}$,
+$\frac{d\hat{y}}{dt}$, and $\frac{d\hat{z}}{dt}$.
+\begin{hint}
+  Recall that if $F$ is a differentiable function of $x$, $y$, and
+  $z$; and if $x$, $y$, and $z$ are all differentiable functions of
+  $t$, then the chain rule states
+  \[
+\dd[F]{t} = \nabla F \bullet\left(\dd[x]{t},\dd[y]{t},\dd[z]{t}\right).
+  \]
+\end{hint}
+\end{problem}
 
-
-\item Rewrite the chain rule in matrix notation and find $M$ such that
+\begin{problem}
+  With the same setting as in the previous problem, rewrite the result
+  of your computation in matrix notation to find $M$ such that
 \[
 \begin{bmatrix}
 \frac{d\hat{x}}{dt} & \frac{d\hat{y}}{dt} & \frac{d\hat{z}}{dt}%
@@ -151,7 +156,6 @@ State the chain rule for%
 \frac{dx}{dt} & \frac{dy}{dt} & \frac{dz}{dt}%
 \end{bmatrix}\cdot M.
 \]
-\end{enumerate}
 \end{problem}
 
 \begin{problem}
@@ -285,21 +289,56 @@ c_{2}%
 
 \end{definition}
 
-So, suppose we have a curve on the $R$-sphere in euclidean space
-but it is given to us in $X(t)=(x(t),y(t),z(t))$-coordinates. Then the
-length of that curve in euclidean space is
+\begin{problem}
+  Show that if a vector is given to us in $(x,y,z)$-coordinates as%
 \[
-\int_{b}^{e}\sqrt{\frac{dX}{dt}\bullet_{K}\frac{dX}{dt}}\,dt.
+V =\left(a,b,c\right)
 \]
+then its length in euclidean space is given by
+\[
+|V|_K=\sqrt{V\bullet_K V}.
+\]
+\end{problem}
+
+\begin{problem}
+  Consider all vectors in the embedding space with their tips on the
+  surface
+  \[
+  1=K(x^2+y^2)+z^2
+  \]
+  and their tails at the origin. What can you say about the length of
+  these vectors? Discuss your answer for various values of $K$.
+\end{problem}
+
+%% So, suppose we have a curve on the $R$-sphere in euclidean space
+%% but it is given to us in $X(t)=(x(t),y(t),z(t))$-coordinates. Then the
+%% length of that curve in euclidean space is
+%% \[
+%% \int_{b}^{e}\sqrt{\frac{dX}{dt}\bullet_{K}\frac{dX}{dt}}\,dt.
+%% \]
+
+\begin{problem}
+  Show that if two vectors are given to us in $(x,y,z)$-coordinates as%
+\begin{align*}
+V_{1}  &=\left(  a_{1},b_{1},c_{1}\right), \\
+V_{2}  &=\left(  a_{2},b_{2},c_{2}\right),
+\end{align*}
+then the angle between them in euclidean space is given by
+\[
+\theta = \arccos\left(\frac{V_1\bullet_K V_2}{\left| V_1\right|_K \cdot\left|V_2\right|_K }\right).
+\]
+\end{problem}
+
 
 
 \begin{problem}
-Show that, if we have any two vectors in euclidean three-space that
-are tangent to the $R$-sphere at some point on it, but the two vectors
-are given to us in $(x,y,z)$-coordinates as%
+%% Show that, if we have any two vectors in euclidean three-space that
+  %% are tangent to the $R$-sphere at some point on it, but the
+  
+Show that if two vectors are given to us in $(x,y,z)$-coordinates as%
 \begin{align*}
-V_{1}  &  =\left(  a_{1},b_{1},c_{1}\right) \\
-V_{2}  &  =\left(  a_{2},b_{2},c_{2}\right)  ,
+V_{1}  &  =\left(  a_{1},b_{1},c_{1}\right), \\
+V_{2}  &  =\left(  a_{2},b_{2},c_{2}\right),
 \end{align*}
 then the area of the parallelogram spanned by those two vectors in euclidean
 space is%
@@ -324,7 +363,6 @@ V_{1}^\transpose & V_{2}^\transpose%
 \end{bmatrix}
 \right) }.
 \]
-
 \end{problem}
 
 \textit{Moral of the story:} The dot-product rules! That is, if you
@@ -336,7 +374,7 @@ geometry, lengths, areas, angles, everything. And the set
 continues to make sense even when $K$ is
 negative. And as we will see later on, the definition of the $K$-dot
 product also makes sense for tangent vectors to that set when $K$ is
-negative.The geometry we get, when the constant $K$ is chosen to be
+negative. The geometry we get, when the constant $K$ is chosen to be
 negative is called a hyperbolic geometry. The geometry we get, when
 the constant $K$ is just chosen to be non-zero is called a
 non-euclidean geometry.  In fact all the non-euclidean $2$-dimensional
