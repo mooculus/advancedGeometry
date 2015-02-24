@@ -44,7 +44,7 @@ d\left( \hat{X}_{1}  \cdot\hat{M},\hat{X}_{2}
 \]
 \end{definition}
 
-It turns out that there is a special class of matricies that give rise
+It turns out that there is a special class of matrices that give rise
 to rigid motions.
 
 \begin{definition}
@@ -60,7 +60,7 @@ to rigid motions.
 \end{definition}
 
 \begin{problem}
-  Prove that a matrix $\hat{M}$ definies a rigid motion via
+  Prove that a matrix $\hat{M}$ defines a rigid motion via
   \[
 \begin{bmatrix}
 \underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
@@ -70,7 +70,7 @@ to rigid motions.
 \end{bmatrix}
 \cdot\hat{M}
   \]
-  if and only if it is orthagonal.
+  if and only if it is orthogonal.
 
   \begin{hint}
     Note that the square of the distance between $\hat{X}_{1}$ and
@@ -81,7 +81,7 @@ to rigid motions.
     with itself. 
   \end{hint}
   \begin{hint}
-    Hence we must show that $\hat{M}$ is orthagonal if
+    Hence we must show that $\hat{M}$ is orthogonal if
     \[
     \left(  \hat{V}  \cdot\hat{M} \right) \bullet\left(
     \hat{V}  \cdot\hat{M}\right)  =\hat{V}\bullet\hat{V}%
@@ -209,8 +209,7 @@ So we have the diagram%
 \end{tikzpicture}
 \end{image}
 \begin{problem}
-Starting from the equality $\left(\ref{100}\right)$ describing the
-transformation in euclidean coordinates, explain why%
+Using the diagram above, explain why%
 \[
 \begin{bmatrix}
 \underline{x} & \underline{y} & \underline{z}%
@@ -234,91 +233,88 @@ x & y & z
 
 \end{problem}
 
-So, if we let%
-\[
-M=\begin{bmatrix}
-%
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & R
-\end{bmatrix}
-  \cdot\hat{M}\cdot\begin{bmatrix}
-%
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & R^{-1}%
-\end{bmatrix}
-  ,
-\]
-then%
-\begin{equation}
-\begin{bmatrix}
-%
-\underline{x} & \underline{y} & \underline{z}%
-\end{bmatrix}
-  =\begin{bmatrix}
-%
-x & y & z
-\end{bmatrix}
-  \cdot M, \label{15}%
-\end{equation}
-that is $M$ is the matrix that gives the transformation $\left(
-\ref{12}\right)  $ in $\left(  x,y,z\right)  $-coordinates.
+%% So, if we let%
+%% \[
+%% M=\begin{bmatrix}
+%% %
+%% 1 & 0 & 0\\
+%% 0 & 1 & 0\\
+%% 0 & 0 & R
+%% \end{bmatrix}
+%%   \cdot\hat{M}\cdot\begin{bmatrix}
+%% %
+%% 1 & 0 & 0\\
+%% 0 & 1 & 0\\
+%% 0 & 0 & R^{-1}%
+%% \end{bmatrix}
+%%   ,
+%% \]
+%% then%
+%% \begin{equation}
+%% \begin{bmatrix}
+%% %
+%% \underline{x} & \underline{y} & \underline{z}%
+%% \end{bmatrix}
+%%   =\begin{bmatrix}
+%% %
+%% x & y & z
+%% \end{bmatrix}
+%%   \cdot M, \label{15}%
+%% \end{equation}
+%% that is $M$ is the matrix that gives the transformation $\left(
+%% \ref{12}\right)  $ in $\left(  x,y,z\right)  $-coordinates.
 
-So how would we check whether a transformation given in $\left(  x,y,z\right)
-$-coordinates by a matrix $M$ preserves distances in euclidean space?
-Again, starting from $\left(  \ref{16}\right)  $ this is just a substitution
-problem:%
-\begin{gather*}
-\hat{M}\cdot\hat{M}^\transpose=I\\
-M=\begin{bmatrix}
-%
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & R
-\end{bmatrix}
-  \cdot\hat{M}\cdot\begin{bmatrix}
-%
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & R^{-1}%
-\end{bmatrix}
- \\
-\begin{bmatrix}
-%
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & R^{-1}%
-\end{bmatrix}
-  \cdot M\cdot\begin{bmatrix}
-%
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & R
-\end{bmatrix}
-  =\hat{M}%
-\end{gather*}
+%% So how would we check whether a transformation given in $\left(  x,y,z\right)
+%% $-coordinates by a matrix $M$ preserves distances in euclidean space?
+%% Again, starting from $\left(  \ref{16}\right)  $ this is just a substitution
+%% problem:%
+%% \begin{gather*}
+%% \hat{M}\cdot\hat{M}^\transpose=I\\
+%% M=\begin{bmatrix}
+%% %
+%% 1 & 0 & 0\\
+%% 0 & 1 & 0\\
+%% 0 & 0 & R
+%% \end{bmatrix}
+%%   \cdot\hat{M}\cdot\begin{bmatrix}
+%% %
+%% 1 & 0 & 0\\
+%% 0 & 1 & 0\\
+%% 0 & 0 & R^{-1}%
+%% \end{bmatrix}
+%%  \\
+%% \begin{bmatrix}
+%% %
+%% 1 & 0 & 0\\
+%% 0 & 1 & 0\\
+%% 0 & 0 & R^{-1}%
+%% \end{bmatrix}
+%%   \cdot M\cdot\begin{bmatrix}
+%% %
+%% 1 & 0 & 0\\
+%% 0 & 1 & 0\\
+%% 0 & 0 & R
+%% \end{bmatrix}
+%%   =\hat{M}%
+%% \end{gather*}
 
 
 \begin{problem}
-Finish the matrix algebra computations just above to show that the condition
-that a transformation $M$ in $\left(  x,y,z\right)  $-coordinates preserves
-distances in euclidean space is the condition that%
-\begin{equation}
+Show that the condition that a transformation $M$ in
+$\left(x,y,z\right)$-coordinates preserves distances in euclidean
+space is the condition that%
+\[
 M\cdot\begin{bmatrix}
-%
 1 & 0 & 0\\
 0 & 1 & 0\\
-0 & 0 & K^{-1}%
+0 & 0 & K^{-1}
 \end{bmatrix}
   \cdot M^\transpose=\begin{bmatrix}
-%
 1 & 0 & 0\\
 0 & 1 & 0\\
-0 & 0 & K^{-1}%
-\end{bmatrix}
-  . \label{17}%
-\end{equation}
+0 & 0 & K^{-1}
+\end{bmatrix}. 
+\]
 
 \end{problem}
 
@@ -331,9 +327,8 @@ M:b\leq t\leq e\right\}  $ is the same as the total length of the curve
 $\left\{  \left(  x(t),y(t),z(t)\right)  :b\leq t\leq e\right\}  $.
 
 \begin{problem}
-Check that $\left(  \ref{17}\right)  $ is the correct condition by showing
-that any $3\times3$ matrix $M$ that satisfies $\left(  \ref{17}\right)  $ also
-satisfies%
+Verify that your condition above is the correct condition by showing
+that any $3\times3$ matrix $M$ that satisfying your condition also satisfies%
 \[
 \left(   V  \cdot M\right)  \bullet_{K}\left(   V
 \cdot M\right)  =V\bullet_{K}V
@@ -342,8 +337,9 @@ where%
 \[
 V=X_{2}-X_{1}.
 \]
-That is, the transformation given in $\left(  x,y,z\right)  $-coordinates by a
-matrix $M$ that satisfies $\left(  \ref{17}\right)  $ preserves the $K$-dot product.
+That is, the transformation given in $\left( x,y,z\right)
+$-coordinates by a matrix $M$ that satisfies your condition preserves
+the $K$-dot product.
 \end{problem}
 
 \begin{problem}
