@@ -60,7 +60,8 @@ to rigid motions.
 \end{definition}
 
 \begin{problem}
-  Prove that a matrix $\hat{M}$ defines a rigid motion via
+  Prove that a matrix $\hat{M}$ defines a rigid motion (a conrguence)
+  via
   \[
 \begin{bmatrix}
 \underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
@@ -88,6 +89,68 @@ to rigid motions.
     \]
   \end{hint}
 \end{problem}
+
+
+\begin{problem}
+  Show that, if $\hat{M}$ is orthagonal, then the transformation
+  \[
+  \begin{bmatrix}
+    \underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    \hat{x} & \hat{y} & \hat{z}
+  \end{bmatrix}
+  \cdot \hat{M}.
+  \]
+  takes the set of points $\left(\hat{x},\hat{y},\hat{z}\right)$ such
+  that
+\[
+\hat{x}^2 + \hat{y}^2 + \hat{z}^2 = R^2
+\]
+to the set of points
+$\left(\underline{\hat{x}},\underline{\hat{y}},\underline{\hat{z}}\right)$
+such that
+\[
+\underline{\hat{x}}^2 + \underline{\hat{y}}^{2} + \underline{\hat{z}}^{2}=R^2.
+\]
+That is, $\hat{M}$ gives a one-to-one and onto mapping of the $R$-sphere to
+itself.
+\begin{hint}
+  Write the equation
+  \[
+  \underline{\hat{x}}^2 + \underline{\hat{y}}^{2} + \underline{\hat{z}}^{2}=R^2
+  \]
+  as
+  \[
+  \begin{bmatrix}
+    \underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
+  \end{bmatrix}  
+  \cdot
+  \begin{bmatrix}
+    \underline{\hat{x}}\\
+    \underline{\hat{y}}\\
+    \underline{\hat{z}}
+  \end{bmatrix}  =R^2.
+  \]
+\end{hint}
+\end{problem}
+
+
+
+
+
+\begin{problem}
+Show that the set of orthogonal matrices $\hat{M}$ form a group.  That
+is, show that
+\begin{enumerate}
+\item the product of two orthogonal matrices is orthogonal,
+\item the identity matrix is orthogonal,
+\item the inverse matrix $\hat{M}^{-1}$ of a orthogonal matrix $\hat{M}$ is orthogonal.
+\end{enumerate}
+\end{problem}
+
+
 
 
 \begin{problem}
@@ -156,199 +219,10 @@ show that its length is unchanged.
 \begin{hint}
   Recall that the length of a curve is given by
 \[
-\int_{b}^{e} \sqrt{\left( \frac{d\hat{X}}{dt}\right) \cdot\left(
-  \frac{d\hat{X}}{dt}\right)^\transpose}\d t.
+\int_{b}^{e} \sqrt{\frac{d\hat{X}}{dt} \bullet \frac{d\hat{X}}{dt}}\d t.
 \]  
 \end{hint}
 \end{problem}
-
-
-\subsection*{Formula in $(x,y,z)$-coordinates for rigid motions
-of euclidean space}
-
-We now wish to figure out how to convert a transformation
-\[
-\begin{bmatrix}
-
-\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
-\end{bmatrix}
-  =\begin{bmatrix}
-\hat{x} & \hat{y} & \hat{z}%
-\end{bmatrix}
-          \cdot\hat{M} \label{100}%
-\]
-from euclidean space to $(x,y,z)$-coordinates. Recall to convert a
-point from $(x,y,z)$-coordinates to euclidean coordinates, we write
-\[
-\begin{bmatrix}
-\hat{x} & \hat{y} & \hat{z}%
-\end{bmatrix}
-=\begin{bmatrix}
-x & y & Rz
-\end{bmatrix}
-=\begin{bmatrix}
-x & y & z
-\end{bmatrix}
-\cdot\begin{bmatrix}
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & R
-\end{bmatrix}.
-\]
-So we have the diagram%
-\begin{image}
-\begin{tikzpicture}
-  \node (xyzHat) {$\begin{bmatrix}\hat{x} & \hat{y} & \hat{z}\end{bmatrix}\in\mathbb{R}^3$};
-  \node (xyzHatBar) [node distance=2cm,below of=xyzHat] {$\begin{bmatrix}\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}\end{bmatrix}$};
-  \node (xyz) [node distance=6cm,right of=xyzHat] {$\begin{bmatrix}x & y & z\end{bmatrix}\in\mathbb{R}^3$};
-  \node (xyzBar) [node distance=6cm,right of=xyzHatBar] {$\begin{bmatrix}\underline{x} & \underline{y} & \underline{z}\end{bmatrix}$};
-  \draw[->] (xyz) to node[above] {$\cdot\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R\end{smallmatrix}\right]$} (xyzHat);
-  \draw[->] (xyz) to node[right] {$\cdot M = \text{?}$} (xyzBar);
-  \draw[->] (xyzHat) to node[right] {$\cdot\hat{M}$} (xyzHatBar);
-  \draw[->] (xyzBar) to node [above] {$\cdot\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R\end{smallmatrix}\right]$} (xyzHatBar);
-\end{tikzpicture}
-\end{image}
-\begin{problem}
-Using the diagram above, explain why%
-\[
-\begin{bmatrix}
-\underline{x} & \underline{y} & \underline{z}%
-\end{bmatrix}
-=\begin{bmatrix}
-x & y & z
-\end{bmatrix}
-  \cdot\begin{bmatrix}
-%
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & R
-\end{bmatrix}
-  \cdot\hat{M}\cdot\begin{bmatrix}
-%
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & R^{-1}%
-\end{bmatrix}.
-\]
-
-\end{problem}
-
-%% So, if we let%
-%% \[
-%% M=\begin{bmatrix}
-%% %
-%% 1 & 0 & 0\\
-%% 0 & 1 & 0\\
-%% 0 & 0 & R
-%% \end{bmatrix}
-%%   \cdot\hat{M}\cdot\begin{bmatrix}
-%% %
-%% 1 & 0 & 0\\
-%% 0 & 1 & 0\\
-%% 0 & 0 & R^{-1}%
-%% \end{bmatrix}
-%%   ,
-%% \]
-%% then%
-%% \begin{equation}
-%% \begin{bmatrix}
-%% %
-%% \underline{x} & \underline{y} & \underline{z}%
-%% \end{bmatrix}
-%%   =\begin{bmatrix}
-%% %
-%% x & y & z
-%% \end{bmatrix}
-%%   \cdot M, \label{15}%
-%% \end{equation}
-%% that is $M$ is the matrix that gives the transformation $\left(
-%% \ref{12}\right)  $ in $\left(  x,y,z\right)  $-coordinates.
-
-%% So how would we check whether a transformation given in $\left(  x,y,z\right)
-%% $-coordinates by a matrix $M$ preserves distances in euclidean space?
-%% Again, starting from $\left(  \ref{16}\right)  $ this is just a substitution
-%% problem:%
-%% \begin{gather*}
-%% \hat{M}\cdot\hat{M}^\transpose=I\\
-%% M=\begin{bmatrix}
-%% %
-%% 1 & 0 & 0\\
-%% 0 & 1 & 0\\
-%% 0 & 0 & R
-%% \end{bmatrix}
-%%   \cdot\hat{M}\cdot\begin{bmatrix}
-%% %
-%% 1 & 0 & 0\\
-%% 0 & 1 & 0\\
-%% 0 & 0 & R^{-1}%
-%% \end{bmatrix}
-%%  \\
-%% \begin{bmatrix}
-%% %
-%% 1 & 0 & 0\\
-%% 0 & 1 & 0\\
-%% 0 & 0 & R^{-1}%
-%% \end{bmatrix}
-%%   \cdot M\cdot\begin{bmatrix}
-%% %
-%% 1 & 0 & 0\\
-%% 0 & 1 & 0\\
-%% 0 & 0 & R
-%% \end{bmatrix}
-%%   =\hat{M}%
-%% \end{gather*}
-
-
-\begin{problem}
-Show that the condition that a transformation $M$ in
-$\left(x,y,z\right)$-coordinates preserves distances in euclidean
-space is the condition that%
-\[
-M\cdot\begin{bmatrix}
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & K^{-1}
-\end{bmatrix}
-  \cdot M^\transpose=\begin{bmatrix}
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & K^{-1}
-\end{bmatrix}. 
-\]
-
-\end{problem}
-
-This is the condition (in $\left(  x,y,z\right)  $-coordinates) which affirms
-that the transformation which takes the path $\left(  x(t),y(t),z(t)\right)  $
-to the path $\left(  x(t),y(t),z(t)\right)  \cdot M$ preserves lengths of
-tangent vectors at corresponding points. Therefore, by integrating, the
-(total) length of the curve $\left\{  \left(  x(t),y(t),z(t)\right)  \cdot
-M:b\leq t\leq e\right\}  $ is the same as the total length of the curve
-$\left\{  \left(  x(t),y(t),z(t)\right)  :b\leq t\leq e\right\}  $.
-
-\begin{problem}
-Verify that your condition above is the correct condition by showing
-that any $3\times3$ matrix $M$ that satisfying your condition also satisfies%
-\[
-\left(   V  \cdot M\right)  \bullet_{K}\left(   V
-\cdot M\right)  =V\bullet_{K}V
-\]
-where%
-\[
-V=X_{2}-X_{1}.
-\]
-That is, the transformation given in $\left( x,y,z\right)
-$-coordinates by a matrix $M$ that satisfies your condition preserves
-the $K$-dot product.
-\end{problem}
-
-\begin{problem}
-Summarize the results from this section. In particular, indicate which
-results follow from the others.
-\begin{freeResponse}
-\end{freeResponse}
-\end{problem}
-
 
 
 \end{document}
