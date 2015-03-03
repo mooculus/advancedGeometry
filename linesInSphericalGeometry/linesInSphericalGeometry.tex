@@ -23,18 +23,53 @@ $K$-geometry:%
 \begin{align*}
 x(\sigma,\tau) &=R\cdot \sin\sigma\cdot \cos \tau\\
 y(\sigma,\tau) &=R\cdot \sin\sigma\cdot \sin\tau\\
-z(\sigma,\tau) &=\cos \sigma.
+z(\sigma,\tau) &=\cos \sigma,
 \end{align*}
+where $0\le \sigma\le\pi$ and $0\le \tau\le 2\pi$.
+
+\begin{image}
+  \includegraphics[width=3in]{spherePara.jpg}
+\end{image}
 
 
 \begin{problem}
-Show that these functions actually parametrize the $R$-sphere, that
-is, that%
+  Show that these functions actually parametrize the $R$-sphere.
+\begin{hint}
+This is an exercise in ``double-containment.'' To show the one direction, show
 \[
 K\left(x(\sigma,\tau) ^{2}+y(\sigma,\tau) ^{2}\right) +z(\sigma,\tau)^{2} = 1
 \]
-for all $(\sigma,\tau)$.
+for all $(\sigma,\tau)$. To show the other direction, appeal to the
+diagram above.
+\end{hint}
+\begin{freeResponse}
+  We will first show that the set determined by
+  \[
+  \left(x(\sigma,\tau), y(\sigma,\tau), z(\sigma,\tau)\right)
+  \]
+  lies on the surface
+  \[
+  K\left(x(\sigma,\tau) ^{2}+y(\sigma,\tau) ^{2}\right) +z(\sigma,\tau)^{2} = 1
+  \]
+  where $K=\frac{1}{R^2}>0$. Substituting we have
+  $K\left(x(\sigma,\tau) ^{2}+y(\sigma,\tau) ^{2}\right)
+  +z(\sigma,\tau)^{2}$
+  \begin{align*}
+    &=K\left((R\cdot\sin\sigma\cdot\cos\tau)^{2}+(R\cdot\sin\sigma\cdot\sin\tau)^{2}\right) +(\cos\sigma)^{2} \\
+    &= \sin^2\sigma\cdot\cos^2\tau+\sin^2\sigma\sin^2\tau + \cos^2\sigma \\
+    &= \sin^2\sigma(\cos^2\tau+\sin^2\tau) + \cos^2\sigma \\
+    &= \sin^2\sigma + \cos^2\sigma \\
+    &=1.
+  \end{align*}
+  Now we must show that every point on the surface can be obtained from
+  \[
+  \left(x(\sigma,\tau), y(\sigma,\tau), z(\sigma,\tau)\right).
+  \]
+  We see this from the diagram above. 
+\end{freeResponse}
 \end{problem}
+
+
 
 
 If we are going to describe paths on the $R$-sphere by paths in the
@@ -43,8 +78,8 @@ product in $(\sigma,\tau)$-coordinates so that we can compute the
 lengths of paths in these coordinates.
 
 \begin{problem}
-Suppose we have a curve in $K$-warped space that is a function of a
-$\sigma(t)$ and $\tau(t)$. Use the chain rule to compute
+Suppose we have a curve $X$ in $K$-warped space that is a function of
+a $\sigma(t)$ and $\tau(t)$. Use the chain rule to compute
 \[
 \dd[x]{t},\qquad \dd[y]{t}, \qquad \dd[z]{t},
 \]
@@ -59,7 +94,14 @@ and $\pp[z]{\tau}$.
 \dd[F]{t} = \nabla F \bullet\left(\dd[x]{t},\dd[y]{t},\dd[z]{t}\right).
   \]
 \end{hint}
-
+\begin{freeResponse}
+  Write
+  \begin{align*}
+    \dd[x]{t} &= \left(\pp[x]{\sigma},\pp[x]{\tau}\right)\bullet\left(\dd[\sigma]{t},\dd[\tau]{t}\right), \\
+    \dd[y]{t} &= \left(\pp[y]{\sigma},\pp[y]{\tau}\right)\bullet\left(\dd[\sigma]{t},\dd[\tau]{t}\right), \\
+    \dd[z]{t} &= \left(\pp[z]{\sigma},\pp[z]{\tau}\right)\bullet\left(\dd[\sigma]{t},\dd[\tau]{t}\right).  
+  \end{align*}
+\end{freeResponse}
 \end{problem}
 
 \begin{problem}
@@ -75,7 +117,96 @@ and $\pp[z]{\tau}$.
 \frac{d\sigma}{dt} & \frac{d\tau}{dt}
 \end{bmatrix}\cdot D_{\mathrm{sph}}.
 \]
+\begin{freeResponse}
+  \[
+  D_{\mathrm{sph}} =
+  \begin{bmatrix}
+    \pp[x]{\sigma} & \pp[y]{\sigma} & \pp[z]{\sigma} \\
+    \pp[x]{\tau}   & \pp[y]{\tau}   & \pp[z]{\tau}
+  \end{bmatrix}.
+  \]
+\end{freeResponse}
 \end{problem}
+
+
+\begin{problem}
+  Now find $M$ in terms of $K$, $\pp[x]{\sigma}$, $\pp[y]{\sigma}$,
+  $\pp[z]{\sigma}$, $\pp[x]{\tau}$, $\pp[y]{\tau}$, and $\pp[z]{\tau}$
+  such that
+  \[
+  \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)\bullet_K
+  \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)
+  =
+  \begin{bmatrix}
+    \dd[\sigma]{t} &  \dd[\tau]{t}
+  \end{bmatrix}
+  \cdot M
+  \cdot
+  \begin{bmatrix}
+    \dd[\sigma]{t} \\  \dd[\tau]{t}
+  \end{bmatrix}.
+  \]
+  Let $V_\mathrm{sph}$ be a vector in
+  $(\sigma,\tau)$-coordinates. Define
+  \[
+  V_\mathrm{sph} \bullet_\mathrm{sph} V_\mathrm{sph} = V_\mathrm{sph} \cdot M \cdot V_\mathrm{sph}^\transpose.
+  \]
+  \begin{freeResponse}
+    Working from the $K$-dot product, we see that
+    \begin{align*}
+      M &=
+      \begin{bmatrix}
+        \pp[x]{\sigma} & \pp[y]{\sigma} & \pp[z]{\sigma} \\
+        \pp[x]{\tau} & \pp[y]{\tau} & \pp[z]{\tau}
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & K^{-1}
+      \end{bmatrix}
+      \begin{bmatrix}
+        \pp[x]{\sigma} & \pp[x]{\tau}\\ 
+        \pp[y]{\sigma} & \pp[y]{\tau}\\
+        \pp[z]{\sigma} & \pp[z]{\tau}
+      \end{bmatrix}\\
+      &=
+      \begin{bmatrix}
+        \left(\pp[x]{\sigma}\right)^2 + \left(\pp[y]{\sigma}\right)^2 + \left(\pp[z]{\sigma}\right)^2K^{-1} & \pp[x]{\sigma}\pp[x]{\tau} + \pp[y]{\sigma}\pp[y]{\tau} + \pp[z]{\sigma}\pp[z]{\tau} K^{-1}\\
+        \pp[x]{\sigma}\pp[x]{\tau} + \pp[y]{\sigma}\pp[y]{\tau} + \pp[z]{\sigma}\pp[z]{\tau} K^{-1}       & \left(\pp[x]{\tau}\right)^2 + \left(\pp[y]{\tau}\right)^2 + \left(\pp[z]{\tau}\right)^2K^{-1}
+      \end{bmatrix}.
+    \end{align*}
+  \end{freeResponse}
+\end{problem}
+
+
+\begin{problem}
+  Set
+  \begin{align*}
+    x(\sigma,\tau) &=R\cdot \sin\sigma\cdot \cos \tau\\
+    y(\sigma,\tau) &=R\cdot \sin\sigma\cdot \sin\tau\\
+    z(\sigma,\tau) &=\cos \sigma,
+  \end{align*}
+  and show that $M$ from the problem above is
+  \[
+  M =
+  \begin{bmatrix}
+    R & 0 \\
+    0 & R\cdot\sin^2 \sigma
+  \end{bmatrix}.
+  \]
+  \begin{freeResponse}
+    Write
+    \begin{align*}
+      \pp[x]{\sigma} &= R\cdot \cos\sigma\cdot \cos \tau \\
+      \pp[y]{\sigma} &= R\cdot \cos\sigma\cdot \sin\tau\\
+      \pp[z]{\sigma} &= -\sin\sigma\\
+      \pp[x]{\tau} &= -R\cdot \sin\sigma\cdot \sin \tau\\
+      \pp[y]{\tau} &= R\cdot \sin\sigma\cdot \cos\tau\\
+      \pp[z]{\tau} &= 0. 
+    \end{align*}
+  \end{freeResponse}
+\end{problem}
+
 
 
 Notice that you can write a path on the $R$-sphere by giving a path
@@ -425,7 +556,7 @@ We will now give the spherical analogue of the Pythagorean Theorem.
   angle $\angle ACB$, and sides $a$ opposite $A$, $b$ opposite $B$,
   and $c$ opposite $C$, then
   \[
-\cos\left(\frac{c}{R}\right)=\cos\left(\frac{a}{R}\right)\left(\frac{b}{R}\right).
+\cos\left(\frac{c}{R}\right)=\cos\left(\frac{a}{R}\right)\cos\left(\frac{b}{R}\right).
   \]
 \end{theorem}
 
