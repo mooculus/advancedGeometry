@@ -269,50 +269,94 @@ itself.
 For $K\neq0$, show that the set of $K$-orthogonal matrices $M$ form a
 group.  That is, show that
 \begin{enumerate}
+\item multiplication of $K$-orthogonal matrices is associative, 
 \item the product of two $K$-orthogonal matrices is $K$-orthogonal,
 \item the identity matrix is $K$-orthogonal,
 \item the inverse matrix $M^{-1}$ of a $K$-orthogonal matrix $M$ is $K$-orthogonal.
 \end{enumerate}
 \end{problem}
 
+\begin{problem}
+  Convert the orthogonal matrix
+  \[
+  \hat{M}=\begin{bmatrix}
+  \cos\theta & \sin\theta & 0\\
+  -\sin\theta & \cos\theta & 0\\
+  0 & 0 & 1
+  \end{bmatrix}
+  \]
+  into a $K$-orthogonal matrix. Are you surprised? Why or why not.
+\end{problem}
+
+\begin{problem}
+  Convert the orthogonal matrix
+  \[
+  \hat{M}=\begin{bmatrix}
+  \cos\psi & 0 & \sin\psi\\
+  0 & 1 & 0\\
+  -\sin\psi & 0 & \cos\psi
+  \end{bmatrix}
+  \]
+  into a $K$-orthogonal matrix. Are you surprised? Why or why not.
+\end{problem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection*{Why use $K$-coordinates?}
 
-We saw that we could measure the usual Euclidean lengths of curves $\hat
-{X}\left(  t\right)  $ on the usual Euclidean $R$-sphere just in terms of the
-formulas $X\left(  t\right)  $ for their paths in $\left(  x,y,z\right)
-$-coordinates using the $K$-dot product, since lengths depended only on
-lengths of tangent vectors and%
+We have seen that we could measure the usual euclidean lengths of
+curves $\hat{X}(t)$ in terms of the formulas $X(t)$ in $K$-warped
+space using the $K$-dot product. The short reason for this is that
 \[
-\frac{d\hat{X}\left(  t\right)  }{dt}\bullet\frac{d\hat{X}\left(  t\right)
-}{dt}=\frac{dX\left(  t\right)  }{dt}\bullet_{K}\frac{dX\left(  t\right)
-}{dt}%
+\frac{d\hat{X}(t)}{dt}\bullet\frac{d\hat{X}(t)}{dt}=\frac{dX(t)}{dt}\bullet_{K}\frac{dX(t)}{dt}%
 \]
 where%
 \[
-\frac{dX\left(  t\right)  }{dt}\bullet_{K}\frac{dX\left(  t\right)  }%
-{dt}=\left(  \frac{dX\left(  t\right)  }{dt}\right)  \cdot\begin{bmatrix}
+\frac{dX(t)}{dt}\bullet_{K}\frac{dX(t)}%
+{dt}=\left(\frac{dX(t)}{dt}\right)\cdot\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
-\end{bmatrix}  \cdot\left(  \frac{dX\left(  t\right)  }{dt}\right)  ^\transpose.
+\end{bmatrix}  \cdot\left(  \frac{dX(  t)  }{dt}\right)  ^\transpose.
 \]
-In other words, the usual geometry of the sphere of radius $R$ is simply the
-geometry of the set $\left(  \ref{29}\right)  $ with $K=1/R^{2}$ and with
-lengths (and areas) given by the $K$-dot product. Said another way, we can do
-all of spherical geometry in $\left(  x,y,z\right)  $-coordinates. All we need
-is the set $\left(  \ref{29}\right)  $ and the $K$-dot product. But the set
-$\left(  \ref{29}\right)  $ continues to exist even if $K=0$ or $K<0$, and the
-$K$-dot product formula continues to make sense even if $K<0$. In short we
-have the following table:
+In other words, the usual geometry of the sphere of radius $R$ is
+simply the geometry of the set
+\[
+\{(x,y,z)\in\R^3:1 = K\left(x^2 + y^2\right) +z^2\}
+\]
+with $K=1/R^{2}$ and with lengths (and areas) given by the $K$-dot
+product. Said another way, we can do all of spherical geometry in
+$(x,y,z)$-coordinates. All we need is the set defined by the relation
+\[
+1 = K\left(x^2 + y^2\right) +z^2
+\]
+and the $K$-dot product. But the set definied by the equation above
+continues to exist even if $K=0$ or $K<0$, and the $K$-dot product
+formula continues to make sense even if $K<0$. In short we have the
+following table:
 
 \[
-{\renewcommand{\arraystretch}{2.5}
-\begin{tabular}{|c||c|c|c|}\hline
-                & Spherical ($K>0$) & Euclidean ($K=0$) & Hyperbolic ($K<0$)\\\hline\hline
-Surface in euclidean space & $\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=R^{2}$ & DNE  & DNE \\\hline
-Euclidean dot product & $\hat{V}\cdot \hat{V}^\transpose$ & DNE  & DNE\\\hline
-Surface in $K$-warped space & $1=K\left(  x^{2}+y^{2}\right)  +z^{2}$ & $1=K\left(  x^{2}+y^{2}\right)+z^{2}$ & $1=K\left(  x^{2}+y^{2}\right)  +z^{2}$\\\hline
-$K$-dot product & $V_{1}\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & K^{-1}\end{smallmatrix}\right] V_{2}^\transpose$ &  DNE & $V_{1}\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & K^{-1}\end{smallmatrix}\right]V_{2}^\transpose$\\\hline
+{\renewcommand{\arraystretch}{2.7}
+  \begin{tabular}{|c||c|c|c|}\hline
+    & \begin{minipage}{2cm}\begin{center}Spherical ($K>0$)\end{center}\end{minipage} & \begin{minipage}{2cm}\begin{center}Euclidean ($K=0$)\end{center}\end{minipage} & \begin{minipage}{2cm}\begin{center}Hyperbolic ($K<0$)\end{center}\end{minipage}\\\hline\hline
+    \begin{minipage}{2cm}\begin{center}Surface in \\ euclidean space\end{center}\end{minipage} & $\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=R^{2}$ & DNE  & DNE \\\hline
+    \begin{minipage}{2cm}\begin{center}Euclidean dot product\end{center}\end{minipage} & $\hat{V}\cdot \hat{V}^\transpose$ & DNE  & DNE\\\hline
+     \begin{minipage}{2cm}\begin{center}Surface in $K$-warped space\end{center}\end{minipage} & \multicolumn{3}{c|}{$1=K\left(  x^{2}+y^{2}\right)  +z^{2}$}\\\hline
+    \begin{minipage}{2cm}\begin{center}$K$-dot product\end{center}\end{minipage} & $V_{1}\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & K^{-1}\end{smallmatrix}\right] V_{2}^\transpose$ &  DNE & $V_{1}\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & K^{-1}\end{smallmatrix}\right]V_{2}^\transpose$\\\hline
 \end{tabular}}
 \]
 
@@ -323,10 +367,10 @@ some other type of two-dimensional geometry beyond plane geometry and
 spherical geometry. But the gap in the bottom row of the table is a
 bit disturbing. If we can't express the usual dot-product in plane
 geometry as the $K$-dot product for $K=0$, we can't pass smoothly from
-spherical through plane geometry to hyperbolic geometry using $\left(
-x,y,z\right) $-coordinates. We now examine two ways to produce
-coordinates uniformly for spherical, plane and hyperbolic geometry
-that overcome this difficulty.
+spherical through plane geometry to hyperbolic geometry using
+$(x,y,z)$-coordinates. We now examine two ways to produce coordinates
+uniformly for spherical, plane and hyperbolic geometry that overcome
+this difficulty.
 
 
 

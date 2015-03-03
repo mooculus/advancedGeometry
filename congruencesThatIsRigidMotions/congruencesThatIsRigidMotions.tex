@@ -60,7 +60,7 @@ to rigid motions.
 \end{definition}
 
 \begin{problem}
-  Prove that a matrix $\hat{M}$ defines a rigid motion (a conrguence)
+  Prove that a matrix $\hat{M}$ defines a rigid motion (a congruence)
   via
   \[
 \begin{bmatrix}
@@ -92,7 +92,7 @@ to rigid motions.
 
 
 \begin{problem}
-  Show that, if $\hat{M}$ is orthagonal, then the transformation
+  Show that, if $\hat{M}$ is orthogonal, then the transformation
   \[
   \begin{bmatrix}
     \underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}
@@ -137,6 +137,145 @@ itself.
 \end{problem}
 
 
+\begin{problem}
+Explain how the following diagram ``proves'' that functional
+composition is \textit{always} associative. Note, we are writing our
+functions on the \textit{right} of the argument.
+\begin{image}
+  \begin{tikzpicture}[scale=.5,geometryDiagrams]
+
+    \node at (-2,8) {$X$};
+    \draw[->] (-1.5,8)--(-.5,8);
+    \draw[fill=blue!10!white] (0,8) ellipse (0.166 and 0.5);% ellipse
+    \draw (.5,7) rectangle (2.5,9);
+    \draw (3,8) [partial ellipse=270:450:0.166 and 0.5];
+    \node at (1.5,8) {\Large $M_1$};
+    \draw (.5,8.5) [partial ellipse=180:270:.5 and 0.166];
+    \draw (.5,7.5) [partial ellipse=90:180:.5 and 0.166];
+    \draw (2.5,8.5) [partial ellipse=270:360:.5 and 0.166];
+    \draw (2.5,7.5) [partial ellipse=0:90:.5 and 0.166];
+
+    %\node at (5,8.6) {$X M_1$};
+    \draw[->] (3.5,8)--(6.5,8);
+    
+    \draw[fill=blue!10!white] (7,8) ellipse (0.166 and 0.5);% ellipse
+    \draw (7.5,7) rectangle (9.5,9);
+    \draw (10,8) [partial ellipse=270:450:0.166 and 0.5];
+    \node at (8.5,8) {\Large $M_2$};
+    \draw (7.5,8.5) [partial ellipse=180:270:.5 and 0.166];
+    \draw (7.5,7.5) [partial ellipse=90:180:.5 and 0.166];
+    \draw (9.5,8.5) [partial ellipse=270:360:.5 and 0.166];
+    \draw (9.5,7.5) [partial ellipse=0:90:.5 and 0.166];
+
+    \node at (12,8.6) {$X M_1 M_2$};
+    \draw[->] (10.5,8)--(13.5,8);
+    
+    \draw[fill=blue!10!white] (14,8) ellipse (0.166 and 0.5);% ellipse
+    \draw (14.5,7) rectangle (16.5,9);
+    \draw (17,8) [partial ellipse=270:450:0.166 and 0.5];
+    \node at (15.5,8) {\Large $M_3$};
+    \draw (14.5,8.5) [partial ellipse=180:270:.5 and 0.166];
+    \draw (14.5,7.5) [partial ellipse=90:180:.5 and 0.166];
+    \draw (16.5,8.5) [partial ellipse=270:360:.5 and 0.166];
+    \draw (16.5,7.5) [partial ellipse=0:90:.5 and 0.166];
+
+    \node at (20.5,8) {$X(M_1 M_2) M_3$};
+    \draw[->] (17.5,8)--(18.5,8);
+
+    \draw[dashed,gray] (-.4,6.6) rectangle (10.35,9.4);
+    \draw[dashed,gray] (6.6,2.6) rectangle (17.35,5.4);    
+    
+    %%%%%%%%%%%%%%%%%
+    
+    \node at (-2,4) {$X$};
+    \draw[->] (-1.5,4)--(-.5,4);
+    \draw[fill=blue!10!white] (0,4) ellipse (0.166 and 0.5);% ellipse
+    \draw (.5,3) rectangle (2.5,5);
+    \draw (3,4) [partial ellipse=270:450:0.166 and 0.5];
+    \node at (1.5,4) {\Large $M_1$};
+    \draw (.5,4.5) [partial ellipse=180:270:.5 and 0.166];
+    \draw (.5,3.5) [partial ellipse=90:180:.5 and 0.166];
+    \draw (2.5,4.5) [partial ellipse=270:360:.5 and 0.166];
+    \draw (2.5,3.5) [partial ellipse=0:90:.5 and 0.166];
+
+    \node at (5,4.6) {$X M_1$};
+    \draw[->] (3.5,4)--(6.5,4);
+    
+    \draw[fill=blue!10!white] (7,4) ellipse (0.166 and 0.5);% ellipse
+    \draw (7.5,3) rectangle (9.5,5);
+    \draw (10,4) [partial ellipse=270:450:0.166 and 0.5];
+    \node at (8.5,4) {\Large $M_2$};
+    \draw (7.5,4.5) [partial ellipse=180:270:.5 and 0.166];
+    \draw (7.5,3.5) [partial ellipse=90:180:.5 and 0.166];
+    \draw (9.5,4.5) [partial ellipse=270:360:.5 and 0.166];
+    \draw (9.5,3.5) [partial ellipse=0:90:.5 and 0.166];
+
+    %\node at (12,4.6) {$X M_1 M_2$};
+    \draw[->] (10.5,4)--(13.5,4);
+    
+    \draw[fill=blue!10!white] (14,4) ellipse (0.166 and 0.5);% ellipse
+    \draw (14.5,3) rectangle (16.5,5);
+    \draw (17,4) [partial ellipse=270:450:0.166 and 0.5];
+    \node at (15.5,4) {\Large $M_3$};
+    \draw (14.5,4.5) [partial ellipse=180:270:.5 and 0.166];
+    \draw (14.5,3.5) [partial ellipse=90:180:.5 and 0.166];
+    \draw (16.5,4.5) [partial ellipse=270:360:.5 and 0.166];
+    \draw (16.5,3.5) [partial ellipse=0:90:.5 and 0.166];
+
+    \node at (20.5,4) {$X M_1 (M_2 M_3)$};
+    \draw[->] (17.5,4)--(18.5,4);
+
+    %%%%%%%%%%%%%%%%%
+
+    \node at (-2,0) {$X$};
+    \draw[->] (-1.5,0)--(-.5,0);
+    \draw[fill=blue!10!white] (0,0) ellipse (0.166 and 0.5);% ellipse
+    \draw (.5,-1) rectangle (2.5,1);
+    \draw (3,0) [partial ellipse=270:450:0.166 and 0.5];
+    \node at (1.5,0) {\Large $M_1$};
+    \draw (.5,.5) [partial ellipse=180:270:.5 and 0.166];
+    \draw (.5,-.5) [partial ellipse=90:180:.5 and 0.166];
+    \draw (2.5,.5) [partial ellipse=270:360:.5 and 0.166];
+    \draw (2.5,-.5) [partial ellipse=0:90:.5 and 0.166];
+
+    \node at (5,.6) {$X M_1$};
+    \draw[->] (3.5,0)--(6.5,0);
+    
+    \draw[fill=blue!10!white] (7,0) ellipse (0.166 and 0.5);% ellipse
+    \draw (7.5,-1) rectangle (9.5,1);
+    \draw (10,0) [partial ellipse=270:450:0.166 and 0.5];
+    \node at (8.5,0) {\Large $M_2$};
+    \draw (7.5,.5) [partial ellipse=180:270:.5 and 0.166];
+    \draw (7.5,-.5) [partial ellipse=90:180:.5 and 0.166];
+    \draw (9.5,.5) [partial ellipse=270:360:.5 and 0.166];
+    \draw (9.5,-.5) [partial ellipse=0:90:.5 and 0.166];
+
+    \node at (12,.6) {$X M_1 M_2$};
+    \draw[->] (10.5,0)--(13.5,0);
+    
+    \draw[fill=blue!10!white] (14,0) ellipse (0.166 and 0.5);% ellipse
+    \draw (14.5,-1) rectangle (16.5,1);
+    \draw (17,0) [partial ellipse=270:450:0.166 and 0.5];
+    \node at (15.5,0) {\Large $M_3$};
+    \draw (14.5,.5) [partial ellipse=180:270:.5 and 0.166];
+    \draw (14.5,-.5) [partial ellipse=90:180:.5 and 0.166];
+    \draw (16.5,.5) [partial ellipse=270:360:.5 and 0.166];
+    \draw (16.5,-.5) [partial ellipse=0:90:.5 and 0.166];
+
+    \node at (20.5,0) {$X M_1 M_2 M_3$};
+    \draw[->] (17.5,0)--(18.5,0);
+
+    %%%%%%%%%%%%%%%%%
+
+    
+
+  \end{tikzpicture}
+\end{image}
+
+\end{problem}
+
+
+
 
 
 
@@ -144,6 +283,7 @@ itself.
 Show that the set of orthogonal matrices $\hat{M}$ form a group.  That
 is, show that
 \begin{enumerate}
+\item multiplication of orthogonal matrices is associative, 
 \item the product of two orthogonal matrices is orthogonal,
 \item the identity matrix is orthogonal,
 \item the inverse matrix $\hat{M}^{-1}$ of a orthogonal matrix $\hat{M}$ is orthogonal.
@@ -184,7 +324,6 @@ is orthogonal.
   Consider
   \[
   \hat{M}=\begin{bmatrix}
-  %
   \cos\psi & 0 & \sin\psi\\
   0 & 1 & 0\\
   -\sin\psi & 0 & \cos\psi
@@ -223,6 +362,15 @@ show that its length is unchanged.
 \]  
 \end{hint}
 \end{problem}
+
+
+\begin{problem}
+Summarize the results from this section. In particular, indicate which
+results follow from the others.
+\begin{freeResponse}
+\end{freeResponse}
+\end{problem}
+
 
 
 \end{document}
