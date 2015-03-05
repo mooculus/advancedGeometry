@@ -21,8 +21,8 @@ geometry.
 For our purposes, it will be convenient to parameterize the sphere in
 $K$-geometry:%
 \begin{align*}
-x(\sigma,\tau) &=R\cdot \sin\sigma\cdot \cos \tau\\
-y(\sigma,\tau) &=R\cdot \sin\sigma\cdot \sin\tau\\
+x(\sigma,\tau) &=R\cdot \sin\sigma\cdot \cos \tau,\\
+y(\sigma,\tau) &=R\cdot \sin\sigma\cdot \sin\tau,\\
 z(\sigma,\tau) &=\cos \sigma,
 \end{align*}
 where $0\le \sigma\le\pi$ and $0\le \tau\le 2\pi$.
@@ -33,7 +33,7 @@ where $0\le \sigma\le\pi$ and $0\le \tau\le 2\pi$.
 
 
 \begin{problem}
-  Show that these functions actually parametrize the $R$-sphere.
+  Show that these functions actually parameterize the $R$-sphere.
 \begin{hint}
 This is an exercise in ``double-containment.'' To show the one direction, show
 \[
@@ -130,7 +130,7 @@ and $\pp[z]{\tau}$.
 
 
 \begin{problem}
-  Now find $M$ in terms of $K$, $\pp[x]{\sigma}$, $\pp[y]{\sigma}$,
+  Now find $P_\mathrm{sph}$ in terms of $K$, $\pp[x]{\sigma}$, $\pp[y]{\sigma}$,
   $\pp[z]{\sigma}$, $\pp[x]{\tau}$, $\pp[y]{\tau}$, and $\pp[z]{\tau}$
   such that
   \[
@@ -140,21 +140,62 @@ and $\pp[z]{\tau}$.
   \begin{bmatrix}
     \dd[\sigma]{t} &  \dd[\tau]{t}
   \end{bmatrix}
-  \cdot M
+  \cdot P_\mathrm{sph}
   \cdot
   \begin{bmatrix}
     \dd[\sigma]{t} \\  \dd[\tau]{t}
   \end{bmatrix}.
   \]
-  Let $V_\mathrm{sph}$ be a vector in
-  $(\sigma,\tau)$-coordinates. Define
-  \[
-  V_\mathrm{sph} \bullet_\mathrm{sph} V_\mathrm{sph} = V_\mathrm{sph} \cdot M \cdot V_\mathrm{sph}^\transpose.
-  \]
   \begin{freeResponse}
-    Working from the $K$-dot product, we see that
+    Working from the $K$-dot product, we need that
     \begin{align*}
-      M &=
+    \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)\bullet_K
+    \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)
+    &=
+    \begin{bmatrix}
+      \dd[x]{t} & \dd[y]{t} & \dd[z]{t}
+    \end{bmatrix}
+    \begin{bmatrix}
+      1 & 0 & 0\\
+      0 & 1 & 0\\
+      0 & 0 & K^{-1}
+    \end{bmatrix}
+    \begin{bmatrix}
+      \dd[x]{t} \\ \dd[y]{t} \\ \dd[z]{t}
+    \end{bmatrix}\\
+    &=
+    \begin{bmatrix}
+      \frac{d\sigma}{dt} & \frac{d\tau}{dt}
+    \end{bmatrix}\cdot D_{\mathrm{sph}}\cdot
+    \begin{bmatrix}
+      1 & 0 & 0\\
+      0 & 1 & 0\\
+    0 & 0 & K^{-1}
+    \end{bmatrix}
+    \cdot
+    \left(
+    \begin{bmatrix}
+      \frac{d\sigma}{dt} & \frac{d\tau}{dt}
+    \end{bmatrix}\cdot D_{\mathrm{sph}}
+    \right)^\transpose\\
+    &=
+    \begin{bmatrix}
+      \frac{d\sigma}{dt} & \frac{d\tau}{dt}
+    \end{bmatrix}\cdot D_{\mathrm{sph}}\cdot
+    \begin{bmatrix}
+      1 & 0 & 0\\
+      0 & 1 & 0\\
+    0 & 0 & K^{-1}
+    \end{bmatrix}
+    \cdot
+    D_{\mathrm{sph}}^\transpose
+    \cdot \begin{bmatrix}
+      \frac{d\sigma}{dt} \\ \frac{d\tau}{dt}
+    \end{bmatrix}.
+  \end{align*}
+    Hence
+    \begin{align*}
+      P_\mathrm{sph} &=
       \begin{bmatrix}
         \pp[x]{\sigma} & \pp[y]{\sigma} & \pp[z]{\sigma} \\
         \pp[x]{\tau} & \pp[y]{\tau} & \pp[z]{\tau}
@@ -186,9 +227,9 @@ and $\pp[z]{\tau}$.
     y(\sigma,\tau) &=R\cdot \sin\sigma\cdot \sin\tau\\
     z(\sigma,\tau) &=\cos \sigma,
   \end{align*}
-  and show that $M$ from the problem above is
+  and show that $P_\mathrm{sph}$ from the problem above is
   \[
-  M =
+  P_\mathrm{sph} =
   \begin{bmatrix}
     R & 0 \\
     0 & R\cdot\sin^2 \sigma
@@ -196,20 +237,66 @@ and $\pp[z]{\tau}$.
   \]
   \begin{freeResponse}
     Write
-    \begin{align*}
-      \pp[x]{\sigma} &= R\cdot \cos\sigma\cdot \cos \tau \\
-      \pp[y]{\sigma} &= R\cdot \cos\sigma\cdot \sin\tau\\
-      \pp[z]{\sigma} &= -\sin\sigma\\
-      \pp[x]{\tau} &= -R\cdot \sin\sigma\cdot \sin \tau\\
-      \pp[y]{\tau} &= R\cdot \sin\sigma\cdot \cos\tau\\
+    \[
+    \begin{split}
+      \pp[x]{\sigma} &= R\cdot \cos\sigma\cdot \cos \tau, \\
+      \pp[y]{\sigma} &= R\cdot \cos\sigma\cdot \sin\tau,\\
+      \pp[z]{\sigma} &= -\sin\sigma,
+    \end{split}
+    \qquad
+    \begin{split}
+      \pp[x]{\tau} &= -R\cdot \sin\sigma\cdot \sin \tau,\\
+      \pp[y]{\tau} &= R\cdot \sin\sigma\cdot \cos\tau,\\
       \pp[z]{\tau} &= 0. 
+    \end{split}
+    \]
+    Now we see $\left(\pp[x]{\sigma}\right)^2 + \left(\pp[y]{\sigma}\right)^2 + \left(\pp[z]{\sigma}\right)^2K^{-1}$
+    \begin{align*}
+      &= \left(R\cdot \cos\sigma\cdot \cos \tau \right)^2 + \left(R\cdot \cos\sigma\cdot \sin\tau\right)^2 + \left(-\sin\sigma\right)^2K^{-1}\\
+      &= R^2\cdot \cos^2\sigma\cdot \cos^2 \tau + R^2\cdot \cos^2\sigma\cdot \sin^2\tau + R^2 \sin^2\sigma \\
+      &= R^2\cdot \cos^2\sigma\left(\cos^2 \tau + \sin^2\tau\right) + R^2 \sin^2\sigma \\
+      &= R^2\left(\cos^2\sigma + \sin^2\sigma\right) \\
+      &= R^2.
     \end{align*}
+    That $\pp[x]{\sigma}\pp[x]{\tau} + \pp[y]{\sigma}\pp[y]{\tau} + \pp[z]{\sigma}\pp[z]{\tau} K^{-1}$
+    \begin{align*}
+      &= -R^2\cdot \cos\sigma\cdot \cos \tau \cdot \sin\sigma\cdot \sin \tau + R^2\cdot \cos\sigma\cdot \cos \tau \cdot \sin\sigma\cdot \sin \tau\\
+      &= 0.
+    \end{align*}
+    And finally that $\left(\pp[x]{\tau}\right)^2 + \left(\pp[y]{\tau}\right)^2 + \left(\pp[z]{\tau}\right)^2K^{-1}$
+     \begin{align*}
+       &= \left(-R\cdot \sin\sigma\cdot \sin \tau \right)^2 + \left( R\cdot \sin\sigma\cdot \cos\tau \right)^2 \\
+       &= R^2\cdot \sin^2\sigma\cdot \sin^2 \tau + R^2\cdot \sin^2\sigma\cdot \cos^2\tau \\
+       &= R^2\cdot \sin^2\sigma\left(\sin^2 \tau + \cos^2\tau\right) \\
+       &= R^2\cdot \sin^2\sigma.
+     \end{align*}
+     Hence
+     \[
+     P_\mathrm{sph} =
+  \begin{bmatrix}
+    R^2 & 0 \\
+    0 & R^2\cdot\sin^2 \sigma
+  \end{bmatrix}.
+     \]
   \end{freeResponse}
 \end{problem}
 
+\begin{definition}
+  Let $V_\mathrm{sph}$ be a vector in
+  $(\sigma,\tau)$-coordinates. Define
+  \[
+  V_\mathrm{sph} \bullet_\mathrm{sph} V_\mathrm{sph} = V_\mathrm{sph} \cdot P_\mathrm{sph} \cdot V_\mathrm{sph}^\transpose.
+  \]
+\end{definition}
+
+\begin{warning}
+  Note, we have only defined $V_\mathrm{sph}\bullet_\mathrm{sph}
+  W_\mathrm{sph}$ for the (very) special case of when $V_\mathrm{sph}
+  = W_\mathrm{sph}$. However, this will be enough for our purposes.
+\end{warning}
 
 
-Notice that you can write a path on the $R$-sphere by giving a path
+Now notice that you can write a path on the $R$-sphere by giving a path
 $\left( \sigma(t),\tau(t)\right)$ in the $(\sigma,\tau)$-plane. In
 fact, you can use $\sigma$ as the parameter, and just write
 \[
@@ -317,10 +404,7 @@ additionally that
 %% in the $\left(  \sigma,\tau\right)  $-plane.
 %% \end{enumerate}
 %% \end{problem}
-
-\begin{problem}
- Use the previous problem with $\sigma = t$ to show that the length
- $L$ of any path on the $R$-sphere given by%
+ Now given a path on the $R$-sphere
  \[
  \left(\sigma,\tau(\sigma)\right),\qquad0\leq\sigma \leq\varepsilon
  \]
@@ -330,24 +414,12 @@ additionally that
  \]
  and%
  \[
-\tau\left(  \varepsilon\right)  =0
-\]
-is given by the formula%
+ \tau\left(  \varepsilon\right)  =0
+ \]
+ its length is given by the formula%
 \[
-L=R \int_{0}^{\varepsilon}
-\sqrt{\begin{bmatrix}
-    1 & \frac{d\tau}{d\sigma}
-  \end{bmatrix}\cdot
-  \begin{bmatrix}
-1 & 0\\ 0 & \sin^{2}\sigma
-\end{bmatrix}
-  \cdot
-  \begin{bmatrix}
-    1 & \frac{d\tau}{d\sigma}
-    \end{bmatrix}^{\transpose}} \d\sigma.
+L=\int_{0}^{\varepsilon} \sqrt{\left(1,\dd[\tau]{\sigma}\right)\bullet_\mathrm{sph} \left(1,\dd[\tau]{\sigma}\right)}\d\sigma.
 \]
-\end{problem}
-
 
 \begin{problem}
   Prove that the shortest path on the $R$-sphere from the North Pole
@@ -365,16 +437,47 @@ L=R \int_{0}^{\varepsilon}
     \[
     1+\sin ^{2}\sigma\cdot \left(\frac{d\tau }{d\sigma}\right)^{2}.
     \]
-    When is it minimial?
+    When is it minimal?
   \end{hint}
 
   \begin{freeResponse}
+    Write
+    \begin{align*}
+    L  &=\int_{0}^{\varepsilon} \sqrt{\left(1,\dd[\tau]{\sigma}\right)\bullet_\mathrm{sph} \left(1,\dd[\tau]{\sigma}\right)}\d\sigma\\
+    &= \int_{0}^{\varepsilon} \sqrt{
+      \begin{bmatrix} 1 & \dd[\tau]{\sigma}
+      \end{bmatrix} \cdot P_\mathrm{sph}\cdot
+      \begin{bmatrix} 1 & \dd[\tau]{\sigma}
+      \end{bmatrix}^\transpose}\d\sigma \\
+    &= \int_{0}^{\varepsilon} \sqrt{
+      \begin{bmatrix} 1 & \dd[\tau]{\sigma}
+      \end{bmatrix}
+      \begin{bmatrix}
+        R & 0 \\
+        0 & R\cdot\sin^2 \sigma
+      \end{bmatrix}
+      \begin{bmatrix} 1 \\ \dd[\tau]{\sigma}
+    \end{bmatrix}}\d\sigma \\
+    &= \int_{0}^{\varepsilon} \sqrt{
+      R^2+R^2\sin^{2}\sigma\cdot \left(\frac{d\tau }{d\sigma}\right)^{2}
+    }\d\sigma \\
+    &= R\int_{0}^{\varepsilon} \sqrt{
+      1+\sin^{2}\sigma\cdot \left(\frac{d\tau }{d\sigma}\right)^{2}
+    }\d\sigma.
+    \end{align*}
    Since $\sin^{2}\sigma$ is is positive for almost all $\sigma\in[
      0,\varepsilon] $, $L$ is minimal only when
    $\frac{d\tau}{d\sigma}$ is identically $0$. But this means that
    $\tau\left( \sigma\right) $ is a constant function. Since
    $\tau\left( 0\right) =0$, this means that $\tau\left( \sigma\right)
-   $ is identically $0$.
+   $ is identically $0$. Hence our path is determined by
+   \begin{align*}
+     x(\sigma,\tau) &=R\cdot \sin\sigma,\\
+     y(\sigma,\tau) &=0,\\
+     z(\sigma,\tau) &=\cos \sigma,
+   \end{align*}
+   and this corresponds to a circular arc embedded in the plane
+   $y=\hat{y}=0$.
   \end{freeResponse}
 
 \end{problem}
@@ -407,11 +510,54 @@ and the plane containing $(0,0,0)$, $X_{1}$ and $X_{2}$.
 \end{theorem}
 
 \begin{problem}
-  Explain in words how to prove this theorem by using the rigid
+  Explain in words how to prove this theorem by using the $K$-rigid
   motions
   \[
-\text{GIVE TWO ROTATIONS!}
+  M_\theta=
+  \begin{bmatrix}
+    \cos\theta & \sin\theta & 0\\
+    -\sin\theta & \cos\theta & 0\\
+    0 & 0 & 1
+  \end{bmatrix}
+  \qquad\text{and}\qquad
+  N_\psi=
+  \begin{bmatrix}
+    \cos\psi & 0 & R^{-1}\cdot\sin\psi\\
+    0 & 1 & 0\\
+    -R\cdot\sin\psi & 0 & \cos\psi
+  \end{bmatrix}.
   \]
+  \begin{hint}
+    $M_\theta$ is a $K$-rigid motion that rotates around the $z$-axis and
+    $N_\psi$ is a $K$-rigid motion that rotates around the $y$-axis.
+  \end{hint}
+  \begin{hint}
+    You should apply \textit{two} $K$-rigid motions of the form
+    $M_\theta$ (for different angles) and one $K$-rigid motion of the
+    form $N_\psi$---though not necessarily in that order!
+  \end{hint}
+  \begin{freeResponse}
+    Given $X_1$ and $X_2$, we may instead consider $X_1\cdot M_\theta$
+    and $X_2\cdot M_\theta$ where $\theta$ is chosen so that $X_1\cdot
+    M_\theta$ is in the plane $y=0$.
+
+    Next consider $X_1\cdot M_\theta\cdot N_\psi$ and $X_2\cdot
+    M_\theta\cdot N_\psi$ where $\psi$ is chosen so that $X_1\cdot
+    M_\theta\cdot N_\psi$ is at the North Pole.
+
+    Finally consider $X_1\cdot M_\theta\cdot N_\psi\cdot M_\varphi$
+    and $X_2\cdot M_\theta\cdot N_\psi\cdot M_\varphi$ where $\varphi$
+    is chosen so that $X_1\cdot M_\theta\cdot N_\psi\cdot M_\varphi$
+    is at the North Pole and $X_2\cdot M_\theta\cdot N_\psi\cdot
+    M_\varphi$ is in the plane $y=0$.
+
+    Now by our previous work, the shortest path between $X_1\cdot
+    M_\theta\cdot N_\psi\cdot M_\varphi$ and $X_2\cdot M_\theta\cdot
+    N_\psi\cdot M_\varphi$ is the great circular arc in the plane
+    $y=0$. Applying $M_\theta^{-1}\cdot N_\psi^{-1}\cdot
+    M_\varphi^{-1}$ to our ``moved'' points will move them back again,
+    and the shortest path is the transformed great circular arc.
+  \end{freeResponse}
 \end{problem}
 
 %% \begin{theorem}
@@ -524,44 +670,142 @@ geometry.
 \begin{problem}
   Given a line in spherical geometry lying entire in the plane $y=0$,
   \begin{align*}
-    x(\varepsilon) &= R\cdot\sin\varepsilon\\
-    y(\varepsilon) &= 0\\
+    x(\varepsilon) &= R\cdot\sin\varepsilon,\\
+    y(\varepsilon) &= 0,\\
     z(\varepsilon) &= \cos(\varepsilon),
   \end{align*}
   show that its length is exactly $R\cdot \varepsilon$.
   \begin{hint}
-    Compute the arclength from $0$ to $\varepsilon$ using the $K$-dot
-    product.
+    Use a previous problem.
   \end{hint}
+  \begin{freeResponse}
+    By a previous problem the length of this line is given by
+    \[
+    L=\int_{0}^{\varepsilon} 1 \d\sigma = R\cdot\varepsilon.
+    \]
+  \end{freeResponse}
 \end{problem}
 
 \begin{problem}
   Explain in words how to prove that given two points on $R$-sphere,
-  say $A$ and $B$, the length of the sphereical line connecting them
+  say $X_A$ and $X_B$, the length of the spherical line connecting them
   is given by
   \[
-  R\cdot \theta = \arccos\left(\frac{A\bullet_K B}{|A|_K\cdot |B|_K}\right).
+  R\cdot \varepsilon = \arccos\left(\frac{X_A\bullet_K X_B}{|X_A|_K\cdot |X_B|_K}\right).
   \]
-  by using the rigid motions
+  by using the $K$-rigid motions
   \[
-\text{GIVE TWO ROTATIONS!}
+   M_\theta=
+  \begin{bmatrix}
+    \cos\theta & \sin\theta & 0\\
+    -\sin\theta & \cos\theta & 0\\
+    0 & 0 & 1
+  \end{bmatrix}
+  \qquad\text{and}\qquad
+  N_\psi=
+  \begin{bmatrix}
+    \cos\psi & 0 & R^{-1}\cdot\sin\psi\\
+    0 & 1 & 0\\
+    -R\cdot\sin\psi & 0 & \cos\psi
+  \end{bmatrix}.
   \]
+  \begin{freeResponse}
+    The problem is essentially the same as a previous problem. Hence one must consider
+    \[
+    X_1\cdot M_\theta\cdot N_\psi\cdot M_\varphi \qquad\text{and}\qquad
+    X_1\cdot M_\theta\cdot N_\psi\cdot M_\varphi
+    \]
+    where $\theta$, $\psi$, and $\varphi$ are chosen to place $X_A$ on
+    the North Pole and $X_B$ in the plane $y=0$.
+
+    Now we know the distance between the points to be $R\cdot
+    \varepsilon$. Since $K$-rigid motions preserve distance and angle,
+    this completes the proof.
+  \end{freeResponse}
 \end{problem}
 
 
 We will now give the spherical analogue of the Pythagorean Theorem.
 
 \begin{theorem}[Spherical Pythagorean Theorem]
-  If $\triangle ABC$ is a right triangle on the $R$-sphere with right
-  angle $\angle ACB$, and sides $a$ opposite $A$, $b$ opposite $B$,
-  and $c$ opposite $C$, then
+  If $\triangle X_AX_BX_C$ is a right triangle on the $R$-sphere with right
+  angle $\angle X_AX_CX_B$, and side $a$ opposite $X_A$, $b$ opposite $X_B$,
+  and $c$ opposite $X_C$, then
   \[
 \cos\left(\frac{c}{R}\right)=\cos\left(\frac{a}{R}\right)\cos\left(\frac{b}{R}\right).
   \]
 \end{theorem}
 
+Let's see why this theorem is true.  We may via $K$-rigid motions
+place the triangle so that $X_C$ is at the North Pole, $X_A$ is in the
+plane $y=0$, and $X_B$ is in the plane $x=0$ (note $X_A$ and $X_B$ may
+be switched---if this is the case, simply rename them). In this case,q
+\begin{align*}
+  X_A &= (R\cdot \sin\alpha, 0, \cos\alpha),\\
+  X_B &= (0, R\cdot \sin \beta, \cos\beta).
+\end{align*}
+Hence the length of side $b$ is $R\cdot\alpha$. Using a rigid motion of the form
+\[
+M_\theta=
+\begin{bmatrix}
+  \cos\theta & \sin\theta & 0\\
+  -\sin\theta & \cos\theta & 0\\
+  0 & 0 & 1
+\end{bmatrix}
+\]
+when $\theta = \pi/2$ we see that the length of side $a$ is $R\cdot
+\beta$. Set
+\[
+\gamma = \arccos\left(\frac{X_A\bullet_K X_B}{|X_A|_K\cdot |X_B|_K}\right).
+\]
+Since we are working on the $R$-sphere,
+\begin{align*}
+  R^2\cdot \cos \gamma &= X_A\bullet_K X_B\\
+  &=
+  \begin{bmatrix}
+    R\cdot \sin\alpha &  0 & \cos\alpha
+  \end{bmatrix}
+    \begin{bmatrix}
+      1 & 0 & 0\\
+      0 & 1 & 0\\
+      0 & 0 & R^2
+    \end{bmatrix}
+    \begin{bmatrix}
+      0\\
+      R\sin\beta\\
+      \cos\beta
+    \end{bmatrix}\\
+   &=R^2 \cdot \cos\alpha \cdot \cos\beta.
+  \end{align*}
 \begin{problem}
-  PROVE IT
+  Explain how to progress from the fact that
+  \[
+  R^2\cdot \cos \gamma = R^2 \cdot \cos\alpha \cdot \cos\beta.
+  \]
+  to the conclusion of the theorem
+  \[
+  \cos\left(\frac{c}{R}\right)=\cos\left(\frac{a}{R}\right)\cos\left(\frac{b}{R}\right).
+  \]
+  \begin{freeResponse}
+    As we have seen
+    \[
+    \begin{split}
+      R\cdot \alpha &= a,\\
+      R\cdot \beta  &= b,\\
+      R\cdot \gamma &= c,
+    \end{split}
+    \qquad\text{so}\qquad
+    \begin{split}
+      \alpha &= \frac{a}{R},\\
+      \beta  &= \frac{b}{R},\\
+      \gamma &= \frac{c}{R},
+    \end{split}
+    \]
+    and hence
+    \[
+    \cos\left(\frac{c}{R}\right)=\cos\left(\frac{a}{R}\right)\cos\left(\frac{b}{R}\right).
+    \]
+  \end{freeResponse}
 \end{problem}
 
 
@@ -571,7 +815,38 @@ We will now give the spherical analogue of the Pythagorean Theorem.
   \cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots
   \]
 to show that for ``small'' triangles, the spherical Pythagorean
-Theorem reduces to the euclidean Pythagorean Theorem.
+Theorem reduces to the euclidean Pythagorean Theorem, meaning
+\[
+c^2 \approx a^2+b^2.
+\]
+\begin{freeResponse}
+  If
+  \[
+  \cos\left(\frac{c}{R}\right)=\cos\left(\frac{a}{R}\right)\cos\left(\frac{b}{R}\right),
+  \]
+  then we may replace each cosine with its Taylor series expansion
+  \[
+  1 - \frac{\left(\frac{c}{R}\right)^2}{2!} + \frac{\left(\frac{c}{R}\right)^4}{4!} - \frac{\left(\frac{c}{R}\right)^6}{6!} + \cdots
+  \]
+  \[
+  =\left(
+  1 - \frac{\left(\frac{a}{R}\right)^2}{2!} + \frac{\left(\frac{a}{R}\right)^4}{4!} - \frac{\left(\frac{a}{R}\right)^6}{6!} + \cdots
+  \right)
+  \left(
+  1 - \frac{\left(\frac{b}{R}\right)^2}{2!} + \frac{\left(\frac{b}{R}\right)^4}{4!} - \frac{\left(\frac{b}{R}\right)^6}{6!} + \cdots
+  \right).
+  \]
+  Expanding this out, and discarding higher-order terms (as they will
+  go to zero when $R$ is large relative to $a$, $b$, and $c$) we find
+  \[
+\left(\frac{c}{R}\right)^2 = \left(\frac{a}{R}\right)^2+\left(\frac{b}{R}\right)^2.
+\]
+Multipling both sides of the equation by $R^2$, we see that for a
+``small'' right triangle on a sphere,
+\[
+c^2 \approx a^2 +b^2.
+\]
+\end{freeResponse}
 \end{problem}
 
 
