@@ -5,7 +5,8 @@
 \title{Lines in spherical geometry}
 \begin{document}
 \begin{abstract}
-Here we examine ``lines'' in spherical geometry.
+Here we examine ``lines'' in spherical geometry and prove a spherical
+version of the Pythagorean Theorem.
 \end{abstract}
 \maketitle
 
@@ -25,7 +26,7 @@ x(\sigma,\tau) &=R\cdot \sin\sigma\cdot \cos \tau,\\
 y(\sigma,\tau) &=R\cdot \sin\sigma\cdot \sin\tau,\\
 z(\sigma,\tau) &=\cos \sigma,
 \end{align*}
-where $0\le \sigma\le\pi$ and $0\le \tau\le 2\pi$.
+where $0\le \sigma\le\pi$ and $0\le \tau<2\pi$.
 
 \begin{image}
   \includegraphics[width=3in]{spherePara.jpg}
@@ -223,8 +224,8 @@ and $\pp[z]{\tau}$.
 \begin{problem}
   Set
   \begin{align*}
-    x(\sigma,\tau) &=R\cdot \sin\sigma\cdot \cos \tau\\
-    y(\sigma,\tau) &=R\cdot \sin\sigma\cdot \sin\tau\\
+    x(\sigma,\tau) &=R\cdot \sin\sigma\cdot \cos \tau,\\
+    y(\sigma,\tau) &=R\cdot \sin\sigma\cdot \sin\tau,\\
     z(\sigma,\tau) &=\cos \sigma,
   \end{align*}
   and show that $P_\mathrm{sph}$ from the problem above is
@@ -506,7 +507,7 @@ shortest path between the two points is the path cut out by the set
 \[
 K\left(  x^{2}+y^{2}\right)  +z^{2}=1
 \]
-and the plane containing $(0,0,0)$, $X_{1}$ and $X_{2}$.
+and the plane containing $(0,0,0)$, $X_{1}$, and $X_{2}$.
 \end{theorem}
 
 \begin{problem}
@@ -554,8 +555,8 @@ and the plane containing $(0,0,0)$, $X_{1}$ and $X_{2}$.
     Now by our previous work, the shortest path between $X_1\cdot
     M_\theta\cdot N_\psi\cdot M_\varphi$ and $X_2\cdot M_\theta\cdot
     N_\psi\cdot M_\varphi$ is the great circular arc in the plane
-    $y=0$. Applying $M_\theta^{-1}\cdot N_\psi^{-1}\cdot
-    M_\varphi^{-1}$ to our ``moved'' points will move them back again,
+    $y=0$. Applying $M_\varphi^{-1}\cdot N_\psi^{-1}\cdot
+    M_\theta^{-1}$ to our ``moved'' points will move them back again,
     and the shortest path is the transformed great circular arc.
   \end{freeResponse}
 \end{problem}
@@ -839,13 +840,13 @@ c^2 \approx a^2+b^2.
   Expanding this out, and discarding higher-order terms (as they will
   go to zero when $R$ is large relative to $a$, $b$, and $c$) we find
   \[
-\left(\frac{c}{R}\right)^2 = \left(\frac{a}{R}\right)^2+\left(\frac{b}{R}\right)^2.
-\]
-Multipling both sides of the equation by $R^2$, we see that for a
-``small'' right triangle on a sphere,
-\[
-c^2 \approx a^2 +b^2.
-\]
+  \frac{-1}{2}\left(\frac{c}{R}\right)^2 = \frac{-1}{2}\left(\frac{a}{R}\right)^2+\frac{-1}{2}\left(\frac{b}{R}\right)^2.
+  \]
+  Multiplying both sides of the equation by $-2R^2$, we see that for a
+  ``small'' right triangle on a sphere,
+  \[
+  c^2 \approx a^2 +b^2.
+  \]
 \end{freeResponse}
 \end{problem}
 
