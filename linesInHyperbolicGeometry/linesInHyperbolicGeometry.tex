@@ -469,6 +469,10 @@ motions to add to our collection.
   Can you describe geometrically what this mapping is doing to the
   points in $K$-warped space?
   \begin{freeResponse}
+    This ridid motion ``rotates'' along the $K$-surface around the $y$-axis:
+    \begin{image}
+      \includegraphics[width=3in]{hyperRigidMotion.jpg}
+    \end{image}
   \end{freeResponse}
 \end{problem}
 
@@ -503,8 +507,9 @@ and the plane containing $(0,0,0)$, $X_{1}$, and $X_{2}$.
   \end{bmatrix}.
   \]
   \begin{hint}
-    $M_\theta$ is a $K$-rigid motion that rotates around the $z$-axis and
-    $N_\psi$ is a $K$-rigid motion that rotates around the $y$-axis.
+    $M_\theta$ is a $K$-rigid motion that rotates around the $z$-axis
+    and $N_\psi$ is a $K$-rigid motion that ``rotates'' along the
+    $K$-surface around the $y$-axis.
   \end{hint}
   \begin{hint}
     You should apply \textit{two} $K$-rigid motions of the form
@@ -528,10 +533,13 @@ and the plane containing $(0,0,0)$, $X_{1}$, and $X_{2}$.
 
     Now by our previous work, the shortest path between $X_1\cdot
     M_\theta\cdot N_\psi\cdot M_\varphi$ and $X_2\cdot M_\theta\cdot
-    N_\psi\cdot M_\varphi$ is the great circular arc in the plane
-    $y=0$. Applying $M_\varphi^{-1}\cdot N_\psi^{-1}\cdot
-    M_\theta^{-1}$ to our ``moved'' points will move them back again,
-    and the shortest path is the transformed great circular arc.
+    N_\psi\cdot M_\varphi$ is the curve formed by intersecting
+    \[
+    K(x^2+y^2)+z^2=1
+    \]
+    and the plane $y=0$. Applying $M_\varphi^{-1}\cdot
+    N_\psi^{-1}\cdot M_\theta^{-1}$ to our ``moved'' points will move
+    them back again, and the shortest path is the transformed curve.
   \end{freeResponse}
 \end{problem}
 
@@ -539,12 +547,12 @@ and the plane containing $(0,0,0)$, $X_{1}$, and $X_{2}$.
 
 
 \begin{definition}
-A \textbf{line} in \textbf{HG} will be a curve that extends infinitely
-in each direction and has the property that, given any two points
-$X_{1}$ and $X_{2}$ on the path, the shortest path between $X_{1}$ and
-$X_{2}$ lies along that curve. Lines in \textbf{HG} are the
-intersections of the $K$-geometry with planes through $\left(
-0,0,0\right) $. The length of the shortest path between two points in
+A \dfn{line} in hyperbolic geometry will be a curve that extends
+infinitely in each direction and has the property that, given any two
+points $X_{1}$ and $X_{2}$ on the path, the shortest path between
+$X_{1}$ and $X_{2}$ lies along that curve. Lines in hyperbolic
+geometry are the intersections of the $K$-geometry with planes through
+$(0,0,0)$. The length of the shortest path between two points in
 $K$-geometry will be called the $K$-distance.
 \end{definition}
 
@@ -555,11 +563,12 @@ To start we need some basic facts about lengths of lines in hyperbolic
 geometry.
 
 \begin{problem}
-  Given a line in spherical geometry lying entire in the plane $y=0$,
+  Given a line in hyperbolic geometry lying entire in the plane
+  $y=0$,
   \begin{align*}
-    x(\varepsilon) &= R\cdot\sin\varepsilon,\\
+    x(\varepsilon) &= |K|^{-1/2}\cdot\sinh\varepsilon,\\
     y(\varepsilon) &= 0,\\
-    z(\varepsilon) &= \cos(\varepsilon),
+    z(\varepsilon) &= \cosh(\varepsilon),
   \end{align*}
   show that its length is exactly $R\cdot \varepsilon$.
   \begin{hint}
@@ -576,8 +585,8 @@ geometry.
 \begin{problem}
   Explain in words how to prove that given two points on the surface
   \[
-  K(x^2 + y^2) + z^2 =1
-  \],
+  K(x^2 + y^2) + z^2 =1,
+  \]
   say $X_A$ and $X_B$, the length of the hyperbolic line connecting them
   is given by
   \[
@@ -592,25 +601,25 @@ geometry.
     0 & 0 & 1
   \end{bmatrix}
   \qquad\text{and}\qquad
-  N_\psi=
+ N_\psi=
   \begin{bmatrix}
-    \cos\psi & 0 & R^{-1}\cdot\sin\psi\\
+    \cosh\psi & 0 & |K|^{1/2}\cdot\sinh\psi\\
     0 & 1 & 0\\
-    -R\cdot\sin\psi & 0 & \cos\psi
+    |K|^{-1/2}\cdot\sinh\psi & 0 & \cos\psi
   \end{bmatrix}.
   \]
   \begin{freeResponse}
     The problem is essentially the same as a previous problem. Hence one must consider
     \[
-    X_1\cdot M_\theta\cdot N_\psi\cdot M_\varphi \qquad\text{and}\qquad
-    X_1\cdot M_\theta\cdot N_\psi\cdot M_\varphi
+    X_A\cdot M_\theta\cdot N_\psi\cdot M_\varphi \qquad\text{and}\qquad
+    X_B\cdot M_\theta\cdot N_\psi\cdot M_\varphi
     \]
     where $\theta$, $\psi$, and $\varphi$ are chosen to place $X_A$ on
     the North Pole and $X_B$ in the plane $y=0$.
 
-    Now we know the distance between the points to be $R\cdot
-    \varepsilon$. Since $K$-rigid motions preserve distance and angle,
-    this completes the proof.
+    Now we know the distance between the points to be
+    $|K|^{-1/2}\cdot\varepsilon$. Since $K$-rigid motions preserve
+    distance and angle, this completes the proof.
   \end{freeResponse}
 \end{problem}
 
@@ -618,23 +627,26 @@ geometry.
 We will now give the hyperbolic analogue of the Pythagorean Theorem.
 
 \begin{theorem}[Hyperbolic Pythagorean Theorem]
-  If $\triangle X_AX_BX_C$ is a right triangle on the $R$-sphere with right
-  angle $\angle X_AX_CX_B$, and side $a$ opposite $X_A$, $b$ opposite $X_B$,
-  and $c$ opposite $X_C$, then
+  If $\triangle X_AX_BX_C$ is a right triangle on the surface
   \[
-\cos\left(\frac{c}{R}\right)=\cos\left(\frac{a}{R}\right)\cos\left(\frac{b}{R}\right).
+  K(x^2+y^2)+z^2\qquad\text{where}\qquad K<0
+  \]
+  with right angle $\angle X_AX_CX_B$, and side $a$ opposite $X_A$,
+  $b$ opposite $X_B$, and $c$ opposite $X_C$, then
+  \[
+  \cosh\left(|K|^{1/2}\cdot c\right)=\cosh\left(|K|^{1/2}\cdot a\right)\cosh\left(|K|^{1/2}\cdot b\right).
   \]
 \end{theorem}
 
 Let's see why this theorem is true.  We may via $K$-rigid motions
 place the triangle so that $X_C$ is at the North Pole, $X_A$ is in the
 plane $y=0$, and $X_B$ is in the plane $x=0$ (note $X_A$ and $X_B$ may
-be switched---if this is the case, simply rename them). In this case,q
+be switched---if this is the case, simply rename them). In this case,
 \begin{align*}
-  X_A &= (R\cdot \sin\alpha, 0, \cos\alpha),\\
-  X_B &= (0, R\cdot \sin \beta, \cos\beta).
+  X_A &= (|K|^{-1/2}\cdot \sinh\alpha, 0, \cosh\alpha),\\
+  X_B &= (0, |K|^{-1/2}\cdot \sinh \beta, \cosh\beta).
 \end{align*}
-Hence the length of side $b$ is $R\cdot\alpha$. Using a rigid motion of the form
+Hence the length of side $b$ is $|K|^{-1/2}\cdot\alpha$. Using a rigid motion of the form
 \[
 M_\theta=
 \begin{bmatrix}
@@ -643,57 +655,57 @@ M_\theta=
   0 & 0 & 1
 \end{bmatrix}
 \]
-when $\theta = \pi/2$ we see that the length of side $a$ is $R\cdot
+when $\theta = \pi/2$ we see that the length of side $a$ is $|K|^{-1/2}\cdot
 \beta$. Set
 \[
 \gamma = \arccos\left(\frac{X_A\bullet_K X_B}{|X_A|_K\cdot |X_B|_K}\right).
 \]
-Since we are working on the $R$-sphere,
+Since we are working on the $K$-surface,
 \begin{align*}
-  R^2\cdot \cos \gamma &= X_A\bullet_K X_B\\
+  K^{-1}\cdot \cos \gamma &= X_A\bullet_K X_B\\
   &=
   \begin{bmatrix}
-    R\cdot \sin\alpha &  0 & \cos\alpha
+    |K|^{-1/2}\cdot \sinh\alpha &  0 & \cosh\alpha
   \end{bmatrix}
     \begin{bmatrix}
       1 & 0 & 0\\
       0 & 1 & 0\\
-      0 & 0 & R^2
+      0 & 0 & K^{-1}
     \end{bmatrix}
     \begin{bmatrix}
       0\\
-      R\sin\beta\\
-      \cos\beta
+      |K|^{-1/2}\sinh\beta\\
+      \cosh\beta
     \end{bmatrix}\\
-   &=R^2 \cdot \cos\alpha \cdot \cos\beta.
+   &=K^{-1} \cdot \cos\alpha \cdot \cos\beta.
   \end{align*}
 \begin{problem}
   Explain how to progress from the fact that
   \[
-  R^2\cdot \cos \gamma = R^2 \cdot \cos\alpha \cdot \cos\beta.
+  K^{-1}\cdot \cosh \gamma = K^{-1} \cdot \cosh\alpha \cdot \cosh\beta.
   \]
   to the conclusion of the theorem
   \[
-  \cos\left(\frac{c}{R}\right)=\cos\left(\frac{a}{R}\right)\cos\left(\frac{b}{R}\right).
+  \cosh\left(|K|^{1/2}\cdot c\right)=\cosh\left(|K|^{1/2} \cdot a\right)\cosh\left(|K|^{1/2}\cdot b\right).
   \]
   \begin{freeResponse}
     As we have seen
     \[
     \begin{split}
-      R\cdot \alpha &= a,\\
-      R\cdot \beta  &= b,\\
-      R\cdot \gamma &= c,
+      |K|^{-1/2}\cdot \alpha &= a,\\
+      |K|^{-1/2}\cdot \beta  &= b,\\
+      |K|^{-1/2}\cdot \gamma &= c,
     \end{split}
     \qquad\text{so}\qquad
     \begin{split}
-      \alpha &= \frac{a}{R},\\
-      \beta  &= \frac{b}{R},\\
-      \gamma &= \frac{c}{R},
+      \alpha &= |K|^{1/2} \cdot a,\\
+      \beta  &= |K|^{1/2} \cdot b,\\
+      \gamma &= |K|^{1/2} \cdot c,\\
     \end{split}
     \]
     and hence
     \[
-    \cos\left(\frac{c}{R}\right)=\cos\left(\frac{a}{R}\right)\cos\left(\frac{b}{R}\right).
+      \cosh\left(|K|^{1/2}\cdot c\right)=\cosh\left(|K|^{1/2} \cdot a\right)\cosh\left(|K|^{1/2}\cdot b\right).
     \]
   \end{freeResponse}
 \end{problem}
@@ -702,7 +714,7 @@ Since we are working on the $R$-sphere,
 \begin{problem}
   Use the Taylor series expansion of $\cos(x)$ centered around $x=0$,
   \[
-  \cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots
+  \cosh(x) = 1 + \frac{x^2}{2!} + \frac{x^4}{4!} + \frac{x^6}{6!} + \cdots
   \]
 to show that for ``small'' triangles, the spherical Pythagorean
 Theorem reduces to the euclidean Pythagorean Theorem, meaning
@@ -712,26 +724,26 @@ c^2 \approx a^2+b^2.
 \begin{freeResponse}
   If
   \[
-  \cos\left(\frac{c}{R}\right)=\cos\left(\frac{a}{R}\right)\cos\left(\frac{b}{R}\right),
+  \cosh\left(|K|^{1/2}\cdot c\right)=\cosh\left(|K|^{1/2}\cdot a\right)\cosh\left(|K|^{1/2}\cdot b\right),
   \]
   then we may replace each cosine with its Taylor series expansion
   \[
-  1 - \frac{\left(\frac{c}{R}\right)^2}{2!} + \frac{\left(\frac{c}{R}\right)^4}{4!} - \frac{\left(\frac{c}{R}\right)^6}{6!} + \cdots
+  1 + \frac{\left(|K|^{1/2}\cdot c\right)^2}{2!} + \frac{\left(|K|^{1/2}\cdot c\right)^4}{4!} +  \cdots
   \]
   \[
   =\left(
-  1 - \frac{\left(\frac{a}{R}\right)^2}{2!} + \frac{\left(\frac{a}{R}\right)^4}{4!} - \frac{\left(\frac{a}{R}\right)^6}{6!} + \cdots
+  1 + \frac{\left(|K|^{1/2}\cdot a\right)^2}{2!} + \frac{\left(|K|^{1/2}\cdot a\right)^4}{4!} +  \cdots
   \right)
   \left(
-  1 - \frac{\left(\frac{b}{R}\right)^2}{2!} + \frac{\left(\frac{b}{R}\right)^4}{4!} - \frac{\left(\frac{b}{R}\right)^6}{6!} + \cdots
+  1 + \frac{\left(|K|^{1/2}\cdot b\right)^2}{2!} + \frac{\left(|K|^{1/2}\cdot b\right)^4}{4!} + \cdots
   \right).
   \]
   Expanding this out, and discarding higher-order terms (as they will
-  go to zero when $R$ is large relative to $a$, $b$, and $c$) we find
+  go to zero when $a$, $b$, and $c$ are small) we find
   \[
-  \frac{-1}{2}\left(\frac{c}{R}\right)^2 = \frac{-1}{2}\left(\frac{a}{R}\right)^2+\frac{-1}{2}\left(\frac{b}{R}\right)^2.
+  \frac{-1}{2}\left(|K|^{1/2}\cdot c\right)^2 = \frac{-1}{2}\left(|K|^{1/2}\cdot a\right)^2+\frac{-1}{2}\left(|K|^{1/2}\cdot b\right)^2.
   \]
-  Multiplying both sides of the equation by $-2R^2$, we see that for a
+  Multiplying both sides of the equation by $-2\cdot |K|$, we see that for a
   ``small'' right triangle on a sphere,
   \[
   c^2 \approx a^2 +b^2.
