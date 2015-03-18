@@ -420,9 +420,9 @@ r^{2}\left(  1-Kx_{c}^{2}r^2\right)  & -Kx_{c}y_{c}r^4\\
 
 
 
-\section{Rigid motion in central projection coordinates}
+\section{Rigid motions in central projection coordinates}
 
-Suppose now we have a $K$-rigid motion%
+Suppose now we have a $K$-rigid motion
 \[
 \left(  \underline{x},\underline{y},\underline{z}\right)  =\left(
 x,y,z\right)  \cdot M
@@ -432,45 +432,100 @@ of $K$-geometry, given by a $K$-orthogonal matrix%
 M=\begin{bmatrix}
 m_{11} & m_{12} & m_{13}\\
 m_{21} & m_{22} & m_{23}\\
-m_{31} & m_{32} & m_{33}%
-\end{bmatrix} .
+m_{31} & m_{32} & m_{33}
+\end{bmatrix}.
 \]
-To see what this $K$-rigid motion looks like in central projection coordinates
-we simply do the matrix multiplication%
-\begin{gather*}
-\left(  \underline{x},\underline{y},\underline{z}\right)  =\left(
-x,y,z\right)  \cdot\begin{bmatrix}
-m_{11} & m_{12} & m_{13}\\
-m_{21} & m_{22} & m_{23}\\
-m_{31} & m_{32} & m_{33}%
-\end{bmatrix}\\
-=\left(  \left(  m_{11}x+m_{21}y+m_{31}z\right)  ,\left(  m_{12}%
-x+m_{22}y+m_{32}z\right)  ,\left(  m_{13}x+m_{23}y+m_{33}z\right)  \right)  .
-\end{gather*}
-Then%
-\begin{align}
-\underline{x_{c}}  &  =\frac{\underline{x}}{\underline{z}}\label{77}\\
-&  =\frac{m_{11}x+m_{21}y+m_{31}z}{m_{13}x+m_{23}y+m_{33}z}\nonumber\\
-&  =\frac{m_{11}\left(  x/z\right)  +m_{21}\left(  y/z\right)  +m_{31}}%
-{m_{13}\left(  x/z\right)  +m_{23}\left(  y/z\right)  +m_{33}}\nonumber\\
-&  =\frac{m_{11}x_{c}+m_{21}y_{c}+m_{31}}{m_{13}x_{c}+m_{23}y_{c}+m_{33}%
-}\nonumber
-\end{align}
-and similarly%
-\[
-\underline{y_{c}}=\frac{m_{12}x_{c}+m_{22}y_{c}+m_{32}}{m_{13}x_{c}%
-+m_{23}y_{c}+m_{33}}.
-\]
-So we write%
-\begin{gather*}
-\left(  \underline{x_{c}},\underline{y_{c}}\right)  =M_{c}\left(  x_{c}%
-,y_{c}\right) \\
-=\left(  \frac{m_{11}x_{c}+m_{21}y_{c}+m_{31}}{m_{13}x_{c}+m_{23}y_{c}+m_{33}%
-},\frac{m_{12}x_{c}+m_{22}y_{c}+m_{32}}{m_{13}x_{c}+m_{23}y_{c}+m_{33}%
-}\right)  .
-\end{gather*}
+Let's convert this $K$-rigid motion to a rigid motion in central
+projection coordinates. This new rigid motion will not necessarily be
+a mapping defined by a matrix, so we'll have to use some new notation.
 
 
+\begin{image}
+\begin{tikzpicture}
+  \node (xyz) {$\begin{bmatrix}x & y & z\end{bmatrix}\in\mathbb{R}^3$};
+  \node (xyzBar) [node distance=2cm,below of=xyz] {$\begin{bmatrix}\underline{x} & \underline{y} & \underline{z}\end{bmatrix}$};
+  \node (xcyc1) [node distance=4cm,right of=xyz] {$(x_c,y_c,1)\in\mathbb{R}^2\times\{1\}$};
+  \node (xcyc1Bar) [node distance=4cm,right of=xyzBar] {$(\underline{x_c},\underline{y_c},1)$};
+  \node (xcyc) [node distance=4cm,right of=xcyc1] {$(x_c,y_c)\in\mathbb{R}^2$};
+  \node (xcycBar) [node distance=4cm,right of=xcyc1Bar] {$(\underline{x_c},\underline{y_c})$};
+  \draw[->] (xcyc1) to node[above] {$\cdot r$} (xyz);
+  \draw[->] (xcyc1Bar) to node [above] {$\cdot\underline{r}$} (xyzBar);
+  \draw[left hook->] (xcyc) to (xcyc1);
+  \draw[left hook->] (xcycBar) to (xcyc1Bar);
+
+  \draw[->] (xyz) to node[right] {$\cdot M$} (xyzBar);
+  \draw[->] (xcyc1) to node[right] {$\mu_{c'}=?$} (xcyc1Bar);
+  \draw[->] (xcyc) to node[right] {$\mu_{c}=?$} (xcycBar);
+\end{tikzpicture}
+\end{image}
+
+\begin{problem}
+  Using the diagram above, explain why
+  \begin{align*}
+(\underline{x_{c}},\underline{y_{c}})  &= \mu_{c}(x_{c},y_{c}) \\
+  & =\left(\frac{m_{11}x_{c}+m_{21}y_{c}+m_{31}}{m_{13}x_{c}+m_{23}y_{c}+m_{33}},
+  \frac{m_{12}x_{c}+m_{22}y_{c}+m_{32}}{m_{13}x_{c}+m_{23}y_{c}+m_{33}
+}\right).
+  \end{align*}
+  \begin{freeResponse}
+    Let's follow this diagram around, starting at the right-most
+    corner. We want to start with $(x_c,y_c)$ and end with
+    $(\underline{x_c},\underline{y_c} = \mu_c(x_c,y_c)$. Since $\R^2$
+    embeeds canonically into $\R^2\times\{1\}$, we move to the
+    upper-middle position almost immedately. Now, via multiplication
+    by $r$, $(x_c,y_c,1)$ maps to $(x,y,z)$. From here we may use
+    matrix multiplication
+    \[
+    \begin{bmatrix}
+      \underline{x} & \underline{y} & \underline{z}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    x & y & z
+    \end{bmatrix}
+    \cdot\begin{bmatrix}
+    m_{11} & m_{12} & m_{13}\\
+    m_{21} & m_{22} & m_{23}\\
+    m_{31} & m_{32} & m_{33}
+    \end{bmatrix}.
+    \]
+    Expanded out, this is
+    \[
+    \begin{bmatrix}
+      m_{11}x+m_{21}y+m_{31}z & m_{12}x+m_{22}y+m_{32}z & 
+      m_{13}x+m_{23}y+m_{33}z
+    \end{bmatrix}.
+    \]
+    We are now at the bottom left-hand corner of our diagram. To move
+    to the lower position, we multiply by $\underline{r}^{-1}$, which
+    is equivalent to dividing by $\underline{z}$. Hence our element
+    becomes
+     \[
+    \begin{bmatrix}
+      \frac{m_{11}x+m_{21}y+m_{31}z}{m_{13}x+m_{23}y+m_{33}z} &
+      \frac{m_{12}x+m_{22}y+m_{32}z}{m_{13}x+m_{23}y+m_{33}z} & 1
+    \end{bmatrix}.
+    \]
+    To write this in terms of $x_c$ and $y_c$, we must divide each
+    numerator and denominator by $z$
+    \[
+    \begin{bmatrix}
+      \frac{m_{11}(x/z)+m_{21}(y/z)+m_{31}}{m_{13}(x/z)+m_{23}(y/z)+m_{33}}
+      &
+      \frac{m_{12}(x/z)+m_{22}(y/z)+m_{32}}{m_{13}(x/z)+m_{23}(y/z)+m_{33}}
+      & 1
+    \end{bmatrix}.
+    \]
+    Now since $x/z = x_c$ and $y/z =y_c$, we may pull this back to
+    $\R^2$ in the lower left-hand corner and write
+    \[
+    \mu_c(x_c,y_c) = \left(
+    \frac{m_{11}x_c+m_{21}y_c+m_{31}}{m_{13}x_c+m_{23}y_c+m_{33}},
+    \frac{m_{12}x_c+m_{22}y_c+m_{32}}{m_{13}x_c+m_{23}y_c+m_{33}}
+    \right).
+    \]
+  \end{freeResponse}
+\end{problem}
 
 
 \section{Length and angle in central projection coordinates}
