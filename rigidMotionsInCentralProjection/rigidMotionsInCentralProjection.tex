@@ -120,6 +120,9 @@ a mapping defined by a matrix, so we'll have to use some new notation.
 
 \section{From $K$-rigid motions to rigid motions in central projection}
 
+Now let's use our new tool to convert $K$-rigid motions to rigid motions in central projection. 
+
+
 
 \begin{problem}
   Assuming $K > 0$, consider the $K$-rigid motion of the $R$-sphere
@@ -131,7 +134,22 @@ a mapping defined by a matrix, so we'll have to use some new notation.
     0 & 0 & 1
   \end{bmatrix}.
   \]
-  Convert this to \mu_{c}
+  Can you describe geometrically what this mapping is doing to the
+  points in central projection?
+\end{problem}
+
+
+\begin{problem}
+  Assuming $K > 0$, consider the $K$-rigid motion of the $R$-sphere
+  \[
+  M_\theta=
+  \begin{bmatrix}
+    \cos\theta & \sin\theta & 0\\
+    -\sin\theta & \cos\theta & 0\\
+    0 & 0 & 1
+  \end{bmatrix}.
+  \]
+  Convert this to a rigid motion in central projection.
 \end{problem}
 
 
@@ -145,7 +163,22 @@ a mapping defined by a matrix, so we'll have to use some new notation.
     -R\cdot\sin\psi & 0 & \cos\psi
   \end{bmatrix}.
   \]
-  Convert this to \mu_{c}
+Can you describe geometrically what this mapping is doing to the
+points in central projection?  
+\end{problem}
+
+
+\begin{problem}
+  Assuming $K > 0$, consider the $K$-rigid motion of the $R$-sphere
+  \[
+  N_\psi=
+  \begin{bmatrix}
+    \cos\psi & 0 & R^{-1}\cdot\sin\psi\\
+    0 & 1 & 0\\
+    -R\cdot\sin\psi & 0 & \cos\psi
+  \end{bmatrix}.
+  \]
+  Convert this to a rigid motion in central projection.
 \end{problem}
 
 
@@ -157,14 +190,36 @@ a mapping defined by a matrix, so we'll have to use some new notation.
     \cosh\psi & 0 & |K|^{1/2}\cdot\sinh\psi\\
     0 & 1 & 0\\
     |K|^{-1/2}\cdot\sinh\psi & 0 & \cosh\psi
-    \]
-  Convert this to \mu_{c}
+  \end{bmatrix}
+  \]
+  Can you describe geometrically what this mapping is doing to the
+  points in central projection?
+\end{problem}
+
+  
+\begin{problem}
+  Assuming $K < 0$, consider the $K$-rigid motion of the $K$-surface
+  \[
+  N_\psi=
+  \begin{bmatrix}
+    \cosh\psi & 0 & |K|^{1/2}\cdot\sinh\psi\\
+    0 & 1 & 0\\
+    |K|^{-1/2}\cdot\sinh\psi & 0 & \cosh\psi
+  \end{bmatrix}
+  \]
+  Convert this to a rigid motion in central projection.
 \end{problem}
 
 
+\begin{problem}
+  When $K>0$, explain how to use the rigid motions given above to move
+  points to arbitrary locations in central projection.
+\end{problem}
 
 
-
+\begin{problem}
+  From your work above, deduce what the rigid motions \textit{must} be when $K=0$.
+\end{problem}
 
 
 \begin{problem}
