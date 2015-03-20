@@ -17,15 +17,13 @@ Let's project $K$-geometry,
 \]
 onto the plane $z=1$ using the origin $O=(0,0,0)$ as the center of
 projection:
-\[
-\includegraphics[width=3in]{MXAJBZ0K.jpg}
-\qquad
-\includegraphics[width=3in]{MXAJBZ0L.jpg}
-\]
+\begin{image}
+\includegraphics[width=5in]{KGeomCentralProjection.png}
+\end{image}
 Let's look at this from a different vantage point, say with our eye parallel to the plane $z=1$.
-\[
-\text{IMAGE: side view with $\lambda$ labeled}
-\]
+\begin{image}
+\includegraphics[width=5in]{2dCentralProjection.png}
+\end{image}
 Note, we are only projecting the top of the surface
 \[
 1=K\left(x^{2}+y^{2}\right)+z^{2} 
@@ -33,6 +31,31 @@ Note, we are only projecting the top of the surface
 onto the plane $z=1$. So when $K>0$, this is the ``Northern hemisphere'' of
 the sphere, when $K<0$, this is the upper hyperboloid, and when $K=0$,
 this is the plane $z=1$.
+
+\begin{problem}
+  Use similar triangles to explain why there is a number $\lambda$
+  such that for any given $(x,y,z)$
+  \[
+  \lambda\cdot(x_c,y_c,1) = (x,y,z).
+  \]
+  \begin{freeResponse}
+    Let $A = (x,y,z)$, $B= (x,y,0)$, $A_c = (x_c,y_c,1)$ and
+    $B_c=(x_c,y_c,0)$. From the diagram above we see that
+    \[
+    \angle AOB = \angle A_c O B_C.
+    \]
+    Moreover, since $\triangle AOB$ and $\triangle A_c O B_C$ are
+    right triangles, we now see that two of their angles have the same
+    measure, and hence all three have the same measure. This means
+    that these triangles are similar, and hence there they are
+    dilations of one another. Hence there is a scale-factor $\lambda$
+    such that
+    \[
+    \lambda\cdot(x_c,y_c,1) = (x,y,z).
+    \]
+  \end{freeResponse}
+\end{problem}
+
 
 \begin{problem}
   What range of values could $\lambda$ take when $K>0$?
@@ -298,6 +321,8 @@ and $\pp[z]{y_c}$.
   \end{freeResponse}
 \end{problem}
 
+Before we actually compute $P_c$, it will help to compute the partial
+derivatives.
 
 \begin{problem}
   Set
@@ -306,16 +331,22 @@ and $\pp[z]{y_c}$.
     y(x_c,y_c) &=y/\lambda,\\
     z(x_c,y_c) &=\lambda,
   \end{align*}
-  and show that $P_c$ from the problem above is
+  and show that
   \[
-  P_c =
-  \begin{bmatrix}
-    \left(Ky_c^2+1\right)\lambda^4 & -Kx_{c}y_{c}\lambda^4\\
-    -Kx_{c}y_{c}\lambda^4 & \left(Kx_c^2+1\right)\lambda^4
-  \end{bmatrix}.
-\]
-\begin{hint}
-  To compute the partial derivatives, work in the following way:
+  \begin{split}
+    \pp[x]{x_c} &=\lambda -Kx_c^2 \lambda^3,\\
+    \pp[y]{x_c} &=-Kx_cy_c \lambda^3,\\
+    \pp[z]{x_c} &=-Kx_c \lambda^3,
+  \end{split}
+  \qquad
+  \begin{split}
+    \pp[x]{y_c} &= -Kx_cy_c \lambda^3,\\
+    \pp[y]{y_c} &= \lambda - Ky_c^2 \lambda^3,\\
+    \pp[z]{y_c} &= -Ky_c \lambda^3.
+  \end{split}
+  \]
+  \begin{hint}
+  Work in the following way:
   \begin{enumerate}
   \item Recall $x = \lambda\cdot x_c$.
   \item Note that $\pp[x]{x_c} = \lambda + x_c \cdot \pp[\lambda]{x_c}$.
@@ -323,15 +354,8 @@ and $\pp[z]{y_c}$.
       and $y_c$.
   \end{enumerate}
 \end{hint}
-\begin{hint}
-  When simplifying, combine the terms with the highest degree of $\lambda$
-  and note that
-  \[
-  \lambda^{-2} = K\left(x_c^2 + y_c^2\right) + 1.
-  \]
-\end{hint}
-\begin{freeResponse}
-  Write
+  \begin{freeResponse}
+    Write
   \begin{align*}
     \pp[x]{x_c} &= \lambda  + x_c \cdot \pp[\lambda]{x_c}\\
     &= \lambda + x_c \cdot \pp{x_c} \left(K\left(x_c^2 + y_c^2\right)+1\right)^{-1/2}\\
@@ -358,10 +382,31 @@ and $\pp[z]{y_c}$.
       \pp[y]{y_c} &= \lambda - Ky_c^2 \lambda^3,\\
       \pp[z]{y_c} &= -Ky_c \lambda^3.
     \end{align*}
+  \end{freeResponse}
+\end{problem}
 
 
-    
-    Now we see $\left(\pp[x]{x_c}\right)^2 + \left(\pp[y]{x_c}\right)^2 + \left(\pp[z]{x_c}\right)^2K^{-1}$
+
+\begin{problem}
+With the same setting as above show that $P_c$ is
+  \[
+  P_c =
+  \begin{bmatrix}
+    \left(Ky_c^2+1\right)\lambda^4 & -Kx_{c}y_{c}\lambda^4\\
+    -Kx_{c}y_{c}\lambda^4 & \left(Kx_c^2+1\right)\lambda^4
+  \end{bmatrix}.
+\]
+
+\begin{hint}
+  When simplifying, combine the terms with the highest degree of $\lambda$
+  and note that
+  \[
+  \lambda^{-2} = K\left(x_c^2 + y_c^2\right) + 1.
+  \]
+\end{hint}
+\begin{freeResponse}
+  
+  Write $\left(\pp[x]{x_c}\right)^2 + \left(\pp[y]{x_c}\right)^2 +\left(\pp[z]{x_c}\right)^2K^{-1}$
     \begin{align*}
       &= \left(\lambda -Kx_c^2 \lambda^3\right)^2 + \left(-Kx_cy_c \lambda^3\right)^2 + \left(-Kx_c \lambda^3\right)^2K^{-1}\\
       &= \lambda^2 - 2Kx_c^2\lambda^4 + K^2x_c^4 \lambda^6+ K^2x_c^2y_c^2\lambda^6 + Kx_c^2\lambda^6\\
@@ -423,6 +468,113 @@ and $\pp[z]{y_c}$.
   \end{freeResponse}
 \end{problem}
 
+
+
+\section{When $K$ is negative, the infinite is finite}
+
+
+Notice that, if $K<0$, the equation of $K$-geometry becomes
+\[
+z^{2}-|K|\left(x^{2}+y^{2}\right)  =1.
+\]
+This describes a $K$-geometry forms a $2$-sheeted hyperboloid with the
+$z$-axis as major axis. We will only consider the sheet on which $z$
+is positive as forming the $K$-geometry. In plain English, this means
+we are doing geometry on this hyperboloid:
+\begin{image}
+\includegraphics[width=3in]{UpperHyperboloid.png}
+\end{image}
+Of critical importance, note
+
+\begin{center}
+  \textbf{this hyperboloid has infinite surface area.}
+\end{center}
+
+The hyperboloid above is obtained by rotating the hyperbola
+\[
+z^{2}-\left\vert K\right\vert x^{2}= 1
+\]
+in the $(x,z)$-plane around the $z$-axis.
+\begin{image}
+\includegraphics[width=3in]{UpperHyperbola.png}
+\end{image}
+
+
+\begin{problem}
+  Compute the (slant) asymptotes of the curve
+  \[
+  z^{2}-\left\vert K\right\vert x^{2}= 1
+  \]
+  \begin{hint}
+    First rewrite $z^{2}-|K|x^{2} =1$ as
+    \[
+    z = \sqrt{1+|K|x^2}
+    \]
+    and explain why this is acceptable.
+  \end{hint}
+  \begin{hint}
+    Explain why computing this limit
+    \[
+    \lim_{x\to \infty} \frac{\sqrt{1+|K|x^2}}{x}
+    \]
+    helps us compute (one) of the asymptotes.
+  \end{hint}
+  \begin{freeResponse}
+    Since we are only considering the upper hyperboloid, we need only
+    look at the upper hyperbola. Hence we may look at
+     \[
+    z = \sqrt{1+|K|x^2}.
+    \]
+    To compute the slope of one of the asymptotes of this curve,
+    compute
+    \[
+    \lim_{x\to \infty} \frac{\sqrt{1+|K|x^2}}{x}
+    \]
+    as this computes the ``end-behavior'' of the ``slope'' of the
+    curve. Write
+    \begin{align*}
+      \lim_{x\to \infty} \frac{\sqrt{1+|K|x^2}}{x} &= \lim_{x\to \infty} \frac{\sqrt{1+|K|x^2}}{x}\cdot \frac{1/x}{1/x}\\
+      &= \lim_{x\to \infty} \sqrt{1/x^2+|K|}\\
+      &= \sqrt{|K|}.
+    \end{align*}
+    Hence one asymptote is given by $z = x\sqrt{|K|}$. To compute the other asymptote, write
+    \begin{align*}
+      \lim_{x\to -\infty} \frac{\sqrt{1+|K|x^2}}{x} &= \lim_{x\to \infty} \frac{\sqrt{1+|K|x^2}}{x}\cdot \frac{1/(-x)}{1/(-x)}\\
+      &= \lim_{x\to \infty} -\sqrt{1/x^2+|K|}\\
+      &= -\sqrt{|K|}.
+    \end{align*}
+    Hence the other asymptote is given by $z = -x\sqrt{|K|}$.
+  \end{freeResponse}
+\end{problem}
+
+
+Rotating the asymptotes in the $(x,z)$-plane around the $z$-axis gives
+us the \textit{asymptotic cone}.  The central projection coordinates
+$(x_{c},y_{c})$ of $K$-geometry when $K<0$ only correspond to points
+in $K$-geometry when $(x_{c},y_{c},1)$ lies \textit{inside} the
+asymptotic cone.
+
+\begin{problem}
+  When $K<0$, find the radius of the disk in the plane $z=1$ whose
+  perimeter is determined by the asymptotic cone. Explain how we have
+  just made the ``infinite'' ``finite.''
+  \begin{hint}
+    Work with the asymptote(s) you found above.
+  \end{hint}
+  \begin{freeResponse}
+    We must find where $z = x\sqrt{|K|}$ intersects the line $z=1$. To do this, simply solve
+    \[
+    1 = x\sqrt{|K|}
+    \]
+    for $x$, and so the radius is $1/\sqrt{|K|}$.
+  \end{freeResponse}
+\end{problem}
+
+\begin{problem}
+  When $K<0$, what happens to the radius of disk determined by central
+  projection as $K$ goes to infinity. Explain why this makes perfect
+  sense.
+\end{problem}
 
 
 
