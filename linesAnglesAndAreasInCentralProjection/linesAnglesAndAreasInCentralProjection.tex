@@ -129,7 +129,7 @@ x=0 \qquad\text{and}\qquad y=0.
 We know from previous work that when $K>0$, the lines described above
 can be parameterized by
 \[
-(0, R\sin\varepsilon,\cos\varepsilon)\qquad\text{and}\qquad(R\cdot \sin\varepsilon, 0, \cos\varepsilon)
+(0, R\cdot \sin\varepsilon,\cos\varepsilon)\qquad\text{and}\qquad(R\cdot \sin\varepsilon, 0, \cos\varepsilon)
 \]
 and a similar result (left to you, bold reader) holds for when
 $K<0$. Note, these curves intersect at the North Pole when
@@ -145,7 +145,7 @@ $\varepsilon =0$.
 \begin{problem}
   Convert the curves
   \[
-  (0, R\sin\varepsilon,\cos\varepsilon)\qquad\text{and}\qquad(R\cdot \sin\varepsilon, 0, \cos\varepsilon)
+  (0, R\cdot\sin\varepsilon,\cos\varepsilon)\qquad\text{and}\qquad(R\cdot \sin\varepsilon, 0, \cos\varepsilon)
   \]
   to curves in central projection.
   \begin{freeResponse}
@@ -156,7 +156,7 @@ $\varepsilon =0$.
     \end{align*}
     for both
       \[
-  (0, R\sin\varepsilon,\cos\varepsilon)\qquad\text{and}\qquad(R\cdot
+  (0, R\cdot\sin\varepsilon,\cos\varepsilon)\qquad\text{and}\qquad(R\cdot
       \sin\varepsilon, 0 \cos\varepsilon).
       \]
       Hence we obtain the curves
@@ -168,11 +168,16 @@ $\varepsilon =0$.
 \end{problem}
 
 \begin{problem}
-  Compute the \textbf{euclidean} angle between the two curves
+  Imagine that the two curves
   \[
-  (0,R\cdot\tan\varepsilon)\qquad\text{and}\qquad(R\cdot\tan\varepsilon,0).
+  (0,R\cdot\tan\varepsilon)\qquad\text{and}\qquad(R\cdot\tan\varepsilon,0)
   \]
-How does this compare with the \textit{actual} $K$-dot product angle?
+  are in the euclidean plane and compute the angle between them at
+  $\varepsilon=0$.  How does this compare with the \textit{actual}
+  $K$-dot product angle?
+  \begin{hint}
+    Remember you should be looking at the tangent vectors.
+  \end{hint}
 \end{problem}
 
 \begin{problem}
@@ -187,16 +192,19 @@ How does this compare with the \textit{actual} $K$-dot product angle?
  \]
  to our curves
  \[
- (0, R\sin\varepsilon,\cos\varepsilon)\qquad\text{and}\qquad(R\cdot
+ (0, R\cdot\sin\varepsilon,\cos\varepsilon)\qquad\text{and}\qquad(R\cdot
  \sin\varepsilon, 0, \cos\varepsilon),
  \]
  and then compute the central projection of these curves.
 \end{problem}
 
 \begin{problem}
-  Compute the \textbf{euclidean} angle between the two curves found
-  above in central projection.  How does this compare with the
-  \textit{actual} $K$-dot product angle?
+  Imagine that the two curves found above are in the euclidean plane
+  and compute the angle between them at $\varepsilon = 0$.  How does
+  this compare with the \textit{actual} $K$-dot product angle?
+  \begin{hint}
+    Remember you should be looking at the tangent vectors.
+  \end{hint}
 \end{problem}
 
 \begin{problem}
@@ -327,14 +335,14 @@ Hence now we see
     \end{align*}
     However, $\lambda = \frac{1}{K\left(x_c^2+y_c^2\right)+1}$, so
     \[
-    \sqrt{\det P_c} = \frac{1}{\left(K\left(x_c^2+y_c^2\right)+1\right)^{3/2}}
+    \sqrt{\det P_c} = \frac{1}{\left(K\left(x_c^2+y_c^2\right)+1\right)^{3/2}}.
     \]
   \end{freeResponse}
 \end{problem}
 
 At this point we see we are interested in the following integral
 \[
-\int_{T_c} \frac{1}{\left(K\left(x_c^2+y_c^2\right)+1\right)^{3/2}} \d x_c\d y_c.
+\int_{L_c} \frac{1}{\left(K\left(x_c^2+y_c^2\right)+1\right)^{3/2}} \d x_c\d y_c.
 \]
 
 \begin{problem}
@@ -344,9 +352,9 @@ At this point we see we are interested in the following integral
   \end{image}
   convert
   \[
-  \int_{T_c} \frac{1}{\left(K\left(x_c^2+y_c^2\right)+1\right)^{3/2}} \d x_c\d y_c.
+  \int_{L_c} \frac{1}{\left(K\left(x_c^2+y_c^2\right)+1\right)^{3/2}} \d x_c\d y_c.
   \]
-  to polar coordinates.
+  to polar coordinates and compute the integral.
   \begin{hint}
     Recall that to covert to polar coordinates, set
     \begin{align*}
@@ -357,18 +365,18 @@ At this point we see we are interested in the following integral
   \end{hint}
   \begin{freeResponse}
     \[
-    \int_{T_c}
+    \int_{L_c}
     \frac{1}{\left(K\left(x_c^2+y_c^2\right)+1\right)^{3/2}} \d x_c\d
-    y_c = \int_0^\alpha \int_0^\infty \frac{1}{\left(r^2+1\right)^{3/2}} r\d r \d \theta.
+    y_c = \int_0^\alpha \int_0^\infty \frac{1}{K\left(r^2+1\right)^{3/2}} r\d r \d \theta.
     \]
+    Integrating this from the inside-out we find
+    \begin{align*}
+      \int_0^\alpha \int_0^\infty \frac{1}{K\left(r^2+1\right)^{3/2}} r\d r \d \theta &= \int_0^\alpha \eval{\frac{-1}{K\left(r^2+1\right)^{1/2}}}_0^\infty \d \theta\\
+      &= \int_0^\alpha \frac{1}{K} \d \theta\\
+      &= \frac{\alpha}{K}.   
+    \end{align*}
+    Recalling that $K = \frac{1}{R^2}$ we find our final answer is $\alpha \cdot R^2$.
   \end{freeResponse}
-\end{problem}
-
-\begin{problem}
-  Now set $u= r^2+1$ and $\d u = 2rdr$, and compute
-  \[
-  \int_0^\alpha \int_0^\infty \frac{1}{\left(r^2+1\right)^{3/2}} r\d r \d \theta.
-  \]
 \end{problem}
 
 \begin{problem}
