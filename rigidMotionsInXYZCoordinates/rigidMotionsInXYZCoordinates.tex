@@ -45,10 +45,10 @@ So we have the diagram%
   \node (xyzHatBar) [node distance=2cm,below of=xyzHat] {$\begin{bmatrix}\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}\end{bmatrix}$};
   \node (xyz) [node distance=6cm,right of=xyzHat] {$\begin{bmatrix}x & y & z\end{bmatrix}\in\mathbb{R}^3$};
   \node (xyzBar) [node distance=6cm,right of=xyzHatBar] {$\begin{bmatrix}\underline{x} & \underline{y} & \underline{z}\end{bmatrix}$};
-  \draw[->] (xyz) to node[above] {$\cdot\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R\end{smallmatrix}\right]$} (xyzHat);
-  \draw[->] (xyz) to node[right] {$\cdot M = \text{?}$} (xyzBar);
-  \draw[->] (xyzHat) to node[right] {$\cdot\hat{M}$} (xyzHatBar);
-  \draw[->] (xyzBar) to node [above] {$\cdot\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R\end{smallmatrix}\right]$} (xyzHatBar);
+  \draw[|->] (xyz) to node[above] {$\cdot\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R\end{smallmatrix}\right]$} (xyzHat);
+  \draw[|->] (xyz) to node[right] {$\cdot M = \text{?}$} (xyzBar);
+  \draw[|->] (xyzHat) to node[right] {$\cdot\hat{M}$} (xyzHatBar);
+  \draw[|->] (xyzBar) to node [above] {$\cdot\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R\end{smallmatrix}\right]$} (xyzHatBar);
 \end{tikzpicture}
 \end{image}
 \begin{problem}

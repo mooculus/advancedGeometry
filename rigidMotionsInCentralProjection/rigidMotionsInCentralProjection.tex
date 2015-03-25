@@ -38,14 +38,14 @@ a mapping defined by a matrix, so we'll have to use some new notation.
   \node (xcyc1Bar) [node distance=4cm,right of=xyzBar] {$(\underline{x_c},\underline{y_c},1)$};
   \node (xcyc) [node distance=4cm,right of=xcyc1] {$(x_c,y_c)\in\mathbb{R}^2$};
   \node (xcycBar) [node distance=4cm,right of=xcyc1Bar] {$(\underline{x_c},\underline{y_c})$};
-  \draw[->] (xcyc1) to node[above] {$\cdot \lambda$} (xyz);
-  \draw[->] (xcyc1Bar) to node [above] {$\cdot\underline{\lambda}$} (xyzBar);
-  \draw[left hook->] (xcyc) to (xcyc1);
-  \draw[left hook->] (xcycBar) to (xcyc1Bar);
+  \draw[|->] (xcyc1) to node[above] {$\cdot \lambda$} (xyz);
+  \draw[|->] (xcyc1Bar) to node [above] {$\cdot\underline{\lambda}$} (xyzBar);
+  \draw[|->] (xcyc) to (xcyc1);
+  \draw[|->] (xcycBar) to (xcyc1Bar);
 
-  \draw[->] (xyz) to node[right] {$\cdot M$} (xyzBar);
-  \draw[->] (xcyc1) to node[right] {$\mu_{c'}=?$} (xcyc1Bar);
-  \draw[->] (xcyc) to node[right] {$\mu_{c}=?$} (xcycBar);
+  \draw[|->] (xyz) to node[right] {$\cdot M$} (xyzBar);
+  \draw[|->] (xcyc1) to node[right] {$\mu_{c'}=?$} (xcyc1Bar);
+  \draw[|->] (xcyc) to node[right] {$\mu_{c}=?$} (xcycBar);
 \end{tikzpicture}
 \end{image}
 

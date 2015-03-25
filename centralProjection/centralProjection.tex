@@ -249,6 +249,7 @@ and $\pp[z]{y_c}$.
   changes.
   \end{hint}
   \begin{freeResponse}
+    For completeness sake, we will include a complete solution.
     Working from the $K$-dot product, we need that
     \begin{align*}
     \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)\bullet_K
@@ -444,18 +445,22 @@ With the same setting as above, show that $P_c$ is
 
 
 \begin{definition}
-  Let $V_c$ be a vector in $(x_c,y_c)$-coordinates. Define
+  Let $V_c$ and $W$ be a vectors in $(x_c,y_c)$-coordinates
+  originating at the same $(x_c,y_c)$-coordinate. Define
   \[
-  V_c \bullet_c V_c = V_c \cdot P_c \cdot V_c^\transpose.
+  V_c \bullet_c W_c = V_c \cdot P_c \cdot W_c^\transpose
   \]
+  where
+  \[
+  P_c =
+  \begin{bmatrix}
+    \left(Ky_c^2+1\right)\lambda^4 & -Kx_{c}y_{c}\lambda^4\\
+    -Kx_{c}y_{c}\lambda^4 & \left(Kx_c^2+1\right)\lambda^4
+  \end{bmatrix}
+  \]
+  and $\lambda$, $x_c$, and $y_c$ are determined by the
+  coordinate that the vectors originate from.
 \end{definition}
-
-\begin{warning}
-  Note, we have only defined $V_c\bullet_c W_c$ for the (very) special
-  case of when $V_c = W_c$. However, this will be enough for our
-  purposes.
-\end{warning}
-
 
 \begin{problem}
   List some questions that can be answered even though we can only dot
@@ -474,7 +479,7 @@ With the same setting as above, show that $P_c$ is
 Central projection allows us to think about both ``finite'' areas and
 ``infinite'' areas in new ways.
 
-\subsection{When $K$ is positive, the finite is infinite}
+\paragraph{When $K$ is positive, the finite is infinite}
 
 When $K>0$, we are working with a sphere. As we know, a sphere has
 finite surface area.
@@ -497,7 +502,7 @@ finite surface area.
 \end{problem}
 
 
-\subsection{When $K$ is negative, the infinite is finite}
+\paragraph{When $K$ is negative, the infinite is finite}
 
 
 Notice that, if $K<0$, the equation of $K$-geometry becomes
