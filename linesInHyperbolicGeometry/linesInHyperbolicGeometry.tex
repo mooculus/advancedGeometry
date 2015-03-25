@@ -251,18 +251,24 @@ and $\pp[z]{\tau}$.
 
 
 \begin{definition}
-  Let $V_\mathrm{hyp}$ be a vector in
-  $(\sigma,\tau)$-coordinates. Define
+  Let $V_\mathrm{hyp}$ and $W_\mathrm{hyp}$ be a vectors in
+  $(\sigma,\tau)$-coordinates originating at the same
+  $(\sigma,\tau)$-coordinate. Define
   \[
-  V_\mathrm{hyp} \bullet_\mathrm{hyp} V_\mathrm{hyp} = V_\mathrm{hyp} \cdot P_\mathrm{hyp} \cdot V_\mathrm{hyp}^\transpose.
+  V_\mathrm{hyp} \bullet_\mathrm{hyp} W_\mathrm{hyp} = V_\mathrm{hyp} \cdot P_\mathrm{hyp} \cdot W_\mathrm{hyp}^\transpose
   \]
+  where
+  \[
+     P_\mathrm{hyp} =
+  \begin{bmatrix}
+    |K|^{-1} & 0 \\
+    0 & |K|^{-1}\cdot\sinh^2 \sigma
+  \end{bmatrix}
+  \]
+  and $\sigma$ is determined by the coordinate that the vectors
+  originate from.
 \end{definition}
 
-\begin{warning}
-  Note, we have only defined $V_\mathrm{hyp}\bullet_\mathrm{hyp}
-  W_\mathrm{hyp}$ for the (very) special case of when $V_\mathrm{hyp}
-  = W_\mathrm{hyp}$. However, this will be enough for our purposes.
-\end{warning}
 
 
 Now notice that you can write a path on the $K$-surface by giving a
@@ -646,6 +652,9 @@ be switched---if this is the case, simply rename them). In this case,
   X_A &= (|K|^{-1/2}\cdot \sinh\alpha, 0, \cosh\alpha),\\
   X_B &= (0, |K|^{-1/2}\cdot \sinh \beta, \cosh\beta).
 \end{align*}
+\begin{image}
+  \includegraphics[width=4in]{hypPythag.png}
+\end{image}
 Hence the length of side $b$ is $|K|^{-1/2}\cdot\alpha$. Using a rigid motion of the form
 \[
 M_\theta=
@@ -674,7 +683,7 @@ Since we are working on the $K$-surface,
     \end{bmatrix}
     \begin{bmatrix}
       0\\
-      |K|^{-1/2}\sinh\beta\\
+      |K|^{-1/2}\cdot\sinh\beta\\
       \cosh\beta
     \end{bmatrix}\\
    &=K^{-1} \cdot \cos\alpha \cdot \cos\beta.
@@ -716,7 +725,7 @@ Since we are working on the $K$-surface,
   \[
   \cosh(x) = 1 + \frac{x^2}{2!} + \frac{x^4}{4!} + \frac{x^6}{6!} + \cdots
   \]
-to show that for ``small'' triangles, the spherical Pythagorean
+to show that for ``small'' triangles, the hyperbolic Pythagorean
 Theorem reduces to the euclidean Pythagorean Theorem, meaning
 \[
 c^2 \approx a^2+b^2.
@@ -744,7 +753,7 @@ c^2 \approx a^2+b^2.
   \frac{-1}{2}\left(|K|^{1/2}\cdot c\right)^2 = \frac{-1}{2}\left(|K|^{1/2}\cdot a\right)^2+\frac{-1}{2}\left(|K|^{1/2}\cdot b\right)^2.
   \]
   Multiplying both sides of the equation by $-2\cdot |K|$, we see that for a
-  ``small'' right triangle on a sphere,
+  ``small'' right triangle on the surface of the hyperboloid,
   \[
   c^2 \approx a^2 +b^2.
   \]

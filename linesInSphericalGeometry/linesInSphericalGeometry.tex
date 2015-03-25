@@ -232,8 +232,8 @@ and $\pp[z]{\tau}$.
   \[
   P_\mathrm{sph} =
   \begin{bmatrix}
-    R & 0 \\
-    0 & R\cdot\sin^2 \sigma
+    R^2 & 0 \\
+    0 & R^2\cdot\sin^2 \sigma
   \end{bmatrix}.
   \]
   \begin{freeResponse}
@@ -283,18 +283,23 @@ and $\pp[z]{\tau}$.
 \end{problem}
 
 \begin{definition}
-  Let $V_\mathrm{sph}$ be a vector in
-  $(\sigma,\tau)$-coordinates. Define
+  Let $V_\mathrm{sph}$ and $W_\mathrm{sph}$ be a vectors in
+  $(\sigma,\tau)$-coordinates originating at the same
+  $(\sigma,\tau)$-coordinate. Define
   \[
-  V_\mathrm{sph} \bullet_\mathrm{sph} V_\mathrm{sph} = V_\mathrm{sph} \cdot P_\mathrm{sph} \cdot V_\mathrm{sph}^\transpose.
+  V_\mathrm{sph} \bullet_\mathrm{sph} W_\mathrm{sph} = V_\mathrm{sph} \cdot P_\mathrm{sph} \cdot W_\mathrm{sph}^\transpose.
   \]
+  where
+  \[
+  P_\mathrm{sph} =
+  \begin{bmatrix}
+    R^2 & 0 \\
+    0 & R^2\cdot\sin^2 \sigma
+  \end{bmatrix}
+  \]
+  and $\sigma$ is determined by the coordinate that the vectors
+  originate from.
 \end{definition}
-
-\begin{warning}
-  Note, we have only defined $V_\mathrm{sph}\bullet_\mathrm{sph}
-  W_\mathrm{sph}$ for the (very) special case of when $V_\mathrm{sph}
-  = W_\mathrm{sph}$. However, this will be enough for our purposes.
-\end{warning}
 
 
 Now notice that you can write a path on the $R$-sphere by giving a path
@@ -454,8 +459,8 @@ L=\int_{0}^{\varepsilon} \sqrt{\left(1,\dd[\tau]{\sigma}\right)\bullet_\mathrm{s
       \begin{bmatrix} 1 & \dd[\tau]{\sigma}
       \end{bmatrix}
       \begin{bmatrix}
-        R & 0 \\
-        0 & R\cdot\sin^2 \sigma
+        R^2 & 0 \\
+        0 & R^2\cdot\sin^2 \sigma
       \end{bmatrix}
       \begin{bmatrix} 1 \\ \dd[\tau]{\sigma}
     \end{bmatrix}}\d\sigma \\
@@ -745,6 +750,9 @@ be switched---if this is the case, simply rename them). In this case,
   X_A &= (R\cdot \sin\alpha, 0, \cos\alpha),\\
   X_B &= (0, R\cdot \sin \beta, \cos\beta).
 \end{align*}
+\begin{image}
+  \includegraphics[width=4in]{sphPythag.png}
+\end{image}
 Hence the length of side $b$ is $R\cdot\alpha$. Using a rigid motion of the form
 \[
 M_\theta=
@@ -773,7 +781,7 @@ Since we are working on the $R$-sphere,
     \end{bmatrix}
     \begin{bmatrix}
       0\\
-      R\sin\beta\\
+      R\cdot\sin\beta\\
       \cos\beta
     \end{bmatrix}\\
    &=R^2 \cdot \cos\alpha \cdot \cos\beta.
