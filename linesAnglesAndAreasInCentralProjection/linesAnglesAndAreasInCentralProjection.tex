@@ -115,7 +115,11 @@ angles. To see this, we simply need to give an example.
 
 
 Consider the simplest case: Lines in $K$-geometry defined by
-intersecting $K\left(x^2+y^2\right) + z^2 = 1$ with the planes
+intersecting
+\[
+K\left(x^2+y^2\right) + z^2 = 1
+\]
+with the planes
 \[
 x=0 \qquad\text{and}\qquad y=0.
 \]
@@ -224,7 +228,7 @@ way.
 \begin{problem}
   Let $K>0$ and consider the following region in central projection
  \begin{image}
-   CUTOUT
+   \includegraphics[width=3in]{halfLune.png}
  \end{image}
  Use the fact that the area of an $\alpha$-lune is $2\alpha\cdot R^2$
  to compute the area of the region.
@@ -310,7 +314,7 @@ Hence now we see
 \begin{problem}
   Compute $\sqrt{\det P_c}$.
   \begin{hint}
-    As a gesture of frienship, we'll remind you that
+    As a gesture of friendship, we'll remind you that
     \[
  P_c =
      \begin{bmatrix}
@@ -346,9 +350,9 @@ At this point we see we are interested in the following integral
 \]
 
 \begin{problem}
-  Examing the following diagram
+  Examining the following diagram
   \begin{image}
-    IMAGE
+    \includegraphics[width=3in]{halfLune.png}
   \end{image}
   convert
   \[
@@ -383,6 +387,43 @@ At this point we see we are interested in the following integral
   Reconcile this computation with what you know about the area of the
   $\alpha$-lune.
 \end{problem}
+
+
+\section{Central projection unifies euclidean, spherical, and hyperbolic geometry}
+
+Under central projection, our new dot product defined by
+\[
+V_c\bullet_c W_c = V_c\cdot P_c\cdot W_c^\transpose
+\]
+make sense when $K$ is zero, positive, and negative. Hence this dot
+product makes sense for euclidean, spherical, and hyperbolic
+geometry. Moreover, in central projection, shortest paths on the $K$ surface
+\[
+K\left(x^2 + y^2\right) + z^2 = 1
+\]
+map to lines in the plane $z=1$. However, there is one trade-off:
+Angles are not preserved in central projection. This means that when
+angles are projected into the plane via central projection, the angle
+we see in the $(x_c,y_c)$-plane may or may not be the actual angle
+between two vectors. Summarizing, we have:
+
+
+
+\[
+{\renewcommand{\arraystretch}{2.7}
+  \begin{tabular}{|c||c|c|c|}\hline
+    & \begin{minipage}{2cm}\begin{center}Spherical ($K>0$)\end{center}\end{minipage} & \begin{minipage}{2cm}\begin{center}Euclidean ($K=0$)\end{center}\end{minipage} & \begin{minipage}{2cm}\begin{center}Hyperbolic ($K<0$)\end{center}\end{minipage}\\\hline\hline
+    \begin{minipage}{2cm}\begin{center}Surface in \\ euclidean space\end{center}\end{minipage} & $\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=R^{2}$ & DNE  & DNE \\\hline
+    \begin{minipage}{2cm}\begin{center}Euclidean dot product\end{center}\end{minipage} & $\hat{V}\cdot \hat{W}^\transpose$ & DNE  & DNE\\\hline
+     \begin{minipage}{2cm}\begin{center}Surface in $K$-warped space\end{center}\end{minipage} & \multicolumn{3}{c|}{$1=K\left(  x^{2}+y^{2}\right)  +z^{2}$}\\\hline
+     \begin{minipage}{2cm}\begin{center}$K$-dot product\end{center}\end{minipage} & $V\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & K^{-1}\end{smallmatrix}\right] W^\transpose$ &  DNE & $V\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & K^{-1}\end{smallmatrix}\right]W^\transpose$\\\hline
+     \begin{minipage}{2cm}\begin{center}Central dot product\end{center}\end{minipage} & \multicolumn{3}{c|}{$V_c\cdot P_c\cdot W_c^\transpose = V_c\left[\begin{smallmatrix}\left(Ky_c^2+1\right)\lambda^4 & -Kx_{c}y_{c}\lambda^4\\
+    -Kx_{c}y_{c}\lambda^4 & \left(Kx_c^2+1\right)\lambda^4\end{smallmatrix}\right] W_c^\transpose$}\\\hline
+\end{tabular}}
+\]
+
+
+
 
 \begin{problem}
 Summarize the results from this section. In particular, indicate which
