@@ -343,8 +343,8 @@ L=\int_{0}^{\varepsilon} \sqrt{\left(1,\dd[\tau]{\sigma}\right)\bullet_\mathrm{h
       \begin{bmatrix} 1 & \dd[\tau]{\sigma}
       \end{bmatrix}
       \begin{bmatrix}
-        |K|^{-1/2} & 0 \\
-        0 & |K|^{-1/2}\cdot\sinh^2 \sigma
+        |K|^{-1} & 0 \\
+        0 & |K|^{-1}\cdot\sinh^2 \sigma
       \end{bmatrix}
       \begin{bmatrix} 1 \\ \dd[\tau]{\sigma}
     \end{bmatrix}}\d\sigma \\
@@ -495,8 +495,8 @@ and the plane containing $(0,0,0)$, $X_{1}$, and $X_{2}$.
 
 
 \begin{problem}
-  Explain in words how to prove this theorem by using the $K$-rigid
-  motions
+  Explain in words, with pictures as needed, how to prove this theorem
+  by using the $K$-rigid motions
   \[
   M_\theta=
   \begin{bmatrix}
@@ -596,7 +596,7 @@ geometry.
   say $X_A$ and $X_B$, the length of the hyperbolic line connecting them
   is given by
   \[
-  |K|^{-1/2}\cdot \varepsilon = |K|^{-1/2} \cdot \arccos\left(\frac{X_A\bullet_K X_B}{|X_A|_K\cdot |X_B|_K}\right).
+  |K|^{-1/2}\cdot \varepsilon = |K|^{-1/2} \cdot \arccosh\left(\frac{X_A\bullet_K X_B}{|X_A|_K\cdot |X_B|_K}\right).
   \]
   by using the $K$-rigid motions
   \[
@@ -667,11 +667,11 @@ M_\theta=
 when $\theta = \pi/2$ we see that the length of side $a$ is $|K|^{-1/2}\cdot
 \beta$. Set
 \[
-\gamma = \arccos\left(\frac{X_A\bullet_K X_B}{|X_A|_K\cdot |X_B|_K}\right).
+\gamma = \arccosh\left(\frac{X_A\bullet_K X_B}{|X_A|_K\cdot |X_B|_K}\right).
 \]
 Since we are working on the $K$-surface,
 \begin{align*}
-  K^{-1}\cdot \cos \gamma &= X_A\bullet_K X_B\\
+  K^{-1}\cdot \cosh \gamma &= X_A\bullet_K X_B\\
   &=
   \begin{bmatrix}
     |K|^{-1/2}\cdot \sinh\alpha &  0 & \cosh\alpha
@@ -686,7 +686,7 @@ Since we are working on the $K$-surface,
       |K|^{-1/2}\cdot\sinh\beta\\
       \cosh\beta
     \end{bmatrix}\\
-   &=K^{-1} \cdot \cos\alpha \cdot \cos\beta.
+   &=K^{-1} \cdot \cosh\alpha \cdot \cosh\beta.
   \end{align*}
 \begin{problem}
   Explain how to progress from the fact that
