@@ -12,137 +12,404 @@ Here we start to develop another model for our geometry.
 
 \subsection*{Stereographic projection coordinates}
 
-On the other hand we can project the set
+Now let's project $K$-geometry,
 \[
-K\left(  x^{2}+y^{2}\right)  +z^{2}=1
+1=K\left(x^{2}+y^{2}\right)+z^{2} 
 \]
-onto the set%
-\[
-z=1
-\]
-using the `South Pole'%
-\[
-S=\left(  0,0,-1\right)
-\]
-as the center of projection:%
-
-\begin{tabular}
-[c]{cc}%
-%TCIMACRO{\FRAME{itbpF}{2.789in}{1.9389in}{0in}{}{}{Figure}%
-%{\special{ language "Scientific Word";  type "GRAPHIC";
-%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
-%width 2.789in;  height 1.9389in;  depth 0in;  original-width 4.9121in;
-%original-height 3.4065in;  cropleft "0";  croptop "1";  cropright "1";
-%cropbottom "0";  tempfilename 'MXAJBZ0M.png';tempfile-properties "XPR";}}}%
-%BeginExpansion
-{\includegraphics[
-natheight=3.406500in,
-natwidth=4.912100in,
-height=1.9389in,
-width=2.789in
-]%
-{MXAJBZ0M.jpg}%
-}%
-%EndExpansion
-&
-%TCIMACRO{\FRAME{itbpF}{2.226in}{1.9415in}{0in}{}{}{Figure}%
-%{\special{ language "Scientific Word";  type "GRAPHIC";
-%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
-%width 2.226in;  height 1.9415in;  depth 0in;  original-width 4.8896in;
-%original-height 4.2635in;  cropleft "0";  croptop "1";  cropright "1";
-%cropbottom "0";  tempfilename 'MXAJBZ0N.png';tempfile-properties "XPR";}}}%
-%BeginExpansion
-{\includegraphics[
-natheight=4.263500in,
-natwidth=4.889600in,
-height=1.9415in,
-width=2.226in
-]%
-{MXAJBZ0N.jpg}%
-}%
-%EndExpansion
-\end{tabular}
-
-
-That is,%
-\[
-\rho\text{\textperiodcentered}\left(  x_{s},y_{s},1-\left(  -1\right)
-\right)  =\left(  x,y,z-\left(  -1\right)  \right)  .
-\]
-So%
-\begin{align*}
-\rho &  =\frac{z+1}{2}\\
-z  &  =2\rho-1
-\end{align*}
-and, from the equation
-\[
-K\left(  x^{2}+y^{2}\right)  +z^{2}=1%
-\]
-we may write
-\begin{align*}
-K\left((\rho x_{s})^{2}+(\rho y_{s})^{2}\right)+(2\rho-1)^{2} &=1\\
-K\left((\rho x_{s})^{2}+(\rho y_{s})^{2}\right)+4\rho^{2}-4\rho &=0\\
-\rho K\left(x_{s}^{2}+y_{s}^{2}\right)+4\rho &=4
-\end{align*}
-and so
-\[
-\rho=\frac{1}{\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  +1}.
-\]
-Notice that, when $K<0$ this last formula only makes sense when%
-\begin{align*}
-\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  &> -1\\
-x_{s}^{2}+y_{s}^{2} &<\frac{-4}{K}.
-\end{align*}
-
-
-\begin{problem}\label{35}\hfil
-\begin{enumerate}
-\item For the projection of the set
-\[
-1=K\left( x^{2}+y^{2}\right) +z^{2}
-\]
-onto the $z=1$ plane with center of projection $S$, write $\left(x_{s}
-,y_{s}\right)$ as a function of $\left( x,y,z\right) $.
-\item For the projection of the set
-\[
-1=K\left( x^{2}+y^{2}\right) +z^{2}
-\]
-onto the $z=1$ plane with center of projection $S$, write $\left(
-x,y,z\right) $ as a function of $\left( x_{s},y_{s}\right) $.
-\end{enumerate}
-\end{problem}
-
-\subsection*{Length and angle in stereographic projection coordinates}
+onto the plane $z=1$ using the `South Pole' $S=(0,0,-1)$ as the center of
+projection:
+\begin{image}
+\includegraphics[width=5in]{stereoProj.png}
+\end{image}
+Let's look at this from a different vantage point, say with our eye
+along the edge of the plane $z=1$:
+\begin{image}
+\includegraphics[width=5in]{stereoCross.png}
+\end{image}
 
 \begin{problem}
-Suppose we have a path%
+  If $K=1$ where does the `equator' map to? What about the `Northern hemisphere?' How about the `Southern hemisphere?'
+  \begin{freeResponse}
+    The `equator' maps to the circle of radius $2$ centered at the
+    origin in the $(x_s,y_s)$ plane.  The `Northern hemisphere' maps
+    inside this circle, and the `Southern hemisphere' maps outside the
+    circle.
+  \end{freeResponse}
+\end{problem}
+
+\begin{problem}
+  Use similar triangles to explain why there is a number $\rho$ such
+  that for any given $(x,y,z)$
+  \[
+  \rho\cdot(x_s,y_s,2) = (x,y,z+1).
+  \]
+  \begin{freeResponse}
+    Let $A = (x,y,z)$, $B= (x,y,-1)$, $A_s = (x_s,y_s,1)$ and
+    $B_s=(x_s,y_s,-1)$. From the diagram above we see that
+    \[
+    \angle ASB = \angle A_s S B_s.
+    \]
+    Moreover, since $\triangle ASB$ and $\triangle A_s S B_s$ are
+    right triangles, we now see that two of their angles have the same
+    measure, and hence all three have the same measure. This means
+    that these triangles are similar, and hence there they are
+    dilations of one another. Hence there is a scale-factor $\rho$
+    such that
+    \[
+    \rho\cdot(x_s,y_s,2) = (x,y,z+1).
+    \]
+  \end{freeResponse}
+\end{problem}
+
+\begin{problem}
+  For the projection of the set $1=K\left(x^{2}+y^{2}\right)+z^{2}$
+  onto the $z=1$ plane with center of projection $S$, write
+  $(x_{s},y_{s})$ as a function of $(x,y,z)$.
+  \begin{freeResponse}
+    We know that
+    \[
+    \rho\cdot(x_{s},y_{s},2)=(x,y,z+1),
+    \]
+    hence $\rho=\frac{z+1}{2}$, and we may now write
+    \begin{align*}
+      x_{s} &=\frac{2x}{z+1},\\
+      y_{s} &=\frac{2y}{z+1}.
+    \end{align*}
+  \end{freeResponse}
+\end{problem}
+
+\begin{problem}
+  For the projection of the set $1=K\left(x^{2}+y^{2}\right)+z^{2}$
+  onto the $z=1$ plane with center of projection $S$, write
+  $(x,y,z)$ as a function of $(x_s,y_s)$.
+  \begin{hint}
+    Note that
+      \[
+      \rho\cdot(x_{s},y_{s},2)=(x,y,z+1) \qquad\text{and}\qquad z = 2\rho-1.
+      \]
+  \end{hint}
+  \begin{hint}
+    Hence if
+    \[
+    1 = K\left(x^2 + y^2\right) + z^2
+    \]
+    we may write
+    \[
+    1 = K\left((\rho\cdot x_s)^2 + (\rho\cdot y_s)^2\right) + (2\rho-1)^2
+    \]
+    and solve for $\rho$.
+  \end{hint}
+  \begin{freeResponse}
+    This is slightly more complex than the previous problem; however,
+    we will begin the same way. We know that
+    \[
+    \rho\cdot(x_{s},y_{s},2)=(x,y,z+1),
+    \]
+    hence $\rho=\frac{z+1}{2}$, and we may now write
+    \begin{align*}
+      x &= \rho \cdot x_s,\\
+      y &= \rho \cdot y_s,\\
+      z &= 2\rho-1.
+    \end{align*}
+    Now our task is now to write $\rho$ in terms of $x_s$ and
+    $y_s$. Using our assignments above, write
+    \begin{align*}
+      1 &= K\left(x^2 + y^2\right) + z^2\\
+      1 &= K\left((\rho\cdot x_s)^2 + (\rho\cdot y_s)^2\right) + (2\rho-1)^2\\
+      1 &= K\left((\rho\cdot x_s)^2 + (\rho\cdot y_s)^2\right) + 4\rho^2-4\rho + 1\\
+    \end{align*}
+    and so
+    \begin{align*}
+      0 &= K\left((\rho\cdot x_s)^2 + (\rho\cdot y_s)^2\right) + 4\rho^2-4\rho\\
+      0 &= \rho^2\cdot K\left(x_s^2 + y_s^2\right) + 4\rho^2-4\rho
+    \end{align*}
+    and since $\rho \ne 0$, we may write
+    \begin{align*}
+      \rho\cdot K\left(x_s^2 + y_s^2\right) + 4\rho-4 &=0 \\
+      \rho\left(K\left(x_s^2 + y_s^2\right) + 4\right) &=4\\
+      \rho &= \frac{4}{K\left(x_s^2 + y_s^2\right) + 4}.
+    \end{align*}
+    Hence
+    \begin{align*}
+      x &= \frac{4x_s}{K\left(x_s^2 + y_s^2\right) + 4},\\
+      y &= \frac{4y_s}{K\left(x_s^2 + y_s^2\right) + 4},\\
+      z &= \frac{4-K\left(x_s^2 + y_s^2\right)}{4+K\left(x_s^2 + y_s^2\right)}.\\
+    \end{align*}
+  \end{freeResponse}
+\end{problem}
+
+
+\section{Stereographic projection dot product}
+
+Once more, we want to be able to find a dot product that will allow us
+to compute lengths in stereographic projection coordinates that will agree
+with the $K$-dot product, and hence the euclidean dot product.
+
+\begin{problem}
+Suppose we have a curve $X$ in $K$-warped space that is a function of
+a curve $X_s$ in the plane $z=1$ space. So
 \[
-X\left(  x_{s}\left(  t\right)  ,y_{s}\left(  t\right)  \right)  =\left(
-x\left(  x_{s}\left(  t\right)  ,y_{s}\left(  t\right)  \right)  ,y\left(
-x_{s}\left(  t\right)  ,y_{s}\left(  t\right)  \right)  ,z\left(  x_{s}\left(
-t\right)  ,y_{s}\left(  t\right)  \right)  \right)
+X_s(t) = \left( x_s(t),y_s(t)\right)
 \]
-lying on the set 
+and
 \[
-1=K\left( x^{2}+y^{2}\right) +z^{2}
+X(t) = 
+\begin{cases}
+  x(x_s(t),y_s(t)),\\
+  y(x_s(t),y_s(t)),\\
+  z(x_s(t),y_s(t)).
+\end{cases}
 \]
-given in terms of its projection $\left( x_{s}\left( t\right)
-,y_{s}\left( t\right) \right) $ in the plane $z=1$. Use the formula
-you derived in a previous problem and the Chain Rule from calculus of
-several variables to find the $2\times3$ matrix%
+Use the chain rule to compute
 \[
-D_{s}=
+\dd[x]{t}, \qquad \dd[y]{t}, \qquad \dd[z]{t},
+\]
+in terms of $\dd[x_s]{t}$, $\dd[y_s]{t}$, $\pp[x]{x_s}$,
+$\pp[y]{x_s}$, $\pp[z]{x_s}$, $\pp[x]{y_s}$, $\pp[y]{y_s}$,
+and $\pp[z]{y_s}$.
+  \begin{hint}
+  Simply write down the answer from a previous problem with some minor
+  changes.
+  \end{hint}
+  \begin{freeResponse}
+  Write
+  \begin{align*}
+    \dd[x]{t} &= \begin{bmatrix}\pp[x]{x_s} & \pp[x]{y_s}\end{bmatrix}\cdot\begin{bmatrix}\dd[x_s]{t} & \dd[y_s]{t}\end{bmatrix}^\transpose = \pp[x]{x_s}\cdot\dd[x_s]{t}+\pp[x]{y_s}\cdot\dd[y_s]{t} &  \\
+    \dd[y]{t} &= \begin{bmatrix}\pp[y]{x_s} & \pp[y]{y_s}\end{bmatrix}\cdot\begin{bmatrix}\dd[x_s]{t} & \dd[y_s]{t}\end{bmatrix}^\transpose = \pp[y]{x_s}\cdot\dd[x_s]{t}+\pp[y]{y_s}\cdot\dd[y_s]{t} &  \\
+    \dd[z]{t} &= \begin{bmatrix}\pp[z]{x_s} & \pp[z]{y_s}\end{bmatrix}\cdot\begin{bmatrix}\dd[x_s]{t} & \dd[y_s]{t}\end{bmatrix}^\transpose = \pp[z]{x_s}\cdot\dd[x_s]{t}+\pp[z]{y_s}\cdot\dd[y_s]{t}.  
+  \end{align*}
+\end{freeResponse}
+\end{problem}
+
+
+\begin{problem}
+  With the same setting as in the previous problem, rewrite the result
+  of your computation in matrix notation to find $D_s$
+  such that
+\[
 \begin{bmatrix}
-\frac{\partial X}{\partial x_{s}} \\
-\frac{\partial X}{\partial y_{s}}
+\dd[x]{t} & \dd[y]{t} & \dd[z]{t}
 \end{bmatrix}
+=
+\begin{bmatrix}
+\frac{dx_s}{dt} & \frac{dy_s}{dt}
+\end{bmatrix}\cdot D_s.
 \]
-such that%
-\[
-\left(  \frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right)  =\left(
-\frac{dx_{s}\left(  t\right)  }{dt},\frac{dy_{s}\left(  t\right)  }%
-{dt}\right)  \cdot D_{s}.
-\]
+\begin{hint}
+  Simply write down the answer from a previous problem with some minor
+  changes.
+\end{hint}
+\begin{freeResponse}
+  \[
+  D_s =
+  \begin{bmatrix}
+    \pp[x]{x_s} & \pp[y]{x_s} & \pp[z]{x_s} \\
+    \pp[x]{y_s}   & \pp[y]{y_s}   & \pp[z]{y_s}
+  \end{bmatrix}.
+  \]
+\end{freeResponse}
+\end{problem}
+
+\begin{problem}
+  Now find $P_s$ in terms of $K$, $\pp[x]{x_s}$, $\pp[y]{x_s}$,
+  $\pp[z]{x_s}$, $\pp[x]{y_s}$, $\pp[y]{y_s}$, and $\pp[z]{y_s}$ such
+  that
+  \[
+  \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)\bullet_K
+  \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)
+  =
+  \begin{bmatrix}
+    \dd[x_s]{t} &  \dd[y_s]{t}
+  \end{bmatrix}
+  \cdot P_s
+  \cdot
+  \begin{bmatrix}
+    \dd[x_s]{t} \\  \dd[y_s]{t}
+  \end{bmatrix}.
+  \]
+  \begin{hint}
+  Simply write down the answer from a previous problem with some minor
+  changes.
+  \end{hint}
+  \begin{freeResponse}
+    For completeness sake, we will include a complete solution.
+    Working from the $K$-dot product, we need that
+    \begin{align*}
+    \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)\bullet_K
+    \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)
+    &=
+    \begin{bmatrix}
+      \dd[x]{t} & \dd[y]{t} & \dd[z]{t}
+    \end{bmatrix}
+    \begin{bmatrix}
+      1 & 0 & 0\\
+      0 & 1 & 0\\
+      0 & 0 & K^{-1}
+    \end{bmatrix}
+    \begin{bmatrix}
+      \dd[x]{t} \\ \dd[y]{t} \\ \dd[z]{t}
+    \end{bmatrix}\\
+    &=
+    \begin{bmatrix}
+      \frac{dx_s}{dt} & \frac{dy_s}{dt}
+    \end{bmatrix}\cdot D_{c}\cdot
+    \begin{bmatrix}
+      1 & 0 & 0\\
+      0 & 1 & 0\\
+    0 & 0 & K^{-1}
+    \end{bmatrix}
+    \cdot
+    \left(
+    \begin{bmatrix}
+      \frac{dx_s}{dt} & \frac{dy_s}{dt}
+    \end{bmatrix}\cdot D_{c}
+    \right)^\transpose\\
+    &=
+    \begin{bmatrix}
+      \frac{dx_s}{dt} & \frac{dy_s}{dt}
+    \end{bmatrix}\cdot D_{c}\cdot
+    \begin{bmatrix}
+      1 & 0 & 0\\
+      0 & 1 & 0\\
+    0 & 0 & K^{-1}
+    \end{bmatrix}
+    \cdot
+    D_{c}^\transpose
+    \cdot \begin{bmatrix}
+      \frac{dx_s}{dt} \\ \frac{dy_s}{dt}
+    \end{bmatrix}.
+  \end{align*}
+    Hence
+    \begin{align*}
+      P_s &=
+      \begin{bmatrix}
+        \pp[x]{x_s} & \pp[y]{x_s} & \pp[z]{x_s} \\
+        \pp[x]{y_s} & \pp[y]{y_s} & \pp[z]{y_s}
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & K^{-1}
+      \end{bmatrix}
+      \begin{bmatrix}
+        \pp[x]{x_s} & \pp[x]{y_s}\\ 
+        \pp[y]{x_s} & \pp[y]{y_s}\\
+        \pp[z]{x_s} & \pp[z]{y_s}
+      \end{bmatrix}\\
+      &=
+      \begin{bmatrix}
+        \left(\pp[x]{x_s}\right)^2 + \left(\pp[y]{x_s}\right)^2 + \left(\pp[z]{x_s}\right)^2K^{-1} & \pp[x]{x_s}\pp[x]{y_s} + \pp[y]{x_s}\pp[y]{y_s} + \pp[z]{x_s}\pp[z]{y_s} K^{-1}\\
+        \pp[x]{x_s}\pp[x]{y_s} + \pp[y]{x_s}\pp[y]{y_s} + \pp[z]{x_s}\pp[z]{y_s} K^{-1}       & \left(\pp[x]{y_s}\right)^2 + \left(\pp[y]{y_s}\right)^2 + \left(\pp[z]{y_s}\right)^2K^{-1}
+      \end{bmatrix}.
+    \end{align*}
+  \end{freeResponse}
+\end{problem}
+
+
+Before we actually compute $P_s$, it will help to compute the partial
+derivatives.
+
+
+\begin{problem}
+  Set
+  \begin{align*}
+    x(x_s,y_s) &=\rho\cdot x_s,\\
+    y(x_s,y_s) &=\rho\cdot y_s,\\
+    z(x_s,y_s) &=2\rho-1,
+  \end{align*}
+  and show that
+  \[
+  \begin{split}
+    \pp[x]{x_s} &=\rho-\left(\frac{K}{2}\right)\rho^2x_s^2,\\
+    \pp[y]{x_s} &=-\left(\frac{K}{2}\right)\rho^2x_sy_s,\\
+    \pp[z]{x_s} &=-K\rho^2x_s,
+  \end{split}
+  \qquad
+  \begin{split}
+    \pp[x]{y_s} &= -\left(\frac{K}{2}\right)\rho^2x_sy_s,\\
+    \pp[y]{y_s} &=\rho-\left(\frac{K}{2}\right)\rho^2y_s^2,\\
+    \pp[z]{y_s} &= -K\rho^2y_s.
+  \end{split}
+  \]
+  \begin{hint}
+  Work in the following way:
+  \begin{enumerate}
+  \item Recall $x = \rho\cdot x_s$.
+  \item Note that $\pp[x]{x_s} = \rho + x_s \cdot \pp[\rho]{x_s}$.
+  \item Express the partial derivative in terms of $\rho$, $K$, $x_s$,
+      and $y_s$.
+  \end{enumerate}
+  \end{hint}
+  \begin{freeResponse}
+    Write
+    \begin{align*}
+      \pp[x]{x_s} &= \rho + x_s\cdot \pp[\rho]{x_s}\\
+      &= \rho + x_s\cdot \pp{x_s}\left(\frac{4}{K\left(x_s^2 + y_s^2\right) + 4}\right)\\
+      &= \rho - x_s\cdot \left(\frac{4}{\left(K\left(x_s^2 + y_s^2\right) + 4\right)^{2}}\right)\cdot2Kx_s \\
+      &=\rho-\left(\frac{K}{2}\right)\rho^2x_s^2.
+    \end{align*}
+    Similarly,
+      \begin{align*}
+      \pp[y]{x_s} &= y_s\cdot \pp[\rho]{x_s}\\
+      &= y_s\cdot \pp{x_s}\left(\frac{4}{K\left(x_s^2 + y_s^2\right) + 4}\right)\\
+      &= - y_s\cdot \left(\frac{4}{\left(K\left(x_s^2 + y_s^2\right) + 4\right)^{2}}\right)\cdot2Kx_s \\
+      &= -\left(\frac{K}{2}\right)\rho^2x_sy_s.
+      \end{align*}
+      Finally,
+      \begin{align*}
+      \pp[z]{x_s} &= 2\cdot\pp[\rho]{x_s}\\
+      &= 2\cdot\cdot \pp{x_s}\left(\frac{4}{K\left(x_s^2 + y_s^2\right) + 4}\right)\\
+      &= - 2\cdot \left(\frac{4}{\left(K\left(x_s^2 + y_s^2\right) + 4\right)^{2}}\right)\cdot2Kx_s \\
+      &= -\frac{K}\rho^2x_s.
+      \end{align*}
+      Now with entirely similar computations, we see
+      \begin{align*}
+        \pp[x]{y_s} &= -\left(\frac{K}{2}\right)\rho^2x_sy_s,\\
+        \pp[y]{y_s} &=\rho-\left(\frac{K}{2}\right)\rho^2y_s^2,\\
+        \pp[z]{y_s} &= -K\rho^2y_s.       
+      \end{align*}
+  \end{freeResponse}
+\end{problem}
+
+
+\begin{problem}
+With the same setting as above, show that $P_s$ is
+  \[
+  P_s =
+  \begin{bmatrix}
+    \rho^2 & 0\\
+    0 & \rho^2
+  \end{bmatrix}.
+  \]
+  \begin{hint}
+  When simplifying, combine the terms with the highest degree of $\rho$
+  and note that
+  \[
+  \rho^{-1} = \frac{K\left(x_s^2 + y_s^2\right)+4}{4}.
+  \]
+\end{hint}
+\begin{freeResponse}
+  Write $\left(\pp[x]{x_s}\right)^2 + \left(\pp[y]{x_s}\right)^2 +\left(\pp[z]{x_s}\right)^2K^{-1}$
+  \begin{align*}
+    &=\left(\rho-\left(\frac{K}{2}\right)\rho^2x_s^2\right)^2 + \left(-\left(\frac{K}{2}\right)\rho^2x_sy_s\right)^2 +\left(-K\rho^2x_s\right)^2K^{-1}\\
+    &=\rho^2 -K\rho^3x_s^2 + \left(\frac{K^2}{4}\right)\rho^4x_s^4 + \left(\frac{K^2}{4}\right)\rho^4x_s^2y_s^2 + K\rho^4x_s^2\\
+    &=\rho^2 -K\rho^3x_s^2 + K\rho^4x_s\left(\left(\frac{K}{4}\right)x_s^4 + \left(\frac{K}{4}\right)y_s^2 + 1\right)\\
+    &=\rho^2 -K\rho^3x_s^2 + K\rho^4x_s\left(\frac{K\left(x_s^2+y_s^2\right)+4}{4}\right)\\
+    &=\rho^2 -K\rho^3x_s^2 + K\rho^4x_s\rho^{-1}\\
+    &=\rho^2.
+  \end{align*}
+\end{freeResponse}
+\end{problem}
+
+
+
+
+
+
+
+
+
+
 \begin{hint}
 Recall 
 \[
@@ -168,7 +435,7 @@ and $x_s$.
 %% &  =-\rho\frac{K}{4}\left(  2x_{s}dx_{s}+2y_{s}dy_{s}\right)  .
 %% \end{align*}
 \end{hint}
-\end{problem}
+%\end{problem}
 
 This last Problem allows us to do something very nice. Namely now, not
 only can we use the coordinates $\left( x_{s},y_{s}\right) $ for our
