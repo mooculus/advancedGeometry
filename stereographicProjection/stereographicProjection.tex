@@ -398,9 +398,48 @@ With the same setting as above, show that $P_s$ is
     &=\rho^2 -K\rho^3x_s^2 + K\rho^4x_s\rho^{-1}\\
     &=\rho^2.
   \end{align*}
+  That $\pp[x]{x_s}\pp[x]{y_s} + \pp[y]{x_s}\pp[y]{y_s} + \pp[z]{x_s}\pp[z]{y_s} K^{-1}$
+  \begin{align*}
+    &=\left(\rho-\left(\frac{K}{2}\right)\rho^2x_s^2\right)\left(-\left(\frac{K}{2}\right)\rho^2x_sy_s\right)
+    + \left(-\left(\frac{K}{2}\right)\rho^2x_sy_s\right)\left(\rho-\left(\frac{K}{2}\right)\rho^2y_s^2\right)
+    + \left(-K\rho^2x_s\right)\left(-K\rho^2y_s\right) K^{-1}\\
+    &=
+    -\left(\frac{K}{2}\right)\rho^3x_sy_s+\left(\frac{K^2}{4}\right)\rho^4x_s^3y_s
+    -\left(\frac{K}{2}\right)\rho^3x_sy_s+\left(\frac{K^2}{4}\right)\rho^4x_sy_s^3
+    + K\rho^4 x_sy_s\\
+    &= -K\rho^3x_sy_s + K\rho^4x_sy_s\left(\frac{K\left(x_s^2+y_s^2\right)+4}{4}\right)\\
+    &= -K\rho^3x_sy_s + K\rho^4x_sy_s\rho^{-1}\\
+    &= -K\rho^3x_sy_s + K\rho^3x_sy_s\\
+    &=0.
+  \end{align*}
+  With entirely analogous computations, we see that 
+    \[
+    P_s =
+    \begin{bmatrix}
+      \rho^2 & 0\\
+      0 & \rho^2
+    \end{bmatrix}.
+    \]
 \end{freeResponse}
 \end{problem}
 
+\begin{definition}
+  Let $V_s$ and $W_s$ be a vectors in $(x_s,y_s)$-coordinates
+  originating at the same $(x_s,y_s)$-coordinate. Define
+  \[
+  V_s \bullet_s W_s = V_s \cdot P_s \cdot W_s^\transpose
+  \]
+  where
+  \[
+  P_s =
+  \begin{bmatrix}
+    \rho^2 & 0\\
+    0 & \rho^2
+  \end{bmatrix}
+  \]
+  and $\rho$ are determined by the coordinate that the vectors
+  originate from.
+\end{definition}
 
 
 
@@ -409,254 +448,145 @@ With the same setting as above, show that $P_s$ is
 
 
 
+\section{Again, when the finite is infinite and the infinite is finite}
 
-\begin{hint}
-Recall 
+Just like central projection, stereographic projection allows us to
+think about both ``finite'' areas and ``infinite'' areas in new ways.
+
+\paragraph{When $K$ is positive, the finite is infinite}
+
+When $K>0$, we are working with a sphere. As we know, a sphere has
+finite surface area.
+
+\begin{problem}
+  As a point approaches the equator of the $R$-sphere from the North
+  Pole, where does it move to under central projection?
+  \begin{hint}
+    A picture is worth a thousand words!
+  \end{hint}
+  \begin{freeResponse}
+  \end{freeResponse}
+\end{problem}
+
+\begin{problem}
+  Explain why one might say that central projection makes the
+  ``finite'' seem ``infinite.''
+    \begin{freeResponse}
+    \end{freeResponse}
+\end{problem}
+
+
+
+
+\paragraph{When $K$ is negative, the infinite is finite}
+
+
+Notice that, if $K<0$, the equation of $K$-geometry becomes
 \[
-x = x_s \rho,
+z^{2}-|K|\left(x^{2}+y^{2}\right)  =1.
 \]
-hence 
-\[
-\pp[x]{x_s} = \rho + x_s\cdot \pp[\rho]{x_s}.
-\]
-Now compute $\pp[\rho]{x_s}$ and express it in terms of $\rho$, $K$,
-and $x_s$.
-%% Hint: Use logarithmic differentiation:%
-%% \begin{gather*}
-%% dx=d\left(  \rho x_{s}\right)  =x_{s}d\rho+\rho dx_{s}\\
-%% \rho^{-1}dx=x_{s}d\mathrm{ln}\left(  \rho\right)  +dx_{s}%
-%% \end{gather*}
-%% and similarly for $y$. Also%
-%% \begin{align*}
-%% d\mathrm{ln}\left(  \rho\right)   &  =-d\mathrm{ln}\left(  \frac{K}{4}\left(
-%% x_{s}^{2}+y_{s}^{2}\right)  +1\right) \\
-%% &  =-\frac{1}{\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  +1}d\left(
-%% \frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  +1\right) \\
-%% &  =-\rho\frac{K}{4}\left(  2x_{s}dx_{s}+2y_{s}dy_{s}\right)  .
-%% \end{align*}
-\end{hint}
-%\end{problem}
+This describes a $K$-geometry forms a $2$-sheeted hyperboloid with the
+$z$-axis as major axis. We will only consider the sheet on which $z$
+is positive as forming the $K$-geometry. In plain English, this means
+we are doing geometry on this hyperboloid:
+\begin{image}
+\includegraphics[width=3in]{UpperHyperboloid.png}
+\end{image}
+Of critical importance, note
 
-This last Problem allows us to do something very nice. Namely now, not
-only can we use the coordinates $\left( x_{s},y_{s}\right) $ for our
-geometry but we can also compute the $K$-dot product in terms of these
-coordinates:%
+\begin{center}
+  \textbf{this hyperboloid has infinite surface area.}
+\end{center}
+
+The hyperboloid above is obtained by rotating the hyperbola
 \[
-\left(  \frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right)  =\left(
-\frac{dx_{s}}{dt},\frac{dy_{s}}{dt}\right)  \cdot D_{s}%
+z^{2}-\left\vert K\right\vert x^{2}= 1
 \]
-so that%
-\begin{align*}
-\left(  \frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right)  \bullet_{K}\left(
-\frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right)   &=
-\begin{bmatrix}
-\frac{dx}{dt} & \frac{dy}{dt} & \frac{dz}{dt}%
-\end{bmatrix}
-\begin{bmatrix}
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & K^{-1}%
-\end{bmatrix}
-\begin{bmatrix}
-\frac{dx}{dt}\\
-\frac{dy}{dt}\\
-\frac{dz}{dt}%
-\end{bmatrix}\\
-&=
-\begin{bmatrix}
-\frac{dx_{s}}{dt} & \frac{dy_{s}}{dt}%
-\end{bmatrix}
-\cdot D_{s}\cdot
-\begin{bmatrix}
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & K^{-1}%
-\end{bmatrix}
-\cdot D_{s}^{t}\cdot
-\begin{bmatrix}
-\frac{dx_{s}}{dt}\\
-\frac{dy_{s}}{dt}%
-\end{bmatrix},
-\end{align*}
+in the $(x,z)$-plane around the $z$-axis.
+\begin{image}
+\includegraphics[width=3in]{UpperHyperbola.png}
+\end{image}
 
 
 \begin{problem}
-\label{36}Use matrix multiplication to compute the $2\times2$ matrix%
-\[
-P_{s}=D_{s}\cdot
-\begin{bmatrix}
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & K^{-1}%
-\end{bmatrix}\cdot D_{s}^{t},
-\]
-that is, to compute the $K$-dot product in $\left( x_{s},y_{s}\right)
-$-coordinates. (You may be surprised at the answer! It is quite simple
-and only involves the quantity $\rho$.)
+  Assume we have a point in $K$-geometry that is shooting off to
+  infinity. What is the maximum distance the image of this point can
+  be from the origin in central projection?
+  \begin{hint}
+    First rewrite $z^{2}-|K|x^{2} =1$ as
+    \[
+    z = \sqrt{1+|K|x^2}
+    \]
+    and explain why this is acceptable.
+  \end{hint}
+  \begin{hint}
+    Explain why computing this limit
+    \[
+    \lim_{x\to \infty} \frac{\sqrt{1+|K|x^2}}{x}
+    \]
+    helps us in this context.
+  \end{hint}
+  \begin{freeResponse}
+    Since we are only considering the upper hyperboloid, we need only
+    look at the upper hyperbola. Hence we may look at
+     \[
+    z = \sqrt{1+|K|x^2}.
+    \]
+    To compute the maximum distance the image of a point can be from
+    the origin, look at 
+    \[
+    \lim_{x\to \infty} \frac{\sqrt{1+|K|x^2}}{x}
+    \]
+    as this computes the ``end-behavior'' of the ``slope'' of the
+    curve. Write
+    \begin{align*}
+      \lim_{x\to \infty} \frac{\sqrt{1+|K|x^2}}{x} &= \lim_{x\to \infty} \frac{\sqrt{1+|K|x^2}}{x}\cdot \frac{1/x}{1/x}\\
+      &= \lim_{x\to \infty} \sqrt{1/x^2+|K|}\\
+      &= \sqrt{|K|}.
+    \end{align*}
+    Hence one projection is given by $z = x\sqrt{|K|}$.
+  \end{freeResponse}
 \end{problem}
 
-So, if, if $K>0$ and you have a path on the sphere of radius
-$R=K^{-1/2}$ in euclidean space given in $\left( x_{s},y_{s}\right)
-$-coordinates as $\left( x_{s}\left( t\right) ,y_{s}\left( t\right)
-\right) $ for $t\in\left[ b,e\right] $, you can trace back everything
-we have done with coordinate changes to see that the length of the
-path on the sphere of radius $R=K^{-1/2}$ in euclidean space is given
-by
-\[
-\int_b^e\l(t)\d t
-\]
-where%
-\begin{align*}
-\l(t)^{2} &=\left(  \frac{dx_{s}}{dt},\frac{dy_{s}}%
-{dt}\right)  \bullet_{s}\left(  \frac{dx_{s}}{dt},\frac{dy_{s}}{dt}\right) \\
-&=
-\begin{bmatrix}
-\frac{dx_{s}}{dt} & \frac{dy_{s}}{dt}%
-\end{bmatrix}
-\cdot P_{s}\cdot
-\begin{bmatrix}
-\frac{dx_{s}}{dt}\\
-\frac{dy_{s}}{dt}%
-\end{bmatrix}
-\end{align*}
-and that the measure $\theta$ of an angle between vectors $\hat{V}_{1}$ and
-$\hat{V}_{2}$ on the $R$-sphere is computed by%
-\[
-\mathrm{arccos}\left(  \frac{V_{1}^{s}\cdot P_{s}\cdot\left(  V_{2}%
-^{s}\right)  ^{t}}{\left\vert V_{1}^{s}\right\vert _{s}\left\vert V_{2}%
-^{s}\right\vert _{s}}\right)  .
-\]
 
-
-Notice that the matrix $P_{s}$ still makes sense when $K=0$ and when
-$K$ becomes negative.
+Rotating the line found above gives the ``asymptotic cone.'' The
+central projection coordinates $(x_{c},y_{c})$ of $K$-geometry when
+$K<0$ only correspond to points in $K$-geometry when $(x_{c},y_{c},1)$
+lies \textit{inside} the asymptotic cone.
 
 \begin{problem}
-Write the formula for the $K$-dot product $\left(  x_{s},y_{s}\right)
-$-coordinates when $K=0$. Does it look familiar?
+  When $K<0$, find the radius of the disk in the plane $z=1$ whose
+  perimeter is determined by the asymptotic cone. 
+  \begin{hint}
+    Work with the asymptote(s) you found above.
+  \end{hint}
+  \begin{freeResponse}
+    We must find where $z = x\sqrt{|K|}$ intersects the line $z=1$. To do this, simply solve
+    \[
+    1 = x\sqrt{|K|}
+    \]
+    for $x$, and so the radius is $1/\sqrt{|K|}$.
+  \end{freeResponse}
 \end{problem}
-
-We now have%
-\[
-{\renewcommand{\arraystretch}{2.5}
-\begin{tabular}{|c||c|c|c|}\hline
-                & Spherical ($K>0$) & Euclidean ($K=0$) & Hyperbolic ($K<0$)\\\hline\hline
-Surface in euclidean space & $\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=R^{2}$ & DNE  & DNE \\\hline
-Euclidean dot product & $\hat{V}\cdot \hat{V}^\transpose$ & DNE  & DNE\\\hline
-Surface in $K$-space & $1=K\left(  x^{2}+y^{2}\right)  +z^{2}$ & $1=K\left(  x^{2}+y^{2}\right)+z^{2}$ & $1=K\left(  x^{2}+y^{2}\right)  +z^{2}$\\\hline
-$K$-dot product & $V_{1}\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & K^{-1}\end{smallmatrix}\right] V_{2}^\transpose$ &  DNE & $V_{1}\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & K^{-1}\end{smallmatrix}\right]V_{2}^\transpose$\\\hline
-Central dot product & 
-$V_{1}^{c}\cdot  
-P_c\cdot
-  {V_{2}^{c}}^\transpose$ 
-&
-$V_{1}^{c}\cdot  
-P_c\cdot
-  {V_{2}^{c}}^\transpose$ 
-&
-$V_{1}^{c}\cdot  
-P_c\cdot
-  {V_{2}^{c}}^\transpose$ 
-    \\\hline
-Stereographic dot product & $V_{1}^{s}\left[\begin{smallmatrix}\rho^2 & 0 \\  0 & \rho^2\end{smallmatrix}\right](V_{2}^{s})^\transpose$ & 
- $V_{1}^{s}\left[\begin{smallmatrix}\rho^2 & 0 \\  0 & \rho^2\end{smallmatrix}\right](V_{2}^{s})^\transpose$ &
- $V_{1}^{s}\left[\begin{smallmatrix}\rho^2 & 0 \\  0 & \rho^2\end{smallmatrix}\right](V_{2}^{s})^\transpose$\\\hline
-\end{tabular}}
-\]
-where
-
-\[
-P_c = \begin{bmatrix}
-r^{2}\left(  1-r^{2}Kx_{c}^{2}\right)  & -r^{4}Kx_{c}y_{c}\\
--r^{4}Kx_{c}y_{c} & r^{2}\left(  1-r^{2}Ky_{c}^{2}\right)
-\end{bmatrix}.
-\]
-Of course if $K>0$, we again have euclidean angles $\theta$ between vectors
-$\hat{V}_{1}$ and $\hat{V}_{2}$ tangent to the $R$-sphere at some point
-computed by%
-\begin{align*}
-\hat{V}_{1}\bullet\hat{V}_{2}  &  =\left\vert \hat{V}_{1}\right\vert
-\cdot\left\vert \hat{V}_{2}\right\vert
-\cdot\cos(\theta) \\
-&=V_{1}^{s}\bullet_{s}V_{2}^{s}.
-\end{align*}
-
-
-\subsection*{Area in stereographic projection coordinates}
-
-Suppose you were given a region $G_{s}$ in the $\left(  x_{s},y_{s}\right)
-$-coordinate plane. Also suppose that $K>0$. If you trace back everything we
-have done with coordinate changes, you can see how $G_{s}$ gives you a region
-$\hat{G}$ on the sphere of radius $R=K^{-1/2}$ in euclidean space via the
-formulas%
-\begin{align*}
-\left(  \hat{x},\hat{y},\hat{z}\right)   &  =\left(  x,y,Rz\right) \\
-&  =\rho\cdot\left(  x_{s},y_{s},R\left(  2\rho-1\right)
-\right) \\
-&  =\left(  \frac{x_{s}}{\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)
-+1},\frac{y_{s}}{\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  +1}%
-,\frac{R\left(  1-\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  \right)
-}{1+\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  }\right)  .
-\end{align*}
-Now there is a formula in several variable calculus for computing the area of
-the region $\hat{G}$ on the sphere of radius $R$ in euclidean space in
-terms of the parameters $\left(  x_{s},y_{s}\right)  $. [DS,49,231]. It is
-\[%
-%TCIMACRO{\dint \nolimits_{G_{c}}}%
-%BeginExpansion
-{\displaystyle\int\nolimits_{G_{c}}}
-%EndExpansion
-\hat{a}\left(  \frac{d\hat{X}}{dx_{s}},\frac{d\hat{X}}{dy_{s}}\right)
-dx_{s}dy_{s}%
-\]
-where $\hat{a}\left(  \frac{d\hat{X}}{dx_{s}},\frac{d\hat{X}}{dy_{s}}\right)
-$ is the (euclidean) area of the parallelogram spanned by the two vectors
-$\frac{d\hat{X}}{dx_{s}}$ and $\frac{d\hat{X}}{dy_{s}}$ in euclidean
-space. That is%
-\[
-\hat{a}\left(  \frac{d\hat{X}}{dx_{s}},\frac{d\hat{X}}{dy_{s}}\right)
-=\left\vert \frac{d\hat{X}}{dx_{s}}\right\vert \cdot \left\vert \frac{d\hat{X}}{dy_{s}}\right\vert \cdot\sin(\theta)
-\]
-where $\theta$ is the angle between the two vectors $\frac{d\hat{X}}{dx_{s}}$
-and $\frac{d\hat{X}}{dy_{s}}$.
 
 \begin{problem}
-As in a previous problem show that%
-\begin{align*}
-\hat{a}\left(  \frac{d\hat{X}}{dx_{s}},\frac{d\hat{X}}{dy_{s}}\right)  ^{2}
-&  =\left\vert
-\det
-\begin{bmatrix}
-\frac{d\hat{X}}{dx_{s}}\bullet\frac{d\hat{X}}{dx_{s}} & \frac{d\hat{X}}%
-{dy_{s}}\bullet\frac{d\hat{X}}{dx_{s}}\\
-\frac{d\hat{X}}{dx_{s}}\bullet\frac{d\hat{X}}{dy_{s}} & \frac{d\hat{X}}%
-{dy_{s}}\bullet\frac{d\hat{X}}{dy_{s}}%
-\end{bmatrix}
-\right\vert \\
-&  =\left\vert
-\det
-\begin{bmatrix}
-\frac{dX}{dx_{s}}\bullet_{K}\frac{dX}{dx_{s}} & \frac{dX}{dy_{s}}\bullet
-_{K}\frac{dX}{dx_{s}}\\
-\frac{dX}{dx_{s}}\bullet_{K}\frac{dX}{dy_{s}} & \frac{dX}{dy_{s}}\bullet
-_{K}\frac{dX}{dy_{s}}%
-\end{bmatrix}
-\right\vert
-\end{align*}
-
+  Explain why one might say that central projection makes the
+  ``infinite'' seem ``finite.''
+    \begin{freeResponse}
+    \end{freeResponse}
 \end{problem}
 
-Now notice the matrix $D_{s}$ is simply the $2\times3$ matrix whose
-rows are the vectors $\frac{dX}{dx_{s}}$ and $\frac{dX}{dy_{s}}$.
+The $(x_{c},y_{c})$-coordinates are called \dfn{Poncar coordinates} for
+hyperbolic geometry and the disk of radius $1/\sqrt{|K|}$ called the
+\dfn{Klein model} for hyperbolic geometry in honor of the famous
+German geometer, Felix Klein.
 
-\begin{problem}
-Use a previous problem to show that%
-\[
-\hat{a}\left(  \frac{d\hat{X}}{dx_{s}},\frac{d\hat{X}}{dy_{s}}\right)
-^{2}=\rho^{4}=\frac{1}{\left(  \frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)
-+1\right)  ^{4}}.
-\]
-\end{problem}
+
+
+
+
+
+
 
 
 \begin{problem}
