@@ -252,7 +252,7 @@ and $\pp[z]{y_s}$.
     &=
     \begin{bmatrix}
       \frac{dx_s}{dt} & \frac{dy_s}{dt}
-    \end{bmatrix}\cdot D_{c}\cdot
+    \end{bmatrix}\cdot D_{s}\cdot
     \begin{bmatrix}
       1 & 0 & 0\\
       0 & 1 & 0\\
@@ -262,19 +262,19 @@ and $\pp[z]{y_s}$.
     \left(
     \begin{bmatrix}
       \frac{dx_s}{dt} & \frac{dy_s}{dt}
-    \end{bmatrix}\cdot D_{c}
+    \end{bmatrix}\cdot D_{s}
     \right)^\transpose\\
     &=
     \begin{bmatrix}
       \frac{dx_s}{dt} & \frac{dy_s}{dt}
-    \end{bmatrix}\cdot D_{c}\cdot
+    \end{bmatrix}\cdot D_{s}\cdot
     \begin{bmatrix}
       1 & 0 & 0\\
       0 & 1 & 0\\
     0 & 0 & K^{-1}
     \end{bmatrix}
     \cdot
-    D_{c}^\transpose
+    D_{s}^\transpose
     \cdot \begin{bmatrix}
       \frac{dx_s}{dt} \\ \frac{dy_s}{dt}
     \end{bmatrix}.
@@ -437,8 +437,7 @@ With the same setting as above, show that $P_s$ is
     0 & \rho^2
   \end{bmatrix}
   \]
-  and $\rho$ are determined by the coordinate that the vectors
-  originate from.
+  is determined by the coordinate that the vectors originate from.
 \end{definition}
 
 
@@ -458,9 +457,10 @@ think about both ``finite'' areas and ``infinite'' areas in new ways.
 When $K>0$, we are working with a sphere. As we know, a sphere has
 finite surface area.
 
+
+
 \begin{problem}
-  As a point approaches the equator of the $R$-sphere from the North
-  Pole, where does it move to under central projection?
+  Where does the Northeren hemisphere of the $R$-sphere map to under stereographic projection?
   \begin{hint}
     A picture is worth a thousand words!
   \end{hint}
@@ -468,8 +468,31 @@ finite surface area.
   \end{freeResponse}
 \end{problem}
 
+
 \begin{problem}
-  Explain why one might say that central projection makes the
+  Where does the Southeren hemisphere of the $R$-sphere map to under stereographic projection?
+  \begin{hint}
+    A picture is worth a thousand words!
+  \end{hint}
+  \begin{freeResponse}
+  \end{freeResponse}
+\end{problem}
+
+
+\begin{problem}
+  As a point approaches the South Pole of the $R$-sphere where does it
+  move to under stereographic projection?
+  \begin{hint}
+    Simply transform the relevant coordinate.
+  \end{hint}
+  \begin{freeResponse}
+  \end{freeResponse}
+\end{problem}
+
+
+
+\begin{problem}
+  Explain why one might say that stereographic projection makes the
   ``finite'' seem ``infinite.''
     \begin{freeResponse}
     \end{freeResponse}
@@ -487,12 +510,7 @@ z^{2}-|K|\left(x^{2}+y^{2}\right)  =1.
 \]
 This describes a $K$-geometry forms a $2$-sheeted hyperboloid with the
 $z$-axis as major axis. We will only consider the sheet on which $z$
-is positive as forming the $K$-geometry. In plain English, this means
-we are doing geometry on this hyperboloid:
-\begin{image}
-\includegraphics[width=3in]{UpperHyperboloid.png}
-\end{image}
-Of critical importance, note
+is positive as forming the $K$-geometry.  Of critical importance, note
 
 \begin{center}
   \textbf{this hyperboloid has infinite surface area.}
@@ -503,15 +521,13 @@ The hyperboloid above is obtained by rotating the hyperbola
 z^{2}-\left\vert K\right\vert x^{2}= 1
 \]
 in the $(x,z)$-plane around the $z$-axis.
-\begin{image}
-\includegraphics[width=3in]{UpperHyperbola.png}
-\end{image}
+
 
 
 \begin{problem}
   Assume we have a point in $K$-geometry that is shooting off to
   infinity. What is the maximum distance the image of this point can
-  be from the origin in central projection?
+  be from the origin in stereographic projection?
   \begin{hint}
     First rewrite $z^{2}-|K|x^{2} =1$ as
     \[
@@ -544,15 +560,15 @@ in the $(x,z)$-plane around the $z$-axis.
       &= \lim_{x\to \infty} \sqrt{1/x^2+|K|}\\
       &= \sqrt{|K|}.
     \end{align*}
-    Hence one projection is given by $z = x\sqrt{|K|}$.
+    Hence one projection is given by $z = x\sqrt{|K|}-1$.
   \end{freeResponse}
 \end{problem}
 
 
 Rotating the line found above gives the ``asymptotic cone.'' The
-central projection coordinates $(x_{c},y_{c})$ of $K$-geometry when
-$K<0$ only correspond to points in $K$-geometry when $(x_{c},y_{c},1)$
-lies \textit{inside} the asymptotic cone.
+stereographic projection coordinates $(x_{s},y_{s})$ of $K$-geometry
+when $K<0$ only correspond to points in $K$-geometry when
+$(x_{s},y_{s},1)$ lies \textit{inside} the asymptotic cone.
 
 \begin{problem}
   When $K<0$, find the radius of the disk in the plane $z=1$ whose
@@ -561,25 +577,25 @@ lies \textit{inside} the asymptotic cone.
     Work with the asymptote(s) you found above.
   \end{hint}
   \begin{freeResponse}
-    We must find where $z = x\sqrt{|K|}$ intersects the line $z=1$. To do this, simply solve
+    We must find where $z = x\sqrt{|K|}-1$ intersects the line $z=1$. To do this, simply solve
     \[
-    1 = x\sqrt{|K|}
+    1 = x\sqrt{|K|}-1
     \]
-    for $x$, and so the radius is $1/\sqrt{|K|}$.
+    for $x$, and so the radius is $2/\sqrt{|K|}$.
   \end{freeResponse}
 \end{problem}
 
 \begin{problem}
-  Explain why one might say that central projection makes the
+  Explain why one might say that stereographic projection makes the
   ``infinite'' seem ``finite.''
     \begin{freeResponse}
     \end{freeResponse}
 \end{problem}
 
-The $(x_{c},y_{c})$-coordinates are called \dfn{Poncar coordinates} for
-hyperbolic geometry and the disk of radius $1/\sqrt{|K|}$ called the
-\dfn{Klein model} for hyperbolic geometry in honor of the famous
-German geometer, Felix Klein.
+The $(x_{s},y_{s})$-coordinates are called \dfn{Poincar\'e
+  coordinates} for hyperbolic geometry and the disk of radius
+$2/\sqrt{|K|}$ called the \dfn{Poincar\'e model} for hyperbolic
+geometry in honor of the famous French geometer, Henri Poincar\'e.
 
 
 
