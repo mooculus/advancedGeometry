@@ -22,7 +22,7 @@ equal to the corresponding angles on the map.
 We do the next best thing---we make two maps of the sphere!  One map
 has the property that straight lines on the map correspond to shortest
 paths, and the other map has the property that angles are faithfully
-represented. We will now show that in centrap projection, straight
+represented. We will now show that in central projection, straight
 lines correspond to shortest paths, but angles are not faithfully
 represented.
 
@@ -36,7 +36,7 @@ represented.
   $(x_{c},y_{c})$-coordinates under central projection.
 
 \begin{hint}
-  To intersect two surfaces, say $f(x,y,z)=a$ and $(g(x,y,z)=b$,
+  To intersect two surfaces, say $f(x,y,z)=a$ and $g(x,y,z)=b$,
   simply examine
   \[
   f(x,y,z)-g(x,y,z) = a-b.
@@ -50,7 +50,7 @@ represented.
   \]
   with the plane
   \[
-  ax+by+z = 0
+  ax+by+cz = 0
   \]
   produces a $K$ geometry line.
 \end{hint}
@@ -67,32 +67,32 @@ represented.
 \begin{freeResponse}
   Let's start by intersecting the surfaces
   \[
-  K\left(x^2+y^2\right)+z^2=1\qquad\text{and}\qquad ax+by+z=0,
+  K\left(x^2+y^2\right)+z^2=1\qquad\text{and}\qquad ax+by+cz=0,
   \]
   where the latter is a plane passing through the origin. Write
   \[
-  K\left(x^2+y^2\right) + z^2- ax- by-z=1.
+  K\left(x^2+y^2\right) + z^2- ax- by-cz=1.
   \]
   Now use the projection formulas to write
   \begin{align*}
     &K\left(\left( \frac{x_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}\right)^2
     +\left(\frac{y_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}\right)^2\right)
     + \left(\frac{1}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}\right)^2\\
-    &-\frac{ax_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}- \frac{by_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}-\frac{1}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}=1.
+    &-\frac{ax_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}- \frac{by_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}-\frac{c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}=1.
   \end{align*}
 Squaring and adding fractions, we find
 \[
-\frac{K\left(x_c^2 + y_c^2\right)+1}{K\left(x_c^2 + y_c^2\right)+1}-\frac{ax_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}- \frac{by_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}-\frac{1}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}=1.
+\frac{K\left(x_c^2 + y_c^2\right)+1}{K\left(x_c^2 + y_c^2\right)+1}-\frac{ax_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}- \frac{by_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}-\frac{c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}=1.
 \]
 Hence
 \begin{align*}
-1-\frac{ax_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}- \frac{by_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}-\frac{1}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}} &=1\\
--\frac{ax_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}- \frac{by_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}-\frac{1}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}} &=0.
+1-\frac{ax_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}- \frac{by_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}-\frac{c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}} &=1\\
+-\frac{ax_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}- \frac{by_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}-\frac{c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}} &=0.
 \end{align*}
 Since $\sqrt{K\left(x_c^2 + y_c^2\right)+1} \ne 0$, we may clear
   denominators to find the following equation for a line
   \[
-  ax_c+by_c+1= 0.
+  ax_c+by_c+c= 0.
   \]
 \end{freeResponse}
 \end{problem}
@@ -107,116 +107,53 @@ Since $\sqrt{K\left(x_c^2 + y_c^2\right)+1} \ne 0$, we may clear
   \end{freeResponse}
 \end{problem}
 
+\begin{problem}
+  If $K<0$ explain why Euclid's fifth axiom:
+  \begin{quote}
+    Through a point not on a line there passes a unique parallel line.
+  \end{quote}
+  fails.
+  \begin{freeResponse}
+    Given a point not on a line, we see that there are many lines
+    parallel to the original line through that point.
+  \end{freeResponse}
+\end{problem}
 
+\begin{problem}
+  If $K>0$ reconcile the fact
+  \begin{quote}
+    in spherical geometry, there are no parallel lines,
+  \end{quote}
+  with the fact that 
+  \begin{quote}
+    The lines $y_c=1$ and $y_c = -1$ seem to be parallel.
+  \end{quote}
+  \begin{freeResponse}
+    These two lines are given by great circles that meet at the
+    equator. Since the equator maps to `infinity' we say they meet at
+    `infinity.'
+  \end{freeResponse}
+\end{problem}
 
 \section{Angles in central projection coordinates}
 
 While central projection coordinates ``preserve'' lines, meaning that
 shortest paths in euclidean geometry, spherical geometry, and
 hyperboloic geometry are all mapped to lines, it does not preserve
-angles. To see this, we simply need to give an example.
+angles. This means that the angle that we see in central projection
+coordinates may or may not be the same as the angle in euclidean
+geometry. To see this, we will give an example where the appearance of
+the angle is changed by a rigid motion.
 
-
-Consider the simplest case: Lines in $K$-geometry defined by
-intersecting
-\[
-K\left(x^2+y^2\right) + z^2 = 1
-\]
-with the planes
-\[
-x=0 \qquad\text{and}\qquad y=0.
-\]
 
 \begin{problem}
-  Reason geometrically why these ``lines'' in $K$-geometry correspond
-  to the the $x_c$-axis and the $y_c$-axis in central projection
-  coordinates.
-\end{problem}
-
-We know from previous work that when $K>0$, the lines described above
-can be parameterized by
-\[
-(0, R\cdot \sin\varepsilon,\cos\varepsilon)\qquad\text{and}\qquad(R\cdot \sin\varepsilon, 0, \cos\varepsilon)
-\]
-and a similar result (left to you, bold reader) holds for when
-$K<0$. Note, these curves intersect at the North Pole when
-$\varepsilon =0$.
-
-\begin{problem}
-  Use the $K$-dot product to compute the angle between these ``lines'' when $\varepsilon=0$.
-  \begin{hint}
-    You should be looking at the angle between the tangent vectors.
-  \end{hint}
-\end{problem}
-
-\begin{problem}
-  Convert the curves
-  \[
-  (0, R\cdot\sin\varepsilon,\cos\varepsilon)\qquad\text{and}\qquad(R\cdot \sin\varepsilon, 0, \cos\varepsilon)
-  \]
-  to curves in central projection.
-  \begin{freeResponse}
-    We must compute
-    \begin{align*}
-      x_{c} &=x/z,\\
-      y_{c} &=y/z.
-    \end{align*}
-    for both
-      \[
-  (0, R\cdot\sin\varepsilon,\cos\varepsilon)\qquad\text{and}\qquad(R\cdot
-      \sin\varepsilon, 0 \cos\varepsilon).
-      \]
-      Hence we obtain the curves
-      \[
-      (0,R\cdot\tan\varepsilon)\qquad\text{and}\qquad(R\cdot\tan\varepsilon,0)
-      \]
-      which correspond to the $y_c$-axis and $x_c$-axis.
-  \end{freeResponse}
-\end{problem}
-
-\begin{problem}
-  Imagine that the two curves
-  \[
-  (0,R\cdot\tan\varepsilon)\qquad\text{and}\qquad(R\cdot\tan\varepsilon,0)
-  \]
-  are in the euclidean plane and compute the angle between them at
-  $\varepsilon=0$.  How does this compare with the \textit{actual}
-  $K$-dot product angle?
-  \begin{hint}
-    Remember you should be looking at the tangent vectors.
-  \end{hint}
-\end{problem}
-
-\begin{problem}
-  Now apply the rigid motion
-  \[
-  N_\psi=
- \begin{bmatrix}
-   \cos\psi & 0 & R^{-1}\cdot\sin\psi\\
-   0 & 1 & 0\\
-   -R\cdot\sin\psi & 0 & \cos\psi
- \end{bmatrix}
- \]
- to our curves
- \[
- (0, R\cdot\sin\varepsilon,\cos\varepsilon)\qquad\text{and}\qquad(R\cdot
- \sin\varepsilon, 0, \cos\varepsilon),
- \]
- and then compute the central projection of these curves.
-\end{problem}
-
-\begin{problem}
-  Imagine that the two curves found above are in the euclidean plane
-  and compute the angle between them at $\varepsilon = 0$.  How does
-  this compare with the \textit{actual} $K$-dot product angle?
-  \begin{hint}
-    Remember you should be looking at the tangent vectors.
-  \end{hint}
-\end{problem}
-
-\begin{problem}
-  Explain what is meant when someone says that ``central projection
-  does not preserve angles.''
+  Consider the following lines in the Klein disk,
+  \begin{image}
+    \includegraphics[width=2.5in]{kleinDiskNonConformal.png}
+  \end{image}
+  where $\overline{A'B'}$ and $\overline{C'D'}$ are the images of
+  $\overline{AB}$ and $\overline{CD}$ under a $K$-rigid
+  motion. Explain how this image shows that central projection does not preserve angles.
 \end{problem}
 
 
