@@ -2,16 +2,16 @@
 
 \input{../preamble.tex}
 
-\title{Lines, circles, angles, and areas in stereographic projection}
+\title{Lines, angles, and areas in stereographic projection}
 \begin{document}
 \begin{abstract}
-Here we look at lines, circles, angles, and areas in central
+Here we look at lines, angles, and areas in central
 projection coordinates.
 \end{abstract}
 \maketitle
 
 
-\section{Stereographic projection preserves circles}
+\section{Stereographic projection sends lines to circles (or lines)}
 
 As we know, we cannot make perfect flat maps of 3D-surfaces. In
 stereographic projection, shortest paths are sent to either lines or
@@ -147,95 +147,273 @@ ADD PICTURES - SEE PAGE 108 HERB's NOTES
 
 
 
-
-CIRCLES IN STEREOGRAPHIC PROJECTION.
-
-
-
-
+\begin{remark}
+  With entirely similar reasoning, you can show that circles in
+  stereographic projection are also sent to either lines or circles.
+\end{remark}
 
 
 
 
 
+\section{Stereographic projection preserves angles}
 
-\subsection*{Area in stereographic projection coordinates}
 
-Suppose you were given a region $G_{s}$ in the $\left(  x_{s},y_{s}\right)
-$-coordinate plane. Also suppose that $K>0$. If you trace back everything we
-have done with coordinate changes, you can see how $G_{s}$ gives you a region
-$\hat{G}$ on the sphere of radius $R=K^{-1/2}$ in euclidean space via the
-formulas%
-\begin{align*}
-\left(  \hat{x},\hat{y},\hat{z}\right)   &  =\left(  x,y,Rz\right) \\
-&  =\rho\cdot\left(  x_{s},y_{s},R\left(  2\rho-1\right)
-\right) \\
-&  =\left(  \frac{x_{s}}{\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)
-+1},\frac{y_{s}}{\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  +1}%
-,\frac{R\left(  1-\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  \right)
-}{1+\frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)  }\right)  .
-\end{align*}
-Now there is a formula in several variable calculus for computing the area of
-the region $\hat{G}$ on the sphere of radius $R$ in euclidean space in
-terms of the parameters $\left(  x_{s},y_{s}\right)  $. [DS,49,231]. It is
-\[%
-%TCIMACRO{\dint \nolimits_{G_{c}}}%
-%BeginExpansion
-{\displaystyle\int\nolimits_{G_{c}}}
-%EndExpansion
-\hat{a}\left(  \frac{d\hat{X}}{dx_{s}},\frac{d\hat{X}}{dy_{s}}\right)
-dx_{s}dy_{s}%
-\]
-where $\hat{a}\left(  \frac{d\hat{X}}{dx_{s}},\frac{d\hat{X}}{dy_{s}}\right)
-$ is the (euclidean) area of the parallelogram spanned by the two vectors
-$\frac{d\hat{X}}{dx_{s}}$ and $\frac{d\hat{X}}{dy_{s}}$ in euclidean
-space. That is%
-\[
-\hat{a}\left(  \frac{d\hat{X}}{dx_{s}},\frac{d\hat{X}}{dy_{s}}\right)
-=\left\vert \frac{d\hat{X}}{dx_{s}}\right\vert \cdot \left\vert \frac{d\hat{X}}{dy_{s}}\right\vert \cdot\sin(\theta)
-\]
-where $\theta$ is the angle between the two vectors $\frac{d\hat{X}}{dx_{s}}$
-and $\frac{d\hat{X}}{dy_{s}}$.
+A remarkable fact about stereographic projection is that it
+``preserves'' angles. This means that the angles we see in
+stereographic projection are true representations of the angle in
+euclidean coordinates.  Now that we are masters of dot products, we
+will prove this fact with ease!
 
 \begin{problem}
-As in a previous problem show that%
-\begin{align*}
-\hat{a}\left(  \frac{d\hat{X}}{dx_{s}},\frac{d\hat{X}}{dy_{s}}\right)  ^{2}
-&  =\left\vert
-\det
-\begin{bmatrix}
-\frac{d\hat{X}}{dx_{s}}\bullet\frac{d\hat{X}}{dx_{s}} & \frac{d\hat{X}}%
-{dy_{s}}\bullet\frac{d\hat{X}}{dx_{s}}\\
-\frac{d\hat{X}}{dx_{s}}\bullet\frac{d\hat{X}}{dy_{s}} & \frac{d\hat{X}}%
-{dy_{s}}\bullet\frac{d\hat{X}}{dy_{s}}%
-\end{bmatrix}
-\right\vert \\
-&  =\left\vert
-\det
-\begin{bmatrix}
-\frac{dX}{dx_{s}}\bullet_{K}\frac{dX}{dx_{s}} & \frac{dX}{dy_{s}}\bullet
-_{K}\frac{dX}{dx_{s}}\\
-\frac{dX}{dx_{s}}\bullet_{K}\frac{dX}{dy_{s}} & \frac{dX}{dy_{s}}\bullet
-_{K}\frac{dX}{dy_{s}}%
-\end{bmatrix}
-\right\vert
-\end{align*}
-
+  Show that
+  \[
+  \frac{V_s\bullet_s W_s}{|V_s|_s\cdot|W_s|_s} = \frac{V_s\bullet W_s}{|V_s|\cdot|W_s|}.
+  \]
+  \begin{hint}
+    On the right-hand side we are using the euclidean dot product and
+    euclidean length formula.
+  \end{hint}
+    \begin{freeResponse}
+    Let
+      \[
+      V_s=
+      \begin{bmatrix}
+        a & b
+      \end{bmatrix}
+      \qquad\text{and}\qquad
+      W_s=
+      \begin{bmatrix}
+        c & d
+      \end{bmatrix}.
+      \]
+      Write
+      \begin{align*}
+        \frac{V_s\bullet_s W_s}{|V_s|_s\cdot|W_s|_s} &= \frac{
+          \begin{bmatrix}
+            a & b
+          \end{bmatrix}
+          \begin{bmatrix}
+            \rho^2 & 0 \\
+            0 & \rho^2
+          \end{bmatrix}
+          \begin{bmatrix}
+            c\\
+            d
+          \end{bmatrix}
+        }{
+          \sqrt{\begin{bmatrix}
+            a & b
+          \end{bmatrix}
+          \begin{bmatrix}
+            \rho^2 & 0 \\
+            0 & \rho^2
+          \end{bmatrix}
+          \begin{bmatrix}
+            a\\
+            b
+          \end{bmatrix}}
+          \cdot
+          \sqrt{\begin{bmatrix}
+            c & d
+          \end{bmatrix}
+          \begin{bmatrix}
+            \rho^2 & 0 \\
+            0 & \rho^2
+          \end{bmatrix}
+          \begin{bmatrix}
+            c\\
+            d
+          \end{bmatrix}}
+        }\\
+        &= \frac{ac\rho^2 + bd\rho^2}{\sqrt{a^2\rho^2+b^2\rho^2}\cdot \sqrt{c^2\rho^2+d^2\rho^2}}\\
+        &= \frac{\rho^2(ac + bd)}{\rho^2\sqrt{a^2+b^2}\cdot \sqrt{c^2+d^2}}\\
+        &= \frac{ac + bd}{\sqrt{a^2+b^2}\cdot \sqrt{c^2+d^2}}\\
+        &=\frac{V_s\bullet W_s}{|V_s|\cdot|W_s|}.
+    \end{align*}
+  \end{freeResponse}
 \end{problem}
 
-Now notice the matrix $D_{s}$ is simply the $2\times3$ matrix whose
-rows are the vectors $\frac{dX}{dx_{s}}$ and $\frac{dX}{dy_{s}}$.
 
 \begin{problem}
-Use a previous problem to show that%
-\[
-\hat{a}\left(  \frac{d\hat{X}}{dx_{s}},\frac{d\hat{X}}{dy_{s}}\right)
-^{2}=\rho^{4}=\frac{1}{\left(  \frac{K}{4}\left(  x_{s}^{2}+y_{s}^{2}\right)
-+1\right)  ^{4}}.
-\]
+  Explain how the last problem shows that stereographic projection
+  ``preserves'' angles. 
 \end{problem}
 
 
+
+
+%% \begin{problem}
+%% Draw a picture of an angle between two paths through a point on
+%%   the Euclidean $R$-sphere and the stereographic projection of that
+%%   angle onto the plane $\hat{z}=R$. Try to give an intuitive geometric
+%%   explanation for why it should have the same measure as the original
+%%   angle.
+%% \end{problem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Areas in stereographic projection coordinates}
+
+Let's use the power of stereographic coordinates to compute the areas
+of spherical, hyperbolic, and euclidean circles.
+
+We know that the area of a region in stereographic coordinates is given by 
+\[
+\int_{C_s} \sqrt{
+  \det
+  \begin{bmatrix}
+    \dd[X]{x_s}\bullet_K \dd[X]{x_s} & \dd[X]{y_s}\bullet_K \dd[X]{x_s} \\
+    \dd[X]{x_s}\bullet_K \dd[X]{y_s} & \dd[X]{y_s}\bullet_K \dd[X]{y_s}
+  \end{bmatrix}
+}\d x_s\d y_s
+\]
+
+\begin{problem}
+  Give a heuristic explanation of why this integral computes what we
+  say it computes.
+\end{problem}
+
+You have already shown that
+\[
+\int_{C_s} \sqrt{
+  \det
+  \begin{bmatrix}
+    \dd[X]{x_s}\bullet_K \dd[X]{x_s} & \dd[X]{y_s}\bullet_K \dd[X]{x_s} \\
+    \dd[X]{x_s}\bullet_K \dd[X]{y_s} & \dd[X]{y_s}\bullet_K \dd[X]{y_s}
+  \end{bmatrix}
+}\d x_s\d y_s
+\]
+\[
+=
+\int_{C_s} \sqrt{
+  \det\left(
+  \begin{bmatrix}
+    \dd[X]{x_s}\\
+    \dd[X]{y_s}
+  \end{bmatrix}
+  \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & K^{-1}
+  \end{bmatrix}
+  \begin{bmatrix}
+    \left(\dd[X]{x_s}\right)^\transpose & \left(\dd[X]{y_s}\right)^\transpose
+  \end{bmatrix}\right)
+}\d x_s\d y_s
+\]
+
+\begin{problem}
+  Explain why
+  \[
+\begin{bmatrix}
+    \dd[X]{x_s}\\
+    \dd[X]{y_s}
+  \end{bmatrix}
+  \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & K^{-1}
+  \end{bmatrix}
+  \begin{bmatrix}
+    \left(\dd[X]{x_s}\right)^\transpose & \left(\dd[X]{y_s}\right)^\transpose
+  \end{bmatrix} =P_s.
+  \]
+  \begin{hint}
+    No new computations need to be done, just look at how $P_s$ was derived.
+  \end{hint}
+\end{problem}
+
+Hence now we see 
+\[
+\int_{C_s} \sqrt{
+  \det
+  \begin{bmatrix}
+    \dd[X]{x_s}\bullet_K \dd[X]{x_s} & \dd[X]{y_s}\bullet_K \dd[X]{x_s} \\
+    \dd[X]{x_s}\bullet_K \dd[X]{y_s} & \dd[X]{y_s}\bullet_K \dd[X]{y_s}
+  \end{bmatrix}
+}\d x_s\d y_s = \int_{C_s} \sqrt{\det P_s}\d x_s\d y_s
+\]
+
+\begin{problem}
+  Compute $\sqrt{\det P_s}$ in terms of $K$, $x_s$, and $y_s$.
+\end{problem}
+
+
+\begin{problem}
+  Examining the following diagram
+  \begin{image}
+    \includegraphics[width=3in]{disk.png}
+  \end{image}
+  convert
+  \[
+  \int_{C_s} \frac{16}{\left(K\left(x_s^2+y_s^2\right)+4\right)^2} \d x_s\d y_s.
+  \]
+  to polar coordinates and compute the integral.
+  \begin{hint}
+    Recall that to covert to polar coordinates, set
+    \begin{align*}
+      r &= \sqrt{x_s^2+y_s^2},\\
+      \theta &= \arctan(y/x),
+    \end{align*}
+    and replace $\d x_s\d y_s$ with $r\d r\d \theta$.
+  \end{hint}
+  \begin{freeResponse}
+    \[
+    \int_{C_s} \frac{16}{\left(K\left(x_s^2+y_s^2\right)+4\right)^2} \d x_s\d y_s
+    = \int_0^{2\pi} \int_0^a \frac{16}{\left(K\cdot r^2+4\right)^2} r\d r \d \theta.
+    \]
+    Integrating this from the inside-out we find
+    \begin{align*}
+      \int_0^{2\pi} \int_0^a \frac{16}{\left(K\cdot r^2+4\right)^2} r\d r \d \theta
+      &= \int_0^{2\pi} \eval{\frac{-8}{K\left(K\cdot r^2+4\right)}}_0^a \d \theta\\
+      &= \int_0^{2\pi} \frac{-8}{K\left(K\cdot a^2+4\right)}+\frac{2}{K} \d \theta\\
+      &= \frac{4\pi}{K}-\frac{16\pi}{K\left(K\cdot a^2+4\right)}.   
+    \end{align*}
+  \end{freeResponse}
+\end{problem}
+
+
+\begin{problem}
+  Compute
+  \[
+  \lim_{K\to 0} \left(\frac{4\pi}{K}-\frac{16\pi}{K\left(K\cdot a^2+4\right)}\right)
+  \]
+  and explain why your answer makes perfect sense.
+  \begin{hint}
+    Express this as a single fraction.
+  \end{hint}
+  \begin{freeResponse}
+    \begin{align*}
+    \lim_{K\to 0} \left(\frac{4\pi}{K}-\frac{16\pi}{K\left(K\cdot a^2+4\right)}\right)
+    &= \lim_{K\to 0} \left(\frac{4\pi\left(K\cdot a^2+4\right) - 16\pi}{K\left(K\cdot a^2+4\right)}\right)\\
+    &= \lim_{K\to 0} \left(\frac{4\pi K\cdot a^2}{K\left(K\cdot a^2+4\right)}\right)\\
+    &= \lim_{K\to 0} \left(\frac{4\pi\cdot a^2}{K\cdot a^2+4}\right)\\
+    &= \frac{4\pi\cdot a^2}{4}\\
+    &= \pi\cdot a^2.\\
+    \end{align*}
+    This makes perfect sense because when $K=0$, we are in the
+    euclidean plane. Hence the area of the circle is $\pi\cdot a^2$.
+  \end{freeResponse}
+\end{problem}
+
+
+
+
+\section{Stereographic projection unifies euclidean, spherical, and hyperbolic geometry}
 
 \[
 {\renewcommand{\arraystretch}{2.7}

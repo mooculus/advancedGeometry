@@ -153,13 +153,14 @@ the angle is changed by a rigid motion.
   \end{image}
   where $\overline{A'B'}$ and $\overline{C'D'}$ are the images of
   $\overline{AB}$ and $\overline{CD}$ under a $K$-rigid
-  motion. Explain how this image shows that central projection does not preserve angles.
+  motion. Explain how this image shows that central projection does
+  not preserve angles.
 \end{problem}
 
 
 \section{Areas in central projection coordinates}
 
-\subsection{The area of half a lune}
+
 
 We have already seen that on the $R$-sphere, the area of an
 $\alpha$-lune is $2\alpha\cdot R^2$. Let's compute this a different
@@ -303,7 +304,7 @@ At this point we see we are interested in the following integral
     Recall that to covert to polar coordinates, set
     \begin{align*}
       r &= \sqrt{x_c^2+y_c^2},\\
-      \theta &= \arctan(y/x),
+      \theta &= \arctan(y_c/x_c),
     \end{align*}
     and replace $\d x_c\d y_c$ with $r\d r\d \theta$.
   \end{hint}
@@ -311,11 +312,11 @@ At this point we see we are interested in the following integral
     \[
     \int_{L_c}
     \frac{1}{\left(K\left(x_c^2+y_c^2\right)+1\right)^{3/2}} \d x_c\d
-    y_c = \int_0^\alpha \int_0^\infty \frac{1}{K\left(r^2+1\right)^{3/2}} r\d r \d \theta.
+    y_c = \int_0^\alpha \int_0^\infty \frac{1}{\left(K\cdot r^2+1\right)^{3/2}} r\d r \d \theta.
     \]
     Integrating this from the inside-out we find
     \begin{align*}
-      \int_0^\alpha \int_0^\infty \frac{1}{K\left(r^2+1\right)^{3/2}} r\d r \d \theta &= \int_0^\alpha \eval{\frac{-1}{K\left(r^2+1\right)^{1/2}}}_0^\infty \d \theta\\
+      \int_0^\alpha \int_0^\infty \frac{1}{\left(K\cdot r^2+1\right)^{3/2}} r\d r \d \theta &= \int_0^\alpha \eval{\frac{-1}{K\left(K\cdot r^2+1\right)^{1/2}}}_0^\infty \d \theta\\
       &= \int_0^\alpha \frac{1}{K} \d \theta\\
       &= \frac{\alpha}{K}.   
     \end{align*}
