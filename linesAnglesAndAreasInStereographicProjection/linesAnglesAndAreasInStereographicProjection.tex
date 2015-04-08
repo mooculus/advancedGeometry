@@ -129,9 +129,19 @@ denominators to find
 \end{problem}
 
 
-ADD PICTURES - SEE PAGE 108 HERB's NOTES
+
+\begin{remark}
+  With entirely similar reasoning, you can show that circles in
+  stereographic projection are also sent to either lines or circles.
+\end{remark}
 
 
+When we project shortest lines, they map to circles (unless $c=0$ as
+above). When $K<0$, the circles meet the ``circle at infinity'' at right angles. 
+
+\begin{image}
+\includegraphics[width=3in]{stereoLines.png}
+\end{image}
 
 \begin{problem}
   If $K<0$ explain why Euclid's fifth axiom:
@@ -146,11 +156,6 @@ ADD PICTURES - SEE PAGE 108 HERB's NOTES
 \end{problem}
 
 
-
-\begin{remark}
-  With entirely similar reasoning, you can show that circles in
-  stereographic projection are also sent to either lines or circles.
-\end{remark}
 
 
 
@@ -356,7 +361,7 @@ Hence now we see
 \begin{problem}
   Examining the following diagram
   \begin{image}
-    \includegraphics[width=3in]{disk.png}
+    \includegraphics[width=3in]{stereoCirc.png}
   \end{image}
   convert
   \[
@@ -367,7 +372,7 @@ Hence now we see
     Recall that to covert to polar coordinates, set
     \begin{align*}
       r &= \sqrt{x_s^2+y_s^2},\\
-      \theta &= \arctan(y/x),
+      \theta &= \arctan(y_s/x_s),
     \end{align*}
     and replace $\d x_s\d y_s$ with $r\d r\d \theta$.
   \end{hint}
@@ -414,6 +419,28 @@ Hence now we see
 
 
 \section{Stereographic projection unifies euclidean, spherical, and hyperbolic geometry}
+
+
+Under stereographic projection, our new dot product defined by
+\[
+V_s\bullet_s W_s = V_s\cdot P_s\cdot W_s^\transpose
+\]
+make sense when $K$ is zero, positive, and negative. Hence this dot
+product makes sense for euclidean, spherical, and hyperbolic
+geometry. However, in stereographic projection, shortest paths on the
+$K$-surface
+\[
+K\left(x^2 + y^2\right) + z^2 = 1
+\]
+map to circles (or lines) in the plane $z=1$. The advantage to
+stereographic projection over central projection is that angles are
+preserved in stereographic projection. This means that when angles are
+projected into the plane via stereographic projection, the angle we
+see in the $(x_s,y_s)$-plane is the actual angle between two
+vectors. Summarizing, we have:
+
+
+
 
 \[
 {\renewcommand{\arraystretch}{2.7}
