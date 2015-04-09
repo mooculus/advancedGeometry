@@ -92,15 +92,19 @@ and $\pp[z]{\tau}$.
   $z$; and if $x$, $y$, and $z$ are all differentiable functions of
   $t$, then the chain rule states
   \[
-\dd[F]{t} = \nabla F \bullet\left(\dd[x]{t},\dd[y]{t},\dd[z]{t}\right).
+  \dd[F]{t} = \nabla F \cdot
+  \begin{bmatrix}
+    \dd[x]{t} & \dd[y]{t} & \dd[z]{t}
+  \end{bmatrix}^\transpose
+  .
   \]
 \end{hint}
 \begin{freeResponse}
   Write
   \begin{align*}
-    \dd[x]{t} &= \left(\pp[x]{\sigma},\pp[x]{\tau}\right)\bullet\left(\dd[\sigma]{t},\dd[\tau]{t}\right) = \pp[x]{\sigma}\cdot\dd[\sigma]{t}+\pp[x]{\tau}\cdot\dd[\tau]{t}, \\
-    \dd[y]{t} &= \left(\pp[y]{\sigma},\pp[y]{\tau}\right)\bullet\left(\dd[\sigma]{t},\dd[\tau]{t}\right) = \pp[y]{\sigma}\cdot\dd[\sigma]{t}+\pp[y]{\tau}\cdot\dd[\tau]{t}, \\
-    \dd[z]{t} &= \left(\pp[z]{\sigma},\pp[z]{\tau}\right)\bullet\left(\dd[\sigma]{t},\dd[\tau]{t}\right) = \pp[z]{\sigma}\cdot\dd[\sigma]{t}+\pp[z]{\tau}\cdot\dd[\tau]{t}.  
+    \dd[x]{t} &= \begin{bmatrix}\pp[x]{\sigma} & \pp[x]{\tau}\end{bmatrix}\cdot\begin{bmatrix}\dd[\sigma]{t} & \dd[\tau]{t}\end{bmatrix}^\transpose = \pp[x]{\sigma}\cdot\dd[\sigma]{t}+\pp[x]{\tau}\cdot\dd[\tau]{t}, \\
+    \dd[y]{t} &= \begin{bmatrix}\pp[y]{\sigma} & \pp[y]{\tau}\end{bmatrix}\cdot\begin{bmatrix}\dd[\sigma]{t} & \dd[\tau]{t}\end{bmatrix}^\transpose = \pp[y]{\sigma}\cdot\dd[\sigma]{t}+\pp[y]{\tau}\cdot\dd[\tau]{t}, \\
+    \dd[z]{t} &= \begin{bmatrix}\pp[z]{\sigma} & \pp[z]{\tau}\end{bmatrix}\cdot\begin{bmatrix}\dd[\sigma]{t} & \dd[\tau]{t}\end{bmatrix}^\transpose = \pp[z]{\sigma}\cdot\dd[\sigma]{t}+\pp[z]{\tau}\cdot\dd[\tau]{t}.  
   \end{align*}
 \end{freeResponse}
 \end{problem}

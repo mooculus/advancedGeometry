@@ -73,21 +73,16 @@ algebra of matrices. In particular you will need to remember and apply the
 chain rule for differentiable functions of several variables, written in
 matrix notation. That is:
 
-\begin{theorem}
-\textbf{(Chain Rule)} Given differentiable mappings%
-\begin{align*}
-&  \left(  y_{1}\left(  x_{1},\ldots,x_{m}\right)  ,\ldots,y_{n}\left(
-x_{1},\ldots,x_{m}\right)  \right) \\
-&  \left(  z_{1}\left(  y_{1},\ldots,y_{n}\right)  ,\ldots,z_{p}\left(
-y_{1},\ldots,y_{n}\right)  \right)
-\end{align*}
-then%
-\[
-\left(  \frac{\partial z_{k}}{\partial x_{i}}\right)  =\left(  \frac{\partial
-z_{k}}{\partial y_{j}}\right)  \cdot\left(  \frac{\partial y_{j}}{\partial
-x_{i}}\right)  .
-\]
-
+\begin{theorem}[Chain Rule]
+  If $F$ is a differentiable function of $x_1, x_2,\dots,x_n$; and if
+  $x_1, x_2,\dots,x_n$ are all differentiable functions of $t$, then
+  the chain rule states
+  \[
+  \dd[F]{t} = \nabla F \cdot
+  \begin{bmatrix}
+    \dd[x_1]{t} & \dd[x_2]{t} & \cdots & \dd[x_n]{t}
+  \end{bmatrix}^\transpose.
+  \]
 \end{theorem}
 
 As a help, at some points in the text and in some of the Exercises, a more

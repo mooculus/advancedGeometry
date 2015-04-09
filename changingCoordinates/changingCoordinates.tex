@@ -139,7 +139,10 @@ $\frac{d\hat{y}}{dt}$, and $\frac{d\hat{z}}{dt}$.
   $z$; and if $x$, $y$, and $z$ are all differentiable functions of
   $t$, then the chain rule states
   \[
-\dd[F]{t} = \nabla F \bullet\left(\dd[x]{t},\dd[y]{t},\dd[z]{t}\right).
+  \dd[F]{t} = \nabla F \cdot
+  \begin{bmatrix}
+    \dd[x]{t} & \dd[y]{t} & \dd[z]{t}
+  \end{bmatrix}^\transpose.
   \]
 \end{hint}
 \end{problem}
