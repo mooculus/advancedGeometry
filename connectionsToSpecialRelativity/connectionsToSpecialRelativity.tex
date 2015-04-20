@@ -1,0 +1,320 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\title{Connections to special relativity}
+
+\begin{document}
+\begin{abstract}
+Here we see a connection to special relativity.
+\end{abstract}
+\maketitle
+
+In this section we will show a connection to special relativity. Underlying all of this work is the notion of a \textit{group action}.
+
+\begin{definition}
+  If $G$ is a group and $X$ is a set, then a (right) \dfn{group action}  is a map (written as $g\cdot x$, for all $g\in G$ and $x\in X$) satisfying the following properties:
+  \begin{enumerate}
+  \item $g_1\cdot(g_2\cdot x) = (g_1\cdot g_2)\cdot x$, for all $g_1,
+    g_2\in G$ and $x\in X$.
+  \item $I\cdot x = x$ for all $x\in X$ where $I$ is the identity
+    element of the group.
+  \end{enumerate}
+\end{definition}
+As we work, you should try to see where we are using group actions.
+
+\section{Galilean transformations of velocity}
+
+
+
+In this case we will let points in central projection coordinates
+$(x_c,y_c)$ represent ``observed velocities.'' We have shown that
+orthogonal matrices in $K$-warped space form a group. That is we have
+shown that
+\begin{enumerate}
+\item multiplication of orthogonal matrices is associative, 
+\item the product of two orthogonal matrices is orthogonal,
+\item the identity matrix is orthogonal,
+\item the inverse matrix $M^{-1}$ of a orthogonal matrix $M$ is orthogonal.
+\end{enumerate}
+The group of orthogonal $3\times 3$ matrices is denoted as
+$O(3)$. We'll denote the group of $K$-orthogonal matrices as
+$O_K(3)$. When $K<0$, we already know three elements of this group:
+\[
+I =
+\begin{bmatrix}
+  1 & 0 & 0\\
+  0 & 1 & 0\\
+  0 & 0 & 1
+\end{bmatrix},
+\qquad
+M_\theta=
+\begin{bmatrix}
+  \cos\theta & \sin\theta & 0\\
+  -\sin\theta & \cos\theta & 0\\
+  0 & 0 & 1
+\end{bmatrix},
+\]
+\[
+N_\psi=\begin{bmatrix}
+\cosh\psi & 0 & |K|^{1/2}\cdot\sinh\psi\\
+0 & 1 & 0\\
+|K|^{-1/2}\cdot\sinh\psi & 0 & \cosh\psi
+\end{bmatrix}
+\]
+If we have an observer at point $O = (0,0)$ in central projection
+coordinates, we can denote any other observed velocity in the plane as
+a point $(x_c,y_c)$.
+
+\begin{problem}
+  With the setting described above in mind, what does the point
+  $(.3,.3)$ represent?
+\end{problem}
+
+Now if we have a configuration of points in this velocity space, we
+would like to answer the following question:
+
+\begin{quote}
+  If a new observer $O'$ views the original observer $O$ as moving at
+  a velocity of $(u,0)$, how do we transform all other velocities
+  measured by the original observer?
+\end{quote}
+
+\begin{problem}
+  Can you give a naive solution to this problem?
+\end{problem}
+Even if you can give a naive solution to this problem, we will think
+of this problem in central projection coordinates. Eventually we want
+to solve a much harder problem where the naive solution will fail,
+however the solution using central projection coordinates will
+prevail. 
+
+We'll start by working when $K<0$, then we will take the limit as $K$
+goes to zero, and see what we find.
+
+\begin{problem}
+  Convert the $K$-rigid motion
+  \[
+  N_\psi=\begin{bmatrix}
+  \cosh\psi & 0 & |K|^{1/2}\cdot\sinh\psi\\
+  0 & 1 & 0\\
+  |K|^{-1/2}\cdot\sinh\psi & 0 & \cosh\psi
+\end{bmatrix}
+  \]
+  to a rigid motion of the $(x_c,y_c)$-plane. Call your answer $\nu_\psi$.
+  \begin{hint}
+    Either write down the answer from a previous exercise or recall
+    that a rigid motion in $(x,y,z)$-coordinates
+    \[
+    M=\begin{bmatrix}
+    m_{11} & m_{12} & m_{13}\\
+    m_{21} & m_{22} & m_{23}\\
+    m_{31} & m_{32} & m_{33}
+    \end{bmatrix}
+    \]
+    converts to
+    \[
+    \mu(x_c,y_c) =
+    \left(\frac{m_{11}x_{c}+m_{21}y_{c}+m_{31}}{m_{13}x_{c}+m_{23}y_{c}+m_{33}},
+    \frac{m_{12}x_{c}+m_{22}y_{c}+m_{32}}{m_{13}x_{c}+m_{23}y_{c}+m_{33}
+    }\right).
+    \]
+  \end{hint}
+  \begin{freeResponse}
+    Write
+    \[
+    \nu_\psi(x_c,y_c) = \left(\frac{x_c\cdot\cosh\psi+|K|^{-1/2}\cdot\sinh\psi}{x_c\cdot|K|^{1/2}\cdot\sinh\psi+\cosh\psi},\frac{y_c}{x_c\cdot|K|^{1/2}\cdot\sinh\psi+\cosh\psi}\right).
+    \]
+  \end{freeResponse}
+\end{problem}
+
+We need to be translating velocities by a constant amount in central
+projection. To do this, we must set $\psi =\arctanh\left(u\cdot|K|^{1/2}\right)$.
+
+\begin{problem}
+  Substitute $\arctanh\left(u\cdot|K|^{1/2}\right)$ for $\psi$ in your formula above.
+  \begin{hint}
+    \begin{align*}
+    \cosh(\arctanh(x)) &= \frac{1}{\sqrt{1-x^2}},\\
+    \sinh(\arctanh(x)) &= \frac{x}{\sqrt{1-x^2}}.
+    \end{align*}
+  \end{hint}
+  \begin{freeResponse}
+    Write
+    \begin{align*}
+      \nu_\psi(x_c,y_c) &= \left(\frac{x_c\cdot\cosh\psi+|K|^{-1/2}\cdot\sinh\psi}{x_c\cdot|K|^{1/2}\cdot\sinh\psi+\cosh\psi},\frac{y_c}{x_c\cdot|K|^{1/2}\cdot\sinh\psi+\cosh\psi}\right)\\
+      &= \left(\frac{\frac{x_c}{\sqrt{1-\left(u\cdot|K|^{1/2}\right)^2}} + \frac{|K|^{-1/2}\cdot u\cdot|K|^{1/2}}{\sqrt{1-\left(u\cdot|K|^{1/2}\right)^2}}}
+         {\frac{x_c\cdot |K|^{1/2}\cdot u \cdot |K|^{1/2}}{\sqrt{1-\left(u\cdot|K|^{1/2}\right)^2}}+\frac{1}{\sqrt{1-\left(u\cdot |K|^{1/2}\right)^2}}},
+         \frac{y_c}{\frac{x_c\cdot |K|^{1/2}\cdot u \cdot |K|^{1/2}}{\sqrt{1-\left(u\cdot|K|^{1/2}\right)^2}}+\frac{1}{\sqrt{1-\left(u\cdot |K|^{1/2}\right)^2}}}\right)\\
+         &= \left(\frac{\frac{x_c}{\sqrt{1-u^2\cdot|K|}} + \frac{u}{\sqrt{1-u^2\cdot|K|}}}
+         {\frac{x_c\cdot u \cdot |K|}{\sqrt{1-u^2\cdot|K|}}+\frac{1}{\sqrt{1-u^2\cdot |K|}}},
+         \frac{y_c}{\frac{x_c\cdot u \cdot |K|}{\sqrt{1-u^2\cdot|K|}}+\frac{1}{\sqrt{1-u^2\cdot |K|}}}\right).
+         %&= \left(\frac{x_c + u}{x_c\cdot u \cdot |K|+1},\frac{y_c\cdot \sqrt{1-u^2\cdot|K|}}{x_c\cdot u \cdot |K|+1}\right).
+    \end{align*}
+  \end{freeResponse}
+\end{problem}
+
+You have just written down a transformation that will work for any
+negative value of $K$. We need this to work for $K=0$.
+
+\begin{problem}
+  Take the limit as $K$ goes to zero in your answer above.
+  \begin{freeResponse}
+    Write
+    \[
+    \lim_{K\to 0} \left(\frac{\frac{x_c}{\sqrt{1-u^2\cdot|K|}} + \frac{u}{\sqrt{1-u^2\cdot|K|}}}
+         {\frac{x_c\cdot u \cdot |K|}{\sqrt{1-u^2\cdot|K|}}+\frac{1}{\sqrt{1-u^2\cdot |K|}}},
+         \frac{y_c}{\frac{x_c\cdot u \cdot |K|}{\sqrt{1-u^2\cdot|K|}}+\frac{1}{\sqrt{1-u^2\cdot |K|}}}\right)
+         \]
+         \begin{align*}
+           &= \lim_{K\to 0}\left(\frac{x_c + u}{x_c\cdot u \cdot |K|+1},\frac{y_c\cdot \sqrt{1-u^2\cdot|K|}}{x_c\cdot u \cdot |K|+1}\right)\\
+           &=(x_c+u,y_c).
+         \end{align*}
+  \end{freeResponse}
+\end{problem}
+
+
+At this point we are working in the \textit{euclidean plane}, that is,
+central projection when $K=0$.
+The answer to our question:
+\begin{quote}
+  If a new observer $O'$ views the original observer $O$ as moving at
+  a velocity of $(u,0)$, how do we transform all other velocities
+  measured by the original observer?
+\end{quote}
+is almost too easy, as it is that we apply the transformation
+\[
+\nu_u(x_c,y_c) = (x_c+u,y_c).
+\]
+Before you object that we have done nothing but ``made mathematics
+difficult'' we preemptively retort:
+\begin{center}
+  \textbf{We are building a foundation for future work.}
+\end{center}
+
+\begin{problem}
+  Can you rephrase what we are doing in terms of group actions?
+\end{problem}
+
+
+
+
+\section{Hyperbolic transformations of velocity}
+
+Armed with experience from above, let's now suppose we are again attacking the question:
+\begin{quote}
+  If a new observer $O'$ views the original observer $O$ as moving at
+  a velocity of $(u,0)$, how do we transform all other velocities
+  measured by the original observer?
+\end{quote}
+however, this time we are working not on the euclidean plane, but on
+the Klein disk, when $K=-1$. The beauty of our work above is that it
+can be directly applied in this case:
+
+\begin{problem}
+  Show that when $u\in [0,1)$ and $K=-1$,
+  \[
+  \nu_u(x_c,y_c) = \left(\frac{x_c + u}{x_c\cdot u + 1},\frac{y_c\cdot \sqrt{1-u^2}}{x_c\cdot u+1}\right).
+  \]
+  \begin{freeResponse}
+    Write
+    \begin{align*}
+    \nu_u(x_c,y_c)&=\left(\frac{\frac{x_c}{\sqrt{1-u^2\cdot|K|}} + \frac{u}{\sqrt{1-u^2\cdot|K|}}}
+         {\frac{x_c\cdot u \cdot |K|}{\sqrt{1-u^2\cdot|K|}}+\frac{1}{\sqrt{1-u^2\cdot |K|}}},
+         \frac{y_c}{\frac{x_c\cdot u \cdot |K|}{\sqrt{1-u^2\cdot|K|}}+\frac{1}{\sqrt{1-u^2\cdot |K|}}}\right)\\
+         &=\left(\frac{x_c + u}{x_c\cdot u \cdot |K|+1},\frac{y_c\cdot \sqrt{1-u^2\cdot|K|}}{x_c\cdot u \cdot |K|+1}\right)
+    \end{align*}
+    and set $K=-1$ to find:
+    \[
+    \nu_u(x_c,y_c)=\left(\frac{x_c + u}{x_c\cdot u + 1},\frac{y_c\cdot \sqrt{1-u^2}}{x_c\cdot u+1}\right).
+    \]
+  \end{freeResponse}
+\end{problem}
+
+For those who are in-the-know, a minor miracle has just occurred. The transformation
+\[
+  \nu_u(x_c,y_c) = \left(\frac{x_c + u}{x_c\cdot u + 1},\frac{y_c\cdot \sqrt{1-u^2}}{x_c\cdot u+1}\right),
+\]
+is in fact the velocity transformation for Einstein's special theory
+of relativity when one takes the speed of light to be $c=1$!
+
+\begin{problem}
+Show that the transformation of the Klein disk $\nu_u$ is
+given by the transformation of $K$-warped space
+\[
+N_u = 
+\begin{bmatrix}
+  \frac{1}{\sqrt{1-u^2\cdot|K|}} & 0 & \frac{u\cdot|K|}{\sqrt{1-u^2\cdot|K|}}\\
+  0 & 1 & 0\\
+  \frac{u}{\sqrt{1-u^2\cdot|K|}} & 0 & \frac{1}{\sqrt{1-u^2\cdot|K|}}
+\end{bmatrix}
+\]
+when $K=-1$.
+\end{problem}
+
+\begin{problem}
+  Show that
+  \[
+  N_u = 
+  \begin{bmatrix}
+    \frac{1}{\sqrt{1-u^2\cdot|K|}} & 0 & \frac{u\cdot|K|}{\sqrt{1-u^2\cdot|K|}}\\
+    0 & 1 & 0\\
+    \frac{u}{\sqrt{1-u^2\cdot|K|}} & 0 & \frac{1}{\sqrt{1-u^2\cdot|K|}}
+  \end{bmatrix}
+  \]
+  is a $K$-rigid motion.
+\end{problem}
+
+The upshot to all of these computations is that transformations of the form:
+\[
+\nu_u(x_c,y_c) = \left(\frac{x_c + u}{x_c\cdot u + 1},\frac{y_c\cdot \sqrt{1-u^2}}{x_c\cdot u+1}\right),
+\]
+correspond exactly to a rigid motion of the surface
+\[
+-(x^2+y^2) + z^2 =1
+\]
+with the $K$-dot product. One imaginative interpretation of these
+computations is that we are in fact living on a hyperbolic surface,
+and that we experience our world through the lens of a central
+projection. What an amazing thought!
+
+
+\section{Hyperbolic transformations of position}
+
+
+THIS IS A DRAFT
+
+
+Here we must set
+\[
+K = \frac{-1}{T^2}\qquad \text{or}\qquad K = \frac{-1}{H+T^2}.
+\]
+Where $T$ is another time parameter different from $t$.
+Computationally $T=t$ and $K= \frac{-1}{t^2}$ seems to work out, but
+it makes very little physical sense to me what this means, or why this
+should be the case.
+
+Write
+\[
+N_{u\cdot t} = 
+\begin{bmatrix}
+  \frac{1}{\sqrt{1-u^2\cdot t^2\cdot|K|}} & 0 & \frac{u\cdot t^2\cdot|K|}{\sqrt{1-u^2\cdot t^2\cdot|K|}}\\
+  0 & 1 & 0\\
+  \frac{u\cdot t^2}{\sqrt{1-u^2\cdot t^2\cdot|K|}} & 0 & \frac{1}{\sqrt{1-u^2\cdot t^2\cdot|K|}}
+\end{bmatrix}
+\]
+If $K=\frac{-1}{t^2}$, then 
+\[
+N_{u\cdot t} = 
+\begin{bmatrix}
+  \frac{1}{\sqrt{1-u^2}} & 0 & \frac{u}{t\cdot\sqrt{1-u^2}}\\
+  0 & 1 & 0\\
+  \frac{u\cdot t}{\sqrt{1-u^2}} & 0 & \frac{1}{\sqrt{1-u^2}}
+\end{bmatrix}
+\]
+and this is a $K$-rigid motion in this case. Moreover, here
+\[
+\nu_{u\cdot t}(v\cdot t,0) = \left(\frac{(v+u)\cdot t}{\sqrt{1+v\cdot u}},0\right)  
+\]
+  
+\end{document}
