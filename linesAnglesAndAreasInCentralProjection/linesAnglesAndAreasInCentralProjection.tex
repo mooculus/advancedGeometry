@@ -60,8 +60,12 @@ represented.
   \begin{align*}
       x &= \frac{x_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}},\\
       y &= \frac{y_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}},\\
-      z &= \frac{1}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}.\\
+      z &= \frac{1}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}},
   \end{align*}
+  and note that these points are \textit{necessarily} on the surface
+  \[
+  1 = K\left(x^2+y^2\right) + z^2.
+  \]
 \end{hint}
 
 \begin{freeResponse}
@@ -73,23 +77,17 @@ represented.
   \[
   K\left(x^2+y^2\right) + z^2- ax- by-cz=1.
   \]
-  Now use the projection formulas to write
+  Now use the projection formulas. Since these formula necessarily
+  produce points on the surface
+  \[
+  1 = K\left(x^2+y^2\right) + z^2,
+  \]
+  we may replace $K\left(x^2+y^2\right) + z^2$ with $1$ and write
   \begin{align*}
-    &K\left(\left( \frac{x_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}\right)^2
-    +\left(\frac{y_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}\right)^2\right)
-    + \left(\frac{1}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}\right)^2\\
-    &-\frac{ax_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}- \frac{by_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}-\frac{c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}=1.
+    1-\frac{ax_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}- \frac{by_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}-\frac{c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}} &=1\\
+    -\frac{ax_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}- \frac{by_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}-\frac{c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}} &=0.
   \end{align*}
-Squaring and adding fractions, we find
-\[
-\frac{K\left(x_c^2 + y_c^2\right)+1}{K\left(x_c^2 + y_c^2\right)+1}-\frac{ax_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}- \frac{by_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}-\frac{c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}=1.
-\]
-Hence
-\begin{align*}
-1-\frac{ax_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}- \frac{by_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}-\frac{c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}} &=1\\
--\frac{ax_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}- \frac{by_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}-\frac{c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}} &=0.
-\end{align*}
-Since $\sqrt{K\left(x_c^2 + y_c^2\right)+1} \ne 0$, we may clear
+  Since $\sqrt{K\left(x_c^2 + y_c^2\right)+1} \ne 0$, we may clear
   denominators to find the following equation for a line
   \[
   ax_c+by_c+c= 0.
@@ -139,7 +137,7 @@ Since $\sqrt{K\left(x_c^2 + y_c^2\right)+1} \ne 0$, we may clear
 
 While central projection coordinates ``preserve'' lines, meaning that
 shortest paths in euclidean geometry, spherical geometry, and
-hyperboloic geometry are all mapped to lines, it does not preserve
+hyperbolic geometry are all mapped to lines, it does not preserve
 angles. This means that the angle that we see in central projection
 coordinates may or may not be the same as the angle in euclidean
 geometry. To see this, we will give an example where the appearance of

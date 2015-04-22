@@ -49,8 +49,12 @@ circles, and perhaps surprisingly, circles are sent to circles!
   \begin{align*}
       x &= \frac{4x_s}{K\left(x_s^2 + y_s^2\right) + 4},\\
       y &= \frac{4y_s}{K\left(x_s^2 + y_s^2\right) + 4},\\
-      z &= \frac{4-K\left(x_s^2 + y_s^2\right)}{4+K\left(x_s^2 + y_s^2\right)}.\\
+      z &= \frac{4-K\left(x_s^2 + y_s^2\right)}{4+K\left(x_s^2 + y_s^2\right)},
   \end{align*}
+  and note that these points are \textit{necessarily} on the surface
+  \[
+  1 = K\left(x^2+y^2\right) + z^2.
+  \]
 \end{hint}
 
 \begin{hint}
@@ -78,18 +82,12 @@ circles, and perhaps surprisingly, circles are sent to circles!
   \[
   K\left(x^2+y^2\right) + z^2- ax- by-cz=1.
   \]
-  Now use the projection formulas to write
-  \begin{align*}
-    &K\left(\left(\frac{4x_s}{K\left(x_s^2 + y_s^2\right) + 4}\right)^2
-    +\left(\frac{4y_s}{K\left(x_s^2 + y_s^2\right) + 4}\right)^2\right)
-    + \left(\frac{4-K\left(x_s^2 + y_s^2\right)}{4+K\left(x_s^2 + y_s^2\right)}\right)^2\\
-    &-\frac{4ax_s}{K\left(x_s^2 + y_s^2\right) + 4}- \frac{4by_s}{K\left(x_s^2 + y_s^2\right) + 4}-c\frac{4-K\left(x_s^2 + y_s^2\right)}{4+K\left(x_s^2 + y_s^2\right)}=1.
-  \end{align*}
-Squaring and adding fractions, we find
-\[
-\frac{\left(4+K\left(x_s^2 + y_s^2\right)\right)^2}{\left(4+K\left(x_s^2 + y_s^2\right)\right)^2}-\frac{4ax_s}{K\left(x_s^2 + y_s^2\right) + 4}- \frac{4by_s}{K\left(x_s^2 + y_s^2\right) + 4}-c\frac{4-K\left(x_s^2 + y_s^2\right)}{4+K\left(x_s^2 + y_s^2\right)}=1.
-\]
-Hence
+  Now use the projection formulas. Since these formula necessarily
+  produce points on the surface
+  \[
+  1 = K\left(x^2+y^2\right) + z^2,
+  \]
+  we may replace $K\left(x^2+y^2\right) + z^2$ with $1$ and write
 \begin{align*}
 1-\frac{4ax_s}{K\left(x_s^2 + y_s^2\right) + 4}- \frac{4by_s}{K\left(x_s^2 + y_s^2\right) + 4}-c\frac{4-K\left(x_s^2 + y_s^2\right)}{4+K\left(x_s^2 + y_s^2\right)}&=1\\
  -\frac{4ax_s}{K\left(x_s^2 + y_s^2\right) + 4}- \frac{4by_s}{K\left(x_s^2 + y_s^2\right) + 4}-c\frac{4-K\left(x_s^2 + y_s^2\right)}{4+K\left(x_s^2 + y_s^2\right)}&=0.
@@ -112,7 +110,7 @@ denominators to find
   \frac{4a^2}{cK} + \frac{4b^2}{cK} + 4c\\
   \left(x_s\sqrt{cK} - \frac{2a}{\sqrt{cK}}\right)^2 + \left(y_s\sqrt{cK} - \frac{2b}{\sqrt{cK}}\right)^2&=\frac{4a^2}{cK} + \frac{4b^2}{cK} + 4c.
   \end{align*}
-  Multiply through by $(cK)^{-1}$ to find
+  Multiply through by $(cK)^{-1/4}$ to find
   \begin{align*}
     \left(x_s - \frac{2a}{cK}\right)^2 + \left(y_s - \frac{2b}{cK}\right)^2 &= \frac{4a^2}{(cK)^2} + \frac{4b^2}{(cK)^2} + \frac{4c}{cK}\\
     \left(x_s - \frac{2a}{cK}\right)^2 + \left(y_s - \frac{2b}{cK}\right)^2 &= \frac{4a^2 + 4b^2 + 4c^2K}{(cK)^2}.
