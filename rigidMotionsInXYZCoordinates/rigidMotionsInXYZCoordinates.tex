@@ -279,7 +279,7 @@ group.  That is, show that
 \begin{problem}
   Convert the orthogonal matrix
   \[
-  \hat{M}=\begin{bmatrix}
+  \hat{M}_\theta=\begin{bmatrix}
   \cos\theta & \sin\theta & 0\\
   -\sin\theta & \cos\theta & 0\\
   0 & 0 & 1
@@ -291,7 +291,7 @@ group.  That is, show that
 \begin{problem}
   Convert the orthogonal matrix
   \[
-  \hat{M}=\begin{bmatrix}
+  \hat{M}_\psi=\begin{bmatrix}
   \cos\psi & 0 & \sin\psi\\
   0 & 1 & 0\\
   -\sin\psi & 0 & \cos\psi
@@ -316,22 +316,23 @@ group.  That is, show that
 
 
 
-\subsection*{Why use $K$-coordinates?}
+\section{Why use $K$-coordinates?}
 
 We have seen that we could measure the usual euclidean lengths of
-curves $\hat{X}(t)$ in terms of the formulas $X(t)$ in $K$-warped
+curves $\hat{X}$ in terms of the formulas of curves $X$ in $K$-warped
 space using the $K$-dot product. The short reason for this is that
 \[
-\frac{d\hat{X}(t)}{dt}\bullet\frac{d\hat{X}(t)}{dt}=\frac{dX(t)}{dt}\bullet_{K}\frac{dX(t)}{dt}%
+\dd[\hat{X}]{t}\bullet\dd[\hat{X}]{t}=\dd[X]{t}\bullet_{K}\dd[X]{t}
 \]
-where%
+where
 \[
-\frac{dX(t)}{dt}\bullet_{K}\frac{dX(t)}%
-{dt}=\left(\frac{dX(t)}{dt}\right)\cdot\begin{bmatrix}
+\dd[X]{t}\bullet_{K}\dd[X]{t}
+=\left[\dd[X]{t}\right]\cdot\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
-\end{bmatrix}  \cdot\left(  \frac{dX(  t)  }{dt}\right)  ^\transpose.
+\end{bmatrix}
+\cdot\left[\dd[X]{t}\right]^\transpose.
 \]
 In other words, the usual geometry of the sphere of radius $R$ is
 simply the geometry of the set

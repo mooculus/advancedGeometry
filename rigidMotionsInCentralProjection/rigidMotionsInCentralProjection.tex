@@ -53,9 +53,10 @@ a mapping defined by a matrix, so we'll have to use some new notation.
   Using the diagram above, explain why
   \begin{align*}
 (\underline{x_{c}},\underline{y_{c}})  &= \mu_{c}(x_{c},y_{c}) \\
-  & =\left(\frac{m_{11}x_{c}+m_{21}y_{c}+m_{31}}{m_{13}x_{c}+m_{23}y_{c}+m_{33}},
-  \frac{m_{12}x_{c}+m_{22}y_{c}+m_{32}}{m_{13}x_{c}+m_{23}y_{c}+m_{33}
-}\right).
+    & =\left(
+    \frac{x_c\cdot m_{11} + y_c\cdot m_{21} + m_{31}}{x_c\cdot m_{13} + y_c\cdot m_{23} + m_{33}},
+    \frac{x_c\cdot m_{12} + y_c\cdot m_{22} + m_{32}}{x_c\cdot m_{13} + y_c\cdot m_{23} + m_{33}}
+    \right).
   \end{align*}
   \begin{freeResponse}
     Let's follow this diagram around, starting at the right-most
@@ -82,8 +83,8 @@ a mapping defined by a matrix, so we'll have to use some new notation.
     Expanded out, this is
     \[
     \begin{bmatrix}
-      m_{11}x+m_{21}y+m_{31}z & m_{12}x+m_{22}y+m_{32}z & 
-      m_{13}x+m_{23}y+m_{33}z
+      x\cdot m_{11}+y\cdot m_{21}+z\cdot m_{31} & x\cdot m_{12}+y\cdot m_{22}+z\cdot m_{32} & 
+      x\cdot m_{13}+y\cdot m_{23}+z\cdot m_{33}
     \end{bmatrix}.
     \]
     We are now at the bottom left-hand corner of our diagram. To move
@@ -92,17 +93,17 @@ a mapping defined by a matrix, so we'll have to use some new notation.
     becomes
      \[
     \begin{bmatrix}
-      \frac{m_{11}x+m_{21}y+m_{31}z}{m_{13}x+m_{23}y+m_{33}z} &
-      \frac{m_{12}x+m_{22}y+m_{32}z}{m_{13}x+m_{23}y+m_{33}z} & 1
+      x\cdot \frac{m_{11}+y\cdot m_{21}+z\cdot m_{31}}{x\cdot m_{13}+y\cdot m_{23}+z\cdot m_{33}} &
+      \frac{x\cdot m_{12}+y\cdot m_{22}+z\cdot m_{32}}{x\cdot m_{13}+y\cdot m_{23}+z\cdot m_{33}} & 1
     \end{bmatrix}.
     \]
     To write this in terms of $x_c$ and $y_c$, we must divide each
     numerator and denominator by $z$
     \[
     \begin{bmatrix}
-      \frac{m_{11}(x/z)+m_{21}(y/z)+m_{31}}{m_{13}(x/z)+m_{23}(y/z)+m_{33}}
+      \frac{(x/z)\cdot m_{11}+(y/z)\cdot m_{21}+m_{31}}{(x/z)\cdot m_{13}+(y/z)\cdot m_{23}+m_{33}}
       &
-      \frac{m_{12}(x/z)+m_{22}(y/z)+m_{32}}{m_{13}(x/z)+m_{23}(y/z)+m_{33}}
+      \frac{(x/z)\cdot m_{12}+(y/z)\cdot m_{22}+m_{32}}{(x/z)\cdot m_{13}+(y/z)\cdot m_{23}+m_{33}}
       & 1
     \end{bmatrix}.
     \]
@@ -110,8 +111,8 @@ a mapping defined by a matrix, so we'll have to use some new notation.
     $\R^2$ in the lower left-hand corner and write
     \[
     \mu_c(x_c,y_c) = \left(
-    \frac{m_{11}x_c+m_{21}y_c+m_{31}}{m_{13}x_c+m_{23}y_c+m_{33}},
-    \frac{m_{12}x_c+m_{22}y_c+m_{32}}{m_{13}x_c+m_{23}y_c+m_{33}}
+    \frac{x_c\cdot m_{11} + y_c\cdot m_{21} + m_{31}}{x_c\cdot m_{13} + y_c\cdot m_{23} + m_{33}},
+    \frac{x_c\cdot m_{12} + y_c\cdot m_{22} + m_{32}}{x_c\cdot m_{13} + y_c\cdot m_{23} + m_{33}}
     \right).
     \]
   \end{freeResponse}

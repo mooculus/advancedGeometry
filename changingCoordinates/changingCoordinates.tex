@@ -10,7 +10,7 @@ Now we will change coordinates.
 \maketitle
 
 
-\subsection*{Bringing the North Pole of the $R$-sphere to $\left(
+\section{Bringing the North Pole of the $R$-sphere to $\left(
 0,0,1\right)  $}
 
 We are now ready to introduce a slightly different set of coordinates for
@@ -93,8 +93,7 @@ R^{2}=\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=10^{-2}.
 \end{enumerate}
 \end{problem}
 
-\subsection*{Formulas for euclidean lengths and angles in terms
-of $\left(  x,y,z\right)  $-coordinates}
+\section{Formulas for euclidean lengths, angles, and areas in terms of $(x,y,z)$-coordinates}
 
 To prepare ourselves to do hyperbolic geometry, which (in some sense)
 has no satisfactory model in euclidean space, we will `practice' by
@@ -121,35 +120,53 @@ but we want lengths and angles to be the usual euclidean ones in $\left(
 \hat{x},\hat{y},\hat{z}\right)  $-coordinates.
 
 \begin{problem}
-  Suppose we have a curve in euclidean space that is a function of a
-  curve in $K$-warped space
-\[
-\hat{X}(x,y,z)=\left(\hat{x}(x,y,z),\hat{y}(x,y,z),\hat{z}(x,y,z)  \right).
-\]
-Via composition, we can further make the curve $\hat{X}$ a function of $t$,
-\begin{align*}
-x &= f(t) \\
-y &= g(t) \\
-z &= h(t)  .
-\end{align*}
-Use the chain rule to compute $\frac{d\hat{x}}{dt}$,
-$\frac{d\hat{y}}{dt}$, and $\frac{d\hat{z}}{dt}$.
-\begin{hint}
-  Recall that if $F$ is a differentiable function of $x$, $y$, and
-  $z$; and if $x$, $y$, and $z$ are all differentiable functions of
-  $t$, then the chain rule states
+  Suppose we have a curve $\hat X$ in euclidean space that is a
+  function of a curve $X$ in $K$-warped space. So
   \[
-  \dd[F]{t} = \nabla F \cdot
-  \begin{bmatrix}
-    \dd[x]{t} & \dd[y]{t} & \dd[z]{t}
-  \end{bmatrix}^\transpose.
+  X(t) = (x(t),y(t),z(t))
   \]
-\end{hint}
+  and
+  \[
+  \hat{X}(t)=
+  \begin{cases}
+    \hat x(x(t), y(t), z(t)),\\
+    \hat y(x(t), y(t), z(t)),\\
+    \hat z(x(t), y(t), z(t)).\\
+  \end{cases}
+  \]
+  Use the chain rule to compute
+  \[
+  \dd[\hat x]{t}, \qquad \dd[\hat y]{t}, \qquad \dd[\hat z]{t},
+  \]
+  in terms of $\dd[x]{t}$, $\dd[y]{t}$, $\dd[z]{t}$, $\pp[\hat x]{x}$, $\pp[\hat y]{x}$, $\pp[\hat z]{x}$,
+  $\pp[\hat x]{y}$, $\pp[\hat y]{y}$, $\pp[\hat z]{y}$, $\pp[\hat x]{z}$, $\pp[\hat y]{z}$, and $\pp[\hat z]{z}$. 
+  \begin{hint}
+    Recall that if $F$ is a differentiable function of $x$, $y$, and
+    $z$; and if $x$, $y$, and $z$ are all differentiable functions of
+    $t$, then the chain rule states
+    \[
+    \dd[F]{t} = \nabla F \cdot
+    \begin{bmatrix}
+      \dd[x]{t} & \dd[y]{t} & \dd[z]{t}
+    \end{bmatrix}^\transpose.
+    \]
+  \end{hint}
+  \begin{freeResponse}
+    Write
+    \begin{align*}
+      \dd[\hat x]{t} &= \begin{bmatrix} \pp[\hat x]{x} & \pp[\hat x]{y} & \pp[\hat x]{z} \end{bmatrix} \cdot \begin{bmatrix} \dd[x]{t} & \dd[y]{t} & \dd[z]{t} \end{bmatrix}^\transpose
+      = \pp[\hat x]{x}\cdot\dd[x]{t} + \pp[\hat x]{y}\cdot\dd[y]{t} + \pp[\hat x]{z}\cdot\dd[z]{t}, \\
+      \dd[\hat y]{t} &= \begin{bmatrix} \pp[\hat y]{x} & \pp[\hat y]{y} & \pp[\hat y]{z} \end{bmatrix} \cdot \begin{bmatrix} \dd[x]{t} & \dd[y]{t} & \dd[z]{t} \end{bmatrix}^\transpose
+      = \pp[\hat y]{x}\cdot\dd[x]{t} + \pp[\hat y]{y}\cdot\dd[y]{t} + \pp[\hat y]{z}\cdot\dd[z]{t}, \\
+      \dd[\hat z]{t} &= \begin{bmatrix} \pp[\hat z]{x} & \pp[\hat z]{y} & \pp[\hat z]{z} \end{bmatrix} \cdot \begin{bmatrix} \dd[x]{t} & \dd[y]{t} & \dd[z]{t} \end{bmatrix}^\transpose
+      = \pp[\hat z]{x}\cdot\dd[x]{t} + \pp[\hat z]{y}\cdot\dd[y]{t} + \pp[\hat z]{z}\cdot\dd[z]{t}.
+    \end{align*}
+  \end{freeResponse}
 \end{problem}
 
 \begin{problem}
   With the same setting as in the previous problem, rewrite the result
-  of your computation in matrix notation to find $D$ such that
+  of your computation in matrix notation to find $D_K$ such that
 \[
 \begin{bmatrix}
 \frac{d\hat{x}}{dt} & \frac{d\hat{y}}{dt} & \frac{d\hat{z}}{dt}%
@@ -157,62 +174,37 @@ $\frac{d\hat{y}}{dt}$, and $\frac{d\hat{z}}{dt}$.
 =
 \begin{bmatrix}
 \frac{dx}{dt} & \frac{dy}{dt} & \frac{dz}{dt}%
-\end{bmatrix}\cdot D
+\end{bmatrix}\cdot D_K
 \]
 in terms of $\pp[\hat x]{x}$, $\pp[\hat y]{x}$, $\pp[\hat z]{x}$,
 $\pp[\hat x]{y}$, $\pp[\hat y]{y}$, $\pp[\hat z]{y}$, $\pp[\hat x]{z}$,
 $\pp[\hat y]{z}$, and $\pp[\hat z]{z}$.
 \end{problem}
 
-\begin{problem}
-  \label{8} Recalling that $R$ is a positive constant, use
-\begin{align*}
-\hat{x}  &=x\\
-\hat{y}  &=y\\
-\hat{z}  &=Rz.
-\end{align*}
-and the chain rule to show that, for any path
-$\hat{X}(t)=(\hat{x}(t),\hat{y}(t),\hat{z}(t))$ in euclidean space,%
-\begin{align*}
-\frac{d\hat{x}}{dt}  &  =\frac{dx}{dt}\\
-\frac{d\hat{y}}{dt}  &  =\frac{dy}{dt}\\
-\frac{d\hat{z}}{dt}  &  =R\frac{dz}{dt}.
-\end{align*}
-\end{problem}
 
 \begin{problem}
-  Use matrix multiplication %[DS,307]
-  and the previous problem to show that%
-\begin{align*}
-\frac{d\hat{X}(t)}{dt}  &  =\frac{dX(t)}{dt}
-\begin{bmatrix}
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & R
-\end{bmatrix} \\
-\frac{dX(t)}{dt}  &=\frac{d\hat{X}(t)
-}{dt}
-\begin{bmatrix}
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & R^{-1}%
-\end{bmatrix}.
-\end{align*}
-
+  Use the previous problems to show that
+  \[
+  \left[\dd[\hat{X}]{t}\right] = \left[ \dd[X]{t}\right] \cdot
+  \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & R
+  \end{bmatrix}.
+  \]
 \end{problem}
 
-This last computation shows that, if
+This last computation shows that if
 \begin{align*}
 \hat{V}_{1}  &  =\left(  \hat{a}_{1},\hat{b}_{1},\hat{c}_{1}\right) \\
 \hat{V}_{2}  &  =\left(  \hat{a}_{2},\hat{b}_{2},\hat{c}_{2}\right)
 \end{align*}
-are tangent vectors in $\left(  \hat{x},\hat{y},\hat{z}\right)  $-coordinates
-and%
+are vectors tangent to a curve in $(\hat{x},\hat{y},\hat{z})$-coordinates and
 \begin{align*}
 V_{1}  &  =\left(  a_{1},b_{1},c_{1}\right) \\
 V_{2}  &  =\left(  a_{2},b_{2},c_{2}\right)
 \end{align*}
-are their transformations into $\left(  x,y,z\right)  $-coordinates, then%
+are their transformations into $(x,y,z)$-coordinates, then
 \begin{align*}
 \hat{V}_{1}  &  =V_{1}
 \begin{bmatrix}
@@ -263,9 +255,11 @@ V_{2}^\transpose\\
 \end{bmatrix}
 V_{2}^\transpose.
 \end{align*}
-This last computation says that we can compute the euclidean dot $\hat{V}%
-_{1}\bullet\hat{V}_{2}$ without ever referring to euclidean coordinates. We
-incorporate that fact into the following definition.
+Hence:
+\begin{center}
+\textbf{We can compute the euclidean dot product without ever referring to euclidean coordinates!}
+\end{center}
+We incorporate that fact into the following definition.
 
 \begin{definition}
 The \textbf{$\boldsymbol{K}$-dot-product} of vectors:%
@@ -300,7 +294,7 @@ c_{2}%
 \[
 V =\left(a,b,c\right)
 \]
-then its length in euclidean space is given by
+then the length of its image .in euclidean space is given by
 \[
 |V|_K=\sqrt{V\bullet_K V}.
 \]
@@ -324,12 +318,12 @@ then its length in euclidean space is given by
 %% \]
 
 \begin{problem}
-  Show that if two vectors are given to us in $(x,y,z)$-coordinates as%
+  Show that when $K>0$ if two vectors are given to us in $(x,y,z)$-coordinates as%
 \begin{align*}
 V_{1}  &=\left(  a_{1},b_{1},c_{1}\right), \\
 V_{2}  &=\left(  a_{2},b_{2},c_{2}\right),
 \end{align*}
-then the angle between them in euclidean space is given by
+then the angle between their image in euclidean space is given by
 \[
 \theta = \arccos\left(\frac{V_1\bullet_K V_2}{\left| V_1\right|_K \cdot\left|V_2\right|_K }\right).
 \]
@@ -346,7 +340,7 @@ Show that if two vectors are given to us in $(x,y,z)$-coordinates as%
 V_{1}  &  =\left(  a_{1},b_{1},c_{1}\right), \\
 V_{2}  &  =\left(  a_{2},b_{2},c_{2}\right),
 \end{align*}
-then the area of the parallelogram spanned by those two vectors in euclidean
+then the area of the parallelogram spanned by the image of those two vectors in euclidean
 space is%
 \[
 \sqrt{\det
