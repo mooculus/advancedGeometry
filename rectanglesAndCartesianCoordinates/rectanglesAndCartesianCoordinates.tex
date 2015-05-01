@@ -445,9 +445,7 @@ Start by constructing lines $\l_1$ and $\l_2$ with $\l_1$
 perpendicular to $\l_2$ at point $A$. On $\l_1$ add point $B$ so that
 $|AB|=a$. Next construct $\l_3$ perpendicular to $\l_1$ through
 $B$. On $\l_3$ add point $C$ such that $|BC|=b$. Finally add $\l_4$
-through $C$ so that $\l_4$ is perpendicular to $\l_3$. Call the
-intersection of $\l_2$ and $\l_4$ point $D$ and label the two
-remaining sides $a'$ and $b'$.
+through $C$ so that $\l_4$ is perpendicular to $\l_3$. 
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
 \coordinate (A) at (2,1);
@@ -475,8 +473,8 @@ remaining sides $a'$ and $b'$.
 
 \node[below] at (5,1) {$a$};
 \node[right] at (8,2.5) {$b$};
-\node[above] at (5,4) {$a'$};
-\node[left] at (2,2.5) {$b'$};
+%\node[above] at (5,4) {$a'$};
+%\node[left] at (2,2.5) {$b'$};
 
 \tkzMarkRightAngle(B,A,D)
 \tkzMarkRightAngle(C,B,A)
@@ -485,12 +483,77 @@ remaining sides $a'$ and $b'$.
 \tkzLabelPoints[below left](A)
 \tkzLabelPoints[below right](B)
 \tkzLabelPoints[above right](C)
-\tkzLabelPoints[above left](D)
+%\tkzLabelPoints[above left](D)
+
+%\draw[step=.5cm,thin] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+
+
+Explain why $\l_3$ is parallel to $\l_2$.
+
+\begin{freeResponse}
+Since alternate interior angles are equal
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (2,1);
+\coordinate (B) at (8,1);
+\coordinate (C) at (8,4);
+\coordinate (D) at (2,4);
+\coordinate (E) at (0,1);
+\coordinate (F) at (10,1);
+\coordinate (G) at (2,0);
+\coordinate (H) at (2,5);
+\coordinate (I) at (8,0);
+\coordinate (J) at (8,5);
+\coordinate (K) at (0,4);
+\coordinate (L) at (10,4);
+
+\draw (E)--(F);
+\draw (G)--(H);
+\draw (I)--(J);
+\draw[thin] (K)--(L);
+
+\node[left] at (E) {$\l_1$};
+\node[below] at (G) {$\l_2$};
+\node[below] at (I) {$\l_3$};
+\node[left] at (K) {$\l_4$};
+
+\node[below] at (5,1) {$a$};
+\node[right] at (8,2.5) {$b$};
+%\node[above] at (5,4) {$a'$};
+%\node[left] at (2,2.5) {$b'$};
+
+\tkzMarkRightAngle(B,A,D)
+\tkzMarkRightAngle[thin](C,B,A)
+\tkzMarkRightAngle[thin](D,C,B)
+\tkzMarkRightAngle(I,B,F)
+%\tkzMarkRightAngle[thin](A,D,C)
+
+\tkzLabelPoints[below left](A)
+\tkzLabelPoints[below right](B)
+\tkzLabelPoints[above right](C)
+%\tkzLabelPoints[above left](D)
 
 %draw[step=.5cm,thin] (0,0) grid (10,5);
 \end{tikzpicture}
 \end{image}
-Explain why $\angle ADC = 90^\circ$.
+we see that $\l_3$ is parallel to $\l_2$. 
+\end{freeResponse}
+
+
+Explain why $\l_4$ intersects $\l_2$.
+
+\begin{freeResponse}
+  Seeking a contradiction, suppse that $\l_4$ does not intersect
+  $\l_2$. This would mean that $\l_4$ is parallel to $\l_2$. However,
+  both $\l_4$ and $\l_3$ pass through point $C$ and now both are
+  parallel to $\l_2$, this violates E5.
+\end{freeResponse}
+
+
+Call the intersection of $\l_2$ and $\l_4$ point $D$ and label the two
+remaining sides $a'$ and $b'$. Explain why $\angle ADC = 90^\circ$.
 
 \begin{freeResponse}
 Since the sum of the interior angles of any quadrilateral is
@@ -498,6 +561,8 @@ $360^\circ$ and our quadrilateral has three angles of measure
 $90^\circ$, we see that the fourth angle must also have a measure of
 $90^\circ$.
 \end{freeResponse}
+
+
 
 Explain why $\l_1$ is parallel to $\l_4$.
 
@@ -550,56 +615,7 @@ Since alternate interior angles are equal
 we see that $\l_1$ is parallel to $\l_4$. 
 \end{freeResponse}
 
-Explain why $\l_2$ is parallel to $\l_3$.
 
-\begin{freeResponse}
-Again since alternate interior angles are equal
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\coordinate (A) at (2,1);
-\coordinate (B) at (8,1);
-\coordinate (C) at (8,4);
-\coordinate (D) at (2,4);
-\coordinate (E) at (0,1);
-\coordinate (F) at (10,1);
-\coordinate (G) at (2,0);
-\coordinate (H) at (2,5);
-\coordinate (I) at (8,0);
-\coordinate (J) at (8,5);
-\coordinate (K) at (0,4);
-\coordinate (L) at (10,4);
-
-\draw (E)--(F);
-\draw (G)--(H);
-\draw (I)--(J);
-\draw[thin] (K)--(L);
-
-\node[left] at (E) {$\l_1$};
-\node[below] at (G) {$\l_2$};
-\node[below] at (I) {$\l_3$};
-\node[left] at (K) {$\l_4$};
-
-\node[below] at (5,1) {$a$};
-\node[right] at (8,2.5) {$b$};
-\node[above] at (5,4) {$a'$};
-\node[left] at (2,2.5) {$b'$};
-
-\tkzMarkRightAngle(B,A,D)
-\tkzMarkRightAngle[thin](C,B,A)
-\tkzMarkRightAngle[thin](D,C,B)
-\tkzMarkRightAngle(I,B,F)
-\tkzMarkRightAngle[thin](A,D,C)
-
-\tkzLabelPoints[below left](A)
-\tkzLabelPoints[below right](B)
-\tkzLabelPoints[above right](C)
-\tkzLabelPoints[above left](D)
-
-%draw[step=.5cm,thin] (0,0) grid (10,5);
-\end{tikzpicture}
-\end{image}
-we see that $\l_2$ is parallel to $\l_3$. 
-\end{freeResponse}
 
 Finally, add a segment to our figure and use a triangle congruence
 theorem to explain why $a=a'$ and $b = b'$.

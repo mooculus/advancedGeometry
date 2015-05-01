@@ -1,4 +1,4 @@
-\documentclass{ximera}
+\documentclass[handout,newpage,nooutcomes,hints]{ximera}
 
 \input{../preamble.tex}
 
@@ -21,7 +21,7 @@ R^2(\alpha+\beta+\gamma - \pi).
   the area of a triangle in spherical geometry.
 \end{problem}
 
-We will attempt to use reasoning anagous to the reasoning we used to
+We will attempt to use reasoning analogous to the reasoning we used to
 deduced the formula above to deduce the formula for a triangle with
 angles $\alpha$, $\beta$, and $\gamma$ in hyperbolic geometry.
 
@@ -36,7 +36,7 @@ of hyperbolic geometry:
 \begin{definition}
   We will define an \dfn{$\boldsymbol\alpha$-lune} in hyperbolic
   geometry to be a triangle with an angle of measure $\alpha$ where
-  verticies opposite of $\alpha$ are at infinity.
+  vertices opposite of $\alpha$ are at infinity.
 \end{definition}
 
 We have seen that
@@ -54,7 +54,7 @@ We have seen that
 
 
 In what follows, we will assume that $K=-1$. This will simplify the
-computations somewhat. Once the mathematician is familier with this
+computations somewhat. Once the mathematician is familiar with this
 case, the general case when $K<0$ will fall easily.
 
 
@@ -76,7 +76,7 @@ case, the general case when $K<0$ will fall easily.
     and replace $\d x_c\d y_c$ with $r\d r\d \theta$.
   \end{hint}
   \begin{hint}
-    At some point you may wish to use the following idenities:
+    At some point you may wish to use the following identities:
     \[
     \begin{split}
       \cos^2\theta + \sin^2\theta &=1\\
@@ -95,10 +95,14 @@ case, the general case when $K<0$ will fall easily.
     \end{align*}
   \end{hint}
   \begin{hint}
-    Finally, it will also be helpful to recall that when $a>0$,
+    It may also be helpful to recall that when $a>0$,
     \[
-    \int \frac{1}{\sqrt{a - t^2}} \d t = \arcsin\left(\frac{t}{\sqrt{a}}\right) + C.
+    \int \frac{1}{\sqrt{a - u^2}} \d u = \arcsin\left(\frac{u}{\sqrt{a}}\right) + C.
     \]
+  \end{hint}
+  \begin{hint}
+    Finally, as a gesture of friendship, I will tell you that you will
+    (hopefully!) deduce that this integral equals $\pi-\alpha$.
   \end{hint}
   \begin{freeResponse}
     Write
@@ -115,8 +119,11 @@ case, the general case when $K<0$ will fall easily.
       &= \int_{-\beta}^\beta \frac{\cos\theta}{\sqrt{\cos^2\theta - \cos^2 \beta}}\d \theta - \alpha.
     \end{align*}
     Now apply a trigonometric substitution,
+    \[
+    = \int_{-\beta}^\beta \frac{\cos\theta}{\sqrt{\sin^2\beta - \sin^2 \theta}}\d \theta- \alpha,
+    \]
+    Using the hint above we see
     \begin{align*}
-      &= \int_{-\beta}^\beta \frac{\cos\theta}{\sqrt{\sin^2\beta - \sin^2 \theta}}\d \theta- \alpha\\
       &= \eval{\arcsin\left(\frac{\sin\theta}{\sin\beta}\right)}_{-\beta}^\beta - \alpha\\
       &= \arcsin\left(\frac{\sin\beta}{\sin\beta}\right)- \arcsin\left(\frac{\sin(-\beta)}{\sin\beta}\right)- \alpha\\
       &= \arcsin(1)-\arcsin(-1)-\alpha\\
@@ -140,18 +147,45 @@ compute the area of an \textit{ideal triangle} in hyperbolic geometry.
 We would like to know the area of an ideal triangle.
 
 \begin{problem}
-  
+  Use the diagrams below
+  \begin{image}
+  \includegraphics[width=4in]{diagramOfIdealTri.png}
+  \end{image}
+  to help compute the area of an ideal triangle in hyperbolic geometry.
+  \begin{hint}
+    Above we see a comic-strip of Poincar\'e disks.
+  \end{hint}
 \end{problem}
 
-Use the diagram below 
+
+\begin{definition}
+  An \dfn{ideal $\boldsymbol{n}$-gon} is an $n$-gon in hyperbolic
+  geometry with its vertices at infinity.
+\end{definition}
+
+\begin{problem}
+Use induction to derive a formula for the area of any ideal $n$-gon in
+hyperbolic geometry.
+\end{problem}
+
+\begin{problem}
+  Use the diagrams below
+  \begin{image}
+  \includegraphics[width=4in]{diagramHex.png}
+  \end{image}
+  to help compute the area of a triangle in hyperbolic geometry.
+  \begin{hint}
+    Make your own drawings inspired by those above.
+  \end{hint}
+\end{problem}
 
 
-compute area of ideal triangle (use stereographic proj)
-
-Compute area of ideal hexagon
-
-consider the funky drawing
-compute the are of a circle hyperbolic geometry.
+\begin{problem}
+Summarize the results from this section. In particular, indicate which
+results follow from the others.
+\begin{freeResponse}
+\end{freeResponse}
+\end{problem}
 
 
 
