@@ -285,7 +285,7 @@ Hence now we see
 
 At this point we see we are interested in the following integral
 \[
-\int_{L_c} \frac{1}{\left(K\left(x_c^2+y_c^2\right)+1\right)^{3/2}} \d x_c\d y_c.
+\int_{L_c} \left(K\left(x_c^2+y_c^2\right)+1\right)^{-3/2} \d x_c\d y_c.
 \]
 
 \begin{problem}
@@ -295,7 +295,7 @@ At this point we see we are interested in the following integral
   \end{image}
   convert
   \[
-  \int_{L_c} \frac{1}{\left(K\left(x_c^2+y_c^2\right)+1\right)^{3/2}} \d x_c\d y_c.
+  \int_{L_c} \left(K\left(x_c^2+y_c^2\right)+1\right)^{-3/2} \d x_c\d y_c.
   \]
   to polar coordinates and compute the integral.
   \begin{hint}
@@ -307,14 +307,16 @@ At this point we see we are interested in the following integral
     and replace $\d x_c\d y_c$ with $r\d r\d \theta$.
   \end{hint}
   \begin{freeResponse}
+    Write
     \[
     \int_{L_c}
-    \frac{1}{\left(K\left(x_c^2+y_c^2\right)+1\right)^{3/2}} \d x_c\d
-    y_c = \int_0^\alpha \int_0^\infty \frac{1}{\left(K\cdot r^2+1\right)^{3/2}} r\d r \d \theta.
+    \left(K\left(x_c^2+y_c^2\right)+1\right)^{-3/2} \d x_c\d
+    y_c = \int_0^\alpha \int_0^\infty \left(K\cdot r^2+1\right)^{-3/2} r\d r \d \theta.
     \]
     Integrating this from the inside-out we find
     \begin{align*}
-      \int_0^\alpha \int_0^\infty \frac{1}{\left(K\cdot r^2+1\right)^{3/2}} r\d r \d \theta &= \int_0^\alpha \eval{\frac{-1}{K\left(K\cdot r^2+1\right)^{1/2}}}_0^\infty \d \theta\\
+      \int_0^\alpha \int_0^\infty \left(K\cdot r^2+1\right)^{-3/2} r\d r \d \theta
+      &= \int_0^\alpha \eval{\frac{-\left(K\cdot r^2+1\right)^{-1/2}}{K}}_0^\infty \d \theta\\
       &= \int_0^\alpha \frac{1}{K} \d \theta\\
       &= \frac{\alpha}{K}.   
     \end{align*}

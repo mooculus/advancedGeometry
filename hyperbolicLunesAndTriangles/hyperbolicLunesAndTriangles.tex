@@ -1,4 +1,4 @@
-\documentclass[handout,newpage,nooutcomes,hints]{ximera}
+\documentclass{ximera}
 
 \input{../preamble.tex}
 
@@ -11,19 +11,19 @@ hyperbolic geometry.
 \end{abstract}
 \maketitle
 
-We know that the area of a triangle in spherical geometry with angles
+We know that the area of a triangle on the $R$-sphere with angles
 $\alpha$, $\beta$, and $\gamma$ is given by
 \[
 R^2(\alpha+\beta+\gamma - \pi).
 \]
 \begin{problem}
   Briefly sketch the line of reasoning used to deduce the formula for
-  the area of a triangle in spherical geometry.
+  the area of a triangle on the $R$-sphere.
 \end{problem}
 
-We will attempt to use reasoning analogous to the reasoning we used to
-deduced the formula above to deduce the formula for a triangle with
-angles $\alpha$, $\beta$, and $\gamma$ in hyperbolic geometry.
+We will attempt to use analogus reasoning to deduce the formula for
+the area of a triangle with angles $\alpha$, $\beta$, and $\gamma$ in
+hyperbolic geometry.
 
 \section{Hyperbolic lunes}
 
@@ -68,7 +68,7 @@ case, the general case when $K<0$ will fall easily.
     Redraw the picture above with $\alpha = 2\beta$ and $K=-1$.
   \end{hint}
   \begin{hint}
-    Recall that to covert to polar coordinates, set
+    Recall that to convert to polar coordinates, set
     \begin{align*}
       r &= \sqrt{x_c^2+y_c^2},\\
       \theta &= \arctan(y_c/x_c),
@@ -136,15 +136,14 @@ case, the general case when $K<0$ will fall easily.
 
 \section{Hyperbolic triangles}
 
-Now we will use our knowledge of the areas of hyperbolic lunes to
-compute the area of an \textit{ideal triangle} in hyperbolic geometry.
+Again assuming $K=-1$, we will use our knowledge that the hyperbolic
+$\alpha$-lune has area $\pi-\alpha$ to compute the area of an
+\textit{ideal triangle} in hyperbolic geometry.
 
 \begin{definition}
   An \dfn{ideal triangle} is a triangle in hyperbolic geometry with
   its vertices at infinity.
 \end{definition}
-
-We would like to know the area of an ideal triangle.
 
 \begin{problem}
   Use the diagrams below
@@ -154,6 +153,10 @@ We would like to know the area of an ideal triangle.
   to help compute the area of an ideal triangle in hyperbolic geometry.
   \begin{hint}
     Above we see a comic-strip of Poincar\'e disks.
+  \end{hint}
+  \begin{hint}
+    Be sure to explain why your computation is general, meaning that
+    it will work for any given ideal triangle.
   \end{hint}
 \end{problem}
 
@@ -176,6 +179,10 @@ hyperbolic geometry.
   to help compute the area of a triangle in hyperbolic geometry.
   \begin{hint}
     Make your own drawings inspired by those above.
+  \end{hint}
+    \begin{hint}
+    Be sure to explain why your computation is general, meaning that
+    it will work for any given triangle.
   \end{hint}
 \end{problem}
 
