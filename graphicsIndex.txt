@@ -5,3 +5,12 @@ linesInHyperbolicGeometry
 - parameterizationOfTheCircle.ggb
 - parameterizationOfTheHyperboloid.ggb
 -
+
+stereographicProjection
+- kSurfaceInStereographicProjection.ggb
+- stereographicProjectionSphericalHyperbolic.ggb
+- tentativePoincareDisk.ggb
+
+sphericalLunesAndTriangles
+- sphericalLune.ggb
+- sphericalTriangle.ggb
