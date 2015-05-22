@@ -14,3 +14,7 @@ stereographicProjection
 sphericalLunesAndTriangles
 - sphericalLune.ggb
 - sphericalTriangle.ggb
+
+euclidsPostulatesForPlaneGeometry
+- noSSALaw.ggb
+- verticleAnglesAndSAS.ggb
