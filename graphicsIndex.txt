@@ -19,3 +19,8 @@ euclidsPostulatesForPlaneGeometry
 - noSSALaw.ggb
 - verticalAnglesAndSAS.ggb
 - verticalAnglesInteractive.ggb
+- alternateInteriorAngles.ggb
+- alternateInteriorAnglesContradiction.ggb
+- angleSumCongruence.ggb
+- constructAngleNoMoreThanHalfAlpha.ggb
+- exteriorAngle.ggb
