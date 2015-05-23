@@ -17,4 +17,5 @@ sphericalLunesAndTriangles
 
 euclidsPostulatesForPlaneGeometry
 - noSSALaw.ggb
-- verticleAnglesAndSAS.ggb
+- verticalAnglesAndSAS.ggb
+- verticalAnglesInteractive.ggb
