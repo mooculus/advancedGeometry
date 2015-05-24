@@ -24,3 +24,11 @@ euclidsPostulatesForPlaneGeometry
 - angleSumCongruence.ggb
 - constructAngleNoMoreThanHalfAlpha.ggb
 - exteriorAngle.ggb
+
+rectanglesAndCartesianCoordinates
+- equalAnglesParallelRays.ggb
+- parallelPostulate.ggb
+- raysAndAngles.ggb
+- sumInteriorAnglesTriange.ggb
+- pythagoreanThm.ggb
+
