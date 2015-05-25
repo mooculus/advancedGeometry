@@ -29,6 +29,6 @@ rectanglesAndCartesianCoordinates
 - equalAnglesParallelRays.ggb
 - parallelPostulate.ggb
 - raysAndAngles.ggb
-- sumInteriorAnglesTriange.ggb
+- sumInteriorAnglesTriangle.ggb
 - pythagoreanThm.ggb
 - euclideanDistanceFormula.ggb
