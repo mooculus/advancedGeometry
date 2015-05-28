@@ -35,3 +35,4 @@ rectanglesAndCartesianCoordinates
 - euclideanDistanceFormula.ggb
 dilationsSimilarityAndConcurrenceInEG
 - vectorDilation.gbb
+- dilationTakesLineToParallelLine.ggb
