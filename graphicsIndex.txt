@@ -33,3 +33,5 @@ rectanglesAndCartesianCoordinates
 - sumInteriorAnglesTriangle.ggb
 - pythagoreanThm.ggb
 - euclideanDistanceFormula.ggb
+dilationsSimilarityAndConcurrenceInEG
+- vectorDilation.gbb
