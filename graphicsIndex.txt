@@ -26,6 +26,7 @@ euclidsPostulatesForPlaneGeometry
 - exteriorAngle.ggb
 - angleSumCongruence2.ggb
 - verticalAnglesWithMovement.ggb
+
 rectanglesAndCartesianCoordinates
 - equalAnglesParallelRays.ggb
 - parallelPostulate.ggb
@@ -33,6 +34,13 @@ rectanglesAndCartesianCoordinates
 - sumInteriorAnglesTriangle.ggb
 - pythagoreanThm.ggb
 - euclideanDistanceFormula.ggb
+
 dilationsSimilarityAndConcurrenceInEG
 - vectorDilation.gbb
 - dilationTakesLineToParallelLine.ggb
+
+centralAndInscribedAnglesInEG
+- centralAndInscribedAnglesAllCases.ggb
+- circumscribedTriangle.ggb
+- isoscelesTriangle.ggb
+- perpendicularBisector.ggb
