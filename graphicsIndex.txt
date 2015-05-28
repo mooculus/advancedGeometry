@@ -24,7 +24,8 @@ euclidsPostulatesForPlaneGeometry
 - angleSumCongruence.ggb
 - constructAngleNoMoreThanHalfAlpha.ggb
 - exteriorAngle.ggb
-
+- angleSumCongruence2.ggb
+- verticalAnglesWithMovement.ggb
 rectanglesAndCartesianCoordinates
 - equalAnglesParallelRays.ggb
 - parallelPostulate.ggb
