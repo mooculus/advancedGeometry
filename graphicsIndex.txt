@@ -44,3 +44,14 @@ centralAndInscribedAnglesInEG
 - circumscribedTriangle.ggb
 - isoscelesTriangle.ggb
 - perpendicularBisector.ggb
+- extendeLawOfSines.ggb
+
+crossRatioOfPointsOnTheNumberLine
+- crossRatio1.ggb
+- crossRatio2.ggb
+- crossRatio3.ggb
+- ptolemysThm.ggb
+- pythagoreanThmPtolemy.ggb
+- sineAngleAddition.ggb
+- sineAngleSubtraction.ggb
+
