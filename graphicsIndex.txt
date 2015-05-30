@@ -38,6 +38,7 @@ rectanglesAndCartesianCoordinates
 dilationsSimilarityAndConcurrenceInEG
 - vectorDilation.gbb
 - dilationTakesLineToParallelLine.ggb
+- dilationPreservesAngle.ggb
 
 centralAndInscribedAnglesInEG
 - centralAndInscribedAnglesAllCases.ggb
