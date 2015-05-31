@@ -56,3 +56,9 @@ crossRatioOfPointsOnTheNumberLine
 - sineAngleAddition.ggb
 - sineAngleSubtraction.ggb
 
+surfaceAreaAndVolumeOfTheRSphereInEuclidean3Space
+- inscribedNTrianglesInUnitCircle.ggb
+- limitAsH_nGoesInfinity.ggb
+- pyramidsInCube.ggb
+
+
