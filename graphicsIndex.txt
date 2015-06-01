@@ -69,3 +69,5 @@ euclideanThreeSpaceAsMetricSpace
 - crossProduct.ggb
 
 changingCoordinates
+- curvatureOfRsphere.ggb
+- lengthOfVectorsInEmbeddingSpace.ggb
