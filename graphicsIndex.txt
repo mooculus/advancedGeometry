@@ -65,4 +65,4 @@ surfaceAreaAndVolumeOfTheRSphereInEuclidean3Space
 - pyramidsInCube.ggb
 
 euclideanThreeSpaceAsMetricSpace
-- 
+- dotProduct.ggb
