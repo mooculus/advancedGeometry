@@ -39,6 +39,8 @@ dilationsSimilarityAndConcurrenceInEG
 - vectorDilation.gbb
 - dilationTakesLineToParallelLine.ggb
 - dilationPreservesAngle.ggb
+- trianglesWithCorrespondingParallelSides.ggb
+- trianglesWithCorrespondingPerpendicularSides.ggb
 
 centralAndInscribedAnglesInEG
 - centralAndInscribedAnglesAllCases.ggb
