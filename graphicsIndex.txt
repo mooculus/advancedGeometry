@@ -41,6 +41,7 @@ dilationsSimilarityAndConcurrenceInEG
 - dilationPreservesAngle.ggb
 - trianglesWithCorrespondingParallelSides.ggb
 - trianglesWithCorrespondingPerpendicularSides.ggb
+- cevasTheroem.ggb
 
 centralAndInscribedAnglesInEG
 - centralAndInscribedAnglesAllCases.ggb
@@ -63,4 +64,5 @@ surfaceAreaAndVolumeOfTheRSphereInEuclidean3Space
 - limitAsH_nGoesInfinity.ggb
 - pyramidsInCube.ggb
 
-
+euclideanThreeSpaceAsMetricSpace
+- 
