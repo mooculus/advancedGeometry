@@ -67,3 +67,5 @@ surfaceAreaAndVolumeOfTheRSphereInEuclidean3Space
 euclideanThreeSpaceAsMetricSpace
 - dotProduct.ggb
 - crossProduct.ggb
+
+changingCoordinates
