@@ -64,10 +64,22 @@ surfaceAreaAndVolumeOfTheRSphereInEuclidean3Space
 - inscribedNTrianglesInUnitCircle.ggb
 - limitAsH_nGoesInfinity.ggb
 - pyramidsInCube.ggb
+- 2dMagnificationPrincipleExamples.ggb
+- 3dMagnificationPrincipleExamples.ggb
+- cavalierisPrinciple.ggb
+- collar.ggb
+- pyramidInSphere.ggb
+- surfaceAreaSphereCylinder.ggb
 
 euclideanThreeSpaceAsMetricSpace
 - dotProduct.ggb
 - crossProduct.ggb
+- angleBetweenDotProduct.ggb
+- areaOfParallelogram.ggb
+- crossProductParallelogram.ggb
+- dotProductDistance.ggb
+- lawOfCosines.ggb
+- magnitudeCrossProduct.ggb
 
 changingCoordinates
 - curvatureOfRsphere.ggb
