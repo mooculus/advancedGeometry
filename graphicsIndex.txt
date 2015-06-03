@@ -84,3 +84,7 @@ euclideanThreeSpaceAsMetricSpace
 changingCoordinates
 - curvatureOfRsphere.ggb
 - lengthOfVectorsInEmbeddingSpace.ggb
+
+congruencesTHatIsRigidMotions
+- reflectionsOnRSphere.ggb
+- rotationsAboutAxesOnSphere.ggb
