@@ -84,6 +84,8 @@ euclideanThreeSpaceAsMetricSpace
 changingCoordinates
 - curvatureOfRsphere.ggb
 - lengthOfVectorsInEmbeddingSpace.ggb
+- kCrossProductParallelogram.ggb
+- angleBetweenVectorsKDotProduct.ggb
 
 congruencesTHatIsRigidMotions
 - reflectionsOnRSphere.ggb
