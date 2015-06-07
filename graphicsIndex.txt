@@ -4,7 +4,6 @@ linesInHyperbolicGeometry
 - hyperbolicRightTriangle.ggb (not done)
 - parameterizationOfTheCircle.ggb
 - parameterizationOfTheHyperboloid.ggb
--
 
 stereographicProjection
 - kSurfaceInStereographicProjection.ggb
@@ -80,7 +79,8 @@ euclideanThreeSpaceAsMetricSpace
 - dotProductDistance.ggb
 - lawOfCosines.ggb
 - magnitudeCrossProduct.ggb
-- smoothCurves.ggb
+- smoothCurvesExample.ggb
+- lengthOfTangentVectorsSmoothCurvesExample.ggb
 
 changingCoordinates
 - curvatureOfRsphere.ggb
@@ -91,3 +91,6 @@ changingCoordinates
 congruencesTHatIsRigidMotions
 - reflectionsOnRSphere.ggb
 - rotationsAboutAxesOnSphere.ggb
+
+rigidMotionsInXYZCoordinates.ggb
+- rotationsXYZCoordinates.ggb
