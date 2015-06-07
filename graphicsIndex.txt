@@ -3,6 +3,7 @@ Graphics Index:
 linesInHyperbolicGeometry
 - hyperbolicRightTriangle.ggb (not done)
 - parameterizationOfTheCircle.ggb
+- parameterizationOfTheHyperbola.ggb
 - parameterizationOfTheHyperboloid.ggb
 
 stereographicProjection
@@ -10,14 +11,18 @@ stereographicProjection
 - stereographicProjectionSphericalHyperbolic.ggb
 - tentativePoincareDisk.ggb
 
+centralProjection
+- 2DView.ggb
+- centralProjection.ggb
+- centralProjectionHS.ggb
+- kSurfaceIncentralProjection.ggb
+
 sphericalLunesAndTriangles
 - sphericalLune.ggb
 - sphericalTriangle.ggb
 
 euclidsPostulatesForPlaneGeometry
 - noSSALaw.ggb
-- verticalAnglesAndSAS.ggb
-- verticalAnglesInteractive.ggb
 - alternateInteriorAngles.ggb
 - alternateInteriorAnglesContradiction.ggb
 - angleSumCongruence.ggb
@@ -50,7 +55,7 @@ centralAndInscribedAnglesInEG
 - perpendicularBisector.ggb
 - extendeLawOfSines.ggb
 
-crossRatioOfPointsOnTheNumberLine
+theCrossRationAndPtolemysTheorem
 - crossRatio1.ggb
 - crossRatio2.ggb
 - crossRatio3.ggb
