@@ -80,6 +80,7 @@ euclideanThreeSpaceAsMetricSpace
 - dotProductDistance.ggb
 - lawOfCosines.ggb
 - magnitudeCrossProduct.ggb
+- smoothCurves.ggb
 
 changingCoordinates
 - curvatureOfRsphere.ggb
