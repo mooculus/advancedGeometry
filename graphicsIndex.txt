@@ -101,3 +101,6 @@ congruencesTHatIsRigidMotions
 
 rigidMotionsInXYZCoordinates.ggb
 - rotationsXYZCoordinates.ggb
+
+rigidMotionsInCentralProjection
+- rotationAroundZaxisCentralProjection.ggb
