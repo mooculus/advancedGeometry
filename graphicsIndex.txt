@@ -48,6 +48,7 @@ dilationsSimilarityAndConcurrenceInEG
 - cevasTheroem.ggb
 - areaDilation.ggb
 - cevasAltitudes.ggb
+- cevasMedians.ggb
 
 centralAndInscribedAnglesInEG
 - centralAndInscribedAnglesAllCases.ggb
