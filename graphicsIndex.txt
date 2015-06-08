@@ -97,10 +97,12 @@ changingCoordinates
 
 congruencesTHatIsRigidMotions
 - reflectionsOnRSphere.ggb
-- rotationsAboutAxesOnSphere.ggb
+- rotationAboutYAxis.ggb
+- rotationAboutZaxis.ggb
 
 rigidMotionsInXYZCoordinates.ggb
-- rotationsXYZCoordinates.ggb
+- rotationAboutYAxisXYZCoordinates.ggb
+- rotationAboutZAxisXYZCoordinates.ggb
 
 rigidMotionsInCentralProjection
 - rotationAroundZaxisCentralProjection.ggb
