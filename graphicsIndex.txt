@@ -6,6 +6,10 @@ linesInHyperbolicGeometry
 - parameterizationOfTheHyperbola.ggb
 - parameterizationOfTheHyperboloid.ggb
 
+linesInSphericalGeometry
+- parameterizationOfTheSphere.ggb
+- sphericalPythagoreanTheorem.ggb
+
 stereographicProjection
 - kSurfaceInStereographicProjection.ggb
 - stereographicProjectionSphericalHyperbolic.ggb
@@ -25,10 +29,10 @@ euclidsPostulatesForPlaneGeometry
 - noSSALaw.ggb
 - alternateInteriorAngles.ggb
 - alternateInteriorAnglesContradiction.ggb
-- angleSumCongruence.ggb
 - constructAngleNoMoreThanHalfAlpha.ggb
 - exteriorAngle.ggb
 - angleSumCongruence2.ggb
+- verticalAnglesInteractive.ggb
 - verticalAnglesWithMovement.ggb
 
 rectanglesAndCartesianCoordinates
@@ -106,3 +110,4 @@ rigidMotionsInXYZCoordinates.ggb
 
 rigidMotionsInCentralProjection
 - rotationAroundZaxisCentralProjection.ggb
+- centralProjectionHSCopy.ggb
