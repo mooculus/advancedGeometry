@@ -47,6 +47,7 @@ dilationsSimilarityAndConcurrenceInEG
 - trianglesWithCorrespondingPerpendicularSides.ggb
 - cevasTheroem.ggb
 - areaDilation.ggb
+- cevasAltitudes.ggb
 
 centralAndInscribedAnglesInEG
 - centralAndInscribedAnglesAllCases.ggb
