@@ -114,9 +114,11 @@ rigidMotionsInCentralProjection
 
 stereographicProjectionHG
 - stereographicProjectionHyperbolic.ggb
+- 2DViewHyperbolic.ggb
 
 stereographicProjectionSG
 - stereographicProjectionSpherical.ggb
+- 2DViewSpherical.ggb
 
 linesAnglesAndAreasinCentralProjection
 - linesInCentralProjection.ggb
