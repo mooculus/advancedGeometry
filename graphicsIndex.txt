@@ -111,3 +111,15 @@ rigidMotionsInXYZCoordinates.ggb
 rigidMotionsInCentralProjection
 - rotationAroundZaxisCentralProjection.ggb
 - centralProjectionHSCopy.ggb
+
+stereographicProjectionHG
+- stereographicProjectionHyperbolic.ggb
+
+stereographicProjectionSG
+- stereographicProjectionSpherical.ggb
+
+linesAnglesAndAreasinCentralProjection
+- linesInCentralProjection.ggb
+
+linesAnglesAndAreasinStereographicProjection
+- linesinStereographicProjection.ggb
