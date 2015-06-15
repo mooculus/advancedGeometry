@@ -124,7 +124,11 @@ stereographicProjectionSG
 - 2DViewSpherical.ggb
 
 linesAnglesAndAreasinCentralProjection
-- linesInCentralProjection.ggb
+- linesInCentralProjectionHyperbolic.ggb
+- linesInCentralProjectionHyperbolic2.ggb
+- linesInCentralProjectionSpherical.ggb
 
 linesAnglesAndAreasinStereographicProjection
-- linesInStereographicProjection.ggb
+- linesInStereographicProjectionHyperbolic.ggb
+- linesInStereographicProjectionHyperbolic2.ggb
+- linesInStereographicProjectionSpherical.ggb
