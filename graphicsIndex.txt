@@ -9,6 +9,8 @@ linesInHyperbolicGeometry
 linesInSphericalGeometry
 - parameterizationOfTheSphere.ggb
 - sphericalPythagoreanTheorem.ggb
+- shortestPath.ggb
+- shortestPathBetweenTwoPoints.ggb 
 
 stereographicProjection
 - kSurfaceInStereographicProjection.ggb
@@ -110,7 +112,7 @@ rigidMotionsInXYZCoordinates.ggb
 
 rigidMotionsInCentralProjection
 - rotationAroundZaxisCentralProjection.ggb
-- centralProjectionHSCopy.ggb
+- rotationAroundYaxisCentralProjection.ggb
 
 stereographicProjectionHG
 - stereographicProjectionHyperbolic.ggb
