@@ -5,6 +5,7 @@ linesInHyperbolicGeometry
 - parameterizationOfTheCircle.ggb
 - parameterizationOfTheHyperbola.ggb
 - parameterizationOfTheHyperboloid.ggb
+- shortestPathH.ggb
 
 linesInSphericalGeometry
 - parameterizationOfTheSphere.ggb
@@ -112,7 +113,7 @@ rigidMotionsInXYZCoordinates.ggb
 
 rigidMotionsInCentralProjection
 - rotationAroundZaxisCentralProjection.ggb
-- rotationAroundYaxisCentralProjection.ggb
+- rotationAroundYaxisCentralProjection.ggb (not finished)
 
 stereographicProjectionHG
 - stereographicProjectionHyperbolic.ggb
