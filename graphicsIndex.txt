@@ -16,7 +16,6 @@ linesInSphericalGeometry
 stereographicProjection
 - kSurfaceInStereographicProjection.ggb
 - stereographicProjectionSphericalHyperbolic.ggb
-- tentativePoincareDisk.ggb
 
 centralProjection
 - 2DView.ggb
