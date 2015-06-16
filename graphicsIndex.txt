@@ -129,3 +129,9 @@ linesAnglesAndAreasinCentralProjection
 linesAnglesAndAreasinStereographicProjection
 - linesInStereographicProjectionHyperbolic.ggb
 - linesInStereographicProjectionSpherical.ggb
+
+centralProjectionHG
+- kleinDisk.ggb
+
+stereographicProjectionHG
+- poincareDisk.ggb
