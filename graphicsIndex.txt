@@ -117,6 +117,7 @@ rigidMotionsInCentralProjection
 stereographicProjectionHG
 - stereographicProjectionHyperbolic.ggb
 - 2DViewHyperbolic.ggb
+- poincareDisk.ggb
 
 stereographicProjectionSG
 - stereographicProjectionSpherical.ggb
@@ -132,6 +133,9 @@ linesAnglesAndAreasinStereographicProjection
 
 centralProjectionHG
 - kleinDisk.ggb
+- 2DViewHyperbolic.ggb
+- centralProjectionHyperbolic.ggb
 
-stereographicProjectionHG
-- poincareDisk.ggb
+centralProjectionSG
+- 2DViewSpherical.ggb
+- centralProjectionSpherical.ggb
