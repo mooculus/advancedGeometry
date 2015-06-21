@@ -6,12 +6,15 @@ linesInHyperbolicGeometry
 - parameterizationOfTheHyperbola.ggb
 - parameterizationOfTheHyperboloid.ggb
 - shortestPathH.ggb
+- shortestPathCopy.ggb
 
 linesInSphericalGeometry
 - parameterizationOfTheSphere.ggb
 - sphericalPythagoreanTheorem.ggb
 - shortestPath.ggb
-- shortestPathBetweenTwoPoints.ggb 
+- shortestPathBetweenTwoPoints.ggb
+- curvatureOfRSphereCopy.ggb
+- sphericalTriangles.ggb 
 
 stereographicProjection
 - kSurfaceInStereographicProjection.ggb
