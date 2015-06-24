@@ -1,7 +1,7 @@
 Graphics Index:
 
 linesInHyperbolicGeometry
-- hyperbolicRightTriangle.ggb (not done)
+- hyperbolicRightTriangle.ggb 
 - parameterizationOfTheCircle.ggb
 - parameterizationOfTheHyperbola.ggb
 - parameterizationOfTheHyperboloid.ggb
