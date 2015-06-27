@@ -18,6 +18,7 @@ linesInSphericalGeometry
 stereographicProjection
 - kSurfaceInStereographicProjection.ggb
 - stereographicProjectionSphericalHyperbolic.ggb
+- 2DView.ggb
 
 centralProjection
 - 2DView.ggb
