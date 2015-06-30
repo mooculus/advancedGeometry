@@ -1,35 +1,6 @@
 Graphics Index:
 
-linesInHyperbolicGeometry
-- hyperbolicRightTriangle.ggb 
-- parameterizationOfTheCircle.ggb
-- parameterizationOfTheHyperbola.ggb
-- parameterizationOfTheHyperboloid.ggb
-- shortestPathH.ggb
-
-linesInSphericalGeometry
-- parameterizationOfTheSphere.ggb
-- sphericalPythagoreanTheorem.ggb
-- shortestPath.ggb
-- shortestPathBetweenTwoPoints.ggb
-- curvatureOfRSphere.ggb
-- sphericalTriangles.ggb (not done)
-
-stereographicProjection
-- kSurfaceInStereographicProjection.ggb
-- stereographicProjectionSphericalHyperbolic.ggb
-- 2DView.ggb
-
-centralProjection
-- 2DView.ggb
-- centralProjection.ggb
-- centralProjectionHS.ggb
-- kSurfaceIncentralProjection.ggb
-
-sphericalLunesAndTriangles
-- sphericalLune.ggb
-- sphericalTriangle.ggb
-
+Chapter 2:
 euclidsPostulatesForPlaneGeometry
 - noSSALaw.ggb
 - alternateInteriorAngles.ggb
@@ -40,6 +11,7 @@ euclidsPostulatesForPlaneGeometry
 - verticalAnglesInteractive.ggb
 - verticalAnglesWithMovement.ggb
 
+Chapter 3:
 rectanglesAndCartesianCoordinates
 - equalAnglesParallelRays.ggb
 - parallelPostulate.ggb
@@ -48,6 +20,7 @@ rectanglesAndCartesianCoordinates
 - pythagoreanThm.ggb
 - euclideanDistanceFormula.ggb
 
+Chapter 4:
 dilationsSimilarityAndConcurrenceInEG
 - vectorDilation.gbb
 - dilationTakesLineToParallelLine.ggb
@@ -59,6 +32,7 @@ dilationsSimilarityAndConcurrenceInEG
 - cevasAltitudes.ggb
 - cevasMedians.ggb
 
+Chapter 5:
 centralAndInscribedAnglesInEG
 - centralAndInscribedAnglesAllCases.ggb
 - circumscribedTriangle.ggb
@@ -66,6 +40,7 @@ centralAndInscribedAnglesInEG
 - perpendicularBisector.ggb
 - extendeLawOfSines.ggb
 
+Chapter 6:
 theCrossRationAndPtolemysTheorem
 - crossRatio1.ggb
 - crossRatio2.ggb
@@ -75,6 +50,7 @@ theCrossRationAndPtolemysTheorem
 - sineAngleAddition.ggb
 - sineAngleSubtraction.ggb
 
+Chapter 7:
 surfaceAreaAndVolumeOfTheRSphereInEuclidean3Space
 - inscribedNTrianglesInUnitCircle.ggb
 - limitAsH_nGoesInfinity.ggb
@@ -86,6 +62,12 @@ surfaceAreaAndVolumeOfTheRSphereInEuclidean3Space
 - pyramidInSphere.ggb
 - surfaceAreaSphereCylinder.ggb
 
+Chapter 8:
+sphericalLunesAndTriangles
+- sphericalLune.ggb
+- sphericalTriangle.ggb
+
+Chapter 9:
 euclideanThreeSpaceAsMetricSpace
 - dotProduct.ggb
 - crossProduct.ggb
@@ -98,47 +80,84 @@ euclideanThreeSpaceAsMetricSpace
 - smoothCurvesExample.ggb
 - lengthOfTangentVectorsSmoothCurvesExample.ggb
 
+Chapter 10:
+congruencesTHatIsRigidMotions
+- reflectionsOnRSphere.ggb
+- rotationAboutYAxis.ggb
+- rotationAboutZaxis.ggb
+
+Chapter 11:
 changingCoordinates
 - curvatureOfRsphere.ggb
 - lengthOfVectorsInEmbeddingSpace.ggb
 - kCrossProductParallelogram.ggb
 - angleBetweenVectorsKDotProduct.ggb
 
-congruencesTHatIsRigidMotions
-- reflectionsOnRSphere.ggb
-- rotationAboutYAxis.ggb
-- rotationAboutZaxis.ggb
-
+Chapter 12:
 rigidMotionsInXYZCoordinates.ggb
 - rotationAboutYAxisXYZCoordinates.ggb
 - rotationAboutZAxisXYZCoordinates.ggb
 
+Chapter 13:
+linesInSphericalGeometry
+- parameterizationOfTheSphere.ggb
+- sphericalPythagoreanTheorem.ggb
+- shortestPath.ggb
+- shortestPathBetweenTwoPoints.ggb
+- curvatureOfRSphere.ggb
+- sphericalTriangles.ggb (not done)
+
+Chapter 14:
+linesInHyperbolicGeometry
+- hyperbolicRightTriangle.ggb 
+- parameterizationOfTheCircle.ggb
+- parameterizationOfTheHyperbola.ggb
+- parameterizationOfTheHyperboloid.ggb
+- shortestPathH.ggb
+
+Chapter 15:
+centralProjection
+- 2DView.ggb
+- centralProjection.ggb
+- centralProjectionHS.ggb
+- kSurfaceIncentralProjection.ggb
+- 2DViewHyperbolic.ggb
+- centralProjectionHyperbolic.ggb
+- 2DViewSpherical.ggb
+- centralProjectionSpherical.ggb
+
+Chapter 16:
 rigidMotionsInCentralProjection
 - rotationAroundZaxisCentralProjection.ggb
 - rotationAroundYaxisCentralProjection.ggb (not finished)
 
-stereographicProjectionHG
-- stereographicProjectionHyperbolic.ggb
-- 2DViewHyperbolic.ggb
-- poincareDisk.ggb
-
-stereographicProjectionSG
-- stereographicProjectionSpherical.ggb
-- 2DViewSpherical.ggb
-
+Chapter 17:
 linesAnglesAndAreasinCentralProjection
 - linesInCentralProjectionHyperbolic.ggb
 - linesInCentralProjectionSpherical.ggb
+- kleinDisk.ggb
 
+Chapter 18:
+stereographicProjection
+- kSurfaceInStereographicProjection.ggb
+- stereographicProjectionSphericalHyperbolic.ggb
+- 2DView.ggb
+- 2DViewHyperbolic.ggb
+- stereographicProjectionHyperbolic.ggb
+- stereographicProjectionSpherical.ggb
+- 2DViewSpherical.ggb
+
+Chapter 19:
 linesAnglesAndAreasinStereographicProjection
 - linesInStereographicProjectionHyperbolic.ggb
 - linesInStereographicProjectionSpherical.ggb
+- poincareDisk.ggb
 
-centralProjectionHG
-- kleinDisk.ggb
-- 2DViewHyperbolic.ggb
-- centralProjectionHyperbolic.ggb
+Chapter 20:
+hyperbolicLunesAndTriangles
 
-centralProjectionSG
-- 2DViewSpherical.ggb
-- centralProjectionSpherical.ggb
+Chapter 21:
+connectionsToSpecialRelativity
+
+Chapter 22:
+theArtofEscher
