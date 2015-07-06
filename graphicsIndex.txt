@@ -105,7 +105,6 @@ linesInSphericalGeometry
 - shortestPath.ggb
 - shortestPathBetweenTwoPoints.ggb
 - curvatureOfRSphere.ggb
-- sphericalTriangles.ggb (not done)
 
 Chapter 14:
 linesInHyperbolicGeometry
@@ -129,7 +128,7 @@ centralProjection
 Chapter 16:
 rigidMotionsInCentralProjection
 - rotationAroundZaxisCentralProjection.ggb
-- rotationAroundYaxisCentralProjection.ggb (not finished)
+- rotationAroundYaxisCentralProjection.ggb
 
 Chapter 17:
 linesAnglesAndAreasinCentralProjection
