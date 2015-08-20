@@ -2,7 +2,7 @@
 
 \input{../preamble.tex}
 
-\title{Dilations, similarity, and concurrence in euclidean geometry}
+\title{Dilations and similarity in euclidean geometry}
 
 \begin{document}
 \begin{abstract}
@@ -13,10 +13,27 @@ geometry.
 
 \section{Dilations in \textbf{EG}}
 
+We start this section off by asking you to prove a basic result.
+
+\begin{problem}
+  Let $X$ be a set and $f: X \to X$. Prove that $f^{-1}$ exists if and
+  only if $f$ is one-to-one and onto.
+  \begin{freeResponse}
+    $(\Rightarrow)$ Suppose $f^{-1}:A\to A$ exists. Since the domain
+    of $f^{-1}$ is all of $A$, $f$ must be onto. Moreover, since
+    $f^{-1}$ is a function, this means $f$ must be onto. 
+    
+    $(\Leftarrow)$ Suppose $f$ is one-to-one and onto, so we may simply
+    ``reverse the arrows'' that define $f$ and obtain a function.
+  \end{freeResponse}
+\end{problem}
+
+
 \begin{definition}
-A \textbf{dilation} is a one-to-one and onto transformation of the
-cartesian plane to itself that:
+A \textbf{dilation} is a transformation of the cartesian plane to
+itself that:
 \begin{enumerate}
+\item Is one-to-one and onto.
 \item Fixes one point called the \textbf{center} of the dilation.
 \item Takes each line through the center of the dilation to itself.
 \item Multiplies all distances by a fixed positive real number called
@@ -40,6 +57,12 @@ as $\left(\underline{x},\underline{y}\right)$.
 Using cartesian coordinates for the plane, show that the mapping $D$
 defined above is a dilation with magnification factor $r$ and center
 $\left( x_{0},y_{0}\right) $.
+\begin{hint}
+  Use the parametric formula for a line:
+  \[
+  \l(t) = \text{point} + t \cdot \text{vector}
+  \]
+\end{hint}
 \begin{freeResponse}
 First we must show that the center of the dilation is fixed, that is we must show that 
 \[
@@ -265,7 +288,7 @@ sides are proportional with the same constant of proportionality.
 \end{enumerate}
 \begin{hint}
 For the first part, you have to start from the supposition that the
-two triangles satisfy the definition of similar triangles.
+two triangles satisfy our definition of similar triangles.
 \end{hint}
 \begin{hint}
 For the second part, you have to start from the supposition that
@@ -311,7 +334,7 @@ triangles are similar.
 
 \begin{hint}
 For the first part, you have to start from the supposition that the
-two triangles satisfy the definition of similar triangles.
+two triangles satisfy our definition of similar triangles.
 \end{hint}
 \begin{hint}
 For the second part, you have to start from the supposition that
@@ -369,408 +392,6 @@ angles are equal one can show the result for any configuration.
 \end{freeResponse}
 \end{problem}
 
-
-\section{Concurrence theorems in \textbf{EG}, Ceva's theorem}
-
-Let's look at a some \textit{concurrence} theorems. Concurrence
-theorems deal with situations when three or more lines (or curves)
-pass through the same point.
-
-\begin{problem}
-\label{25} Denote the measure or area of a triangle $\triangle
-ABC$ as $\left\vert \triangle ABC\right\vert $. Show that, in the
-diagram below,
-\[
-\frac{\left\vert AF\right\vert }{\left\vert FB\right\vert }=\frac{\left\vert
-\triangle AFC\right\vert }{\left\vert \triangle CFB\right\vert }%
-=\frac{\left\vert \triangle AFX\right\vert }{\left\vert \triangle
-XFB\right\vert }.
-\]
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\tkzDefPoint(0,0){A}
-\tkzDefPoint(5,3){C}
-\tkzDefPoint(8,0){B}
-\tkzDefPoint(4.79,1.33){X}
-\tkzDefPoint(4.63,0){F}
-\tkzDefPoint(6.26,1.74){D}
-\tkzDefPoint(3.27,1.96){E}
-\draw (A)--(B)--(C)--cycle;
-\draw (A)--(D);
-\draw (F)--(C);
-\draw (B)--(E);
-
-
-\tkzLabelPoints[above](C)
-\tkzLabelPoints[above right](X)
-\tkzLabelPoints[below](A,B,F)
-\tkzLabelPoints[above left](E)
-\tkzLabelPoints[right](D)
-%\draw[step=.5cm] (0,0) grid (10,5);
-\end{tikzpicture}
-\end{image}
-\begin{hint}
-Mark the height of the relevant triangles.
-\end{hint}
-\begin{freeResponse}
-Start by marking the height of $\triangle AFC$ and $\triangle CFB$:
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\tkzDefPoint(0,0){A}
-\tkzDefPoint(5,3){C}
-\tkzDefPoint(8,0){B}
-\tkzDefPoint(5,0){D}
-\tkzDefPoint(4.63,0){F}
-\draw (A)--(B)--(C)--cycle;
-\draw (F)--(C);
-\draw[thin] (C)--(5,0);
-\tkzMarkRightAngle[thin](B,D,C)
-
-\node[right] at (5,1.5) {$h$};
-
-\tkzLabelPoints[above](C)
-\tkzLabelPoints[below](A,B,F)
-%\draw[step=.5cm] (0,0) grid (10,5);
-\end{tikzpicture}
-\end{image}
-Now 
-\[
-|\triangle AFC| = \frac{1}{2} |AF|\cdot h\qquad\text{and}\qquad |\triangle CFB| = \frac{1}{2} |FB|\cdot h,
-\]
-and so
-\[
-\frac{|\triangle AFC|}{|\triangle CFB|} = \frac{\frac{1}{2} |AF|\cdot h}{\frac{1}{2} |FB|\cdot h} = \frac{|AF|}{|FB|}.
-\]
-
-To get the second equality, again add the height of the triangles in problem:
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\tkzDefPoint(0,0){A}
-\tkzDefPoint(5,3){C}
-\tkzDefPoint(8,0){B}
-\tkzDefPoint(4.79,1.33){X}
-\tkzDefPoint(4.63,0){F}
-\tkzDefPoint(6.26,1.74){D}
-\tkzDefPoint(3.27,1.96){E}
-\tkzDefPoint(4.79,0){G}
-
-\draw (A)--(B)--(C)--cycle;
-\draw (A)--(D);
-\draw (F)--(C);
-\draw (B)--(E);
-\draw[thin] (G)--(X);
-
-\tkzMarkRightAngle[thin](B,D,C)
-
-\node[right] at (4.79,.66) {$g$};
-
-\tkzLabelPoints[above](C)
-\tkzLabelPoints[above right](X)
-\tkzLabelPoints[below](A,B,F)
-\tkzLabelPoints[above left](E)
-\tkzLabelPoints[right](D)
-%\draw[step=.5cm] (0,0) grid (10,5);
-\end{tikzpicture}
-\end{image}
-Now 
-\[
-|\triangle AFX| = \frac{1}{2} |AF|\cdot g\qquad\text{and}\qquad |\triangle XFB| = \frac{1}{2} |FB|\cdot g,
-\]
-and so
-\[
-\frac{|\triangle AFX|}{|\triangle XFB|} = \frac{\frac{1}{2} |AF|\cdot g}{\frac{1}{2} |FB|\cdot g} = \frac{|AF|}{|FB|}.
-\]
-\end{freeResponse}
-\end{problem}
-
-\begin{problem}
-\label{26} Use the previous problem to show using pure algebra that%
-\[
-\frac{|AF|}{|FB|}=\frac{|\triangle AXC|}{|\triangle CXB|}. %\label{27}%
-\]
-\begin{freeResponse}
-Write
-\[
-\frac{|\triangle AXC|}{|\triangle CXB|} = \frac{|\triangle AFC|-|\triangle AFX|}{|\triangle CFB|-|\triangle XFB|}.
-\]
-From our work above, we know that
-\[
-|\triangle AFC| = \frac{|AF|\cdot |\triangle CFB|}{|FB|} \qquad\text{and}\qquad |\triangle AFX| = \frac{|AF|\cdot |\triangle XFB|}{|FB|}.
-\]
-Substituting we find
-\begin{align*}
-\frac{|\triangle AXC|}{|\triangle CXB|} &= \frac{|\triangle AFC|-|\triangle AFX|}{|\triangle CFB|-|\triangle XFB|}\\
-&=\frac{ \frac{|AF|\cdot |\triangle CFB|}{|FB|}- \frac{|AF|\cdot |\triangle XFB|}{|FB|}}{|\triangle CFB|-|\triangle XFB|}\\
-&=\frac{|AF|}{|FB|} \frac{|\triangle CFB|- |\triangle XFB|}{|\triangle CFB|-|\triangle XFB|}\\
-&=\frac{|AF|}{|FB|}.
-\end{align*}
-\end{freeResponse}
-\end{problem}
-
-
-Now we will present, and you will prove \textit{Ceva's
-  Theorem}. [MJG,287-288]
-
-\begin{theorem}[Ceva's Theorem]
-For three segments $\bar{AD}$, $\bar{BE}$, and $\bar{CF}$
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\tkzDefPoint(0,0){A}
-\tkzDefPoint(5,3){C}
-\tkzDefPoint(8,0){B}
-\tkzDefPoint(4.79,1.33){X}
-\tkzDefPoint(4.63,0){F}
-\tkzDefPoint(6.26,1.74){D}
-\tkzDefPoint(3.27,1.96){E}
-\draw (A)--(B)--(C)--cycle;
-\draw (A)--(D);
-\draw (F)--(C);
-\draw (B)--(E);
-
-
-\tkzLabelPoints[above](C)
-\tkzLabelPoints[above right](X)
-\tkzLabelPoints[below](A,B,F)
-\tkzLabelPoints[above left](E)
-\tkzLabelPoints[right](D)
-%\draw[step=.5cm] (0,0) grid (10,5);
-\end{tikzpicture}
-\end{image}
-are concurrent if and only if 
-\[
-\frac{|AF|}{|FB|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|}=1.
-\]
-\end{theorem}
-
-\begin{problem}
-Prove the forward direction of Ceva's theorem: For three concurrent
-segments $\bar{AD}$, $\bar{BE}$ and $\bar{CF}$
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\tkzDefPoint(0,0){A}
-\tkzDefPoint(5,3){C}
-\tkzDefPoint(8,0){B}
-\tkzDefPoint(4.79,1.33){X}
-\tkzDefPoint(4.63,0){F}
-\tkzDefPoint(6.26,1.74){D}
-\tkzDefPoint(3.27,1.96){E}
-\draw (A)--(B)--(C)--cycle;
-\draw (A)--(D);
-\draw (F)--(C);
-\draw (B)--(E);
-
-
-\tkzLabelPoints[above](C)
-\tkzLabelPoints[above right](X)
-\tkzLabelPoints[below](A,B,F)
-\tkzLabelPoints[above left](E)
-\tkzLabelPoints[right](D)
-%\draw[step=.5cm] (0,0) grid (10,5);
-\end{tikzpicture}
-\end{image}
-show that
-\[
-\frac{|AF|}{|FB|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|}=1.
-\]
-\begin{hint}
-Use the previous problem repeatedly.
-\end{hint}
-\begin{freeResponse}
-From the previous problem, we see that
-\[
-\frac{|AF|}{|FB|}=\frac{|\triangle AXC|}{|\triangle CXB|},\qquad
-\frac{|BD|}{|DC|}=\frac{|\triangle AXB|}{|\triangle AXC|},\qquad
-\frac{|CE|}{|EA|}=\frac{|\triangle CXB|}{|\triangle AXB|}.
-\]
-So we may write
-\[
-\frac{|AF|}{|FB|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|} = 
-\frac{|\triangle AXC|}{|\triangle CXB|}\cdot 
-\frac{|\triangle AXB|}{|\triangle AXC|}\cdot
-\frac{|\triangle CXB|}{|\triangle AXB|} = 1.
-\]
-\end{freeResponse}
-\end{problem}
-
-
-
-\begin{problem}
-Prove the reverse direction of Ceva's Theorem: If%
-\[
-\frac{|AF|}{|FB|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|}=1
-\]
-then the lines $AD$, $BE$, and $CF$ pass through a common point.
-\begin{hint}
-Suppose that they do not pass through a common point.
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\tkzDefPoint(0,0){A}
-\tkzDefPoint(5,3){C}
-\tkzDefPoint(8,0){B}
-\tkzDefPoint(5,0){F}
-\tkzDefPoint(6.26,1.74){D}
-\tkzDefPoint(2.75,1.65){E}
-\draw (A)--(B)--(C)--cycle;
-\draw (A)--(D);
-\draw (F)--(C);
-\draw (B)--(E);
-
-
-\tkzLabelPoints[above](C)
-\tkzLabelPoints[below](A,B,F)
-\tkzLabelPoints[above left](E)
-\tkzLabelPoints[right](D)
-%\draw[step=.5cm] (0,0) grid (10,5);
-\end{tikzpicture}
-\end{image}
-\end{hint}
-\begin{hint}
-Notice that if, for example, $F$ moves along the segment $\bar{AB}$,
-then $\frac{|AF|}{|FB|}$ is a strictly increasing function of
-$|AF|$. Now use a previous problem to determine a position $F'$ for
-$F$ along the segment $\bar{AB}$ at which
-\[
-\frac{|AF'|}{|F'B|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|}=1.
-\]
-\end{hint}
-\begin{freeResponse}
-Seeking a contradiction, suppose that 
-\[
-\frac{|AF|}{|FB|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|}=1
-\]
-and we have the situation where the lines in problem do not meet at a point:
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\tkzDefPoint(0,0){A}
-\tkzDefPoint(5,3){C}
-\tkzDefPoint(8,0){B}
-\tkzDefPoint(5,0){F}
-\tkzDefPoint(6.26,1.74){D}
-\tkzDefPoint(2.75,1.65){E}
-\draw (A)--(B)--(C)--cycle;
-\draw (A)--(D);
-\draw (F)--(C);
-\draw (B)--(E);
-
-
-\tkzLabelPoints[above](C)
-\tkzLabelPoints[below](A,B,F)
-\tkzLabelPoints[above left](E)
-\tkzLabelPoints[right](D)
-%\draw[step=.5cm] (0,0) grid (10,5);
-\end{tikzpicture}
-\end{image}
-There is an $F'$ such that we have the following diagram:
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\tkzDefPoint(0,0){A}
-\tkzDefPoint(5,3){C}
-\tkzDefPoint(8,0){B}
-\tkzDefPoint(5,0){F}
-\tkzDefPoint(3.76,0){F'}
-\tkzDefPoint(6.26,1.74){D}
-\tkzDefPoint(2.75,1.65){E}
-\draw (A)--(B)--(C)--cycle;
-\draw (A)--(D);
-\draw (F)--(C);
-\draw (B)--(E);
-\draw[dashed] (F')--(C);
-
-
-\tkzLabelPoints[above](C)
-\tkzLabelPoints[below](A,B,F,F')
-\tkzLabelPoints[above left](E)
-\tkzLabelPoints[right](D)
-%\draw[step=.5cm] (0,0) grid (10,5);
-\end{tikzpicture}
-\end{image}
-Note, $F'$ might be on the other side of $F$. Regardless, since
-$\frac{|AF|}{|FB|}$ increases as $|AF|$ increases, we see that
-\[
-\frac{|AF|}{|FB|} \ne \frac{|AF'|}{|F'B|}.
-\]
-But this means that 
-\[
-\frac{|AF'|}{|F'B|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|}\ne\frac{|AF|}{|FB|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|}=1
-\]
-contradicting our previous result! Hence the lines $AD$, $BE$, and $CF$ must
-pass through a common point.
-\end{freeResponse}
-\end{problem}
-
-\begin{problem}
-A \textbf{median} of a triangle is a line segment from a vertex
-to the midpoint of the opposite side. Show that the medians of any triangle
-meet in a common point.
-
-\begin{hint}
-Use Ceva's Theorem.
-\end{hint}
-\begin{freeResponse}
-Since medians connect the midpoint of a side of a triangle to the
-opposite angle, we have
-\begin{align*}
-\frac{|AF|}{|FB|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|} &= 
-\frac{|AB|/2}{|AB|/2}\cdot\frac{|BC|/2}{|BC|/2}\frac{|CA|/2}{|CA|/2}\\
-&= 1.
-\end{align*}
-Hence by Ceva's Theorem, we see that the medians are concurrent. 
-\end{freeResponse}
-\end{problem}
-
-\begin{problem}
-Use Ceva's theorem to show that the three altitudes of a
-triangle are concurrent.
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\tkzDefPoint(0,0){A}
-\tkzDefPoint(5,4){C}
-\tkzDefPoint(6.5,0){B}
-\tkzDefPoint(5,0){F}
-\tkzDefPoint(5.54,2.56){D}
-\tkzDefPoint(3.98,3.18){E}
-\draw (A)--(B)--(C)--cycle;
-\draw (A)--(D);
-\draw (F)--(C);
-\draw (B)--(E);
-
-
-\tkzLabelPoints[above](C)
-\tkzLabelPoints[below](A,B,F)
-\tkzLabelPoints[above left](E)
-\tkzLabelPoints[right](D)
-%\draw[step=.5cm] (0,0) grid (10,5);
-\end{tikzpicture}
-\end{image}
-\begin{hint}
-Use all three similarities of the form $\triangle CEB\sim\triangle
-CDA$ and then apply Ceva's theorem.
-\end{hint}
-\begin{freeResponse}
-Since altitudes intersect lines containing the opposite sites at right
-angles, see that 
-\[
-\triangle CEB\sim\triangle CDA,\qquad 
-\triangle BFC \sim \triangle BDA,\qquad
-\triangle AFC \sim \triangle AEB.
-\]
-From this we see that 
-\[
-\frac{|AF|}{|EA|}=\frac{|AC|}{|AB|},\qquad
-\frac{|BD|}{|FB|}=\frac{|AB|}{|BC|},\qquad
-\frac{|CE|}{|DC|}=\frac{|BC|}{|AC|}.
-\]
-Now we see that 
-\begin{align*}
-\frac{|AF|}{|FB|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|} &= 
-\frac{|AF|}{|EA|}\cdot\frac{|BD|}{|FB|}\cdot\frac{|CE|}{|DC|}\\
-&=\frac{|AC|}{|AB|}\cdot\frac{|AB|}{|BC|}\cdot\frac{|BC|}{|AC|}\\
-&= 1.
-\end{align*}
-Hence by Ceva's Theorem, we see that the altitudes of a triangle are
-concurrent.
-\end{freeResponse}
-\end{problem}
 
 \begin{problem}
 Summarize the results from this section. In particular, indicate which
