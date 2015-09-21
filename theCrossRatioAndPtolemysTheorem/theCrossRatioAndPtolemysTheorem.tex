@@ -62,17 +62,17 @@ AOB\right)  }{\sin\left(  \angle COB\right)  }.
 \]
 
 
-\begin{hint}
-Notice that
-\[
-m\left(  \angle BAO\right)  +m\left(\angle OCB\right)  =180^{\circ}%
-\]
-so that%
-\[
-\sin\left(  \angle BAO\right)  =\sin\left(\angle  OCB\right)  .
-\]
-Now use the Law of Sines.
-\end{hint}
+%% \begin{hint}
+%% Notice that
+%% \[
+%% m\left(  \angle BAO\right)  +m\left(\angle OCB\right)  =180^{\circ}%
+%% \]
+%% so that%
+%% \[
+%% \sin\left(  \angle BAO\right)  =\sin\left(\angle  OCB\right)  .
+%% \]
+%% Now use the Law of Sines.
+%% \end{hint}
 \begin{freeResponse}
 By the Law of Sines we have that
 \[
@@ -99,14 +99,15 @@ AOB\right)  }{\sin\left(  \angle COB\right)  }.
 \end{freeResponse}
 \end{problem}
 
-\begin{remark}
+\begin{problem}
 Note that if, in the above figure, $B$ moves along the
 circle to the other side of $C$, it is still true that%
 \[
 \frac{\left\vert AB\right\vert }{\left\vert CB\right\vert }=\frac
 {\sin\left(  \angle AOB\right)  }{\sin\left(  \angle
-COB\right)  }%
+COB\right).  }%
 \]
+Carefully draw the diagram for this situation.
 %% \begin{freeResponse}
 %% By the Law of Sines we have that
 %% \[
@@ -127,7 +128,7 @@ COB\right)  }%
 %% COB\right)  }.
 %% \]
 %% \end{freeResponse}
-\end{remark}
+\end{problem}
 
 
 
@@ -183,7 +184,7 @@ show that
 \frac{\sin\left(\angle A'OB'\right)}{\sin\left(\angle C'OB'\right)}\cdot\frac{
 \sin\left( \angle B'C'O\right)}{\sin\left(\angle B'A'O\right)}.
 \]
-[MJG,266-267]
+%[MJG,266-267]
 \begin{freeResponse}
 By the Law of Sines we have that
 \[
@@ -234,8 +235,22 @@ Finally, we see directly that
 %% \end{freeResponse}
 %% \end{problem}
 
-These last two problems allow us to define the cross-ratio of four
-points on a circle.
+
+
+\begin{problem}
+Note that if, in the above figure, $B$ moves along the
+circle to the other side of $C$, it is still true that%
+\[
+\frac{\left|A'B'\right|}{\left|C'B'\right|}=
+\frac{\sin\alpha}{\sin\beta}\cdot\frac{\sin\delta}{\sin\gamma}=
+\frac{\sin\left(\angle A'OB'\right)}{\sin\left(\angle C'OB'\right)}\cdot\frac{
+\sin\left( \angle B'C'O\right)}{\sin\left(\angle B'A'O\right)}.
+\]
+Carefully draw the diagram for this situation.
+\end{problem}
+
+These problems allow us to define the cross-ratio of four points on a
+circle.
 
 \begin{definition}
 For a sequence of four (ordered) points $A,B,C,$ and $D$ on a circle,
@@ -290,6 +305,7 @@ Show that, in the figure%
 \draw (0,0) circle (2cm);
 \draw (O) -- (C');
 \draw (A) -- (B);
+\draw (A) -- (D);
 \draw (C) -- (D);
 \draw (O) -- (B');
 \draw (B) -- (C);
