@@ -2,7 +2,7 @@
 
 \input{../preamble.tex}
 
-\title{Surface area and volume of the $R$-sphere in euclidean $3$-space}
+\title{Surface area and volume of the $R$-sphere}
 \begin{document}
 \begin{abstract}
 In this activity we begin to explore spherical geometry.
@@ -11,19 +11,18 @@ In this activity we begin to explore spherical geometry.
 
 
 We are now going to study the geometry of the $R$-sphere in euclidean
-$3$-space. This is the sphere of radius $R$ in normal $3$-space. We
-will use the coordinates $(\hat{x},\hat{y},\hat{z})$ to denote this
-space. We will show why there is a factor of $1/3$ in many formulas
-for volumes in $3$-dimensional euclidean geometry, just like there is
-a factor of $1/2$ in many formulas for areas in $2$-dimensional
-euclidean geometry.
+$3$-space. This is the sphere of radius $R$ in normal $3$-space.  We
+will show why there is a factor of $1/3$ in many formulas for volumes
+in $3$-dimensional euclidean geometry, just like there is a factor of
+$1/2$ in many formulas for areas in $2$-dimensional euclidean
+geometry.
 
 
 
 \section{Circumference and area of circles}
 
 We begin with perhaps the most basic fact of all about circles in
-\textbf{EG}. We will use calculus to compute the perimeter of a unit
+euclidean geometry. We will use calculus to compute the perimeter of a unit
 circle.
 
 
@@ -40,27 +39,21 @@ at the center of the circle), here we have shown the $n$th triangle:
 \node[left] at (3.41,1.41) {$b_n$};
 \node[right] at (4,0) {$(1,0)$};
 \node[left] at (0,0) {$(0,0)$};
-\node[above] at (C) {$P$};
+%\node[above] at (C) {$P$};
 \tkzMarkAngle[size=0.7cm,thin](A,O,C)
-\tkzLabelAngle[pos = 0.5](A,O,C){$\theta$}
+\tkzLabelAngle[pos = 0.5](A,O,C){$\theta_n$}
 \end{tikzpicture}
 \end{image}
-Find $P$ and $\theta$, and $b_n$.
+Find $\theta_n$ and $b_n$ in terms of $n$.
 \end{problem}
 
 
 \begin{problem}
 Explain what the limit
 \[
-\lim_{n\to\infty} n\cdot b_n
+\lim_{n\to\infty} \left(n\cdot b_n\right)
 \]
 computes and compute the limit.
-\begin{hint}
-You might want to use a half-angle formula
-\[
-\sin(\alpha/2) = \sqrt{\frac{1-\cos(\alpha)}{2}}.
-\]
-\end{hint}
 \end{problem}
 
 
@@ -144,19 +137,6 @@ of the circle. Hence
 \end{freeResponse}
 \end{problem}
 
-\begin{problem}
-Now compute 
-\[
-\lim_{n\to \infty} n\cdot b_n
-\]
-and explain your reasoning.
-\begin{freeResponse}
-As $n$ goes to infinity, $n\cdot b_n$ goes to the circumference of the circle. Hence 
-\[
-\lim_{n\to \infty} n\cdot b_n = 2\pi.
-\]
-\end{freeResponse}
-\end{problem}
 
 \begin{problem}
 Consider the limit
@@ -307,7 +287,7 @@ given by
 Let $h_{i}$ denote the vertical height of the label on the can between
 the $i$th pair of successive slices. Explain why the area of the label is exactly%
 \[%
-\sum_{i=1}^{n} 2\pi\cdot h_{i}.
+\sum_{i=1}^{n} 2\pi R \cdot h_{i}.
 \]
 \end{hint}
 \begin{hint}
@@ -405,7 +385,14 @@ distance $r$, the volume is unchanged.
 This fact is an example of \textit{Cavalieri's Principle}: Shearing a
 figure parallel to a fixed direction does not change the
 $n$-dimensional measure of an object in euclidean $n$-space. Think of
-a stack of (very thin) books.
+a stack of (very thin) books. We'll give a proof in euclidean $3$-space,
+and we will use the coordinates $(\hat{x},\hat{y},\hat{z})$ to denote
+this space. 
+
+
+
+
+
 
 \begin{problem}
 Show that Cavalieri's Principle is true for the pyramid using several

@@ -13,41 +13,40 @@ importance of the dot product to geometry.
 
 \subsection*{Points and vectors in euclidean 3-space}
 
-In this book, we will study all the \textit{two}-dimensional
-geometries (spheres, the plane and hyperbolic spaces). Each one of
-these geometries looks the same at each of its points and it also
-looks the same in every direction emanating from any of its
-points. But to study them all at the same time and in a uniform way we
-will need to visualize them all as different surfaces lying in some
-common \textit{three}-dimensional space. Let's examine this
-``ambient'' space.
+In this book, we will study plane, spherical and hyperbolic geometry
+in \textit{two}-dimensions. Each one of these geometries looks the
+same at each of its points and it also looks the same in every
+direction emanating from any of its points. But to study them all at
+the same time and in a uniform way we will need to visualize them all
+as different surfaces lying in some common \textit{three}-dimensional
+space. Let's examine this ``ambient'' space.
 
-
-For those we begin with three-dimensional euclidean space%
+We begin with three-dimensional euclidean space
 \[
 \mathbb{R}^{3}=\left\{  \left(  \hat{x},\hat{y},\hat{z}\right)  :\hat{x}%
 ,\hat{y},\hat{z}\in\mathbb{R}\right\}.
 \]
-We will want to reserve the notation $\left( x,y,z\right) $ for some
-new coordinates that we will put on the `same' objects in the next
-section. In euclidean space, there is a standard way to measure distance between two points%
+We reserve the notation $\left( x,y,z\right) $ for some new
+coordinates that we will put on the `same' objects later in this
+course. In euclidean space, there is a standard way to measure
+distance between two points%
 \begin{align*}
 \hat{X}_{1}  &  =\left(  \hat{x}_{1},\hat{y}_{1},\hat{z}_{1}\right) \\
 \hat{X}_{2}  &  =\left(  \hat{x}_{2},\hat{y}_{2},\hat{z}_{2}\right)  ,
 \end{align*}
 namely%
-\begin{equation}
+\[
 d\left(  \hat{X}_{1},\hat{X}_{2}\right)  =\sqrt{\left(  \hat{x}_{2}-\hat
 {x}_{1}\right)  ^{2}+\left(  \hat{y}_{2}-\hat{y}_{1}\right)  ^{2}+\left(
 \hat{z}_{2}-\hat{z}_{1}\right)  ^{2}}. \label{0}%
-\end{equation}
+\]
 
-When you see $\left( \hat{x},\hat{y},\hat{z}\right)$ in what follows,
-that means that distance between points is measured by the formula
-above. One more thing, in euclidean three-space it
-will be important throughout to make the distinction between
-\textbf{points} and \textbf{vectors}: Although each will be
-represented by a triple of real numbers we will use%
+When you see two point $\hat{X}_1$ and $\hat{X}_2$ in what follows,
+the `hats' mean that distance between points is measured by the
+formula above. One more thing, in euclidean three-space it will be
+important throughout to make the distinction between \textbf{points}
+and \textbf{vectors}: Although each will be represented by a triple of
+real numbers we will use%
 \[
 \hat{X}=\left(  \hat{x},\hat{y},\hat{z}\right)
 \]
@@ -70,8 +69,8 @@ first is the dot product of two vectors.
 \begin{definition}
 The dot product of two vectors%
 \begin{align*}
-\hat{V}_{1}  &  =\left(  \hat{a}_{1},\hat{b}_{1},\hat{c}_{1}\right) \\
-\hat{V}_{2}  &  =\left(  \hat{a}_{2},\hat{b}_{2},\hat{c}_{2}\right)
+\hat{V}_{1}  &  =\left(  \hat{a}_{1},\hat{b}_{1},\hat{c}_{1}\right), \\
+\hat{V}_{2}  &  =\left(  \hat{a}_{2},\hat{b}_{2},\hat{c}_{2}\right),
 \end{align*}
 emanating from the same point in 3-dimensional euclidean space is
 defined as the real number given by the formula%
@@ -106,6 +105,14 @@ $\hat{V}=\left(  \hat{a},\hat{b},\hat{c}\right)  $ in 3-dimensional euclidean
 space in terms of dot product.
 \end{problem}
 
+\begin{problem}
+  Prove that
+  \[
+  \hat{x}^2 + \hat{y}^2 + \hat{z}^2 = R^2
+  \]
+  is a sphere in euclidean three-space.
+\end{problem}
+
 
 \begin{lemma}[Law of Cosines]
 \label{110} The (smaller) angle $\theta$ between two
@@ -124,7 +131,7 @@ the proof below.
 
 \begin{problem}
 Start by noting that without loss of generality we can assume that
-$\left\vert \hat{V}% _{1}\right\vert \leq\left\vert
+$\left\vert \hat{V} _{1}\right\vert \le\left\vert
 \hat{V}_{2}\right\vert$. Consider the triangle with one side given by
 the segment from $O=\left( 0,0,0\right) $ to the endpoint $P_{1}$ of
 $\hat{V}_{1}$, with a second side $S_{2}$ given by the segment from
@@ -173,7 +180,7 @@ the relation
 \hat{V}_{1}\bullet\hat{V}_{2}=\left\vert \hat{V}_{1}\right\vert \cdot
 \left\vert \hat{V}_{2}\right\vert \cdot\cos\theta. \label{2}%
 \end{equation}
-[DS,30ff]
+%[DS,30ff]
 \end{theorem}
 
 Now we will prove this theorem. Your task is to fill-in the details of
@@ -258,13 +265,17 @@ _{2}}{\left\vert \hat{V}_{1}\right\vert \cdot\left\vert \hat{V}_{2}\right\vert
 \end{problem}
 
 \begin{problem}
-Show that we have the following equality of matrices%
+Show that we have the following equality:
 \[
+\sqrt{
+  \det
 \begin{bmatrix}
 \hat{V}_{1}\bullet\hat{V}_{1} & \hat{V}_{2}\bullet\hat{V}_{1}\\
 \hat{V}_{1}\bullet\hat{V}_{2} & \hat{V}_{2}\bullet\hat{V}_{2}%
-\end{bmatrix}
+\end{bmatrix}}
 =
+\sqrt{
+  \det\left(
 \begin{bmatrix}
 \hat{V}_{1} \\
 \hat{V}_{2}
@@ -272,7 +283,7 @@ Show that we have the following equality of matrices%
 \cdot
 \begin{bmatrix}
 \hat{V}_{1}^\transpose  & \hat{V}_{2}^\transpose 
-\end{bmatrix}.
+\end{bmatrix}\right)}.
 \]
 
 \end{problem}
@@ -280,118 +291,120 @@ Show that we have the following equality of matrices%
 Again, the significance of the previous problems is that, to compute
 areas, we only need to know how to compute dot-products. Hence, it is
 the definition of the dot-product of the vectors completely determines
-the calculation of the area of the parallelogram they generate.  We
-finish this section with one other related fact.
+the calculation of the area of the parallelogram they generate.
 
-\begin{lemma}
-The area of the parallelogram determined by two vectors $\hat{V}_{1}=\left(
-\hat{a}_{1},\hat{b}_{1},\hat{c}_{1}\right)  $ and $\hat{V}_{2}=\left(  \hat
-{a}_{2},\hat{b}_{2},\hat{c}_{2}\right)  $ emanating from the same point in
-euclidean $3$-space is given by the length of the cross-product%
-\[
-\hat{V}_{1}\times\hat{V}_{2}=\left(
-\det\begin{bmatrix}
-\hat{b}_{1} & \hat{c}_{1}\\
-\hat{b}_{2} & \hat{c}_{2}%
-\end{bmatrix},
-\det\begin{bmatrix}
-\hat{c}_{1} & \hat{a}_{1}\\
-\hat{c}_{2} & \hat{a}_{2}%
-\end{bmatrix},
-\det\begin{bmatrix}
-\hat{a}_{1} & \hat{b}_{1}\\
-\hat{a}_{2} & \hat{b}_{2}%
-\end{bmatrix}
-\right).
-\]
 
-\end{lemma}
+%% We finish this section with one other related fact.
 
-Now we will prove this lemma. Your task is to fill-in the details of
-the proof below.
+%% \begin{lemma}
+%% The area of the parallelogram determined by two vectors $\hat{V}_{1}=\left(
+%% \hat{a}_{1},\hat{b}_{1},\hat{c}_{1}\right)  $ and $\hat{V}_{2}=\left(  \hat
+%% {a}_{2},\hat{b}_{2},\hat{c}_{2}\right)  $ emanating from the same point in
+%% euclidean $3$-space is given by the length of the cross-product%
+%% \[
+%% \hat{V}_{1}\times\hat{V}_{2}=\left(
+%% \det\begin{bmatrix}
+%% \hat{b}_{1} & \hat{c}_{1}\\
+%% \hat{b}_{2} & \hat{c}_{2}%
+%% \end{bmatrix},
+%% \det\begin{bmatrix}
+%% \hat{c}_{1} & \hat{a}_{1}\\
+%% \hat{c}_{2} & \hat{a}_{2}%
+%% \end{bmatrix},
+%% \det\begin{bmatrix}
+%% \hat{a}_{1} & \hat{b}_{1}\\
+%% \hat{a}_{2} & \hat{b}_{2}%
+%% \end{bmatrix}
+%% \right).
+%% \]
 
-\begin{problem}
-We use some facts from linear algebra. First of all, develop the determinant%
-\[
-\det
-\begin{bmatrix}
-\hat{V}_{1} \\
-\hat{V}_{2} \\
-\hat{V}_{1}\times\hat{V}_{2}
-\end{bmatrix}
-\]
-along the third row.
-\begin{itemize}
-\item Conclude that 
-\[
-\left\vert
-\det
-\begin{bmatrix}
-\hat{V}_{1} \\
-\hat{V}_{2} \\
-\hat{V}_{1}\times\hat{V}_{2}
-\end{bmatrix}\right\vert
-=\left\vert \hat{V}_{1}\times\hat{V}_{2}\right\vert ^{2}
-\]
-\item On the other hand by developing the left-hand determinant along
-  the third row, show that
-\[
-\det
-\begin{bmatrix}
-\hat{V}_{1} \\
-\hat{V}_{2} \\
-\hat{V}_{1}
-\end{bmatrix}
-=0
-\]
-\end{itemize}
-Hence we conclude that $\hat{V}_{1}$ is perpendicular to
-$\hat{V}_{1}\times\hat{V}_{2}$. Similarly $\hat{V}_{2}$ is
-perpendicular to $\hat{V}_{1}\times\hat{V}_{2}$. Finally, the absolute
-value of the determinant of a $3\times3$ matrix%
-\[
-\left\vert
-\det
-\begin{bmatrix}
-\hat{V}_{1} \\
-\hat{V}_{2} \\
-\hat{V}_{1}\times\hat{V}_{2}
-\end{bmatrix}
-\right\vert
-\]
-is the volume of the parallelepiped determined by the row vectors of the
-matrix. But that volume is%
-\[
-\left( \left\vert \hat{V}_{1}\right\vert \cdot\left\vert \hat{V}%
-_{2}\right\vert \cdot\sin\theta\right)  \cdot\left\vert \hat{V}%
-_{1}\times\hat{V}_{2}\right\vert
-\]
-since $\left(  \left\vert \hat{V}_{1}\right\vert \cdot\left\vert \hat{V}%
-_{2}\right\vert \cdot\sin\theta\right)  $ is the area of the base
-of the parallelepiped and $\hat{V}_{1}\times\hat{V}_{2}$ is perpendicular to
-both $V_{1}$ and $V_{2}$. So we see
-\[
-\left(  \left\vert \hat{V}_{1}\right\vert \cdot\left\vert \hat{V}%
-_{2}\right\vert \cdot\sin\theta\right)  \cdot\left\vert \hat{V}%
-_{1}\times\hat{V}_{2}\right\vert =\left\vert
-\det\begin{bmatrix}
-\hat{V}_{1} \\
-\hat{V}_{2} \\
-\hat{V}_{1}\times\hat{V}_{2}
-\end{bmatrix}
-\right\vert =\left\vert \hat{V}_{1}\times\hat{V}_{2}\right\vert ^{2}.
-\]
-So%
-\[
-\left(  \left\vert \hat{V}_{1}\right\vert \cdot\left\vert \hat{V}%
-_{2}\right\vert \cdot\sin\theta\right)  =\left\vert \hat{V}%
-_{1}\times\hat{V}_{2}\right\vert .
-\]
-%[DS,42-47]
-\begin{itemize}
-\item Explain how this completes the proof. 
-\end{itemize}
-\end{problem}
+%% \end{lemma}
+
+%% Now we will prove this lemma. Your task is to fill-in the details of
+%% the proof below.
+
+%% \begin{problem}
+%% We use some facts from linear algebra. First of all, develop the determinant%
+%% \[
+%% \det
+%% \begin{bmatrix}
+%% \hat{V}_{1} \\
+%% \hat{V}_{2} \\
+%% \hat{V}_{1}\times\hat{V}_{2}
+%% \end{bmatrix}
+%% \]
+%% along the third row.
+%% \begin{itemize}
+%% \item Conclude that 
+%% \[
+%% \left\vert
+%% \det
+%% \begin{bmatrix}
+%% \hat{V}_{1} \\
+%% \hat{V}_{2} \\
+%% \hat{V}_{1}\times\hat{V}_{2}
+%% \end{bmatrix}\right\vert
+%% =\left\vert \hat{V}_{1}\times\hat{V}_{2}\right\vert ^{2}
+%% \]
+%% \item On the other hand by developing the left-hand determinant along
+%%   the third row, show that
+%% \[
+%% \det
+%% \begin{bmatrix}
+%% \hat{V}_{1} \\
+%% \hat{V}_{2} \\
+%% \hat{V}_{1}
+%% \end{bmatrix}
+%% =0
+%% \]
+%% \end{itemize}
+%% Hence we conclude that $\hat{V}_{1}$ is perpendicular to
+%% $\hat{V}_{1}\times\hat{V}_{2}$. Similarly $\hat{V}_{2}$ is
+%% perpendicular to $\hat{V}_{1}\times\hat{V}_{2}$. Finally, the absolute
+%% value of the determinant of a $3\times3$ matrix%
+%% \[
+%% \left\vert
+%% \det
+%% \begin{bmatrix}
+%% \hat{V}_{1} \\
+%% \hat{V}_{2} \\
+%% \hat{V}_{1}\times\hat{V}_{2}
+%% \end{bmatrix}
+%% \right\vert
+%% \]
+%% is the volume of the parallelepiped determined by the row vectors of the
+%% matrix. But that volume is%
+%% \[
+%% \left( \left\vert \hat{V}_{1}\right\vert \cdot\left\vert \hat{V}%
+%% _{2}\right\vert \cdot\sin\theta\right)  \cdot\left\vert \hat{V}%
+%% _{1}\times\hat{V}_{2}\right\vert
+%% \]
+%% since $\left(  \left\vert \hat{V}_{1}\right\vert \cdot\left\vert \hat{V}%
+%% _{2}\right\vert \cdot\sin\theta\right)  $ is the area of the base
+%% of the parallelepiped and $\hat{V}_{1}\times\hat{V}_{2}$ is perpendicular to
+%% both $V_{1}$ and $V_{2}$. So we see
+%% \[
+%% \left(  \left\vert \hat{V}_{1}\right\vert \cdot\left\vert \hat{V}%
+%% _{2}\right\vert \cdot\sin\theta\right)  \cdot\left\vert \hat{V}%
+%% _{1}\times\hat{V}_{2}\right\vert =\left\vert
+%% \det\begin{bmatrix}
+%% \hat{V}_{1} \\
+%% \hat{V}_{2} \\
+%% \hat{V}_{1}\times\hat{V}_{2}
+%% \end{bmatrix}
+%% \right\vert =\left\vert \hat{V}_{1}\times\hat{V}_{2}\right\vert ^{2}.
+%% \]
+%% So%
+%% \[
+%% \left(  \left\vert \hat{V}_{1}\right\vert \cdot\left\vert \hat{V}%
+%% _{2}\right\vert \cdot\sin\theta\right)  =\left\vert \hat{V}%
+%% _{1}\times\hat{V}_{2}\right\vert .
+%% \]
+%% %[DS,42-47]
+%% \begin{itemize}
+%% \item Explain how this completes the proof. 
+%% \end{itemize}
+%% \end{problem}
 
 
 \subsection*{Curves in euclidean $3$-space and vectors tangent to them}
@@ -405,34 +418,40 @@ t\mapsto\left(  \hat{x}\left(  t\right)  ,\hat{y}\left(  t\right)  ,\hat
 {z}\left(  t\right)  \right)
 \end{gather*}
 from an interval $\left[ b,e\right] $ on the real line. We shall
-sometimes use the notation%
+use the notation%
 \[
-\left(  \hat{x}\left(  t\right)  ,\hat{y}\left(  t\right)  ,\hat{z}\left(
-t\right)  \right)  =\hat{X}\left(  t\right)  .
+\hat{X}(t) = \begin{cases}
+  \hat{x}(t),\\
+  \hat{y}(t),\\
+  \hat{z}(t).
+\end{cases}
 \]
-The mapping $\hat{X}\left(  t\right)  $ must have the additional property that
+The mapping $\hat{X}(t)$ must have the additional property that
 the tangent vector
 \[
-\left(  \hat{a}\left(  t\right)  ,\hat{b}\left(  t\right)  ,\hat{c}\left(
-t\right)  \right)  =\left(  \frac{d\hat{x}}{dt},\frac{d\hat{y}}{dt}%
-,\frac{d\hat{z}}{dt}\right)  =\frac{d\hat{X}}{dt}%
+\dd[\hat{X}]{t} =\left(
+  \dd[\hat{x}]{t},
+  \dd[\hat{y}]{t},
+  \dd[\hat{z}]{t}
+\right)
 \]
-is not the zero vector for any $t$ in $\left[ b,e\right] $.
+is not the zero vector for any $t$ in $[b,e]$.
 \end{definition}
 
 \begin{problem}\hfil
 \begin{enumerate}
 \label{1}\item Give two examples of smooth curves,
 \begin{align*}
-\hat{X}_{1}\left(  s\right)   &  =\left(  \hat{x}_{1}\left(  s\right)
-,\hat{y}_{1}\left(  s\right)  ,\hat{z}_{1}\left(  s\right)  \right) \\
-\hat{X}_{2}\left(  t\right)   &  =\left(  \hat{x}_{2}\left(  t\right)
-,\hat{y}_{2}\left(  t\right)  ,\hat{z}_{2}\left(  t\right)  \right)
+\hat{X}_{1}(s) &=\left(\hat{x}_{1}(s),\hat{y}_{1}(s),\hat{z}_{1}(s)\right) \\
+\hat{X}_{2}(t) &=\left(\hat{x}_{2}(t),\hat{y}_{2}(t),\hat{z}_{2}(t)\right)
 \end{align*}
-neither of which is a straight line, in $3$-dimensional euclidean space. Do
-this so that the two curves pass through a common point and go in distinct
-tangent directions at that point. Please choose curves so that none of the
-coordinate functions of $s$ or $t$ is a constant function. [DS,71ff]
+where
+\begin{itemize}
+\item neither $\hat{X}_1$ nor $\hat{X}_2$ are a straight line,
+\item the two curves $\hat{X}_1$ and $\hat{X}_2$ pass through a common
+  point \textbf{and} go in distinct tangent directions at that point.
+\item None of the components of $\hat{X}_1$ and $\hat{X}_2$ are constant functions.
+\end{itemize}
 
 \item Compute the tangent vectors of each of the two curves at each of their points.
 
@@ -441,7 +460,7 @@ in euclidean $3$-space at which the two curves intersect?
 
 \item Use the dot product formula to compute the angle $\theta$ between (the
 tangent vectors to) your two example curves in a) at the point at which the
-curves intersect. [DS,20-21]
+curves intersect. %[DS,20-21]
 \end{enumerate}
 \end{problem}
 
@@ -458,7 +477,7 @@ point moving along a curve as in%
 t\right)  }{dt},\frac{d\hat{y}\left(  t\right)  }{dt},\frac{d\hat{z}\left(
 t\right)  }{dt}\right)  .
 \]
-[DS,30ff].
+%[DS,30ff].
 
 In matrix notation we can think of
 \[
@@ -498,18 +517,17 @@ to the curve, that is,%
 \[
 L=\int_{b}^{e} \l(t)  \,dt.
 \]
-[DS,82] Notice that the length of any curve only depends on the definition of
+%[DS,82]
+  Notice that the length of any curve only depends on the definition of
 the dot-product. That is, if we know the formula for the dot-product, we know
 (the formula for) the length of any curve.
 \end{definition}
 
 Our first example is the path%
-\begin{align*}
-\left(  \hat{x}\left(  t\right)  ,\hat{y}\left(  t\right)  ,\hat{z}\left(
-t\right)  \right)   &  =\left(  R\cdot \sin\left(  t\right)  ,0,R\cdot
-\cos\left(  t\right)  \right) \label{6}\\
-0\,  &  \leq t\leq\pi.
-\end{align*}
+\[
+\left(\hat{x}(t),\hat{y}(t),\hat{z}(t)\right)=\left(R\cdot\sin(t),0,R\cdot\cos(t)\right) \qquad
+0 \leq t\leq\pi.
+\]
 
 
 Notice that this path lies on the sphere of radius $R$.
@@ -536,35 +554,24 @@ from a fixed beginning point to a variable ending point on the
 ellipse. If that kind of thing occurs, go back and change the
 definitions of your curves in the previous problem until you get two
 curves for which you can compute length of your path from a fixed
-beginning point to a fixed ending point. [DS,81-82]
+beginning point to a fixed ending point. %[DS,81-82]
 \end{remark}
 
 
 
 
-We want to extend such ideas to objects like spheres
-\[
-\left\{  \left(  \hat{x},\hat{y},\hat{z}\right)  \in\mathbb{R}^{3}:\hat{x}%
-^{2}+\hat{y}^{2}+\hat{z}^{2}=R^{2}\right\}
-\]
-of a fixed radius $R$, since these can be faithfully represented in
-ordinary euclidean three-space.  However, there is one disconcerting
-fact: As $R$ approaches infinity, the geometry of the $R$-sphere at
-any point looks more and more like plane geometry, but on the other
-hand, that `limit' plane geometry is `out at infinity.' 
 
-To study all the two-dimensional geometries, including plane geometry
-and the hyperbolic geometries, in a uniform way we will have to
-\textit{change} the coordinate system we use, or, what will turn out
-to be the same thing, we will have to change the distance formula
-slightly for each geometry. In fact this means we will change
-coordinates.  These new coordinates will be chosen to keep the north
-and south poles from going to infinity as the radius $R$ of a sphere
-increases without bound. This change of viewpoint will eventually let
-us go non-euclidean or, in the language of Buzz Lightyear ``to
-infinity and beyond.'' The idea will be like the change from
-rectangular to polar coordinates for the plane that you encountered in
-calculus, only easier.
+To study plane geometry, spherical geometry, and the hyperbolic
+geometries in a uniform way we will have to \textit{change} the
+coordinate system we use. In essence, this means that we will have to
+change the distance formula slightly for each geometry. These new
+coordinates will be chosen to keep the north and south poles from
+going to infinity as the radius $R$ of a sphere increases without
+bound. This change of viewpoint will eventually let us go
+non-euclidean or, in the language of Buzz Lightyear ``to infinity and
+beyond.'' The idea will be like the change from rectangular to polar
+coordinates for the plane that you encountered in calculus, only
+easier.
 
 
 \begin{problem}
