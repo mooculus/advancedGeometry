@@ -75,18 +75,33 @@ to rigid motions.
 
   \begin{hint}
     Note that the square of the distance between $\hat{X}_{1}$ and
-    $\hat{X}_{1}$ is just the dot-product of the vector%
+    $\hat{X}_{2}$ is just the dot-product of the vector%
     \[
     \hat{V}=\hat{X}_{2}-\hat{X}_{1}%
     \]
     with itself. 
   \end{hint}
   \begin{hint}
-    Hence we must show that $\hat{M}$ is orthogonal if
+    If $\hat{M}$ is orthogonal, write
     \[
     \left(  \hat{V}  \cdot\hat{M} \right) \bullet\left(
-    \hat{V}  \cdot\hat{M}\right)  =\hat{V}\bullet\hat{V}%
+    \hat{V}  \cdot\hat{M}\right)
     \]
+    and deduce that this equals $\hat{V}\bullet\hat{V}$. 
+  \end{hint}
+  \begin{hint} For the other direction, set
+    \[
+    \hat{V} =
+    \begin{bmatrix}
+      a & b & c
+    \end{bmatrix}
+    \]
+    and view the equation 
+    \[
+    \left(  \hat{V}  \cdot\hat{M} \right) \bullet\left(
+    \hat{V}  \cdot\hat{M}\right)  =\hat{V}\bullet\hat{V}
+    \]
+    as an equation of polynomials in the variables $a$, $b$, and $c$.
   \end{hint}
 \end{problem}
 
