@@ -67,21 +67,170 @@ notebook, is intended to encourage you to write out (in correctable form)
 solutions to the problems that can be inserted at the appropriate places into
 the text.
 
-This book supposes familiarity with several variable calculus and the linear
-algebra of matrices. In particular you will need to remember and apply the
-chain rule for differentiable functions of several variables, written in
-matrix notation. That is:
+The second half of this book supposes familiarity with several variable
+calculus and the linear algebra of matrices. In particular, it will often be
+useful to consider a vector, for example, $V=\left( a,b,c\right) $, as a $%
+1\times 3$ matrix and we will write%
+\begin{equation*}
+\left( V\right) =\left( 
+\begin{array}{ccc}
+a & b & c%
+\end{array}%
+\right) 
+\end{equation*}%
+or as a $3\times 1$ matrix and we will write%
+\begin{equation*}
+\left( V\right) ^{t}=\left( 
+\begin{array}{c}
+a \\ 
+b \\ 
+c%
+\end{array}%
+\right) .
+\end{equation*}%
+This will allow us, for example, to write the scalar product of two vectors%
+\begin{align*}
+V\bullet V^{\prime }& =\left( a,b,c\right) \bullet \left( a^{\prime
+},b^{\prime },c^{\prime }\right)  \\
+& =aa^{\prime }+bb^{\prime }+cc^{\prime }
+\end{align*}%
+as a product of matrices%
+\begin{equation*}
+V\cdot V^{\prime }=\left( 
+\begin{array}{ccc}
+a & b & c%
+\end{array}%
+\right) \cdot \left( 
+\begin{array}{c}
+a^{\prime } \\ 
+b^{\prime } \\ 
+c^{\prime }%
+\end{array}%
+\right) .
+\end{equation*}%
+Furthermore we will use the notations $det(A)$ and $|A|$ interchangeably for the determinant of a square matrix A.
 
-\begin{theorem}[Chain Rule]
-  If $F$ is a differentiable function of $x_1, x_2,\dots,x_n$; and if
-  $x_1, x_2,\dots,x_n$ are all differentiable functions of $t$, then
-  the chain rule states
-  \[
-  \dd[F]{t} = \nabla F \cdot
-  \begin{bmatrix}
-    \dd[x_1]{t} & \dd[x_2]{t} & \cdots & \dd[x_n]{t}
-  \end{bmatrix}^\transpose.
-  \]
+You will also need to remember and apply the Chain Rule for differentiable
+functions of several variables, written in matrix notation. Here's the
+gradual build-up to this general form of the Chain Rule using matrix
+notation and matrix multiplication.
+
+\begin{theorem}
+\textbf{(Chain Rule)} I: Given differentiable mappings%
+\begin{align*}
+& y\left( x\right) \\
+& z\left( y\right)
+\end{align*}
+then substituting we have%
+\begin{equation*}
+z\left( y\left( x\right) \right) 
+\end{equation*}
+making $z$ a function of $x$ and%
+\begin{equation*}
+\frac{dz}{dx}=\frac{dz}{dy}\cdot\frac{dy}{dx}. 
+\end{equation*}
+
+II: Given differentiable mappings%
+\begin{align*}
+& \left( y_{1}\left( x\right) ,\ldots,y_{n}\left( x\right) \right) \\
+& z\left( y_{1},\ldots,y_{n}\right)
+\end{align*}
+then substituting we have%
+\begin{equation*}
+z\left( y_{1}\left( x\right) ,\ldots,y_{n}\left( x\right) \right) 
+\end{equation*}
+making $z$ a function of $x$ and%
+\begin{equation*}
+\frac{dz}{dx}=\left( 
+\begin{array}{ccc}
+\frac{\partial z}{\partial y_{1}} & \ldots & \frac{\partial z}{\partial y_{n}%
+}%
+\end{array}
+\right) \cdot\left( 
+\begin{array}{c}
+\frac{dy_{1}}{dx} \\ 
+\vdots \\ 
+\frac{dy_{n}}{dx}%
+\end{array}
+\right) =\nabla z\cdot\left( 
+\begin{array}{c}
+\frac{dy_{1}}{dx} \\ 
+\vdots \\ 
+\frac{dy_{n}}{dx}%
+\end{array}
+\right) . 
+\end{equation*}
+
+III: Given differentiable mappings%
+\begin{align*}
+& \left( y_{1}\left( x_{1},\ldots,x_{m}\right) ,\ldots,y_{n}\left(
+x_{1},\ldots,x_{m}\right) \right) \\
+& \left( z_{1}\left( y_{1},\ldots,y_{n}\right) ,\ldots,z_{p}\left(
+y_{1},\ldots,y_{n}\right) ,\right)
+\end{align*}
+then substituting 
+\begin{equation*}
+z_{k}\left( y_{1}\left( x_{1},\ldots,x_{m}\right) ,\ldots,y_{n}\left(
+x_{1},\ldots,x_{m}\right) \right) 
+\end{equation*}
+and fixing $x_{1},\ldots,x_{i-1}$ and $x_{i+1},\ldots,x_{m}$ we make $z_{k}$
+a function of $x_{i}$ and%
+\begin{equation*}
+\frac{\partial z_{k}}{\partial x_{i}}=\left( 
+\begin{array}{ccc}
+\frac{\partial z_{k}}{\partial y_{1}} & \ldots & \frac{\partial z_{k}}{%
+\partial y_{n}}%
+\end{array}
+\right) \cdot\left( 
+\begin{array}{c}
+\frac{\partial y_{1}}{\partial x_{i}} \\ 
+\vdots \\ 
+\frac{\partial y_{n}}{\partial x_{i}}%
+\end{array}
+\right) =\nabla z_{k}\cdot\left( 
+\begin{array}{c}
+\frac{\partial y_{1}}{\partial x_{i}} \\ 
+\vdots \\ 
+\frac{\partial y_{n}}{\partial x_{i}}%
+\end{array}
+\right) . 
+\end{equation*}
+
+IV: Putting III together for all indices $k$ and $i$, we have the matrix
+equation%
+\begin{equation}
+\left( \frac{\partial z_{k}}{\partial x_{i}}\right) =\left( \frac{\partial
+z_{k}}{\partial y_{j}}\right) \cdot\left( \frac{\partial y_{j}}{\partial
+x_{i}}\right)   \label{ChR}
+\end{equation}
+where $\left( \frac{\partial z_{k}}{\partial x_{i}}\right) $ is the $p\times
+m$ matrix whose $\left( k,i\right) $-th entry is $\frac{\partial z_{k}}{%
+\partial x_{i}}$, etc.
+\end{theorem}
+
+One of its important applications is the Substitution Rule for integrals of
+functions of several variables.
+
+\begin{theorem}
+\textbf{(Substitution Rule)} I: If $f\left( y\right) $ is a function of $y$
+and $y\left( x\right) $ is a function of $x$,%
+\begin{equation*}
+\dint \nolimits_{\left[ y\left( a\right) ,y\left( b\right) \right] }f\left(
+y\right) \cdot dy=\dint \nolimits_{\left[ a,b\right] }f\left( \left( y\left(
+x\right) \right) \right) \cdot\frac{dy}{dx}\cdot dx. 
+\end{equation*}
+
+II: If $f\left( y_{1},\ldots ,y_{m}\right) $ is a function of $\left(
+y_{1},\ldots ,y_{m}\right) $ and the mapping $\left( y_{1}\left(
+x_{1},\ldots ,x_{m}\right) ,\ldots ,y_{m}\left( x_{1},\ldots ,x_{m}\right)
+\right) $ takes the region $R_{x}$ to the region $R_{y},$ then%
+\begin{equation}
+\dint\nolimits_{R_{y}}f\left( y_{1},\ldots ,y_{m}\right) \cdot dy_{1}\ldots
+dy_{m}=\dint\nolimits_{R_{x}}f\left( \left( y_{1}\left( x_{1},\ldots
+,x_{m}\right) ,\ldots ,y_{m}\left( x_{1},\ldots ,x_{m}\right) \right)
+\right) \cdot \left\vert \left( \frac{\partial y_{j}}{\partial x_{i}}\right)
+\right\vert \cdot dx_{1}\ldots dx_{m}.  \label{SuR}
+\end{equation}
 \end{theorem}
 
 As a help, at some points in the text and in some of the exercises, a more
