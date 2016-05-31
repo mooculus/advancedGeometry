@@ -67,194 +67,9 @@ notebook, is intended to encourage you to write out (in correctable form)
 solutions to the problems that can be inserted at the appropriate places into
 the text.
 
-The second half of this book supposes familiarity with several variable
-calculus and the linear algebra of matrices. In particular, it will often be
-useful to consider a vector, for example, $V=\left( a,b,c\right) $, as a $%
-1\times 3$ matrix and we will write%
-\begin{equation*}
-\left( V\right) =\left( 
-\begin{array}{ccc}
-a & b & c%
-\end{array}%
-\right) 
-\end{equation*}%
-or as a $3\times 1$ matrix and we will write%
-\begin{equation*}
-\left( V\right) ^{t}=\left( 
-\begin{array}{c}
-a \\ 
-b \\ 
-c%
-\end{array}%
-\right) .
-\end{equation*}%
-This will allow us, for example, to write the scalar product of two vectors%
-\begin{align*}
-V\bullet V^{\prime }& =\left( a,b,c\right) \bullet \left( a^{\prime
-},b^{\prime },c^{\prime }\right)  \\
-& =aa^{\prime }+bb^{\prime }+cc^{\prime }
-\end{align*}%
-as a product of matrices%
-\begin{equation*}
-V\cdot V^{\prime }=\left( 
-\begin{array}{ccc}
-a & b & c%
-\end{array}%
-\right) \cdot \left( 
-\begin{array}{c}
-a^{\prime } \\ 
-b^{\prime } \\ 
-c^{\prime }%
-\end{array}%
-\right) .
-\end{equation*}%
-Furthermore we will use the notations $det(A)$ and $|A|$ interchangeably for the determinant of a square matrix A.
-
-You will also need to remember and apply the Chain Rule for differentiable
-functions of several variables, written in matrix notation. Here's the
-gradual build-up to this general form of the Chain Rule using matrix
-notation and matrix multiplication.
-
-\begin{theorem}
-\textbf{(Chain Rule)} I: Given differentiable mappings%
-\begin{align*}
-& y\left( x\right) \\
-& z\left( y\right)
-\end{align*}
-then substituting we have%
-\begin{equation*}
-z\left( y\left( x\right) \right) 
-\end{equation*}
-making $z$ a function of $x$ and%
-\begin{equation*}
-\frac{dz}{dx}=\frac{dz}{dy}\cdot\frac{dy}{dx}. 
-\end{equation*}
-
-II: Given differentiable mappings%
-\begin{align*}
-& \left( y_{1}\left( x\right) ,\ldots,y_{n}\left( x\right) \right) \\
-& z\left( y_{1},\ldots,y_{n}\right)
-\end{align*}
-then substituting we have%
-\begin{equation*}
-z\left( y_{1}\left( x\right) ,\ldots,y_{n}\left( x\right) \right) 
-\end{equation*}
-making $z$ a function of $x$ and%
-\begin{equation*}
-\frac{dz}{dx}=\left( 
-\begin{array}{ccc}
-\frac{\partial z}{\partial y_{1}} & \ldots & \frac{\partial z}{\partial y_{n}%
-}%
-\end{array}
-\right) \cdot\left( 
-\begin{array}{c}
-\frac{dy_{1}}{dx} \\ 
-\vdots \\ 
-\frac{dy_{n}}{dx}%
-\end{array}
-\right) =\nabla z\cdot\left( 
-\begin{array}{c}
-\frac{dy_{1}}{dx} \\ 
-\vdots \\ 
-\frac{dy_{n}}{dx}%
-\end{array}
-\right) . 
-\end{equation*}
-
-III: Given differentiable mappings%
-\begin{align*}
-& \left( y_{1}\left( x_{1},\ldots,x_{m}\right) ,\ldots,y_{n}\left(
-x_{1},\ldots,x_{m}\right) \right) \\
-& \left( z_{1}\left( y_{1},\ldots,y_{n}\right) ,\ldots,z_{p}\left(
-y_{1},\ldots,y_{n}\right) ,\right)
-\end{align*}
-then substituting 
-\begin{equation*}
-z_{k}\left( y_{1}\left( x_{1},\ldots,x_{m}\right) ,\ldots,y_{n}\left(
-x_{1},\ldots,x_{m}\right) \right) 
-\end{equation*}
-and fixing $x_{1},\ldots,x_{i-1}$ and $x_{i+1},\ldots,x_{m}$ we make $z_{k}$
-a function of $x_{i}$ and%
-\begin{equation*}
-\frac{\partial z_{k}}{\partial x_{i}}=\left( 
-\begin{array}{ccc}
-\frac{\partial z_{k}}{\partial y_{1}} & \ldots & \frac{\partial z_{k}}{%
-\partial y_{n}}%
-\end{array}
-\right) \cdot\left( 
-\begin{array}{c}
-\frac{\partial y_{1}}{\partial x_{i}} \\ 
-\vdots \\ 
-\frac{\partial y_{n}}{\partial x_{i}}%
-\end{array}
-\right) =\nabla z_{k}\cdot\left( 
-\begin{array}{c}
-\frac{\partial y_{1}}{\partial x_{i}} \\ 
-\vdots \\ 
-\frac{\partial y_{n}}{\partial x_{i}}%
-\end{array}
-\right) . 
-\end{equation*}
-
-IV: Putting III together for all indices $k$ and $i$, we have the matrix
-equation%
-\begin{equation}
-\left( \frac{\partial z_{k}}{\partial x_{i}}\right) =\left( \frac{\partial
-z_{k}}{\partial y_{j}}\right) \cdot\left( \frac{\partial y_{j}}{\partial
-x_{i}}\right)   \label{ChR}
-\end{equation}
-where $\left( \frac{\partial z_{k}}{\partial x_{i}}\right) $ is the $p\times
-m$ matrix whose $\left( k,i\right) $-th entry is $\frac{\partial z_{k}}{%
-\partial x_{i}}$, etc.
-\end{theorem}
-
-One of its important applications is the Substitution Rule for integrals of
-functions of several variables.
-
-\begin{theorem}
-\textbf{(Substitution Rule)} I: If $f\left( y\right) $ is a function of $y$
-and $y\left( x\right) $ is a function of $x$,%
-\begin{equation*}
-\dint \nolimits_{\left[ y\left( a\right) ,y\left( b\right) \right] }f\left(
-y\right) \cdot dy=\dint \nolimits_{\left[ a,b\right] }f\left( \left( y\left(
-x\right) \right) \right) \cdot\frac{dy}{dx}\cdot dx. 
-\end{equation*}
-
-II: If $f\left( y_{1},\ldots ,y_{m}\right) $ is a function of $\left(
-y_{1},\ldots ,y_{m}\right) $ and the mapping $\left( y_{1}\left(
-x_{1},\ldots ,x_{m}\right) ,\ldots ,y_{m}\left( x_{1},\ldots ,x_{m}\right)
-\right) $ takes the region $R_{x}$ to the region $R_{y},$ then%
-\begin{equation}
-\dint\nolimits_{R_{y}}f\left( y_{1},\ldots ,y_{m}\right) \cdot dy_{1}\ldots
-dy_{m}=\dint\nolimits_{R_{x}}f\left( \left( y_{1}\left( x_{1},\ldots
-,x_{m}\right) ,\ldots ,y_{m}\left( x_{1},\ldots ,x_{m}\right) \right)
-\right) \cdot \left\vert \left( \frac{\partial y_{j}}{\partial x_{i}}\right)
-\right\vert \cdot dx_{1}\ldots dx_{m}.  \label{SuR}
-\end{equation}
-\end{theorem}
-
-As a help, at some points in the text and in some of the exercises, a more
-complete treatment of a particular topic can be found in one of the following
-two texts:
-
-[MJG]: Greenberg, Marvin Jay. \textit{Euclidean and Non-Euclidean Geometry:
-Development and History.} W.H. Freeman \& Co. 3rd Ed., 1994.
-
-[DS]: Davis, H. and Snider, A.D. \textit{Introduction to Vector Analysis.} Wm.
-C. Brown Publishers, 7th Ed. 1994.
-
-The corresponding topics in these texts are referenced. For example, [MJG,311]
-refers to page 311 in the Greenberg book and [DS,59ff] refers to page 59 and
-those pages just following page 59 in the Davis-Snider book.
-
-Some final remarks about notation in this book. The letters `\textbf{EG}' will
-always mean euclidean (usually plane but occasionally $3$-dimensional)
-Geometry, the letters `\textbf{SG}' will always mean Spherical Geometry, and
-the letters `\textbf{HG}' will always mean Hyperbolic Geometry. One further
-kind of geometry, which we call Neutral Geometry, will be explained in the
-book and denoted by `\textbf{NG}.'
-
-Also, it will often be useful to consider a vector, for example
+The second half of this book supposes familiarity with several
+variable calculus and the linear algebra of matrices. In particular,
+it will often be useful to consider a vector, for example
 $V=\left(a,b,c\right)$, as a $1\times3$ matrix
 \[
 V=
@@ -289,6 +104,153 @@ e\\
 f
 \end{bmatrix}.
 \]
+Furthermore we will use the notations $\det(A)$ and $|A|$
+interchangeably for the determinant of a square matrix $A$.
+
+You will also need to remember and apply the Chain Rule for differentiable
+functions of several variables, written in matrix notation. Here's the
+gradual build-up to this general form of the Chain Rule using matrix
+notation and matrix multiplication.
+
+\begin{theorem}[Chain Rule] We will present three different versions:
+  \begin{enumerate}
+  \item Given differentiable functions $y(x)$ and $z(y)$
+    and substituting we have%
+    \[
+    z\left( y\left( x\right) \right) 
+    \]
+    making $z$ a function of $x$ and%
+    \[
+      \frac{dz}{dx}=\frac{dz}{dy}\cdot\frac{dy}{dx}. 
+    \]
+  \item Given differentiable functions
+    \begin{align*}
+      & \left( y_{1}\left( x\right) ,\ldots,y_{n}\left( x\right) \right) \\
+      & z\left( y_{1},\ldots,y_{n}\right)
+    \end{align*}
+    then substituting we have%
+    \[
+    z\left( y_{1}\left( x\right) ,\ldots,y_{n}\left( x\right) \right) 
+    \]
+    making $z$ a function of $x$ and%
+    \[
+      \frac{dz}{dx}=\begin{bmatrix}
+      \frac{\partial z}{\partial y_{1}} & \ldots & \frac{\partial z}{\partial y_{n}
+      }
+      \end{bmatrix}
+      \cdot\begin{bmatrix}
+      \frac{dy_{1}}{dx} \\ 
+      \vdots \\ 
+      \frac{dy_{n}}{dx}%
+      \end{bmatrix}
+      =\nabla z\cdot
+      \begin{bmatrix}
+        \frac{dy_{1}}{dx} \\ 
+        \vdots \\ 
+        \frac{dy_{n}}{dx}%
+      \end{bmatrix}
+      \]
+\item Given differentiable mappings%
+  \begin{align*}
+    & \left( y_{1}\left( x_{1},\ldots,x_{m}\right) ,\ldots,y_{n}\left(
+    x_{1},\ldots,x_{m}\right) \right) \\
+    & \left( z_{1}\left( y_{1},\ldots,y_{n}\right) ,\ldots,z_{p}\left(
+    y_{1},\ldots,y_{n}\right)\right)
+  \end{align*}
+  then substituting 
+  \[
+  z_{k}\left( y_{1}\left( x_{1},\ldots,x_{m}\right) ,\ldots,y_{n}\left(
+  x_{1},\ldots,x_{m}\right) \right) 
+  \]
+  and fixing $x_{1},\ldots,x_{i-1}$ and $x_{i+1},\ldots,x_{m}$ we make
+  $z_{k}$ a function of $x_{i}$ and%
+  \[
+  \frac{\partial z_{k}}{\partial x_{i}}= 
+  \begin{bmatrix}
+    \frac{\partial z_{k}}{\partial y_{1}} & \ldots & \frac{\partial z_{k}}{%
+    \partial y_{n}}%
+  \end{bmatrix}
+  \cdot
+  \begin{bmatrix}
+    \frac{\partial y_{1}}{\partial x_{i}} \\ 
+    \vdots \\ 
+    \frac{\partial y_{n}}{\partial x_{i}}%
+  \end{bmatrix}
+  =\nabla z_{k}\cdot
+  \begin{bmatrix}
+    \frac{\partial y_{1}}{\partial x_{i}} \\ 
+    \vdots \\ 
+    \frac{\partial y_{n}}{\partial x_{i}}%
+  \end{bmatrix}. 
+  \]
+  
+\item Putting the previous work together for all indices $k$ and $i$,
+  we have the matrix equation%
+  \[
+  \left[ \frac{\partial z_{k}}{\partial x_{i}}\right] =\left[ \frac{\partial
+      z_{k}}{\partial y_{j}}\right] \cdot\left[ \frac{\partial y_{j}}{\partial
+      x_{i}}\right]   \label{ChR}
+  \]
+  where $\left[ \frac{\partial z_{k}}{\partial x_{i}}\right] $ is the $p\times
+  m$ matrix whose $(k,i)$-th entry is $\frac{\partial z_{k}}{%
+    \partial x_{i}}$, etc.
+  \end{enumerate}
+\end{theorem}
+
+One of the Chain Rule's important applications is the Substitution Rule
+for integrals of functions of several variables.
+
+\begin{theorem}[Substitution Rule] We will present two different versions:
+  \begin{enumerate}
+  \item If $f\left( y\right) $ is a function of $y$
+    and $y\left( x\right) $ is a function of $x$,%
+    \[
+    \int \nolimits_{\left[ y\left( a\right) ,y\left( b\right) \right] }f\left(
+    y\right) \cdot dy=\int \nolimits_{\left[ a,b\right] }f\left( \left( y\left(
+    x\right) \right) \right) \cdot\frac{dy}{dx} \d x. 
+    \]
+    
+  \item If $f(\mathbf{y}) $ is a function of $\mathbf{y} = \left(
+    y_{1},\ldots ,y_{m}\right) $ and the function
+    \[
+    \begin{bmatrix}
+      y_{1}(x_{1},\ldots ,x_{m}) \\
+      \vdots\\
+      y_{m}( x_{1},\ldots,x_{m})
+    \end{bmatrix}
+    \]
+    takes the region $R_{x}$ to the region $R_{y},$ then%
+    \[
+    \int_{R_{y}}f(\mathbf{y})  \d \mathbf{y}
+    =\int_{R_{x}}f(( y_{1}(\mathbf{x}) ,\ldots ,y_{m}(\mathbf{x}) )
+    ) \cdot \det\left[\frac{\partial y_{j}}{\partial x_{i}}\right]
+    \d \mathbf{x}
+      \]
+      where $\mathbf{x} = (x_{1},\ldots,x_{m})$.
+  \end{enumerate}
+\end{theorem}
+
+As a help, at some points in the text and in some of the exercises, a more
+complete treatment of a particular topic can be found in one of the following
+two texts:
+
+[MJG]: Greenberg, Marvin Jay. \textit{Euclidean and Non-Euclidean Geometry:
+Development and History.} W.H. Freeman \& Co. 3rd Ed., 1994.
+
+[DS]: Davis, H. and Snider, A.D. \textit{Introduction to Vector Analysis.} Wm.
+C. Brown Publishers, 7th Ed. 1994.
+
+The corresponding topics in these texts are referenced. For example, [MJG,311]
+refers to page 311 in the Greenberg book and [DS,59ff] refers to page 59 and
+those pages just following page 59 in the Davis-Snider book.
+
+Some final remarks about notation in this book. The letters `\textbf{EG}' will
+always mean euclidean (usually plane but occasionally $3$-dimensional)
+Geometry, the letters `\textbf{SG}' will always mean Spherical Geometry, and
+the letters `\textbf{HG}' will always mean Hyperbolic Geometry. One further
+kind of geometry, which we call Neutral Geometry, will be explained in the
+book and denoted by `\textbf{NG}.'
+
 
 
 It is my hope and intention in writing this little book that you engage with

@@ -75,6 +75,143 @@ In \textbf{NG}, two distinct lines are called \textbf{parallel} if and
 only if they don't intersect.
 \end{definition}
 
+
+
+\begin{definition} 
+We will call the set of points on a line which lie on one side of a
+given point a \textbf{ray}.  We call the given point the
+\textbf{origin} of the ray.
+\end{definition}
+
+\begin{definition}
+We call two rays in the plane \textbf{parallel} if they lie on
+parallel lines and they both lie on the same side of the transversal
+line passing through their origins.
+\end{definition}
+
+\begin{definition} An \textbf{angle} in the plane is the union of two ordered
+rays with common origin and choice of one of the two connected regions
+into which the union of the rays divides the plane. We often denote
+angles by $\angle BAC$ where $A$ is the common origin and $B$ a point
+along one of the rays, called the initial ray, and $C$ is a point
+along the other ray, called the final ray.
+\end{definition}
+
+
+The choice of the region is either clear from the context or
+explicitly given.
+
+\begin{problem}
+Given an angle $\angle BAC$ show by drawings the two regions into
+which it divides the plane. Show how the (signed) measure of the angle
+depends on:
+\begin{enumerate}
+\item Which region you pick as the interior/exterior. 
+\item Which ray is the initial ray and which is the final ray of the
+  angle.
+\end{enumerate}
+\begin{freeResponse}
+We present a summary in the table below:
+\begin{center}
+\begin{tabular}{|c|c|}\hline
+%\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,0);
+\coordinate (B) at (2,2);
+\coordinate (C) at (2.83,0);
+\tkzDrawVector (A,B)
+\tkzDrawVector (A,C)
+
+\tkzLabelPoints[below](A,C)
+\tkzLabelPoints[above](B)
+
+\coordinate (initRay) at (1.42,0);
+\node[below] at (initRay) {initial ray};
+
+\coordinate (int) at (1.6,1);
+\node[below] at (int) {interior};
+
+\tkzMarkAngle[size=0.6cm,thin](C,A,B)
+\end{tikzpicture}
+%\end{image}
+&
+%\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,0);
+\coordinate (B) at (2,2);
+\coordinate (C) at (2.83,0);
+\tkzDrawVector (A,B)
+\tkzDrawVector (A,C)
+
+\tkzLabelPoints[below](A,C)
+\tkzLabelPoints[above](B)
+
+\coordinate (initRay) at (1,1);
+\node[above,rotate=45] at (initRay) {initial ray};
+
+\coordinate (int) at (1.6,1);
+\node[below] at (int) {interior};
+
+\tkzMarkAngle[size=0.6cm,thin](C,A,B)
+\end{tikzpicture}
+%\end{image} 
+\\
+
+$\angle BAC$ is positive & $\angle BAC$ is negative\\\hline
+
+%\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,0);
+\coordinate (B) at (2,2);
+\coordinate (C) at (2.83,0);
+\tkzDrawVector (A,B)
+\tkzDrawVector (A,C)
+
+\tkzLabelPoints[below](A,C)
+\tkzLabelPoints[above](B)
+
+\coordinate (initRay) at (1,1);
+\node[above,rotate=45] at (initRay) {initial ray};
+
+\coordinate (ext) at (1.6,1);
+\node[below] at (ext) {exterior};
+
+\tkzMarkAngle[size=0.6cm,thin](B,A,C)
+\end{tikzpicture}
+%\end{image}
+&
+%\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,0);
+\coordinate (B) at (2,2);
+\coordinate (C) at (2.83,0);
+\tkzDrawVector (A,B)
+\tkzDrawVector (A,C)
+
+\tkzLabelPoints[below](A,C)
+\tkzLabelPoints[above](B)
+
+\coordinate (initRay) at (1.42,0);
+\node[below] at (initRay) {initial ray};
+
+\coordinate (ext) at (1.6,1);
+\node[below] at (ext) {exterior};
+
+\tkzMarkAngle[size=0.6cm,thin](B,A,C)
+\end{tikzpicture}\\
+$\angle BAC$ is positive & $\angle BAC$ is negative\\ \hline
+
+%\end{image}
+\end{tabular}
+\end{center}
+\end{freeResponse}
+
+\end{problem}
+
+
+
+
+
 One implicit assumption of two-dimensional neutral geometry is the
 existence of (a group of) rigid motions or congruences. That is, it is
 assumed that given any point $A$ and any vector $V$ emanating from $A$
@@ -988,37 +1125,34 @@ greater than
 \end{problem}
 
 \begin{problem}
-(\textbf{NG}): Let $ABCD$ be a quadrilateral with $\angle ABC=\angle BCD$
-right angles. (We denote polygons by naming their vertices in counterclockwise
-order.) [MJG,164-165]
-
-a) Show in \textbf{NG} that
-
-$\left\vert AB\right\vert =\left\vert CD\right\vert $ implies that $\angle
-BAD=\angle ADC$,
-
-$\left\vert AB\right\vert >\left\vert CD\right\vert $ implies that $\angle
-BAD<\angle ADC$,
-
-$\left\vert AB\right\vert <\left\vert CD\right\vert $ implies that $\angle
-BAD>\angle ADC$.
-
-b) Use a) and pure logic to show that
-
-$\angle BAD<\angle ADC$ implies that $\left\vert AB\right\vert >\left\vert
-CD\right\vert $,
-
-$\angle BAD=\angle ADC$ implies that $\left\vert AB\right\vert =\left\vert
-CD\right\vert $,
-
-$\angle BAD>\angle ADC$ implies that $\left\vert AB\right\vert <\left\vert
-CD\right\vert $.
-
-Hint: For the first implication in a) show that quadrilateral $ABCD$ is
-(self-) congruent to the quadrilateral $DCBA$. 
-For the second implication in a) suppose that $\left\vert AB\right\vert >\left\vert CD\right\vert $. 
-Construct $A^{\prime}$ on $\overline{AB}$ so that $\left\vert A^{\prime}B\right\vert
-=\left\vert CD\right\vert $. By Problem \ref{18}%
+  Let $ABCD$ be a quadrilateral with $\angle ABC=\angle BCD$ right
+  angles. (We denote polygons by naming their vertices in
+  counterclockwise order.) Show in \textbf{NG} that:
+  \begin{enumerate}
+  \item \begin{itemize}
+  \item $\left\vert AB\right\vert =\left\vert CD\right\vert $
+    implies that $\angle BAD=\angle ADC$,
+  \item $\left\vert AB\right\vert >\left\vert CD\right\vert $
+    implies that $\angle BAD<\angle ADC$,
+    \item $\left\vert AB\right\vert <\left\vert CD\right\vert $
+      implies that $\angle BAD>\angle ADC$.
+  \end{itemize}
+  \item Use the previous part and pure logic to show that
+    \begin{itemize}
+    \item $\angle BAD<\angle ADC$ implies that $\left\vert
+      AB\right\vert >\left\vert CD\right\vert $,
+    \item $\angle BAD=\angle ADC$ implies that $\left\vert
+      AB\right\vert =\left\vert CD\right\vert $,
+    \item $\angle BAD>\angle ADC$ implies that $\left\vert
+      AB\right\vert <\left\vert CD\right\vert $.
+    \end{itemize}
+  \end{enumerate}
+\begin{hint} For the first implication in a) show that quadrilateral $ABCD$ is
+(self-) congruent to the quadrilateral $DCBA$.  For the second
+  implication in the first part suppose that $\left\vert AB\right\vert
+  >\left\vert CD\right\vert $.  Construct $A^{\prime}$ on
+  $\overline{AB}$ so that $\left\vert A^{\prime}B\right\vert
+  =\left\vert CD\right\vert $. By a previous problem
 \[
 \angle BAD<\angle BA^{\prime}D.
 \]
@@ -1032,19 +1166,22 @@ Finally%
 \]
 since the segment $DA^{\prime}$ lies between the segment $DA$ and the segment
 $DC$. Stringing these last three relations together, we get the second
-implication in a).
+implication.
 
-The proof of the third implication in a) is the same as the proof of the
-second implication--just interchange $A$ and $D$ and interchange $B$ and $C$.
+The proof of the third implication in is the same as the proof of the
+second implication--just interchange $A$ and $D$ and interchange $B$
+and $C$.
 
-For b), just use pure logic: If the first implication is false, then $\angle
-BAD<\angle ADC$ and either $\left\vert AB\right\vert <\left\vert CD\right\vert
-$ or $\left\vert AB\right\vert =\left\vert CD\right\vert $. If $\left\vert
-AB\right\vert <\left\vert CD\right\vert $, then by a)%
+For the second part, just use pure logic: If the first implication is
+false, then $\angle BAD<\angle ADC$ and either $\left\vert
+AB\right\vert <\left\vert CD\right\vert $ or $\left\vert AB\right\vert
+=\left\vert CD\right\vert $. If $\left\vert AB\right\vert <\left\vert
+CD\right\vert $, then by previous work%
 \[
 \angle BAD>\angle ADC.
 \]
-Contradiction! Etc., etc.\pagebreak
+Contradiction! Etc., etc.
+\end{hint}
 \end{problem}
 
 \begin{problem}
