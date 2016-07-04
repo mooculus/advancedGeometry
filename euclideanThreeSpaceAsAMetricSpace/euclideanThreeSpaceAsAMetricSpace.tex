@@ -13,13 +13,16 @@ importance of the dot product to geometry.
 
 \subsection*{Points and vectors in euclidean 3-space}
 
-In this book, we will study plane, spherical and hyperbolic geometry
-in \textit{two}-dimensions. Each one of these geometries looks the
-same at each of its points and it also looks the same in every
-direction emanating from any of its points. But to study them all at
-the same time and in a uniform way we will need to visualize them all
-as different surfaces lying in some common \textit{three}-dimensional
-space. Let's examine this ``ambient'' space.
+%In this book, we will study plane, spherical and hyperbolic geometry in \textit{two}-dimensions. Each one of these geometries looks the same at each of its points and it also looks  the same in every direction emanating from any of its points. But to study them all at the same time and in a uniform way we will need to visualize them all as different surfaces lying in some common \textit{three}-dimensional space. Let's examine this ``ambient'' space.
+
+Up to this point in this book, we have studied two and three-dimensional shapes, the \textit{objects} found in two (and three) dimensional geometry. Now we will study geometries as objects unto themselves. In particular, we will study plane, spherical, and hyperbolic geometry in two-dimensions. What does it mean to study a ``whole geometry?'' Well, geometry is the study of 
+\begin{itemize}
+\item length,
+\item angle, and
+\item area.
+\end{itemize}
+Hence, if we can explain how to compute lengths, angles, and areas, we understand something about the geometry as a whole. Moreover, the congruences found in geometry are simply the transformations that preserve length, angle, and area. Thus we now seek to understand how to compute length, angle, and area, along with a description of the congruences for euclidean, spherical, and hyperbolic geometry.
+Our plan of attack is as follows: we will visualize each of the geometries as different surfaces lying in some common three-dimensional space. This will allow us to use the techniques from calculus and linear algebra to describe euclidean, spherical, and hyperbolic geometry in a unified way. We start by introducing the concepts we need in the more familiar setting in ordinary $3$-dimensional euclidean space. 
 
 We begin with three-dimensional euclidean space
 \[
@@ -103,6 +106,19 @@ or in matrix notation as%
 Give the formula for the length $\left\vert \hat{V}\right\vert $ of a vector
 $\hat{V}=\left(  \hat{a},\hat{b},\hat{c}\right)  $ in 3-dimensional euclidean
 space in terms of dot product.
+\begin{freeResponse}
+Let 
+\[
+\hat{V}=\left(  \hat{a},\hat{b},\hat{c}\right)
+\]
+be a vector with the origin as it's point of reference. The length of $\hat{V}$ is
+
+\[
+\left\vert \hat{V}\right\vert  = \sqrt{\left(  \hat{a}-\hat
+{0}\right)  ^{2}+\left(  \hat{b}-\hat{0}\right)  ^{2}+\left(
+\hat{c}-\hat{0}\right)  ^{2}} \label{0} = \sqrt{\hat{a} ^2+\hat{b}^2+\hat{c} ^2} = \sqrt{\hat{V}\bullet \hat{V}}
+\]
+\end{freeResponse}
 \end{problem}
 
 \begin{problem}
@@ -111,6 +127,13 @@ space in terms of dot product.
   \hat{x}^2 + \hat{y}^2 + \hat{z}^2 = R^2
   \]
   is a sphere in euclidean three-space.
+\begin{freeResponse}
+Let $\hat{V}= \left(\hat{x},\hat{y}, \hat{z}\right)$ be a vector with it's tail on the origin and tip on the surface above.
+\[
+\left\vert \hat{V}\right\vert = \sqrt{\hat{V}\bullet \hat{V}} = \sqrt{ \hat{x}^2+\hat{y}^2 + \hat{z}^2}= \sqrt{R^2} = \left\vert R \right\vert
+\] 
+Therefore, every point on the surface is equidistant from the origin.
+\end{freeResponse}  
 \end{problem}
 
 
@@ -141,26 +164,63 @@ point on $S_{2}$ so that the segment between $P_{1}$ and $P$ is
 perpendicular to $S_{2}$.
 \begin{itemize}
 \item Illustrate the diagram described above. 
+%\begin{freeResponse}
+%Insert geogebra image?
+%\end{freeResponse}
 \item Now explain how the Pythagorean theorem gives:
 \begin{align*}
 |P_{1}P_{2}|^{2} - |P_{2}P|^{2} &= |PP_{1}|^{2}\\
+|P_{1}P_{2}|^{2} -  |P_{2}P|^{2} &= |PP_{1}|^{2}\\
 &= |OP_{1}|^{2} - |OP|^{2}\\
 \end{align*}
+
+\begin{freeResponse}
+$\triangle PP_{2}P_{1}$ is a right triangle, so by the pythagorean theorem:
+
+\begin{align*}
+|P_{1}P_{2}|^{2} - |P_{2}P|^{2} = |PP_{1}|^{2}
+\end{align*}
+Also by the pythagorean theorem, $ \triangle PPP_{1}$ gives:
+\begin{align*}  |PP_{1}|^{2} = |OP_{1}|^{2} - |OP|^{2}
+\end{align*}
+
+\end{freeResponse}
+
 \item Explain the following lines:
 \begin{align*}
 |P_{1}P_{2}|^{2} &= |OP_{1}|^{2}+\left(|P_{2}P|^{2}-|OP|^{2}\right) \\
 &=|OP_{1}|^{2}+\left(|P_{2}P|+|OP|\right)\left(|P_{2}P|-|OP| \right)
 \end{align*}
+
+\begin{freeResponse}
+Add $|P_{1}P_{2}|^2$ to both sides of the previous equation and then use the difference of squares to factor $|P_{2}P|^{2}- |OP|^2$.
+\end{freeResponse}
+
 \item Explain the following lines:
 \begin{align*}
 &=|OP_{1}|^{2}+|OP_{2}| \left(|P_{2}P|-|OP|\right)\\
 &=|OP_{1}|^{2}+|OP_{2}| \left(|OP_{2}| -2| OP| \right)
 \end{align*}
+
+\begin{freeResponse}
+The length $|P_{2}P|+|OP|$ is the same as $|OP_{2}|$, then $|OP_{2}| - 2|OP| = |P_{2}P|-|OP|$.
+\end{freeResponse}
 \item Now consider,
 \[
 |OP| =|OP_{1}| \cdot\cos\theta.
 \]
 and explain how this completes the proof.
+
+\begin{freeResponse}
+We have $|\hat{V}_{1}| = |OP_{1}|$ and $|\hat{V}_{2}| = |OP_{2}|$, then using the work above and substitution:
+\begin{align*} 
+|\hat{V}_{2} - \hat{V}_{1}|^2 &= |P_{1}P_{2}|^{2}\\
+&=|OP_{1}|^{2}+|OP_{2}| \left(|OP_{2}| -2| OP| \right)\\
+&=|\hat{V}_{1}|^2 + |\hat{V}_{2}|\left(|\hat{V}_{2}| -2|\hat{V}_{1}| \cdot\cos\theta \right) \\
+&=|\hat{V}_{1}|^2 + |\hat{V}_{2}|^2 -2|\hat{V}_{1}| \cdot |\hat{V}_{2}| \cdot\cos\theta
+\end{align*}
+\end{freeResponse}
+
 \end{itemize}
 \end{problem}
 
