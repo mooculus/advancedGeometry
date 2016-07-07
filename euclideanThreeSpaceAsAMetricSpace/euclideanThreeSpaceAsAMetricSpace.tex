@@ -136,6 +136,11 @@ be a vector with the origin as it's point of reference. The length of $\hat{V}$ 
   \hat{x}^2 + \hat{y}^2 + \hat{z}^2 = R^2
   \]
   is a sphere in euclidean three-space.
+  
+\begin{hint}
+Recall that all the points on a sphere are equidistant from the center. 
+\end{hint}
+
 \begin{freeResponse}
 Let $\hat{V}= \left(\hat{x},\hat{y}, \hat{z}\right)$ be a vector with it's tail on the origin and tip on the surface above.
 \[
@@ -345,6 +350,31 @@ _{2}}{\left\vert \hat{V}_{1}\right\vert \cdot\left\vert \hat{V}_{2}\right\vert
 \]
 \end{hint}
 
+\begin{freeResponse}
+By the theorem above:
+\begin{align*}
+A^2 = |\hat{V}_{1}|^2 \cdot |\hat{V}_{2} |^2 \cdot\sin^{2}\theta 
+&= |\hat{V}_{1}|^2 \cdot |\hat{V}_{2} |^2 \cdot \left(1- \cos^{2}\theta\right)\\
+&= |\hat{V}_{1}|^2 \cdot |\hat{V}_{2} |^2 - |\hat{V}_{1}|^2 \cdot |\hat{V}_{2} |^2 \cdot\cos^{2}\theta \\
+&= |\hat{V}_{1}|^2 \cdot |\hat{V}_{2} |^2 - |\hat{V}_{1}|^2 \cdot |\hat{V}_{2} |^2 \left(  \frac{\hat{V}_{1}\bullet\hat{V}_{2}}{\left\vert \hat{V}_{1}\right\vert \cdot\left\vert \hat{V}_{2}\right\vert}\right)^2\\
+&= |\hat{V}_{1}|^2 \cdot |\hat{V}_{2} |^2 - \left(\hat{V}_{1}\bullet\hat{V}_{2}\right)^2\\
+&= \left(\hat{V}_{1}\bullet\hat{V}_{1}\right) \left(\hat{V}_{2}\bullet\hat{V}_{2}\right) - \left(\hat{V}_{1}\bullet\hat{V}_{2}\right)^2\\
+&=\det
+    \begin{bmatrix}
+      \hat{V}_{1}\bullet\hat{V}_{1} & \hat{V}_{2}\bullet\hat{V}_{1}\\
+      \hat{V}_{1}\bullet\hat{V}_{2} & \hat{V}_{2}\bullet\hat{V}_{2}
+    \end{bmatrix}
+\end{align*}
+Therefore, the area of the parallelogram is also given by
+$\sqrt{\det
+    \begin{bmatrix}
+      \hat{V}_{1}\bullet\hat{V}_{1} & \hat{V}_{2}\bullet\hat{V}_{1}\\
+      \hat{V}_{1}\bullet\hat{V}_{2} & \hat{V}_{2}\bullet\hat{V}_{2}
+    \end{bmatrix}}$.
+
+Alternatively,     
+\end{freeResponse}
+
 \end{problem}
 
 \begin{problem}
@@ -369,6 +399,32 @@ Show that we have the following equality:
 \end{bmatrix}\right)}.
 \]
 
+\begin{freeResponse}
+\[
+\sqrt{
+  \det
+\begin{bmatrix}
+\hat{V}_{1}\bullet\hat{V}_{1} & \hat{V}_{2}\bullet\hat{V}_{1}\\
+\hat{V}_{1}\bullet\hat{V}_{2} & \hat{V}_{2}\bullet\hat{V}_{2}%
+\end{bmatrix}}
+=\sqrt{
+  \det
+\begin{bmatrix}
+\hat{V}_{1}\cdot \hat{V}_{1}^\transpose & \hat{V}_{1}\cdot \hat{V}_{2}^\transpose\\
+\hat{V}_{2}\cdot \hat{V}_{1}^\transpose & \hat{V}_{2}\cdot \hat{V}_{2}^\transpose%
+\end{bmatrix}}
+=\sqrt{
+  \det\left(
+\begin{bmatrix}
+\hat{V}_{1} \\
+\hat{V}_{2}
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+\hat{V}_{1}^\transpose  & \hat{V}_{2}^\transpose 
+\end{bmatrix}\right)}.
+\]
+\end{freeResponse}
 \end{problem}
 
 Again, the significance of the previous problems is that, to compute
@@ -545,6 +601,29 @@ in euclidean $3$-space at which the two curves intersect?
 tangent vectors to) your two example curves in a) at the point at which the
 curves intersect. %[DS,20-21]
 \end{enumerate}
+
+\begin{freeResponse} 
+\begin{enumerate}
+\label{1}\item Two examples of smooth curves:
+\begin{align*}
+\hat{X}_{1}(s) &=\left(s^3, \frac{\sqrt{6}}{2}s^2, s\right) \qquad 1 \leq s\leq3 \\
+\hat{X}_{2}(s) &=\left(s, \frac{\sqrt{6}}{2}s^2, s^3\right) \qquad 1 \leq s\leq4
+\end{align*}
+
+\item  $\dd[\hat{X}_{1}]{s} = \left(3s^2, \sqrt{6}s, 1 \right)$ and 
+$\dd[\hat{X}_{2}]{s} =  \left(1, \sqrt{6}s,  3s^2 \right)$
+
+\item $\left(1,1,1 \right)$
+
+\item 
+$\theta = \arccos \left( 
+   \frac{ \left(3, \sqrt{6} , 1 \right) \bullet \left(1, \sqrt{6} , 3 \right)}
+   { |\left(3, \sqrt{6} , 1 \right)| \cdot |\left(1, \sqrt{6} , 3 \right)|} \right)
+= \arccos \left( \frac{12}{16} \right) = 41.41^{\circ}.$
+
+\end{enumerate}
+\end{freeResponse}
+
 \end{problem}
 
 Sometimes displacement is measured by showing how a given point is displaced,
@@ -591,6 +670,16 @@ Compute the length of the tangent vector
 \]
 to each of your two example curves in the previous problem at each of
 their points.
+
+\begin{freeResponse}
+\[
+\l_{1}(s) = \sqrt{\frac{d\hat{X}_{1}}{ds}\bullet\frac{d\hat{X}_{1}}{ds}} = \sqrt{9s^4 + 6s^2 +1}
+\] and
+\[ 
+\l_{2}(s) = \sqrt{\frac{d\hat{X}_{2}}{ds}\bullet\frac{d\hat{X}_{2}}{ds}} = \sqrt{1 + 6s^2 +9s^4}
+\]
+\end{freeResponse}
+
 \end{problem}
 
 \begin{definition}
@@ -620,11 +709,37 @@ Write the formula for the tangent vector to the path above at each
 point using
 $\left(\hat{x}(t),\hat{y}(t),\hat{z}(t)\right)$-coordinates. Show that
 the length of this path is $R\pi$.
+
+\begin{freeResponse}
+\[
+\left( \dd[\hat{x}]{t}, \dd[\hat{y}]{t}, \dd[\hat{z}]{t} \right) 
+    = \left(R\cdot\cos(t),0,-R\cdot\sin(t) \right)
+\]
+\[
+\l(t) = \sqrt{
+   R^2 \cdot\cos^{2}(t) + R^2 \cdot\sin^{2}(t)} 
+   = \sqrt{R^2} = |R|
+\]
+\[
+L=\int_{0}^{\pi} R \,dt = R\cdot\pi
+\]
+\end{freeResponse}
+
 \end{problem}
 
 \begin{problem}
 Compute the length of each of your two example curves in the previous
 problem.
+
+\begin{freeResponse}
+\[
+L_{1}= \int_{1}^{3}  \sqrt{9s^4 + 6s^2 +1} \,ds = \int_{1}^{3} |3s^2 +1| \, ds = 28
+\]
+\[
+L_{2}= \int_{1}^{4}  \sqrt{9s^4 + 6s^2 +1} \,ds = \int_{1}^{4} |3s^2 +1| \, ds = 66
+\]
+\end{freeResponse}
+
 \end{problem}
 
 \begin{remark}
@@ -661,6 +776,7 @@ easier.
 Summarize the results from this section. In particular, indicate which
 results follow from the others.
 \begin{freeResponse}
+We defined the dot product for Euclidean space. We calculated the length of a vector, angle between two vectors, and the area of a parallelogram determined by two vectors, determining that they all depend only on the dot product. 
 \end{freeResponse}
 \end{problem}
 
