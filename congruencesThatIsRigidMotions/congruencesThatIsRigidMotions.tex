@@ -103,6 +103,34 @@ to rigid motions.
     \]
     as an equation of polynomials in the variables $a$, $b$, and $c$.
   \end{hint}
+  
+\begin{freeResponse}
+For the first direction we assume that $\hat{M}$ is orthogonal and we want to show that for any two points,  $\hat{X}_{1}$ and $\hat{X}_{2}$,%
+\[
+   d\left( \hat{X}_{1}  \cdot\hat{M},\hat{X}_{2}
+   \cdot\hat{M}\right)  =d\left(  \hat{X}_{1},\hat{X}_{2}\right).
+\]
+Let $ \hat{V}=\hat{X}_{2}-\hat{X}_{1}$.
+
+\begin{align*}
+   d\left( \hat{X}_{1}  \cdot\hat{M},\hat{X}_{2}
+   \cdot\hat{M}\right) &= \sqrt{\left(\hat{X}_{2}  \cdot\hat{M}-\hat{X}_{1}  \cdot\hat{M}\right) \bullet \left(\hat{X}_{2}  	\cdot\hat{M}-\hat{X}_{1}  \cdot\hat{M}\right)} \\
+   & = \sqrt{\left( \left( \hat{X}_{2}-\hat{X}_{1} \right) \cdot\hat{M}\right) \bullet \left( \left( \hat{X}_{2}-\hat{X}_{1} 		\right) \cdot\hat{M}\right)} \\
+   & = \sqrt{ \left(\hat{V}\cdot\hat{M} \right) \bullet \left(\hat{V}\cdot\hat{M} \right)}\\
+   & = \sqrt{
+       \begin{bmatrix}
+          \hat{V}\cdot\hat{M}
+       \end{bmatrix} \cdot
+       \begin{bmatrix}
+          \hat{V}\cdot\hat{M}
+       \end{bmatrix}^\transpose}\\
+   & = \sqrt{ \hat{V}\cdot\hat{M} \cdot \hat{M}^\transpose \cdot \hat{V}^\transpose} \\
+   & = \sqrt{ \hat{V} \cdot \hat{V}^\transpose} \\
+   & = \sqrt{\hat{V} \bullet \hat{V}} = \sqrt{d\left(  \hat{X}_{1},\hat{X}_{2}\right)^2} = d\left( \hat{X}_{1},\hat{X}_{2}\right)
+\end{align*}
+
+\end{freeResponse}
+
 \end{problem}
 
 
@@ -149,6 +177,48 @@ itself.
   \end{bmatrix}  =R^2.
   \]
 \end{hint}
+
+\begin{freeResponse}
+\begin{align*}
+R^2 = \underline{\hat{x}}^2 + \underline{\hat{y}}^2 +\underline{\hat{z}}^2 
+	&= \begin{bmatrix} 
+	 \underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}
+  	\end{bmatrix}  
+  		\cdot
+  	\begin{bmatrix}
+    		\underline{\hat{x}}\\
+    		\underline{\hat{y}}\\
+    		\underline{\hat{z}}
+  	\end{bmatrix}\\
+	&= \begin{bmatrix} 
+		 \underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}
+  		\end{bmatrix}  
+  		\cdot
+		\begin{bmatrix} 
+		 \underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}
+  		\end{bmatrix}^\transpose \\
+	&= \begin{bmatrix}
+   		 \hat{x} & \hat{y} & \hat{z}
+ 	        \end{bmatrix}
+	       \cdot \hat{M} \cdot \hat{M}^\transpose \cdot 
+	      \begin{bmatrix}
+	      	{\hat{x}}\\
+    		{\hat{y}}\\
+    		{\hat{z}}
+		\end{bmatrix}\\
+	&= \begin{bmatrix}
+   		 \hat{x} & \hat{y} & \hat{z}
+ 	        \end{bmatrix}
+	       \cdot
+	       \begin{bmatrix}
+	      	{\hat{x}}\\
+    		{\hat{y}}\\
+    		{\hat{z}}
+		\end{bmatrix}
+	= \hat{x}^2 + \hat{y}^2 + \hat{z}^2 .
+\end{align*}
+\end{freeResponse}
+
 \end{problem}
 
 
@@ -299,10 +369,43 @@ Show that the set of orthogonal matrices $\hat{M}$ form a group.  That
 is, show that
 \begin{enumerate}
 \item multiplication of orthogonal matrices is associative, 
+ 	\begin{hint}
+	Use the previous problem. 
+	\end{hint}
 \item the product of two orthogonal matrices is orthogonal,
 \item the identity matrix is orthogonal,
 \item the inverse matrix $\hat{M}^{-1}$ of a orthogonal matrix $\hat{M}$ is orthogonal.
 \end{enumerate}
+
+\begin{freeResponse}
+\begin{enumerate}
+\item Matrices are functions and in the previous problem we showed that function composition is associative. Therefore, matrix multiplication is associative.
+
+\item Let $\hat{M}_{1}$ and $\hat{M}_{2}$ be orthogonal matrices.
+\[
+\left( \hat{M}_{1} \cdot \hat{M}_{2} \right) \left( \hat{M}_{1} \cdot \hat{M}_{2} \right)^\transpose 
+	= \left( \hat{M}_{1} \cdot \hat{M}_{2} \right) \left( \hat{M}_{2}^\transpose \cdot \hat{M}_{1}^\transpose \right)  
+\]
+Since $\hat{M}_{1}$ and $\hat{M}_{2}$ are orthogonal,
+\[
+\left( \hat{M}_{1} \cdot \hat{M}_{2} \right) \left( \hat{M}_{2}^\transpose \cdot \hat{M}_{1}^\transpose \right) 
+	= \hat{M}_{2} \cdot I \cdot \hat{M}_{2}^\transpose = I.
+\]
+
+\item Since $ I^\transpose = I$, then $I \cdot I^\transpose = I$
+
+\item Since $\left( \hat{M}^{-1} \cdot \hat{M} \right)^\transpose = I^\transpose = I$, then 
+\[
+\hat{M}^\transpose \cdot \left( \hat{M}^{-1} \right)^\transpose = I.
+\]
+Therefore, because $\hat{M}$ is orthogonal $\left( \hat{M}^{-1} \right)^\transpose = \hat{M}$, so
+\[
+\hat{M}^{-1} \cdot \left( \hat{M}^{-1} \right)^\transpose = \hat{M}^{-1} \cdot \hat{M} = I.
+\]
+
+\end{enumerate}
+\end{freeResponse}
+
 \end{problem}
 
 
