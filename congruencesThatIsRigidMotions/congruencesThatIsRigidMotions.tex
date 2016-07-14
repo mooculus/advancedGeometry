@@ -422,6 +422,10 @@ Therefore, because $\hat{M}$ is orthogonal $\left( \hat{M}^{-1} \right)^\transpo
   \]
   Can you describe geometrically what this mapping is doing
   to the points in euclidean space?
+
+\begin{freeResponse}
+$\hat{M}_\theta$ rotates points in euclidean space around the $z$-axis. 
+\end{freeResponse}
 \end{problem}
 
 
@@ -435,6 +439,32 @@ Therefore, because $\hat{M}$ is orthogonal $\left( \hat{M}^{-1} \right)^\transpo
 \end{bmatrix}
 \]
 is orthogonal. 
+
+\begin{freeResponse}
+\begin{align*}
+\hat{M}_\theta \cdot \hat{M}_\theta^\transpose 
+	&= \begin{bmatrix}
+	\cos\theta & \sin\theta & 0 \\
+	-\sin\theta & \cos\theta & 0 \\
+	0 & 0 & 1
+	\end{bmatrix} \cdot
+	\begin{bmatrix}
+	\cos\theta & -\sin\theta & 0 \\
+	\sin\theta & \cos\theta & 0 \\
+	0 & 0 & 1
+	\end{bmatrix} \\
+	&= \begin{bmatrix}
+	\cos^{2}\theta + \sin^{2} \theta & 0 & 0 \\
+	0 &  \sin^{2} \theta + \cos^{2}\theta  & 0 \\
+	0 & 0 & 1
+	\end{bmatrix}
+	=  \begin{bmatrix}
+	1 & 0 & 0 \\
+	0 & 1  & 0 \\
+	0 & 0 & 1
+	\end{bmatrix}
+\end{align*}
+\end{freeResponse}
 \end{problem}
 
 
@@ -449,6 +479,11 @@ is orthogonal.
   \]
   Can you describe geometrically what this mapping is doing
   to the points in euclidean space?
+  
+\begin{freeResponse}
+$\hat{N}_\psi$ rotates points in euclidean space around the $y$-axis.
+\end{freeResponse}
+
 \end{problem}
 
 
@@ -462,6 +497,32 @@ Show that the matrix
 \end{bmatrix}
 \]
 is orthogonal.
+
+\begin{freeResponse}
+\begin{align*}
+\hat{N}_\psi \cdot \hat{N}_\psi^\transpose
+&= \begin{bmatrix}
+	\cos\psi & 0 & \sin\psi \\
+	0 & 1 & 0 \\
+	-\sin\theta & 0 & \cos\psi 
+	\end{bmatrix} \cdot
+	\begin{bmatrix}
+	\cos\psi & 0 & -\sin\psi \\
+	0 & 1 & 0 \\
+	\sin\theta & 0 & \cos\psi 
+	\end{bmatrix}  \\
+	&= \begin{bmatrix}
+	\cos^{2}\psi + \sin^{2} \psi & 0 & -\sin\psi \cos\psi + \sin\psi \cos\psi \\
+	0 &  1 & 0 \\
+	 -\sin\psi \cos\psi + \sin\psi \cos\psi & 0 & \cos^{2}\psi + \sin^{2} \psi 
+	\end{bmatrix}
+	=  \begin{bmatrix}
+	1 & 0 & 0 \\
+	0 & 1  & 0 \\
+	0 & 0 & 1
+	\end{bmatrix}
+\end{align*}
+\end{freeResponse}
 \end{problem}
 
 
@@ -478,6 +539,20 @@ show that its length is unchanged.
 \int_{b}^{e} \sqrt{\frac{d\hat{X}}{dt} \bullet \frac{d\hat{X}}{dt}}\d t.
 \]  
 \end{hint}
+
+\begin{freeResponse}
+Let $\hat{X}_{2}(t) = \hat{X}(t) \cdot \hat{M}$, then the length of $\hat{X}_{2}$ is given by,
+\begin{align*}
+\int_{b}^{e} \sqrt{\frac{d\hat{X}_{2}}{dt} \bullet \frac{d\hat{X}_{2}}{dt}}\d t 
+	&= \int_{b}^{e} \sqrt{ \left( \frac{d\hat{X}}{dt} \cdot \hat{M} \right) \bullet 
+	\left( \frac{d\hat{X}}{dt} \cdot \hat{M} \right)}\d t \\
+	&= \int_{b}^{e} \sqrt{ \left( \frac{d\hat{X}}{dt} \cdot \hat{M} \right) \cdot 
+	\left( \frac{d\hat{X}}{dt} \cdot \hat{M} \right)^\transpose}\d t \\
+	&= \int_{b}^{e} \sqrt{ \frac{d\hat{X}}{dt} \cdot \hat{M} \cdot 
+	 \hat{M}^\transpose \cdot \frac{d\hat{X}}{dt}^\transpose}\d t \\
+	 &= \int_{b}^{e} \sqrt{ \frac{d\hat{X}}{dt} \bullet \frac{d\hat{X}}{dt}}\d t
+\end{align*}
+\end{freeResponse}
 \end{problem}
 
 
