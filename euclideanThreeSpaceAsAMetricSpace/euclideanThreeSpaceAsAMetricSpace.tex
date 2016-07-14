@@ -115,6 +115,9 @@ or in matrix notation as%
 Give the formula for the length $\left\vert \hat{V}\right\vert $ of a vector
 $\hat{V}=\left(  \hat{a},\hat{b},\hat{c}\right)  $ in 3-dimensional euclidean
 space in terms of dot product.
+
+%dotProductDistance Geogebra
+
 \begin{freeResponse}
 Let 
 \[
@@ -179,7 +182,9 @@ perpendicular to $S_{2}$.
 \begin{itemize}
 \item Illustrate the diagram described above. 
 %\begin{freeResponse}
-%Insert geogebra image?
+
+%lawOfCosines Geogebra
+
 %\end{freeResponse}
 \item Now explain how the Pythagorean theorem gives:
 \begin{align*}
@@ -259,6 +264,8 @@ the relation
 Now we will prove this theorem. Your task is to fill-in the details of
 the proof below.
 
+%angleBetweenDotProduct Geogebra
+
 \begin{problem}
 Multiplying out using the definition and algebraic properties of dot product,%
 \begin{align*}
@@ -310,6 +317,9 @@ $\hat{V}_{2}$ emanating from the same point in euclidean $3$-space is given by%
 \[
 |\hat{V}_{1}|\cdot|\hat{V}_{2}|\cdot\sin\theta.
 \]
+
+%areaOfParallelogram Geogebra
+
 \begin{freeResponse}
 
 Let $|\hat{V}_{1}|$ be the base and $h$ be the height of the parallelogram determined by  $\hat{V}_{1}$ and $\hat{V}_{2}$.  If $\theta$ is the angle between $\hat{V}_{1}$ and $\hat{V}_{2}$ then $|\hat{V}_{2}|\cdot \sin\theta = h$. Therefore, $A = b \cdot h = |\hat{V}_{1}| \cdot |\hat{V}_{2}| \cdot\sin\theta$.
@@ -372,7 +382,36 @@ $\sqrt{\det
       \hat{V}_{1}\bullet\hat{V}_{2} & \hat{V}_{2}\bullet\hat{V}_{2}
     \end{bmatrix}}$.
 
-Alternatively,     
+Alternatively, given that $A = |\hat{V}_{1}| \cdot |\hat{V}_{2}| \cdot\sin\theta$, we know
+\[
+\theta = \arccos \left( 
+	\frac{\hat{V}_{1}\bullet\hat{V}_{2}}{\left\vert \hat{V}_{1}\right\vert \cdot\left\vert \hat{V}_{2}\right\vert}.
+		 \right)
+\]
+Then, using a right triangle whose ``adjacent" side is $\hat{V}_{1}\bullet\hat{V}_{2}$ and hypotenuse is $\left\vert \hat{V}_{1}\right\vert \cdot\left\vert \hat{V}_{2}\right\vert$,
+
+\begin{align*}
+\sin \theta = \sin\left(  \arccos\left(  \frac{\hat{V}_{1}\bullet\hat{V}_{2}}{\left\vert \hat{V}_{1}\right\vert \cdot\left\vert 	\hat{V}_{2}\right\vert} \right)  \right) 
+	&= \frac{\sqrt{
+	 \left( \left\vert \hat{V}_{1}\right\vert \cdot\left\vert \hat{V}_{2}\right\vert \right)^2 
+	- \left( \hat{V}_{1}\bullet\hat{V}_{2} \right)^2}}{\left\vert \hat{V}_{1}\right\vert \cdot\left\vert \hat{V}_{2}\right\vert}  \\
+	&= \frac{\sqrt{ 
+	\left( \hat{V}_{1}\bullet\hat{V}_{1} \right) \cdot \left(\hat{V}_{2}\bullet\hat{V}_{2} \right)
+	- \left( \hat{V}_{1}\bullet\hat{V}_{2} \right)^2}}{\left\vert\hat{V}_{1}\right\vert \cdot\left\vert \hat{V}_{2}\right\vert}\\
+	&=\frac{\sqrt{\det
+    	\begin{bmatrix}
+      		\hat{V}_{1}\bullet\hat{V}_{1} & \hat{V}_{2}\bullet\hat{V}_{1}\\
+      		\hat{V}_{1}\bullet\hat{V}_{2} & \hat{V}_{2}\bullet\hat{V}_{2}
+    	\end{bmatrix}}}{\left\vert\hat{V}_{1}\right\vert \cdot\left\vert \hat{V}_{2}\right\vert}
+\end{align*}
+
+Therefore, the area of the parallelogram is also given by
+$\sqrt{\det
+    \begin{bmatrix}
+      \hat{V}_{1}\bullet\hat{V}_{1} & \hat{V}_{2}\bullet\hat{V}_{1}\\
+      \hat{V}_{1}\bullet\hat{V}_{2} & \hat{V}_{2}\bullet\hat{V}_{2}
+    \end{bmatrix}}$.
+
 \end{freeResponse}
 
 \end{problem}
@@ -602,6 +641,8 @@ tangent vectors to) your two example curves in a) at the point at which the
 curves intersect. %[DS,20-21]
 \end{enumerate}
 
+%smoothCurvesExample geogebra
+
 \begin{freeResponse} 
 \begin{enumerate}
 \label{1}\item Two examples of smooth curves:
@@ -670,6 +711,9 @@ Compute the length of the tangent vector
 \]
 to each of your two example curves in the previous problem at each of
 their points.
+
+%lengthOfTangentVectorsSmoothCurvesExamples Geogebra
+
 
 \begin{freeResponse}
 \[
