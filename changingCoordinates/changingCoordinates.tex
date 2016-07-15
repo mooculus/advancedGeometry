@@ -84,6 +84,11 @@ $R$-sphere.
 \begin{problem}
   What happens to the surface when $K$ goes to $0$? Does this make
   sense in terms of curvature?
+  
+\begin{freeResponse}
+When K goes to zero the surface goes to $z^{2} =1$. As the curvature gets smaller, the surface gets flatter. When the curvature goes to zero, the surface becomes two copies of the plane which makes sense because a plane has zero curvature.  
+\end{freeResponse}
+
 \end{problem}
 
 \begin{problem}\hfil
@@ -194,11 +199,37 @@ but we want lengths and angles to be the usual euclidean ones in $\left(
 in terms of $\pp[\hat x]{x}$, $\pp[\hat y]{x}$, $\pp[\hat z]{x}$,
 $\pp[\hat x]{y}$, $\pp[\hat y]{y}$, $\pp[\hat z]{y}$, $\pp[\hat x]{z}$,
 $\pp[\hat y]{z}$, and $\pp[\hat z]{z}$.
+
+\begin{freeResponse}
+\[
+\begin{bmatrix}
+\frac{d\hat{x}}{dt} & \frac{d\hat{y}}{dt} & \frac{d\hat{z}}{dt}%
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{dx}{dt} & \frac{dy}{dt} & \frac{dz}{dt}%
+\end{bmatrix}\cdot
+\begin{bmatrix}
+\pp[\hat x]{x} & \pp[\hat y]{x} & \pp[\hat z]{x} \\
+\pp[\hat x]{y} & \pp[\hat y]{y} & \pp[\hat z]{y} \\
+\pp[\hat x]{z} &\pp[\hat y]{z} & \pp[\hat z]{z}
+\end{bmatrix}
+\]
+\[
+D_K = 
+\begin{bmatrix}
+\pp[\hat x]{x} & \pp[\hat y]{x} & \pp[\hat z]{x} \\
+\pp[\hat x]{y} & \pp[\hat y]{y} & \pp[\hat z]{y} \\
+\pp[\hat x]{z} &\pp[\hat y]{z} & \pp[\hat z]{z}
+\end{bmatrix}
+\]
+
+\end{freeResponse}
 \end{problem}
 
 
 \begin{problem}
-  Use the previous problems to show that
+  Use the previous problems and the relationship between euclidean and $\left(x,y,z\right)$-coordinates to show that
   \[
   \left[\dd[\hat{X}]{t}\right] = \left[ \dd[X]{t}\right] \cdot
   \begin{bmatrix}
@@ -207,6 +238,38 @@ $\pp[\hat y]{z}$, and $\pp[\hat z]{z}$.
     0 & 0 & R
   \end{bmatrix}.
   \]
+  
+\begin{freeResponse}
+Since we have 
+\begin{align*}
+\hat{x}  &  =x\\
+\hat{y}  &  =y\\
+\hat{z}  &  =Rz
+\end{align*}
+then, 
+\[
+D_K = 
+ \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & R
+  \end{bmatrix}.
+  \]
+  Therefore, 
+  \[
+ \left[\dd[\hat{X}]{t}\right] 
+= \begin{bmatrix}
+\frac{d\hat{x}}{dt} & \frac{d\hat{y}}{dt} & \frac{d\hat{z}}{dt}%
+\end{bmatrix}
+= \left[ \dd[X]{t}\right] \cdot
+  \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & R
+  \end{bmatrix}.
+\]
+\end{freeResponse}
+
 \end{problem}
 
 This last computation shows that if
@@ -315,6 +378,28 @@ then the length of its image in euclidean space is given by
 \[
 |V|_K=\sqrt{V\bullet_K V}.
 \]
+
+\begin{freeResponse}
+$\hat{V} = \left(a,b,Rc \right)$ is the image of $V$ in euclidean space. Then,
+\begin{align*}
+|V|_K = |\hat{V}| = \sqrt{\hat{V}\bullet\hat{V}} 
+&= \sqrt{a^{2} + b^{2} + R^{2}c^{2}} \\
+&= \begin{bmatrix}
+a & b & c%
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{bmatrix}
+\begin{bmatrix}
+a\\
+b\\
+c%
+\end{bmatrix} \\
+&= \sqrt{V\bullet_K V}
+\end{align*}
+\end{freeResponse} 
 \end{problem}
 
 \begin{problem}
@@ -325,6 +410,29 @@ then the length of its image in euclidean space is given by
   \]
   and their tails at the origin. What can you say about the length of
   these vectors? Discuss your answer for various values of $K$.
+  
+\begin{freeResponse}
+Let $V = \left(x,y,z\right)$ be a vector with it's tail at the origin and tip on the surface above. Now write the equation of the surface as,
+\begin{align*}
+\frac{1}{K} &= x^{2} + y^{2} + \frac{1}{K} \cdot z^{2} \\
+&= \begin{bmatrix}
+	x & y & z
+	\end{bmatrix}
+\begin{bmatrix}
+	1 & 0 & 0 \\
+	0 & 1 & 0 \\
+	0 & 0 & K^{-1}
+	\end{bmatrix}
+\begin{bmatrix}
+	x \\
+	y \\
+	z
+	\end{bmatrix}\\
+&= V \bullet_{K} V
+\end{align*}
+Therefore, $|V|_{K} = \sqrt{V \bullet_{K} V} = \frac{1}{\sqrt{K}} = |R|$. 
+\end{freeResponse}
+
 \end{problem}
 
 %% So, suppose we have a curve on the $R$-sphere in euclidean space
@@ -347,6 +455,12 @@ then the angle between their image in euclidean space is given by
 \[
 \theta = \arccos\left(\frac{V_1\bullet_K V_2}{\left| V_1\right|_K \cdot\left|V_2\right|_K }\right).
 \]
+
+\begin{freeResponse} Using the previous problems,
+\[
+\arccos\left(\frac{V_1\bullet_K V_2}{\left| V_1\right|_K \cdot\left|V_2\right|_K }\right) = \arccos\left(\frac{\hat{V}_{1}\bullet \hat{V}_{2}}{\left| \hat{V}_{1}\right| \cdot\left|\hat{V}_{2}\right| }\right) = \theta.
+\]
+\end{freeResponse}
 \end{problem}
 
 
@@ -386,6 +500,66 @@ V_{1}^\transpose & V_{2}^\transpose%
 \end{bmatrix}
 \right) }.
 \]
+
+\begin{freeResponse} From the previous problems,
+\[
+\sqrt{\det
+\begin{bmatrix}
+V_{1}\bullet_{K}V_{1} & V_{2}\bullet_{K}V_{1}\\
+V_{1}\bullet_{K}V_{2} & V_{2}\bullet_{K}V_{2}%
+\end{bmatrix}}
+=
+\sqrt{\det
+\begin{bmatrix}
+\hat{V}_{1}\bullet \hat{V}_{1} & \hat{V}_{2}\bullet \hat{V}_{1}\\
+\hat{V}_{1}\bullet \hat{V}_{2} & \hat{V}_{2}\bullet \hat{V}_{2}%
+\end{bmatrix}}.
+\]
+Which was previously shown to be the area of the parallelogram spanned by the image of $V_1$ and $V_2$ in euclidean space. To show the equality write,
+
+\begin{align*}
+\sqrt{\det
+\begin{bmatrix}
+V_{1}\bullet_{K}V_{1} & V_{2}\bullet_{K}V_{1}\\
+V_{1}\bullet_{K}V_{2} & V_{2}\bullet_{K}V_{2}%
+\end{bmatrix}}
+&=\sqrt{\det
+\begin{bmatrix}
+a^2_1 + b^2_1 + c^2_1K^{-1} & a_1a_2 + b_1b_2 + c_1c_2K^{-1}\\
+a_1a_2 + b_1b_2 + c_1c_2K^{-1} & a^2_2 + b^2_2 + c^2_2K^{-1}%
+\end{bmatrix}} \\
+&= \sqrt{\det
+\begin{bmatrix}
+a_{1} & b_{1} & c_{1}\\
+a_{2} & b_{2} & c_{2}
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}
+\end{bmatrix}
+\begin{bmatrix}
+a_{1} & a_{1}  \\
+b_{1} & b_{2}  \\
+c_{1} &  c_{2}
+\end{bmatrix}} \\
+&= \sqrt{\det\left( 
+\begin{bmatrix}
+V_{1} \\
+V_{2}
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{bmatrix}
+\begin{bmatrix}
+V_{1}^\transpose & V_{2}^\transpose%
+\end{bmatrix}
+\right) }
+\end{align*}
+\end{freeResponse}
+
 \end{problem}
 
 \textit{Moral of the story:} The dot-product rules! That is, if you
