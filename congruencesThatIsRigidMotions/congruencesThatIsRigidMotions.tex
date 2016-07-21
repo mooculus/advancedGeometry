@@ -89,7 +89,17 @@ to rigid motions.
     \]
     and deduce that this equals $\hat{V}\bullet\hat{V}$. 
   \end{hint}
-  \begin{hint} For the other direction, set
+  \begin{hint}
+  For the other direction, write 
+  \[\left(  \hat{V}  \cdot\hat{M} \right) \bullet\left(
+    \hat{V}  \cdot\hat{M}\right)  =\hat{V}\bullet\hat{V}
+    \] as
+  \[
+  \hat{V}\cdot\hat{V}^\transpose= \left(  \hat{V}  \cdot\hat{M} \right) \cdot\left(
+    \hat{V}  \cdot\hat{M}\right)^\transpose 
+  \]
+  \end{hint}
+  \begin{hint} Set
     \[
     \hat{V} =
     \begin{bmatrix}
@@ -98,10 +108,18 @@ to rigid motions.
     \]
     and view the equation 
     \[
-    \left(  \hat{V}  \cdot\hat{M} \right) \bullet\left(
-    \hat{V}  \cdot\hat{M}\right)  =\hat{V}\bullet\hat{V}
+    \hat{V}\cdot\hat{V}^\transpose= \left(  \hat{V}  \cdot\hat{M} \right) \cdot\left(
+    \hat{V}  \cdot\hat{M}\right)^\transpose 
     \]
-    as an equation of polynomials in the variables $a$, $b$, and $c$.
+    as an equation of polynomials in the variables $a$, $b$, and $c$. Also, denote 
+    \[
+    \hat{M} = 
+    \begin{bmatrix}
+	m_{11} & m_{12} & m_{13}\\
+	m_{21} & m_{22} & m_{23}\\
+	m_{31} & m_{32} & m_{33}
+\end{bmatrix}
+\]
   \end{hint}
   
 \begin{freeResponse}
@@ -129,6 +147,94 @@ Let $ \hat{V}=\hat{X}_{2}-\hat{X}_{1}$.
    & = \sqrt{\hat{V} \bullet \hat{V}} = \sqrt{d\left(  \hat{X}_{1},\hat{X}_{2}\right)^2} = d\left( \hat{X}_{1},\hat{X}_{2}\right)
 \end{align*}
 
+For the other direction we suppose $\hat{M}$ is a rigid motion, so
+\[
+ d\left( \hat{X}_{1}  \cdot\hat{M},\hat{X}_{2}
+   \cdot\hat{M}\right) = d\left(  \hat{X}_{1},\hat{X}_{2}\right).
+\]
+Therefore, 
+\[
+	\left(  \hat{V}  \cdot\hat{M} \right) \bullet\left(
+    \hat{V}  \cdot\hat{M}\right)  =\hat{V}\bullet\hat{V}.
+ \]
+Following the hint, write,
+\[
+\hat{V}\cdot\hat{V}^\transpose= \left(  \hat{V}  \cdot\hat{M} \right) \cdot\left(
+    \hat{V}  \cdot\hat{M}\right)^\transpose  = \hat{V} \cdot\hat{M} \cdot \hat{M}^\transpose \cdot \hat{V}^\transpose .
+\]
+Then, 
+\begin{align*}
+a^2 + b^2 +c^2 &= 
+\begin{bmatrix}
+      a & b & c
+    \end{bmatrix}
+\begin{bmatrix}
+      a \\
+      b \\
+      c
+    \end{bmatrix} \\ &=
+\begin{bmatrix}
+      a & b & c
+    \end{bmatrix}
+\begin{bmatrix}
+	m_{11} & m_{12} & m_{13}\\
+	m_{21} & m_{22} & m_{23}\\
+	m_{31} & m_{32} & m_{33}
+\end{bmatrix}
+\begin{bmatrix}
+	m_{11} & m_{21} & m_{31}\\
+	m_{12} & m_{22} & m_{32}\\
+	m_{13} & m_{23} & m_{33}
+\end{bmatrix}
+\begin{bmatrix}
+      a \\
+      b \\
+      c
+    \end{bmatrix}. \\
+ \end{align*}
+ Let $\hat{W} = \hat{M} \cdot \hat{M}^\transpose$ then,
+ \begin{align*}
+ w_{11} &= m_{11}^2 + m_{12}^2 +  m_{13}^2 \\
+ w_{12} &= m_{11}m_{21} + m_{12}m_{22} +m_{13}m_{23}\\
+ w_{13} &= m_{11}m_{31} + m_{12}m_{32} +m_{13}m_{33}\\
+ w_{21} &= m_{21}m_{11} + m_{22}m_{12} +m_{23}m_{13} \\
+ w_{22} &= m_{21}^2 + m_{22}^2 +  m_{23}^2 \\
+ w_{23} &=  m_{21}m_{31} + m_{22}m_{32} +m_{23}m_{33} \\
+ w_{31} &= m_{31}m_{11} + m_{32}m_{12} +m_{33}m_{13} \\
+ w_{32} &= m_{31}m_{11} + m_{32}m_{12} +m_{33}m_{13}\\
+ w_{33} &= m_{31}^2 + m_{32}^2 +  m_{33}^2.
+ \end{align*}    
+   
+ Note that $w_{12} =  w_{21}$, $w_{13} =  w_{31}$, and $w_{23} =  w_{32}$. Now,
+\[
+ a^2 + b^2 +c^2 =  
+a^2 w_{11} + 2abw_{21} + b^2 w_{22} + 2ac w_{13} + c^2 w_{33} + 2bc w_{23}.
+\]
+Therefore,  $0 = w_{12} =  w_{21} =w_{13} =  w_{31} = w_{23} =  w_{32}$, and $1 =  w_{11} =  w_{22} =  w_{33}$ so $\hat{M}$ is orthogonal. 
+ 
+    
+% &= \begin{bmatrix}
+%      a & b & c
+%    \end{bmatrix}
+%\begin{bmatrix}
+%	m_{11}^2 + m_{12}^2 +  m_{13}^2 & 
+%	m_{11}m_{21} + m_{12}m_{22} +m_{13}m_{23} &
+%	m_{11}m_{31} + m_{12}m_{32} +m_{13}m_{33}  \\
+%	m_{21}m_{11} + m_{22}m_{12} +m_{23}m_{13}  & 
+%	 m_{21}^2 + m_{22}^2 +  m_{23}^2 &
+%	 m_{21}m_{31} + m_{22}m_{32} +m_{23}m_{33} \\
+%	m_{31}m_{11} + m_{32}m_{12} +m_{33}m_{13}  & 
+%	m_{31}m_{11} + m_{32}m_{12} +m_{33}m_{13}  &  
+%	m_{31}^2 + m_{32}^2 +  m_{33}^2
+%\end{bmatrix}
+%\begin{bmatrix}
+%      a \\
+%      b \\
+%      c
+%    \end{bmatrix}
+%    
+%    
+%\end{align*}
 \end{freeResponse}
 
 \end{problem}
