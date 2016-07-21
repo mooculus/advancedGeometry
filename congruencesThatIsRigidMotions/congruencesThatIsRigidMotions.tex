@@ -90,10 +90,12 @@ to rigid motions.
     and deduce that this equals $\hat{V}\bullet\hat{V}$. 
   \end{hint}
   \begin{hint}
-  For the other direction, write 
-  \[\left(  \hat{V}  \cdot\hat{M} \right) \bullet\left(
-    \hat{V}  \cdot\hat{M}\right)  =\hat{V}\bullet\hat{V}
-    \] as
+  Now suppose that $\hat{M}$ is a rigid motion. Explain why this means that:
+  \[
+  \left(  \hat{V}  \cdot\hat{M} \right) \bullet\left(
+  \hat{V}  \cdot\hat{M}\right)  =\hat{V}\bullet\hat{V}
+  \]
+  Now rewrite as:
   \[
   \hat{V}\cdot\hat{V}^\transpose= \left(  \hat{V}  \cdot\hat{M} \right) \cdot\left(
     \hat{V}  \cdot\hat{M}\right)^\transpose 
@@ -106,21 +108,26 @@ to rigid motions.
       a & b & c
     \end{bmatrix}
     \]
+    and
+    \[
+    \hat{M} =
+    \begin{bmatrix}
+      m_{11} & m_{12} & m_{13}\\
+      m_{21} & m_{22} & m_{23}\\
+      m_{31} & m_{32} & m_{33}
+    \end{bmatrix}
+    \]
     and view the equation 
     \[
     \hat{V}\cdot\hat{V}^\transpose= \left(  \hat{V}  \cdot\hat{M} \right) \cdot\left(
     \hat{V}  \cdot\hat{M}\right)^\transpose 
     \]
-    as an equation of polynomials in the variables $a$, $b$, and $c$. Also, denote 
-    \[
-    \hat{M} = 
-    \begin{bmatrix}
-	m_{11} & m_{12} & m_{13}\\
-	m_{21} & m_{22} & m_{23}\\
-	m_{31} & m_{32} & m_{33}
-\end{bmatrix}
-\]
+    as an equation of polynomials in the variables $a$, $b$, and $c$. 
   \end{hint}
+  \begin{hint}
+    Polynomials are equal if and only if their coefficients are equal. 
+  \end{hint}
+  
   
 \begin{freeResponse}
 For the first direction we assume that $\hat{M}$ is orthogonal and we want to show that for any two points,  $\hat{X}_{1}$ and $\hat{X}_{2}$,%
