@@ -76,6 +76,77 @@ x & y & z
 \begin{hint}
   Express $M$ in terms of $\hat{M}$.
 \end{hint}
+
+\begin{freeResponse}
+We want to find $M$ in terms of $\hat{M}$ such that 
+\[
+\begin{bmatrix}
+\underline{x} & \underline{y} & \underline{z}%
+\end{bmatrix}
+=\begin{bmatrix}
+x & y & z
+\end{bmatrix}
+\cdot M
+\]
+Begin in the upper-right corner of the diagram with a vector
+$\begin{bmatrix}
+x & y & z
+\end{bmatrix}
+$ in K-geometry. Multiplying by 
+\[
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{bmatrix}
+\]
+moves us to the left corner and gives the image of the vector in euclidean space. Then multiplying by $\hat{M}$ moves us to the bottom let corner and gives the transformation in euclidean space. Now to determine $M$ in terms of $\hat{M}$, we map the current vector
+\[
+%\begin{bmatrix}
+%\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}
+%\end{bmatrix}=
+\begin{bmatrix}
+x & y & z
+\end{bmatrix}
+  \cdot\begin{bmatrix}
+%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{bmatrix}
+  \cdot\hat{M}
+  \]
+back to K-geometry by multiplying by 
+\[
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{bmatrix}^{-1}.
+\]
+ Therefore we now end up in the bottom right hand corner and have
+\[
+\begin{bmatrix}
+\underline{x} & \underline{y} & \underline{z}%
+\end{bmatrix}
+=\begin{bmatrix}
+x & y & z
+\end{bmatrix}
+  \cdot\begin{bmatrix}
+%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{bmatrix}
+  \cdot\hat{M}\cdot\begin{bmatrix}
+%
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R^{-1}
+\end{bmatrix}.
+\]
+
+\end{freeResponse}
 \end{problem}
 
 %% So, if we let%
