@@ -336,6 +336,51 @@ itself.
 \end{bmatrix}  =\frac{1}{K}.
 \]
 \end{hint}
+
+\begin{freeResponse}
+Following the hint, write the previous equation as,
+\begin{align*}
+\frac{1}{K} &=
+\begin{bmatrix}
+\underline{x} & \underline{y} & \underline{z}%
+\end{bmatrix}  \cdot\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{bmatrix}  \cdot
+\begin{bmatrix}
+\underline{x}\\
+\underline{y}\\
+\underline{z}%
+\end{bmatrix} \\
+&= \begin{bmatrix}
+    x & y & z
+  \end{bmatrix} \cdot M \cdot
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{bmatrix}  \cdot M^\transpose \cdot
+\begin{bmatrix}
+    x \\ y \\  z
+  \end{bmatrix} \\
+ &= \begin{bmatrix}
+    x & y & z
+  \end{bmatrix} \cdot 
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{bmatrix}  \cdot 
+\begin{bmatrix}
+    x \\ y \\  z
+  \end{bmatrix}.
+\end{align*}
+Therefore,
+\[
+1 = K\left(x^2 + y^2\right) +z^2.
+\] 
+\end{freeResponse}
 \end{problem}
 
 
@@ -346,6 +391,9 @@ For $K\neq0$, show that the set of $K$-orthogonal matrices $M$ form a
 group.  That is, show that
 \begin{enumerate}
 \item multiplication of $K$-orthogonal matrices is associative, 
+	\begin{hint}
+	Recall that function composition is always associative.
+	\end{hint}
 \item the product of two $K$-orthogonal matrices is $K$-orthogonal,
 \item the identity matrix is $K$-orthogonal,
 \item the inverse matrix $M^{-1}$ of a $K$-orthogonal matrix $M$ is $K$-orthogonal.
