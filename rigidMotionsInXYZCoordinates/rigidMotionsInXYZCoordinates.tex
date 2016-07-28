@@ -123,7 +123,7 @@ back to K-geometry by multiplying by
 0 & 0 & R
 \end{bmatrix}^{-1}.
 \]
- Therefore we now end up in the bottom right hand corner and have
+Then we end up in the bottom right hand corner and have
 \[
 \begin{bmatrix}
 \underline{x} & \underline{y} & \underline{z}%
@@ -397,6 +397,56 @@ group.  That is, show that
 \item the identity matrix is $K$-orthogonal,
 \item the inverse matrix $M^{-1}$ of a $K$-orthogonal matrix $M$ is $K$-orthogonal.
 \end{enumerate}
+
+\begin{freeResponse}
+\begin{enumerate}
+\item Matrices are functions and function composition is associative. Therefore, matrix multiplication is associative.
+
+\item Let $A$ and $B$ be K-orthogonal matrices. 
+\begin{align*}
+AB \cdot \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{bmatrix} \cdot
+\left(AB\right)^\transpose
+&= AB \cdot \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{bmatrix} \cdot
+B^\transpose A^\transpose \\
+&=A \cdot \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{bmatrix} \cdot
+A^\transpose \\
+&= \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{bmatrix}
+\end{align*}
+
+\item Since $I^\transpose = I $, then 
+\[
+I \cdot \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{bmatrix} \cdot
+I^\transpose 
+= \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{bmatrix}.
+\]
+
+\end{enumerate}
+\end{freeResponse}
+
 \end{problem}
 
 \begin{problem}
