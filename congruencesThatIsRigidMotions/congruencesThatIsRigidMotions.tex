@@ -171,15 +171,8 @@ Following the hint, write,
 \]
 Then, 
 \begin{align*}
-a^2 + b^2 +c^2 &= 
-\begin{bmatrix}
-      a & b & c
-    \end{bmatrix}
-\begin{bmatrix}
-      a \\
-      b \\
-      c
-    \end{bmatrix} \\ &=
+a^2 + b^2 +c^2
+=
 \begin{bmatrix}
       a & b & c
     \end{bmatrix}
@@ -212,12 +205,19 @@ a^2 + b^2 +c^2 &=
  w_{33} &= m_{31}^2 + m_{32}^2 +  m_{33}^2.
  \end{align*}    
    
- Note that $w_{12} =  w_{21}$, $w_{13} =  w_{31}$, and $w_{23} =  w_{32}$. Now,
+ Since $w_{12} =  w_{21}$, $w_{13} =  w_{31}$, and $w_{23} =  w_{32}$, then 
 \[
  a^2 + b^2 +c^2 =  
+ \begin{bmatrix}
+      a & b & c
+    \end{bmatrix} \cdot \hat{W} \cdot \begin{bmatrix}
+      a \\
+      b \\
+      c
+    \end{bmatrix} =
 a^2 w_{11} + 2abw_{21} + b^2 w_{22} + 2ac w_{13} + c^2 w_{33} + 2bc w_{23}.
 \]
-Therefore,  $0 = w_{12} =  w_{21} =w_{13} =  w_{31} = w_{23} =  w_{32}$, and $1 =  w_{11} =  w_{22} =  w_{33}$ so $\hat{M}$ is orthogonal. 
+Therefore,  $w_{21} =  w_{12} =w_{13} =  w_{31} = w_{23} =  w_{32}=0$, and $w_{11} =  w_{22} =  w_{33}=1$ so $\hat{M}$ is orthogonal. 
  
 \end{freeResponse}
 
@@ -446,6 +446,10 @@ functions on the \textit{right} of the argument.
 
   \end{tikzpicture}
 \end{image}
+
+\begin{freeResponse}
+The first function on the right sends $X$ through the function made up of functions $M_{1}$ and $M_{2}$ and then sends the result through function $M_{3}$. However, the diagram shows that when $X$ is sent through through the function made up of functions $M_{1}$ and $M_{2}$, it is first sent through $M_{1}$ and then the result is sent through $M_{2}$, which is the same as the last function on the right. The last function on the right sends $X$ first through function $M_{1}$, then the result through $M_{2}$ and then that result through $M_{3}$. The second function listed on the right first sends $X$ through function $M_{1}$ and then sends the result through the function made up of $M_{2}$ and $M_{3}$. When sending $XM_{1}$ through the function made up of $M_{2}$ and $M_{3}$,  $XM_{1}$ is first sent through function $M_{2}$ and then that result is sent through $M_{3}$, which is also the same as the last function on the right. Therefore, the diagram shows that the three functions are equivalent, and hence function composition is associative.
+\end{freeResponse}
 
 \end{problem}
 
