@@ -215,9 +215,8 @@ x & y & z
 
 
 \begin{problem}
-Show that the condition that a transformation $M$ in
-$\left(x,y,z\right)$-coordinates preserves distances in euclidean
-space is the condition that%
+Show that a transformation $M$ in
+$\left(x,y,z\right)$-coordinates preserves distances in $K$-warped space if and only if%
 \[
 M\cdot\begin{bmatrix}
 1 & 0 & 0\\
@@ -231,12 +230,17 @@ M\cdot\begin{bmatrix}
 \end{bmatrix}. 
   \]
   \begin{hint}
-    Start with the assumption that $\hat{M}$ is orthogonal.
+   First assume $M$ preserves distances in $K$-warped space. 
+   \end{hint} 
+   \begin{hint} 
+   Explain how the previous problem shows that there is a bijection between transformations defined by a matrix in K-warped space and transformations defined by a matrix in euclidean space, and thus $\hat{M}$ is orthogonal. 
   \end{hint}
+  
 
 \begin{freeResponse}
-We have 
-$M = \begin{bmatrix}
+First we assume that a transformation $M$ in K-warped space preserves distances. In the previous problem we showed that there is a a bijection between transformations defined by a matrix in K-warped space and transformations defined by a matrix in euclidean space. Therefore, if a transformation $M$ preserves distances in K-warped space then, then $\hat{M}$ preserves distances in euclidean space and thus is orthogonal. We have
+\[
+M = \begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & R
@@ -245,7 +249,8 @@ $M = \begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & R^{-1}
-\end{bmatrix}$. \\
+\end{bmatrix}. 
+\]
 Therefore, $M\cdot \begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
@@ -305,6 +310,59 @@ Therefore, $M\cdot \begin{bmatrix}
 \end{bmatrix}
 \end{align*}
 
+Now for the other direction we assume 
+\[
+M\cdot\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}
+\end{bmatrix}
+  \cdot M^\transpose=\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}
+\end{bmatrix}. 
+  \]
+Then,
+\begin{align*}
+\left(\begin{bmatrix}
+x & y & z
+\end{bmatrix} \cdot M \right) \bullet_{K} \left( \begin{bmatrix}
+x & y & z
+\end{bmatrix} \cdot M \right) 
+&= \begin{bmatrix}
+x & y & z
+\end{bmatrix} \cdot M \cdot 
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}
+\end{bmatrix} \cdot M^\transpose \cdot
+\begin{bmatrix}
+x \\
+y \\ 
+z
+\end{bmatrix} \\
+&= \begin{bmatrix}
+x & y & z
+\end{bmatrix} \cdot 
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}
+\end{bmatrix} \cdot 
+\begin{bmatrix}
+x \\ 
+y \\ 
+z
+\end{bmatrix} \\
+&= \begin{bmatrix}
+x & y & z
+\end{bmatrix} \bullet_{K} \begin{bmatrix}
+x & y & z
+\end{bmatrix}
+\end{align*}
+Therefore, the transformation $M$ preserves distances in $K$-warped space. 
 \end{freeResponse}
 
 \end{problem}
@@ -415,7 +473,7 @@ such that
 That is, $M$ gives a one-to-one and onto mapping of $K$-geometry to
 itself.
 \begin{hint}
-  Write the equation
+  Explain how you can write the equation
   \[
   1=K\left(\underline{x}^2 + \underline{y}^{2}\right) + \underline{z}^{2}.
   \]
@@ -437,20 +495,25 @@ itself.
 \end{hint}
 
 \begin{freeResponse}
-Following the hint, write the previous equation as,
+Beginning with the equation of the surface in $K$-geometry, 
+\[
+1 = K\left(x^2 + y^2\right) +z^2.
+\]
+We perform some algebra:
 \begin{align*}
-\frac{1}{K} &=
+\frac{1}{K} &= \left(x^2 +y^2 \right) + \frac{z^2}{K}\\
+&=
 \begin{bmatrix}
-\underline{x} & \underline{y} & \underline{z}%
+x & y & z%
 \end{bmatrix}  \cdot\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
 \end{bmatrix}  \cdot
 \begin{bmatrix}
-\underline{x}\\
-\underline{y}\\
-\underline{z}%
+x\\
+y\\
+z%
 \end{bmatrix} \\
 &= \begin{bmatrix}
     x & y & z
@@ -464,7 +527,7 @@ Following the hint, write the previous equation as,
     x \\ y \\  z
   \end{bmatrix} \\
  &= \begin{bmatrix}
-    x & y & z
+    \underline{x} & \underline{y} & \underline{z}
   \end{bmatrix} \cdot 
 \begin{bmatrix}
 1 & 0 & 0\\
@@ -472,12 +535,13 @@ Following the hint, write the previous equation as,
 0 & 0 & K^{-1}%
 \end{bmatrix}  \cdot 
 \begin{bmatrix}
-    x \\ y \\  z
-  \end{bmatrix}.
+    \underline{x} \\ \underline{y} \\  \underline{z}
+  \end{bmatrix}. \\
+ &= \left(\underline{x}^2 +\underline{y}^2 \right) + \frac{\underline{z}^2}{K}
 \end{align*}
 Therefore,
 \[
-1 = K\left(x^2 + y^2\right) +z^2.
+1 = K\left(\underline{x}^2 + \underline{y}^2\right) +\underline{z}^2.
 \] 
 \end{freeResponse}
 \end{problem}
@@ -632,7 +696,7 @@ M_\theta &= \begin{bmatrix}
   0 & 0 & 1
   \end{bmatrix} 
 \end{align*} 
-
+It is not surprising that the matrix stays the same because $M_\theta$ rotates points around the $z$-axis in euclidean space. This is not affected in $K$-warped space because the $R$-sphere is just pressed between $z=1$ and $z=-1$.
 \end{freeResponse}
 
 \end{problem}
@@ -681,6 +745,7 @@ M_\psi &= \begin{bmatrix}
   -R\sin\psi & 0 & \cos\psi
   \end{bmatrix} 
 \end{align*} 
+$M_\psi$ does change when converted into a $K$-orthogonal matrix because $M_\psi$ Rotates points around the $y$-axis, and this is affected since the  the $R$-sphere is pressed between $z=1$ and $z=-1$ in $K$-warped space. 
 \end{freeResponse}
 
 \end{problem}
@@ -755,7 +820,7 @@ geometry as the $K$-dot product for $K=0$, we can't pass smoothly from
 spherical through plane geometry to hyperbolic geometry using
 $(x,y,z)$-coordinates. Later, we will examine two ways to produce coordinates
 uniformly for spherical, plane and hyperbolic geometry that overcome
-this difficulty. First, we will examine "lines" in spherical and hyperbolic geometry.
+this difficulty. 
 
 
 
