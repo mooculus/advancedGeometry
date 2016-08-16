@@ -85,7 +85,7 @@ We want to find $M$ in terms of $\hat{M}$ such that
 =\begin{bmatrix}
 x & y & z
 \end{bmatrix}
-\cdot M
+\cdot M.
 \]
 Begin in the upper-right corner of the diagram with a vector
 $\begin{bmatrix}
@@ -99,7 +99,7 @@ $ in K-geometry. Multiplying by
 0 & 0 & R
 \end{bmatrix}
 \]
-moves us to the left corner and gives the image of the vector in euclidean space. Then multiplying by $\hat{M}$ moves us to the bottom let corner and gives the transformation in euclidean space. Now to determine $M$ in terms of $\hat{M}$, we map the current vector
+moves us to the left corner of the diagram and gives the image of the vector in euclidean space. Then, multiplying by $\hat{M}$ moves us to the bottom-left corner of the diagram and gives the transformation in euclidean space. Now, to determine $M$ in terms of $\hat{M}$, we map the current vector
 \[
 %\begin{bmatrix}
 %\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}
@@ -123,7 +123,7 @@ back to K-geometry by multiplying by
 0 & 0 & R
 \end{bmatrix}^{-1}.
 \]
-Then we end up in the bottom right hand corner and have
+Then, we end up in the bottom-right corner of the diagram and have
 \[
 \begin{bmatrix}
 \underline{x} & \underline{y} & \underline{z}%
@@ -131,7 +131,7 @@ Then we end up in the bottom right hand corner and have
 =\begin{bmatrix}
 x & y & z
 \end{bmatrix}
-  \cdot\begin{bmatrix}
+  \cdot \begin{bmatrix}
 %
 1 & 0 & 0\\
 0 & 1 & 0\\
@@ -231,8 +231,81 @@ M\cdot\begin{bmatrix}
 \end{bmatrix}. 
   \]
   \begin{hint}
-    Start with the assumption that $\hat{M}$ is orthagonal.
+    Start with the assumption that $\hat{M}$ is orthogonal.
   \end{hint}
+
+\begin{freeResponse}
+We have 
+$M = \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{bmatrix}
+  \cdot\hat{M}\cdot \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R^{-1}
+\end{bmatrix}$. \\
+Therefore, $M\cdot \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}
+\end{bmatrix}
+  \cdot M^\transpose=$
+\begin{align*}
+ &= \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{bmatrix} \cdot \hat{M} \cdot
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R^{-1}
+\end{bmatrix} \cdot 
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}
+\end{bmatrix} \cdot
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R^{-1}
+\end{bmatrix} \cdot \hat{M}^\transpose \cdot
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{bmatrix}\\
+&= \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{bmatrix} \cdot \hat{M} \cdot \hat{M}^\transpose \cdot
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{bmatrix} \\
+&= \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{bmatrix} \cdot
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{bmatrix} \\
+&= \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}
+\end{bmatrix}
+\end{align*}
+
+\end{freeResponse}
 
 \end{problem}
 
@@ -258,6 +331,33 @@ V=X_{2}-X_{1}.
 That is, the transformation given in $\left( x,y,z\right)
 $-coordinates by a matrix $M$ that satisfies your condition preserves
 the $K$-dot product.
+
+\begin{freeResponse} 
+Let $M$ be a matrix satisfying the previous condition. 
+\begin{align*}
+\left(   V  \cdot M\right)  \bullet_{K}\left(   V
+\cdot M\right)  
+&= \left(   V  \cdot M\right) \cdot
+ \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}
+\end{bmatrix} \cdot \left(   V
+\cdot M\right)^\transpose \\
+&= V  \cdot M \cdot 
+ \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}
+\end{bmatrix} \cdot M^\transpose \cdot V^\transpose \\
+&= V \cdot \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}
+\end{bmatrix} \cdot V^\transpose = V\bullet_{K}V
+\end{align*}
+\end{freeResponse}
+
 \end{problem}
 
 
@@ -443,7 +543,46 @@ I^\transpose
 0 & 0 & K^{-1}%
 \end{bmatrix}.
 \]
-
+\item
+Since $M^{-1}\cdot M = I$, then $I = \left( M^{-1}\cdot M\right)^\transpose = M^\transpose \cdot \left(M^{-1}\right)^\transpose$. We know
+\[
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{bmatrix} =M \cdot \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{bmatrix} \cdot M^\transpose.
+\]
+Then, multiplying by $\left(M^{-1}\right)^\transpose$ on the right and $M^{-1}$ on the left we have 
+\[
+M^{-1} \cdot \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{bmatrix} \cdot  \left(M^{-1}\right)^\transpose
+= M^{-1} \cdot M \cdot 
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{bmatrix} \cdot M^\transpose \cdot \left(M^{-1}\right)^\transpose.
+\]
+Therefore, 
+\[
+M^{-1} \cdot \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{bmatrix} \cdot  \left(M^{-1}\right)^\transpose
+= \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & K^{-1}%
+\end{bmatrix}.
+\]
 \end{enumerate}
 \end{freeResponse}
 
@@ -459,6 +598,43 @@ I^\transpose
   \end{bmatrix}
   \]
   into a $K$-orthogonal matrix. Are you surprised? Why or why not?
+  
+\begin{freeResponse}
+\begin{align*}
+M_\theta &= \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R%
+\end{bmatrix} \cdot \hat{M}_\theta \cdot
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R^{-1}%
+\end{bmatrix} \\
+&= \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R%
+\end{bmatrix} \cdot 
+\begin{bmatrix}
+  \cos\theta & \sin\theta & 0\\
+  -\sin\theta & \cos\theta & 0\\
+  0 & 0 & 1
+  \end{bmatrix} \cdot
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R^{-1}%
+\end{bmatrix}
+= \begin{bmatrix}
+  \cos\theta & \sin\theta & 0\\
+  -\sin\theta & \cos\theta & 0\\
+  0 & 0 & 1
+  \end{bmatrix} 
+\end{align*} 
+
+\end{freeResponse}
+
 \end{problem}
 
 \begin{problem}
@@ -471,6 +647,42 @@ I^\transpose
   \end{bmatrix}
   \]
   into a $K$-orthogonal matrix. Are you surprised? Why or why not?
+  
+\begin{freeResponse}
+\begin{align*}
+M_\psi &= \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R%
+\end{bmatrix} \cdot \hat{M}_\psi \cdot
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R^{-1}%
+\end{bmatrix} \\
+&= \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R%
+\end{bmatrix} \cdot 
+\begin{bmatrix}
+  \cos\psi & 0 & \sin\psi\\
+  0 & 1 & 0\\
+  -\sin\psi & 0 & \cos\psi
+  \end{bmatrix} \cdot
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R^{-1}%
+\end{bmatrix}
+=\begin{bmatrix}
+  \cos\psi & 0 & R^{-1} \sin\psi\\
+  0 & 1 & 0\\
+  -R\sin\psi & 0 & \cos\psi
+  \end{bmatrix} 
+\end{align*} 
+\end{freeResponse}
+
 \end{problem}
 
 
@@ -541,9 +753,9 @@ spherical geometry. But the gap in the bottom row of the table is a
 bit disturbing. If we can't express the usual dot-product in plane
 geometry as the $K$-dot product for $K=0$, we can't pass smoothly from
 spherical through plane geometry to hyperbolic geometry using
-$(x,y,z)$-coordinates. We now examine two ways to produce coordinates
+$(x,y,z)$-coordinates. Later, we will examine two ways to produce coordinates
 uniformly for spherical, plane and hyperbolic geometry that overcome
-this difficulty.
+this difficulty. First, we will examine "lines" in spherical and hyperbolic geometry.
 
 
 

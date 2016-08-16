@@ -11,6 +11,7 @@ Here we start to develop unified models for our geometries.
 
 \section{Central projection coordinates}
 
+Now we will examine one way to produce coordinates uniformly for spherical, plane, and hyperbolic geometry that will allow us to pass smoothly through the three geometries.\\
 Let's project $K$-geometry,
 \[
 1=K\left(x^{2}+y^{2}\right)+z^{2} 
@@ -475,6 +476,8 @@ finite surface area.
     A picture is worth a thousand words!
   \end{hint}
   \begin{freeResponse}
+  %centralProjectionSpherical geogebra
+  As a point approaches the equator of the $R$-sphere, it's image in central projection approaches infinity. 
   \end{freeResponse}
 \end{problem}
 
@@ -482,6 +485,7 @@ finite surface area.
   Explain why one might say that central projection makes the
   ``finite'' seem ``infinite.''
     \begin{freeResponse}
+    The surface area of sphere is finite, but it's image in central projection is a plane with infinite surface area. Also, the distance a point travels along a line away from the north pole has a finite maximum distance as it approaches the equator. However, the distance from the image of the point in central projection to the origin goes to infinity. 
     \end{freeResponse}
 \end{problem}
 
@@ -517,10 +521,8 @@ in the $(x,z)$-plane around the $z$-axis.
 
 
 \begin{problem}
-  Assume we have a point in $K$-geometry that is shooting off to
-  infinity. What is the maximum distance the image of this point can
-  be from the origin in central projection?
-  \begin{hint}
+  Assume we have a point, $(x, y, z)$, in $K$-geometry that is shooting off to
+  infinity. Determine the line that connects the origin to the point $(x, y, z)$.  \begin{hint}
     First rewrite $z^{2}-|K|x^{2} =1$ as
     \[
     z = \sqrt{1+|K|x^2}
@@ -552,7 +554,7 @@ in the $(x,z)$-plane around the $z$-axis.
       &= \lim_{x\to \infty} \sqrt{1/x^2+|K|}\\
       &= \sqrt{|K|}.
     \end{align*}
-    Hence one projection is given by $z = x\sqrt{|K|}$.
+    Hence the equation of the line is given by $z = x\sqrt{|K|}$.
   \end{freeResponse}
 \end{problem}
 
@@ -581,6 +583,7 @@ lies \textit{inside} the asymptotic cone.
   Explain why one might say that central projection makes the
   ``infinite'' seem ``finite.''
     \begin{freeResponse}
+    As a point in K-geometry goes to infinity, it's distance from the origin goes to infinity. However, the image of the point in central projection is bounded by the circle of radius $\frac{1}{\sqrt{K}}$. Therefore, the distance from the point in central projection to the origin is less than $\frac{1}{\sqrt{K}}$.
     \end{freeResponse}
 \end{problem}
 
