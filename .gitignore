@@ -32,3 +32,5 @@
 *.ps
 *.jpg
 *.lyx
+*.synctex.gz(busy)
+*.sage-chat
