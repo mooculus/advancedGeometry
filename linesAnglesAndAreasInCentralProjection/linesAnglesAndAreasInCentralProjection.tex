@@ -148,6 +148,10 @@ the angle is changed by a rigid motion.
   $\overline{AB}$ and $\overline{CD}$ under a $K$-rigid
   motion. Explain how this image shows that central projection does
   not preserve angles.
+  
+  \begin{freeResponse}
+  In the image its seems as though the larger arc intersected by $\overline{CD}$ and $\overline{AB}$ is greater than the larger arc intersected by $\overline{C'D'}$ and $\overline{A'B'}$. Therefore, it appears as though the angle created by $\overline{CD}$ and $\overline{AB}$ is greater than the angle created by $\overline{C'D'}$ and $\overline{A'B'}$ even though the lines are transformed by rigid motions. 
+  \end{freeResponse}
 \end{problem}
 
 
@@ -166,6 +170,9 @@ way.
  \end{image}
  Use the fact that the area of an $\alpha$-lune is $2\alpha\cdot R^2$
  to compute the area of the region.
+ \begin{freeResponse}
+In central projection we are only considering the top half of the $R$-sphere in $K$-geometry, therefore, when projecting the region of the $\alpha$-lune, we only project half of it. Hence, the above region is half of the area of the $\alpha$-lune on the $R$-sphere, and has an area of $\alpha \cdot R^{2}$.
+ \end{freeResponse}
 \end{problem}
 
 On the other hand, we know that the area in spherical geometry
@@ -233,6 +240,53 @@ You have already shown that
   \begin{hint}
     No new computations need to be done, just look at how $P_c$ was derived.
   \end{hint}
+  \begin{freeResponse}
+  In a previous section we derived $P_c$ by computing
+  \[
+  D_c \cdot 
+  \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & K^{-1}
+  \end{bmatrix} \cdot D_c^\transpose.
+  \]
+  Since $D_c$ and $X\left(t\right)$ were defined as follows:
+  \[
+X(t) = 
+\begin{cases}
+  x(x_c(t),y_c(t)),\\
+  y(x_c(t),y_c(t)),\\
+  z(x_c(t),y_c(t)).
+\end{cases} \\
+ D_c =
+  \begin{bmatrix}
+    \pp[x]{x_c} & \pp[y]{x_c} & \pp[z]{x_c} \\
+    \pp[x]{y_c}   & \pp[y]{y_c}   & \pp[z]{y_c}
+  \end{bmatrix}.
+\]
+Then, 
+\[
+ \begin{bmatrix}
+    \dd[X]{x_c}\\
+    \dd[X]{y_c}
+  \end{bmatrix}
+  \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & K^{-1}
+  \end{bmatrix}
+  \begin{bmatrix}
+    \left(\dd[X]{x_c}\right)^\transpose & \left(\dd[X]{y_c}\right)^\transpose
+  \end{bmatrix}
+  = D_c \cdot 
+  \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & K^{-1}
+  \end{bmatrix} \cdot D_c^\transpose
+  = P_c
+\]
+  \end{freeResponse}
 \end{problem}
 
 Hence now we see 
@@ -319,6 +373,10 @@ At this point we see we are interested in the following integral
 \begin{problem}
   Reconcile this computation with what you know about the area of the
   $\alpha$-lune.
+  
+  \begin{freeResponse}
+  As shown in the previous problem the area of the image is half the area of the $\alpha$-lune, which checks out with this computation. 
+  \end{freeResponse}
 \end{problem}
 
 
