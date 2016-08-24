@@ -88,7 +88,7 @@ a mapping defined by a matrix, so we'll have to use some new notation.
     \end{bmatrix}.
     \]
     We are now at the bottom left-hand corner of our diagram. To move
-    to the lower position, we multiply by $\underline{\lambda}^{-1}$, which
+    to the lower middle position, we multiply by $\underline{\lambda}^{-1}$, which
     is equivalent to dividing by $\underline{z}$. Hence our element
     becomes
      \[
@@ -108,7 +108,7 @@ a mapping defined by a matrix, so we'll have to use some new notation.
     \end{bmatrix}.
     \]
     Now since $x/z = x_c$ and $y/z =y_c$, we may pull this back to
-    $\R^2$ in the lower left-hand corner and write
+    $\R^2$ in the lower right-hand corner and write
     \[
     \mu_c(x_c,y_c) = \left(
     \frac{x_c\cdot m_{11} + y_c\cdot m_{21} + m_{31}}{x_c\cdot m_{13} + y_c\cdot m_{23} + m_{33}},
@@ -137,6 +137,10 @@ Now let's use our new tool to convert $K$-rigid motions to rigid motions in cent
   \]
   Can you describe geometrically what this mapping is doing to the
   points in central projection?
+  
+  \begin{freeResponse}
+  In $K$-geometry $M_\theta$ rotates points around the $z$-axis so $M_\theta$ rotates points around the origin in central projection
+  \end{freeResponse}
 \end{problem}
 
 
@@ -151,6 +155,17 @@ Now let's use our new tool to convert $K$-rigid motions to rigid motions in cent
   \end{bmatrix}.
   \]
   Convert this to a rigid motion in central projection.
+  \begin{freeResponse}
+   With $M$ = $M_\theta$,
+  \begin{align*}
+  \mu_c(x_c,y_c) &= \left( \frac{x_c\cdot m_{11} + y_c\cdot m_{21} + m_{31}}{x_c\cdot m_{13} + y_c\cdot m_{23} + m_{33}},
+    \frac{x_c\cdot m_{12} + y_c\cdot m_{22} + m_{32}}{x_c\cdot m_{13} + y_c\cdot m_{23} + m_{33}} \right) \\
+    &= \left( \frac{x_c\cdot \cos\theta - y_c\cdot \sin\theta}{1},
+    \frac{x_c\cdot \sin\theta + y_c \cdot \cos\theta}{1} \right) \\
+    &= \left( x_c\cdot \cos\theta - y_c\cdot \sin\theta,
+    x_c\cdot \sin\theta+ y_c \cdot \cos\theta \right)
+  \end{align*}
+  \end{freeResponse}
 \end{problem}
 
 
@@ -180,6 +195,17 @@ points in central projection?
   \end{bmatrix}.
   \]
   Convert this to a rigid motion in central projection.
+  
+  \begin{freeResponse}
+   With $M$ = $N_\psi$,
+  \begin{align*}
+  \mu_c(x_c,y_c) &= \left( \frac{x_c\cdot n_{11} + y_c\cdot n_{21} + n_{31}}{x_c\cdot m_{13} + y_c\cdot n_{23} + n_{33}},
+    \frac{x_c\cdot n_{12} + y_c\cdot n_{22} + n_{32}}{x_c\cdot n_{13} + y_c\cdot n_{23} + n_{33}} \right) \\
+    &= \left( \frac{x_c\cdot \cos\psi - R\cdot \sin\psi}{x_c\cdot R^{-1} \cdot \sin\psi + \cos\psi},
+    \frac{y_c}{x_c\cdot R^{-1} \cdot \sin\psi + \cos\psi} \right) 
+  \end{align*}
+  \end{freeResponse}
+
 \end{problem}
 
 
@@ -209,6 +235,16 @@ points in central projection?
   \end{bmatrix}
   \]
   Convert this to a rigid motion in central projection.
+  
+    \begin{freeResponse}
+   With $M$ = $N_\psi$,
+  \begin{align*}
+  \mu_c(x_c,y_c) &= \left( \frac{x_c\cdot n_{11} + y_c\cdot n_{21} + n_{31}}{x_c\cdot m_{13} + y_c\cdot n_{23} + n_{33}},
+    \frac{x_c\cdot n_{12} + y_c\cdot n_{22} + n_{32}}{x_c\cdot n_{13} + y_c\cdot n_{23} + n_{33}} \right) \\
+    &= \left( \frac{x_c\cdot \cosh\psi -  |K|^{-1/2}\cdot \sinh\psi}{x_c \cdot |K|^{1/2}\cdot \sinh\psi + \cosh\psi},
+    \frac{y_c}{x_c\cdot R^{-1} \cdot \sin\psi + \cos\psi} \right) 
+  \end{align*}
+  \end{freeResponse}
 \end{problem}
 
 
