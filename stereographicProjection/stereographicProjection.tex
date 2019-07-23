@@ -149,9 +149,14 @@ with the $K$-dot product, and hence the euclidean dot product.
 \begin{problem}
 Suppose we have a curve $\gamma$ in $K$-warped space which we can decompose as
 \[
-\xymatrix{
-  t \ar@{|->}[r]^-{\gamma_s} \ar@{|->}@/_1pc/[rr]_{\gamma} & (x_s(t),y_s(t)) \ar@{|->}[r]^-{\left[\begin{smallmatrix}x(x_s,y_s)\\y(x_s,y_s)\\z(x_s,y_s)\end{smallmatrix}\right]} & \gamma(t)=(x(t),y(t),z(t))
-}
+\begin{tikzcd}
+  t \ar[r,mapsto,"\gamma_{s}"] \ar[rr,mapsto,bend right=20,swap,"\gamma"] &  (x_s(t),y_s(t))\ar[r,mapsto,"{\left[\begin{smallmatrix}
+          x(x_s,y_s)\\
+          y(x_s,y_s)\\
+          z(x_s,y_s)
+        \end{smallmatrix}\right]}"
+  ] & \gamma(t)=(x(t),y(t),z(t))
+\end{tikzcd}
 \]
 Use the chain rule to compute
 \[

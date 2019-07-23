@@ -102,9 +102,14 @@ paths in these coordinates.
 \begin{problem}
 Suppose we have a curve $\gamma$ in $K$-warped space which we can decompose as
 \[
-\xymatrix{
-  t \ar@{|->}[r]^-{\gamma_{\text{sph}}} \ar@{|->}@/_1pc/[rr]_{\gamma} & (\sigma(t),\tau(t)) \ar@{|->}[r]^-{\left[\begin{smallmatrix}x(\sigma,\tau)\\y(\sigma,\tau)\\z(\sigma,\tau)\end{smallmatrix}\right]} & \gamma(t)=(x(t),y(t),z(t))
-}
+\begin{tikzcd}
+  t \ar[r,mapsto,"\gamma_{\mathrm{hyp}}"] \ar[rr,mapsto,bend right=20,swap,"\gamma"] &  (\sigma(t),\tau(t))\ar[r,mapsto,"{\left[\begin{smallmatrix}
+          x(\sigma,\tau)\\
+          y(\sigma,\tau)\\
+          z(\sigma,\tau)
+        \end{smallmatrix}\right]}"
+  ] & \gamma(t)=(x(t),y(t),z(t))
+\end{tikzcd}
 \]
 Use the chain rule to compute
 \[
