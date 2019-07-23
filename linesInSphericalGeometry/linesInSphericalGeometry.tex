@@ -1,4 +1,4 @@
-\documentclass{ximera}
+\documentclass[newpage,hints,handout]{ximera}
 
 \input{../preamble.tex}
 
@@ -36,7 +36,9 @@ where $0\le \sigma\le\pi$ and $0\le \tau<2\pi$.
 \begin{problem}
   Show that these functions actually parameterize the $R$-sphere.
 \begin{hint}
-This is an exercise in ``double-containment.'' To show the one direction, show
+This is an exercise in ``double-containment'': you must show that every point
+specified in this way is a point on the sphere and vice versa.  To show the one
+direction, show
 \[
 K\left(x(\sigma,\tau) ^{2}+y(\sigma,\tau) ^{2}\right) +z(\sigma,\tau)^{2} = 1
 \]
@@ -80,15 +82,11 @@ product in $(\sigma,\tau)$-coordinates so that we can compute the
 lengths of paths in these coordinates.
 
 \begin{problem}
-Suppose we have a curve $X$ in $K$-warped space that is a function of
-$\sigma(t)$ and $\tau(t)$. So
+Suppose we have a curve $\gamma$ in $K$-warped space which we can decompose as
 \[
-X(t) =
-\begin{cases}
-  x(\sigma(t),\tau(t)),\\
-  y(\sigma(t),\tau(t)),\\
-  z(\sigma(t),\tau(t)).\\
-\end{cases}
+\xymatrix{
+  t \ar@{|->}[r]^-{\gamma_{\text{sph}}} \ar@{|->}@/_1pc/[rr]_{\gamma} & (\sigma(t),\tau(t)) \ar@{|->}[r]^-{\left[\begin{smallmatrix}x(\sigma,\tau)\\y(\sigma,\tau)\\z(\sigma,\tau)\end{smallmatrix}\right]} & \gamma(t)=(x(t),y(t),z(t))
+}
 \]
 Use the chain rule to compute
 \[
@@ -98,14 +96,13 @@ in terms of $\dd[\sigma]{t}$, $\dd[\tau]{t}$, $\pp[x]{\sigma}$,
 $\pp[y]{\sigma}$, $\pp[z]{\sigma}$, $\pp[x]{\tau}$, $\pp[y]{\tau}$,
 and $\pp[z]{\tau}$.
 \begin{hint}
-  Recall that if $F$ is a differentiable function of $x$, $y$, and
-  $z$; and if $x$, $y$, and $z$ are all differentiable functions of
-  $t$, then the chain rule states
+  Recall that if $F$ is a differentiable function of $a$ and $b$; and if $a$ and
+  $b$ are all differentiable functions of $t$, then the chain rule states
   \[
   \dd[F]{t} = \nabla F \cdot
   \begin{bmatrix}
-    \dd[x]{t} & \dd[y]{t} & \dd[z]{t}
-  \end{bmatrix}^\transpose
+    da/dt \\ db/dt
+  \end{bmatrix}
   .
   \]
 \end{hint}
@@ -125,12 +122,12 @@ and $\pp[z]{\tau}$.
   that
 \[
 \begin{bmatrix}
-\dd[x]{t} & \dd[y]{t} & \dd[z]{t}
+dx/dt\\ dy/dt \\ dz/dt
 \end{bmatrix}
-=
+= D_{\mathrm{sph}} \cdot
 \begin{bmatrix}
-\frac{d\sigma}{dt} & \frac{d\tau}{dt}
-\end{bmatrix}\cdot D_{\mathrm{sph}}
+d\sigma/dt \\ d\tau/dt
+\end{bmatrix}
 \]
 in terms of $\pp[x]{\sigma}$, $\pp[y]{\sigma}$, $\pp[z]{\sigma}$,
 $\pp[x]{\tau}$, $\pp[y]{\tau}$, and $\pp[z]{\tau}$.
@@ -299,11 +296,11 @@ $\pp[x]{\tau}$, $\pp[y]{\tau}$, and $\pp[z]{\tau}$.
 \end{problem}
 
 \begin{definition}
-  Let $V_\mathrm{sph}$ and $W_\mathrm{sph}$ be a vectors in
+  Let $\mathbf{v}_\mathrm{sph}$ and $\mathbf{w}_\mathrm{sph}$ be a vectors in
   $(\sigma,\tau)$-coordinates originating at the same
   $(\sigma,\tau)$-coordinate. Define
   \[
-  V_\mathrm{sph} \bullet_\mathrm{sph} W_\mathrm{sph} = V_\mathrm{sph} \cdot P_\mathrm{sph} \cdot W_\mathrm{sph}^\transpose
+  \mathbf{v}_\mathrm{sph} \bullet_\mathrm{sph} \mathbf{w}_\mathrm{sph} = \mathbf{v}_\mathrm{sph} \cdot P_\mathrm{sph} \cdot \mathbf{w}_\mathrm{sph}^\transpose
   \]
   where
   \[
@@ -319,25 +316,13 @@ $\pp[x]{\tau}$, $\pp[y]{\tau}$, and $\pp[z]{\tau}$.
 
 
 Now notice that you can write a path on the $R$-sphere by giving a path
-$\left( \sigma(t),\tau(t)\right)$ in the $(\sigma,\tau)$-plane. In
-fact, you can use $\sigma$ as the parameter, and just write
+$\left( \sigma(t),\tau(t)\right)$ in the $(\sigma,\tau)$-plane.  To write a path
+that starts at the North Pole, just write%
 \[
-\left(\sigma,\tau(\sigma)\right)
+\left(\sigma(t),\tau(t)\right), \qquad 0\leq t \leq e
 \]
-where $\tau$ is a function of $\sigma$. To write a path that starts at
-the North Pole, just write%
-\[
-\left(\sigma,\tau(\sigma)\right), \qquad 0\leq\sigma\leq\varepsilon
-\]
-and demand that
-\[
-\tau(0) =0.
-\]
-If you want the path to end on the plane $y=\hat{y}=0$, demand
-additionally that
-\[
-\tau(\varepsilon) =0.
-\]
+and demand that $\sigma(0)=0$.  If you want the path to end on the plane
+$y=\hat{y}=0$, demand additionally that $\tau(e)=0.$
 
 %% \begin{problem}
 %% \begin{enumerate}
@@ -428,38 +413,33 @@ additionally that
 %% \end{problem}
  Now given a path on the $R$-sphere
  \[
- \left(\sigma,\tau(\sigma)\right),\qquad0\leq\sigma \leq\varepsilon
+ \left(\sigma(t),\tau(t)\right),\qquad 0 \leq t \leq e
  \]
- with
- \[
- \tau\left(  0\right)  =0.
- \]
- and%
- \[
- \tau\left(  \varepsilon\right)  =0
- \]
- its length is given by the formula%
-\[
-L=\int_{0}^{\varepsilon} \sqrt{\left(1,\dd[\tau]{\sigma}\right)\bullet_\mathrm{sph} \left(1,\dd[\tau]{\sigma}\right)}\d\sigma.
-\]
+ satisfying $\sigma(0)=\tau(0)=0$ and $\tau(e)=0$, its length is given by the
+ formula%
+ \begin{equation} \label{length}\tag{$*$}
+   L=\int_{0}^e \sqrt{\left(\frac{d\sigma}{dt},\frac{d\tau}{dt}\right)
+     \bullet_\mathrm{sph} \left(\frac{d\sigma}{dt},\frac{d\tau}{dt}\right)}dt.
+ \end{equation}
+ (Why?)
 
 \begin{problem}
-  Prove that the shortest path on the $R$-sphere from the North Pole
+  Prove that the shortest path on the $R$-sphere from the North Pole $(0,0,1)$
+  (in $(\sigma,\tau)$-coordinates, $(0,0)$) to a point
   \[
-  N=\left( R\cdot \sin 0\cdot  \cos 0,R\cdot \sin  0\cdot \sin 0,\cos
-  0\right)
+  (x,y,z)=(R\sin e,0,\cos e)
   \]
-  to a point
-  \[
-  (x,y,z)=\left(R\cdot \sin \varepsilon,0,\cos \varepsilon\right)
-  \]
-  is the path lying in the plane $y=0$.
+  (in $\sigma,\tau)$-coordinates, $(e,0)$) is the downwards path lying in the
+  plane $y=0$.
   \begin{hint}
-    Note that the following expression is always positive:
-    \[
-    1+\sin ^{2}\sigma\cdot \left(\frac{d\tau }{d\sigma}\right)^{2}.
-    \]
-    When is it minimal?
+    Start with some arbitrary path $(\sigma(t),\tau(t))$ which begins and ends at
+    this point and show that it's longer than this path, in two steps:
+    \begin{itemize}
+    \item First use the equation \eqref{length} to show that it gets shorter if
+      you keep the same $\sigma$ but make $\tau$ always zero (squishing the curve
+      onto the plane $y=0$.)
+    \item Finish the argument by eliminating any backtracking.
+    \end{itemize}
   \end{hint}
 
   \begin{freeResponse}
@@ -531,22 +511,22 @@ K\left(  x^{2}+y^{2}\right)  +z^{2}=1
 and the plane containing $(0,0,0)$, $X_{1}$, and $X_{2}$.
 \end{theorem}
 
-\begin{problem}
-  Explain in words how to prove this theorem by using the $K$-rigid
-  motions
+\begin{problem} (\textbf{Tricky!})
+  Explain in words how to prove this theorem by using $K$-rigid
+  motions of the form
   \[
   M_\theta=
   \begin{bmatrix}
-    \cos\theta & \sin\theta & 0\\
-    -\sin\theta & \cos\theta & 0\\
+    \cos\theta & -\sin\theta & 0\\
+    \sin\theta & \cos\theta & 0\\
     0 & 0 & 1
   \end{bmatrix}
   \qquad\text{and}\qquad
   N_\psi=
   \begin{bmatrix}
-    \cos\psi & 0 & R^{-1}\cdot\sin\psi\\
+    \cos\psi & 0 & -R\cdot\sin\psi\\
     0 & 1 & 0\\
-    -R\cdot\sin\psi & 0 & \cos\psi
+    R^{-1}\cdot\sin\psi & 0 & \cos\psi
   \end{bmatrix}.
   \]
   \begin{hint}
@@ -688,22 +668,21 @@ through $(0,0,0)$.
 
 To start we need some basic facts about lengths of lines in spherical
 geometry.
-
 \begin{problem}
-  Given a line in spherical geometry lying entire in the plane $y=0$,
+  Given a line in spherical geometry lying entirely in the plane $y=0$,
   \begin{align*}
-    x(\varepsilon) &= R\cdot\sin\varepsilon,\\
-    y(\varepsilon) &= 0,\\
-    z(\varepsilon) &= \cos\varepsilon,
+    x(t) &= R\sin t,\\
+    y(t) &= 0,\\
+    z(t) &= \cos t,
   \end{align*}
-  show that its length is exactly $R\cdot \varepsilon$.
+  show that the length of the segment at $0 \leq t \leq e$ is exactly $Re$.
   \begin{hint}
     Use a previous problem.
   \end{hint}
   \begin{freeResponse}
     By a previous problem the length of this line is given by
     \[
-    L=R \cdot \int_{0}^{\varepsilon} 1 \d\sigma = R\cdot\varepsilon.
+    L=R \cdot \int_{0}^e 1 \d\sigma = Re.
     \]
   \end{freeResponse}
 \end{problem}
@@ -713,22 +692,22 @@ geometry.
   say $X_A$ and $X_B$, the length of the spherical line connecting them
   is given by
   \[
-  R\cdot \varepsilon = R\cdot\arccos\left(\frac{X_A\bullet_K X_B}{|X_A|_K\cdot |X_B|_K}\right).
+  R\cdot e = R\cdot\arccos\left(\frac{X_A\bullet_K X_B}{|X_A|_K\cdot |X_B|_K}\right).
   \]
-  by using the $K$-rigid motions
+  by using $K$-rigid motions of the form
   \[
    M_\theta=
   \begin{bmatrix}
-    \cos\theta & \sin\theta & 0\\
-    -\sin\theta & \cos\theta & 0\\
+    \cos\theta & -\sin\theta & 0\\
+    \sin\theta & \cos\theta & 0\\
     0 & 0 & 1
   \end{bmatrix}
   \qquad\text{and}\qquad
   N_\psi=
   \begin{bmatrix}
-    \cos\psi & 0 & R^{-1}\cdot\sin\psi\\
+    \cos\psi & 0 & -R\cdot\sin\psi\\
     0 & 1 & 0\\
-    -R\cdot\sin\psi & 0 & \cos\psi
+    R^{-1}\cdot\sin\psi & 0 & \cos\psi
   \end{bmatrix}.
   \]
   \begin{freeResponse}
@@ -773,8 +752,8 @@ Hence the length of side $b$ is $R\cdot\alpha$. Using a rigid motion of the form
 \[
 M_\theta=
 \begin{bmatrix}
-  \cos\theta & \sin\theta & 0\\
-  -\sin\theta & \cos\theta & 0\\
+  \cos\theta & -\sin\theta & 0\\
+  \sin\theta & \cos\theta & 0\\
   0 & 0 & 1
 \end{bmatrix}
 \]

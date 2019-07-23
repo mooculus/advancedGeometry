@@ -1,4 +1,4 @@
-\documentclass{ximera}
+\documentclass[newpage,hints,handout]{ximera}
 
 \input{../preamble.tex}
 
@@ -31,17 +31,9 @@ represented.
   $(x_{c},y_{c})$-coordinates under central projection.
 
 \begin{hint}
-  To intersect two surfaces, say $f(x,y,z)=a$ and $g(x,y,z)=b$,
-  simply examine
+  Referring to previous handouts, explain why intersecting the $K$-surface
   \[
-  f(x,y,z)-g(x,y,z) = a-b.
-  \]
-\end{hint}
-
-\begin{hint}
-  Explain why intersecting the $K$-surface
-  \[
-  1 = K\left(x^2+y^2\right) + z^2 
+  1 = K(x^2+y^2) + z^2 
   \]
   with the plane
   \[
@@ -51,26 +43,20 @@ represented.
 \end{hint}
 
 \begin{hint}
-  Use the projection formulas
-  \begin{align*}
-      x &= \frac{x_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}},\\
-      y &= \frac{y_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}},\\
-      z &= \frac{1}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}},
-  \end{align*}
-  and note that these points are \textit{necessarily} on the surface
-  \[
-  1 = K\left(x^2+y^2\right) + z^2.
-  \]
+  Argue that the central projection to the plane $z=1$ of a point on the
+  $K$-surface which lies in the plane
+  $$ax+by+cz=0$$
+  also lies in that plane.  What is the intersection of two planes?
 \end{hint}
 
 \begin{freeResponse}
   Let's start by intersecting the surfaces
   \[
-  K\left(x^2+y^2\right)+z^2=1\qquad\text{and}\qquad ax+by+cz=0,
+  K(x^2+y^2)+z^2=1\qquad\text{and}\qquad ax+by+cz=0,
   \]
   where the latter is a plane passing through the origin. Write
   \[
-  K\left(x^2+y^2\right) + z^2- ax- by-cz=1.
+  K(x^2+y^2)+z^2-ax-by-cz=1.
   \]
   Now use the projection formulas. Since these formula necessarily
   produce points on the surface
@@ -178,11 +164,11 @@ In central projection we are only considering the top half of the $R$-sphere in 
 On the other hand, we know that the area in spherical geometry
 represented by the region in central projection is given by
 \[
-\int_{L_c} \sqrt{
+\iint_{L_c} \sqrt{
   \det
   \begin{bmatrix}
-    \dd[X]{x_c}\bullet_K \dd[X]{x_c} & \dd[X]{y_c}\bullet_K \dd[X]{x_c} \\
-    \dd[X]{x_c}\bullet_K \dd[X]{y_c} & \dd[X]{y_c}\bullet_K \dd[X]{y_c}
+    \pp[X]{x_c}\bullet_K \pp[X]{x_c} & \pp[X]{y_c}\bullet_K \pp[X]{x_c} \\
+    \pp[X]{x_c}\bullet_K \pp[X]{y_c} & \pp[X]{y_c}\bullet_K \pp[X]{y_c}
   \end{bmatrix}
 }\d x_c\d y_c
 \]
@@ -190,43 +176,45 @@ represented by the region in central projection is given by
 \begin{problem}
   Give a heuristic explanation of why this integral computes what we
   say it computes.
+  \begin{hint}
+    Think about a tiny square in $(x_c,y_c)$-coordinates.
+  \end{hint}
 \end{problem}
 
 You have already shown that
-\[
-\int_{L_c} \sqrt{
-  \det
-  \begin{bmatrix}
-    \dd[X]{x_c}\bullet_K \dd[X]{x_c} & \dd[X]{y_c}\bullet_K \dd[X]{x_c} \\
-    \dd[X]{x_c}\bullet_K \dd[X]{y_c} & \dd[X]{y_c}\bullet_K \dd[X]{y_c}
-  \end{bmatrix}
-}\d x_c\d y_c
-\]
-\[
-=
-\int_{L_c} \sqrt{
-  \det\left(
-  \begin{bmatrix}
-    \dd[X]{x_c}\\
-    \dd[X]{y_c}
-  \end{bmatrix}
-  \begin{bmatrix}
-    1 & 0 & 0\\
-    0 & 1 & 0\\
-    0 & 0 & K^{-1}
-  \end{bmatrix}
-  \begin{bmatrix}
-    \left(\dd[X]{x_c}\right)^\transpose & \left(\dd[X]{y_c}\right)^\transpose
-  \end{bmatrix}\right)
-}\d x_c\d y_c
-\]
+\begin{multline*}
+  \iint_{L_c} \sqrt{
+    \det
+    \begin{bmatrix}
+      \pp[X]{x_c}\bullet_K \pp[X]{x_c} & \pp[X]{y_c}\bullet_K \pp[X]{x_c} \\
+      \pp[X]{x_c}\bullet_K \pp[X]{y_c} & \pp[X]{y_c}\bullet_K \pp[X]{y_c}
+    \end{bmatrix}
+  }\d x_c\d y_c \\
+  =\iint_{L_c} \sqrt{
+    \det\left(
+      \begin{bmatrix}
+        \leftarrow & \pp[X]{x_c} & \rightarrow \\
+        \leftarrow & \pp[X]{y_c} & \rightarrow
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & K^{-1}
+      \end{bmatrix}
+      \begin{bmatrix}
+        \uparrow & \uparrow \\
+        \pp[X]{x_c} & \pp[X]{y_c} \\
+        \downarrow & \downarrow
+      \end{bmatrix}\right)
+  }\d x_c\d y_c
+\end{multline*}
 
 \begin{problem}
   Explain why
   \[
 \begin{bmatrix}
-    \dd[X]{x_c}\\
-    \dd[X]{y_c}
+    \leftarrow & \pp[X]{x_c} & \rightarrow \\
+    \leftarrow & \pp[X]{y_c} & \rightarrow
   \end{bmatrix}
   \begin{bmatrix}
     1 & 0 & 0\\
@@ -234,7 +222,9 @@ You have already shown that
     0 & 0 & K^{-1}
   \end{bmatrix}
   \begin{bmatrix}
-    \left(\dd[X]{x_c}\right)^\transpose & \left(\dd[X]{y_c}\right)^\transpose
+    \uparrow & \uparrow \\
+    \pp[X]{x_c} & \pp[X]{y_c} \\
+    \downarrow & \downarrow
   \end{bmatrix} =P_c.
   \]
   \begin{hint}
@@ -267,8 +257,8 @@ X(t) =
 Then, 
 \[
  \begin{bmatrix}
-    \dd[X]{x_c}\\
-    \dd[X]{y_c}
+    \pp[X]{x_c}\\
+    \pp[X]{y_c}
   \end{bmatrix}
   \begin{bmatrix}
     1 & 0 & 0\\
@@ -276,7 +266,7 @@ Then,
     0 & 0 & K^{-1}
   \end{bmatrix}
   \begin{bmatrix}
-    \left(\dd[X]{x_c}\right)^\transpose & \left(\dd[X]{y_c}\right)^\transpose
+    \left(\pp[X]{x_c}\right)^\transpose & \left(\pp[X]{y_c}\right)^\transpose
   \end{bmatrix}
   = D_c \cdot 
   \begin{bmatrix}
@@ -291,13 +281,13 @@ Then,
 
 Hence now we see 
 \[
-\int_{L_c} \sqrt{
+\iint_{L_c} \sqrt{
   \det
   \begin{bmatrix}
-    \dd[X]{x_c}\bullet_K \dd[X]{x_c} & \dd[X]{y_c}\bullet_K \dd[X]{x_c} \\
-    \dd[X]{x_c}\bullet_K \dd[X]{y_c} & \dd[X]{y_c}\bullet_K \dd[X]{y_c}
+    \pp[X]{x_c}\bullet_K \pp[X]{x_c} & \pp[X]{y_c}\bullet_K \pp[X]{x_c} \\
+    \pp[X]{x_c}\bullet_K \pp[X]{y_c} & \pp[X]{y_c}\bullet_K \pp[X]{y_c}
   \end{bmatrix}
-}\d x_c\d y_c = \int_{L_c} \sqrt{\det P_c}\d x_c\d y_c
+}\d x_c\d y_c = \iint_{L_c} \sqrt{\det P_c}\d x_c\d y_c
 \]
 \begin{problem}
   Compute $\sqrt{\det P_c}$.
@@ -331,7 +321,7 @@ Hence now we see
 
 At this point we see we are interested in the following integral
 \[
-\int_{L_c} \left(K\left(x_c^2+y_c^2\right)+1\right)^{-3/2} \d x_c\d y_c.
+\iint_{L_c} (K(x_c^2+y_c^2)+1)^{-3/2} \d x_c\d y_c.
 \]
 
 \begin{problem}
@@ -341,7 +331,7 @@ At this point we see we are interested in the following integral
   \end{image}
   convert
   \[
-  \int_{L_c} \left(K\left(x_c^2+y_c^2\right)+1\right)^{-3/2} \d x_c\d y_c.
+  \iint_{L_c} (K(x_c^2+y_c^2)+1)^{-3/2} \d x_c\d y_c.
   \]
   to polar coordinates and compute the integral.
   \begin{hint}
@@ -356,7 +346,7 @@ At this point we see we are interested in the following integral
     Write
     \[
     \int_{L_c}
-    \left(K\left(x_c^2+y_c^2\right)+1\right)^{-3/2} \d x_c\d
+    \left(K(x_c^2+y_c^2)+1\right)^{-3/2} \d x_c\d
     y_c = \int_0^\alpha \int_0^\infty \left(K\cdot r^2+1\right)^{-3/2} r\d r \d \theta.
     \]
     Integrating this from the inside-out we find
@@ -370,27 +360,19 @@ At this point we see we are interested in the following integral
   \end{freeResponse}
 \end{problem}
 
-\begin{problem}
-  Reconcile this computation with what you know about the area of the
-  $\alpha$-lune.
-  
-  \begin{freeResponse}
-  As shown in the previous problem the area of the image is half the area of the $\alpha$-lune, which checks out with this computation. 
-  \end{freeResponse}
-\end{problem}
-
+Hopefully you got the same area that you predicted in the previous problem!
 
 \section{Central projection unifies euclidean, spherical, and hyperbolic geometry}
 
 Under central projection, our new dot product defined by
 \[
-V_c\bullet_c W_c = V_c\cdot P_c\cdot W_c^\transpose
+\mathbf{v}_c \bullet_c \mathbf{w}_c = \mathbf{v}_c^\transpose \cdot P_c \cdot \mathbf{w}_c
 \]
 make sense when $K$ is zero, positive, and negative. Hence this dot
 product makes sense for euclidean, spherical, and hyperbolic
 geometry. Moreover, in central projection, shortest paths on the $K$-surface
 \[
-K\left(x^2 + y^2\right) + z^2 = 1
+K(x^2 + y^2) + z^2 = 1
 \]
 map to lines in the plane $z=1$. However, there is one trade-off:
 Angles are not preserved in central projection. This means that when
@@ -399,17 +381,30 @@ we see in the $(x_c,y_c)$-plane may or may not be the actual angle
 between two vectors. Summarizing, we have:
 
 
-
 \[
-{\renewcommand{\arraystretch}{2.7}
+  {\renewcommand{\arraystretch}{2.7}
   \begin{array}{|c||c|c|c|}\hline
-    & \text{Spherical} (K>0)& \text{Euclidean} (K=0)& \text{Hyperbolic} (K<0)\\\hline\hline
-    \text{Surface in} \ \text{euclidean space} & \hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=R^{2} & \text{DNE}  & \text{DNE} \\\hline
-    \text{Euclidean dot product} & \hat{V}\cdot \hat{W}^\transpose & \hat{V}\cdot \hat{W}^\transpose  & \text{DNE}\\\hline
-     \text{Surface in $K$-warped space}& {1=K\left(  x^{2}+y^{2}\right)  +z^{2}} & 1=K\left(  x^{2}+y^{2}\right)  +z^{2} & 1=K\left(  x^{2}+y^{2}\right)  +z^{2} \\\hline
-     \text{$K$-dot product} & V\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & K^{-1}\end{smallmatrix}\right] W^\transpose &  \text{DNE} & V\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & K^{-1}\end{smallmatrix}\right]W^\transpose\\\hline
-     \text{Central dot product} & \multicolumn{3}{c|}{V_c\cdot P_c\cdot W_c^\transpose = V_c\left[\begin{smallmatrix}\left(Ky_c^2+1\right)\lambda^4 & -Kx_{c}y_{c}\lambda^4\\
-    -Kx_{c}y_{c}\lambda^4 & \left(Kx_c^2+1\right)\lambda^4\end{smallmatrix}\right] W_c^\transpose}\\\hline
+    & \text{Spherical (}K>0) & \text{Euclidean (}K=0) & \text{Hyperbolic (}K<0)\\
+    \hline\hline
+    \text{Surface in euclidean space}
+    & \hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=R^{2} & \text{DNE}  & \text{DNE} \\\hline
+    \text{Euclidean dot product} & \hat{\mathbf v}^\transpose\cdot \hat{\mathbf w}
+                             & \text{DNE}  & \text{DNE}\\\hline
+    \text{Surface in $K$-warped space}
+    & {1=K(x^{2}+y^{2})+z^{2}} & 1=K(x^{2}+y^{2})+z^{2} & 1=K(x^{2}+y^{2})+z^{2}\\\hline
+    K\text{-dot product}
+    & \mathbf v^\transpose \left[\begin{smallmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & K^{-1}
+      \end{smallmatrix}\right] \mathbf w &  \text{DNE}
+    & \mathbf{v}^\transpose \left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & K^{-1}\end{smallmatrix}\right]\mathbf w \\\hline
+    \text{Central dot product} & \multicolumn{3}{c|}{
+        \mathbf{v}_c^\transpose \cdot P_c \cdot \mathbf{w}_c
+        = \mathbf{v}_c^\transpose\left[\begin{smallmatrix}
+            \left(Ky_c^2+1\right)\lambda^4 & -Kx_{c}y_{c}\lambda^4 \\
+            -Kx_{c}y_{c}\lambda^4 & \left(Kx_c^2+1\right)\lambda^4
+          \end{smallmatrix}\right] \mathbf{w}_c}\\\hline
 \end{array}}
 \]
 

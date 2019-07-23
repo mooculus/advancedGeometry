@@ -214,21 +214,21 @@ $\angle BAC$ is positive & $\angle BAC$ is negative\\ \hline
 
 One implicit assumption of two-dimensional neutral geometry is the
 existence of (a group of) rigid motions or congruences. That is, it is
-assumed that given any point $A$ and any vector $V$ emanating from $A$
-and given any second point $B$ in the geometry and any vector $W$
+assumed that given any point $A$ and any vector $\vec v$ emanating from $A$
+and given any second point $B$ in the geometry and any vector $\vec w$
 emanating from $B$, then there is a transformation (thought of as a
-matrix that we will multiply on the right) $M$ such that:
+matrix that we will multiply on the left) $\mathbf{M}$ such that:
 \begin{enumerate}
-\item $A\cdot M=B$.
-\item $V\cdot M$ is a positive scalar multiple of $W$.
-\item For all points $P$ and $Q$ in the geometry, $M$ leaves the
+\item $\mathbf{M}\cdot A=B$.
+\item $\mathbf{M}\cdot \vec v$ is a positive scalar multiple of $\vec w$.
+\item For all points $P$ and $Q$ in the geometry, $\mathbf{M}$ leaves the
   distance between them unchanged:
 \[
-d\left(P\cdot M,  Q\cdot M\right) =d\left( P,Q\right).
+d\left(\mathbf M \cdot P,  \mathbf M \cdot Q\right) =d\left( P,Q\right).
 \]
-\item For any two vectors $U$ and $V$ emanating from $A$, the angle
-  between $U\cdot M$ and $V\cdot M$ is the same as the angle between
-  $U$ and $V$.
+\item For any two vectors $\vec u$ and $\vec v$ emanating from $A$, the angle
+  between $\mathbf M\cdot\vec u$ and $\mathbf M \cdot \vec v$ is the same as the
+  angle between $\vec u$ and $\vec v$.
 \end{enumerate}
 
 
@@ -318,39 +318,36 @@ d\left(P\cdot M,  Q\cdot M\right) =d\left( P,Q\right).
 
 \begin{problem}
 Think back to high school days and write the congruence rules SSS,
-SAS, and ASA. Be very careful with your wording---it had better be
-that triangles can be \textbf{moved onto each other by a rigid motion}
-if and only if they satisfy any one (and hence all) of the three
-properties (SSS, SAS, ASA).
+SAS, and ASA.  Translate them into the language of \textbf{rigid motions}.
 
 \begin{freeResponse}
 Suppose there is a triangle $\triangle ABC$ and another triangle
 $\triangle DEF$. 
 
 \paragraph{SSS}
-If there is a single rigid motion that moves
+If there are rigid motions that move
 \begin{align*}
 \bar{AB} &\mapsto \bar{DE}\\
 \bar{BC} &\mapsto \bar{EF}\\
 \bar{CA} &\mapsto \bar{FD},
 \end{align*}
-then this rigid motion moves $\triangle ABC$ to $\triangle DEF$.
+then there is a single rigid motion that moves $\triangle ABC$ to $\triangle DEF$.
 \paragraph{SAS}
-If there is a single rigid motion that moves
+If there are rigid motions that move
 \begin{align*}
 \bar{AB} &\mapsto \bar{DE}\\
 \angle{ABC} &\mapsto \angle{DEF}\\
 \bar{CA} &\mapsto \bar{FD},
 \end{align*}
-then this rigid motion moves $\triangle ABC$ to $\triangle DEF$.
+then there is a single rigid motion that moves $\triangle ABC$ to $\triangle DEF$.
 \paragraph*{ASA}
-If there is a single rigid motion that moves
+If there are rigid motions that move
 \begin{align*}
 \angle{ABC} &\mapsto \angle{DEF}\\
 \bar{AB} &\mapsto \bar{DE}\\
 \angle{BAC} &\mapsto \angle{EDF},
 \end{align*}
-then this rigid motion moves $\triangle ABC$ to $\triangle DEF$.
+then there is a single rigid motion that moves $\triangle ABC$ to $\triangle DEF$.
 The upshot is that:
 \begin{center}
 \textbf{Congruence theorems are theorems about rigid motions.}
@@ -918,18 +915,17 @@ have completed the proof.
 \label{121} Suppose that there is a triangle $\triangle ABC$ in
 \textbf{NG} for which the sum of the angles in a triangle $\triangle
 ABC$ is $\left( 180+x\right)^\circ$ with $x>0$. Show that there is a
-positive integer $n$ so that, if you repeat the construction in the
-previous problem over and over again $n$-times, a triangle can be
-found with sum of its angles still equal to $\left(180+x\right)^\circ$
+triangle with sum of its angles still equal to $\left(180+x\right)^\circ$
 but with one of its angles having measure less than $x$. [MJG,125-127]
 
 
 \begin{hint}
-Explain how we can construct a triangle where the sum of the interior
-angles is $(180+x)^\circ$ but one of this triangles measures is less than
+Use the previous problem repeatedly to construct a triangle where the sum of the
+interior angles is $(180+x)^\circ$ but one of this triangles measures is less than
 \[
-\frac{\angle CAB}{2^n}.
+\frac{\angle CAB}{2^n},
 \]
+for any value of $n$.
 \end{hint}
 \begin{hint}
 Next, use the fact that for any positive real number $M$,
@@ -1025,7 +1021,22 @@ $\left( n-2\right)\cdot180^\circ$.
 Given any quadrilateral, we can break it into two triangles. 
 \end{hint}
 \begin{hint}
-For the second part, use induction.
+You may use the \textbf{two ears theorem}: For any polygon, even a non-convex
+one, there are always two vertices where you can ``clip off an ear'', as in the
+illustration.
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,3);
+\coordinate (C) at (2,1);
+\coordinate (D) at (3,2);
+\coordinate (E) at (2,0);
+\coordinate (F) at (1,2);
+\draw (A)--(B)--(C)--(D)--(E)--(F)--cycle;
+\draw[thin,dashed] (B)--(F);
+\end{tikzpicture}
+\end{image}
+This fact wasn't written down and proved until 1899!
 \end{hint}
 \begin{freeResponse}
 For the first part, we note that given any quadrilateral, even a
@@ -1172,15 +1183,8 @@ The proof of the third implication in is the same as the proof of the
 second implication--just interchange $A$ and $D$ and interchange $B$
 and $C$.
 
-For the second part, just use pure logic: If the first implication is
-false, then $\angle BAD<\angle ADC$ and either $\left\vert
-AB\right\vert <\left\vert CD\right\vert $ or $\left\vert AB\right\vert
-=\left\vert CD\right\vert $. If $\left\vert AB\right\vert <\left\vert
-CD\right\vert $, then by previous work%
-\[
-\angle BAD>\angle ADC.
-\]
-Contradiction! Etc., etc.
+For the second part, write out the contrapositive of each part and then prove
+that.
 \end{hint}
 \end{problem}
 

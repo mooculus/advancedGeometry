@@ -1,4 +1,4 @@
-\documentclass{ximera}
+\documentclass[newpage,hints,handout]{ximera}
 
 \input{../preamble.tex}
 
@@ -12,11 +12,13 @@ Here we start to develop another model for our geometry.
 
 \section{Stereographic projection coordinates}
 
-Now we will examine the second way to produce coordinates uniformly for spherical, plane, and hyperbolic geometry that will allow us to pass smoothly through the three geometries. Now let's project $K$-geometry,
+Now we will examine the second way to produce coordinates uniformly for
+spherical, plane, and hyperbolic geometry that will allow us to pass smoothly
+through the three geometries. Now let's project $K$-geometry,
 \[
 1=K\left(x^{2}+y^{2}\right)+z^{2} 
 \]
-onto the plane $z=1$ using the `South Pole' $S=(0,0,-1)$ as the center of
+onto the plane $z=1$ using the `south pole' $S=(0,0,-1)$ as the center of
 projection:
 \begin{image}
 \includegraphics[width=5in]{stereoProj.png}
@@ -28,7 +30,8 @@ along the edge of the plane $z=1$:
 \end{image}
 
 \begin{problem}
-  If $K=1$ where does the `equator' map to? What about the `Northern hemisphere?' How about the `Southern hemisphere?'
+  If $K=1$ where does the `equator' map to? What about the `Northern hemisphere?'
+  How about the `Southern hemisphere?'
   \begin{freeResponse}
     The `equator' maps to the circle of radius $2$ centered at the
     origin in the $(x_s,y_s)$ plane.  The `Northern hemisphere' maps
@@ -85,10 +88,8 @@ along the edge of the plane $z=1$:
   \begin{hint}
     Note that
       \[
-      \rho\cdot(x_{s},y_{s},2)=(x,y,z+1) \qquad\text{and}\qquad z = 2\rho-1.
+      \rho\cdot(x_{s},y_{s},2)=(x,y,z+1) \qquad\text{where}\qquad z = 2\rho-1.
       \]
-  \end{hint}
-  \begin{hint}
     Hence if
     \[
     1 = K\left(x^2 + y^2\right) + z^2
@@ -146,19 +147,11 @@ to compute lengths in stereographic projection coordinates that will agree
 with the $K$-dot product, and hence the euclidean dot product.
 
 \begin{problem}
-Suppose we have a curve $X$ in $K$-warped space that is a function of
-a curve $X_s$ in the plane $z=1$ space. So
+Suppose we have a curve $\gamma$ in $K$-warped space which we can decompose as
 \[
-X_s(t) = \left( x_s(t),y_s(t)\right)
-\]
-and
-\[
-X(t) = 
-\begin{cases}
-  x(x_s(t),y_s(t)),\\
-  y(x_s(t),y_s(t)),\\
-  z(x_s(t),y_s(t)).
-\end{cases}
+\xymatrix{
+  t \ar@{|->}[r]^-{\gamma_s} \ar@{|->}@/_1pc/[rr]_{\gamma} & (x_s(t),y_s(t)) \ar@{|->}[r]^-{\left[\begin{smallmatrix}x(x_s,y_s)\\y(x_s,y_s)\\z(x_s,y_s)\end{smallmatrix}\right]} & \gamma(t)=(x(t),y(t),z(t))
+}
 \]
 Use the chain rule to compute
 \[
@@ -168,8 +161,7 @@ in terms of $\dd[x_s]{t}$, $\dd[y_s]{t}$, $\pp[x]{x_s}$,
 $\pp[y]{x_s}$, $\pp[z]{x_s}$, $\pp[x]{y_s}$, $\pp[y]{y_s}$,
 and $\pp[z]{y_s}$.
   \begin{hint}
-  Simply write down the answer from a previous problem with some minor
-  changes.
+  Simply write down the answer from a previous problem with some minor changes.
   \end{hint}
   \begin{freeResponse}
   Write
@@ -184,22 +176,20 @@ and $\pp[z]{y_s}$.
 
 \begin{problem}
   With the same setting as in the previous problem, rewrite the result
-  of your computation in matrix notation to find $D_s$
-  such that
-\[
-\begin{bmatrix}
-\dd[x]{t} & \dd[y]{t} & \dd[z]{t}
-\end{bmatrix}
-=
-\begin{bmatrix}
-\frac{dx_s}{dt} & \frac{dy_s}{dt}
-\end{bmatrix}\cdot D_s
-\]
+  of your computation in matrix notation to find $D_s$ such that
+  \[
+  \begin{bmatrix}
+    dx/dt \\ dy/dt \\ dz/dt
+  \end{bmatrix}
+  =D_s \cdot
+  \begin{bmatrix}
+    dx_s/dt \\ dy_s/dt
+  \end{bmatrix}
+  \]
 in terms of $\pp[x]{x_s}$, $\pp[y]{x_s}$, $\pp[z]{x_s}$,
 $\pp[x]{y_s}$, $\pp[y]{y_s}$, and $\pp[z]{y_s}$.
 \begin{hint}
-  Simply write down the answer from a previous problem with some minor
-  changes.
+  Simply write down the answer from a previous problem with some minor changes.
 \end{hint}
 \begin{freeResponse}
   \[
@@ -426,10 +416,10 @@ With the same setting as above, show that $P_s$ is
 \end{problem}
 
 \begin{definition}
-  Let $V_s$ and $W_s$ be a vectors in $(x_s,y_s)$-coordinates
+  Let $\mathbf{v}_s$ and $\mathbf{w}_s$ be vectors in $(x_s,y_s)$-coordinates
   originating at the same $(x_s,y_s)$-coordinate. Define
   \[
-  V_s \bullet_s W_s = V_s \cdot P_s \cdot W_s^\transpose
+  \mathbf{v}_s \bullet_s \mathbf{w}_s = \mathbf{v}_s^\transpose P_s \mathbf{w}_s
   \]
   where
   \[
@@ -462,7 +452,7 @@ finite surface area.
 
 
 \begin{problem}
-  Where does the Northeren hemisphere of the $R$-sphere map to under stereographic projection?
+  Where does the Northern hemisphere of the $R$-sphere map to under stereographic projection?
   \begin{hint}
     A picture is worth a thousand words!
   \end{hint}
@@ -472,7 +462,7 @@ finite surface area.
 
 
 \begin{problem}
-  Where does the Southeren hemisphere of the $R$-sphere map to under stereographic projection?
+  Where does the Southern hemisphere of the $R$-sphere map to under stereographic projection?
   \begin{hint}
     A picture is worth a thousand words!
   \end{hint}
@@ -482,7 +472,7 @@ finite surface area.
 
 
 \begin{problem}
-  As a point approaches the South Pole of the $R$-sphere where does it
+  As a point approaches the south pole of the $R$-sphere where does it
   move to under stereographic projection?
   \begin{hint}
     Simply transform the relevant coordinate.
@@ -506,50 +496,35 @@ finite surface area.
 \paragraph{When $K$ is negative, the infinite is finite}
 
 
-Notice that, if $K<0$, the equation of $K$-geometry becomes
+Recall that, if $K<0$, the equation of $K$-geometry becomes
 \[
-z^{2}-|K|\left(x^{2}+y^{2}\right)  =1.
+z^{2}-|K|(x^{2}+y^{2})=1.
 \]
-This describes a $K$-geometry forms a $2$-sheeted hyperboloid with the
-$z$-axis as major axis. We will only consider the sheet on which $z$
-is positive as forming the $K$-geometry.  Of critical importance, note
+This describes a $2$-sheeted hyperboloid with the $z$-axis as major axis.  We
+will only consider the sheet on which $z$ is positive as forming the
+$K$-geometry.  Recall:
 
-\begin{center}
-  \textbf{this hyperboloid has infinite surface area.}
-\end{center}
-
-The hyperboloid above is obtained by rotating the hyperbola
-\[
-z^{2}-\left\vert K\right\vert x^{2}= 1
-\]
-in the $(x,z)$-plane around the $z$-axis.
-
+\begin{itemize}
+\item This hyperboloid has infinite surface area.
+\item It is obtained by rotating the hyperbola
+  \[z^{2}-\left\vert K\right\vert x^{2}=1\]
+  in the $(x,z)$-plane around the $z$-axis.
+\end{itemize}
 
 
 \begin{problem}
-  Assume we have a point in $K$-geometry that is shooting off to
-  infinity. What is the maximum distance the image of this point can
-  be from the origin in stereographic projection?
+  Consider points of the form $(x,0,z)$ in $K$-geometry, $K<0$.  As $x$ and $z$
+  shoot off to infinity, what happens to the corresponding stereographic
+  projection coordinate $x_s$?
   \begin{hint}
-    First rewrite $z^{2}-|K|x^{2} =1$ as
-    \[
-    z = \sqrt{1+|K|x^2}
-    \]
-    and explain why this is acceptable.
-  \end{hint}
-  \begin{hint}
-    Explain why computing this limit
-    \[
-    \lim_{x\to \infty} \frac{\sqrt{1+|K|x^2}}{x}
-    \]
-    helps us in this context.
+    As you did with central projection, use similar triangles and the fact that
+    \[z=\sqrt{1+|K|x^2}\]
+    and compute a limit.
   \end{hint}
   \begin{freeResponse}
     Since we are only considering the upper hyperboloid, we need only
     look at the upper hyperbola. Hence we may look at
-     \[
-    z = \sqrt{1+|K|x^2}.
-    \]
+    \[z = \sqrt{1+|K|x^2}.\]
     To compute the maximum distance the image of a point can be from
     the origin, look at 
     \[
@@ -566,17 +541,11 @@ in the $(x,z)$-plane around the $z$-axis.
   \end{freeResponse}
 \end{problem}
 
-
-Rotating the line found above gives the ``asymptotic cone.'' The
-stereographic projection coordinates $(x_{s},y_{s})$ of $K$-geometry
-when $K<0$ only correspond to points in $K$-geometry when
-$(x_{s},y_{s},1)$ lies \textit{inside} the asymptotic cone.
-
 \begin{problem}
-  When $K<0$, find the radius of the disk in the plane $z=1$ whose
-  perimeter is determined by the asymptotic cone. 
+  When $K<0$, what is the set of points $(x_s,y_s)$ in stereographic projection
+  which correspond to points on the hyperboloid?
   \begin{hint}
-    Work with the asymptote(s) you found above.
+    Again, use the previous question and rotational symmetry.
   \end{hint}
   \begin{freeResponse}
     We must find where $z = x\sqrt{|K|}-1$ intersects the line $z=1$. To do this, simply solve
@@ -594,10 +563,10 @@ $(x_{s},y_{s},1)$ lies \textit{inside} the asymptotic cone.
     \end{freeResponse}
 \end{problem}
 
-The $(x_{s},y_{s})$-coordinates are called \dfn{Poincar\'e
-  coordinates} for hyperbolic geometry and the disk of radius
-$2/\sqrt{|K|}$ called the \dfn{Poincar\'e model} for hyperbolic
-geometry in honor of the famous French geometer, Henri Poincar\'e.
+The $(x_{s},y_{s})$-coordinates are called \dfn{Poincar\'e coordinates} for
+hyperbolic geometry and the disk of radius $2/\sqrt{|K|}$ called the
+\dfn{Poincar\'e model} for hyperbolic geometry in honor of the famous French
+geometer, Henri Poincar\'e.
 
 
 

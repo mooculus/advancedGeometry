@@ -1,4 +1,4 @@
-\documentclass{ximera}
+\documentclass[newpage,hints,handout]{ximera}
 
 \input{../preamble.tex}
 
@@ -6,6 +6,9 @@
 \begin{document}
 \begin{abstract}
 In this activity we explore the areas of lunes and triangles on the sphere.
+For now we will assume that the equivalent of ``lines'' on the sphere are
+\emph{great circles}: circles that cut the sphere exactly in half.  Later we will
+see an explanation of why this is the right notion.
 \end{abstract}
 \maketitle
 
@@ -44,16 +47,13 @@ equal to that interior angle of the triangle. The other vertices of each lune
 are vertices of an `opposite' triangle that has the same area as the given one
 since it is just the image of the given one under the rigid motion%
 \[
-\left(  \underline{\hat{x}},\underline{\hat{y}},\underline{\hat{z}}\right)
-=
-\begin{bmatrix}
-  \hat{x} & \hat{y} &\hat{z}
-\end{bmatrix}  
+\begin{bmatrix}-x\\-y\\-z\end{bmatrix}=
 \begin{bmatrix}
 -1 & 0 & 0\\
 0 & -1 & 0\\
 0 & 0 & -1
-\end{bmatrix}.
+\end{bmatrix}
+\begin{bmatrix}x\\y\\z\end{bmatrix}.
 \]
 The three lunes cover the triangle three times. The three opposite
 lunes cover the opposite triangle three times. If you take all six

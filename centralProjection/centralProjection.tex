@@ -1,4 +1,4 @@
-\documentclass{ximera}
+\documentclass[newpage,hints,handout]{ximera}
 
 \input{../preamble.tex}
 
@@ -151,19 +151,11 @@ euclidean dot product.
 
 
 \begin{problem}
-Suppose we have a curve $X$ in $K$-warped space that is a function of
-a curve $X_c$ in the plane $z=1$ space. So
+Suppose we have a curve $\gamma$ in $K$-warped space which we can decompose as
 \[
-X_c(t) = \left( x_c(t),y_c(t)\right)
-\]
-and
-\[
-X(t) = 
-\begin{cases}
-  x(x_c(t),y_c(t)),\\
-  y(x_c(t),y_c(t)),\\
-  z(x_c(t),y_c(t)).
-\end{cases}
+\xymatrix{
+  t \ar@{|->}[r]^-{\gamma_{c}} \ar@{|->}@/_1pc/[rr]_{\gamma} & (x_c(t),y_c(t)) \ar@{|->}[r]^-{\left[\begin{smallmatrix}x(x_c,y_c)\\y(x_c,y_c)\\z(x_c,y_c)\end{smallmatrix}\right]} & \gamma(t)=(x(t),y(t),z(t))
+}
 \]
 Use the chain rule to compute
 \[
@@ -191,32 +183,31 @@ and $\pp[z]{y_c}$.
 
 \begin{problem}
   With the same setting as in the previous problem, rewrite the result
-  of your computation in matrix notation to find $D_c$
-  such that
-\[
-\begin{bmatrix}
-\dd[x]{t} & \dd[y]{t} & \dd[z]{t}
-\end{bmatrix}
-=
-\begin{bmatrix}
-\frac{dx_c}{dt} & \frac{dy_c}{dt}
-\end{bmatrix}\cdot D_c
-\]
-in terms of $\pp[x]{x_c}$, $\pp[y]{x_c}$, $\pp[z]{x_c}$,
-$\pp[x]{y_c}$, $\pp[y]{y_c}$, and $\pp[z]{y_c}$.
-\begin{hint}
-  Simply write down the answer from a previous problem with some minor
-  changes.
-\end{hint}
-\begin{freeResponse}
+  of your computation in matrix notation to find $D_c$ such that
   \[
-  D_c =
   \begin{bmatrix}
-    \pp[x]{x_c} & \pp[y]{x_c} & \pp[z]{x_c} \\
-    \pp[x]{y_c}   & \pp[y]{y_c}   & \pp[z]{y_c}
-  \end{bmatrix}.
+    dx/dt \\ dy/dt \\ dz/dt
+  \end{bmatrix}
+  =D_c \cdot
+  \begin{bmatrix}
+    dx_c/dt \\ dy_c/dt
+  \end{bmatrix}
   \]
-\end{freeResponse}
+  in terms of $\pp[x]{x_c}$, $\pp[y]{x_c}$, $\pp[z]{x_c}$,
+  $\pp[x]{y_c}$, $\pp[y]{y_c}$, and $\pp[z]{y_c}$.
+  \begin{hint}
+    Simply write down the answer from a previous problem with some minor
+    changes.
+  \end{hint}
+  \begin{freeResponse}
+    \[
+    D_c =
+    \begin{bmatrix}
+      \pp[x]{x_c} & \pp[y]{x_c} & \pp[z]{x_c} \\
+      \pp[x]{y_c}   & \pp[y]{y_c}   & \pp[z]{y_c}
+    \end{bmatrix}.
+    \]
+  \end{freeResponse}
 \end{problem}
 
 
@@ -344,10 +335,11 @@ derivatives.
   \begin{hint}
   Work in the following way:
   \begin{enumerate}
-  \item Recall $x = \lambda\cdot x_c$.
-  \item Note that $\pp[x]{x_c} = \lambda + x_c \cdot \pp[\lambda]{x_c}$.
-    \item Express the partial derivative in terms of $\lambda$, $K$, $x_c$,
-      and $y_c$.
+  \item Remember that $\lambda$ is itself a function of $x_c$ and $y_c$, so its
+    partial derivatives also matter.  Use the product rule:
+    $$\pp[x]{x_c} = \lambda + x_c \cdot \pp[\lambda]{x_c}.$$
+  \item Express the partial derivative in terms of $\lambda$, $K$, $x_c$, and
+    $y_c$.
   \end{enumerate}
 \end{hint}
   \begin{freeResponse}
@@ -440,10 +432,10 @@ With the same setting as above, show that $P_c$ is
 
 
 \begin{definition}
-  Let $V_c$ and $W_c$ be vectors in $(x_c,y_c)$-coordinates
+  Let $\mathbf{v}_c$ and $\mathbf{w}_c$ be vectors in $(x_c,y_c)$-coordinates
   originating at the same $(x_c,y_c)$-coordinate. Define
   \[
-  V_c \bullet_c W_c = V_c \cdot P_c \cdot W_c^\transpose
+  \mathbf{v}_c \bullet_c \mathbf{w}_c = \mathbf{v}_c^\transpose P_c \mathbf{w}_c
   \]
   where
   \[
@@ -492,14 +484,14 @@ finite surface area.
 \paragraph{When $K$ is negative, the infinite is finite}
 
 
-Notice that, if $K<0$, the equation of $K$-geometry becomes
+Notice that, if $K<0$, the equation for the $K$-plane becomes
 \[
-z^{2}-|K|\left(x^{2}+y^{2}\right)  =1.
+z^{2}-|K|(x^{2}+y^2)  =1.
 \]
-This describes a $K$-geometry forms a $2$-sheeted hyperboloid with the
-$z$-axis as major axis. We will only consider the sheet on which $z$
-is positive as forming the $K$-geometry. In plain English, this means
-we are doing geometry on this hyperboloid:
+This describes a $2$-sheeted hyperboloid with the $z$-axis as major axis.  We
+will only consider the sheet on which $z$ is positive as forming the
+$K$-geometry. In plain English, this means we are doing geometry on this
+hyperboloid:
 \begin{image}
 \includegraphics[width=3in]{UpperHyperboloid.png}
 \end{image}
@@ -520,8 +512,11 @@ in the $(x,z)$-plane around the $z$-axis.
 
 
 \begin{problem}
-  Assume we have a point, $(x, y, z)$, in $K$-geometry that is shooting off to
-  infinity. Determine the line that connects the origin to the point $(x, y, z)$.  \begin{hint}
+  Consider points of the form $(x,0,z)$ in $K$-geometry.  As $x$ and $z$ shoot
+  off to infinity, what happens to the corresponding central projection
+  coordinate $x_c$?  Relate this to the asymptote of the hyperbola as
+  $x \to \infty$.
+  \begin{hint}
     First rewrite $z^{2}-|K|x^{2} =1$ as
     \[
     z = \sqrt{1+|K|x^2}
@@ -557,17 +552,13 @@ in the $(x,z)$-plane around the $z$-axis.
   \end{freeResponse}
 \end{problem}
 
-
-Rotating the line found above gives the ``asymptotic cone.'' The
-central projection coordinates $(x_{c},y_{c})$ of $K$-geometry when
-$K<0$ only correspond to points in $K$-geometry when $(x_{c},y_{c},1)$
-lies \textit{inside} the asymptotic cone.
-
 \begin{problem}
-  When $K<0$, find the radius of the disk in the plane $z=1$ whose
-  perimeter is determined by the asymptotic cone. 
+  When $K<0$, what is the set of points $(x_c,y_c)$ in central projection which
+  correspond to points on the hyperboloid?
   \begin{hint}
-    Work with the asymptote(s) you found above.
+    Use the answer to the previous question and the fact that both the
+    hyperboloid and the process of central projection are symmetric with respect
+    to rotation around the $z$-axis.
   \end{hint}
   \begin{freeResponse}
     We must find where $z = x\sqrt{|K|}$ intersects the line $z=1$. To do this, simply solve
@@ -582,7 +573,7 @@ lies \textit{inside} the asymptotic cone.
   Explain why one might say that central projection makes the
   ``infinite'' seem ``finite.''
     \begin{freeResponse}
-    As a point in K-geometry goes to infinity, its distance from the origin goes to infinity. However, the image of the point in central projection is bounded by the circle of radius $\frac{1}{\sqrt{K}}$. Therefore, the distance from the point in central projection to the origin appears to be less than $\frac{1}{\sqrt{K}}$.
+    As a point in $K$-geometry goes to infinity, its $K$-distance from the origin goes to infinity. However, the image of the point in central projection is bounded by the circle of radius $\frac{1}{\sqrt{K}}$. Therefore, the distance from the point in central projection to the origin appears to be less than $\frac{1}{\sqrt{K}}$.
     \end{freeResponse}
 \end{problem}
 

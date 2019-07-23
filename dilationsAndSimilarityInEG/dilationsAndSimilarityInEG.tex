@@ -1,4 +1,4 @@
-\documentclass{ximera}
+\documentclass[newpage,hints,handout]{ximera}
 
 \input{../preamble.tex}
 
@@ -205,7 +205,7 @@ magnification factor $r$ multiplies all areas by a factor of $r^{2}$.
 \begin{hint}
 Recall that if $R$ is a region in the plane, 
 \[
-\int_{D(R)} f(x,y)  \d xdy = \int_{R} f(D(x,y)) \left|\det J_D(x,y)\right| \d xdy,
+\iint_{D(R)} f(x,y)  \d xdy = \iint_{R} f(D(x,y)) \left|\det J_D(x,y)\right| \d xdy,
 \]
 where
 \[
@@ -340,7 +340,7 @@ two triangles satisfy our definition of similar triangles.
 For the second part, you have to start from the supposition that
 corresponding angles of the two triangles are equal, then use a
 dilation with $r=|A'B'|/|AB|$ and ASA to show that the dilation of one
-triangle that is congruent to the other.
+triangle is congruent to the other.
 \end{hint}
 \begin{freeResponse}
 For the first part, suppose that we have two similar triangles. This
@@ -377,8 +377,7 @@ angles are equal. Hence the triangles are similar.
 \begin{problem}
 Show that two triangles are similar if corresponding sides are perpendicular.
 \begin{hint}
-Consider the lines that each angle lies within. Find similar triangles
-in this figure.
+Just think about one angle at a time.
 \end{hint}
 \begin{freeResponse}
 It is sufficient to show that given two angles with perpendicular

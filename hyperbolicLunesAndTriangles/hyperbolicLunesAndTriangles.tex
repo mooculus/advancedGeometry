@@ -1,4 +1,4 @@
-\documentclass{ximera}
+\documentclass[newpage,hints,handout]{ximera}
 
 \input{../preamble.tex}
 
@@ -21,35 +21,38 @@ R^2(\alpha+\beta+\gamma - \pi).
   the area of a triangle on the $R$-sphere.
 \end{problem}
 
-We will attempt to use analogous reasoning to deduce the formula for
-the area of a triangle with angles $\alpha$, $\beta$, and $\gamma$ in
-hyperbolic geometry.
+We will use similar reasoning to deduce the formula for the area of a triangle
+with angles $\alpha$, $\beta$, and $\gamma$ in hyperbolic geometry.
 
 \section{Hyperbolic lunes}
 
-Consider the following diagram on the Klein disk, central projection
+Consider the following diagram on the Klein disk, that is the central projection
 of hyperbolic geometry:
 \begin{image}
   \includegraphics[width=3in]{diagramOfHyperbolicLune.png}
 \end{image}
 
+Notice that in both the Klein model and the Poincar\'e model, every line hits
+``the circle at infinity'' at two specific points.  This means we can talk about
+shapes with ``vertices at infinity''.
+
 \begin{definition}
-  We will define an \dfn{$\boldsymbol\alpha$-lune} in hyperbolic
-  geometry to be a triangle with an angle of measure $\alpha$ where
-  vertices opposite of $\alpha$ are at infinity.
+  We define an \dfn{$\boldsymbol\alpha$-lune} in hyperbolic geometry to be a
+  triangle with an angle of measure $\alpha$ where vertices opposite of $\alpha$
+  are at infinity.
 \end{definition}
 
 We have seen that
 \begin{align*}
-  \int_{L_c} \sqrt{
+  \iint_{L_c} \sqrt{
   \det
   \begin{bmatrix}
-    \dd[X]{x_c}\bullet_K \dd[X]{x_c} & \dd[X]{y_c}\bullet_K \dd[X]{x_c} \\
-    \dd[X]{x_c}\bullet_K \dd[X]{y_c} & \dd[X]{y_c}\bullet_K \dd[X]{y_c}
+    \pp[X]{x_c}\bullet_K \pp[X]{x_c} & \pp[X]{y_c}\bullet_K \pp[X]{x_c} \\
+    \pp[X]{x_c}\bullet_K \pp[X]{y_c} & \pp[X]{y_c}\bullet_K \pp[X]{y_c}
   \end{bmatrix}
   }\d x_c\d y_c &=
-  \int_{L_c} \sqrt{\det P_c}\d x_c\d y_c\\
-  &=\int_{L_c} \left(K\left(x_c^2+y_c^2\right)+1\right)^{-3/2} \d x_c\d y_c.
+  \iint_{L_c} \sqrt{\det P_c}\d x_c\d y_c\\
+  &=\iint_{L_c} \left(K\left(x_c^2+y_c^2\right)+1\right)^{-3/2} \d x_c\d y_c.
 \end{align*}
 
 
@@ -61,7 +64,7 @@ case, the general case when $K<0$ will fall easily.
 \begin{problem}
   Convert
   \[
-  \int_{L_c} \left(-\left(x_c^2+y_c^2\right)+1\right)^{-3/2} \d x_c\d y_c
+  \iint_{L_c} \left(-\left(x_c^2+y_c^2\right)+1\right)^{-3/2} \d x_c\d y_c
   \]
   to polar coordinates and compute the integral.
   \begin{hint}
@@ -138,11 +141,11 @@ case, the general case when $K<0$ will fall easily.
 
 Again assuming $K=-1$, we will use our knowledge that the hyperbolic
 $\alpha$-lune has area $\pi-\alpha$ to compute the area of an
-\textit{ideal triangle} in hyperbolic geometry. Note, now we are
-working under stereographic projection in the Poincar\'e disk.
+\textit{ideal triangle} in hyperbolic geometry. Note, now we are working under
+stereographic projection in the Poincar\'e disk (because it's more fun to draw.)
 
 \begin{definition}
-  An \dfn{ideal triangle} is a triangle in hyperbolic geometry with
+  An \dfn{ideal triangle} is a triangle in hyperbolic geometry with all of
   its vertices at infinity.
 \end{definition}
 
@@ -156,8 +159,8 @@ working under stereographic projection in the Poincar\'e disk.
     Above we see a comic-strip of Poincar\'e disks.
   \end{hint}
   \begin{hint}
-    Be sure to explain why your computation is general, meaning that
-    it will work for any given ideal triangle.
+    Make sure your computation is general.  That is, start with an arbitrary
+    ideal triangle and then fill in the rest of the diagram.
   \end{hint}
 \end{problem}
 
@@ -181,9 +184,9 @@ hyperbolic geometry.
   \begin{hint}
     Make your own drawings inspired by those above.
   \end{hint}
-    \begin{hint}
-    Be sure to explain why your computation is general, meaning that
-    it will work for any given triangle.
+  \begin{hint}
+    Make sure your computation is general: start with an arbitrary triangle and
+    explain how you can fill in the rest of the diagram.
   \end{hint}
 \end{problem}
 

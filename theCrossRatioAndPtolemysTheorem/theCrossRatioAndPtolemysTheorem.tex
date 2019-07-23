@@ -1,4 +1,4 @@
-\documentclass{ximera}
+\documentclass[newpage,hints,handout]{ximera}
 
 \input{../preamble.tex}
 
@@ -107,7 +107,8 @@ circle to the other side of $C$, it is still true that%
 {\sin\left(  \angle AOB\right)  }{\sin\left(  \angle
 COB\right).  }%
 \]
-Carefully draw the diagram for this situation.
+Carefully draw the diagram for this situation.  You do not need to give the
+proof again.
 %% \begin{freeResponse}
 %% By the Law of Sines we have that
 %% \[
@@ -261,7 +262,7 @@ we define%
 \frac{
 \left|CD\right|
 }{
-\left|AD\right|
+\left|DA\right|
 }%
 \]
 which we call the \textbf{cross-ratio of the ordered sequence of four
@@ -274,7 +275,7 @@ $A',B',C',$ and $D'$ on a line, we define%
 \frac{
 \left|C'D'\right|
 }{
-\left|A'D'\right|
+\left|D'A'\right|
 }
 \]
 which we call the \textbf{cross-ratio of the ordered sequence of the
@@ -437,50 +438,44 @@ of the products of pairs of opposite sides.
 We need to check that%
 \[
 \left\vert AC\right\vert \cdot\left\vert BD\right\vert
-=\left\vert AD\right\vert \cdot\left\vert BC\right\vert
-+\left\vert AB\right\vert \cdot\left\vert CD\right\vert
+=\left\vert AB\right\vert \cdot\left\vert CD\right\vert
++\left\vert BC\right\vert \cdot\left\vert DA\right\vert
 \]
 or, what is the same, we need to check that%
 \[
 \frac{\left\vert AC\right\vert \cdot\left\vert
-BD\right\vert }{\left\vert AD\right\vert \cdot\left\vert
-BC\right\vert }=1+\frac{\left\vert AB\right\vert \text{\textperiodcentered
-}\left\vert CD\right\vert }{\left\vert AD\right\vert \text{\textperiodcentered
-}\left\vert BC\right\vert }.
+BD\right\vert }{\left\vert DA\right\vert \cdot\left\vert
+BC\right\vert }=\frac{\left\vert AB\right\vert \text{\textperiodcentered
+}\left\vert CD\right\vert }{\left\vert DA\right\vert \text{\textperiodcentered
+}\left\vert BC\right\vert }+1.
 \]
 That is, we need to check that
 \[
-\left(  A:C:B:D\right)  =1+\left(  A:B:C:D\right)  .
+\left(  A:C:B:D\right)  =\left(  A:B:C:D\right)+1  .
 \]
 But by a previous problem this is the same as checking that%
 \[
-\left(  A':C':B':D'\right)  =1+\left(
-A':B':C':D'\right)
+\left(  A':C':B':D'\right)  =\left(A':B':C':D'\right)+1
 \]
 for the projection of the four points onto a line from a point $O$ on the
 circle. But that is the same thing as showing that
 \[
-\frac{\left\vert A'C'\right\vert \text{\textperiodcentered
-}\left\vert B'D'\right\vert }{\left\vert A'D^{\prime
-}\right\vert \cdot\left\vert B'C^{\prime
-}\right\vert }=1+\frac{\left\vert A'B'\right\vert
+\frac{\left\vert A'C'\right\vert \cdot \left\vert B'D'\right\vert }{\left\vert D'A'\right\vert \cdot\left\vert B'C'\right\vert }=\frac{\left\vert A'B'\right\vert
 \cdot\left\vert C'D'\right\vert
-}{\left\vert A'D'\right\vert \cdot \left\vert B'C'\right\vert }%
+}{\left\vert D'A'\right\vert \cdot \left\vert B'C'\right\vert }+1%
 \]
 which is the same thing as showing that%
-\[
-\left\vert A'C'\right\vert \text{\textperiodcentered
-}\left\vert B'D'\right\vert =\left\vert A'D^{\prime
-}\right\vert \cdot\left\vert B'C^{\prime
-}\right\vert +\left\vert A'B'\right\vert
-\cdot\left\vert C'D'\right\vert .
-\]
+\begin{equation} \label{ptolemy}\tag{$*$}
+\left\vert A'C'\right\vert \cdot \left\vert B'D'\right\vert =
+\left\vert D'A'\right\vert \cdot \left\vert B'C'\right\vert 
++\left\vert A'B'\right\vert \cdot \left\vert C'D'\right\vert .
+\end{equation}
+In order to finish the proof, we need to show \eqref{ptolemy}.
 \end{proof}
 
 
 \begin{problem}
-Check the last equality in the proof of Ptolemy's Theorem using high
-school-algebra.
+Check the equality \eqref{ptolemy} using high-school algebra.
 \begin{freeResponse}
 \end{freeResponse}
 \end{problem}
@@ -578,13 +573,13 @@ where $\bar{BC}$ is a unit diameter for the circle.
 \end{hint}
 \end{problem}
 
-Both of the above formulas were very important to Ptolemy. You see,
-Ptolemy wrote a book called the \textit{Almagest}. The
-\textit{Almagest} was a book that contained all the current
-information about the stars, including information on how a potential
-reader could reproduce their observations and conclusions. A key
-technical hurtle that needed to be resolved was the computation of
-sine and cosine. The two formulas above, were the key in this endeavor.
+Both of the above formulas were crucial to Ptolemy.  Ptolemy's magnum opus was
+the \textit{Almagest}, a book that contained all the known information about the
+stars and their motion, including information on how a potential
+reader could reproduce its observations and conclusions. A key
+technical hurdle that needed to be resolved was the computation of
+sines and cosines of lots of different angles. The two formulas above were the
+key to this endeavor.
 
 
 %% Given any three non-collinear points in the Euclidean plane, there is

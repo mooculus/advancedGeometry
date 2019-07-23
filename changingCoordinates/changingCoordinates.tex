@@ -1,4 +1,4 @@
-\documentclass{ximera}
+\documentclass[newpage,hints,handout]{ximera}
 
 \input{../preamble.tex}
 
@@ -13,16 +13,18 @@ Now we will change coordinates.
 \section{Bringing the North Pole of the $R$-sphere to $\left(
 0,0,1\right)  $}
 
-We are now ready to change coordinates on euclidean $3$-space so that we can fill up that space  with plane geometry and all the spherical and hyperbolic  geometries.
-We have reserved the notation $\left(  x,y,z\right)  $ for these new
-coordinates that we will put on the `same' objects we have been studying in
-euclidean $\left(  \hat{x},\hat{y},\hat{z}\right)  $-coordinates. These new
-coordinates will be chosen to keep the north and south poles from going to
-infinity as the radius $R$ of a sphere increases without bound. In these now $\left(  x,y,z\right)  $-coordinates the sphere of radius $R$ will be given by the equation
+We are now ready to change coordinates on euclidean $3$-space so that we can fill
+up that space  with plane geometry and all the spherical and hyperbolic
+geometries.  We have reserved the notation $(x,y,z)$ for these new coordinates
+that we will put on the `same' objects we have been studying in euclidean
+$(\hat{x},\hat{y},\hat{z})$-coordinates. These new coordinates will be chosen to
+keep the north and south poles from going to infinity as the radius $R$ of a
+sphere increases without bound. In these now $(x,y,z)$-coordinates the sphere of
+radius $R$ will be given by the equation
 \[
-K\left(x^{2}+y^{2}\right)+z^{2}=1
+K(x^{2}+y^{2})+z^{2}=1
 \]
-where $K=1/R$. Notice that the above equation has solutions even when $K$ is negative. It is on those solution sets that hyperbolic geometries will live. So this change of
+where $K=1/R^2$. Notice that the above equation has solutions even when $K$ is negative. It is on those solution sets that hyperbolic geometries will live. So this change of
 viewpoint will eventually let us go hyperbolic or, in the language of Buzz
 Lightyear, will let $R$ go `to infinity and beyond.' The
 idea will be like the change from rectangular to polar coordinates for the
@@ -32,7 +34,7 @@ We are now ready to introduce this slightly different set of coordinates for
 $\mathbb{R}^{3}$, three-dimensional euclidean space. To understand a bit better why we are doing this,
 suppose we are standing at the North Pole%
 \[
-N=\left(0,0,R\right)
+N=(0,0,R)
 \]
 of the sphere%
 \[
@@ -82,8 +84,8 @@ $R$-sphere.
 \end{definition}
 
 \begin{problem}
-  What happens to the surface when $K$ goes to $0$? Does this make
-  sense in terms of curvature?
+  What happens to the surface when $K$ goes to $0$?  How does this relate to the
+  colloquial sense of ``curvature''?
   
 \begin{freeResponse}
 When K goes to zero the surface goes to $z^{2} =1$.  A large sphere is not as curvy as a smaller sphere. As the radius increases, the surface gets flatter so the curvature gets smaller and vice versa.  When the curvature goes to zero, the surface becomes two copies of the plane which makes sense because a plane has zero curvature.  
@@ -144,19 +146,19 @@ but we want lengths and angles to be the usual euclidean ones in $\left(
 \hat{x},\hat{y},\hat{z}\right)  $-coordinates.
 
 \begin{problem}
-  Suppose we have a curve $\hat X$ in euclidean space that is a
-  function of a curve $X$ in $K$-warped space. So
+  Suppose we have a curve $\hat\gamma$ in euclidean space and we think of it as a
+  composition of a curve $\gamma$ in $K$-warped space with a transformation.  In
+  other words, we're looking at a diagram
   \[
-  X(t) = (x(t),y(t),z(t))
-  \]
-  and
-  \[
-  \hat{X}(t)=
-  \begin{cases}
-    \hat x(x(t), y(t), z(t)),\\
-    \hat y(x(t), y(t), z(t)),\\
-    \hat z(x(t), y(t), z(t)).\\
-  \end{cases}
+  \xymatrix{
+    t \ar@{|->}[r]^-{\gamma} \ar@{|->}@/_1pc/[rr]_{\hat \gamma}
+    & (x(t),y(t),z(t)) \ar@{|->}[r]^-{\left[\begin{smallmatrix}
+          \hat x(x,y,z)\\
+          \hat y(x,y,z)\\
+          \hat z(x,y,z)
+        \end{smallmatrix}\right]}
+    & \hat\gamma(t)=(\hat x(t),\hat y(t),\hat z(t))
+  }
   \]
   Use the chain rule to compute
   \[
@@ -193,12 +195,11 @@ but we want lengths and angles to be the usual euclidean ones in $\left(
   of your computation in matrix notation to find $D_K$ such that
 \[
 \begin{bmatrix}
-\frac{d\hat{x}}{dt} & \frac{d\hat{y}}{dt} & \frac{d\hat{z}}{dt}%
+d\hat{x}/dt \\ d\hat{y}/dt \\ d\hat{z}/dt%
 \end{bmatrix}
-=
-\begin{bmatrix}
-\frac{dx}{dt} & \frac{dy}{dt} & \frac{dz}{dt}%
-\end{bmatrix}\cdot D_K
+=D_K \cdot \begin{bmatrix}
+dx/dt \\ dy/dt \\ dz/dt
+\end{bmatrix}
 \]
 in terms of $\pp[\hat x]{x}$, $\pp[\hat y]{x}$, $\pp[\hat z]{x}$,
 $\pp[\hat x]{y}$, $\pp[\hat y]{y}$, $\pp[\hat z]{y}$, $\pp[\hat x]{z}$,
@@ -233,14 +234,15 @@ D_K =
 
 
 \begin{problem}
-  Use the previous problems and the relationship between euclidean and $\left(x,y,z\right)$-coordinates to show that
+  Use the previous problems and the relationship between euclidean and
+  $(x,y,z)$-coordinates to show that
   \[
-  \left[\dd[\hat{X}]{t}\right] = \left[ \dd[X]{t}\right] \cdot
+  \left[\dd[\hat{\gamma}]{t}\right] =
   \begin{bmatrix}
     1 & 0 & 0\\
     0 & 1 & 0\\
     0 & 0 & R
-  \end{bmatrix}.
+  \end{bmatrix}\cdot \left[ \dd[\gamma]{t}\right].
   \]
   
 \begin{freeResponse}
@@ -261,11 +263,11 @@ D_K =
   \]
   Therefore, 
   \[
- \left[\dd[\hat{X}]{t}\right] 
+ \left[\dd[\hat{\gamma}]{t}\right] 
 = \begin{bmatrix}
 \frac{d\hat{x}}{dt} & \frac{d\hat{y}}{dt} & \frac{d\hat{z}}{dt}%
 \end{bmatrix}
-= \left[ \dd[X]{t}\right] \cdot
+= \left[ \dd[\gamma]{t}\right] \cdot
   \begin{bmatrix}
     1 & 0 & 0\\
     0 & 1 & 0\\
@@ -277,65 +279,68 @@ D_K =
 \end{problem}
 
 This last computation shows that if
-\begin{align*}
-\hat{V}_{1}  &  =\left(  \hat{a}_{1},\hat{b}_{1},\hat{c}_{1}\right) \\
-\hat{V}_{2}  &  =\left(  \hat{a}_{2},\hat{b}_{2},\hat{c}_{2}\right)
-\end{align*}
+\[
+\hat{\mathbf v}_{1}=\begin{pmatrix}\hat{a}_{1} \\ \hat{b}_{1} \\ \hat{c}_{1}\end{pmatrix}
+\qquad\text{and}\qquad
+\hat{\mathbf v}_{2} =\begin{pmatrix}\hat{a}_{2} \\ \hat{b}_{2} \\ \hat{c}_{2}\end{pmatrix}
+\]
 are vectors tangent to a curve in $(\hat{x},\hat{y},\hat{z})$-coordinates and
-\begin{align*}
-V_{1}  &  =\left(  a_{1},b_{1},c_{1}\right) \\
-V_{2}  &  =\left(  a_{2},b_{2},c_{2}\right)
-\end{align*}
+\[
+\mathbf{v}_{1}=\begin{pmatrix}a_{1} \\ b_{1} \\ c_{1}\end{pmatrix}
+\qquad\text{and}\qquad
+\mathbf{v}_{2} =\begin{pmatrix}a_{2} \\ b_{2} \\ c_{2}\end{pmatrix}
+\]
 are their transformations into $(x,y,z)$-coordinates, then
-\begin{align*}
-\hat{V}_{1}  &  =V_{1}
+\[
+\hat{\mathbf v}_{1}=
 \begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & R
-\end{bmatrix}
- \\
-\hat{V}_{2}  &  =V_{2} 
+\end{bmatrix}\mathbf{v}_{1}
+\qquad\text{and}\qquad
+\hat{\mathbf v}_{2}=
 \begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & R
-\end{bmatrix}
-\end{align*}
+\end{bmatrix}\mathbf{v}_{2} 
+\]
 and%
 \begin{align*}
-\hat{V}_{1}\bullet\hat{V}_{2} &= \hat{V}_{1}\cdot \hat{V}_{2}^\transpose\\
-&=V_{1}
+\hat{\mathbf v}_{1}\bullet\hat{\mathbf v}_{2}
+=\hat{\mathbf v}_{1}^\transpose \cdot \hat{\mathbf v}_{2} 
+&= 
+\left(\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{bmatrix}\mathbf{v}_{1}\right)^\transpose
+\left(
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & R
+\end{bmatrix}\mathbf{v}_{2}\right)\\
+&=\mathbf{v}_{1}^\transpose
 \begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & R
 \end{bmatrix}
-\left(V_{2}
-\begin{bmatrix}
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & R
-\end{bmatrix}\right)^\transpose\\
-&=V_{1}
 \begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & R
 \end{bmatrix}
-\begin{bmatrix}
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & R
-\end{bmatrix}
-V_{2}^\transpose\\
-&=V_{1}
+\mathbf{v}_{2}\\
+&=\mathbf{v}_{1}^\transpose
 \begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
 \end{bmatrix}
-V_{2}^\transpose.
+\mathbf{v}_{2}.
 \end{align*}
 Hence:
 \begin{center}
@@ -346,13 +351,13 @@ We incorporate that fact into the following definition.
 \begin{definition}
 The \textbf{$\boldsymbol{K}$-dot-product} of vectors:%
 \begin{align*}
-V_{1}\bullet_{K}V_{2}  &=V_{1} 
+\mathbf{v}_{1}\bullet_{K}\mathbf{v}_{2}  &=\mathbf{v}_{1}^\transpose
 \begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
 \end{bmatrix}
-V_{2}^\transpose\\
+\mathbf{v}_{2}\\
 &=
 \begin{bmatrix}
 a_{1} & b_{1} & c_{1}%
@@ -376,17 +381,17 @@ c_{2}%
 \begin{problem}
   Show that if a vector is given to us in $(x,y,z)$-coordinates as%
 \[
-V =\left(a,b,c\right)
+\mathbf{v}=(a,b,c)^\transpose,
 \]
 then the length of its image in euclidean space is given by
 \[
-|V|_K=\sqrt{V\bullet_K V}.
+|\mathbf{v}|_K=\sqrt{\mathbf{v} \bullet_K \mathbf{v}}.
 \]
 
 \begin{freeResponse}
-$\hat{V} = \left(a,b,Rc \right)$ is the image of $V$ in euclidean space. Then,
+$\hat{\mathbf v} = \left(a,b,Rc \right)$ is the image of $V$ in euclidean space. Then,
 \begin{align*}
-|V|_K = |\hat{V}| = \sqrt{\hat{V}\bullet\hat{V}} 
+|V|_K = |\hat{\mathbf v}| = \sqrt{\hat{\mathbf v}\bullet\hat{\mathbf v}} 
 &= \sqrt{a^{2} + b^{2} + R^{2}c^{2}} \\
 &= \begin{bmatrix}
 a & b & c%
@@ -407,13 +412,12 @@ c%
 \end{problem}
 
 \begin{problem}
-  Consider all vectors in $K$-warped space with their tips on the
-  surface
+  Consider all vectors in $K$-warped space with their tips on the surface
   \[
   1=K(x^2+y^2)+z^2
   \]
-  and their tails at the origin. What can you say about the length of
-  these vectors? What does this tell you about the surface for all values of $K$, except $K=0$.
+  and their tails at the origin. What can you say about the length of these
+  vectors? What does this tell you about the surface for all values of $K>0$?
   
 \begin{freeResponse}
 Let $V = \left(x,y,z\right)$ be a vector with its tail at the origin and tip on the surface above. Now write the equation of the surface as,
@@ -450,21 +454,22 @@ Then $|V|_{K} = \sqrt{V \bullet_{K} V} = \frac{1}{\sqrt{K}} = |R|$. This tells u
 \subsection{Computing angles}
 
 \begin{problem}
-  Show that when $K>0$ if two vectors are given to us in $(x,y,z)$-coordinates as%
-\begin{align*}
-V_{1}  &=\left(  a_{1},b_{1},c_{1}\right), \\
-V_{2}  &=\left(  a_{2},b_{2},c_{2}\right),
-\end{align*}
-then the angle between their image in euclidean space is given by
-\[
-\theta = \arccos\left(\frac{V_1\bullet_K V_2}{\left| V_1\right|_K \cdot\left|V_2\right|_K }\right).
-\]
+  Show that when $K>0$ if two vectors are given to us in $(x,y,z)$-coordinates as
+  \[
+  \mathbf{v}_{1}=\begin{pmatrix}a_{1} \\ b_{1} \\ c_{1}\end{pmatrix}
+  \qquad\text{and}\qquad
+  \mathbf{v}_{2} =\begin{pmatrix}a_{2} \\ b_{2} \\ c_{2}\end{pmatrix}
+  \]
+  then the angle between their image in euclidean space is given by
+  \[
+  \theta = \arccos\left(\frac{\mathbf{v}_1\bullet_K \mathbf{v}_2}{|\mathbf{v}_1|_K \cdot|\mathbf{v}_2|_K }\right).
+  \]
 
 %angleBetweenVectorsKDotProduct Geogebra%
 
 \begin{freeResponse} Using the previous problems,
 \[
-\arccos\left(\frac{V_1\bullet_K V_2}{\left| V_1\right|_K \cdot\left|V_2\right|_K }\right) = \arccos\left(\frac{\hat{V}_{1}\bullet \hat{V}_{2}}{\left| \hat{V}_{1}\right| \cdot\left|\hat{V}_{2}\right| }\right) = \theta.
+\arccos\left(\frac{\mathbf{v}_1\bullet_K \mathbf{v}_2}{\left| \mathbf{v}_1\right|_K \cdot\left|\mathbf{v}_2\right|_K }\right) = \arccos\left(\frac{\hat{\mathbf v}_{1}\bullet \hat{\mathbf v}_{2}}{\left| \hat{\mathbf v}_{1}\right| \cdot\left|\hat{\mathbf v}_{2}\right| }\right) = \theta.
 \]
 \end{freeResponse}
 \end{problem}
@@ -478,33 +483,34 @@ then the angle between their image in euclidean space is given by
 %% Show that, if we have any two vectors in euclidean three-space that
   %% are tangent to the $R$-sphere at some point on it, but the
   
-Show that if two vectors are given to us in $(x,y,z)$-coordinates as%
-\begin{align*}
-V_{1}  &  =\left(  a_{1},b_{1},c_{1}\right), \\
-V_{2}  &  =\left(  a_{2},b_{2},c_{2}\right),
-\end{align*}
-then the area of the parallelogram spanned by the image of those two vectors in euclidean
-space is%
-\[
-\sqrt{\det
-\begin{bmatrix}
-V_{1}\bullet_{K}V_{1} & V_{2}\bullet_{K}V_{1}\\
-V_{1}\bullet_{K}V_{2} & V_{2}\bullet_{K}V_{2}%
-\end{bmatrix}}
-=\sqrt{\det\left( 
-\begin{bmatrix}
-V_{1} \\
-V_{2}
-\end{bmatrix}
-\begin{bmatrix}
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & K^{-1}%
-\end{bmatrix}
-\begin{bmatrix}
-V_{1}^\transpose & V_{2}^\transpose%
-\end{bmatrix}
-\right) }.
+  Show that if two vectors are given to us in $(x,y,z)$-coordinates as
+  \[
+  \mathbf{v}_{1}=\begin{pmatrix}a_{1} \\ b_{1} \\ c_{1}\end{pmatrix}
+  \qquad\text{and}\qquad
+  \mathbf{v}_{2} =\begin{pmatrix}a_{2} \\ b_{2} \\ c_{2}\end{pmatrix}
+  \]
+  then the area of the parallelogram spanned by the image of those two vectors in
+  euclidean space is%
+  \[
+  \sqrt{\det
+    \begin{bmatrix}
+      \mathbf{v}_{1}\bullet_{K}\mathbf{v}_{1} & \mathbf{v}_{2}\bullet_{K}\mathbf{v}_{1}\\
+      \mathbf{v}_{1}\bullet_{K}\mathbf{v}_{2} & \mathbf{v}_{2}\bullet_{K}\mathbf{v}_{2}%
+    \end{bmatrix}}
+  =\sqrt{\det\left( 
+      \begin{bmatrix}
+        \mathbf{v}_{1} \\
+        \mathbf{v}_{2}
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & K^{-1}%
+      \end{bmatrix}
+      \begin{bmatrix}
+        \mathbf{v}_{1}^\transpose & \mathbf{v}_{2}^\transpose%
+      \end{bmatrix}
+    \right) }.
 \]
 
 %kCrossProductParallelogram Geogebra%
@@ -513,23 +519,23 @@ V_{1}^\transpose & V_{2}^\transpose%
 \[
 \sqrt{\det
 \begin{bmatrix}
-V_{1}\bullet_{K}V_{1} & V_{2}\bullet_{K}V_{1}\\
-V_{1}\bullet_{K}V_{2} & V_{2}\bullet_{K}V_{2}%
+\mathbf{v}_{1}\bullet_{K}\mathbf{v}_{1} & \mathbf{v}_{2}\bullet_{K}\mathbf{v}_{1}\\
+\mathbf{v}_{1}\bullet_{K}\mathbf{v}_{2} & \mathbf{v}_{2}\bullet_{K}\mathbf{v}_{2}%
 \end{bmatrix}}
 =
 \sqrt{\det
 \begin{bmatrix}
-\hat{V}_{1}\bullet \hat{V}_{1} & \hat{V}_{2}\bullet \hat{V}_{1}\\
-\hat{V}_{1}\bullet \hat{V}_{2} & \hat{V}_{2}\bullet \hat{V}_{2}%
+\hat{\mathbf v}_{1}\bullet \hat{\mathbf v}_{1} & \hat{\mathbf v}_{2}\bullet \hat{\mathbf v}_{1}\\
+\hat{\mathbf v}_{1}\bullet \hat{\mathbf v}_{2} & \hat{\mathbf v}_{2}\bullet \hat{\mathbf v}_{2}%
 \end{bmatrix}}.
 \]
-Which was previously shown to be the area of the parallelogram spanned by the image of $V_1$ and $V_2$ in euclidean space. To show the equality write,
+Which was previously shown to be the area of the parallelogram spanned by the image of $\mathbf{v}_1$ and $\mathbf{v}_2$ in euclidean space. To show the equality write,
 
 \begin{align*}
 \sqrt{\det
 \begin{bmatrix}
-V_{1}\bullet_{K}V_{1} & V_{2}\bullet_{K}V_{1}\\
-V_{1}\bullet_{K}V_{2} & V_{2}\bullet_{K}V_{2}%
+\mathbf{v}_{1}\bullet_{K}\mathbf{v}_{1} & \mathbf{v}_{2}\bullet_{K}\mathbf{v}_{1}\\
+\mathbf{v}_{1}\bullet_{K}\mathbf{v}_{2} & \mathbf{v}_{2}\bullet_{K}\mathbf{v}_{2}%
 \end{bmatrix}}
 &=\sqrt{\det
 \begin{bmatrix}
@@ -553,8 +559,8 @@ c_{1} &  c_{2}
 \end{bmatrix}} \\
 &= \sqrt{\det\left( 
 \begin{bmatrix}
-V_{1} \\
-V_{2}
+\mathbf{v}_{1} \\
+\mathbf{v}_{2}
 \end{bmatrix}
 \begin{bmatrix}
 1 & 0 & 0\\
@@ -562,7 +568,7 @@ V_{2}
 0 & 0 & K^{-1}%
 \end{bmatrix}
 \begin{bmatrix}
-V_{1}^\transpose & V_{2}^\transpose%
+\mathbf{v}_{1}^\transpose & \mathbf{v}_{2}^\transpose%
 \end{bmatrix}
 \right) }
 \end{align*}
@@ -579,7 +585,7 @@ geometry, lengths, areas, angles, everything. And the set
 continues to make sense even when $K$ is
 negative. And as we will see later on, the definition of the $K$-dot
 product also makes sense for tangent vectors to that set when $K$ is
-negative. The geometry we get, when the constant $K$ is chosen to be
+negative. The geometry we get when the constant $K$ is chosen to be
 negative is called a hyperbolic geometry. The geometry we get, when
 the constant $K$ is just chosen to be non-zero is called a
 non-euclidean geometry.  In fact all the non-euclidean $2$-dimensional
@@ -587,13 +593,13 @@ geometries are either spherical or hyperbolic.
 
 %% \textit{Coming attractions:} In hyperbolic geometry, when $K^{-1}$ in
 %% \[
-%% V_{1}\bullet_{K}V_{2}  =V_{1} 
+%% \mathbf{v}_{1}\bullet_{K}\mathbf{v}_{2}  =\mathbf{v}_{1} 
 %% \begin{bmatrix}
 %% 1 & 0 & 0\\
 %% 0 & 1 & 0\\
 %% 0 & 0 & K^{-1}%
 %% \end{bmatrix}
-%% V_{2}^\transpose
+%% \mathbf{v}_{2}^\transpose
 %% \]
 %% becomes negative, so that the third coordinate of velocity, that is,
 %% the $c$-direction, actually \textit{contracts} lengths. It was the
@@ -617,13 +623,13 @@ K\left(x^{2}+y^{2}\right)+z^{2}=1,
 \]
  generates the hyperbolic plane when $K<0$, the euclidean plane when $K=0$, and the sphere of radius $R$ when $K> 0$. Using a computation involving the euclidean dot product we defined the $K$-dot-product in $(x, y, z)$-coordinates such that,
 \[
-V_{1}\bullet_{K}V_{2}  = V_{1} 
+\mathbf{v}_{1}\bullet_{K}\mathbf{v}_{2}  = \mathbf{v}_{1} 
 \begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
 \end{bmatrix}
-V_{2}^\transpose.
+\mathbf{v}_{2}^\transpose.
 \]
 Lastly we calculated formulas for length, area, and the angle between vectors in $(x,y,z)$-coordinates in terms of the $K$-dot-product.
 \end{freeResponse}

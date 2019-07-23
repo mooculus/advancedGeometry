@@ -1,4 +1,4 @@
-\documentclass{ximera}
+\documentclass[newpage,hints,handout]{ximera}
 
 \input{../preamble.tex}
 
@@ -27,8 +27,8 @@ circle.
 
 
 \begin{problem}
-Consider a unit circle with $n$ inscribed triangles (with one vertex
-at the center of the circle), here we have shown the $n$th triangle:
+Consider a unit circle with $n$ equal inscribed triangles meeting at the center.
+Here we have shown the $n$th triangle:
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
 \draw [domain=-20:65] plot ({4*cos(\x)}, {4*sin(\x)});
@@ -230,8 +230,9 @@ Let
 \end{itemize}
 Explain why the area of the collar is%
 \[
-\pi \cdot \left( r_{b}+r_{t}\right)\cdot s =2\pi\cdot r_{a}\cdot s
+\pi \cdot \left( r_{b}+r_{t}\right)\cdot s.
 \]
+(This can also be written as $2\pi\cdot r_{a}\cdot s$.)
 \end{problem}
 
 
@@ -395,8 +396,8 @@ this space.
 
 
 \begin{problem}
-Show that Cavalieri's Principle is true for the pyramid using several
-variable calculus.
+Show that Cavalieri's Principle is true for the pyramid using
+multivariable calculus.
 
 \begin{hint}
 Put the base of the pyramid $P$ so that its vertices are $\left(
@@ -404,43 +405,31 @@ Put the base of the pyramid $P$ so that its vertices are $\left(
 r,r\right) $ in $3$-dimensional euclidean space. Consider the
 transformation%
 \[
-\left(  \underline{\hat{x}},\underline{\hat{y}},\underline{\hat{z}}\right)
-=
-\begin{bmatrix}  \hat{x} & \hat{y} & \hat{z}\end{bmatrix}
+T(x,y,z)=
 \begin{bmatrix}
-1 & 0 & 0\\
-0 & 1 & 0\\
-a & b & 1
+1 & 0 & a\\
+0 & 1 & b\\
+0 & 0 & 1
 \end{bmatrix}
+\begin{bmatrix} x \\ y \\ z\end{bmatrix}
 \]
-now use calculus.
-\end{hint}
-
-\begin{hint}
-Recall that if $P$ is a region in $3$-space, 
-\[
-\int_{\underline{P}} f(\hat{x},\hat{y},\hat{z})  \d \hat{x}d\hat{y}d\hat{z} = 
-\int_{P} f(\underline{\hat{x}},\underline{\hat{y}},\underline{\hat{z}})) \left|\det J(\underline{\hat{x}},\underline{\hat{y}},\underline{\hat{z}})\right| \d \hat{x}d\hat{y}d\hat{z},
-\]
+and use the 3-dimensional change of variables formula,
+$$\iiint_{T(P)} f(x,y,z)dxdydz=\iiint_P f(T(x,y,z))\lvert\det DT(x,y,z)\rvert dxdydz,$$
 where
-\[
-J(\underline{\hat{x}},\underline{\hat{y}},\underline{\hat{z}}) =
-{\renewcommand\arraystretch{2}
-\begin{bmatrix}
-\pp[\underline{\hat{x}}]{\hat{x}} & \pp[\underline{\hat{y}}]{\hat{x}} & \pp[\underline{\hat{z}}]{\hat{x}} \\
-\pp[\underline{\hat{x}}]{\hat{y}} & \pp[\underline{\hat{y}}]{\hat{y}} & \pp[\underline{\hat{z}}]{\hat{y}} \\
-\pp[\underline{\hat{x}}]{\hat{z}} & \pp[\underline{\hat{y}}]{\hat{z}} & \pp[\underline{\hat{z}}]{\hat{z}} 
-\end{bmatrix}}.
-\]
+$$DT(x,y,z)=\begin{bmatrix}
+\frac{\partial T}{\partial x} & \frac{\partial T}{\partial y} & \frac{\partial T}{\partial z}
+\end{bmatrix}.$$
+(Each partial derivative is itself a vector since $T(x,y,z)$ has three
+components.)
 \end{hint}
 
 
 
 \end{problem}
 
-\section{Magnification principle}
+\section{The magnification principle}
 
-\textit{Magnification principle:} If an object in euclidean $n$-space is
+\textbf{The magnification principle:} If an object in Euclidean $n$-space is
 magnified by factors of $r_{1},\ldots,r_{n}$, its $n$-dimensional
 measure is multiplied by $r_{1}\cdots r_{n}$.
 
@@ -453,24 +442,20 @@ for any pyramid with rectangular base of area $B$ and vertical altitude $h$.
 \end{problem}
 
 \begin{problem}
-Prove the magnification principle using several variable calculus.
+Prove the magnification principle using multivariable calculus.
 
 \begin{hint}
 Consider the transformation%
 \[
-\left(  \underline{\hat{x}_{1}},\dots,\underline{\hat{x}_{n}}\right)
-=
+J(\vec x)=
 \begin{bmatrix}
-\hat{x}_{1} & \dots & \hat{x}_{n}
-\end{bmatrix}  
-\begin{bmatrix}
-r_{1} & 0   & 0 & \dots & 0 & 0\\
-0     & r_2 & 0 & \dots & 0 & 0\\
-\hdotsfor{6}\\
-0     & 0   & 0 & \dots & 0 & r_{n}%
-\end{bmatrix}
+r_{1} & 0   & \dots & 0\\
+0     & r_2 & \dots & 0\\
+\vdots &\vdots &\ddots & \vdots \\
+0     & 0   & \dots & r_{n}%
+\end{bmatrix}\vec x.
 \]
-and use calculus.
+and use the change of variables formula.
 \end{hint}
 \end{problem}
 

@@ -1,4 +1,4 @@
-\documentclass{ximera}
+\documentclass[newpage,hints,handout]{ximera}
 
 \input{../preamble.tex}
 
@@ -46,8 +46,7 @@ where $0\le \sigma< \infty$ and $0\le \tau<2\pi$.
 
 
 \begin{problem}
-Show that these hyperbolic coordinates do actually parametrize the
-$K$-geometry.
+Show that these hyperbolic coordinates do actually parametrize $K$-geometry.
 \begin{hint}
   Remember, $K$ is negative.
 \end{hint}
@@ -61,8 +60,7 @@ $K$-geometry.
   This is an exercise in ``double-containment.'' To show the one
   direction, show
 \[
-K\left(x(\sigma,\tau)^{2}+y(\sigma,\tau)^{2}\right)+z(\sigma,\tau)^{2}
-= 1
+K\left(x(\sigma,\tau)^{2}+y(\sigma,\tau)^{2}\right)+z(\sigma,\tau)^{2}=1
 \]
 for all $(\sigma,\tau)$. To show the other direction, appeal to the
 diagram above.
@@ -102,15 +100,11 @@ paths in these coordinates.
 
 
 \begin{problem}
-Suppose we have a curve $X$ in $K$-warped space that is a function of
-$\sigma(t)$ and $\tau(t)$. So
+Suppose we have a curve $\gamma$ in $K$-warped space which we can decompose as
 \[
-X(t) =
-\begin{cases}
-  x(\sigma(t),\tau(t)),\\
-  y(\sigma(t),\tau(t)),\\
-  z(\sigma(t),\tau(t)).\\
-\end{cases}
+\xymatrix{
+  t \ar@{|->}[r]^-{\gamma_{\text{sph}}} \ar@{|->}@/_1pc/[rr]_{\gamma} & (\sigma(t),\tau(t)) \ar@{|->}[r]^-{\left[\begin{smallmatrix}x(\sigma,\tau)\\y(\sigma,\tau)\\z(\sigma,\tau)\end{smallmatrix}\right]} & \gamma(t)=(x(t),y(t),z(t))
+}
 \]
 Use the chain rule to compute
 \[
@@ -140,12 +134,12 @@ and $\pp[z]{\tau}$.
   that
 \[
 \begin{bmatrix}
-\dd[x]{t} & \dd[y]{t} & \dd[z]{t}
+dx/dt\\ dy/dt \\ dz/dt
 \end{bmatrix}
-=
+= D_{\mathrm{hyp}} \cdot
 \begin{bmatrix}
-\frac{d\sigma}{dt} & \frac{d\tau}{dt}
-\end{bmatrix}\cdot D_{\mathrm{hyp}}
+d\sigma/dt \\ d\tau/dt
+\end{bmatrix}
 \]
 in terms of $\pp[x]{\sigma}$, $\pp[y]{\sigma}$, $\pp[z]{\sigma}$,
 $\pp[x]{\tau}$, $\pp[y]{\tau}$, and $\pp[z]{\tau}$.
@@ -262,11 +256,11 @@ $\pp[x]{\tau}$, $\pp[y]{\tau}$, and $\pp[z]{\tau}$.
 
 
 \begin{definition}
-  Let $V_\mathrm{hyp}$ and $W_\mathrm{hyp}$ be a vectors in
+  Let $\mathbf{v}_\mathrm{hyp}$ and $\mathbf{w}_\mathrm{hyp}$ be a vectors in
   $(\sigma,\tau)$-coordinates originating at the same
   $(\sigma,\tau)$-coordinate. Define
   \[
-  V_\mathrm{hyp} \bullet_\mathrm{hyp} W_\mathrm{hyp} = V_\mathrm{hyp} \cdot P_\mathrm{hyp} \cdot W_\mathrm{hyp}^\transpose
+  \mathbf{v}_\mathrm{hyp} \bullet_\mathrm{hyp} \mathbf{w}_\mathrm{hyp} = \mathbf{v}_\mathrm{hyp} \cdot P_\mathrm{hyp} \cdot \mathbf{w}_\mathrm{hyp}^\transpose
   \]
   where
   \[
@@ -282,45 +276,26 @@ $\pp[x]{\tau}$, $\pp[y]{\tau}$, and $\pp[z]{\tau}$.
 
 
 
-Now notice that you can write a path on the $K$-surface by giving a
-path $\left( \sigma(t),\tau(t)\right)$ in the
-$(\sigma,\tau)$-plane. In fact, you can use $\sigma$ as the parameter,
-and just write
+Now notice that you can write a path on the $K$-surface by giving a path
+$\left( \sigma(t),\tau(t)\right)$ in the $(\sigma,\tau)$-plane.  To write a path
+that starts at the North Pole, just write%
 \[
-\left(\sigma,\tau(\sigma)\right)
+\left(\sigma(t),\tau(t)\right), \qquad 0\leq t \leq e
 \]
-where $\tau$ is a function of $\sigma$. To write a path that starts at
-the North Pole, just write
-\[
-\left(\sigma,\tau(\sigma)\right), \qquad 0\leq\sigma\leq\varepsilon
-\]
-and demand that
-\[
-\tau(0) =0.
-\]
-If you want the path to end on the plane $y=\hat{y}=0$, demand
-additionally that
-\[
-\tau(\varepsilon) =0.
-\]
+and demand that $\sigma(0)=\tau(0) =0$.  If you want the path to end on the plane
+$y=\hat{y}=0$, demand additionally that $\tau(e)=0.$
 
 
  Now given a path on the $K$-surface
  \[
- \left(\sigma,\tau(\sigma)\right),\qquad0\leq\sigma \leq\varepsilon
+ \left(\sigma(t),\tau(t)\right),\qquad 0 \leq t \leq e
  \]
- with
- \[
- \tau\left(  0\right)  =0.
- \]
- and%
- \[
- \tau\left(  \varepsilon\right)  =0
- \]
- its length is given by the formula%
-\[
-L=\int_{0}^{\varepsilon} \sqrt{\left(1,\dd[\tau]{\sigma}\right)\bullet_\mathrm{hyp} \left(1,\dd[\tau]{\sigma}\right)}\d\sigma.
-\]
+ satisfying $\sigma(0)=\tau(0)=0$ and $\tau(e)=0$, its length is given by the
+ formula%
+ \begin{equation} \label{length}\tag{$*$}
+   L=\int_{0}^e \sqrt{\left(\frac{d\sigma}{dt},\frac{d\tau}{dt}\right)
+     \bullet_\mathrm{hyp} \left(\frac{d\sigma}{dt},\frac{d\tau}{dt}\right)}dt.
+ \end{equation}
 
 \begin{problem}
   Prove that the shortest path on the $K$-surface from the North Pole
@@ -330,15 +305,11 @@ L=\int_{0}^{\varepsilon} \sqrt{\left(1,\dd[\tau]{\sigma}\right)\bullet_\mathrm{h
   \]
   to a point
   \[
-  (x,y,z)=\left(|K|^{-1/2}\cdot \sinh \varepsilon,0,\cosh \varepsilon\right)
+  (x,y,z)=\left(|K|^{-1/2}\sinh e,0,\cosh e\right)
   \]
   is the path lying in the plane $y=0$.
   \begin{hint}
-    Note that the following expression is always positive:
-    \[
-    1+\sinh^{2}\sigma\cdot \left(\frac{d\tau }{d\sigma}\right)^{2}.
-    \]
-    When is it minimal?
+    Use the same steps you did in the sphere case.
   \end{hint}
 
   \begin{freeResponse}
@@ -395,7 +366,7 @@ L=\int_{0}^{\varepsilon} \sqrt{\left(1,\dd[\tau]{\sigma}\right)\bullet_\mathrm{h
 Just as we proved in spherical geometry that the shortest path is the
 path cut out by
 \[
-K\left(  x^{2}+y^{2}\right)  +z^{2}=1
+K(x^{2}+y^{2})+z^{2}=1
 \]
 and the plane containing the origin and the two points in question, we
 will see that a completely analogous result is true in hyperbolic
@@ -408,9 +379,9 @@ motions to add to our collection.
   \[
   N_\psi=
   \begin{bmatrix}
-    \cosh\psi & 0 & |K|^{1/2}\cdot\sinh\psi\\
+    \cosh\psi & 0 & |K|^{-1/2}\cdot\sinh\psi\\
     0 & 1 & 0\\
-    |K|^{-1/2}\cdot\sinh\psi & 0 & \cosh\psi
+    |K|^{1/2}\cdot\sinh\psi & 0 & \cosh\psi
   \end{bmatrix}
   \]
   is a $K$-rigid motion.
@@ -478,13 +449,16 @@ motions to add to our collection.
   \[
   N_\psi=
   \begin{bmatrix}
-    \cosh\psi & 0 & |K|^{1/2}\cdot\sinh\psi\\
+    \cosh\psi & 0 & |K|^{-1/2}\cdot\sinh\psi\\
     0 & 1 & 0\\
-    |K|^{-1/2}\cdot\sinh\psi & 0 & \cosh\psi
+    |K|^{1/2}\cdot\sinh\psi & 0 & \cosh\psi
   \end{bmatrix}.
   \]
   Can you describe geometrically what this mapping is doing to the
   points in $K$-warped space?
+  \begin{hint}
+    First look at the image of the point $(0,0,1)$.
+  \end{hint}
   \begin{freeResponse}
     This rigid motion ``rotates'' along the $K$-surface around the $y$-axis:
     \begin{image}
@@ -511,22 +485,21 @@ and the plane containing $(0,0,0)$, $X_{1}$, and $X_{2}$.
   \[
   M_\theta=
   \begin{bmatrix}
-    \cos\theta & \sin\theta & 0\\
-    -\sin\theta & \cos\theta & 0\\
+    \cos\theta & -\sin\theta & 0\\
+    \sin\theta & \cos\theta & 0\\
     0 & 0 & 1
   \end{bmatrix}
   \qquad\text{and}\qquad
   N_\psi=
   \begin{bmatrix}
-    \cosh\psi & 0 & |K|^{1/2}\cdot\sinh\psi\\
+    \cosh\psi & 0 & |K|^{-1/2}\cdot\sinh\psi\\
     0 & 1 & 0\\
-    |K|^{-1/2}\cdot\sinh\psi & 0 & \cosh\psi
+    |K|^{1/2}\cdot\sinh\psi & 0 & \cosh\psi
   \end{bmatrix}.
   \]
   \begin{hint}
-    $M_\theta$ is a $K$-rigid motion that rotates around the $z$-axis
-    and $N_\psi$ is a $K$-rigid motion that ``rotates'' along the
-    $K$-surface around the $y$-axis.
+    $M_\theta$ is a $K$-rigid motion that rotates around the $z$-axis and $N_\psi$
+    is a $K$-rigid motion that ``slides'' the $K$-surface past the $y$-axis.
   \end{hint}
   \begin{hint}
     You should apply \textit{two} $K$-rigid motions of the form
@@ -583,18 +556,19 @@ geometry.
   Given a line in hyperbolic geometry lying entire in the plane
   $y=0$,
   \begin{align*}
-    x(\varepsilon) &= |K|^{-1/2}\cdot\sinh\varepsilon,\\
-    y(\varepsilon) &= 0,\\
-    z(\varepsilon) &= \cosh(\varepsilon),
+    x(t) &= |K|^{-1/2}\sinh t,\\
+    y(t) &= 0,\\
+    z(t) &= \cosh(t),
   \end{align*}
-  show that its length is exactly $|K|^{-1/2}\cdot \varepsilon$.
+  show that the length of the segment on the interval $0 \leq t \leq e$ is
+  exactly $|K|^{-1/2}e$.
   \begin{hint}
     Use a previous problem.
   \end{hint}
   \begin{freeResponse}
     By a previous problem the length of this line is given by
     \[
-    L=\int_{0}^{\varepsilon} 1 \d\sigma = |K|^{-1/2}\cdot\varepsilon.
+    L=\int_{0}^{\varepsilon} 1 \d\sigma = |K|^{-1/2}e.
     \]
   \end{freeResponse}
 \end{problem}
@@ -607,22 +581,23 @@ geometry.
   say $X_A$ and $X_B$, the length of the hyperbolic line connecting them
   is given by
   \[
-  |K|^{-1/2}\cdot \varepsilon = |K|^{-1/2} \cdot \arccosh\left(\frac{X_A\bullet_K X_B}{|X_A|_K\cdot |X_B|_K}\right).
+  |K|^{-1/2}\cdot \varepsilon = |K|^{-1/2} \cdot \mathrm{arcosh}
+  \left(\frac{X_A\bullet_K X_B}{|X_A|_K\cdot |X_B|_K}\right).
   \]
   by using the $K$-rigid motions
   \[
    M_\theta=
   \begin{bmatrix}
-    \cos\theta & \sin\theta & 0\\
-    -\sin\theta & \cos\theta & 0\\
+    \cos\theta & -\sin\theta & 0\\
+    \sin\theta & \cos\theta & 0\\
     0 & 0 & 1
   \end{bmatrix}
   \qquad\text{and}\qquad
  N_\psi=
   \begin{bmatrix}
-    \cosh\psi & 0 & |K|^{1/2}\cdot\sinh\psi\\
+    \cosh\psi & 0 & |K|^{-1/2}\cdot\sinh\psi\\
     0 & 1 & 0\\
-    |K|^{-1/2}\cdot\sinh\psi & 0 & \cos\psi
+    |K|^{1/2}\cdot\sinh\psi & 0 & \cos\psi
   \end{bmatrix}.
   \]
   \begin{freeResponse}
@@ -670,15 +645,15 @@ Hence the length of side $b$ is $|K|^{-1/2}\cdot\alpha$. Using a rigid motion of
 \[
 M_\theta=
 \begin{bmatrix}
-  \cos\theta & \sin\theta & 0\\
-  -\sin\theta & \cos\theta & 0\\
+  \cos\theta & -\sin\theta & 0\\
+  \sin\theta & \cos\theta & 0\\
   0 & 0 & 1
 \end{bmatrix}
 \]
 when $\theta = \pi/2$ we see that the length of side $a$ is $|K|^{-1/2}\cdot
 \beta$. Set
 \[
-\gamma = \arccosh\left(\frac{X_A\bullet_K X_B}{|X_A|_K\cdot |X_B|_K}\right).
+\gamma = \mathrm{arcosh}\left(\frac{X_A\bullet_K X_B}{|X_A|_K\cdot |X_B|_K}\right).
 \]
 Since we are working on the $K$-surface,
 \begin{align*}
@@ -706,7 +681,7 @@ Since we are working on the $K$-surface,
   \]
   to the conclusion of the theorem
   \[
-  \cosh\left(|K|^{1/2}\cdot c\right)=\cosh\left(|K|^{1/2} \cdot a\right)\cosh\left(|K|^{1/2}\cdot b\right).
+  \cosh(|K|^{1/2}\cdot c)=\cosh(|K|^{1/2} \cdot a)\cosh(|K|^{1/2}\cdot b).
   \]
   \begin{freeResponse}
     As we have seen
@@ -732,7 +707,7 @@ Since we are working on the $K$-surface,
 
 
 \begin{problem}
-  Use the Taylor series expansion of $\cos(x)$ centered around $x=0$,
+  Use the Taylor series expansion of $\cosh(x)$ centered around $x=0$,
   \[
   \cosh(x) = 1 + \frac{x^2}{2!} + \frac{x^4}{4!} + \frac{x^6}{6!} + \cdots
   \]

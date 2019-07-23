@@ -1,4 +1,4 @@
-\documentclass{ximera}
+\documentclass[newpage,hints,handout]{ximera}
 
 \input{../preamble.tex}
 
@@ -15,33 +15,22 @@ Consider the following mapping of euclidean space to itself:%
 \[
 \begin{bmatrix}
 \underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
-\end{bmatrix}
-=
-\begin{bmatrix} \hat{x} & \hat{y} & \hat{z}%
-\end{bmatrix}
-\cdot\hat{M}
+\end{bmatrix}^\transpose
+=\hat M \begin{bmatrix} \hat{x} & \hat{y} & \hat{z}\end{bmatrix}^\transpose,
 \]
 where $\hat{M}$ is an invertible $3\times3$ matrix. Since the matrix
 is invertible, this mapping is one-to-one and onto.
 
+\textbf{Notation}: In this section, points and vectors will be arranged
+vertically.
+
 \begin{definition}
-  A mapping of euclidean space to itself given by
+  Such a mapping is called a \dfn{rigid motion} if the distance between any two
+  points in euclidean space is left unchanged by the mapping, that is, for
+  any two points $\hat{X}_{1}$ and $\hat{X}_{2}$ in euclidean space,%
   \[
-\begin{bmatrix}
-\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
-\end{bmatrix}
-=
-\begin{bmatrix} \hat{x} & \hat{y} & \hat{z}%
-\end{bmatrix}
-\cdot\hat{M}
+  d(\hat{M}\hat{X}_{1},\hat M\hat{X}_{2})=d(\hat{X}_{1},\hat{X}_{2}).
   \]
-  is called a \dfn{rigid motion} if the distance between any two
-points in euclidean space is left unchanged by the mapping, that is, for
-any two points, $\hat{X}_{1}$ and $\hat{X}_{2}$ in euclidean space%
-\[
-d\left( \hat{X}_{1}  \cdot\hat{M},\hat{X}_{2}
-\cdot\hat{M}\right)  =d\left(  \hat{X}_{1},\hat{X}_{2}\right).
-\]
 \end{definition}
 
 It turns out that there is a special class of matrices that give rise
@@ -50,7 +39,7 @@ to rigid motions.
 \begin{definition}
   A matrix $\hat{M}$ satisfying
   \[
-  \hat{M}\cdot\hat{M}^\transpose=I=\begin{bmatrix}
+  \hat{M}^\transpose\cdot\hat{M}=I=\begin{bmatrix}
   1 & 0 & 0\\
   0 & 1 & 0\\
   0 & 0 & 1
@@ -63,53 +52,47 @@ to rigid motions.
   Prove that a matrix $\hat{M}$ defines a rigid motion (a congruence)
   via
   \[
-\begin{bmatrix}
-\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
-\end{bmatrix}
-=
-\begin{bmatrix} \hat{x} & \hat{y} & \hat{z}%
-\end{bmatrix}
-\cdot\hat{M}
+  \begin{bmatrix}
+    \underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
+  \end{bmatrix}^\transpose
+  =\hat M \begin{bmatrix} \hat{x} & \hat{y} & \hat{z}\end{bmatrix}^\transpose
   \]
   if and only if it is orthogonal.
 
   \begin{hint}
     Note that the square of the distance between $\hat{X}_{1}$ and
-    $\hat{X}_{2}$ is just the dot-product of the vector%
+    $\hat{X}_{2}$ is the dot product of the vector%
     \[
-    \hat{V}=\hat{X}_{2}-\hat{X}_{1}%
+    \hat{\mathbf v}=\hat{X}_{2}-\hat{X}_{1}%
     \]
-    with itself. 
+    with itself.  Also recall the identity $(AB)^\transpose=B^\transpose A^\transpose$.
   \end{hint}
   \begin{hint}
     If $\hat{M}$ is orthogonal, write
     \[
-    \left(  \hat{V}  \cdot\hat{M} \right) \bullet\left(
-    \hat{V}  \cdot\hat{M}\right)
+    (\hat M\hat{\mathbf v}) \bullet (\hat M\hat{\mathbf v})
     \]
-    and deduce that this equals $\hat{V}\bullet\hat{V}$. 
+    and deduce that this equals $\hat{\mathbf v}\bullet\hat{\mathbf v}$. 
   \end{hint}
   \begin{hint}
-  Now suppose that $\hat{M}$ is a rigid motion. Explain why this means that:
-  \[
-  \left(  \hat{V}  \cdot\hat{M} \right) \bullet\left(
-  \hat{V}  \cdot\hat{M}\right)  =\hat{V}\bullet\hat{V}
-  \]
-  Now rewrite as:
-  \[
-  \hat{V}\cdot\hat{V}^\transpose= \left(  \hat{V}  \cdot\hat{M} \right) \cdot\left(
-    \hat{V}  \cdot\hat{M}\right)^\transpose 
-  \]
-  \end{hint}
-  \begin{hint} Set
+    Now suppose that $\hat{M}$ defines a rigid motion. Explain why this means
+    that
     \[
-    \hat{V} =
-    \begin{bmatrix}
-      a & b & c
-    \end{bmatrix}
+    (\hat{M}\hat{\mathbf v}) \bullet (\hat M\hat{\mathbf v})=
+    \hat{\mathbf v} \bullet \hat{\mathbf v}
     \]
-    and
+    for every $\hat{\mathbf v}$.  Now rewrite as:
     \[
+    \hat{\mathbf v}^\transpose \cdot\hat{\mathbf v}
+    =(\hat{M}\hat{\mathbf v})^\transpose \cdot (\hat M\hat{\mathbf v}).
+    \]
+    Write
+    \[
+    \hat{\mathbf v} =
+    \begin{bmatrix}
+      a \\ b \\ c
+    \end{bmatrix}
+    \qquad \text{and} \qquad
     \hat{M} =
     \begin{bmatrix}
       m_{11} & m_{12} & m_{13}\\
@@ -119,10 +102,10 @@ to rigid motions.
     \]
     and view the equation 
     \[
-    \hat{V}\cdot\hat{V}^\transpose= \left(  \hat{V}  \cdot\hat{M} \right) \cdot\left(
-    \hat{V}  \cdot\hat{M}\right)^\transpose 
+    \hat{\mathbf v}^\transpose \cdot\hat{\mathbf v}
+    =(\hat{M}\hat{\mathbf v})^\transpose \bullet (\hat M\hat{\mathbf v})
     \]
-    as an equation of polynomials in the variables $a$, $b$, and $c$. 
+    as a polynomial equation in the variables $a$, $b$, and $c$. 
   \end{hint}
   \begin{hint}
     Polynomials are equal if and only if their coefficients are equal. 
@@ -135,23 +118,23 @@ For the first direction we assume that $\hat{M}$ is orthogonal and we want to sh
    d\left( \hat{X}_{1}  \cdot\hat{M},\hat{X}_{2}
    \cdot\hat{M}\right)  =d\left(  \hat{X}_{1},\hat{X}_{2}\right).
 \]
-Let $ \hat{V}=\hat{X}_{2}-\hat{X}_{1}$.
+Let $ \hat{\mathbf v}=\hat{X}_{2}-\hat{X}_{1}$.
 
 \begin{align*}
    d\left( \hat{X}_{1}  \cdot\hat{M},\hat{X}_{2}
    \cdot\hat{M}\right) &= \sqrt{\left(\hat{X}_{2}  \cdot\hat{M}-\hat{X}_{1}  \cdot\hat{M}\right) \bullet \left(\hat{X}_{2}  	\cdot\hat{M}-\hat{X}_{1}  \cdot\hat{M}\right)} \\
    & = \sqrt{\left( \left( \hat{X}_{2}-\hat{X}_{1} \right) \cdot\hat{M}\right) \bullet \left( \left( \hat{X}_{2}-\hat{X}_{1} 		\right) \cdot\hat{M}\right)} \\
-   & = \sqrt{ \left(\hat{V}\cdot\hat{M} \right) \bullet \left(\hat{V}\cdot\hat{M} \right)}\\
+   & = \sqrt{ \left(\hat{\mathbf v}\cdot\hat{M} \right) \bullet \left(\hat{\mathbf v}\cdot\hat{M} \right)}\\
    & = \sqrt{
        \begin{bmatrix}
-          \hat{V}\cdot\hat{M}
+          \hat{\mathbf v}\cdot\hat{M}
        \end{bmatrix} \cdot
        \begin{bmatrix}
-          \hat{V}\cdot\hat{M}
+          \hat{\mathbf v}\cdot\hat{M}
        \end{bmatrix}^\transpose}\\
-   & = \sqrt{ \hat{V}\cdot\hat{M} \cdot \hat{M}^\transpose \cdot \hat{V}^\transpose} \\
-   & = \sqrt{ \hat{V} \cdot \hat{V}^\transpose} \\
-   & = \sqrt{\hat{V} \bullet \hat{V}} = \sqrt{d\left(  \hat{X}_{1},\hat{X}_{2}\right)^2} = d\left( \hat{X}_{1},\hat{X}_{2}\right)
+   & = \sqrt{ \hat{\mathbf v}\cdot\hat{M} \cdot \hat{M}^\transpose \cdot \hat{\mathbf v}^\transpose} \\
+   & = \sqrt{ \hat{\mathbf v} \cdot \hat{\mathbf v}^\transpose} \\
+   & = \sqrt{\hat{\mathbf v} \bullet \hat{\mathbf v}} = \sqrt{d\left(  \hat{X}_{1},\hat{X}_{2}\right)^2} = d\left( \hat{X}_{1},\hat{X}_{2}\right)
 \end{align*}
 
 For the other direction we suppose $\hat{M}$ is a rigid motion, so
@@ -161,13 +144,13 @@ For the other direction we suppose $\hat{M}$ is a rigid motion, so
 \]
 Therefore, 
 \[
-	\left(  \hat{V}  \cdot\hat{M} \right) \bullet\left(
-    \hat{V}  \cdot\hat{M}\right)  =\hat{V}\bullet\hat{V}.
+	\left(  \hat{\mathbf v}  \cdot\hat{M} \right) \bullet\left(
+    \hat{\mathbf v}  \cdot\hat{M}\right)  =\hat{\mathbf v}\bullet\hat{\mathbf v}.
  \]
 Following the hint, write,
 \[
-\hat{V}\cdot\hat{V}^\transpose= \left(  \hat{V}  \cdot\hat{M} \right) \cdot\left(
-    \hat{V}  \cdot\hat{M}\right)^\transpose  = \hat{V} \cdot\hat{M} \cdot \hat{M}^\transpose \cdot \hat{V}^\transpose .
+\hat{\mathbf v}\cdot\hat{\mathbf v}^\transpose= \left(  \hat{\mathbf v}  \cdot\hat{M} \right) \cdot\left(
+    \hat{\mathbf v}  \cdot\hat{M}\right)^\transpose  = \hat{\mathbf v} \cdot\hat{M} \cdot \hat{M}^\transpose \cdot \hat{\mathbf v}^\transpose .
 \]
 Then, 
 \begin{align*}
@@ -229,12 +212,10 @@ Therefore,  $w_{21} =  w_{12} =w_{13} =  w_{31} = w_{23} =  w_{32}=0$, and $w_{1
   \[
   \begin{bmatrix}
     \underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}
-  \end{bmatrix}
-  =
-  \begin{bmatrix}
+  \end{bmatrix}^\transpose
+  =\hat M \cdot \begin{bmatrix}
     \hat{x} & \hat{y} & \hat{z}
-  \end{bmatrix}
-  \cdot \hat{M}.
+  \end{bmatrix}^\transpose.
   \]
   takes the set of points $\left(\hat{x},\hat{y},\hat{z}\right)$ such
   that
@@ -257,14 +238,12 @@ itself.
   as
   \[
   \begin{bmatrix}
-    \underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
+    \underline{\hat{x}} \\ \underline{\hat{y}} \\ \underline{\hat{z}}%
   \end{bmatrix}  
-  \cdot
+  \bullet
   \begin{bmatrix}
-    \underline{\hat{x}}\\
-    \underline{\hat{y}}\\
-    \underline{\hat{z}}
-  \end{bmatrix}  =R^2.
+    \underline{\hat{x}} \\ \underline{\hat{y}} \\ \underline{\hat{z}}
+  \end{bmatrix}=R^2.
   \]
 \end{hint}
 
@@ -313,9 +292,8 @@ R^2 = \underline{\hat{x}}^2 + \underline{\hat{y}}^2 +\underline{\hat{z}}^2
 
 
 \begin{problem}
-Explain how the following diagram ``proves'' that functional
-composition is \textit{always} associative. Note, we are writing our
-functions on the \textit{right} of the argument.
+Explain how the following diagram ``proves'' that function
+composition is \textit{always} associative.
 \begin{image}
   \begin{tikzpicture}[scale=.5,geometryDiagrams]
 
@@ -342,7 +320,7 @@ functions on the \textit{right} of the argument.
     \draw (9.5,8.5) [partial ellipse=270:360:.5 and 0.166];
     \draw (9.5,7.5) [partial ellipse=0:90:.5 and 0.166];
 
-    \node at (12,8.6) {$X M_1 M_2$};
+    \node at (12,8.6) {$M_2 \circ M_1(X)$};
     \draw[->] (10.5,8)--(13.5,8);
     
     \draw[fill=blue!10!white] (14,8) ellipse (0.166 and 0.5);% ellipse
@@ -354,7 +332,7 @@ functions on the \textit{right} of the argument.
     \draw (16.5,8.5) [partial ellipse=270:360:.5 and 0.166];
     \draw (16.5,7.5) [partial ellipse=0:90:.5 and 0.166];
 
-    \node at (20.5,8) {$X(M_1 M_2) M_3$};
+    \node at (21.5,8) {$M_3 \circ (M_2 \circ M_1)(X)$};
     \draw[->] (17.5,8)--(18.5,8);
 
     \draw[dashed,gray] (-.4,6.6) rectangle (10.35,9.4);
@@ -373,7 +351,7 @@ functions on the \textit{right} of the argument.
     \draw (2.5,4.5) [partial ellipse=270:360:.5 and 0.166];
     \draw (2.5,3.5) [partial ellipse=0:90:.5 and 0.166];
 
-    \node at (5,4.6) {$X M_1$};
+    \node at (5,4.6) {$M_1(X)$};
     \draw[->] (3.5,4)--(6.5,4);
     
     \draw[fill=blue!10!white] (7,4) ellipse (0.166 and 0.5);% ellipse
@@ -397,7 +375,7 @@ functions on the \textit{right} of the argument.
     \draw (16.5,4.5) [partial ellipse=270:360:.5 and 0.166];
     \draw (16.5,3.5) [partial ellipse=0:90:.5 and 0.166];
 
-    \node at (20.5,4) {$X M_1 (M_2 M_3)$};
+    \node at (21.5,4) {$(M_3 \circ M_2) \circ M_1(X)$};
     \draw[->] (17.5,4)--(18.5,4);
 
     %%%%%%%%%%%%%%%%%
@@ -413,7 +391,7 @@ functions on the \textit{right} of the argument.
     \draw (2.5,.5) [partial ellipse=270:360:.5 and 0.166];
     \draw (2.5,-.5) [partial ellipse=0:90:.5 and 0.166];
 
-    \node at (5,.6) {$X M_1$};
+    \node at (5,.6) {$M_1(X)$};
     \draw[->] (3.5,0)--(6.5,0);
     
     \draw[fill=blue!10!white] (7,0) ellipse (0.166 and 0.5);% ellipse
@@ -425,7 +403,7 @@ functions on the \textit{right} of the argument.
     \draw (9.5,.5) [partial ellipse=270:360:.5 and 0.166];
     \draw (9.5,-.5) [partial ellipse=0:90:.5 and 0.166];
 
-    \node at (12,.6) {$X M_1 M_2$};
+    \node at (12,.6) {$M_2(M_1(X))$};
     \draw[->] (10.5,0)--(13.5,0);
     
     \draw[fill=blue!10!white] (14,0) ellipse (0.166 and 0.5);% ellipse
@@ -437,7 +415,7 @@ functions on the \textit{right} of the argument.
     \draw (16.5,.5) [partial ellipse=270:360:.5 and 0.166];
     \draw (16.5,-.5) [partial ellipse=0:90:.5 and 0.166];
 
-    \node at (20.5,0) {$X M_1 M_2 M_3$};
+    \node at (21.5,0) {$M_3(M_2(M_1(X)))$};
     \draw[->] (17.5,0)--(18.5,0);
 
     %%%%%%%%%%%%%%%%%
@@ -509,8 +487,8 @@ Therefore, because $\hat{M}$ is orthogonal $\left( \hat{M}^{-1} \right)^\transpo
   Consider
   \[
   \hat{M}_\theta=\begin{bmatrix}
-  \cos\theta & \sin\theta & 0\\
-  -\sin\theta & \cos\theta & 0\\
+  \cos\theta & -\sin\theta & 0\\
+  \sin\theta & \cos\theta & 0\\
   0 & 0 & 1
   \end{bmatrix}
   \]
@@ -529,8 +507,8 @@ $\hat{M}_\theta$ rotates points in euclidean space around the $z$-axis.
 \label{14} Show that the matrix%
 \[
 \hat{M}_\theta=\begin{bmatrix}
-\cos\theta & \sin\theta & 0\\
--\sin\theta & \cos\theta & 0\\
+\cos\theta & -\sin\theta & 0\\
+\sin\theta & \cos\theta & 0\\
 0 & 0 & 1
 \end{bmatrix}
 \]
@@ -568,9 +546,9 @@ is orthogonal.
   Consider
   \[
   \hat{N}_\psi=\begin{bmatrix}
-  \cos\psi & 0 & \sin\psi\\
+  \cos\psi & 0 & -\sin\psi\\
   0 & 1 & 0\\
-  -\sin\psi & 0 & \cos\psi
+  \sin\psi & 0 & \cos\psi
   \end{bmatrix}
   \]
   Can you describe geometrically what this mapping is doing
@@ -589,9 +567,9 @@ $\hat{N}_\psi$ rotates points in euclidean space around the $y$-axis.
 Show that the matrix
 \[
 \hat{N}_\psi=\begin{bmatrix}
-\cos\psi & 0 & \sin\psi\\
+\cos\psi & 0 & -\sin\psi\\
 0 & 1 & 0\\
--\sin\psi & 0 & \cos\psi
+\sin\psi & 0 & \cos\psi
 \end{bmatrix}
 \]
 is orthogonal.
@@ -627,28 +605,28 @@ is orthogonal.
 \begin{problem}
 If a curve
 \[
-\hat{X}(t) = \left(\hat{x}(t),\hat{y}(t),\hat{z}(t)\right),\qquad b\le t\le e
+\hat{\gamma}(t) = (\hat{x}(t),\hat{y}(t),\hat{z}(t)),\qquad b\le t\le e
 \]
 is moved by a transformation given by an orthogonal matrix $\hat{M}$,
 show that its length is unchanged.
 \begin{hint}
   Recall that the length of a curve is given by
 \[
-\int_{b}^{e} \sqrt{\frac{d\hat{X}}{dt} \bullet \frac{d\hat{X}}{dt}}\d t.
+\int_{b}^{e} \sqrt{\frac{d\hat{\gamma}}{dt} \bullet \frac{d\hat{\gamma}}{dt}}\d t.
 \]  
 \end{hint}
 
 \begin{freeResponse}
-Let $\hat{X}_{2}(t) = \hat{X}(t) \cdot \hat{M}$, then the length of $\hat{X}_{2}$ is given by,
+Let $\hat\gamma_{2}(t) = \hat\gamma(t) \cdot \hat{M}$, then the length of $\hat\gamma_{2}$ is given by,
 \begin{align*}
-\int_{b}^{e} \sqrt{\frac{d\hat{X}_{2}}{dt} \bullet \frac{d\hat{X}_{2}}{dt}}\d t 
-	&= \int_{b}^{e} \sqrt{ \left( \frac{d\hat{X}}{dt} \cdot \hat{M} \right) \bullet 
-	\left( \frac{d\hat{X}}{dt} \cdot \hat{M} \right)}\d t \\
-	&= \int_{b}^{e} \sqrt{ \left( \frac{d\hat{X}}{dt} \cdot \hat{M} \right) \cdot 
-	\left( \frac{d\hat{X}}{dt} \cdot \hat{M} \right)^\transpose}\d t \\
-	&= \int_{b}^{e} \sqrt{ \frac{d\hat{X}}{dt} \cdot \hat{M} \cdot 
-	 \hat{M}^\transpose \cdot \frac{d\hat{X}}{dt}^\transpose}\d t \\
-	 &= \int_{b}^{e} \sqrt{ \frac{d\hat{X}}{dt} \bullet \frac{d\hat{X}}{dt}}\d t
+\int_{b}^{e} \sqrt{\frac{d\hat\gamma_{2}}{dt} \bullet \frac{d\hat\gamma_{2}}{dt}}\d t 
+	&= \int_{b}^{e} \sqrt{ \left( \frac{d\hat\gamma}{dt} \cdot \hat{M} \right) \bullet 
+	\left( \frac{d\hat\gamma}{dt} \cdot \hat{M} \right)}\d t \\
+	&= \int_{b}^{e} \sqrt{ \left( \frac{d\hat\gamma}{dt} \cdot \hat{M} \right) \cdot 
+	\left( \frac{d\hat\gamma}{dt} \cdot \hat{M} \right)^\transpose}\d t \\
+	&= \int_{b}^{e} \sqrt{ \frac{d\hat\gamma}{dt} \cdot \hat{M} \cdot 
+	 \hat{M}^\transpose \cdot \frac{d\hat\gamma}{dt}^\transpose}\d t \\
+	 &= \int_{b}^{e} \sqrt{ \frac{d\hat\gamma}{dt} \bullet \frac{d\hat\gamma}{dt}}\d t
 \end{align*}
 \end{freeResponse}
 \end{problem}

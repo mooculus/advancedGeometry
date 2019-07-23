@@ -1,4 +1,4 @@
-\documentclass{ximera}
+\documentclass[newpage,hints,handout]{ximera}
 
 \input{../preamble.tex}
 
@@ -14,8 +14,8 @@
 
 Suppose now we have a $K$-rigid motion
 \[
-\left(  \underline{x},\underline{y},\underline{z}\right)  =\left(
-x,y,z\right)  \cdot M
+\begin{bmatrix}\underline{x}\\\underline{y}\\\underline{z}\end{bmatrix}
+=M\begin{bmatrix}x\\y\\z\end{bmatrix}
 \]
 of $K$-geometry, given by a $K$-orthogonal matrix%
 \[
@@ -32,8 +32,8 @@ a mapping defined by a matrix, so we'll have to use some new notation.
 
 \begin{image}
 \begin{tikzpicture}
-  \node (xyz) {$\begin{bmatrix}x & y & z\end{bmatrix}\in\mathbb{R}^3$};
-  \node (xyzBar) [node distance=2cm,below of=xyz] {$\begin{bmatrix}\underline{x} & \underline{y} & \underline{z}\end{bmatrix}$};
+  \node (xyz) {$(x,y,z)\in\mathbb{R}^3$};
+  \node (xyzBar) [node distance=2cm,below of=xyz] {$(\underline{x},\underline{y},\underline{z})$};
   \node (xcyc1) [node distance=4cm,right of=xyz] {$(x_c,y_c,1)\in\mathbb{R}^2\times\{1\}$};
   \node (xcyc1Bar) [node distance=4cm,right of=xyzBar] {$(\underline{x_c},\underline{y_c},1)$};
   \node (xcyc) [node distance=4cm,right of=xcyc1] {$(x_c,y_c)\in\mathbb{R}^2$};
@@ -43,21 +43,19 @@ a mapping defined by a matrix, so we'll have to use some new notation.
   \draw[|->] (xcyc) to (xcyc1);
   \draw[|->] (xcycBar) to (xcyc1Bar);
 
-  \draw[|->] (xyz) to node[right] {$\cdot M$} (xyzBar);
+  \draw[|->] (xyz) to node[right] {$M \cdot$} (xyzBar);
   \draw[|->] (xcyc1) to node[right] {$\mu_{c'}=?$} (xcyc1Bar);
   \draw[|->] (xcyc) to node[right] {$\mu_{c}=?$} (xcycBar);
 \end{tikzpicture}
 \end{image}
 
 \begin{problem}
-  Using the diagram above, explain why
-  \begin{align*}
-(\underline{x_{c}},\underline{y_{c}})  &= \mu_{c}(x_{c},y_{c}) \\
-    & =\left(
-    \frac{x_c\cdot m_{11} + y_c\cdot m_{21} + m_{31}}{x_c\cdot m_{13} + y_c\cdot m_{23} + m_{33}},
-    \frac{x_c\cdot m_{12} + y_c\cdot m_{22} + m_{32}}{x_c\cdot m_{13} + y_c\cdot m_{23} + m_{33}}
-    \right).
-  \end{align*}
+  Using the diagram above, explain why the formula for
+  $(\underline{x_{c}},\underline{y_{c}})=\mu_{c}(x_{c},y_{c})$ is
+  $$\mu_c(x_c,y_c)=\left(
+    \frac{m_{11}x_c+m_{12}y_c+m_{13}}{m_{31}x_c+m_{32}y_c+m_{33}},
+    \frac{m_{21}x_c+m_{22}y_c+m_{23}}{m_{31}x_c+m_{32}y_c+m_{33}}
+    \right).$$
   \begin{freeResponse}
     Let's follow this diagram around, starting at the right-most
     corner. We want to start with $(x_c,y_c)$ and end with
@@ -126,12 +124,12 @@ Now let's use our new tool to convert $K$-rigid motions to rigid motions in cent
 
 
 \begin{problem}
-  Assuming $K > 0$, consider the $K$-rigid motion of the $R$-sphere
+  For any $K$, consider the $K$-rigid motion of $K$-geometry
   \[
   M_\theta=
   \begin{bmatrix}
-    \cos\theta & \sin\theta & 0\\
-    -\sin\theta & \cos\theta & 0\\
+    \cos\theta & -\sin\theta & 0\\
+    \sin\theta & \cos\theta & 0\\
     0 & 0 & 1
   \end{bmatrix}.
   \]
@@ -145,12 +143,12 @@ Now let's use our new tool to convert $K$-rigid motions to rigid motions in cent
 
 
 \begin{problem}
-  Assuming $K > 0$, consider the $K$-rigid motion of the $R$-sphere
+  For any $K$, consider the $K$-rigid motion of $K$-geometry
   \[
   M_\theta=
   \begin{bmatrix}
-    \cos\theta & \sin\theta & 0\\
-    -\sin\theta & \cos\theta & 0\\
+    \cos\theta & -\sin\theta & 0\\
+    \sin\theta & \cos\theta & 0\\
     0 & 0 & 1
   \end{bmatrix}.
   \]
@@ -174,9 +172,9 @@ Now let's use our new tool to convert $K$-rigid motions to rigid motions in cent
   \[
   N_\psi=
   \begin{bmatrix}
-    \cos\psi & 0 & R^{-1}\cdot\sin\psi\\
+    \cos\psi & 0 & -R\cdot\sin\psi\\
     0 & 1 & 0\\
-    -R\cdot\sin\psi & 0 & \cos\psi
+    R^{-1}\cdot\sin\psi & 0 & \cos\psi
   \end{bmatrix}.
   \]
 Can you describe geometrically what this mapping is doing to the
@@ -189,9 +187,9 @@ points in central projection?
   \[
   N_\psi=
   \begin{bmatrix}
-    \cos\psi & 0 & R^{-1}\cdot\sin\psi\\
+    \cos\psi & 0 & -R\cdot\sin\psi\\
     0 & 1 & 0\\
-    -R\cdot\sin\psi & 0 & \cos\psi
+    R^{-1}\cdot\sin\psi & 0 & \cos\psi
   \end{bmatrix}.
   \]
   Convert this to a rigid motion in central projection.
@@ -214,9 +212,9 @@ points in central projection?
   \[
   N_\psi=
   \begin{bmatrix}
-    \cosh\psi & 0 & |K|^{1/2}\cdot\sinh\psi\\
+    \cosh\psi & 0 & |K|^{-1/2}\cdot\sinh\psi\\
     0 & 1 & 0\\
-    |K|^{-1/2}\cdot\sinh\psi & 0 & \cosh\psi
+    |K|^{1/2}\cdot\sinh\psi & 0 & \cosh\psi
   \end{bmatrix}
   \]
   Can you describe geometrically what this mapping is doing to the
@@ -229,9 +227,9 @@ points in central projection?
   \[
   N_\psi=
   \begin{bmatrix}
-    \cosh\psi & 0 & |K|^{1/2}\cdot\sinh\psi\\
+    \cosh\psi & 0 & |K|^{-1/2}\cdot\sinh\psi\\
     0 & 1 & 0\\
-    |K|^{-1/2}\cdot\sinh\psi & 0 & \cosh\psi
+    |K|^{1/2}\cdot\sinh\psi & 0 & \cosh\psi
   \end{bmatrix}
   \]
   Convert this to a rigid motion in central projection.

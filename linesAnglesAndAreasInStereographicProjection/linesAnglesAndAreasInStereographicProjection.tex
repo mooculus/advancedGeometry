@@ -1,39 +1,30 @@
-\documentclass{ximera}
+\documentclass[newpage,hints,handout]{ximera}
 
 \input{../preamble.tex}
 
 \title{Lines, angles, and areas in stereographic projection}
 \begin{document}
 \begin{abstract}
-Here we look at lines, angles, and areas in central
-projection coordinates.
+Here we look at lines, angles, and areas in stereographic projection coordinates.
 \end{abstract}
 \maketitle
 
 
 \section{Stereographic projection sends lines to circles (or lines)}
 
-As we know, we cannot make perfect flat maps of 3D-surfaces. In
-stereographic projection, shortest paths are sent to either lines or
-circles, and perhaps surprisingly, circles are sent to circles!
+As we know, we cannot make perfect flat maps of 3D surfaces. In stereographic
+projection, shortest paths are sent to either lines or circles, and (perhaps
+surprisingly!) circles are sent to circles.
 
 
 
 \begin{problem}
-  Show that ``lines'' in $K$-geometry correspond to either lines or
-  circles in $(x_{s},y_{s})$-coordinates under stereographic
-  projection.
+  Show that ``lines'' in $K$-geometry correspond to either lines or circles in
+  $(x_{s},y_{s})$-coordinates under stereographic projection.
 
 \begin{hint}
-  To intersect two surfaces, say $f(x,y,z)=a$ and $g(x,y,z)=b$,
-  simply examine
-  \[
-  f(x,y,z)-g(x,y,z) = a-b.
-  \]
-\end{hint}
-
-\begin{hint}
-  Explain why intersecting the $K$-surface
+\begin{enumerate}
+\item Recall that intersecting the $K$-surface
   \[
   1 = K\left(x^2+y^2\right) + z^2 
   \]
@@ -42,65 +33,49 @@ circles, and perhaps surprisingly, circles are sent to circles!
   ax+by+cz = 0
   \]
   produces a $K$-geometry line.
-\end{hint}
-
-\begin{hint}
-  Use the projection formulas
+\item Use the projection formulas
   \begin{align*}
-      x &= \frac{4x_s}{K\left(x_s^2 + y_s^2\right) + 4},\\
-      y &= \frac{4y_s}{K\left(x_s^2 + y_s^2\right) + 4},\\
-      z &= \frac{4-K\left(x_s^2 + y_s^2\right)}{4+K\left(x_s^2 + y_s^2\right)},
+      x &= \frac{4x_s}{K(x_s^2 + y_s^2) + 4},\\
+      y &= \frac{4y_s}{K(x_s^2 + y_s^2) + 4},\\
+      z &= \frac{4-K(x_s^2 + y_s^2)}{4+K(x_s^2 + y_s^2)},
   \end{align*}
-  and note that these points are \textit{necessarily} on the surface
+  and note that the points generated this way automatically satisfy the condition
   \[
-  1 = K\left(x^2+y^2\right) + z^2.
+  1 = K(x^2+y^2) + z^2.
   \]
-\end{hint}
-
-\begin{hint}
-  If $c=0$, then you will find the line
+\item If $c=0$, then you will find the line
   \[
    ax_s + by_s = 0.
   \]
-\end{hint}
-
-\begin{hint}
-  If $c\ne 0$, then you will find the circle
+\item If $c\ne 0$, then you will find the circle
   \[
    \left(x_s - \frac{2a}{cK}\right)^2 + \left(y_s -
    \frac{2b}{cK}\right)^2 = \frac{4a^2 + 4b^2 + 4c^2K}{(cK)^2}.
    \]
-   You will need to complete the square to find it in this form.
+   You will need to complete the square to convert it into this form.
+\end{enumerate}
 \end{hint}
 
 \begin{freeResponse}
   Let's start by intersecting the surfaces
   \[
-  K\left(x^2+y^2\right)+z^2=1\qquad\text{and}\qquad ax+by+cz=0,
+  K(x^2+y^2)+z^2=1\qquad\text{and}\qquad ax+by+cz=0,
   \]
-  where the latter is a plane passing through the origin. Write
-  \[
-  K\left(x^2+y^2\right) + z^2- ax- by-cz=1.
-  \]
-  Now use the projection formulas. Since these formula necessarily
-  produce points on the surface
-  \[
-  1 = K\left(x^2+y^2\right) + z^2,
-  \]
-  we may replace $K\left(x^2+y^2\right) + z^2$ with $1$ and write
+  where the latter is a plane passing through the origin.  By the projection
+  formulas, points which are in both of these satisfy the equation
 \begin{align*}
-1-\frac{4ax_s}{K\left(x_s^2 + y_s^2\right) + 4}- \frac{4by_s}{K\left(x_s^2 + y_s^2\right) + 4}-c\frac{4-K\left(x_s^2 + y_s^2\right)}{4+K\left(x_s^2 + y_s^2\right)}&=1\\
- -\frac{4ax_s}{K\left(x_s^2 + y_s^2\right) + 4}- \frac{4by_s}{K\left(x_s^2 + y_s^2\right) + 4}-c\frac{4-K\left(x_s^2 + y_s^2\right)}{4+K\left(x_s^2 + y_s^2\right)}&=0.
+\frac{4ax_s}{K(x_s^2 + y_s^2) + 4}+\frac{4by_s}{K(x_s^2 + y_s^2) + 4}+c\frac{4-K(x_s^2 + y_s^2)}{4+K(x_s^2 + y_s^2)}&=0\\
+ \frac{4ax_s+4by_s+4c-cK(x_s^2 + y_s^2)}{4+K(x_s^2 + y_s^2)}&=0.
 \end{align*}
 Since $K\left(x_s^2 + y_s^2\right) + 4 \ne 0$, we may clear
 denominators to find 
   \begin{align*}
-    -4ax_s-4by_s-4c + cK\left(x_s^2+y_s^2\right) &= 0\\
+    4ax_s+4by_s+4c-cK\left(x_s^2+y_s^2\right) &= 0\\
     cKx_s^2-4ax_s + cKy_s^2-4by_s-4c &= 0.
   \end{align*}
   At this point, note if $c=0$, then our equation becomes
   \begin{align*}
-    -4ax_s -4by_s &= 0\\
+    4ax_s+4by_s &= 0\\
     ax_s + by_s &= 0,
   \end{align*}
   and this is the equation for a line. Now assume that $c\ne 0$ and
@@ -134,8 +109,11 @@ denominators to find
 \end{remark}
 
 
-When we project shortest paths, they map to circles (unless $c=0$ as
-above). When $K<0$, the circles meet the ``circle at infinity'' at right angles. 
+When we project shortest paths, they map to circles (unless $c=0$ as above).
+
+When $K<0$, the circles meet the ``circle at infinity'' at right angles.
+\textbf{We won't make you prove this, but try to convince yourself that it's true!}
+
 
 \begin{image}
 \includegraphics[width=3in]{stereoLines.png}
@@ -171,7 +149,7 @@ will prove this fact with ease!
 \begin{problem}
   Show that
   \[
-  \frac{V_s\bullet_s W_s}{|V_s|_s\cdot|W_s|_s} = \frac{V_s\bullet W_s}{|V_s|\cdot|W_s|}.
+  \frac{\mathbf{v}_s\bullet_s \mathbf{w}_s}{|\mathbf{v}_s|_s\cdot|\mathbf{w}_s|_s} = \frac{\mathbf{v}_s\bullet \mathbf{w}_s}{|\mathbf{v}_s|\cdot|\mathbf{w}_s|}.
   \]
   \begin{hint}
     On the right-hand side we are using the euclidean dot product and
@@ -180,19 +158,19 @@ will prove this fact with ease!
     \begin{freeResponse}
     Let
       \[
-      V_s=
+      \mathbf{v}_s=
       \begin{bmatrix}
         a & b
       \end{bmatrix}
       \qquad\text{and}\qquad
-      W_s=
+      \mathbf{w}_s=
       \begin{bmatrix}
         c & d
       \end{bmatrix}.
       \]
       Write
       \begin{align*}
-        \frac{V_s\bullet_s W_s}{|V_s|_s\cdot|W_s|_s} &= \frac{
+        \frac{\mathbf{v}_s\bullet_s \mathbf{w}_s}{|\mathbf{v}_s|_s\cdot|\mathbf{w}_s|_s} &= \frac{
           \begin{bmatrix}
             a & b
           \end{bmatrix}
@@ -232,7 +210,7 @@ will prove this fact with ease!
         &= \frac{ac\rho^2 + bd\rho^2}{\sqrt{a^2\rho^2+b^2\rho^2}\cdot \sqrt{c^2\rho^2+d^2\rho^2}}\\
         &= \frac{\rho^2(ac + bd)}{\rho^2\sqrt{a^2+b^2}\cdot \sqrt{c^2+d^2}}\\
         &= \frac{ac + bd}{\sqrt{a^2+b^2}\cdot \sqrt{c^2+d^2}}\\
-        &=\frac{V_s\bullet W_s}{|V_s|\cdot|W_s|}.
+        &=\frac{\mathbf{v}_s\bullet \mathbf{w}_s}{|\mathbf{v}_s|\cdot|\mathbf{w}_s|}.
     \end{align*}
   \end{freeResponse}
 \end{problem}
@@ -276,11 +254,11 @@ of spherical, hyperbolic, and euclidean circles.
 
 We know that the area of a region in stereographic coordinates is given by 
 \[
-\int_{C_s} \sqrt{
+\iint_{C_s} \sqrt{
   \det
   \begin{bmatrix}
-    \dd[X]{x_s}\bullet_K \dd[X]{x_s} & \dd[X]{y_s}\bullet_K \dd[X]{x_s} \\
-    \dd[X]{x_s}\bullet_K \dd[X]{y_s} & \dd[X]{y_s}\bullet_K \dd[X]{y_s}
+    \pp[X]{x_s}\bullet_K \pp[X]{x_s} & \pp[X]{y_s}\bullet_K \pp[X]{x_s} \\
+    \pp[X]{x_s}\bullet_K \pp[X]{y_s} & \pp[X]{y_s}\bullet_K \pp[X]{y_s}
   \end{bmatrix}
 }\d x_s\d y_s
 \]
@@ -291,40 +269,39 @@ We know that the area of a region in stereographic coordinates is given by
 \end{problem}
 
 You have already shown that
-\[
-\int_{C_s} \sqrt{
-  \det
-  \begin{bmatrix}
-    \dd[X]{x_s}\bullet_K \dd[X]{x_s} & \dd[X]{y_s}\bullet_K \dd[X]{x_s} \\
-    \dd[X]{x_s}\bullet_K \dd[X]{y_s} & \dd[X]{y_s}\bullet_K \dd[X]{y_s}
-  \end{bmatrix}
-}\d x_s\d y_s
-\]
-\[
-=
-\int_{C_s} \sqrt{
-  \det\left(
-  \begin{bmatrix}
-    \dd[X]{x_s}\\
-    \dd[X]{y_s}
-  \end{bmatrix}
-  \begin{bmatrix}
-    1 & 0 & 0\\
-    0 & 1 & 0\\
-    0 & 0 & K^{-1}
-  \end{bmatrix}
-  \begin{bmatrix}
-    \left(\dd[X]{x_s}\right)^\transpose & \left(\dd[X]{y_s}\right)^\transpose
-  \end{bmatrix}\right)
-}\d x_s\d y_s
-\]
+\begin{multline*}
+  \iint_{C_s} \sqrt{
+    \det
+    \begin{bmatrix}
+      \pp[X]{x_s}\bullet_K \pp[X]{x_s} & \pp[X]{y_s}\bullet_K \pp[X]{x_s} \\
+      \pp[X]{x_s}\bullet_K \pp[X]{y_s} & \pp[X]{y_s}\bullet_K \pp[X]{y_s}
+    \end{bmatrix}
+  }\d x_s\d y_s \\
+  =\iint_{C_s} \sqrt{
+    \det\left(
+      \begin{bmatrix}
+        \leftarrow & \pp[X]{x_s} & \rightarrow \\
+        \leftarrow & \pp[X]{y_s} & \rightarrow
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & K^{-1}
+      \end{bmatrix}
+      \begin{bmatrix}
+        \uparrow & \uparrow \\
+        \pp[X]{x_s} & \pp[X]{y_s} \\
+        \downarrow & \downarrow
+      \end{bmatrix}\right)
+}\d x_s\d y_s.
+\end{multline*}
 
 \begin{problem}
   Explain why
   \[
-\begin{bmatrix}
-    \dd[X]{x_s}\\
-    \dd[X]{y_s}
+  \begin{bmatrix}
+    \leftarrow & \pp[X]{x_s} & \rightarrow \\
+    \leftarrow & \pp[X]{y_s} & \rightarrow
   \end{bmatrix}
   \begin{bmatrix}
     1 & 0 & 0\\
@@ -332,7 +309,9 @@ You have already shown that
     0 & 0 & K^{-1}
   \end{bmatrix}
   \begin{bmatrix}
-    \left(\dd[X]{x_s}\right)^\transpose & \left(\dd[X]{y_s}\right)^\transpose
+    \uparrow & \uparrow \\
+    \pp[X]{x_s} & \pp[X]{y_s} \\
+    \downarrow & \downarrow
   \end{bmatrix} =P_s.
   \]
   \begin{hint}
@@ -342,32 +321,33 @@ You have already shown that
 
 Hence now we see 
 \[
-\int_{C_s} \sqrt{
+\iint_{C_s} \sqrt{
   \det
   \begin{bmatrix}
-    \dd[X]{x_s}\bullet_K \dd[X]{x_s} & \dd[X]{y_s}\bullet_K \dd[X]{x_s} \\
-    \dd[X]{x_s}\bullet_K \dd[X]{y_s} & \dd[X]{y_s}\bullet_K \dd[X]{y_s}
+    \pp[X]{x_s}\bullet_K \pp[X]{x_s} & \pp[X]{y_s}\bullet_K \pp[X]{x_s} \\
+    \pp[X]{x_s}\bullet_K \pp[X]{y_s} & \pp[X]{y_s}\bullet_K \pp[X]{y_s}
   \end{bmatrix}
-}\d x_s\d y_s = \int_{C_s} \sqrt{\det P_s}\d x_s\d y_s
+}\d x_s\d y_s = \iint_{C_s} \sqrt{\det P_s}\d x_s\d y_s.
 \]
 
 \begin{problem}
   Compute $\sqrt{\det P_s}$ in terms of $K$, $x_s$, and $y_s$.
 \end{problem}
 
-
+For the next few problems, consider the following diagram:
+\begin{image}
+  \includegraphics[width=3in]{stereoCirc.png}
+\end{image}
 \begin{problem}
-  Examining the following diagram
-  \begin{image}
-    \includegraphics[width=3in]{stereoCirc.png}
-  \end{image}
-  convert
-  \[
-  \int_{C_s} \frac{16}{\left(K\left(x_s^2+y_s^2\right)+4\right)^2} \d x_s\d y_s.
-  \]
-  to polar coordinates and compute the integral.
+  Compute the area of $C_s$ in $K$-geometry by taking the integral
+  \[\iint_{C_s} \sqrt{\det P_s}dx_sdy_s.\]
   \begin{hint}
-    Recall that to covert to polar coordinates, set
+    In the previous problem, you should have obtained
+    \[\sqrt{\det P_s}=\frac{16}{(K(x_s^2+y_s^2)+4)^2}.\]
+  \end{hint}
+  \begin{hint}
+    This integral is easiest to compute in polar coordinates.  Recall that to
+    convert to polar coordinates, you must set
     \begin{align*}
       r &= \sqrt{x_s^2+y_s^2},\\
       \theta &= \arctan(y_s/x_s),
@@ -377,58 +357,114 @@ Hence now we see
   \begin{freeResponse}
     \[
     \int_{C_s} \frac{16}{\left(K\left(x_s^2+y_s^2\right)+4\right)^2} \d x_s\d y_s
-    = \int_0^{2\pi} \int_0^a \frac{16}{\left(K\cdot r^2+4\right)^2} r\d r \d \theta.
+    =\int_0^{2\pi}\int_0^a \frac{16}{\left(K\cdot r^2+4\right)^2} r\d r \d \theta.
     \]
-    Integrating this from the inside-out we find
+    Integrating this from the inside out we find
     \begin{align*}
       \int_0^{2\pi} \int_0^a \frac{16}{\left(K\cdot r^2+4\right)^2} r\d r \d \theta
       &= \int_0^{2\pi} \eval{\frac{-8}{K\left(K\cdot r^2+4\right)}}_0^a \d \theta\\
       &= \int_0^{2\pi} \frac{-8}{K\left(K\cdot a^2+4\right)}+\frac{2}{K} \d \theta\\
-      &= \frac{4\pi}{K}-\frac{16\pi}{K\left(K\cdot a^2+4\right)}.   
+      &= \frac{4\pi}{K}-\frac{16\pi}{K\left(K\cdot a^2+4\right)}. \\
+      &= \frac{4\pi a^2}{Ka^2+4}.
     \end{align*}
   \end{freeResponse}
 \end{problem}
-
+\begin{problem}
+  Explain why the radius of $C_s$ in $K$-geometry is given by
+  \[r=\int_0^a \sqrt{\left(\frac{dx_s}{dt},\frac{dy_s}{dt}\right)
+    \bullet_s \left(\frac{dx_s}{dt},\frac{dy_s}{dt}\right)}dt\]
+  where
+  \[(x_s(t),y_s(t))=(t,0).\]
+\end{problem}
 
 \begin{problem}
-  Compute
-  \[
-  \lim_{K\to 0} \left(\frac{4\pi}{K}-\frac{16\pi}{K\left(K\cdot a^2+4\right)}\right)
-  \]
-  and explain why your answer makes perfect sense.
+  When $K>0$, find $a$ in terms of the radius $r$ from the previous problem.
   \begin{hint}
-    Express this as a single fraction.
+    There are two ways of going about this:
+    \begin{itemize}
+    \item Compute the integral from the previous problem, using the fact that
+      \[\frac{d}{dx}\arctan(Ax)=\frac{A}{1+(Ax)^2}.\]
+      Then solve for $a$.
+    \item \textbf{Or,} consider the following diagram in Euclidean geometry and
+      use facts about circles and triangles:
+      \begin{image}
+        \includegraphics[width=3in]{stereoSphere.png}
+      \end{image}
+    \end{itemize}
   \end{hint}
-  \begin{freeResponse}
-    \begin{align*}
-    \lim_{K\to 0} \left(\frac{4\pi}{K}-\frac{16\pi}{K\left(K\cdot a^2+4\right)}\right)
-    &= \lim_{K\to 0} \left(\frac{4\pi\left(K\cdot a^2+4\right) - 16\pi}{K\left(K\cdot a^2+4\right)}\right)\\
-    &= \lim_{K\to 0} \left(\frac{4\pi K\cdot a^2}{K\left(K\cdot a^2+4\right)}\right)\\
-    &= \lim_{K\to 0} \left(\frac{4\pi\cdot a^2}{K\cdot a^2+4}\right)\\
-    &= \frac{4\pi\cdot a^2}{4}\\
-    &= \pi\cdot a^2.\\
-    \end{align*}
-    This makes perfect sense because when $K=0$, we are in the
-    euclidean plane. Hence the area of the circle is $\pi\cdot a^2$.
-  \end{freeResponse}
 \end{problem}
 
+\begin{problem}
+  When $K>0$, plug in and simplify to get a formula for the area of a circle in
+  $K$-geometry in terms of its radius $r$.
+\end{problem}
 
+\begin{problem}
+  What happens as $r$ approaches $\pi R=\pi K^{-1/2}$?
 
+  When $r$ gets very small, what happens to $\frac{\text{area}}{r^2}$?
+
+  Explain how these computations square with our understanding of spheres.
+\end{problem}
+
+\begin{problem}
+  When $K<0$, find $a$ in terms of the radius $r$.
+  \begin{hint}
+    There are two ways of going about this:
+    \begin{itemize}
+    \item Compute the integral from a previous problem,  using the fact that
+      \[\frac{d}{dx}\mathrm{artanh}(Ax)=\frac{A}{1-(Ax)^2}.\]
+      Then solve for $a$.
+    \item \textbf{Or,} use the fact that the $K$-length of the line
+      $$\text{from}\quad(1,0,0)\quad\text{to}\quad
+      (|K|^{-1/2}\sinh(\sigma),0,\cosh(\sigma))$$
+      is $|K|^{-1/2}\sigma$, and compare that to the length of its stereographic
+      projection onto the plane $z=1$.  Use the identities
+      \begin{align*}
+        \cosh(2x) &= 2\cosh^2(x)-1 \\
+        \sinh(2x) &= 2\sinh(x)\cosh(x).
+      \end{align*}
+      to simplify.
+    \end{itemize}
+  \end{hint}
+  \begin{hint}
+    This problem is potentially more involved than the spherical version, but in
+    the end you should get the same answer with an extra ``h''.
+  \end{hint}
+\end{problem}
+
+\begin{problem}
+  When $K<0$, plug in to get a formula for the area of a circle in $K$-geometry
+  in terms of its radius $r$.
+\end{problem}
+
+Notice that for big enough $x$, $\sinh(x) \approx e^x/2$, since the $e^{-x}$ term
+is pretty much zero.  So the area of a circle in hyperbolic geometry grows
+exponentially with radius, unlike in Euclidean geometry where it only grows
+quadratically.  There's a \textbf{lot} of space within radius $r$ of a point in
+the hyperbolic plane.
+\begin{problem}
+  When $r$ gets very small, what happens to $\frac{\text{area}}{r^2}$?  Explain
+  why this makes sense.
+  \begin{freeResponse}
+    This makes sense because we already discussed that at small scales,
+    hyperbolic geometry ``looks linear''.
+  \end{freeResponse}
+\end{problem}
 
 \section{Stereographic projection unifies euclidean, spherical, and hyperbolic geometry}
 
 
 Under stereographic projection, our new dot product defined by
 \[
-V_s\bullet_s W_s = V_s\cdot P_s\cdot W_s^\transpose
+\mathbf{v}_s\bullet_s \mathbf{w}_s = \mathbf{v}_s^\transpose \cdot P_s \cdot \mathbf{w}_s
 \]
 make sense when $K$ is zero, positive, and negative. Hence this dot
 product makes sense for euclidean, spherical, and hyperbolic
 geometry. However, in stereographic projection, shortest paths on the
 $K$-surface
 \[
-K\left(x^2 + y^2\right) + z^2 = 1
+K(x^2 + y^2) + z^2 = 1
 \]
 map to circles (or lines) in the plane $z=1$. The advantage of
 stereographic projection over central projection is that angles are
@@ -439,19 +475,35 @@ vectors. Summarizing, we have:
 
 
 
-
 \[
-{\renewcommand{\arraystretch}{2.7}
+  {\renewcommand{\arraystretch}{2.7}
   \begin{array}{|c||c|c|c|}\hline
-    & \text{Spherical} (K>0) & \text{Euclidean} (K=0) & \text{Hyperbolic} (K<0)\\\hline\hline
-    \text{Surface in} \ \text{euclidean space} & \hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=R^{2} & \text{DNE}  & \text{DNE} \\\hline
-    \text{Euclidean dot product} & \hat{V}\cdot \hat{W}^\transpose & \text{DNE}  & \text{DNE}\\\hline
-     \text{Surface in $K$-warped space} & 1=K\left(  x^{2}+y^{2}\right)  +z^{2} & 1=K\left(  x^{2}+y^{2}\right)  +z^{2} & 1=K\left(  x^{2}+y^{2}\right)  +z^{2}\\\hline
-     \text{$K$-dot product} & V\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & K^{-1}\end{smallmatrix}\right] W^\transpose &  \text{DNE} & V\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & K^{-1}\end{smallmatrix}\right]W^\transpose\\\hline
-     \text{Central dot product} & \multicolumn{3}{c|}{V_c\cdot P_c\cdot W_c^\transpose = V_c\left[\begin{smallmatrix}\left(Ky_c^2+1\right)\lambda^4 & -Kx_{c}y_{c}\lambda^4\\
-           -Kx_{c}y_{c}\lambda^4 & \left(Kx_c^2+1\right)\lambda^4\end{smallmatrix}\right] W_c^\transpose}\\\hline
-     \text{Stereographic dot product} & \multicolumn{3}{c|}{V_s\cdot P_s\cdot W_s^\transpose = V_s\left[\begin{smallmatrix}\rho^2 & 0\\
-    0 & \rho^2 \end{smallmatrix}\right] W_s^\transpose}\\\hline
+    & \text{Spherical (}K>0) & \text{Euclidean (}K=0) & \text{Hyperbolic (}K<0)\\
+    \hline\hline
+    \text{Surface in euclidean space}
+    & \hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=R^{2} & \text{DNE}  & \text{DNE} \\\hline
+    \text{Euclidean dot product} & \hat{\mathbf v}^\transpose\cdot \hat{\mathbf w}
+                             & \text{DNE}  & \text{DNE}\\\hline
+    \text{Surface in $K$-warped space}
+    & {1=K(x^{2}+y^{2})+z^{2}} & 1=K(x^{2}+y^{2})+z^{2} & 1=K(x^{2}+y^{2})+z^{2}\\\hline
+    K\text{-dot product}
+    & \mathbf v^\transpose \left[\begin{smallmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & K^{-1}
+      \end{smallmatrix}\right] \mathbf w &  \text{DNE}
+    & \mathbf{v}^\transpose \left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & K^{-1}\end{smallmatrix}\right]\mathbf w \\\hline
+    \text{Central dot product} & \multicolumn{3}{c|}{
+        \mathbf{v}_c^\transpose \cdot P_c \cdot \mathbf{w}_c
+        = \mathbf{v}_c^\transpose\left[\begin{smallmatrix}
+            \left(Ky_c^2+1\right)\lambda^4 & -Kx_{c}y_{c}\lambda^4 \\
+            -Kx_{c}y_{c}\lambda^4 & \left(Kx_c^2+1\right)\lambda^4
+          \end{smallmatrix}\right] \mathbf{w}_c}\\\hline
+    \text{Stereographic dot product} & \multicolumn{3}{c|}{
+        \mathbf{v}_s^\transpose\cdot P_s\cdot \mathbf{w}_s
+        = \mathbf{v}_s^\transpose\left[\begin{smallmatrix}
+            \rho^2 & 0\\ 0 & \rho^2
+          \end{smallmatrix}\right] \mathbf{w}_s}\\\hline
 \end{array}}
 \]
 
