@@ -152,16 +152,19 @@ euclidean dot product.
 
 \begin{problem}
 Suppose we have a curve $\gamma$ in $K$-warped space which we can decompose as
-\[
-\begin{tikzcd}
-  t \ar[r,mapsto,"\gamma_{c}"] \ar[rr,mapsto,bend right=20,swap,"\gamma"] &  (x_c(t),y_c(t))\ar[r,mapsto,"{\left[\begin{smallmatrix}
+\begin{image}
+  \begin{tikzpicture}
+    \node{
+      \begin{tikzcd}[ampersand replacement=\&]
+        t \ar[r,mapsto,"\gamma_{c}"] \ar[rr,mapsto,bend right=20,swap,"\gamma"] \&  (x_c(t),y_c(t))\ar[r,mapsto,"{\left[\begin{smallmatrix}
           x(x_c,y_c)\\
           y(x_c,y_c)\\
           z(x_c,y_c)
-        \end{smallmatrix}\right]}"
-  ] & \gamma(t)=(x(t),y(t),z(t))
-\end{tikzcd}
-\]
+              \end{smallmatrix}\right]}"
+        ] \& \gamma(t)=(x(t),y(t),z(t))
+    \end{tikzcd}};
+  \end{tikzpicture}
+\end{image}
 Use the chain rule to compute
 \[
 \dd[x]{t}, \qquad \dd[y]{t}, \qquad \dd[z]{t},
