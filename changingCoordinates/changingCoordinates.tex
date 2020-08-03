@@ -149,16 +149,20 @@ but we want lengths and angles to be the usual euclidean ones in $\left(
   Suppose we have a curve $\hat\gamma$ in euclidean space and we think of it as a
   composition of a curve $\gamma$ in $K$-warped space with a transformation.  In
   other words, we're looking at a diagram
-  \[
-  \begin{tikzcd}
-    t \ar[r,mapsto,"\gamma"] \ar[rr,mapsto,bend right=20,swap,"\hat\gamma"] &  (x(t),y(t),z(t))\ar[r,mapsto,"{\left[\begin{smallmatrix}
+  \begin{image}
+  \begin{tikzpicture}
+    \node{
+  \begin{tikzcd}[ampersand replacement=\&]
+    t \ar[r,mapsto,"\gamma"] \ar[rr,mapsto,bend right=20,swap,"\hat\gamma"] \&  (x(t),y(t),z(t))\ar[r,mapsto,"{\left[\begin{smallmatrix}
             \hat x(x,y,z)\\
             \hat y(x,y,z)\\
             \hat z(x,y,z)
           \end{smallmatrix}\right]}"
-    ] & \hat\gamma(t)=(\hat x(t),\hat y(t),\hat z(t))
-  \end{tikzcd}
-  \]
+    ] \& \hat\gamma(t)=(\hat x(t),\hat y(t),\hat z(t))
+    \end{tikzcd}};
+  \end{tikzpicture}
+\end{image}
+
   Use the chain rule to compute
   \[
   \dd[\hat x]{t}, \qquad \dd[\hat y]{t}, \qquad \dd[\hat z]{t},
