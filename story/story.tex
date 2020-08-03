@@ -1,0 +1,369 @@
+\documentclass{amsart}
+\usepackage{amsmath,amsfonts,amssymb}
+
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\transpose}{\intercal}
+
+\title{The story of 4507}
+
+\begin{document}
+\begin{abstract}
+  Each course should tell a story; here is the story that 4507 tells.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+
+In Math 4507 we guide the students through writing their own geometry
+textbook. This textbook takes a quasi-historical approach that not
+only presents topics in essentially historical order, but also changes
+emphasis of concept es from those of the past, to those of the present
+as the course proceeds.
+
+\subsection{A note on rigor}
+
+
+
+
+\section{Historical ordering of the course}
+
+\subsection{Neutral geometry}
+
+The course begins with neutral geometry. While neutral geometry was
+first conceptualize by J\'anos Bolyai in 1832, and hence its
+conceptualization is quite recent, Euclid seems to have had some
+notion of neutral geometries, since he only used his first four axioms
+to prove his first 29 theorems!
+
+\subsubsection{Primary result(s)}
+
+In neutral geometry the sum of the interior angles of a triangle sums
+to less than $180^\circ$.
+
+\subsubsection{Primary content}
+
+High-school algebra and geometry.
+
+
+\subsubsection{Current issues}
+
+Each semester I have asked the question, ``Why does this proof fail in
+spherical geometry.'' A satisfactory answer has never been given.
+
+
+\subsection{Euclidean geometry}
+
+Next we add Euclid's fifth axiom.
+
+\subsubsection{Primary result(s)}
+
+Now we show that the sum of the interior angles of a triangle in
+euclidean geometry is $180^\circ$.
+
+We give a proof of the Pythagorean Theorem.
+
+\subsubsection{Primary content}
+
+High-school algebra and geometry. 
+
+\subsubsection{Current issues}
+
+The question addressing the bijection between the plane and $\RR^2$
+usually falls flat with the students.
+
+
+
+\subsection{Similarity}
+
+Now we talk about similar figures.
+
+\subsubsection{Primary result(s)}
+
+We prove basic results (high school) about similar triangles.
+
+We prove basic results about concurrence (centroid, orthocenter of a triangle.)
+
+\subsubsection{Primary content}
+
+High-school algebra and geometry, vector calculus (scaling of
+regions), middle grades geometry (another explanation of scaling of
+regions).
+
+\subsubsection{Current issues}
+
+Proving dilations are bijective, reduces to proving they are
+one-to-one and onto. Two approaches could be taken.
+\begin{enumerate}
+\item Prove one-to-one and onto separately. The issue here is that the students see these as being similar proofs. This causes some confusion.
+\item Take the approach that if $f:A\to A$ and $f^{-1}:A\to A$ then $f$ must be bijective.
+\end{enumerate}
+
+The proof that dilations preserve angles is given via vectors.
+
+The proof that if two triangles have perpendicular corresponding sides, then they are similar, is ``tricky'' and not general. 
+
+
+\subsection{Angles in circles}
+
+We look at (tri)angles inscribed in circles.
+
+\subsubsection{Primary result(s)}
+
+We prove basic results (high school) about central and inscribed angles.
+
+We show that a triangle can be inscribed in a circle.
+
+We prove basic results about concurrence (circumcenter).
+
+We prove the extended law of sines.
+
+
+
+\subsubsection{Primary content}
+
+High-school algebra and geometry.
+
+\subsubsection{Current issues}
+
+None.
+
+
+
+
+\subsection{Projective geometry}
+
+We look at (tri)angles the geometric cross ratio.
+
+\subsubsection{Primary result(s)}
+
+
+We prove basic results about the cross ratio.
+
+We give a second proof of the Pythagorean theorem.
+
+We prove the sine addition and subtraction formula. 
+
+
+\subsubsection{Primary content}
+
+High-school algebra and geometry.
+
+\subsubsection{Current issues}
+
+None.
+
+
+
+
+\subsection{Quantifying circles and spheres.}
+
+We look at quantities related to circles and spheres.
+
+
+\subsubsection{Primary result(s)}
+
+We prove that the circumference of the unit circle is $2\pi$.
+
+We give two proofs (middle grades/high school) that the area of the
+unit circle is $\pi$
+
+We prove that the surface area of the $R$-sphere is
+\[
+4\pi R^2.
+\]
+
+We prove that the volume of the $R$-sphere is
+\[
+\frac{4}{3}\pi R^3.
+\]
+
+
+\subsubsection{Primary content}
+
+High-school algebra and geometry.
+
+\subsubsection{Current issues}
+
+None.
+
+
+
+
+\subsection{Spherical triangles}
+
+We look at quantities related to circles and spheres.
+
+
+\subsubsection{Primary result(s)}
+
+We find formulas for the areas of triangles. 
+
+
+\subsubsection{Primary content}
+
+A very nice proof.
+
+\subsubsection{Current issues}
+
+We should add the spherical Pythagorean theorem, and spherical law of sines.
+
+
+
+
+
+\subsection{Euclidean space}
+
+We study euclidean space.
+
+
+\subsubsection{Primary result(s)}
+
+The dot product computes length/angle/area.
+
+\subsubsection{Primary content}
+
+Vector calculus.
+
+\subsubsection{Current issues}
+
+The formulas for area seem to continue on even after we are done.
+
+Matrices are multiplied on the right.
+
+
+
+\subsection{$K$-warped space}
+
+We study $K$-warped space space, $(x,y,z)$-coordinates.
+
+
+\subsubsection{Primary result(s)}
+
+Formulas for computing length/angle/area.
+
+\subsubsection{Primary content}
+
+Vector calculus.
+
+Linear algebra.
+
+The idea that to produce a new ``agreeable'' dot product is to
+\begin{enumerate}
+\item Take a curve, $F$, whose tangent vectors are known.
+\item Write $F(x(t),y(t),z(t))$ where $x$, $y$, and $z$ determine a curve in the new space.
+\item Differentiate via the chain rule.
+\item Identify the difference between the tangents.
+\item Write the difference as a matrix $M$.
+\item Define the new dot product as:
+  \[
+V\cdot M \cdot V^\transpose.
+\]
+\end{enumerate}
+
+\subsubsection{Current issues}
+
+The above procedure is used implicitly throughout the notes. It needs
+to be explicit.
+
+
+
+
+\subsection{Congruences via rigid motions}
+
+Orthogonal matrices are shown to be rigid motions.
+
+\subsubsection{Primary result(s)}
+
+A matrix is a rigid motion if and only if it is an orthogonal matrix. 
+
+\subsubsection{Primary content}
+
+Linear algebra.
+
+Group theory.
+
+
+\subsubsection{Current issues}
+
+This now pick up a thread dropped in the first worksheet. However,
+might it not be better to state the problem here in terms of rigid motions?
+
+There is an ``apparent'' paradox here, a translation is a rigid
+motion; however, a translation is not an orthogonal matrix.
+
+Associativity of the group is not proved.
+
+
+
+
+\subsection{$K$-rigid motions}
+
+$K$-warped rigid motions are studied.
+
+\subsubsection{Primary result(s)}
+
+We derive a necessary and sufficient condition for a matrix to be a
+$K$-rigid motion.
+
+\subsubsection{Primary content}
+
+Commutative diagrams.
+
+Linear algebra.
+
+Group theory.
+
+The idea of generalizing the geometry is revealed.
+
+
+\subsubsection{Current issues}
+
+Associativity of the group is not proved.
+
+
+
+
+\subsection{Spherical lines}
+
+Lines in spherical geometry are studied.
+
+\subsubsection{Primary result(s)}
+
+We prove that great circles are geodesics in spherical geometry.
+
+
+\subsubsection{Primary content}
+
+Vector calculus.
+
+
+\subsubsection{Current issues}
+
+None really, in this semester this is when we'll prove the pythagorean
+theorem and law of sines.
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{itemize}
+\item Student centered learning.
+\item Quasi-historical list of topics.
+\item Quasi-historical emphasis of concepts.
+\item Reiteration of topics from calculus.
+\item Reiteration of topics from vector calculus.
+\item Reiteration of topics from linear algebra.
+\item Introduction to topics from abstract algebra.
+\item Introduction to topics from applied mathematics.
+\item S
+\end{itemize}
+
+\end{document}
