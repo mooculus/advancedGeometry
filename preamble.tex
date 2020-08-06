@@ -55,6 +55,9 @@
 \renewcommand{\hat}{\widehat}
 
 
+%% should clobber the free response online.
 \ifxake
-\renewenvironment{freeResponse}{}{}
+\let\freeResponse\relax
+\let\endfreeRespnse\relax
+\NewEnviron{freeResponse}{}
 \fi
