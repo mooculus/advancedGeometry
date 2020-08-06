@@ -53,3 +53,10 @@
 
 \renewcommand{\bar}{\overline}
 \renewcommand{\hat}{\widehat}
+
+
+\ifxake
+\NewEnviron{freeResponse}{}
+\else
+\newtheorem{freeResponse}{Response:}
+\fi
