@@ -60,3 +60,18 @@
 \let\endfreeResponse\relax
 \NewEnviron{freeResponse}{}
 \fi
+
+
+\newwrite\outcomefile
+  \immediate\openout\outcomefile=\jobname.oc
+\renewcommand{\outcome}[1]{\edef\theoutcomes{\theoutcomes #1~}%
+\immediate\write\outcomefile{\unexpanded{\outcome}{#1}}}
+
+%% \newcommand{\outcomelist}{\begin{itemize}\theoutcomes\end{itemize}}
+
+\NewEnviron{listOutcomes}{
+After answering the following questions, students should be able to:
+\begin{itemize}
+\BODY
+\end{itemize}
+}
