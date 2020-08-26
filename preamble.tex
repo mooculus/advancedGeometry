@@ -1,5 +1,5 @@
 %\usepackage{microtype}
-%\usepackage{tikz}
+\usepackage{tikz}
 \usepackage{tkz-euclide}
 %\usetkzobj{all}
 \tikzstyle geometryDiagrams=[rounded corners=.5pt,ultra thick,color=blue!50!black]
@@ -11,7 +11,6 @@
 %% \hypersetup{
 %%     colorlinks = false,
 %%     }
-
 
 \tikzset{%% partial ellipse
     partial ellipse/.style args={#1:#2:#3}{
@@ -53,3 +52,29 @@
 
 \renewcommand{\bar}{\overline}
 \renewcommand{\hat}{\widehat}
+
+
+%% should clobber the free response ALL THE TIME.
+\let\freeResponse\relax
+\let\endfreeResponse\relax
+\newenvironment{freeResponse}%
+       {%
+ \setbox0\vbox\bgroup
+       }
+               {%
+ \egroup
+       }
+
+\newwrite\outcomefile
+  \immediate\openout\outcomefile=\jobname.oc
+\renewcommand{\outcome}[1]{\edef\theoutcomes{\theoutcomes #1~}%
+\immediate\write\outcomefile{\unexpanded{\outcome}{#1}}}
+
+%% \newcommand{\outcomelist}{\begin{itemize}\theoutcomes\end{itemize}}
+
+\NewEnviron{listOutcomes}{
+After answering the following questions, students should be able to:
+\begin{itemize}
+\BODY
+\end{itemize}
+}
