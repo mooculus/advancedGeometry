@@ -105,112 +105,112 @@ along the other ray, called the final ray.
 The choice of the region is either clear from the context or
 explicitly given.
 
-\begin{problem}
-Given an angle $\angle BAC$ show by drawings the two regions into
-which it divides the plane. Show how the (signed) measure of the angle
-depends on:
-\begin{enumerate}
-\item Which region you pick as the interior/exterior. 
-\item Which ray is the initial ray and which is the final ray of the
-  angle.
-\end{enumerate}
-\begin{freeResponse}
-We present a summary in the table below:
-\begin{center}
-\begin{tabular}{|c|c|}\hline
-%\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\coordinate (A) at (0,0);
-\coordinate (B) at (2,2);
-\coordinate (C) at (2.83,0);
-\tkzDrawSegment[->](A,B)
-\tkzDrawSegment[->](A,C)
+%% \begin{problem}
+%% Given an angle $\angle BAC$ show by drawings the two regions into
+%% which it divides the plane. Show how the (signed) measure of the angle
+%% depends on:
+%% \begin{enumerate}
+%% \item Which region you pick as the interior/exterior. 
+%% \item Which ray is the initial ray and which is the final ray of the
+%%   angle.
+%% \end{enumerate}
+%% \begin{freeResponse}
+%% We present a summary in the table below:
+%% \begin{center}
+%% \begin{tabular}{|c|c|}\hline
+%% %\begin{image}
+%% \begin{tikzpicture}[geometryDiagrams]
+%% \coordinate (A) at (0,0);
+%% \coordinate (B) at (2,2);
+%% \coordinate (C) at (2.83,0);
+%% \tkzDrawSegment[->](A,B)
+%% \tkzDrawSegment[->](A,C)
 
-\tkzLabelPoints[below](A,C)
-\tkzLabelPoints[above](B)
+%% \tkzLabelPoints[below](A,C)
+%% \tkzLabelPoints[above](B)
 
-\coordinate (initRay) at (1.42,0);
-\node[below] at (initRay) {initial ray};
+%% \coordinate (initRay) at (1.42,0);
+%% \node[below] at (initRay) {initial ray};
 
-\coordinate (int) at (1.6,1);
-\node[below] at (int) {interior};
+%% \coordinate (int) at (1.6,1);
+%% \node[below] at (int) {interior};
 
-\tkzMarkAngle[size=0.6cm,thin](C,A,B)
-\end{tikzpicture}
-%\end{image}
-&
-%\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\coordinate (A) at (0,0);
-\coordinate (B) at (2,2);
-\coordinate (C) at (2.83,0);
-\tkzDrawSegment[->](A,B)
-\tkzDrawSegment[->](A,C)
+%% \tkzMarkAngle[size=0.6cm,thin](C,A,B)
+%% \end{tikzpicture}
+%% %\end{image}
+%% &
+%% %\begin{image}
+%% \begin{tikzpicture}[geometryDiagrams]
+%% \coordinate (A) at (0,0);
+%% \coordinate (B) at (2,2);
+%% \coordinate (C) at (2.83,0);
+%% \tkzDrawSegment[->](A,B)
+%% \tkzDrawSegment[->](A,C)
 
-\tkzLabelPoints[below](A,C)
-\tkzLabelPoints[above](B)
+%% \tkzLabelPoints[below](A,C)
+%% \tkzLabelPoints[above](B)
 
-\coordinate (initRay) at (1,1);
-\node[above,rotate=45] at (initRay) {initial ray};
+%% \coordinate (initRay) at (1,1);
+%% \node[above,rotate=45] at (initRay) {initial ray};
 
-\coordinate (int) at (1.6,1);
-\node[below] at (int) {interior};
+%% \coordinate (int) at (1.6,1);
+%% \node[below] at (int) {interior};
 
-\tkzMarkAngle[size=0.6cm,thin](C,A,B)
-\end{tikzpicture}
-%\end{image} 
-\\
+%% \tkzMarkAngle[size=0.6cm,thin](C,A,B)
+%% \end{tikzpicture}
+%% %\end{image} 
+%% \\
 
-$\angle BAC$ is positive & $\angle BAC$ is negative\\\hline
+%% $\angle BAC$ is positive & $\angle BAC$ is negative\\\hline
 
-%\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\coordinate (A) at (0,0);
-\coordinate (B) at (2,2);
-\coordinate (C) at (2.83,0);
-\tkzDrawSegments[->](A,B)
-\tkzDrawSegments[->](A,C)
+%% %\begin{image}
+%% \begin{tikzpicture}[geometryDiagrams]
+%% \coordinate (A) at (0,0);
+%% \coordinate (B) at (2,2);
+%% \coordinate (C) at (2.83,0);
+%% \tkzDrawSegments[->](A,B)
+%% \tkzDrawSegments[->](A,C)
 
-\tkzLabelPoints[below](A,C)
-\tkzLabelPoints[above](B)
+%% \tkzLabelPoints[below](A,C)
+%% \tkzLabelPoints[above](B)
 
-\coordinate (initRay) at (1,1);
-\node[above,rotate=45] at (initRay) {initial ray};
+%% \coordinate (initRay) at (1,1);
+%% \node[above,rotate=45] at (initRay) {initial ray};
 
-\coordinate (ext) at (1.6,1);
-\node[below] at (ext) {exterior};
+%% \coordinate (ext) at (1.6,1);
+%% \node[below] at (ext) {exterior};
 
-\tkzMarkAngle[size=0.6cm,thin](B,A,C)
-\end{tikzpicture}
-%\end{image}
-&
-%\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\coordinate (A) at (0,0);
-\coordinate (B) at (2,2);
-\coordinate (C) at (2.83,0);
-\tkzDrawSegment[->](A,B)
-\tkzDrawSegment[->](A,C)
+%% \tkzMarkAngle[size=0.6cm,thin](B,A,C)
+%% \end{tikzpicture}
+%% %\end{image}
+%% &
+%% %\begin{image}
+%% \begin{tikzpicture}[geometryDiagrams]
+%% \coordinate (A) at (0,0);
+%% \coordinate (B) at (2,2);
+%% \coordinate (C) at (2.83,0);
+%% \tkzDrawSegment[->](A,B)
+%% \tkzDrawSegment[->](A,C)
 
-\tkzLabelPoints[below](A,C)
-\tkzLabelPoints[above](B)
+%% \tkzLabelPoints[below](A,C)
+%% \tkzLabelPoints[above](B)
 
-\coordinate (initRay) at (1.42,0);
-\node[below] at (initRay) {initial ray};
+%% \coordinate (initRay) at (1.42,0);
+%% \node[below] at (initRay) {initial ray};
 
-\coordinate (ext) at (1.6,1);
-\node[below] at (ext) {exterior};
+%% \coordinate (ext) at (1.6,1);
+%% \node[below] at (ext) {exterior};
 
-\tkzMarkAngle[size=0.6cm,thin](B,A,C)
-\end{tikzpicture}\\
-$\angle BAC$ is positive & $\angle BAC$ is negative\\ \hline
+%% \tkzMarkAngle[size=0.6cm,thin](B,A,C)
+%% \end{tikzpicture}\\
+%% $\angle BAC$ is positive & $\angle BAC$ is negative\\ \hline
 
-%\end{image}
-\end{tabular}
-\end{center}
-\end{freeResponse}
+%% %\end{image}
+%% \end{tabular}
+%% \end{center}
+%% \end{freeResponse}
 
-\end{problem}
+%% \end{problem}
 
 
 
