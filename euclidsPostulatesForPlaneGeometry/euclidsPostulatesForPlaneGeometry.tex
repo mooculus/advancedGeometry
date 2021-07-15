@@ -1,4 +1,4 @@
-\documentclass{ximera}
+\documentclass[instructornotes]{ximera}
 
 \input{../preamble.tex}
 %% \prerequisites{rigidMotions,geometry}
@@ -30,6 +30,14 @@ geometries.
 \item Apply SAS.
 \item Prove that the sum of the interior angles of a triangle in
   neutral geoemtry is always less than or equal to $180^\circ$.
+\end{listOutcomes}
+
+\begin{listOutcomes}
+\item State the axioms of neutral geoemtry.
+\item State the side-angle-side congruence axiom.
+\item Apply side-angle-side.
+\item Prove that the sum of the interior angles of a triangle in
+  neutral geomtry is always less than or equal to $180^\circ$.
 \end{listOutcomes}
 
 
@@ -85,7 +93,7 @@ geometry \textbf{neutral geometry} (\textbf{NG}).
 \end{definition}
 
 \begin{definition}
-In \textbf{NG}, two distinct lines are called \textbf{parallel} if and
+In \textbf{neutral geometry}, two distinct lines are called \textbf{parallel} if and
 only if they don't intersect.
 \end{definition}
 
@@ -96,6 +104,16 @@ We will call the set of points on a line which lie on one side of a
 given point a \textbf{ray}.  We call the given point the
 \textbf{origin} of the ray.
 \end{definition}
+
+\begin{remark}
+ Spheres do not have neutral geometry. There are infinitely many lines between the north pole and south pole; you can see some of them in this image from Wikipedia:
+ 
+\begin{figure}[h]
+ \includegraphics[width=.5\textwidth]{euclidsPostulatesForPlaneGeometry/Sphere.png}
+\caption{Image of a wireframe sphere from \url{https://en.wikipedia.org/wiki/Sphere}. By Geek3 - Own work, CC BY 3.0, %\url{https://commons.wikimedia.org/w/index.php?curid=8089933}
+}
+\end{figure}
+\end{remark}
 
 \begin{definition}
 We call two rays in the plane \textbf{parallel} if they lie on
@@ -331,8 +349,10 @@ d\left(\mathbf M \cdot P,  \mathbf M \cdot Q\right) =d\left( P,Q\right).
 %% \end{problem}
 
 \begin{problem}
-Think back to high school days and write the congruence rules SSS,
-SAS, and ASA.  Translate them into the language of \textbf{rigid motions}.
+Think back to high school days and write the congruence rules side-side-side (SSS),
+side-angle-side (SAS), and angle-side-angle (ASA).  Translate them into the language of \textbf{rigid motions}.
+
+You may look up these congruence rules without citing the source. 
 
 \begin{freeResponse}
 Suppose there is a triangle $\triangle ABC$ and another triangle
@@ -371,7 +391,7 @@ The upshot is that:
 \end{problem}
 
 \begin{problem}
-Give an example to show that there is no universal SSA law.
+Give an example to show that there is no universal side-side-angle (SSA) law.
 
 \begin{freeResponse}
 Consider:
@@ -395,7 +415,7 @@ Consider:
 Hence a triangle is not uniquely determined by a side, side, and an angle. 
 \end{freeResponse}
 
-Can you find a restriction that will allow for an ``SSA-type'' law?
+Can you find a restriction that will allow for an ``side-side-angle-type'' law?
 \begin{freeResponse}
 Perhaps the simplest restriction is forcing the angle to be greater
 than or equal to $90^\circ$.
@@ -664,8 +684,8 @@ $\alpha + \beta < 180^\circ$.
 
 \end{problem}
 
-\begin{problem}
-Show in \textbf{NG} that, if two lines cut by a transversal line have
+\begin{problem}\label{ng_parallel}
+Show in \textbf{neutral geometry} that, if two lines cut by a transversal line have
 a pair of congruent alternate interior angles, then they are
 parallel. [MJG,117]
 
@@ -708,7 +728,7 @@ nonparallel lines $\l$ and $m$:
 \end{image}
 From the diagram we have $\alpha + \beta = 180^\circ$. This is a
 contradiction since the sum of any two interior angles of a triangle
-is always less than $180^\circ$ in \textbf{NG}.
+is always less than $180^\circ$ in neutral geometry.
 \end{freeResponse}
 
 \end{problem}
@@ -719,22 +739,26 @@ is always less than $180^\circ$ in \textbf{NG}.
 
 
 
-\section{Sum of angles in a triangle in NG}
+\section{Sum of angles in a triangle in neutral geometry}
+\begin{listOutcomes}
+ \item Construct a new triangle  $\triangle ABC$ where the sum of the angles of  $\triangle ABC$ has certain properties relating to a given triangle.
+ \item Show that there are no triangles in neutral geometry whose angles sum to more than $180^\circ$.
+\end{listOutcomes}
 
+You may have learned these five postulates of two-dimensional geometry:
+\begin{enumerate}
+\item You can draw a straight line through any two points
+\item You can extend any straight line segment to an infinite line
+\item Given any straight light segment, you can draw a circle with that segment as the radius and one endpoint as the center
+\item All right angles are equivalent
+\item Given any two lines intersect with a third line such that the sum of the interior angles on one side is less that two right angles, then the two lines must intersect if the lines are extended far enough.
+\end{enumerate}
 
-For many centuries, mathematicians attempted to prove that the sum of
-the angles in a triangle was $180^{\circ}$ using only E1--E4. However,
-the discovery of \textit{hyperbolic geometry} about two centuries ago,
-proved this to be a futile pursuit. The thing that separates
-hyperbolic geometry from euclidean (plane) geometry is the sum of the
-angles in a triangle. If you had a good geometry course in high
-school, you may remember that you had to use Euclid's fifth axiom in
-order to show that the sum of the angles in a triangle was
-$180^{\circ}$, but more on that later.
+How do these five postulates relate to (E1)-(E4) in the previous section?
 
-There is one important fact about the sum of the angles in a triangle that you
-\textit{can} prove in \textbf{NG}, that is, without invoking Euclid's fifth
-axiom. We will in fact accomplish that in this section.
+You might also remember that the sum of the interior angles of a triangle is $180^\circ$. While it might seem like this fact could follow from (E1)-(E4), we will eventually see that is false. It turns out the fifth postulate about parallel lines is true {\bf if and only if} the sum of the interior angles of a triangle is always $180^\circ$. In fact, there is an entire list of geometry facts that are true if and only if the parallel postulate is true. You can find some at: \url{https://orion.math.iastate.edu/lhogben/classes/parallelpostulate.pdf}. 
+
+{\bf Remember:} The parallel postulate is not part of neutral geometry. In fact, that is what make it neutral, although I'd argue a \emph{truly} neutral geometry would also apply to spherical geometry.
 
 \begin{problem}\label{20}
 Show that the sum of the angles in $\triangle ACE$ is the same as the
@@ -816,7 +840,7 @@ The sums are equal since addition is commutative.
 \end{problem}
 
 \begin{problem}\label{22} 
-Suppose that there is a triangle $\triangle ABC$ in \textbf{NG} for
+Suppose that there is a triangle $\triangle ABC$ in neutral geometry for
 which the sum of the angles in a triangle $\triangle ABC$ is
 $\Delta^\circ$. Construct a new triangle, $\triangle ACE$ such that
 the sum of the angles in a triangle is still $\Delta^\circ$, but one
@@ -927,7 +951,7 @@ have completed the proof.
 
 \begin{problem}
 \label{121} Suppose that there is a triangle $\triangle ABC$ in
-\textbf{NG} for which the sum of the angles in a triangle $\triangle
+neutral geometry for which the sum of the angles in a triangle $\triangle
 ABC$ is $\left( 180+x\right)^\circ$ with $x>0$. Show that there is a
 triangle with sum of its angles still equal to $\left(180+x\right)^\circ$
 but with one of its angles having measure less than $x$. [MJG,125-127]
@@ -973,7 +997,7 @@ $180^\circ$. Hence, from our work above, we can prove the following
 theorem:
 
 \begin{theorem}
-In \textbf{NG}, the sum of the interior angles in any triangle is no greater
+In neutral geometry, the sum of the interior angles in any triangle is no greater
 than $180^\circ$.
 \end{theorem}
 
@@ -1152,7 +1176,7 @@ greater than
 \begin{problem}
   Let $ABCD$ be a quadrilateral with $\angle ABC=\angle BCD$ right
   angles. (We denote polygons by naming their vertices in
-  counterclockwise order.) Show in \textbf{NG} that:
+  counterclockwise order.) Show in neutral geometry that:
   \begin{enumerate}
   \item \begin{itemize}
   \item $\left\vert AB\right\vert =\left\vert CD\right\vert $
@@ -1210,7 +1234,7 @@ Explain why a) in the last Problem does not prove the existence of rectangles in
 
 
 \begin{problem}
-Summarize the results from this section. In particular, indicate which
+Summarize the results from this chapter. In particular, indicate which
 results follow from the others.
 \begin{freeResponse}
 \end{freeResponse}
