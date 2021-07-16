@@ -12,14 +12,14 @@
 We now wish to figure out how to convert a transformation
 \[\hat{T}(\hat x,\hat y,\hat z)=
 \begin{bmatrix}
-\underline{\hat{x}} \\ \underline{\hat{y}} \\ \underline{\hat{z}}%
+\hat{a}\\ \hat{b}\\ \hat{c}%
 \end{bmatrix}
   =\hat{M} \cdot \begin{bmatrix}
 \hat{x} \\ \hat{y} \\ \hat{z}%
 \end{bmatrix} \label{100}%
 \]
-from euclidean space to $(x,y,z)$-coordinates. Recall to convert a
-point from $(x,y,z)$-coordinates to euclidean coordinates, we write
+from Euclidean space to $(x,y,z)$-coordinates. Recall to convert a
+point from $(x,y,z)$-coordinates to Euclidean coordinates, we write
 \[
 \begin{bmatrix}
 \hat{x} \\ \hat{y} \\ \hat{z}%
@@ -27,7 +27,7 @@ point from $(x,y,z)$-coordinates to euclidean coordinates, we write
 =\begin{bmatrix}
   x \\ y \\ Rz
 \end{bmatrix}
-=\cdot\begin{bmatrix}
+=\begin{bmatrix}
   1 & 0 & 0\\
   0 & 1 & 0\\
   0 & 0 & R
@@ -36,23 +36,59 @@ point from $(x,y,z)$-coordinates to euclidean coordinates, we write
   x \\ y \\ z
 \end{bmatrix}.
 \]
-So we have the diagram%
-\begin{image}
-\begin{tikzpicture}
-  \node (xyzHat) {$\begin{bmatrix}\hat{x} & \hat{y} & \hat{z}\end{bmatrix}^\transpose\in\mathbb{R}^3$};
-  \node (xyzHatBar) [node distance=2cm,below of=xyzHat] {$\begin{bmatrix}\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}\end{bmatrix}^\transpose$};
-  \node (xyz) [node distance=6cm,right of=xyzHat] {$\begin{bmatrix}x & y & z\end{bmatrix}^\transpose\in\mathbb{R}^3$};
-  \node (xyzBar) [node distance=6cm,right of=xyzHatBar] {$\begin{bmatrix}\underline{x} & \underline{y} & \underline{z}\end{bmatrix}^\transpose$};
-  \draw[|->] (xyz) to node[above] {$\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R\end{smallmatrix}\right]\cdot$} (xyzHat);
-  \draw[|->] (xyz) to node[right] {$T = \text{?}$} (xyzBar);
-  \draw[|->] (xyzHat) to node[right] {$\hat{M} \cdot$} (xyzHatBar);
-  \draw[|->] (xyzBar) to node [above] {$\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R\end{smallmatrix}\right]\cdot$} (xyzHatBar);
-\end{tikzpicture}
-\end{image}
+
+We summarize this in the diagrams 
+
+\begin{tikzcd}[ column sep = 2in,row sep=.75in,ampersand replacement=\&]
+\textrm{$K$-warped coordinates}\arrow{r}
+\arrow{r}{\begin{bmatrix}
+  1 & 0 & 0\\
+  0 & 1 & 0\\
+  0 & 0 & R
+\end{bmatrix}
+\cdot}\arrow[swap]{d}{M  \cdot} \&\textrm{Euclidean coordinates} \arrow{d}{\hat{M} \cdot} \\
+\textrm{$K$-warped coordinates}\arrow{r}{\begin{bmatrix}
+  1 & 0 & 0\\
+  0 & 1 & 0\\
+  0 & 0 & R
+\end{bmatrix}
+\cdot}\&\textrm{Euclidean coordinates}
+\end{tikzcd}
+ where
+ 
+\begin{tikzcd}[ column sep = 2in,row sep=.75in,ampersand replacement=\&]
+\begin{bmatrix}
+x\\ y \\ z 
+\end{bmatrix}
+\rar[mapsto]{\begin{bmatrix}
+  1 & 0 & 0\\
+  0 & 1 & 0\\
+  0 & 0 & R
+\end{bmatrix}
+\cdot}\dar[mapsto]{M  
+\cdot} \&\begin{bmatrix}
+\hat{x}\\ \hat{y} \\ \hat{z} 
+\end{bmatrix} \dar[mapsto]{\hat{M} \cdot} \\
+\begin{bmatrix}
+a\\ b \\ c 
+\end{bmatrix}
+\rar[mapsto]{\begin{bmatrix}
+  1 & 0 & 0\\
+  0 & 1 & 0\\
+  0 & 0 & R
+\end{bmatrix}
+\cdot}\&\begin{bmatrix}
+\hat{a}\\ \hat{b} \\ \hat{c} 
+\end{bmatrix}.
+\end{tikzcd}
+
+Thus, we start at $[x\quad y \quad z]^\transpose$ and end at $[\hat{a}\quad \hat{b}\quad \hat{c}]^\transpose$ whether we convert to Euclidean coordinates then apply $\hat{M}$, or we apply $M$ then convert to Euclidean coordinates.
 \begin{problem}
+
+
 Using the diagram above, explain why%
 \[
-\begin{bmatrix} \underline{x} \\ \underline{y} \\ \underline{z} \end{bmatrix}
+M
 =\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
@@ -63,18 +99,23 @@ Using the diagram above, explain why%
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & R
-\end{bmatrix}
-\cdot \begin{bmatrix}x \\ y \\ z\end{bmatrix}.
+\end{bmatrix}.
 \]
 \begin{hint}
-  Express the transformation matrix $M$ of $T$ in terms of $\hat{M}$.
+ We can also go from Euclidean coordinates to $K$-warped coordinates using the map defined by $
+\begin{bmatrix}
+ 1 & 0 & 0\\ 0 & 1 & 0 \\ 0 & 0 & R
+\end{bmatrix}^{-1}$
+\end{hint}
+\begin{hint}
+We start at $[x\ y \ z]^\transpose$ and end at $[\hat{a}\ \hat{b}\ \hat{c}]^\transpose$ whether we convert to Euclidean coordinates then apply $\hat{M}$, or we apply $M$ then convert to Euclidean coordinates.
 \end{hint}
 
 \begin{freeResponse}
 We want to find $M$ in terms of $\hat{M}$ such that 
 \[
 \begin{bmatrix}
-\underline{x} & \underline{y} & \underline{z}%
+a & b & c%
 \end{bmatrix}
 =\begin{bmatrix}
 x & y & z
@@ -93,10 +134,10 @@ $ in K-geometry. Multiplying by
 0 & 0 & R
 \end{bmatrix}
 \]
-moves us to the left corner of the diagram and gives the image of the vector in euclidean space. Then, multiplying by $\hat{M}$ moves us to the bottom-left corner of the diagram and gives the transformation in euclidean space. Now, to determine $M$ in terms of $\hat{M}$, we map the current vector
+moves us to the left corner of the diagram and gives the image of the vector in Euclidean space. Then, multiplying by $\hat{M}$ moves us to the bottom-left corner of the diagram and gives the transformation in Euclidean space. Now, to determine $M$ in terms of $\hat{M}$, we map the current vector
 \[
 %\begin{bmatrix}
-%\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}
+%\hat{a}& \hat{b}& \hat{c}}
 %\end{bmatrix}=
 \begin{bmatrix}
 x & y & z
@@ -120,7 +161,7 @@ back to K-geometry by multiplying by
 Then, we end up in the bottom-right corner of the diagram and have
 \[
 \begin{bmatrix}
-\underline{x} & \underline{y} & \underline{z}%
+a & b & c%
 \end{bmatrix}
 =\begin{bmatrix}
 x & y & z
@@ -162,7 +203,7 @@ x & y & z
 %% \begin{equation}
 %% \begin{bmatrix}
 %% %
-%% \underline{x} & \underline{y} & \underline{z}%
+%% a & b & c%
 %% \end{bmatrix}
 %%   =\begin{bmatrix}
 %% %
@@ -174,7 +215,7 @@ x & y & z
 %% \ref{12}\right)  $ in $\left(  x,y,z\right)  $-coordinates.
 
 %% So how would we check whether a transformation given in $\left(  x,y,z\right)
-%% $-coordinates by a matrix $M$ preserves distances in euclidean space?
+%% $-coordinates by a matrix $M$ preserves distances in Euclidean space?
 %% Again, starting from $\left(  \ref{16}\right)  $ this is just a substitution
 %% problem:%
 %% \begin{gather*}
@@ -223,16 +264,24 @@ x & y & z
     0 & 0 & K^{-1}
     \end{bmatrix}. 
   \end{equation}
-\begin{hint} 
-  Explain how the previous problem gives a correspondence between
-  transformations defined by a matrix in $K$-warped space and transformations
-  defined by a matrix in euclidean space.  Then show that \eqref{Korth} is
-  equivalent to the corresponding euclidean matrix $\hat{M}$ being orthogonal. 
-\end{hint}
   
+\begin{hint}
+ Prove that  \eqref{Korth} is true if and only if $\hat{M}$ is orthogonal.
+\end{hint}
+
+\begin{hint}
+ Use a previous problem to show $|\mathbf{v}|_K=|\hat{\mathbf{v}}|$ and conclude  $|M\mathbf{v}|_K=|\hat{M}\hat{\mathbf{v}}|$ if and only if $\hat{M}$ is orthogonal.
+\end{hint}
+%\begin{hint} 
+%  Explain how the previous problem gives a correspondence between
+%  transformations defined by a matrix in $K$-warped space and transformations
+%  defined by a matrix in Euclidean space.  Then show that \eqref{Korth} is
+%  equivalent to the corresponding Euclidean matrix $\hat{M}$ being orthogonal. 
+%\end{hint}
+%  
 
 \begin{freeResponse}
-First we assume that a transformation $M$ in K-warped space preserves distances. In the previous problem we showed that there is a a bijection between transformations defined by a matrix in K-warped space and transformations defined by a matrix in euclidean space. Therefore, if a transformation $M$ preserves distances in K-warped space then, then $\hat{M}$ preserves distances in euclidean space and thus is orthogonal. We have
+First we assume that a transformation $M$ in K-warped space preserves distances. In the previous problem we showed that there is a a bijection between transformations defined by a matrix in K-warped space and transformations defined by a matrix in Euclidean space. Therefore, if a transformation $M$ preserves distances in K-warped space then, then $\hat{M}$ preserves distances in Euclidean space and thus is orthogonal. We have
 \[
 M = \begin{bmatrix}
 1 & 0 & 0\\
@@ -443,7 +492,7 @@ M^\transpose\cdot\begin{bmatrix}
   For $K\ne 0$, show that if $M$ is $K$-orthogonal, then the transformation
   \[T(x,y,z)=
   \begin{bmatrix}
-    \underline{x} \\ \underline{y} \\ \underline{z}
+    a \\ b \\ c
   \end{bmatrix}
   =M \cdot
   \begin{bmatrix}
@@ -454,30 +503,30 @@ M^\transpose\cdot\begin{bmatrix}
 \[
 1 = K\left(x^2 + y^2\right) +z^2
 \]
-to the set of points $(\underline{x},\underline{y},\underline{z})$ such that
+to the set of points $(a, b, c)$ such that
 \[
-1=K\left(\underline{x}^2 + \underline{y}^{2}\right) + \underline{z}^{2}.
+1=K\left(a^2 + b^{2}\right) + c^{2}.
 \]
 That is, $M$ gives a one-to-one and onto mapping of $K$-geometry to
 itself.
 \begin{hint}
   Explain how you can write the equation
   \[
-  1=K\left(\underline{x}^2 + \underline{y}^{2}\right) + \underline{z}^{2}.
+  1=K\left(a^2 + b^{2}\right) + c^{2}.
   \]
   as
 \[
 \begin{bmatrix}
-\underline{x} & \underline{y} & \underline{z}%
+a & b & c%
 \end{bmatrix}  \cdot\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
 \end{bmatrix}  \cdot
 \begin{bmatrix}
-\underline{x}\\
-\underline{y}\\
-\underline{z}%
+a\\
+b\\
+c%
 \end{bmatrix}  =\frac{1}{K}.
 \]
 \end{hint}
@@ -515,7 +564,7 @@ z%
     x \\ y \\  z
   \end{bmatrix} \\
  &= \begin{bmatrix}
-    \underline{x} & \underline{y} & \underline{z}
+    a & b & c
   \end{bmatrix} \cdot 
 \begin{bmatrix}
 1 & 0 & 0\\
@@ -685,7 +734,7 @@ M_\theta &= \begin{bmatrix}
   0 & 0 & 1
   \end{bmatrix} 
 \end{align*} 
-It is not surprising that the matrix stays the same because $M_\theta$ rotates points around the $z$-axis in euclidean space. This is not affected in $K$-warped space because the $R$-sphere is just pressed between $z=1$ and $z=-1$.
+It is not surprising that the matrix stays the same because $M_\theta$ rotates points around the $z$-axis in Euclidean space. This is not affected in $K$-warped space because the $R$-sphere is just pressed between $z=1$ and $z=-1$.
 \end{freeResponse}
 
 \end{problem}
@@ -757,7 +806,7 @@ $M_\psi$ does change when converted into a $K$-orthogonal matrix because $M_\psi
 
 \section{Why use $K$-coordinates?}
 
-We have seen that we could measure the usual euclidean lengths of
+We have seen that we could measure the usual Euclidean lengths of
 curves $\hat{\gamma}$ in terms of the formulas of curves $\gamma$ in $K$-warped
 space using the $K$-dot product. The short reason for this is that
 \[
@@ -771,7 +820,7 @@ where
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
 \end{bmatrix}
-\cdot\left[\dd[X]{t}\right]^\transpose.
+\cdot\left[\dd[\gamma]{t}\right]^\transpose.
 \]
 In other words, the usual geometry of the sphere of radius $R$ is
 simply the geometry of the set
@@ -793,7 +842,7 @@ following table:
   \begin{array}{|c||c|c|c|}\hline
     & \text{Spherical (}K>0) & \text{Euclidean (}K=0) & \text{Hyperbolic (}K<0)\\
     \hline\hline
-    \text{Surface in euclidean space}
+    \text{Surface in Euclidean space}
     & \hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=R^{2} & \text{DNE}  & \text{DNE} \\\hline
     \text{Euclidean dot product} & \hat{\mathbf v}^\transpose\cdot \hat{\mathbf w}
                              & \text{DNE}  & \text{DNE}\\\hline

@@ -1,11 +1,11 @@
-\documentclass[newpage,hints,handout]{ximera}
+\documentclass[hints,handout]{ximera}
 
 \input{../preamble.tex}
 
 %% \prerequisites{geometry}
-%% \outcome{euclideanGeometry,parallelPostulate}
+%% \outcome{EuclideanGeometry,parallelPostulate}
 
-\title{Rectangles and cartesian coordinates}
+\title{Rectangles and Cartesian coordinates}
 \begin{document}
 \begin{abstract}
 In this activity, we explore some consequences of Euclid's fifth
@@ -13,21 +13,30 @@ axiom.
 \end{abstract}
 \maketitle
 
-\section*{Euclid's fifth axiom, the parallel postulate}
+<<<<<<< Updated upstream
+=======
 
-We are finally ready to introduce Euclid's fifth and final axiom, the
-so-called \textit{Parallel Postulate}.
+>>>>>>> Stashed changes
+\section*{Euclid's fifth axiom, the parallel postulate}
+\begin{listOutcomes}
+\item Define Euclidean geometry,
+ \item Prove that in Euclidean geometry, the sum of the interior angles of a triangle is $180^\circ$.
+ \item Show that Euclidean geometry has a Cartesian coordinate system.
+\end{listOutcomes}
+We saw in the last chapter that neutral geometry does not assume that two parallel lines must intersect a third line in such a way that the sum of the interior angles (ie, the two angles between the parallel lines) is the same as the sum of two right angles (ie, $180^\circ$).  A (very not obviously) equivalent statement is:
 
 \begin{axiom}[E5]
 Through a point not on a line there passes a unique parallel line.
 \end{axiom}
 
-\textbf{NG} together with E5 is called euclidean geometry
-(\textbf{EG}). As mentioned above, we will see later that there is
-another geometry called \textit{hyperbolic geometry} (\textbf{HG})
-that satisfies all the postulates of \textbf{NG} but not E5. In it,
+Neutral geometry together with E5 is called \emph{Euclidean} or \emph{flat geometry}
+(Euclidean geometry). Euclidean geometry is probably what you think about when you think about geometry. We will see later that there is another geometry called \textit{hyperbolic geometry} (\textbf{HG})
+that satisfies all the postulates of neutral geometry but not E5. In it,
 the sum of the interior angles of a triangle will \textit{always} be
-less than $180^\circ$! [MJG,134]
+less than $180^\circ$! 
+
+In Problem 16, %\ref{altinteriorangles}, 
+we will show that in Euclidean geometry,  two parallel lines must intersect a third line in such a way that the sum of the interior angles is $180^\circ$.
 
 \begin{problem}
 \label{24} Show that if two parallel lines are cut by a
@@ -35,6 +44,11 @@ transversal line, then alternate interior angles are equal.
 
 \begin{hint}
 Draw a picture and seek a contradiction.
+\end{hint}
+\begin{hint}
+ Watch the solution at \url{https://youtu.be/tMBADmI6LnY} or read the file at \url{https://osu.instructure.com/courses/84670/files/23572065/}. 
+ 
+Your solution should make sense to someone who has not watched the video or read the notes file. In particular, you should explain how to draw the diagram and put the proof in your own words.
 \end{hint}
 \begin{freeResponse}
 Seeking a contradiction, suppose that we have two parallel lines cut
@@ -101,10 +115,49 @@ cut by a transversal line, then alternate interior angles are equal.
 
 \end{problem}
 
+\begin{problem}\label{altinteriorangles}
+ Show that if two parallel lines are cut by a transverse line, then the sum of the interior angles is $180^\circ$.
+ 
+ 
+\begin{hint}
+ Watch hint video at \url{https://youtu.be/7ttySwGJpZg} or read the notes at \url{https://osu.instructure.com/courses/84670/files/23572065/}.
+\end{hint}
+ 
+\begin{freeResponse}
+ From the previous problem, if two parallel lines are cut by a transversal line, then alternate interior angles are equal labeled $\alpha$ in the diagram. Then the interior angles have measure $\alpha$ and $\beta$ as in the following diagram. Since the two angles form a straight line, $\alpha+\beta=180^\circ$.
+ 
+\begin{image}
+ \begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,4.5);
+\coordinate (B) at (10,4.5);
+\coordinate (C) at (0,1.5);
+\coordinate (D) at (10,1.5);
+\coordinate (E) at (1.5,0);
+\coordinate (F) at (3.5,6);
+\coordinate (G) at (2,1.5);
+\coordinate (H) at (3,4.5);
+\draw (A)--(B);
+\draw (C)--(D);
+\draw[thin] (E)--(F);
+
+\tkzMarkAngle[size=0.6cm,thin](D,G,H)
+\tkzLabelAngle[pos = 0.4](D,G,H){$\alpha$}
+
+\tkzMarkAngle[size=0.5cm,thin](A,H,G)
+\tkzLabelAngle[pos = -0.3](A,H,G){$\alpha$}
+
+\tkzMarkAngle[size=0.5cm,thin](G,H,D)
+\tkzLabelAngle[pos = 0.3](G,H,D){$\beta$}
+
+%\draw[thin,step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+\end{freeResponse}
+\end{problem}
 
 \begin{problem}
 Show that angles $\angle BAC$ and $\angle B'A'C'$ in the
-  euclidean plane are equal (have the same measure) if corresponding
+  Euclidean plane are equal (have the same measure) if corresponding
   rays are parallel. Hence if $\angle B'A'C'$ can be rotated around
   $A'$ to obtain an angle $\angle B''A'C''$ with corresponding rays
   parallel to those of $\angle BAC$, then $\angle BAC$ and $\angle
@@ -114,7 +167,8 @@ Show that angles $\angle BAC$ and $\angle B'A'C'$ in the
 Draw your angles and extend their legs so that you have two sets of
 parallel sides.
 \end{hint}
-\begin{freeResponse}
+%%%%%%%%%%%%%CHANGED FROM IN PERSON SEMESTERS%%%%%%%%%%%%%%%%%%%
+\begin{proof}
 Start with the given angles and extend their legs so that we now have two sets of parallel lines:
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
@@ -161,12 +215,12 @@ By our previous work with alternate interior angles,
 \alpha = \alpha'' \qquad\text{and}\qquad \alpha'' = \alpha',
 \]
 hence $\alpha = \alpha'$.
-\end{freeResponse}
+\end{proof}
 \end{problem}
 
 \begin{problem}
 Use the `uniqueness' assertion in E5 together with what we have
-established about neutral geometry to show that in \textbf{EG} the sum
+established about neutral geometry to show that in Euclidean geometry the sum
 of the interior angles of any triangle is $180^\circ$.
 
 \begin{hint}
@@ -174,6 +228,10 @@ Make two parallel lines, the first being the base of a given triangle
 and the second being the unique parallel line that passes through the
 vertex opposite to the base.
 \end{hint}
+\begin{hint}
+ Watch hint video at \url{https://youtu.be/7ttySwGJpZg} or read the notes at \url{https://osu.instructure.com/courses/84670/files/23572065/}.
+\end{hint}
+
 \begin{freeResponse}
 Start by drawing two parallel lines, the first containing the base of a
 given triangle and the second passing through the vertex opposite to
@@ -248,7 +306,7 @@ Hence we see $\alpha + \beta+ \gamma = 180^\circ$.
 
 
 \begin{problem}
-Show that in \textbf{EG} the sum of the interior angles of a
+Show that in Euclidean geometry the sum of the interior angles of a
 quadrilateral is $360^\circ$.
 \begin{freeResponse}
 As we did before, we note that given any quadrilateral, even a
@@ -305,9 +363,11 @@ is
 \end{problem}
 
 \begin{problem}\label{112} 
-Now we will show in \textbf{EG} that given any positive real numbers
+Now we will show in Euclidean geometry that given any positive real numbers
 $a$ and $b$, there exist rectangles with adjacent side of lengths $a$
-and $b$. Your task is to fill-in the details of the proof below.
+and $b$. Your task is to fill-in the details of the proof below. The notes from when we talked about this problem in class are at \url{https://osu.instructure.com/files/23572263/} or you can rewatch the class recording \url{https://osu.zoom.us/rec/share/UH_Zr42lQKe2VYVa9t_AVoiPiKuvXj5rcA5M9h9y30-7oMjUSiSoxnFCwXIo8vs.U26znUPozxyOrGaT} (Access Passcode: Gq7\%m.jc) 
+
+
 
 Start by constructing lines $\l_1$ and $\l_2$ with $\l_1$
 perpendicular to $\l_2$ at point $A$. On $\l_1$ add point $B$ so that
@@ -416,7 +476,7 @@ we see that $\l_3$ is parallel to $\l_2$.
 Explain why $\l_4$ intersects $\l_2$.
 
 \begin{freeResponse}
-  Seeking a contradiction, suppse that $\l_4$ does not intersect
+  Seeking a contradiction, suppose that $\l_4$ does not intersect
   $\l_2$. This would mean that $\l_4$ is parallel to $\l_2$. However,
   both $\l_4$ and $\l_3$ pass through point $C$ and now both are
   parallel to $\l_2$, this violates E5.
@@ -554,16 +614,22 @@ $ABCD$ is a rectangle.
 \end{problem}
 
 
+%%%%%%%%%%%%%CHANGED FROM IN PERSON SEMESTERS%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}
-Show that there is a cartesian coordinate system on \textbf{EG}. This
-means you must show that there is a bijection between the points in
-\textbf{EG} and elements of $\R^2$, the set of pairs of real numbers.
+Consider the ordered pair $(x,y)\in\mathbb{R}^2$ to be the corner of rectangle with one vertex at the origin, side lengths $|x|$ and $|y|$, and the sign of $x$ and $y$ moving in either the positive or negative direction along the $x$ and $y$ axes. This is a \emph{Cartesian coordinate system}.
 
-\begin{freeResponse}
-Pick any point of \textbf{EG}, call it $A$. Our map will take this
+Show that there is a Cartesian coordinate system on Euclidean geometry. This
+means you must show that there is a bijection between the points in
+Euclidean geometry and elements of $\R^2$, the set of pairs of real numbers.
+
+\begin{hint}
+ For a longer explanation of what the question is asking and where the map comes from, watch the video at \url{https://youtu.be/ffal4JkqrEw}.
+\end{hint}
+\begin{proof}
+Pick any point of Euclidean geometry, call it $A$. Our map will take this
 point to $(0,0)$. By our previous problem, we can construct an
-$a\times b$ rectangle $ABCD$ in \textbf{EG}.
+$a\times b$ rectangle $ABCD$ in Euclidean geometry.
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
 \coordinate (A) at (2,1);
@@ -608,15 +674,19 @@ $(-a,b)$. If $D$ was placed below $A$, then our map takes $C$ to
 $(a,-b)$. Finally if $B$ was placed to the left of $A$ and $D$ was
 placed below $A$, then our map takes $C$ to $(-a,-b)$.  By
 construction, this map is one-to-one and onto and hence shows that we
-have a cartesian coordinate system in \textbf{EG}.
-\end{freeResponse}
+have a Cartesian coordinate system in Euclidean geometry.
+\end{proof}
 
 \end{problem}
 
 
-\section*{The distance formula in \textbf{EG}}
+\section*{The distance formula in Euclidean geometry}
+\begin{listOutcomes}
+ \item Use the axioms of Euclidean geometry to prove the Pythagorean theorem,
+ \item Prove the Euclidean distance formula.
+\end{listOutcomes}
 
-It is the existence of a cartesian coordinate system in \textbf{EG} that
+It is the existence of a Cartesian coordinate system in Euclidean geometry that
 allows us to define distance between points%
 \[
 d\left( (a_{1},b_{1}), (a_{2},b_{2}) \right)
@@ -624,18 +694,18 @@ d\left( (a_{1},b_{1}), (a_{2},b_{2}) \right)
 \]
 and so gives rigorous mathematical meaning to a concept that the
 ancient Greeks were never able to describe precisely, namely the
-similarity of figures in \textbf{EG}. For that we will require the
+similarity of figures in Euclidean geometry. For that we will require the
 notion of a \textit{dilation} or \textit{magnification} in
-\textbf{EG}. We need a cartesian coordinate system to describe
+Euclidean geometry. We need a Cartesian coordinate system to describe
 dilation precisely, a reality backed up by the fact that similarities
-do not exist in \textbf{HG} or \textbf{SG}. (Try drawing two triangles
+do not exist in hyperbolic or spherical. (Try drawing two triangles
 that are similar but not congruent on a perfectly spherical balloon!)
 
 \begin{problem}
-State and prove the Pythagorean theorem in \textbf{EG}.
+State and prove the Pythagorean theorem in Euclidean geometry. Do not use the distance formula. 
 
 \begin{hint}
-In the cartesian plane, construct a square with vertices
+In the Cartesian plane, construct a square with vertices
 \[
 \left(0,0\right),\qquad \left(a+b,0\right),\qquad \left(0,a+b\right), \qquad \left( a+b,a+b\right).
 \] 
@@ -645,7 +715,7 @@ Inside that square, construct the square with vertices
 \]
 \end{hint}
 \begin{freeResponse}
-Consider the square in the cartesian plane with vertices
+Consider the square in the Cartesian plane with vertices
 \[
 \left(0,0\right),\qquad \left(a+b,0\right),\qquad \left(0,a+b\right),
 \qquad \left( a+b,a+b\right)
@@ -830,7 +900,7 @@ we have that $a^2 + b^2 = c^2.$
 \end{problem}
 
 \begin{problem}
-Use the Pythagorean theorem to justify the euclidean distance formula,
+Use the Pythagorean theorem to justify the Euclidean distance formula,
 \[
 d\left( (a_{1},b_{1}), (a_{2},b_{2}) \right)
 =\sqrt{(a_{2}-a_{1})^{2}+(b_{2}-b_{1})^{2}}.

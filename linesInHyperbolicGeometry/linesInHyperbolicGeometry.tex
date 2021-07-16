@@ -12,6 +12,12 @@ hyperbolic version of the Pythagorean Theorem.
 \maketitle
 
 \subsection*{Hyperbolic coordinates, a shortest path from the North Pole}
+\begin{listOutcomes}
+ \item Convert K-warped space to hyperbolic coordinates
+ \item Derive the formula for the hyperbolic ($\sigma, \tau$)-coordinate dot product
+ \item Show that the shortest distance from the north pole of the $K$-surface to a point on the surface in the $y=0$ plane is on the path that stays in the $y=0$ plane.
+\end{listOutcomes}
+
 
 We next will figure out what is the shortest path you can take between
 two points in hyperbolic geometry. Since $K$ is negative, we must do
@@ -264,11 +270,20 @@ $\pp[x]{\tau}$, $\pp[y]{\tau}$, and $\pp[z]{\tau}$.
 
 
 \begin{definition}
-  Let $\mathbf{v}_\mathrm{hyp}$ and $\mathbf{w}_\mathrm{hyp}$ be a vectors in
+  Let $\mathbf{v}_\mathrm{hyp}= 
+\begin{bmatrix}
+ a&b
+\end{bmatrix}$ and $\mathbf{w}_\mathrm{hyp}= 
+\begin{bmatrix}
+ c&d
+\end{bmatrix}$ be a vectors in
   $(\sigma,\tau)$-coordinates originating at the same
   $(\sigma,\tau)$-coordinate. Define
   \[
-  \mathbf{v}_\mathrm{hyp} \bullet_\mathrm{hyp} \mathbf{w}_\mathrm{hyp} = \mathbf{v}_\mathrm{hyp} \cdot P_\mathrm{hyp} \cdot \mathbf{w}_\mathrm{hyp}^\transpose
+  \mathbf{v}_\mathrm{hyp} \bullet_\mathrm{hyp} \mathbf{w}_\mathrm{hyp}=\frac{ac}{|K|^{-1}}+\frac{bd\sinh^2\sigma}{|K|^{-1}}\]
+  or in matrix notation,
+  \[  \mathbf{v}_\mathrm{hyp} \bullet_\mathrm{hyp} \mathbf{w}_\mathrm{hyp}=
+\mathbf{v}_\mathrm{hyp} \cdot P_\mathrm{hyp} \cdot \mathbf{w}_\mathrm{hyp}^\transpose
   \]
   where
   \[
@@ -282,6 +297,9 @@ $\pp[x]{\tau}$, $\pp[y]{\tau}$, and $\pp[z]{\tau}$.
   originate from.
 \end{definition}
 
+\begin{problem}
+ How does this definition of the hyperbolic dot product compare with the definition of the $K$-dot product from Chapter 12 and the spherical dot product from Chapter 15? 
+\end{problem}
 
 
 Now notice that you can write a path on the $K$-surface by giving a path
@@ -370,6 +388,9 @@ $y=\hat{y}=0$, demand additionally that $\tau(e)=0.$
 
 
 \section{Shortest path between any two points}
+\begin{listOutcomes}
+ \item Show that the shortest distance between two points on the hyperbolic plane lies on the plane containing the points and the origin
+\end{listOutcomes}
 
 Just as we proved in spherical geometry that the shortest path is the
 path cut out by
@@ -556,6 +577,10 @@ $K$-geometry will be called the $K$-distance.
 
 
 \section{The hyperbolic Pythagorean Theorem}
+\begin{listOutcomes}
+ \item Prove the hyperbolic version of the Pythagorean Theorem
+ \item Show that for very small triangles, the hyperbolic version of the Pythagorean Theorem is approximately the same as the Euclidean version.
+\end{listOutcomes}
 
 To start we need some basic facts about lengths of lines in hyperbolic
 geometry.

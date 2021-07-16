@@ -2,13 +2,18 @@
 
 \input{../preamble.tex}
 
-\title{Concurrence theorems in euclidean geometry}
+\title{Concurrence theorems in Euclidean geometry}
 
 \begin{document}
 \begin{abstract}
 Now we explore when three lines meet at a point.
 \end{abstract}
 \maketitle
+
+\begin{listOutcomes}
+ \item State and prove facts about the ratio of sides and areas of triangles
+ \item State and prove Ceva's theorem
+\end{listOutcomes}
 
 Let's look at a some \textit{concurrence} theorems. Concurrence
 theorems deal with situations when three or more lines (or curves)
@@ -49,6 +54,11 @@ XFB\right\vert }.
 \end{image}
 \begin{hint}
 Mark the height of the relevant triangles.
+\end{hint}
+
+\begin{hint}
+ Video for the first equality is at \url{https://youtu.be/nALZ_REZV74} with notes at \url{https://osu.instructure.com/courses/84670/files/23758741}.
+ 
 \end{hint}
 \begin{freeResponse}
 Start by marking the height of $\triangle AFC$ and $\triangle CFB$:
@@ -122,7 +132,7 @@ and so
 \end{problem}
 
 \begin{problem}
-\label{26} Use the previous problem to show using pure algebra that%
+\label{26} Use the previous problem to show using only algebra that%
 \[
 \frac{|AF|}{|FB|}=\frac{|\triangle AXC|}{|\triangle CXB|}. %\label{27}%
 \]
@@ -148,10 +158,10 @@ Substituting we find
 
 Now we will present, and you will prove, \textit{Ceva's Theorem}. %[MJG,287-288]
 
-\textbf{Historical note:} Giovanni Ceva (\emph{CHEH-vah}) was an Italian
-mathematician who proved this theorem in the 1600s.  In fact, it was previously
+\textbf{Historical note:} The following fact was 
 proved in the 1000s by Yusuf al-Mu'taman ibn-H\=ud, the Muslim king of Zaragoza
-in Spain.  But we still call it Ceva's theorem.
+in Spain.  But we call it Ceva's theorem. Giovanni Ceva (\emph{CHEH-vah}) was an Italian
+mathematician who proved this theorem in the 1600s.  In fact, it 
 
 \begin{theorem}[Ceva's Theorem]
 Three segments $\bar{AD}$, $\bar{BE}$, and $\bar{CF}$
@@ -185,7 +195,10 @@ are concurrent if and only if
 \end{theorem}
 
 \begin{problem}
-Prove the forward direction of Ceva's theorem: For three concurrent
+Prove the Ceva's theorem: 
+\begin{enumerate}
+ \item 
+For three concurrent
 segments $\bar{AD}$, $\bar{BE}$ and $\bar{CF}$
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
@@ -214,30 +227,14 @@ show that
 \[
 \frac{|AF|}{|FB|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|}=1.
 \]
+
 \begin{hint}
-Use the previous problem repeatedly.
+Use the previous problem repeatedly.  Video for finding $\frac{|BD|}{|CD|}$ is at \url{https://youtu.be/nALZ_REZV74?t=249} with notes at \url{https://osu.instructure.com/courses/84670/files/23758741}. 
+
+Interactive demonstration is at \url{https://www.geogebra.org/m/s7m8xVDu}.
 \end{hint}
-\begin{freeResponse}
-From the previous problem, we see that
-\[
-\frac{|AF|}{|FB|}=\frac{|\triangle AXC|}{|\triangle CXB|},\qquad
-\frac{|BD|}{|DC|}=\frac{|\triangle AXB|}{|\triangle AXC|},\qquad
-\frac{|CE|}{|EA|}=\frac{|\triangle CXB|}{|\triangle AXB|}.
-\]
-So we may write
-\[
-\frac{|AF|}{|FB|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|} = 
-\frac{|\triangle AXC|}{|\triangle CXB|}\cdot 
-\frac{|\triangle AXB|}{|\triangle AXC|}\cdot
-\frac{|\triangle CXB|}{|\triangle AXB|} = 1.
-\]
-\end{freeResponse}
-\end{problem}
 
-
-
-\begin{problem}
-Prove the reverse direction of Ceva's Theorem: If%
+\item Prove the reverse direction of Ceva's Theorem: If%
 \[
 \frac{|AF|}{|FB|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|}=1
 \]
@@ -267,7 +264,7 @@ Suppose that they do not pass through a common point.
 \end{image}
 \end{hint}
 \begin{hint}
-Notice that if, for example, $F$ moves along the segment $\bar{AB}$,
+Notice that if, for example, $F$ moves along the segment $\bar{AB}$ from $A$ to $B$,
 then $\frac{|AF|}{|FB|}$ is a strictly increasing function of
 $|AF|$. Now use a previous problem to determine a position $F'$ for
 $F$ along the segment $\bar{AB}$ at which
@@ -275,6 +272,30 @@ $F$ along the segment $\bar{AB}$ at which
 \frac{|AF'|}{|F'B|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|}=1.
 \]
 \end{hint}
+
+\begin{hint}
+Video showing $F$ moving from $A$ to $B$ is at \url{https://youtu.be/nALZ_REZV74?t=496} with notes at \url{https://osu.instructure.com/courses/84670/files/23758741}. 
+
+Interactive demonstration is at \url{https://www.geogebra.org/m/s7m8xVDu}.
+\end{hint}
+\end{enumerate}
+
+\begin{freeResponse}
+From the previous problem, we see that
+\[
+\frac{|AF|}{|FB|}=\frac{|\triangle AXC|}{|\triangle CXB|},\qquad
+\frac{|BD|}{|DC|}=\frac{|\triangle AXB|}{|\triangle AXC|},\qquad
+\frac{|CE|}{|EA|}=\frac{|\triangle CXB|}{|\triangle AXB|}.
+\]
+So we may write
+\[
+\frac{|AF|}{|FB|}\cdot\frac{|BD|}{|DC|}\cdot\frac{|CE|}{|EA|} = 
+\frac{|\triangle AXC|}{|\triangle CXB|}\cdot 
+\frac{|\triangle AXB|}{|\triangle AXC|}\cdot
+\frac{|\triangle CXB|}{|\triangle AXB|} = 1.
+\]
+\end{freeResponse}
+
 \begin{freeResponse}
 Seeking a contradiction, suppose that 
 \[

@@ -9,14 +9,19 @@ Now we will change coordinates.
 \end{abstract}
 \maketitle
 
+\begin{listOutcomes}
+ \item Define $K$-warped space
+ \item Change from Euclidean coordinates to $K$-warped space coordinates
+ \item Prove facts about the angle between vectors and the area of a parallelogram in $K$-warped space
+\end{listOutcomes}
 
 \section{Bringing the North Pole of the $R$-sphere to $\left(
 0,0,1\right)  $}
 
-We are now ready to change coordinates on euclidean $3$-space so that we can fill
+We are now ready to change coordinates on Euclidean $3$-space so that we can fill
 up that space  with plane geometry and all the spherical and hyperbolic
 geometries.  We have reserved the notation $(x,y,z)$ for these new coordinates
-that we will put on the `same' objects we have been studying in euclidean
+that we will put on the `same' objects we have been studying in Euclidean
 $(\hat{x},\hat{y},\hat{z})$-coordinates. These new coordinates will be chosen to
 keep the north and south poles from going to infinity as the radius $R$ of a
 sphere increases without bound. In these now $(x,y,z)$-coordinates the sphere of
@@ -31,7 +36,7 @@ idea will be like the change from rectangular to polar coordinates for the
 plane that you encountered in calculus, only easier. 
 
 We are now ready to introduce this slightly different set of coordinates for
-$\mathbb{R}^{3}$, three-dimensional euclidean space. To understand a bit better why we are doing this,
+$\mathbb{R}^{3}$, three-dimensional Euclidean space. To understand a bit better why we are doing this,
 suppose we are standing at the North Pole%
 \[
 N=(0,0,R)
@@ -55,17 +60,17 @@ between the two $\mathbb{R}^{3}$'s:%
 \hat{z}  &  =Rz.
 \end{align*}
 We think of the $\left( x,y,z\right) $-coordinates as simply being a
-different set of addresses for the points in euclidean space. For
+different set of addresses for the points in Euclidean space. For
 example,
 \[
 \left(x,y,z\right)  =\left(0,0,1\right)
 \]
-tells me that the point in euclidean space that I'm referring to is%
+tells me that the point in Euclidean space that I'm referring to is%
 \[
 \left(\hat{x},\hat{y},\hat{z}\right) =\left( 0,0,R\right)= N.
 \]
 Continuing with this ``change of addresses'' the sphere of radius $R$
-in euclidean space is given by
+in Euclidean space is given by
 \begin{align*}
 R^{2} & =\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}\\ &
 =x^{2}+y^{2}+R^{2}z^{2}
@@ -119,12 +124,12 @@ R^{2}=\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=10^{-2}.
 %\end{hint}
 \end{problem}
 
-\section{Formulas for euclidean lengths, angles, and areas in terms of $(x,y,z)$-coordinates}
+\section{Formulas for Euclidean lengths, angles, and areas in terms of $(x,y,z)$-coordinates}
 
 To prepare ourselves to do hyperbolic geometry, which (in some sense)
-has no satisfactory model in euclidean space, we will `practice' by
+has no satisfactory model in Euclidean space, we will `practice' by
 doing spherical geometry (which \textit{does} have a completely
-satisfactory model in euclidean space) using these `slightly strange'
+satisfactory model in Euclidean space) using these `slightly strange'
 $\left( x,y,z\right) $-coordinates. Gradually throughout this course
 we will discover that the same rules that govern spherical geometry,
 expressed in $\left( x,y,z\right) $-coordinates, also govern flat and
@@ -134,7 +139,7 @@ x,y,z\right) $-coordinates that we will study is%
 1=K\left(x^{2}+y^{2}\right)+z^{2} .
 \]
 If $K>0$, the geometry we will be studying is the geometry of the the
-euclidean sphere of radius%
+Euclidean sphere of radius%
 \[
 R=\frac{1}{\sqrt{K}}.
 \]
@@ -142,11 +147,11 @@ If $K=0$ we will be studying flat (plane) geometry. If $K<0$, we will be
 studying hyperbolic geometry. 
 
 In short, we want to use $\left(  x,y,z\right)  $-coordinates to compute with,
-but we want lengths and angles to be the usual euclidean ones in $\left(
+but we want lengths and angles to be the usual Euclidean ones in $\left(
 \hat{x},\hat{y},\hat{z}\right)  $-coordinates.
 
 \begin{problem}
-  Suppose we have a curve $\hat\gamma$ in euclidean space and we think of it as a
+  Suppose we have a curve $\hat\gamma$ in Euclidean space and we think of it as a
   composition of a curve $\gamma$ in $K$-warped space with a transformation.  In
   other words, we're looking at a diagram
   \begin{image}
@@ -159,6 +164,20 @@ but we want lengths and angles to be the usual euclidean ones in $\left(
             \hat z(x,y,z)
           \end{smallmatrix}\right]}"
     ] \& \hat\gamma(t)=(\hat x(t),\hat y(t),\hat z(t))
+    \end{tikzcd}};
+  \end{tikzpicture}
+\end{image}
+
+\begin{image}
+    \begin{tikzpicture}
+    \node{
+  \begin{tikzcd}[ampersand replacement=\&, column sep = huge]
+    \R \ar[r,"\gamma"] \ar[rr,bend right=20,swap,"\hat\gamma"] \&  K-warped\ space \ar[r,"{\left[\begin{smallmatrix}
+            \hat x(x,y,z)\\
+            \hat y(x,y,z)\\
+            \hat z(x,y,z)
+          \end{smallmatrix}\right]}"
+    ] \& Euclidean\ geometry
     \end{tikzcd}};
   \end{tikzpicture}
 \end{image}
@@ -237,7 +256,7 @@ D_K =
 
 
 \begin{problem}
-  Use the previous problems and the relationship between euclidean and
+  Use the previous problems and the relationship between Euclidean and
   $(x,y,z)$-coordinates to show that
   \[
   \left[\dd[\hat{\gamma}]{t}\right] =
@@ -347,7 +366,7 @@ and%
 \end{align*}
 Hence:
 \begin{center}
-\textbf{We can compute the euclidean dot product without ever referring to euclidean coordinates!}
+\textbf{We can compute the Euclidean dot product without ever referring to Euclidean coordinates!}
 \end{center}
 We incorporate that fact into the following definition.
 
@@ -386,13 +405,13 @@ c_{2}%
 \[
 \mathbf{v}=(a,b,c)^\transpose,
 \]
-then the length of its image in euclidean space is given by
+then the length of its image in Euclidean space is given by
 \[
 |\mathbf{v}|_K=\sqrt{\mathbf{v} \bullet_K \mathbf{v}}.
 \]
 
 \begin{freeResponse}
-$\hat{\mathbf v} = \left(a,b,Rc \right)$ is the image of $V$ in euclidean space. Then,
+$\hat{\mathbf v} = \left(a,b,Rc \right)$ is the image of $V$ in Euclidean space. Then,
 \begin{align*}
 |V|_K = |\hat{\mathbf v}| = \sqrt{\hat{\mathbf v}\bullet\hat{\mathbf v}} 
 &= \sqrt{a^{2} + b^{2} + R^{2}c^{2}} \\
@@ -446,9 +465,9 @@ Then $|V|_{K} = \sqrt{V \bullet_{K} V} = \frac{1}{\sqrt{K}} = |R|$. This tells u
 
 \end{problem}
 
-%% So, suppose we have a curve on the $R$-sphere in euclidean space
+%% So, suppose we have a curve on the $R$-sphere in Euclidean space
 %% but it is given to us in $X(t)=(x(t),y(t),z(t))$-coordinates. Then the
-%% length of that curve in euclidean space is
+%% length of that curve in Euclidean space is
 %% \[
 %% \int_{b}^{e}\sqrt{\frac{dX}{dt}\bullet_{K}\frac{dX}{dt}}\,dt.
 %% \]
@@ -463,7 +482,7 @@ Then $|V|_{K} = \sqrt{V \bullet_{K} V} = \frac{1}{\sqrt{K}} = |R|$. This tells u
   \qquad\text{and}\qquad
   \mathbf{v}_{2} =\begin{pmatrix}a_{2} \\ b_{2} \\ c_{2}\end{pmatrix}
   \]
-  then the angle between their image in euclidean space is given by
+  then the angle between their image in Euclidean space is given by
   \[
   \theta = \arccos\left(\frac{\mathbf{v}_1\bullet_K \mathbf{v}_2}{|\mathbf{v}_1|_K \cdot|\mathbf{v}_2|_K }\right).
   \]
@@ -483,7 +502,7 @@ Then $|V|_{K} = \sqrt{V \bullet_{K} V} = \frac{1}{\sqrt{K}} = |R|$. This tells u
 \subsection{Computing area}
 
 \begin{problem}
-%% Show that, if we have any two vectors in euclidean three-space that
+%% Show that, if we have any two vectors in Euclidean three-space that
   %% are tangent to the $R$-sphere at some point on it, but the
   
   Show that if two vectors are given to us in $(x,y,z)$-coordinates as
@@ -493,7 +512,7 @@ Then $|V|_{K} = \sqrt{V \bullet_{K} V} = \frac{1}{\sqrt{K}} = |R|$. This tells u
   \mathbf{v}_{2} =\begin{pmatrix}a_{2} \\ b_{2} \\ c_{2}\end{pmatrix}
   \]
   then the area of the parallelogram spanned by the image of those two vectors in
-  euclidean space is%
+  Euclidean space is%
   \[
   \sqrt{\det
     \begin{bmatrix}
@@ -518,7 +537,7 @@ Then $|V|_{K} = \sqrt{V \bullet_{K} V} = \frac{1}{\sqrt{K}} = |R|$. This tells u
 
 %kCrossProductParallelogram Geogebra%
 
-\begin{freeResponse} In the previous problems it was shown that the K-dot product agrees with the euclidean dot product so, 
+\begin{freeResponse} In the previous problems it was shown that the K-dot product agrees with the Euclidean dot product so, 
 \[
 \sqrt{\det
 \begin{bmatrix}
@@ -532,7 +551,7 @@ Then $|V|_{K} = \sqrt{V \bullet_{K} V} = \frac{1}{\sqrt{K}} = |R|$. This tells u
 \hat{\mathbf v}_{1}\bullet \hat{\mathbf v}_{2} & \hat{\mathbf v}_{2}\bullet \hat{\mathbf v}_{2}%
 \end{bmatrix}}.
 \]
-Which was previously shown to be the area of the parallelogram spanned by the image of $\mathbf{v}_1$ and $\mathbf{v}_2$ in euclidean space. To show the equality write,
+Which was previously shown to be the area of the parallelogram spanned by the image of $\mathbf{v}_1$ and $\mathbf{v}_2$ in Euclidean space. To show the equality write,
 
 \begin{align*}
 \sqrt{\det
@@ -591,7 +610,7 @@ product also makes sense for tangent vectors to that set when $K$ is
 negative. The geometry we get when the constant $K$ is chosen to be
 negative is called a hyperbolic geometry. The geometry we get, when
 the constant $K$ is just chosen to be non-zero is called a
-non-euclidean geometry.  In fact all the non-euclidean $2$-dimensional
+non-Euclidean geometry.  In fact all the non-Euclidean $2$-dimensional
 geometries are either spherical or hyperbolic.
 
 %% \textit{Coming attractions:} In hyperbolic geometry, when $K^{-1}$ in
@@ -611,10 +630,10 @@ geometries are either spherical or hyperbolic.
 
 
 \begin{problem}
-Summarize the results from this section. In particular, indicate which
+Summarize the results from this section. In particular, summarize the results in your own words and indicate which
 results follow from the others.
 \begin{freeResponse}
-In this section we started working in $K$-warped space, denoted by $(x, y, z)$-coordinates. We used the following rule to transition between euclidean and  $(x, y, z)$-coordinates:
+In this section we started working in $K$-warped space, denoted by $(x, y, z)$-coordinates. We used the following rule to transition between Euclidean and  $(x, y, z)$-coordinates:
 \begin{align*}
 \hat{x}  &  =x\\
 \hat{y}  &  =y\\
@@ -624,7 +643,7 @@ In $K$-warped space the following surface,
 \[
 K\left(x^{2}+y^{2}\right)+z^{2}=1,
 \]
- generates the hyperbolic plane when $K<0$, the euclidean plane when $K=0$, and the sphere of radius $R$ when $K> 0$. Using a computation involving the euclidean dot product we defined the $K$-dot-product in $(x, y, z)$-coordinates such that,
+ generates the hyperbolic plane when $K<0$, the Euclidean plane when $K=0$, and the sphere of radius $R$ when $K> 0$. Using a computation involving the Euclidean dot product we defined the $K$-dot-product in $(x, y, z)$-coordinates such that,
 \[
 \mathbf{v}_{1}\bullet_{K}\mathbf{v}_{2}  = \mathbf{v}_{1} 
 \begin{bmatrix}

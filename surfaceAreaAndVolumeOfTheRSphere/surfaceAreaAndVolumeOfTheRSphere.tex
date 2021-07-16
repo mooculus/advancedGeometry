@@ -10,24 +10,28 @@ In this activity we begin to explore spherical geometry.
 \maketitle
 
 
-We are now going to study the geometry of the $R$-sphere in euclidean
+We are now going to study the geometry of the $R$-sphere in Euclidean
 $3$-space. This is the sphere of radius $R$ in normal $3$-space.  We
 will show why there is a factor of $1/3$ in many formulas for volumes
-in $3$-dimensional euclidean geometry, just like there is a factor of
-$1/2$ in many formulas for areas in $2$-dimensional euclidean
+in $3$-dimensional Euclidean geometry, just like there is a factor of
+$1/2$ in many formulas for areas in $2$-dimensional Euclidean
 geometry.
 
 
 
 \section{Circumference and area of circles}
+\begin{listOutcomes}
+ \item Prove that the circumference of a circle with radius $1$ is $2\pi$.
+ \item Give two different proofs that the area of a circle with radius $1$ is $pi$.
+\end{listOutcomes}
 
 We begin with perhaps the most basic fact of all about circles in
-euclidean geometry. We will use calculus to compute the perimeter of a unit
+Euclidean geometry. We will use calculus to compute the perimeter of a unit
 circle.
 
-
-\begin{problem}
-Consider a unit circle with $n$ equal inscribed triangles meeting at the center.
+%%%%%%FOR ONLINE, TURNED THE DRAWING INTO THE SET UP FOR THE NEXT PROBLEM%%%%%%
+%\begin{problem}
+{\bf Problem Set Up} Consider a unit circle with $n$ equal inscribed triangles meeting at the center.
 Here we have shown the $n$th triangle:
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
@@ -44,11 +48,13 @@ Here we have shown the $n$th triangle:
 \tkzLabelAngle[pos = 0.5](A,O,C){$\theta_n$}
 \end{tikzpicture}
 \end{image}
+
 Find $\theta_n$ and $b_n$ in terms of $n$.
-\end{problem}
+%\end{problem}
 
 
-\begin{problem}
+\begin{problem} Write $\theta_n$ and $b_n$ in terms of $n$.
+
 Explain what the limit
 \[
 \lim_{n\to\infty} \left(n\cdot b_n\right)
@@ -59,7 +65,7 @@ computes and compute the limit.
 
 
 \begin{problem}
-The circle of radius $1$ has circumference $2\pi$. Use this to reason
+The circle of radius $1$ has circumference $2\pi$. Use this to show
 that the circle of radius $1$ has area $\pi$.
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
@@ -123,7 +129,7 @@ the circle), here we have shown the $n$th triangle:
 \end{tikzpicture}
 \end{image}
 In each triangle, label $b_n$ and $h_n$, where $b_n$ is conceptualized
-as a ``base'' and $h_n$ is a ``height.'' Compute
+as a ``base'' and $h_n$ is a ``height.'' Find
 \[
 \lim_{n\to \infty} h_n
 \]
@@ -157,9 +163,12 @@ $1$. From using substitution from our work above, we see
 
 
 \section{Surface area of spheres}
+\begin{listOutcomes}
+\item Prove the formula for the surface area of a sphere.
+\end{listOutcomes}
 
 To compute the surface area of the sphere of radius $R$ in $3$-dimensional
-euclidean space, we will show that its surface area is equal to the surface
+Euclidean space, we will show that its surface area is equal to the surface
 area of something we can lay out flat. The argument for this goes way back to
 the great physicist and mathematician, Archimedes of Alexandria, in the $2$nd
 century B.C. To follow his argument, we have to begin by computing the area of
@@ -321,6 +330,10 @@ r_{i}\cdot s_{i}=h_{i}\cdot R.
 
 
 \section{Volumes of pyramids and spheres}
+\begin{listOutcomes}
+\item State the magnification principle.
+ \item Prove the formula for the volume of a rectangular base pyramid.
+\end{listOutcomes}
 
 We will start by looking at the volumes of pyramids.
 
@@ -385,8 +398,8 @@ distance $r$, the volume is unchanged.
 
 This fact is an example of \textit{Cavalieri's Principle}: Shearing a
 figure parallel to a fixed direction does not change the
-$n$-dimensional measure of an object in euclidean $n$-space. Think of
-a stack of (very thin) books. We'll give a proof in euclidean $3$-space,
+$n$-dimensional measure of an object in Euclidean $n$-space. Think of
+a stack of (very thin) books. We'll give a proof in Euclidean $3$-space,
 and we will use the coordinates $(\hat{x},\hat{y},\hat{z})$ to denote
 this space. 
 
@@ -402,7 +415,7 @@ multivariable calculus.
 \begin{hint}
 Put the base of the pyramid $P$ so that its vertices are $\left(
 0,0\right) $, $\left( r,0\right) $, $\left( 0,r\right) $ and $\left(
-r,r\right) $ in $3$-dimensional euclidean space. Consider the
+r,r\right) $ in $3$-dimensional Euclidean space. Consider the
 transformation%
 \[
 T(x,y,z)=
@@ -427,26 +440,33 @@ components.)
 
 \end{problem}
 
-\section{The magnification principle}
+%\section{The magnification principle}
 
 \textbf{The magnification principle:} If an object in Euclidean $n$-space is
 magnified by factors of $r_{1},\ldots,r_{n}$, its $n$-dimensional
 measure is multiplied by $r_{1}\cdots r_{n}$.
+\begin{remark}
+ When $n=2$ and $r_1=r_2$, this is a dilation, as in problem 31.
+\end{remark}
 
-\begin{problem}
-Use this magnification principle to justify the volume formula%
-\[
-(1/3)B\cdot h
-\]
-for any pyramid with rectangular base of area $B$ and vertical altitude $h$.
-\end{problem}
+\begin{theorem}[The magnification principle]
+We now prove the magnification principle using multivariable calculus.
+\end{theorem}
 
-\begin{problem}
-Prove the magnification principle using multivariable calculus.
+\begin{proof}
+In Chapter 4, we used the 2-dimensional change of variables formula. In Cavalieri's Principle, we used the three dimensional change of variables formula. Now, we extend that idea to the $n$-dimensional change of variables formula:
+\begin{equation}\label{changevar}
+\begin{split}
+ &\int\int\dots\int_{J(R)} f(x_1,x_2,\dots,x_n)dx_1 dx_2\dots dx_n\\
+ &= \int\int\dots\int_{R} f(J(x_1,x_2,\dots,x_n))|\det J(x_1,x_2,\dots,x_n)|dx_1 dx_2\dots dx_n.
+\end{split}\end{equation}
 
-\begin{hint}
-Consider the transformation%
-\[
+As we saw in the two dimensional version, when computing area, $f(x,y)=1$. Here, we are computing the $n$-dimensional version of volume, so $f(x_1,x_2,\dots,x_n)$. 
+
+Now we translate the magnification principle into a function and into a matrix. We want to magnify $x_1$ by $r_1$, $x_2$ by $r_2$, all the way through the list to multiplying $x_n$ by $r_n$. As a function, the magnification is \[J(x_1,x_2,\dots,x_n)=(r_1 x_1,r_2 x_2,\dots, r_n x_n).\] As a matrix, $\vec x=
+\left[\begin{smallmatrix}
+ x_1\\x_2\\\vdots\\x_n
+\end{smallmatrix}\right]$, and \[
 J(\vec x)=
 \begin{bmatrix}
 r_{1} & 0   & \dots & 0\\
@@ -455,55 +475,82 @@ r_{1} & 0   & \dots & 0\\
 0     & 0   & \dots & r_{n}%
 \end{bmatrix}\vec x.
 \]
-and use the change of variables formula.
+
+Since $J(\vec x)$ is a diagonal matrix, the absolute value of the determinant is $|r_1 r_2 r_3\cdots r_n|$. Now we can plug all of our formulas into the change of variables formula \eqref{changevar}:
+\begin{equation}
+\begin{split}
+ \int\int\dots\int_{J(R)}1dx_1 dx_2\dots dx_n
+ &= \int\int\dots\int_{R}1|r_1 r_2 r_3\cdots r_n|dx_1 dx_2\dots dx_n\\
+ &=|r_1 r_2 r_3\cdots r_n|\int\int\dots\int_{R}dx_1 dx_2\dots dx_n.
+\end{split}\end{equation}
+\end{proof}
+
+\begin{problem}
+ Explain how the statement and proof of the magnification principle is related to the statement and proof of Problem 31.
+\end{problem}
+
+\begin{problem}
+Use this magnification principle to justify the volume formula%
+\[
+(1/3)B\cdot h
+\]
+for any pyramid with rectangular base of area $B$ and vertical altitude $h$.
+\begin{hint}
+ Use a previous problem that found the formula for the volume of a pyramid with square base of area $r^2$ and vertical altitude $r$.
 \end{hint}
 \end{problem}
 
-Now suppose we have any pyramid%
-\begin{image}
-\begin{tikzpicture}
-%\draw[thick,-stealth] (0,0,0)--(0,0,6); 
-%\draw[thick,-stealth] (0,0,0)--(0,6,0);
-%\draw[-stealth] (0,0,0)--(6,0,0);
-\coordinate (B1) at (0,0,0);
-\coordinate (B2) at (0,0,2);
-\coordinate (B3) at (2,0,1);
-\coordinate (B4) at (4,0,2);
-\coordinate (B5) at (3,0,0);
-\coordinate (peak) at (1,3,1);
 
-\draw[fill=red,opacity=0.3] (B1)--(B2)--(B3)--(B4)--(B5)--cycle; % base
-\draw[fill=orange,opacity=0.3] (B1)--(B2)--(peak);
-\draw[fill=yellow,opacity=0.3] (B2)--(B3)--(peak);
-\draw[fill=green,opacity=0.3] (B3)--(B4)--(peak);
-\draw[fill=blue,opacity=0.3] (B4)--(B5)--(peak);
-\draw[fill=purple,opacity=0.3] (B5)--(B1)--(peak);
 
-\draw[ultra thick] (B2)--(B3)--(B4)--(B5)--(peak)--(B4)--(B3)--(peak)--(B2);
-\end{tikzpicture}
-\end{image}
-with any shaped base of area $B$ and any vertical altitude $h$. Approximate
-the base as close as you want (i.e.\ $\varepsilon$-close) by tiling its interior
-with rectangles. Let $t$ denote the sum of the areas of these rectangles.
-Approximate the base as close as you want (i.e.\ $\varepsilon$-close) by
-covering it entirely with rectangles. Let $T$ denote the sum of the areas of
-these rectangles. Why is the area $B$ of the base of the pyramid caught
-between $B-\varepsilon$ and $B+\varepsilon$?
 
-\begin{problem}
-Show that the volume $V$ of the pyramid is caught between $\left(
-1/3\right) \cdot t\cdot h$ and $\left( 1/3\right) \cdot T\cdot
-h$. Argue that, given any positive real number $\varepsilon$, however
-small, the volume $V$ of the pyramid is caught between $\left(
-1/3\right) \cdot \left( B-\varepsilon\right)\cdot h$ and $\left(
-1/3\right) \cdot \left( B+\varepsilon\right) \cdot h$. Finally, show that
-\[
-V=\left(  1/3\right)  \cdot B\cdot h.
-\]
-\end{problem}
+%Now suppose we have any pyramid%
+%\begin{image}
+%\begin{tikzpicture}
+%%\draw[thick,-stealth] (0,0,0)--(0,0,6); 
+%%\draw[thick,-stealth] (0,0,0)--(0,6,0);
+%%\draw[-stealth] (0,0,0)--(6,0,0);
+%\coordinate (B1) at (0,0,0);
+%\coordinate (B2) at (0,0,2);
+%\coordinate (B3) at (2,0,1);
+%\coordinate (B4) at (4,0,2);
+%\coordinate (B5) at (3,0,0);
+%\coordinate (peak) at (1,3,1);
+%
+%\draw[fill=red,opacity=0.3] (B1)--(B2)--(B3)--(B4)--(B5)--cycle; % base
+%\draw[fill=orange,opacity=0.3] (B1)--(B2)--(peak);
+%\draw[fill=yellow,opacity=0.3] (B2)--(B3)--(peak);
+%\draw[fill=green,opacity=0.3] (B3)--(B4)--(peak);
+%\draw[fill=blue,opacity=0.3] (B4)--(B5)--(peak);
+%\draw[fill=purple,opacity=0.3] (B5)--(B1)--(peak);
+%
+%\draw[ultra thick] (B2)--(B3)--(B4)--(B5)--(peak)--(B4)--(B3)--(peak)--(B2);
+%\end{tikzpicture}
+%\end{image}
+%with any shaped base of area $B$ and any vertical altitude $h$. Approximate
+%the base as close as you want (i.e.\ $\varepsilon$-close) by tiling its interior
+%with rectangles. Let $t$ denote the sum of the areas of these rectangles.
+%Approximate the base as close as you want (i.e.\ $\varepsilon$-close) by
+%covering it entirely with rectangles. Let $T$ denote the sum of the areas of
+%these rectangles. Why is the area $B$ of the base of the pyramid caught
+%between $B-\varepsilon$ and $B+\varepsilon$?
+%
+%\begin{problem}
+%Show that the volume $V$ of the pyramid is caught between $\left(
+%1/3\right) \cdot t\cdot h$ and $\left( 1/3\right) \cdot T\cdot
+%h$. Argue that, given any positive real number $\varepsilon$, however
+%small, the volume $V$ of the pyramid is caught between $\left(
+%1/3\right) \cdot \left( B-\varepsilon\right)\cdot h$ and $\left(
+%1/3\right) \cdot \left( B+\varepsilon\right) \cdot h$. Finally, show that
+%\[
+%V=\left(  1/3\right)  \cdot B\cdot h.
+%\]
+%\end{problem}
 
 \section{Relation between volume and surface area of a sphere}
-
+\begin{listOutcomes}
+ \item Use pyramids to approximate the volume and surface area of a sphere.
+ \item Use pyramids to find a relationship between the volume and surface area of a sphere.
+\end{listOutcomes}
 Think of a disco-ball. Its surface is approximately a sphere, but that
 surface is made up of tiny flat mirrors.
 
@@ -525,7 +572,7 @@ Argue that, as the mirrors are made to be smaller and smaller,
 \item the distance $h$ approaches the radius $R$ of that sphere,
 \item the volume of the disco-ball approaches the volume of the sphere.
 \end{enumerate}
-Conclude that, for a sphere of radius $R$ in euclidean $3$-space, the relation
+Conclude that, for a sphere of radius $R$ in Euclidean $3$-space, the relation
 between the volume $V$ of the sphere and the surface area $S$ of the sphere is
 given by the formula%
 \[
@@ -541,7 +588,7 @@ Use the work above to deduce a formula for the volume of a sphere.
 
 
 \begin{problem}
-Summarize the results from this section. In particular, indicate which
+Summarize the results from this section. In particular, state the conclusion of each problem in your own words and indicate which
 results follow from the others.
 \begin{freeResponse}
 \end{freeResponse}

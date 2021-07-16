@@ -12,9 +12,14 @@ version of the Pythagorean Theorem.
 
 
 \section{Spherical coordinates, a shortest path from the North Pole}
+\begin{listOutcomes}
+ \item Convert K-warped space to spherical coordinates
+ \item Derive the formula for the spherical or ($\sigma, \tau$)-coordinate dot product
+ \item Show that the shortest distance from the north pole of the $R$-sphere to a point on the sphere in the $y=0$ plane is on the path that stays in the $y=0$ plane.
+\end{listOutcomes}
 
 We next will figure out what is the shortest path you can take between
-two points on the euclidean $R$-sphere. However, we will do our
+two points on the Euclidean $R$-sphere. However, we will do our
 calculation using $(x,y,z)$-coordinates, as we won't have
 $(\hat{x},\hat{y},\hat{z})$-coordinates when we get to hyperbolic
 geometry.
@@ -37,12 +42,11 @@ where $0\le \sigma\le\pi$ and $0\le \tau<2\pi$.
   Show that these functions actually parameterize the $R$-sphere.
 \begin{hint}
 This is an exercise in ``double-containment'': you must show that every point
-specified in this way is a point on the sphere and vice versa.  To show the one
-direction, show
+specified in this way is a point on the sphere and vice versa.  To show every point is on the sphere, show
 \[
 K\left(x(\sigma,\tau) ^{2}+y(\sigma,\tau) ^{2}\right) +z(\sigma,\tau)^{2} = 1
 \]
-for all $(\sigma,\tau)$. To show the other direction, appeal to the
+for all $(\sigma,\tau)$. To show the every point on the sphere can be written this way, appeal to the
 diagram above.
 \end{hint}
 \begin{freeResponse}
@@ -304,11 +308,20 @@ $\pp[x]{\tau}$, $\pp[y]{\tau}$, and $\pp[z]{\tau}$.
 \end{problem}
 
 \begin{definition}
-  Let $\mathbf{v}_\mathrm{sph}$ and $\mathbf{w}_\mathrm{sph}$ be a vectors in
-  $(\sigma,\tau)$-coordinates originating at the same
+  Let $\mathbf{v}_\mathrm{sph}= 
+\begin{bmatrix}
+ a&b
+\end{bmatrix}$ and $\mathbf{w}_\mathrm{sph}= 
+\begin{bmatrix}
+ c & d
+\end{bmatrix}$ be a vectors in
+  $(\sigma,\tau)$-coordinates based at the same point
   $(\sigma,\tau)$-coordinate. Define
   \[
-  \mathbf{v}_\mathrm{sph} \bullet_\mathrm{sph} \mathbf{w}_\mathrm{sph} = \mathbf{v}_\mathrm{sph} \cdot P_\mathrm{sph} \cdot \mathbf{w}_\mathrm{sph}^\transpose
+  \mathbf{v}_\mathrm{sph} \bullet_\mathrm{sph} \mathbf{w}_\mathrm{sph} = R^2 ac+R^2 bd\sin^2\sigma\]
+  or in matrix notation,
+  \[
+   \mathbf{v}_\mathrm{sph} \bullet_\mathrm{sph} \mathbf{w}_\mathrm{sph} =  \mathbf{v}_\mathrm{sph} \cdot P_\mathrm{sph} \cdot \mathbf{w}_\mathrm{sph}^\transpose
   \]
   where
   \[
@@ -494,13 +507,10 @@ $y=\hat{y}=0$, demand additionally that $\tau(e)=0.$
 
 
 
-
-
-
-
-
-
 \section{Shortest path between any two points}
+\begin{listOutcomes}
+ \item Show that the shortest distance between two points on a sphere lies on a great circle
+\end{listOutcomes}
 
 We next prove the theorem that shows that shortest path on the surface
 of the Earth from Rio de Janeiro to Los Angeles is the one cut on the
@@ -673,6 +683,10 @@ through $(0,0,0)$.
 %% $X_{1}$ pointing in the direction of $X_{2}.$
 
 \section{The spherical Pythagorean Theorem}
+\begin{listOutcomes}
+ \item Prove the spherical version of the Pythagorean Theorem
+ \item Show that for very small triangles, the spherical version of the Pythagorean Theorem is approximately the same as the Euclidean version.
+\end{listOutcomes}
 
 To start we need some basic facts about lengths of lines in spherical
 geometry.
@@ -827,7 +841,7 @@ Since we are working on the $R$-sphere,
   \cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots
   \]
 to show that for ``small'' triangles, the spherical Pythagorean
-Theorem reduces to the euclidean Pythagorean Theorem, meaning
+Theorem reduces to the Euclidean Pythagorean Theorem, meaning
 \[
 c^2 \approx a^2+b^2.
 \]

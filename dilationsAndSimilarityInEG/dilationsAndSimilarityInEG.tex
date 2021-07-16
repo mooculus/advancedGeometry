@@ -1,23 +1,31 @@
-\documentclass[newpage,hints,handout]{ximera}
+\documentclass[hints,handout]{ximera}
 
 \input{../preamble.tex}
 
-\title{Dilations and similarity in euclidean geometry}
+\title{Dilations and similarity in Euclidean geometry}
 
 \begin{document}
 \begin{abstract}
-Now we explore some properties that are somewhat unique to euclidean
+Now we explore some properties that are somewhat unique to Euclidean
 geometry.
 \end{abstract}
 \maketitle
 
-\section{Dilations in \textbf{EG}}
+\section{Dilations in Euclidean Geometry}
+\begin{listOutcomes}
+ \item Show how dilations affect vectors.
+ \item Show how dilations affect lines.
+ \item Show how dilations affect angles.
+\end{listOutcomes}
 
-We start this section off by asking you to prove a basic result.
+We start this section off by asking you to prove a general result.
 
 \begin{problem}
-  Let $X$ be a set and $f: X \to X$. Prove that $f^{-1}$ exists if and
+  Let $X$ be a set and $f: X \to X$. Prove that a function $f^{-1}$ exists if and
   only if $f$ is one-to-one and onto.
+\begin{hint}
+ Remember the definition of a function means that $f^{-1}$ is a function if and only if for every input $x$ in the domain $X$, there exists a unique output $y$ in the range (in this case, also $X$).
+\end{hint}
   \begin{freeResponse}
     $(\Rightarrow)$ Suppose $f^{-1}:A\to A$ exists. Since the domain
     of $f^{-1}$ is all of $A$, $f$ must be onto. Moreover, since
@@ -28,9 +36,11 @@ We start this section off by asking you to prove a basic result.
   \end{freeResponse}
 \end{problem}
 
-
 \begin{definition}
-A \textbf{dilation} is a transformation of the cartesian plane to
+ A \emph{transformation} or \emph{mapping} is a function $f$ that takes a set $X$ to itself. That is $f:X\to X$. Mathematicians often use function, map, and transformation interchangeably. 
+\end{definition}
+\begin{definition}
+A \textbf{dilation} is a transformation of the Cartesian plane to
 itself that:
 \begin{enumerate}
 \item Is one-to-one and onto.
@@ -40,6 +50,8 @@ itself that:
   the \textbf{magnification factor} of the dilation.
 \end{enumerate}
 \end{definition}
+
+Dilations are like inflation and deflation or zooming in or out on an image. Inflation or zooming in does not introduce gaps (onto) or folds (one-to-one). One point stays the same when zooming in and lines through the center are stretched.
 
 \begin{definition}
 Given a point $\left(x_{0},y_{0}\right)$ in the plane and a positive
@@ -53,8 +65,10 @@ We will also denote the output $D\left(x,y\right)$ of the dilation
 as $\left(\underline{x},\underline{y}\right)$.
 \end{definition}
 
+
+%%%%%%%%%%%%%%%%%CHANGED FROM IN PERSON%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}
-Using cartesian coordinates for the plane, show that the mapping $D$
+Using Cartesian coordinates for the plane, show that the mapping $D$
 defined above is a dilation with magnification factor $r$ and center
 $\left( x_{0},y_{0}\right) $.
 \begin{hint}
@@ -63,8 +77,24 @@ $\left( x_{0},y_{0}\right) $.
   \l(t) = \text{point} + t \cdot \text{vector}
   \]
 \end{hint}
-\begin{freeResponse}
-First we must show that the center of the dilation is fixed, that is we must show that 
+\begin{hint}
+ See video solution at \url{https://youtu.be/ZkNg-dp2ijQ} or notes \url{https://osu.instructure.com/courses/84670/files/23562177/}. The video and notes give a proof that $D$ is one-to-one and onto without using the result of the previous problem. 
+\end{hint}
+\begin{proof}We need to verify that $D$ satisfies the four parts of the definition of a dilation.
+\begin{description} 
+\item[(a)] By the previous problem, we can prove that $D$ is one-to-one and onto by finding its inverse. To do this, let $(x,y),(z,w)\in\mathbb{R}^2$ such that 
+\begin{equation}
+(z,w):= D\left(  x,y\right)  =\left(  x_{0},y_{0}\right)  +r\left(  x-x_{0},y-y_{0}\right).
+\end{equation}
+Since $x,y,x_0,y_0,r\in\mathbb{R}$, we know such a $(z,w)$ exists (This is the proof of onto!).  Now we solve for $(x,y)$.
+\begin{align}
+(z,w)&=\left(  x_{0},y_{0}\right)  +r\left(  x-x_{0},y-y_{0}\right)\\
+(z-x_0,w-y_0)&=r(x-x_0,y-y_0)\\
+\left(\frac{z-x_0}{r},\frac{w-y_0}{r}\right)&=(x-x_0,y-y_0)\\
+\left(\frac{z-x_0}{r}+x_0,\frac{w-y_0}{r}+y_0\right)&=(x,y).
+\end{align}
+Thus, $D^{-1}(z,w):=\left(\frac{z-x_0}{r}+x_0,\frac{w-y_0}{r}+y_0\right)$. Since we found an inverse function, $D$ must be one-to-one and onto.
+\item[(b)] We must show that the center of the dilation is fixed, that is we must show that 
 \[
 D(x_0,y_0) = (x_0,y_0).
 \]
@@ -74,7 +104,7 @@ D(x_0,y_0) &= (x_0,y_0) + r(x_0-x_0,y_0-y_0)\\
 &= (x_0,y_0) + r(0,0)\\
 &=(x_0,y_0).
 \end{align*}
-Next we must show that every line through the fixed point goes to
+\item[(c)] Next we must show that every line through the fixed point goes to
 itself. To do this, consider the line
 \[
 \l(t) = (x_0,y_0) + t(u,v)
@@ -93,7 +123,7 @@ vector $(u,v)$ goes in the same direction as the vector
 $(ru,rv)$. Hence a dilation maps any line that passes through its
 center to itself.
 
-Finally, we must show that all distances are multiplied by the
+\item[(d)] Finally, we must show that all distances are multiplied by the
 magnification factor of the dilation. Consider two points $(a_1,b_1)$
 and $(a_2,b_2)$.  Write
 \begin{align*}
@@ -119,14 +149,38 @@ d((\underline{a_1},\underline{b_1}),(\underline{a_2},\underline{b_2})) &=
 \end{align*}
 Hence we see that the distance between any two points is multiplied by
 the magnification factor.
+\end{description}
+\end{proof}
+\end{problem}
+
+
+\begin{problem}
+Show that the inverse mapping of a dilation is again a dilation with
+the same center but with magnification factor $r^{-1}$.
+\begin{hint}
+Solve for $(x,y)$ in terms of $(\underline{x},\underline{y})$. Look for where this is done in the previous problem.
+\end{hint}
+\begin{freeResponse}
+Write
+\begin{align*}
+(\underline{x},\underline{y}) &= (x_{0},y_{0})  +r(x-x_{0},y-y_{0}), \\
+(\underline{x},\underline{y}) &= (x_{0},y_{0})  +r(x,y) -r(x_{0},y_{0}), \\
+r(x_0,y_0) + (\underline{x},\underline{y}) - (x_0,y_0) &= r(x,y), \\
+(x_0,y_0) + r^{-1}(\underline{x}-x_0,\underline{y}-y_0) &= (x,y). \\
+\end{align*}
+Hence the inverse mapping of a dilation is again a dilation with the
+same center but with magnification factor $r^{-1}$.
 \end{freeResponse}
 \end{problem}
 
+
+
 \begin{problem}
-Show that a dilation by a factor of $r$ takes any vector to $r$
-times itself.
+Show that a dilation by a factor of $r$ takes any vector to $r$ times itself.
 \begin{hint}
-View the vector as the difference between two points.
+Write a vector $\vec{u}$ as $(a,b)$, where the head of $\vec{u}$ is on $(a,b)$ when the tail is on $(0,0)$. That is, $\vec{u}$ has slope $\frac{b}{a}$ and length $\sqrt{a^2+b^2}$. 
+
+Look for where this was done in a previous problem.
 \end{hint}
 \begin{freeResponse}
 Consider the vector with its tip at $(a,b)$ and its tail at
@@ -146,9 +200,12 @@ Hence a dilation takes any vector to $r$ times itself.
 \begin{problem}
 Show that a dilation takes a line to a line parallel (or equal) to
 itself.
+
+
 \begin{hint}
-Use the parametric formula for a line.
+Use the parametric formula for a line.  For a longer review of parameterizing lines using vectors, see \url{https://youtu.be/ZwgeCXuIROA} and \url{https://youtu.be/ZkNg-dp2ijQ?t=532} at 8:52.
 \end{hint}
+
 \begin{freeResponse}
 Using the parametric formula for a line
 \[
@@ -178,27 +235,7 @@ angles.
 \end{freeResponse}
 \end{problem}
 
-
-\begin{problem}
-Show that the inverse mapping of a dilation is again a dilation with
-the same center but with magnification factor $r^{-1}$.
-\begin{hint}
-Solve for $(x,y)$ in terms of $(\underline{x},\underline{y})$.
-\end{hint}
-\begin{freeResponse}
-Write
-\begin{align*}
-(\underline{x},\underline{y}) &= (x_{0},y_{0})  +r(x-x_{0},y-y_{0}), \\
-(\underline{x},\underline{y}) &= (x_{0},y_{0})  +r(x,y) -r(x_{0},y_{0}), \\
-r(x_0,y_0) + (\underline{x},\underline{y}) - (x_0,y_0) &= r(x,y), \\
-(x_0,y_0) + r^{-1}(\underline{x}-x_0,\underline{y}-y_0) &= (x,y). \\
-\end{align*}
-Hence the inverse mapping of a dilation is again a dilation with the
-same center but with magnification factor $r^{-1}$.
-\end{freeResponse}
-\end{problem}
-
-
+%%%%%%%%CHANGED FROM IN PERSON%%%%%%%%%%%%%%%%%
 \begin{problem}
 Show using several-variable calculus that a dilation with
 magnification factor $r$ multiplies all areas by a factor of $r^{2}$.
@@ -218,7 +255,7 @@ J_D(x,y) =
 \]
 and $D_x$ and $D_y$ are the components of $D(x,y)$.
 \end{hint}
-\begin{freeResponse}
+\begin{proof}
 Let $R$ be the region in the plane. Write
 \[
 \int_{D(R)} 1  \d xdy = \int_{R}  \left|\det J_D(x,y)\right| \d xdy,
@@ -242,7 +279,7 @@ Hence $\left|\det J_D(x,y)\right| = r^2$ and so
 \]
 This shows that a dilation with magnification factor $r$ multiplies
 all areas by a factor of $r^{2}$.
-\end{freeResponse}
+\end{proof}
 \end{problem}
 
 \begin{problem}
@@ -250,7 +287,7 @@ Give an explanation that a middle grades student would understand that
 a dilation with magnification factor $r$ multiplies all areas by a
 factor of $r^{2}$.
 \begin{hint}
-Break the region into rectangles. 
+Break the region into rectangles. Focus on explaining why this fact is true for rectangles, then why it makes sense to be true in general. 
 \end{hint}
 \begin{freeResponse}
 Break an arbitrary region into rectangles. Once we have the
@@ -263,8 +300,12 @@ has increased by a factor of $r^2$.
 
 
 
-\section{Similarity in \textbf{EG}}
-
+\section{Similarity in {Euclidean Geometry}}
+\begin{listOutcomes}
+ \item Prove two triangles are similar if and only if the corresponding sides are proportionally with the same constant of proportionality.
+ \item Prove two triangles are similar if and only if the corresponding angles are congruent.
+ \item Prove two triangles are similar if the corresponding sides are parallel or perpendicular.
+\end{listOutcomes}
 \begin{definition}
 Two triangles are \textbf{similar} if there is a dilation of the
 plane that takes one to a triangle which is congruent to the other. We write%
@@ -287,16 +328,17 @@ sides are proportional with the same constant of proportionality.
 
 \end{enumerate}
 \begin{hint}
-For the first part, you have to start from the supposition that the
+For the first part, you have to start from the hypothesis that the
 two triangles satisfy our definition of similar triangles.
 \end{hint}
 \begin{hint}
-For the second part, you have to start from the supposition that
+For the second part, you have to start from the assumption that
 corresponding sides of the two triangles are proportional and use SSS
 to show that there is a dilation of $\triangle ABC$ is congruent to
 $\triangle A'B'C'$.
 \end{hint}
-\begin{freeResponse}
+%\begin{freeResponse}%%%%%%%%%%%%%CHANGE FROM IN PERSON%%%%%%
+\begin{proof}
 For the first part, suppose that we have two similar triangles. This
 means that there is a dilation that takes one triangle to a triangle
 congruent to the other. Since a dilation with magnification factor
@@ -307,8 +349,8 @@ lengths, we have that
 |AC| &= r\cdot |A'C'|\\
 |BC| &= r\cdot |B'C'|.
 \end{align*}
-
-
+\end{proof}
+\begin{freeResponse}
 For the second part, suppose that corresponding sides are proportional
 with the same constant of proportionality. So
 \begin{align*}
@@ -333,11 +375,11 @@ triangles are similar.
 \end{enumerate}
 
 \begin{hint}
-For the first part, you have to start from the supposition that the
+For the first part, you have to start from the assumption that the
 two triangles satisfy our definition of similar triangles.
 \end{hint}
 \begin{hint}
-For the second part, you have to start from the supposition that
+For the second part, you have to start from the assumption that
 corresponding angles of the two triangles are equal, then use a
 dilation with $r=|A'B'|/|AB|$ and ASA to show that the dilation of one
 triangle is congruent to the other.
@@ -347,7 +389,8 @@ For the first part, suppose that we have two similar triangles. This
 means that there is a dilation that takes one triangle to a triangle
 congruent to the other. Since dilations preserve angles,
 corresponding angles must be equal.
-
+\end{freeResponse}%%%%%%%%%%%%%%CHANGE FROM IN PERSON%%%%%%%
+\begin{proof}
 For the second part, suppose that corresponding angles of two
 triangles are equal. Set the magnification factor of the dilation $D$
 to be
@@ -358,7 +401,8 @@ In this case, $D$ maps $\bar{AB}$ to a segment congruent to
 $\bar{A'B'}$. Moreover, dilations preserve angles. Hence by ASA, $D$
 maps $\triangle ABC$ to a triangle congruent to $\triangle A'B'C'$,
 and so $\triangle ABC \sim \triangle A'B'C'$.
-\end{freeResponse}
+\end{proof}
+%\end{freeResponse}
 \end{problem}
 
 \begin{problem}
@@ -374,12 +418,13 @@ angles are equal. Hence the triangles are similar.
 \end{freeResponse}
 \end{problem}
 
+%%%%%%%%%%%%%%CHANGE FROM IN PERSON%%%%%%%%%%%
 \begin{problem}
 Show that two triangles are similar if corresponding sides are perpendicular.
 \begin{hint}
 Just think about one angle at a time.
 \end{hint}
-\begin{freeResponse}
+\begin{proof}
 It is sufficient to show that given two angles with perpendicular
 legs, then the angles are equal.
 
@@ -388,7 +433,7 @@ could be several configurations, but all proofs will be similar. Right
 triangles will be formed containing the angle in question. Using the
 fact that right triangles are similar if and only if two nonright
 angles are equal one can show the result for any configuration. 
-\end{freeResponse}
+\end{proof}
 \end{problem}
 
 

@@ -9,9 +9,17 @@ We explore rigid motions as matrix multiplication.
 \end{abstract}
 \maketitle
 
-\subsection*{Transformations of euclidean space}
+\begin{listOutcomes}
+ \item Define an orthogonal matrix
+ \item Prove that orthogonal matrices define rigid motions of 3-d Euclidean space
+ \item Prove that orthogonal mappings are bijective mappings of the sphere
+ \item Describe certain orthogonal maps geometrically
+\item Prove that orthogonal mappings preserve the lengths of curves
+\end{listOutcomes}
 
-Consider the following mapping of euclidean space to itself:%
+\subsection*{Transformations of Euclidean space}
+
+Consider the following mapping of Euclidean space to itself:%
 \[
 \begin{bmatrix}
 \underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
@@ -26,8 +34,8 @@ vertically.
 
 \begin{definition}
   Such a mapping is called a \dfn{rigid motion} if the distance between any two
-  points in euclidean space is left unchanged by the mapping, that is, for
-  any two points $\hat{X}_{1}$ and $\hat{X}_{2}$ in euclidean space,%
+  points in Euclidean space is left unchanged by the mapping, that is, for
+  any two points $\hat{X}_{1}$ and $\hat{X}_{2}$ in Euclidean space,%
   \[
   d(\hat{M}\hat{X}_{1},\hat M\hat{X}_{2})=d(\hat{X}_{1},\hat{X}_{2}).
   \]
@@ -223,26 +231,26 @@ Therefore,  $w_{21} =  w_{12} =w_{13} =  w_{31} = w_{23} =  w_{32}=0$, and $w_{1
 \hat{x}^2 + \hat{y}^2 + \hat{z}^2 = R^2
 \]
 to the set of points
-$\left(\underline{\hat{x}},\underline{\hat{y}},\underline{\hat{z}}\right)$
+$\left({\hat{a}},{\hat{b}},{\hat{c}}\right)$
 such that
 \[
-\underline{\hat{x}}^2 + \underline{\hat{y}}^{2} + \underline{\hat{z}}^{2}=R^2.
+{\hat{a}}^2 + {\hat{b}}^{2} +{\hat{c}}^{2}=R^2.
 \]
 That is, $\hat{M}$ gives a one-to-one and onto mapping of the $R$-sphere to
 itself.
 \begin{hint}
   Write the equation
   \[
-  \underline{\hat{x}}^2 + \underline{\hat{y}}^{2} + \underline{\hat{z}}^{2}=R^2
+ {\hat{a}}^2 +{\hat{b}}^{2} + {\hat{c}}^{2}=R^2
   \]
   as
   \[
   \begin{bmatrix}
-    \underline{\hat{x}} \\ \underline{\hat{y}} \\ \underline{\hat{z}}%
+    {\hat{a}} \\ {\hat{b}} \\ {\hat{c}}%
   \end{bmatrix}  
   \bullet
   \begin{bmatrix}
-    \underline{\hat{x}} \\ \underline{\hat{y}} \\ \underline{\hat{z}}
+    {\hat{a}} \\ {\hat{b}} \\ {\hat{c}}
   \end{bmatrix}=R^2.
   \]
 \end{hint}
@@ -291,146 +299,146 @@ R^2 = \underline{\hat{x}}^2 + \underline{\hat{y}}^2 +\underline{\hat{z}}^2
 \end{problem}
 
 
-\begin{problem}
-Explain how the following diagram ``proves'' that function
-composition is \textit{always} associative.
-\begin{image}
-  \begin{tikzpicture}[scale=.5,geometryDiagrams]
-
-    \node at (-2,8) {$X$};
-    \draw[->] (-1.5,8)--(-.5,8);
-    \draw[fill=blue!10!white] (0,8) ellipse (0.166 and 0.5);% ellipse
-    \draw (.5,7) rectangle (2.5,9);
-    \draw (3,8) [partial ellipse=270:450:0.166 and 0.5];
-    \node at (1.5,8) {\Large $M_1$};
-    \draw (.5,8.5) [partial ellipse=180:270:.5 and 0.166];
-    \draw (.5,7.5) [partial ellipse=90:180:.5 and 0.166];
-    \draw (2.5,8.5) [partial ellipse=270:360:.5 and 0.166];
-    \draw (2.5,7.5) [partial ellipse=0:90:.5 and 0.166];
-
-    %\node at (5,8.6) {$X M_1$};
-    \draw[->] (3.5,8)--(6.5,8);
-    
-    \draw[fill=blue!10!white] (7,8) ellipse (0.166 and 0.5);% ellipse
-    \draw (7.5,7) rectangle (9.5,9);
-    \draw (10,8) [partial ellipse=270:450:0.166 and 0.5];
-    \node at (8.5,8) {\Large $M_2$};
-    \draw (7.5,8.5) [partial ellipse=180:270:.5 and 0.166];
-    \draw (7.5,7.5) [partial ellipse=90:180:.5 and 0.166];
-    \draw (9.5,8.5) [partial ellipse=270:360:.5 and 0.166];
-    \draw (9.5,7.5) [partial ellipse=0:90:.5 and 0.166];
-
-    \node at (12,8.6) {$M_2 \circ M_1(X)$};
-    \draw[->] (10.5,8)--(13.5,8);
-    
-    \draw[fill=blue!10!white] (14,8) ellipse (0.166 and 0.5);% ellipse
-    \draw (14.5,7) rectangle (16.5,9);
-    \draw (17,8) [partial ellipse=270:450:0.166 and 0.5];
-    \node at (15.5,8) {\Large $M_3$};
-    \draw (14.5,8.5) [partial ellipse=180:270:.5 and 0.166];
-    \draw (14.5,7.5) [partial ellipse=90:180:.5 and 0.166];
-    \draw (16.5,8.5) [partial ellipse=270:360:.5 and 0.166];
-    \draw (16.5,7.5) [partial ellipse=0:90:.5 and 0.166];
-
-    \node at (21.5,8) {$M_3 \circ (M_2 \circ M_1)(X)$};
-    \draw[->] (17.5,8)--(18.5,8);
-
-    \draw[dashed,gray] (-.4,6.6) rectangle (10.35,9.4);
-    \draw[dashed,gray] (6.6,2.6) rectangle (17.35,5.4);    
-    
-    %%%%%%%%%%%%%%%%%
-    
-    \node at (-2,4) {$X$};
-    \draw[->] (-1.5,4)--(-.5,4);
-    \draw[fill=blue!10!white] (0,4) ellipse (0.166 and 0.5);% ellipse
-    \draw (.5,3) rectangle (2.5,5);
-    \draw (3,4) [partial ellipse=270:450:0.166 and 0.5];
-    \node at (1.5,4) {\Large $M_1$};
-    \draw (.5,4.5) [partial ellipse=180:270:.5 and 0.166];
-    \draw (.5,3.5) [partial ellipse=90:180:.5 and 0.166];
-    \draw (2.5,4.5) [partial ellipse=270:360:.5 and 0.166];
-    \draw (2.5,3.5) [partial ellipse=0:90:.5 and 0.166];
-
-    \node at (5,4.6) {$M_1(X)$};
-    \draw[->] (3.5,4)--(6.5,4);
-    
-    \draw[fill=blue!10!white] (7,4) ellipse (0.166 and 0.5);% ellipse
-    \draw (7.5,3) rectangle (9.5,5);
-    \draw (10,4) [partial ellipse=270:450:0.166 and 0.5];
-    \node at (8.5,4) {\Large $M_2$};
-    \draw (7.5,4.5) [partial ellipse=180:270:.5 and 0.166];
-    \draw (7.5,3.5) [partial ellipse=90:180:.5 and 0.166];
-    \draw (9.5,4.5) [partial ellipse=270:360:.5 and 0.166];
-    \draw (9.5,3.5) [partial ellipse=0:90:.5 and 0.166];
-
-    %\node at (12,4.6) {$X M_1 M_2$};
-    \draw[->] (10.5,4)--(13.5,4);
-    
-    \draw[fill=blue!10!white] (14,4) ellipse (0.166 and 0.5);% ellipse
-    \draw (14.5,3) rectangle (16.5,5);
-    \draw (17,4) [partial ellipse=270:450:0.166 and 0.5];
-    \node at (15.5,4) {\Large $M_3$};
-    \draw (14.5,4.5) [partial ellipse=180:270:.5 and 0.166];
-    \draw (14.5,3.5) [partial ellipse=90:180:.5 and 0.166];
-    \draw (16.5,4.5) [partial ellipse=270:360:.5 and 0.166];
-    \draw (16.5,3.5) [partial ellipse=0:90:.5 and 0.166];
-
-    \node at (21.5,4) {$(M_3 \circ M_2) \circ M_1(X)$};
-    \draw[->] (17.5,4)--(18.5,4);
-
-    %%%%%%%%%%%%%%%%%
-
-    \node at (-2,0) {$X$};
-    \draw[->] (-1.5,0)--(-.5,0);
-    \draw[fill=blue!10!white] (0,0) ellipse (0.166 and 0.5);% ellipse
-    \draw (.5,-1) rectangle (2.5,1);
-    \draw (3,0) [partial ellipse=270:450:0.166 and 0.5];
-    \node at (1.5,0) {\Large $M_1$};
-    \draw (.5,.5) [partial ellipse=180:270:.5 and 0.166];
-    \draw (.5,-.5) [partial ellipse=90:180:.5 and 0.166];
-    \draw (2.5,.5) [partial ellipse=270:360:.5 and 0.166];
-    \draw (2.5,-.5) [partial ellipse=0:90:.5 and 0.166];
-
-    \node at (5,.6) {$M_1(X)$};
-    \draw[->] (3.5,0)--(6.5,0);
-    
-    \draw[fill=blue!10!white] (7,0) ellipse (0.166 and 0.5);% ellipse
-    \draw (7.5,-1) rectangle (9.5,1);
-    \draw (10,0) [partial ellipse=270:450:0.166 and 0.5];
-    \node at (8.5,0) {\Large $M_2$};
-    \draw (7.5,.5) [partial ellipse=180:270:.5 and 0.166];
-    \draw (7.5,-.5) [partial ellipse=90:180:.5 and 0.166];
-    \draw (9.5,.5) [partial ellipse=270:360:.5 and 0.166];
-    \draw (9.5,-.5) [partial ellipse=0:90:.5 and 0.166];
-
-    \node at (12,.6) {$M_2(M_1(X))$};
-    \draw[->] (10.5,0)--(13.5,0);
-    
-    \draw[fill=blue!10!white] (14,0) ellipse (0.166 and 0.5);% ellipse
-    \draw (14.5,-1) rectangle (16.5,1);
-    \draw (17,0) [partial ellipse=270:450:0.166 and 0.5];
-    \node at (15.5,0) {\Large $M_3$};
-    \draw (14.5,.5) [partial ellipse=180:270:.5 and 0.166];
-    \draw (14.5,-.5) [partial ellipse=90:180:.5 and 0.166];
-    \draw (16.5,.5) [partial ellipse=270:360:.5 and 0.166];
-    \draw (16.5,-.5) [partial ellipse=0:90:.5 and 0.166];
-
-    \node at (21.5,0) {$M_3(M_2(M_1(X)))$};
-    \draw[->] (17.5,0)--(18.5,0);
-
-    %%%%%%%%%%%%%%%%%
-
-    
-
-  \end{tikzpicture}
-\end{image}
-
-\begin{freeResponse}
-The first function on the right sends $X$ through the function made up of functions $M_{1}$ and $M_{2}$ and then sends the result through function $M_{3}$. However, the diagram shows that when $X$ is sent through through the function made up of functions $M_{1}$ and $M_{2}$, it is first sent through $M_{1}$ and then the result is sent through $M_{2}$, which is the same as the last function on the right. The last function on the right sends $X$ first through function $M_{1}$, then the result through $M_{2}$ and then that result through $M_{3}$. The second function listed on the right first sends $X$ through function $M_{1}$ and then sends the result through the function made up of $M_{2}$ and $M_{3}$. When sending $XM_{1}$ through the function made up of $M_{2}$ and $M_{3}$,  $XM_{1}$ is first sent through function $M_{2}$ and then that result is sent through $M_{3}$, which is also the same as the last function on the right. Therefore, the diagram shows that the three functions are equivalent, and hence function composition is associative.
-\end{freeResponse}
-
-\end{problem}
-
+%\begin{problem}
+%Explain how the following diagram ``proves'' that function
+%composition is \textit{always} associative.
+%\begin{image}
+%  \begin{tikzpicture}[scale=.5,geometryDiagrams]
+%
+%    \node at (-2,8) {$X$};
+%    \draw[->] (-1.5,8)--(-.5,8);
+%    \draw[fill=blue!10!white] (0,8) ellipse (0.166 and 0.5);% ellipse
+%    \draw (.5,7) rectangle (2.5,9);
+%    \draw (3,8) [partial ellipse=270:450:0.166 and 0.5];
+%    \node at (1.5,8) {\Large $M_1$};
+%    \draw (.5,8.5) [partial ellipse=180:270:.5 and 0.166];
+%    \draw (.5,7.5) [partial ellipse=90:180:.5 and 0.166];
+%    \draw (2.5,8.5) [partial ellipse=270:360:.5 and 0.166];
+%    \draw (2.5,7.5) [partial ellipse=0:90:.5 and 0.166];
+%
+%    %\node at (5,8.6) {$X M_1$};
+%    \draw[->] (3.5,8)--(6.5,8);
+%    
+%    \draw[fill=blue!10!white] (7,8) ellipse (0.166 and 0.5);% ellipse
+%    \draw (7.5,7) rectangle (9.5,9);
+%    \draw (10,8) [partial ellipse=270:450:0.166 and 0.5];
+%    \node at (8.5,8) {\Large $M_2$};
+%    \draw (7.5,8.5) [partial ellipse=180:270:.5 and 0.166];
+%    \draw (7.5,7.5) [partial ellipse=90:180:.5 and 0.166];
+%    \draw (9.5,8.5) [partial ellipse=270:360:.5 and 0.166];
+%    \draw (9.5,7.5) [partial ellipse=0:90:.5 and 0.166];
+%
+%    \node at (12,8.6) {$M_2 \circ M_1(X)$};
+%    \draw[->] (10.5,8)--(13.5,8);
+%    
+%    \draw[fill=blue!10!white] (14,8) ellipse (0.166 and 0.5);% ellipse
+%    \draw (14.5,7) rectangle (16.5,9);
+%    \draw (17,8) [partial ellipse=270:450:0.166 and 0.5];
+%    \node at (15.5,8) {\Large $M_3$};
+%    \draw (14.5,8.5) [partial ellipse=180:270:.5 and 0.166];
+%    \draw (14.5,7.5) [partial ellipse=90:180:.5 and 0.166];
+%    \draw (16.5,8.5) [partial ellipse=270:360:.5 and 0.166];
+%    \draw (16.5,7.5) [partial ellipse=0:90:.5 and 0.166];
+%
+%    \node at (21.5,8) {$M_3 \circ (M_2 \circ M_1)(X)$};
+%    \draw[->] (17.5,8)--(18.5,8);
+%
+%    \draw[dashed,gray] (-.4,6.6) rectangle (10.35,9.4);
+%    \draw[dashed,gray] (6.6,2.6) rectangle (17.35,5.4);    
+%    
+%    %%%%%%%%%%%%%%%%%
+%    
+%    \node at (-2,4) {$X$};
+%    \draw[->] (-1.5,4)--(-.5,4);
+%    \draw[fill=blue!10!white] (0,4) ellipse (0.166 and 0.5);% ellipse
+%    \draw (.5,3) rectangle (2.5,5);
+%    \draw (3,4) [partial ellipse=270:450:0.166 and 0.5];
+%    \node at (1.5,4) {\Large $M_1$};
+%    \draw (.5,4.5) [partial ellipse=180:270:.5 and 0.166];
+%    \draw (.5,3.5) [partial ellipse=90:180:.5 and 0.166];
+%    \draw (2.5,4.5) [partial ellipse=270:360:.5 and 0.166];
+%    \draw (2.5,3.5) [partial ellipse=0:90:.5 and 0.166];
+%
+%    \node at (5,4.6) {$M_1(X)$};
+%    \draw[->] (3.5,4)--(6.5,4);
+%    
+%    \draw[fill=blue!10!white] (7,4) ellipse (0.166 and 0.5);% ellipse
+%    \draw (7.5,3) rectangle (9.5,5);
+%    \draw (10,4) [partial ellipse=270:450:0.166 and 0.5];
+%    \node at (8.5,4) {\Large $M_2$};
+%    \draw (7.5,4.5) [partial ellipse=180:270:.5 and 0.166];
+%    \draw (7.5,3.5) [partial ellipse=90:180:.5 and 0.166];
+%    \draw (9.5,4.5) [partial ellipse=270:360:.5 and 0.166];
+%    \draw (9.5,3.5) [partial ellipse=0:90:.5 and 0.166];
+%
+%    %\node at (12,4.6) {$X M_1 M_2$};
+%    \draw[->] (10.5,4)--(13.5,4);
+%    
+%    \draw[fill=blue!10!white] (14,4) ellipse (0.166 and 0.5);% ellipse
+%    \draw (14.5,3) rectangle (16.5,5);
+%    \draw (17,4) [partial ellipse=270:450:0.166 and 0.5];
+%    \node at (15.5,4) {\Large $M_3$};
+%    \draw (14.5,4.5) [partial ellipse=180:270:.5 and 0.166];
+%    \draw (14.5,3.5) [partial ellipse=90:180:.5 and 0.166];
+%    \draw (16.5,4.5) [partial ellipse=270:360:.5 and 0.166];
+%    \draw (16.5,3.5) [partial ellipse=0:90:.5 and 0.166];
+%
+%    \node at (21.5,4) {$(M_3 \circ M_2) \circ M_1(X)$};
+%    \draw[->] (17.5,4)--(18.5,4);
+%
+%    %%%%%%%%%%%%%%%%%
+%
+%    \node at (-2,0) {$X$};
+%    \draw[->] (-1.5,0)--(-.5,0);
+%    \draw[fill=blue!10!white] (0,0) ellipse (0.166 and 0.5);% ellipse
+%    \draw (.5,-1) rectangle (2.5,1);
+%    \draw (3,0) [partial ellipse=270:450:0.166 and 0.5];
+%    \node at (1.5,0) {\Large $M_1$};
+%    \draw (.5,.5) [partial ellipse=180:270:.5 and 0.166];
+%    \draw (.5,-.5) [partial ellipse=90:180:.5 and 0.166];
+%    \draw (2.5,.5) [partial ellipse=270:360:.5 and 0.166];
+%    \draw (2.5,-.5) [partial ellipse=0:90:.5 and 0.166];
+%
+%    \node at (5,.6) {$M_1(X)$};
+%    \draw[->] (3.5,0)--(6.5,0);
+%    
+%    \draw[fill=blue!10!white] (7,0) ellipse (0.166 and 0.5);% ellipse
+%    \draw (7.5,-1) rectangle (9.5,1);
+%    \draw (10,0) [partial ellipse=270:450:0.166 and 0.5];
+%    \node at (8.5,0) {\Large $M_2$};
+%    \draw (7.5,.5) [partial ellipse=180:270:.5 and 0.166];
+%    \draw (7.5,-.5) [partial ellipse=90:180:.5 and 0.166];
+%    \draw (9.5,.5) [partial ellipse=270:360:.5 and 0.166];
+%    \draw (9.5,-.5) [partial ellipse=0:90:.5 and 0.166];
+%
+%    \node at (12,.6) {$M_2(M_1(X))$};
+%    \draw[->] (10.5,0)--(13.5,0);
+%    
+%    \draw[fill=blue!10!white] (14,0) ellipse (0.166 and 0.5);% ellipse
+%    \draw (14.5,-1) rectangle (16.5,1);
+%    \draw (17,0) [partial ellipse=270:450:0.166 and 0.5];
+%    \node at (15.5,0) {\Large $M_3$};
+%    \draw (14.5,.5) [partial ellipse=180:270:.5 and 0.166];
+%    \draw (14.5,-.5) [partial ellipse=90:180:.5 and 0.166];
+%    \draw (16.5,.5) [partial ellipse=270:360:.5 and 0.166];
+%    \draw (16.5,-.5) [partial ellipse=0:90:.5 and 0.166];
+%
+%    \node at (21.5,0) {$M_3(M_2(M_1(X)))$};
+%    \draw[->] (17.5,0)--(18.5,0);
+%
+%    %%%%%%%%%%%%%%%%%
+%
+%    
+%
+%  \end{tikzpicture}
+%\end{image}
+%
+%\begin{freeResponse}
+%The first function on the right sends $X$ through the function made up of functions $M_{1}$ and $M_{2}$ and then sends the result through function $M_{3}$. However, the diagram shows that when $X$ is sent through through the function made up of functions $M_{1}$ and $M_{2}$, it is first sent through $M_{1}$ and then the result is sent through $M_{2}$, which is the same as the last function on the right. The last function on the right sends $X$ first through function $M_{1}$, then the result through $M_{2}$ and then that result through $M_{3}$. The second function listed on the right first sends $X$ through function $M_{1}$ and then sends the result through the function made up of $M_{2}$ and $M_{3}$. When sending $XM_{1}$ through the function made up of $M_{2}$ and $M_{3}$,  $XM_{1}$ is first sent through function $M_{2}$ and then that result is sent through $M_{3}$, which is also the same as the last function on the right. Therefore, the diagram shows that the three functions are equivalent, and hence function composition is associative.
+%\end{freeResponse}
+%
+%\end{problem}
+%
 
 
 
@@ -442,7 +450,7 @@ is, show that
 \begin{enumerate}
 \item multiplication of orthogonal matrices is associative, 
  	\begin{hint}
-	Use the previous problem. 
+	Use the fact that function composition os associatvie. 
 	\end{hint}
 \item the product of two orthogonal matrices is orthogonal,
 \item the identity matrix is orthogonal,
@@ -492,27 +500,31 @@ Therefore, because $\hat{M}$ is orthogonal $\left( \hat{M}^{-1} \right)^\transpo
   0 & 0 & 1
   \end{bmatrix}
   \]
-  Can you describe geometrically what this mapping is doing
-  to the points in euclidean space?
+  
+\begin{enumerate}
+ \item Describe what this mapping does geometrically? ie, Does it translate in a certain direction, scale/dilate by a certain factor, rotate about a certain line, or some other geometric action?
+ \item Show that the matrix $\hat{M}_\theta$ is orthogonal.
+\end{enumerate}
+%  Can you describe geometrically what this mapping is doing  to the points in Euclidean space?
 
 %rotationAboutZaxis Geogebra
 
 \begin{freeResponse}
-$\hat{M}_\theta$ rotates points in euclidean space around the $z$-axis. 
+$\hat{M}_\theta$ rotates points in Euclidean space around the $z$-axis. 
 \end{freeResponse}
-\end{problem}
+%\end{problem}
 
 
-\begin{problem}
-\label{14} Show that the matrix%
-\[
-\hat{M}_\theta=\begin{bmatrix}
-\cos\theta & -\sin\theta & 0\\
-\sin\theta & \cos\theta & 0\\
-0 & 0 & 1
-\end{bmatrix}
-\]
-is orthogonal. 
+%\begin{problem}
+%\label{14} Show that the matrix%
+%\[
+%\hat{M}_\theta=\begin{bmatrix}
+%\cos\theta & -\sin\theta & 0\\
+%\sin\theta & \cos\theta & 0\\
+%0 & 0 & 1
+%\end{bmatrix}
+%\]
+%is orthogonal. 
 
 \begin{freeResponse}
 \begin{align*}
@@ -551,28 +563,32 @@ is orthogonal.
   \sin\psi & 0 & \cos\psi
   \end{bmatrix}
   \]
-  Can you describe geometrically what this mapping is doing
-  to the points in euclidean space?
+  \begin{enumerate}
+ \item Describe what this mapping does geometrically? ie, Does it translate in a certain direction, scale/dilate by a certain factor, rotate about a certain line, or some other geometric action?
+ \item Show that the matrix $\hat{N}_\psi$ is orthogonal.
+\end{enumerate}
+
+%  Can you describe geometrically what this mapping is doing to the points in Euclidean space?
   
  %rotationAboutYaxis geogebra 
   
 \begin{freeResponse}
-$\hat{N}_\psi$ rotates points in euclidean space around the $y$-axis.
+$\hat{N}_\psi$ rotates points in Euclidean space around the $y$-axis.
 \end{freeResponse}
 
-\end{problem}
-
-
-\begin{problem}
-Show that the matrix
-\[
-\hat{N}_\psi=\begin{bmatrix}
-\cos\psi & 0 & -\sin\psi\\
-0 & 1 & 0\\
-\sin\psi & 0 & \cos\psi
-\end{bmatrix}
-\]
-is orthogonal.
+%\end{problem}
+%
+%
+%\begin{problem}
+%Show that the matrix
+%\[
+%\hat{N}_\psi=\begin{bmatrix}
+%\cos\psi & 0 & -\sin\psi\\
+%0 & 1 & 0\\
+%\sin\psi & 0 & \cos\psi
+%\end{bmatrix}
+%\]
+%is orthogonal.
 
 \begin{freeResponse}
 \begin{align*}

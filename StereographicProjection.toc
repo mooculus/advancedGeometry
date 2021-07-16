@@ -1,0 +1,10 @@
+\contentsline {section}{Stereographic projection coordinates}{3}{section*.1}
+\contentsline {section}{Stereographic projection dot product}{7}{section*.2}
+\contentsline {section}{Again, when the finite is infinite and the infinite is finite}{12}{section*.3}
+\contentsline {paragraph}{When $K$ is positive, the finite is infinite}{12}{paragraph*.4}
+\contentsline {paragraph}{When $K$ is negative, the infinite is finite}{16}{paragraph*.5}
+\contentsline {section}{Stereographic projection sends lines to circles (or lines)}{22}{section*.6}
+\contentsline {section}{Stereographic projection preserves angles}{24}{section*.7}
+\contentsline {section}{Areas in stereographic projection coordinates}{26}{section*.8}
+\contentsline {section}{Stereographic projection unifies euclidean, spherical, and hyperbolic geometry}{37}{section*.9}
+\contentsfinish 

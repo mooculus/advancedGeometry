@@ -21,9 +21,14 @@ particular, we will use the cross-ratio to prove a famous mathematical
 relationship, \textit{Ptolemy's Theorem}. We will then explore several
 corollaries of Ptolemy's Theorem.
 
-
-
 \section{The cross-ratio}
+\begin{listOutcomes}
+\item Prove results about the ratio of the length of sides and the ratio of the sine of the corresponding angle
+ \item Draw diagrams to illustrate the results results
+\item Define the \emph{cross-ratio of the ordered sequence of four points} on a line and on a circle
+\item Prove that the two cross-ratios are the same if the four points have a certain relationship.
+\end{listOutcomes}
+\vfill\pagebreak
 
 \begin{problem}\label{46}
 In the diagram
@@ -282,6 +287,10 @@ which we call the \textbf{cross-ratio of the ordered sequence of the
   four points on a line}.
 \end{definition}
 
+
+Based on the following result, we say that ``Cross-ratio is invariant under stereographic
+projection.'' This statement will have more meaning 
+
 %% Notice that the original definition of a \textit{cross-ratio} is just
 %% a refinement of the definition of $\left( A':B':C':D'\right)$ just
 %% above. In the original definition we are keeping track of the signs of
@@ -296,12 +305,12 @@ Show that, in the figure%
 \coordinate (A) at ({2*cos(190)},{2*sin(190)});
 \coordinate (B) at ({2*cos(250)},{2*sin(250)});
 \coordinate (C) at ({2*cos(310)},{2*sin(310)});
-\coordinate (D) at ({2*cos(340)},{2*sin(340)});
+\coordinate (D) at ({2*cos(338)},{2*sin(338)});
 
 \coordinate (A') at (-3.21,-3);
 \coordinate (B') at (-.59,-3);
 \coordinate (C') at (2.31,-3);
-\coordinate (D') at (4.64,-3);
+\coordinate (D') at (4.47,-3);
 
 \draw (0,0) circle (2cm);
 \draw (O) -- (C');
@@ -382,9 +391,6 @@ This completes the proof.
 \end{problem}
 
 
-We say that ``Cross-ratio is invariant under stereographic
-projection.''
-
 
 
 
@@ -393,7 +399,13 @@ projection.''
 
 \section{Ptolemy's Theorem}
 
-You can easily convince yourself with a few examples that, given four
+\begin{listOutcomes}
+ \item Finish the proof off Ptolemy's Thoerem
+ \item Give an alternate proof of the Pythagorean Theorem
+ \item Prove the angle addition and subtraction formulas for sine.
+\end{listOutcomes}
+
+You can  convince yourself with a few examples that, given four
 non-collinear points $A,B,C$ and $D$ in the plane, it is not always
 true that there is a circle that passes through all four. A famous
 theorem of classical Euclidean geometry gives a condition when there
@@ -476,6 +488,10 @@ In order to finish the proof, we need to show \eqref{ptolemy}.
 
 \begin{problem}
 Check the equality \eqref{ptolemy} using high-school algebra.
+
+\begin{hint}
+ Use that $|A'C'|=|A'B'|+|B'C|, |B'D'|=|B'C'|+|C'D'|,$ and $|D'A'|=|A'B'|+|B'C+|C'D'|$. 
+\end{hint}
 \begin{freeResponse}
 \end{freeResponse}
 \end{problem}
@@ -574,10 +590,10 @@ where $\bar{BC}$ is a unit diameter for the circle.
 \end{problem}
 
 Both of the above formulas were crucial to Ptolemy.  Ptolemy's magnum opus was
-the \textit{Almagest}, a book that contained all the known information about the
+the \textit{Almagest}, a book that contained information about the
 stars and their motion, including information on how a potential
-reader could reproduce its observations and conclusions. A key
-technical hurdle that needed to be resolved was the computation of
+reader could reproduce the observations and conclusions. A key
+technical hurdle was the computation of
 sines and cosines of lots of different angles. The two formulas above were the
 key to this endeavor.
 
