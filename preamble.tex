@@ -1,4 +1,44 @@
-%\usepackage{microtype}
+\usepackage{kmath,kerkis} % The order of the packages matters; kmath changes the default text font
+\usepackage[T1]{fontenc}
+
+
+%% page layout
+\usepackage[cm,headings]{fullpage}
+%\raggedright
+\setlength\headheight{13.6pt} %% otherwise the headers hit the text.
+
+
+
+%% semester watermark
+\newcommand{\semester}{%
+  \ifcase\month
+  \or SP %1
+  \or SP %2
+  \or SP %3
+  \or SP %4
+  \or M  %5
+  \or SU %6
+  \or SU %7
+  \or AU %8
+  \or AU %9
+  \or AU %10
+  \or AU %11
+  \or AU %12
+  \fi
+}
+
+\usepackage{draftwatermark}
+\SetWatermarkText{\bfseries\ttfamily 
+\semester \the\year}
+\SetWatermarkScale{1}
+\SetWatermarkLightness{.98}
+
+
+%\setcounter{tocdepth}{1}
+
+
+
+
 \usepackage{tikz}
 \usepackage{tkz-euclide}
 %\usetkzobj{all}
