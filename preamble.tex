@@ -3,7 +3,7 @@
 
 
 %% page layout
-\usepackage[cm,headings]{fullpage}
+\usepackage[in,headings]{fullpage}
 %\raggedright
 \setlength\headheight{13.6pt} %% otherwise the headers hit the text.
 
@@ -42,11 +42,12 @@
 \usepackage{tikz}
 \usepackage{tkz-euclide}
 %\usetkzobj{all}
-\tikzstyle geometryDiagrams=[rounded corners=.5pt,ultra thick,color=blue!50!black]
+\tikzset{>=stealth}
+\tikzstyle geometryDiagrams=[rounded corners=.5pt,ultra thick,color=black]
 
 \usepackage{tikz-cd}
 
-\colorlet{penColor}{blue!50!black} % Color of a curve in a plot
+\colorlet{penColor}{black} % Color of a curve in a plot
 
 %% \hypersetup{
 %%     colorlinks = false,
