@@ -43,6 +43,7 @@
 \usepackage{tkz-euclide}
 %\usetkzobj{all}
 \tikzset{>=stealth}
+\tikzset{/tkzmkangle/mark=none} % no annoy tick in every angle
 \tikzstyle geometryDiagrams=[rounded corners=.5pt,ultra thick,color=black]
 
 \usepackage{tikz-cd}
@@ -102,4 +103,29 @@ After answering the following questions, students should be able to:
 \begin{itemize}
 \BODY
 \end{itemize}
+}
+
+
+
+%% thm like environments
+\let\problem\relax
+\let\endproblem\relax
+\makeatletter\let\c@problem\relax\makeatother
+\let\endproblem\relax
+%% \newtheoremstyle{GeometryStyle}{\topsep}{\topsep}%%% space between body and thm
+%% 		{}                      %%% Thm body font
+%% 		{}                              %%% Indent amount (empty = no indent)
+%% 		{\bfseries}            %%% Thm head font
+%% 		{\quad}                              %%% Punctuation after thm head
+%% 		{ }                           %%% Space after thm head
+%% 		{Problem~\thmnumber{#2}\thmnote{ \bfseries(#3)}}%%% Thm head spec
+%% \theoremstyle{GeometryStyle}
+%% \newtheorem{problem}{}
+\newcounter{problem}
+\setcounter{problem}{1}
+\NewEnviron{problem}{
+\addtocounter{problem}{1}
+\noindent\textbf{Problem~\theproblem}\quad
+\BODY
+\newpage
 }

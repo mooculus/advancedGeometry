@@ -12,25 +12,16 @@ geometries.
 \end{abstract}
 \maketitle
 
-%% test for svg-viewer
-%%
-%% \begin{center}
-%%   \begin{tikzpicture}
-%%     \draw[thick] (0,0) -- (1,1);
-%%   \end{tikzpicture}
-%% \end{center}
 
 
 
-\subsection{Neutral geometry}
-
-\begin{listOutcomes}
-\item State the axioms of neutral geoemtry.
-\item State the SAS congruence axiom.
-\item Apply SAS.
-\item Prove that the sum of the interior angles of a triangle in
-  neutral geoemtry is always less than or equal to $180^\circ$.
-\end{listOutcomes}
+%% \begin{listOutcomes}
+%% \item State the axioms of neutral geoemtry.
+%% \item State the SAS congruence axiom.
+%% \item Apply SAS.
+%% \item Prove that the sum of the interior angles of a triangle in
+%%   neutral geoemtry is always less than or equal to $180^\circ$.
+%% \end{listOutcomes}
 
 
 %% We first turn our attention to plane (or `flat') two-dimensional
@@ -44,9 +35,9 @@ fundamentals, that are called \textit{axioms}, are postulated or
 `given,' providing the platform on which a `geometry' is built. This
 creates a mathematical entity modeling a physical `reality.' Its
 properties are arrived at by applying the laws of logic to the given
-fundamentals. Euclid gives five axioms for plane geometry, the first
-four of which seem to be `obvious' reflections of physical reality. In
-paraphrased form, they are:
+fundamentals. In the \textit{Elements}, Euclid gives five axioms for
+plane geometry, the first four of which seem to be `obvious'
+reflections of physical reality. In paraphrased form, they are:
 
 \begin{axiom}[E1]
 Through any point $P$ and any other point $Q$, there lies a unique
@@ -76,13 +67,32 @@ All right angles are congruent.
 Note: A right angle is defined as follows. Let $C$ be the midpoint on
 the segment $\bar{AB}$. Let $E$ be any point not equal to
 $C$. The angle $\angle ACE$ is called a right angle if $\angle ACE$ is
-congruent to $\angle ECB$. [MJG,17-18]
+congruent to $\angle ECB$. 
 \end{axiom}
 
+These first four posutlates are quite powerful on their own, and they
+were all Euclid needed to prove the first $28$ propositions in the
+\textit{Elements}.
+
+
 \begin{definition}
-If we are only given axioms E1--E4, we will call our
-geometry \textbf{neutral geometry} (\textbf{NG}).
+If we are only given axioms E1--E4, we will call our geometry
+\textbf{neutral geometry}.
 \end{definition}
+
+
+
+
+
+\subsection{Neutral geometry}
+
+
+Here's the issue: If Euclid could prove his first $28$ propositions
+using the first four postulates alone, whose to say that the fifth
+postulate is even needed?  Let's follow in the footsteps of Euclid and
+see what we can prove using these first four postulates.
+
+
 
 \begin{definition}
 In \textbf{neutral geometry}, two distinct lines are called \textbf{parallel} if and
@@ -91,169 +101,33 @@ only if they don't intersect.
 
 
 
-\begin{definition} 
-We will call the set of points on a line which lie on one side of a
-given point a \textbf{ray}.  We call the given point the
-\textbf{origin} of the ray.
-\end{definition}
-
-\begin{remark}
- Spheres do not have neutral geometry. There are infinitely many lines between the north pole and south pole; you can see some of them in this image from Wikipedia:
- 
-\begin{center}
- \includegraphics[width=.5\textwidth]{euclidsPostulatesForPlaneGeometry/Sphere.png}\\
-\text{Image of a wireframe sphere from \url{https://en.wikipedia.org/wiki/Sphere}. By Geek3 - Own work, CC BY 3.0, %\url{https://commons.wikimedia.org/w/index.php?curid=8089933}
-}
-\end{center}
-\end{remark}
-
-\begin{definition}
-We call two rays in the plane \textbf{parallel} if they lie on
-parallel lines and they both lie on the same side of the transversal
-line passing through their origins.
-\end{definition}
-
-\begin{definition} An \textbf{angle} in the plane is the union of two ordered
-rays with common origin and choice of one of the two connected regions
-into which the union of the rays divides the plane. We often denote
-angles by $\angle BAC$ where $A$ is the common origin and $B$ a point
-along one of the rays, called the initial ray, and $C$ is a point
-along the other ray, called the final ray.
-\end{definition}
-
-
-The choice of the region is either clear from the context or
-explicitly given.
-
 \begin{problem}
-Given an angle $\angle BAC$ show by drawings the two regions into
-which it divides the plane. Show how the (signed) measure of the angle
-depends on:
-\begin{enumerate}
-\item Which region you pick as the interior/exterior. 
-\item Which ray is the initial ray and which is the final ray of the
-  angle.
-\end{enumerate}
-\begin{freeResponse}
-We present a summary in the table below:
-\begin{center}
-\begin{tabular}{|c|c|}\hline
-%\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\coordinate (A) at (0,0);
-\coordinate (B) at (2,2);
-\coordinate (C) at (2.83,0);
-\tkzDrawSegment[->](A,B)
-\tkzDrawSegment[->](A,C)
-
-\tkzLabelPoints[below](A,C)
-\tkzLabelPoints[above](B)
-
-\coordinate (initRay) at (1.42,0);
-\node[below] at (initRay) {initial ray};
-
-\coordinate (int) at (1.6,1);
-\node[below] at (int) {interior};
-
-\tkzMarkAngle[size=0.6cm,thin](C,A,B)
-\end{tikzpicture}
-%\end{image}
-&
-%\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\coordinate (A) at (0,0);
-\coordinate (B) at (2,2);
-\coordinate (C) at (2.83,0);
-\tkzDrawSegment[->](A,B)
-\tkzDrawSegment[->](A,C)
-
-\tkzLabelPoints[below](A,C)
-\tkzLabelPoints[above](B)
-
-\coordinate (initRay) at (1,1);
-\node[above,rotate=45] at (initRay) {initial ray};
-
-\coordinate (int) at (1.6,1);
-\node[below] at (int) {interior};
-
-\tkzMarkAngle[size=0.6cm,thin](C,A,B)
-\end{tikzpicture}
-%\end{image} 
-\\
-
-$\angle BAC$ is positive & $\angle BAC$ is negative\\\hline
-
-%\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\coordinate (A) at (0,0);
-\coordinate (B) at (2,2);
-\coordinate (C) at (2.83,0);
-\tkzDrawSegments[->](A,B)
-\tkzDrawSegments[->](A,C)
-
-\tkzLabelPoints[below](A,C)
-\tkzLabelPoints[above](B)
-
-\coordinate (initRay) at (1,1);
-\node[above,rotate=45] at (initRay) {initial ray};
-
-\coordinate (ext) at (1.6,1);
-\node[below] at (ext) {exterior};
-
-\tkzMarkAngle[size=0.6cm,thin](B,A,C)
-\end{tikzpicture}
-%\end{image}
-&
-%\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\coordinate (A) at (0,0);
-\coordinate (B) at (2,2);
-\coordinate (C) at (2.83,0);
-\tkzDrawSegment[->](A,B)
-\tkzDrawSegment[->](A,C)
-
-\tkzLabelPoints[below](A,C)
-\tkzLabelPoints[above](B)
-
-\coordinate (initRay) at (1.42,0);
-\node[below] at (initRay) {initial ray};
-
-\coordinate (ext) at (1.6,1);
-\node[below] at (ext) {exterior};
-
-\tkzMarkAngle[size=0.6cm,thin](B,A,C)
-\end{tikzpicture}\\
-$\angle BAC$ is positive & $\angle BAC$ is negative\\ \hline
-
-%\end{image}
-\end{tabular}
-\end{center}
-\end{freeResponse}
-
+ Lines on a sphere are great circles, that is circles that cut the
+ sphere in half. Explain why someone might say that there are no
+ parallel lines on a sphere.
 \end{problem}
+   
 
 
 
-
-
-One implicit assumption of two-dimensional neutral geometry is the
-existence of (a group of) rigid motions or congruences. That is, it is
-assumed that given any point $A$ and any vector $\vec v$ emanating from $A$
-and given any second point $B$ in the geometry and any vector $\vec w$
-emanating from $B$, then there is a transformation (thought of as a
-matrix that we will multiply on the left) $\mathbf{M}$ such that:
-\begin{enumerate}
-\item $\mathbf{M}\cdot A=B$.
-\item $\mathbf{M}\cdot \vec v$ is a positive scalar multiple of $\vec w$.
-\item For all points $P$ and $Q$ in the geometry, $\mathbf{M}$ leaves the
-  distance between them unchanged:
-\[
-d\left(\mathbf M \cdot P,  \mathbf M \cdot Q\right) =d\left( P,Q\right).
-\]
-\item For any two vectors $\vec u$ and $\vec v$ emanating from $A$, the angle
-  between $\mathbf M\cdot\vec u$ and $\mathbf M \cdot \vec v$ is the same as the
-  angle between $\vec u$ and $\vec v$.
-\end{enumerate}
+%% One implicit assumption of two-dimensional neutral geometry is the
+%% existence of (a group of) rigid motions or congruences. That is, it is
+%% assumed that given any point $A$ and any vector $\vec v$ emanating from $A$
+%% and given any second point $B$ in the geometry and any vector $\vec w$
+%% emanating from $B$, then there is a transformation (thought of as a
+%% matrix that we will multiply on the left) $\mathbf{M}$ such that:
+%% \begin{enumerate}
+%% \item $\mathbf{M}\cdot A=B$.
+%% \item $\mathbf{M}\cdot \vec v$ is a positive scalar multiple of $\vec w$.
+%% \item For all points $P$ and $Q$ in the geometry, $\mathbf{M}$ leaves the
+%%   distance between them unchanged:
+%% \[
+%% d\left(\mathbf M \cdot P,  \mathbf M \cdot Q\right) =d\left( P,Q\right).
+%% \]
+%% \item For any two vectors $\vec u$ and $\vec v$ emanating from $A$, the angle
+%%   between $\mathbf M\cdot\vec u$ and $\mathbf M \cdot \vec v$ is the same as the
+%%   angle between $\vec u$ and $\vec v$.
+%% \end{enumerate}
 
 
 %% \begin{problem}
@@ -340,79 +214,79 @@ d\left(\mathbf M \cdot P,  \mathbf M \cdot Q\right) =d\left( P,Q\right).
 
 %% \end{problem}
 
-\begin{problem}
-Think back to high school days and write the congruence rules side-side-side (SSS),
-side-angle-side (SAS), and angle-side-angle (ASA).  Translate them into the language of \textbf{rigid motions}.
+%% \begin{problem}
+%% Think back to high school days and write the congruence rules side-side-side (SSS),
+%% side-angle-side (SAS), and angle-side-angle (ASA).  Translate them into the language of \textbf{rigid motions}.
 
-You may look up these congruence rules without citing the source. 
+%% You may look up these congruence rules without citing the source. 
 
-\begin{freeResponse}
-Suppose there is a triangle $\triangle ABC$ and another triangle
-$\triangle DEF$. 
+%% \begin{freeResponse}
+%% Suppose there is a triangle $\triangle ABC$ and another triangle
+%% $\triangle DEF$. 
 
-\paragraph{SSS}
-If there are rigid motions that move
-\begin{align*}
-\bar{AB} &\mapsto \bar{DE}\\
-\bar{BC} &\mapsto \bar{EF}\\
-\bar{CA} &\mapsto \bar{FD},
-\end{align*}
-then there is a single rigid motion that moves $\triangle ABC$ to $\triangle DEF$.
-\paragraph{SAS}
-If there are rigid motions that move
-\begin{align*}
-\bar{AB} &\mapsto \bar{DE}\\
-\angle{ABC} &\mapsto \angle{DEF}\\
-\bar{CA} &\mapsto \bar{FD},
-\end{align*}
-then there is a single rigid motion that moves $\triangle ABC$ to $\triangle DEF$.
-\paragraph*{ASA}
-If there are rigid motions that move
-\begin{align*}
-\angle{ABC} &\mapsto \angle{DEF}\\
-\bar{AB} &\mapsto \bar{DE}\\
-\angle{BAC} &\mapsto \angle{EDF},
-\end{align*}
-then there is a single rigid motion that moves $\triangle ABC$ to $\triangle DEF$.
-The upshot is that:
-\begin{center}
-\textbf{Congruence theorems are theorems about rigid motions.}
-\end{center}
-\end{freeResponse}
+%% \paragraph{SSS}
+%% If there are rigid motions that move
+%% \begin{align*}
+%% \bar{AB} &\mapsto \bar{DE}\\
+%% \bar{BC} &\mapsto \bar{EF}\\
+%% \bar{CA} &\mapsto \bar{FD},
+%% \end{align*}
+%% then there is a single rigid motion that moves $\triangle ABC$ to $\triangle DEF$.
+%% \paragraph{SAS}
+%% If there are rigid motions that move
+%% \begin{align*}
+%% \bar{AB} &\mapsto \bar{DE}\\
+%% \angle{ABC} &\mapsto \angle{DEF}\\
+%% \bar{CA} &\mapsto \bar{FD},
+%% \end{align*}
+%% then there is a single rigid motion that moves $\triangle ABC$ to $\triangle DEF$.
+%% \paragraph*{ASA}
+%% If there are rigid motions that move
+%% \begin{align*}
+%% \angle{ABC} &\mapsto \angle{DEF}\\
+%% \bar{AB} &\mapsto \bar{DE}\\
+%% \angle{BAC} &\mapsto \angle{EDF},
+%% \end{align*}
+%% then there is a single rigid motion that moves $\triangle ABC$ to $\triangle DEF$.
+%% The upshot is that:
+%% \begin{center}
+%% \textbf{Congruence theorems are theorems about rigid motions.}
+%% \end{center}
+%% \end{freeResponse}
 
-\end{problem}
+%% \end{problem}
 
-\begin{problem}
-Give an example to show that there is no universal side-side-angle (SSA) law.
+%% \begin{problem}
+%% Give an example to show that there is no universal side-side-angle (SSA) law.
 
-\begin{freeResponse}
-Consider:
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\coordinate (A) at (1.28,2.72);
-\coordinate (Asub) at (3.22,0.78);
-\coordinate (B) at (0.5,0);
-\coordinate (C) at (4,0);
-\draw (A)--(B);
-\draw (B)--(C);
-\draw[dashed] (C)--(A);
-\draw (Asub)--(B);
+%% \begin{freeResponse}
+%% Consider:
+%% \begin{image}
+%% \begin{tikzpicture}[geometryDiagrams]
+%% \coordinate (A) at (1.28,2.72);
+%% \coordinate (Asub) at (3.22,0.78);
+%% \coordinate (B) at (0.5,0);
+%% \coordinate (C) at (4,0);
+%% \draw (A)--(B);
+%% \draw (B)--(C);
+%% \draw[dashed] (C)--(A);
+%% \draw (Asub)--(B);
 
-\tkzMarkSegments[mark=|](A,B Asub,B)
-\tkzMarkSegments[mark=||](B,C)
+%% \tkzMarkSegments[mark=|](A,B Asub,B)
+%% \tkzMarkSegments[mark=||](B,C)
 
-\tkzMarkAngle[size=0.5cm,thin](A,C,B)
-\end{tikzpicture}
-\end{image}
-Hence a triangle is not uniquely determined by a side, side, and an angle. 
-\end{freeResponse}
+%% \tkzMarkAngle[size=0.5cm,thin](A,C,B)
+%% \end{tikzpicture}
+%% \end{image}
+%% Hence a triangle is not uniquely determined by a side, side, and an angle. 
+%% \end{freeResponse}
 
-Can you find a restriction that will allow for an ``side-side-angle-type'' law?
-\begin{freeResponse}
-Perhaps the simplest restriction is forcing the angle to be greater
-than or equal to $90^\circ$.
-\end{freeResponse}
-\end{problem}
+%% Can you find a restriction that will allow for an ``side-side-angle-type'' law?
+%% \begin{freeResponse}
+%% Perhaps the simplest restriction is forcing the angle to be greater
+%% than or equal to $90^\circ$.
+%% \end{freeResponse}
+%% \end{problem}
 
 Although it is a bit tedious to show (and we will not ask you to do it
 here), using only E1--E4 you can derive the usual rules for congruent
@@ -490,10 +364,8 @@ BDA$ and triangle $\triangle CDE$ are congruent.
 
 \end{problem}
 
-\begin{problem}\hfil
-\label{118} 
-\begin{enumerate}
-\item\label{Exp:ExtAngle} Show in neutral geometry that, for $\triangle ABC$
+\begin{problem}
+  Show in neutral geometry that, for $\triangle ABC$
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
 \coordinate (A) at (0,2);
@@ -517,10 +389,9 @@ BDA$ and triangle $\triangle CDE$ are congruent.
 \end{tikzpicture}
 \end{image}
 the exterior angle $\epsilon$ of the triangle at $C$ is greater than
-either remote interior angle $\alpha$ or $\beta$. [MJG,119]
-\item Use the previous part to show that the sum of any two angles of
-  a triangle is less than $180^{\circ}$.
-\end{enumerate}
+either remote interior angle $\alpha$ or $\beta$. Then show that the
+sum of any two angles of a triangle is less than $180^{\circ}$.
+
 
 \begin{hint}
 Add line segments to the diagram above, and attempt to use the
@@ -677,9 +548,10 @@ $\alpha + \beta < 180^\circ$.
 \end{problem}
 
 \begin{problem}\label{ng_parallel}
-Show in \textbf{neutral geometry} that, if two lines cut by a transversal line have
-a pair of congruent alternate interior angles, then they are
-parallel. [MJG,117]
+Show in \textbf{neutral geometry} that, if two lines cut by a
+transversal line have a pair of congruent alternate interior angles,
+then they are parallel. Explain why spherical geometry is not a
+neutral geometry.
 
 \begin{hint}
 Suppose the assertion is false for some pair of lines. Find a triangle
@@ -732,10 +604,10 @@ is always less than $180^\circ$ in neutral geometry.
 
 
 \subsection{Sum of angles in a triangle in neutral geometry}
-\begin{listOutcomes}
- \item Construct a new triangle  $\triangle ABC$ where the sum of the angles of  $\triangle ABC$ has certain properties relating to a given triangle.
- \item Show that there are no triangles in neutral geometry whose angles sum to more than $180^\circ$.
-\end{listOutcomes}
+%% \begin{listOutcomes}
+%%  \item Construct a new triangle  $\triangle ABC$ where the sum of the angles of  $\triangle ABC$ has certain properties relating to a given triangle.
+%%  \item Show that there are no triangles in neutral geometry whose angles sum to more than $180^\circ$.
+%% \end{listOutcomes}
 
 You may have learned these five postulates of two-dimensional geometry:
 \begin{enumerate}
@@ -748,9 +620,22 @@ You may have learned these five postulates of two-dimensional geometry:
 
 How do these five postulates relate to (E1)-(E4) in the previous section?
 
-You might also remember that the sum of the interior angles of a triangle is $180^\circ$. While it might seem like this fact could follow from (E1)-(E4), we will eventually see that is false. It turns out the fifth postulate about parallel lines is true {\bf if and only if} the sum of the interior angles of a triangle is always $180^\circ$. In fact, there is an entire list of geometry facts that are true if and only if the parallel postulate is true. You can find some at: \url{https://orion.math.iastate.edu/lhogben/classes/parallelpostulate.pdf}. 
+You might also remember that the sum of the interior angles of a
+triangle is $180^\circ$. While it might seem like this fact could
+follow from (E1)-(E4), we will eventually see that is false. It turns
+out the fifth postulate about parallel lines is true {\bf if and only
+  if} the sum of the interior angles of a triangle is always
+$180^\circ$.%%  In fact, there is an entire list of geometry facts that
+%% are true if and only if the parallel postulate is true. You can find
+%% some at:
+%% \url{https://orion.math.iastate.edu/lhogben/classes/parallelpostulate.pdf}.
 
-{\bf Remember:} The parallel postulate is not part of neutral geometry. In fact, that is what make it neutral, although I'd argue a \emph{truly} neutral geometry would also apply to spherical geometry.
+\begin{remark}
+  The parallel postulate is not part of neutral geometry. In fact,
+  that is what make it neutral, although I'd argue a \emph{truly}
+  neutral geometry would also apply to spherical geometry.
+\end{remark}
+
 
 \begin{problem}\label{20}
 Show that the sum of the angles in $\triangle ACE$ is the same as the
@@ -1039,190 +924,190 @@ you should state major steps, but exclude the details.
 
 
 
-\begin{problem}
-Show the following:
-\begin{enumerate}
-\item The sum of the interior angles in any quadrilateral is no greater than $360^\circ$.
-\item The sum of the interior angles of an $n$-gon is no greater than
-$\left( n-2\right)\cdot180^\circ$.
-\end{enumerate}
+%% \begin{problem}
+%% Show the following:
+%% \begin{enumerate}
+%% \item The sum of the interior angles in any quadrilateral is no greater than $360^\circ$.
+%% \item The sum of the interior angles of an $n$-gon is no greater than
+%% $\left( n-2\right)\cdot180^\circ$.
+%% \end{enumerate}
 
-\begin{hint}
-Given any quadrilateral, we can break it into two triangles. 
-\end{hint}
-\begin{hint}
-You may use the \textbf{two ears theorem}: For any polygon, even a non-convex
-one, there are always two vertices where you can ``clip off an ear'', as in the
-illustration.
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\coordinate (A) at (0,0);
-\coordinate (B) at (1,3);
-\coordinate (C) at (2,1);
-\coordinate (D) at (3,2);
-\coordinate (E) at (2,0);
-\coordinate (F) at (1,2);
-\draw (A)--(B)--(C)--(D)--(E)--(F)--cycle;
-\draw[thin,dashed] (B)--(F);
-\end{tikzpicture}
-\end{image}
-This fact wasn't written down and proved until 1899!
-\end{hint}
-\begin{freeResponse}
-For the first part, we note that given any quadrilateral, even a
-nonconvex quadrilateral, we can break it into two triangles by
-connecting appropriate opposite vertices:
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\coordinate (A) at (2,5);
-\coordinate (B) at (.5,0);
-\coordinate (C) at (2.5,2.5);
-\coordinate (D) at (6,2);
-\draw (A)--(B)--(C)--(D)--cycle;
-\draw[thin,dashed] (A)--(C);
-%\draw[step=.5cm,thin] (0,0) grid (10,5);
-\end{tikzpicture}
-\end{image}
-Labeling angles, we see:
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\coordinate (A) at (2,5);
-\coordinate (B) at (.5,0);
-\coordinate (C) at (2.5,2.5);
-\coordinate (D) at (6,2);
-\draw (A)--(B)--(C)--(D)--cycle;
-\draw[thin,dashed] (A)--(C);
+%% \begin{hint}
+%% Given any quadrilateral, we can break it into two triangles. 
+%% \end{hint}
+%% \begin{hint}
+%% You may use the \textbf{two ears theorem}: For any polygon, even a non-convex
+%% one, there are always two vertices where you can ``clip off an ear'', as in the
+%% illustration.
+%% \begin{image}
+%% \begin{tikzpicture}[geometryDiagrams]
+%% \coordinate (A) at (0,0);
+%% \coordinate (B) at (1,3);
+%% \coordinate (C) at (2,1);
+%% \coordinate (D) at (3,2);
+%% \coordinate (E) at (2,0);
+%% \coordinate (F) at (1,2);
+%% \draw (A)--(B)--(C)--(D)--(E)--(F)--cycle;
+%% \draw[thin,dashed] (B)--(F);
+%% \end{tikzpicture}
+%% \end{image}
+%% This fact wasn't written down and proved until 1899!
+%% \end{hint}
+%% \begin{freeResponse}
+%% For the first part, we note that given any quadrilateral, even a
+%% nonconvex quadrilateral, we can break it into two triangles by
+%% connecting appropriate opposite vertices:
+%% \begin{image}
+%% \begin{tikzpicture}[geometryDiagrams]
+%% \coordinate (A) at (2,5);
+%% \coordinate (B) at (.5,0);
+%% \coordinate (C) at (2.5,2.5);
+%% \coordinate (D) at (6,2);
+%% \draw (A)--(B)--(C)--(D)--cycle;
+%% \draw[thin,dashed] (A)--(C);
+%% %\draw[step=.5cm,thin] (0,0) grid (10,5);
+%% \end{tikzpicture}
+%% \end{image}
+%% Labeling angles, we see:
+%% \begin{image}
+%% \begin{tikzpicture}[geometryDiagrams]
+%% \coordinate (A) at (2,5);
+%% \coordinate (B) at (.5,0);
+%% \coordinate (C) at (2.5,2.5);
+%% \coordinate (D) at (6,2);
+%% \draw (A)--(B)--(C)--(D)--cycle;
+%% \draw[thin,dashed] (A)--(C);
 
-\tkzMarkAngle[size=1.1cm,thin](B,A,C)
-\tkzLabelAngle[pos = 0.8](B,A,C){$\alpha$}
+%% \tkzMarkAngle[size=1.1cm,thin](B,A,C)
+%% \tkzLabelAngle[pos = 0.8](B,A,C){$\alpha$}
 
-\tkzMarkAngle[size=1.2cm,thin](C,B,A)
-\tkzLabelAngle[pos = 0.8](C,B,A){$\beta$}
+%% \tkzMarkAngle[size=1.2cm,thin](C,B,A)
+%% \tkzLabelAngle[pos = 0.8](C,B,A){$\beta$}
 
-\tkzMarkAngle[size=.5cm,thin](A,C,B)
-\tkzLabelAngle[pos = -0.3](A,C,B){$\gamma$}
+%% \tkzMarkAngle[size=.5cm,thin](A,C,B)
+%% \tkzLabelAngle[pos = -0.3](A,C,B){$\gamma$}
 
-\tkzMarkAngle[size=1.2cm,thin](C,A,D)
-\tkzLabelAngle[pos = 0.8](C,A,D){$\alpha'$}
+%% \tkzMarkAngle[size=1.2cm,thin](C,A,D)
+%% \tkzLabelAngle[pos = 0.8](C,A,D){$\alpha'$}
 
-\tkzMarkAngle[size=1.3cm,thin](A,D,C)
-\tkzLabelAngle[pos = 1](A,D,C){$\beta'$}
+%% \tkzMarkAngle[size=1.3cm,thin](A,D,C)
+%% \tkzLabelAngle[pos = 1](A,D,C){$\beta'$}
 
-\tkzMarkAngle[size=.6cm,thin](D,C,A)
-\tkzLabelAngle[pos = 0.3](D,C,A){$\gamma'$}
-%\draw[step=.5cm,thin] (0,0) grid (10,5);
-\end{tikzpicture}
-\end{image}
-Now we have that the sum of the interior angles of this quadrilateral
-is
-\begin{align*}
-\alpha + \beta + \gamma + \alpha'+\beta' + \gamma' &< 180^\circ + 180^\circ\\
-&= 360^\circ. 
-\end{align*}
+%% \tkzMarkAngle[size=.6cm,thin](D,C,A)
+%% \tkzLabelAngle[pos = 0.3](D,C,A){$\gamma'$}
+%% %\draw[step=.5cm,thin] (0,0) grid (10,5);
+%% \end{tikzpicture}
+%% \end{image}
+%% Now we have that the sum of the interior angles of this quadrilateral
+%% is
+%% \begin{align*}
+%% \alpha + \beta + \gamma + \alpha'+\beta' + \gamma' &< 180^\circ + 180^\circ\\
+%% &= 360^\circ. 
+%% \end{align*}
 
-For the second part, we will use induction on the number of sides of
-the $n$-gon. If $n=3$, then our assertion holds, the sum of the interior angles is no greater than 
-\[
-180^\circ = (3-2) \cdot 180^\circ. 
-\]
+%% For the second part, we will use induction on the number of sides of
+%% the $n$-gon. If $n=3$, then our assertion holds, the sum of the interior angles is no greater than 
+%% \[
+%% 180^\circ = (3-2) \cdot 180^\circ. 
+%% \]
 
-Now suppose that our assertion holds for $(n-1)$-gons. We must show
-that it holds for $n$-gons. Given any $n$-gon, we can remove a
-``triangle'' as shown in the diagram below:
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\coordinate (A) at (3.5,4.5);
-\coordinate (B) at (3,3);
-\coordinate (C) at (0.5,2.5);
-\coordinate (D) at (3,2);
-\coordinate (E) at (2,0.5);
-\coordinate (F) at (4.5,1);
-\coordinate (G) at (6,2);
-\coordinate (H) at (8,1);
-\coordinate (I) at (9,3);
-\coordinate (J) at (6.5,3.5);
-\coordinate (K) at (6.5,4.5);
-\coordinate (L) at (5,4);
+%% Now suppose that our assertion holds for $(n-1)$-gons. We must show
+%% that it holds for $n$-gons. Given any $n$-gon, we can remove a
+%% ``triangle'' as shown in the diagram below:
+%% \begin{image}
+%% \begin{tikzpicture}[geometryDiagrams]
+%% \coordinate (A) at (3.5,4.5);
+%% \coordinate (B) at (3,3);
+%% \coordinate (C) at (0.5,2.5);
+%% \coordinate (D) at (3,2);
+%% \coordinate (E) at (2,0.5);
+%% \coordinate (F) at (4.5,1);
+%% \coordinate (G) at (6,2);
+%% \coordinate (H) at (8,1);
+%% \coordinate (I) at (9,3);
+%% \coordinate (J) at (6.5,3.5);
+%% \coordinate (K) at (6.5,4.5);
+%% \coordinate (L) at (5,4);
 
-\coordinate (sum1) at (4.5,2.5);
-\coordinate (sum2) at (8,2.5);
+%% \coordinate (sum1) at (4.5,2.5);
+%% \coordinate (sum2) at (8,2.5);
 
-\draw (A)--(B)--(C)--(D)--(E)--(F)--(G)--(H)--(I)--(J)--(K)--(L)--cycle;
-\draw[thin,dashed] (H)--(J);
-%\draw[step=.5cm,thin] (0,0) grid (10,5);
+%% \draw (A)--(B)--(C)--(D)--(E)--(F)--(G)--(H)--(I)--(J)--(K)--(L)--cycle;
+%% \draw[thin,dashed] (H)--(J);
+%% %\draw[step=.5cm,thin] (0,0) grid (10,5);
 
-\node at (sum1) {$\le((n-1)-2)\cdot 180^\circ$};
-\node at (sum2) {$\le 180^\circ$};
-\end{tikzpicture}
-\end{image}
-Now we may add the maximum values for the sum of the interior angles
-to find that the sum of the interior angles of an $n$-gon is no
-greater than
-\[
-((n-1)-2)\cdot 180^\circ + 180^\circ = (n-2)\cdot 180^\circ.
-\]
-\end{freeResponse}
+%% \node at (sum1) {$\le((n-1)-2)\cdot 180^\circ$};
+%% \node at (sum2) {$\le 180^\circ$};
+%% \end{tikzpicture}
+%% \end{image}
+%% Now we may add the maximum values for the sum of the interior angles
+%% to find that the sum of the interior angles of an $n$-gon is no
+%% greater than
+%% \[
+%% ((n-1)-2)\cdot 180^\circ + 180^\circ = (n-2)\cdot 180^\circ.
+%% \]
+%% \end{freeResponse}
 
-\end{problem}
+%% \end{problem}
 
-\begin{problem}
-  Let $ABCD$ be a quadrilateral with $\angle ABC=\angle BCD$ right
-  angles. (We denote polygons by naming their vertices in
-  counterclockwise order.) Show in neutral geometry that:
-  \begin{enumerate}
-  \item \begin{itemize}
-  \item $\left\vert AB\right\vert =\left\vert CD\right\vert $
-    implies that $\angle BAD=\angle ADC$,
-  \item $\left\vert AB\right\vert >\left\vert CD\right\vert $
-    implies that $\angle BAD<\angle ADC$,
-    \item $\left\vert AB\right\vert <\left\vert CD\right\vert $
-      implies that $\angle BAD>\angle ADC$.
-  \end{itemize}
-  \item Use the previous part and pure logic to show that
-    \begin{itemize}
-    \item $\angle BAD<\angle ADC$ implies that $\left\vert
-      AB\right\vert >\left\vert CD\right\vert $,
-    \item $\angle BAD=\angle ADC$ implies that $\left\vert
-      AB\right\vert =\left\vert CD\right\vert $,
-    \item $\angle BAD>\angle ADC$ implies that $\left\vert
-      AB\right\vert <\left\vert CD\right\vert $.
-    \end{itemize}
-  \end{enumerate}
-\begin{hint} For the first implication in a) show that quadrilateral $ABCD$ is
-(self-) congruent to the quadrilateral $DCBA$.  For the second
-  implication in the first part suppose that $\left\vert AB\right\vert
-  >\left\vert CD\right\vert $.  Construct $A^{\prime}$ on
-  $\overline{AB}$ so that $\left\vert A^{\prime}B\right\vert
-  =\left\vert CD\right\vert $. By a previous problem
-\[
-\angle BAD<\angle BA^{\prime}D.
-\]
-By the (already proved) first implication%
-\[
-\angle BA^{\prime}D=\angle CDA^{\prime}.
-\]
-Finally%
-\[
-\angle A^{\prime}DC<\angle ADC
-\]
-since the segment $DA^{\prime}$ lies between the segment $DA$ and the segment
-$DC$. Stringing these last three relations together, we get the second
-implication.
+%% \begin{problem}
+%%   Let $ABCD$ be a quadrilateral with $\angle ABC=\angle BCD$ right
+%%   angles. (We denote polygons by naming their vertices in
+%%   counterclockwise order.) Show in neutral geometry that:
+%%   \begin{enumerate}
+%%   \item \begin{itemize}
+%%   \item $\left\vert AB\right\vert =\left\vert CD\right\vert $
+%%     implies that $\angle BAD=\angle ADC$,
+%%   \item $\left\vert AB\right\vert >\left\vert CD\right\vert $
+%%     implies that $\angle BAD<\angle ADC$,
+%%     \item $\left\vert AB\right\vert <\left\vert CD\right\vert $
+%%       implies that $\angle BAD>\angle ADC$.
+%%   \end{itemize}
+%%   \item Use the previous part and pure logic to show that
+%%     \begin{itemize}
+%%     \item $\angle BAD<\angle ADC$ implies that $\left\vert
+%%       AB\right\vert >\left\vert CD\right\vert $,
+%%     \item $\angle BAD=\angle ADC$ implies that $\left\vert
+%%       AB\right\vert =\left\vert CD\right\vert $,
+%%     \item $\angle BAD>\angle ADC$ implies that $\left\vert
+%%       AB\right\vert <\left\vert CD\right\vert $.
+%%     \end{itemize}
+%%   \end{enumerate}
+%% \begin{hint} For the first implication in a) show that quadrilateral $ABCD$ is
+%% (self-) congruent to the quadrilateral $DCBA$.  For the second
+%%   implication in the first part suppose that $\left\vert AB\right\vert
+%%   >\left\vert CD\right\vert $.  Construct $A^{\prime}$ on
+%%   $\overline{AB}$ so that $\left\vert A^{\prime}B\right\vert
+%%   =\left\vert CD\right\vert $. By a previous problem
+%% \[
+%% \angle BAD<\angle BA^{\prime}D.
+%% \]
+%% By the (already proved) first implication%
+%% \[
+%% \angle BA^{\prime}D=\angle CDA^{\prime}.
+%% \]
+%% Finally%
+%% \[
+%% \angle A^{\prime}DC<\angle ADC
+%% \]
+%% since the segment $DA^{\prime}$ lies between the segment $DA$ and the segment
+%% $DC$. Stringing these last three relations together, we get the second
+%% implication.
 
-The proof of the third implication in is the same as the proof of the
-second implication--just interchange $A$ and $D$ and interchange $B$
-and $C$.
+%% The proof of the third implication in is the same as the proof of the
+%% second implication--just interchange $A$ and $D$ and interchange $B$
+%% and $C$.
 
-For the second part, write out the contrapositive of each part and then prove
-that.
-\end{hint}
-\end{problem}
+%% For the second part, write out the contrapositive of each part and then prove
+%% that.
+%% \end{hint}
+%% \end{problem}
 
-\begin{problem}
-Explain why a) in the last Problem does not prove the existence of rectangles in Neutral Geometry.
-\begin{freeResponse}
-\end{freeResponse}
-\end{problem}
+%% \begin{problem}
+%% Explain why a) in the last Problem does not prove the existence of rectangles in Neutral Geometry.
+%% \begin{freeResponse}
+%% \end{freeResponse}
+%% \end{problem}
 
 
 \begin{problem}
