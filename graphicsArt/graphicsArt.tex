@@ -6,28 +6,6 @@
 \begin{abstract}
 \end{abstract}
 
-%% \begin{tikzpicture}  
-%%       %% x-axis
-%%       \draw [->] (3,1.5)--(-3,-1.5); 
-%%       \node[below left] at (-3,-1.5) {$x$};
-
-%%       %% y-axis
-%%       \draw [->] (-3.5,0)--(3.5,0); 
-%%       \node[below left] at (3.5,0) {$y$};
-
-%%       %% z-axis
-%%       \draw [->] (0,-3.5)--(0,3.5); 
-%%       \node[below left] at (0,3.5) {$z$};
-      
-%%       %% sphere
-%%       \draw [ultra thick] circle (2);
-%%       %\addplot [ultra thick, penColor,domain=180:360,smooth] ({1.5*cos(x)},{.6*sin(x)});
-%%       %\addplot [ultra thick, dashed,domain=0:180,smooth] ({1.5*cos(x)},{.6*sin(x)});
-
-%%       %% plane
-%%       \draw (-5,1)--(-1,3)--(5,3)--(1,1)--(-5,1);
-%% \end{tikzpicture}  
-
 
 \begin{tikzpicture}[geometryDiagrams]  
       %% x-axis
@@ -41,6 +19,13 @@
       %% z-axis
       \draw [thin,->] (0,-2.5)--(0,3.5); 
       \node[above] at (0,3.5) {$z$};
+
+      %% NP
+      \draw [fill=black] (0,1.75) circle (.075);
+      
+      %% plane at z=1
+      \draw (-5,.75)--(-1,2.75)--(5,2.75)--(1,.75)--cycle;
+
       
       %% sphere
       \draw[dashed] (1.45,0.98) arc (34:155:1.75);
@@ -48,12 +33,6 @@
       %%%% Equator
       \draw (-1.75,0) arc (180:360:1.75 and .5);
       \draw[dashed] (1.75,0) arc (0:180:1.75 and .5);
-
-      %% plane at z=1
-      \draw (-5,.75)--(-1,2.75)--(5,2.75)--(1,.75)--cycle;
-
-      %% NP
-      \draw [fill=black] (0,1.75) circle (.075);
 \end{tikzpicture}  
 
 
@@ -71,16 +50,12 @@
       \draw[thin,->] (0,-2)--(0,3.5); 
       \node[above] at (0,3.5) {$z$};
 
-      %% plane at z=1
-      \draw (-5,.75)--(-1,2.75)--(5,2.75)--(1,.75)--(-5,.75)--cycle;
-      
-      %% plane
-      \draw (1.5,1)--(5,1)--(1,-1)--(-5,-1)--(-1.5,0.75);
-
-      \draw[dashed] (-1.5,0.75)--(-1,1)--(1.5,1);
-
       %% NP
       \draw[fill=black] (0,1.75) circle (.075);
+
+      
+      %% plane at z=1
+      \draw (-5,.75)--(-1,2.75)--(5,2.75)--(1,.75)--(-5,.75)--cycle;
 \end{tikzpicture}  
 
 
@@ -100,21 +75,20 @@
       \draw[thin,->] (0,-1)--(0,3.5); 
       \node[above] at (0,3.5) {$z$};
 
+      %% NP
+      \draw[fill=black] (0,1.75) circle (.075);
+      
       %% plane at z=1
       \draw (2.12,2.75)--(5,2.75)--(1,.75)--(-5,.75)--(-1.67,2.42);
       \draw[dashed] (-1.67,2.42)--(-1,2.75)--(2.12,2.75);
       
-      %% paraboloid
+      %% 2-sheeted hyperboloid
       \draw[domain=-3.5:3.5] plot (\x,{sqrt(1.75^2+\x*\x)});
       %%%% Equator
       \draw (3.5,4) arc (0:360:3.5 and .8);
-            
-      %% NP
-      \draw[fill=black] (0,1.75) circle (.075);
 \end{tikzpicture}  
 
 
- 
 
 
 

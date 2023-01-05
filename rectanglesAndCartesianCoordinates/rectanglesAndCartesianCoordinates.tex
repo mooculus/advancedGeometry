@@ -18,16 +18,16 @@ axiom.
 We are finally ready to introduce Euclid's fifth and final axiom, the
 so-called \textit{Parallel Postulate}.
 
-\begin{axiom}[E5]
+\begin{axiom}
 Through a point not on a line there passes a unique parallel line.
 \end{axiom}
-
-\textbf{NG} together with E5 is called euclidean geometry
-(\textbf{EG}). As mentioned above, we will see later that there is
-another geometry called \textit{hyperbolic geometry} (\textbf{HG})
-that satisfies all the postulates of \textbf{NG} but not E5. In it,
-the sum of the interior angles of a triangle will \textit{always} be
-less than $180^\circ$! [MJG,134]
+\t
+Neutral geometry together with the fifth axiom is called euclidean
+geometry. As mentioned above, we will see later that there is another
+geometry called \textit{hyperbolic geometry} that satisfies all the
+postulates of neutral geometry but not the fifth axiom. In it, the sum
+of the interior angles of a triangle will \textit{always} be less than
+$180^\circ$! 
 
 \begin{problem}
 \label{24} Show that if two parallel lines are cut by a
@@ -66,7 +66,7 @@ equal:
 \end{image}
 Without loss of generality, we may assume that $\epsilon<
 \alpha$. From the vertex of the angle with measure $\epsilon$, add a
-new line that crosses the tranversal line with angle $\alpha$. By E5,
+new line that crosses the transversal line with angle $\alpha$. By E5,
 this new line must cross the lower of the parallel lines:
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
@@ -165,9 +165,9 @@ hence $\alpha = \alpha'$.
 \end{problem}
 
 \begin{problem}
-Use the `uniqueness' assertion in E5 together with what we have
-established about neutral geometry to show that in \textbf{EG} the sum
-of the interior angles of any triangle is $180^\circ$.
+Use the `uniqueness' assertion in the fifth axiom together with what
+we have established about neutral geometry to show that in euclidean geometry
+the sum of the interior angles of any triangle is $180^\circ$.
 
 \begin{hint}
 Make two parallel lines, the first being the base of a given triangle
@@ -248,7 +248,7 @@ Hence we see $\alpha + \beta+ \gamma = 180^\circ$.
 
 
 \begin{problem}
-Show that in \textbf{EG} the sum of the interior angles of a
+Show that in euclidean geometry the sum of the interior angles of a
 quadrilateral is $360^\circ$.
 \begin{freeResponse}
 As we did before, we note that given any quadrilateral, even a
@@ -305,7 +305,7 @@ is
 \end{problem}
 
 \begin{problem}\label{112} 
-Now we will show in \textbf{EG} that given any positive real numbers
+Now we will show in euclidean geometry that given any positive real numbers
 $a$ and $b$, there exist rectangles with adjacent side of lengths $a$
 and $b$. Your task is to fill-in the details of the proof below.
 
@@ -416,7 +416,7 @@ we see that $\l_3$ is parallel to $\l_2$.
 Explain why $\l_4$ intersects $\l_2$.
 
 \begin{freeResponse}
-  Seeking a contradiction, suppse that $\l_4$ does not intersect
+  Seeking a contradiction, suppose that $\l_4$ does not intersect
   $\l_2$. This would mean that $\l_4$ is parallel to $\l_2$. However,
   both $\l_4$ and $\l_3$ pass through point $C$ and now both are
   parallel to $\l_2$, this violates E5.
@@ -556,14 +556,14 @@ $ABCD$ is a rectangle.
 
 
 \begin{problem}
-Show that there is a cartesian coordinate system on \textbf{EG}. This
+Show that there is a cartesian coordinate system on euclidean geometry. This
 means you must show that there is a bijection between the points in
-\textbf{EG} and elements of $\R^2$, the set of pairs of real numbers.
+euclidean geometry and elements of $\R^2$, the set of pairs of real numbers.
 
 \begin{freeResponse}
-Pick any point of \textbf{EG}, call it $A$. Our map will take this
+Pick any point of euclidean geometry, call it $A$. Our map will take this
 point to $(0,0)$. By our previous problem, we can construct an
-$a\times b$ rectangle $ABCD$ in \textbf{EG}.
+$a\times b$ rectangle $ABCD$ in euclidean geometry.
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
 \coordinate (A) at (2,1);
@@ -608,15 +608,15 @@ $(-a,b)$. If $D$ was placed below $A$, then our map takes $C$ to
 $(a,-b)$. Finally if $B$ was placed to the left of $A$ and $D$ was
 placed below $A$, then our map takes $C$ to $(-a,-b)$.  By
 construction, this map is one-to-one and onto and hence shows that we
-have a cartesian coordinate system in \textbf{EG}.
+have a cartesian coordinate system in euclidean geometry.
 \end{freeResponse}
 
 \end{problem}
 
 
-\section*{The distance formula in \textbf{EG}}
+\section*{The distance formula in euclidean geometry}
 
-It is the existence of a cartesian coordinate system in \textbf{EG} that
+It is the existence of a cartesian coordinate system in euclidean geometry that
 allows us to define distance between points%
 \[
 d\left( (a_{1},b_{1}), (a_{2},b_{2}) \right)
@@ -624,15 +624,15 @@ d\left( (a_{1},b_{1}), (a_{2},b_{2}) \right)
 \]
 and so gives rigorous mathematical meaning to a concept that the
 ancient Greeks were never able to describe precisely, namely the
-similarity of figures in \textbf{EG}. For that we will require the
+similarity of figures in euclidean geometry. For that we will require the
 notion of a \textit{dilation} or \textit{magnification} in
-\textbf{EG}. We need a cartesian coordinate system to describe
+euclidean geometry. We need a cartesian coordinate system to describe
 dilation precisely, a reality backed up by the fact that similarities
-do not exist in \textbf{HG} or \textbf{SG}. (Try drawing two triangles
+do not exist in hyperbolic geometry or spherical geometry. (Try drawing two triangles
 that are similar but not congruent on a perfectly spherical balloon!)
 
 \begin{problem}
-State and prove the Pythagorean theorem in \textbf{EG}.
+State and prove the Pythagorean theorem in euclidean geometry.
 
 \begin{hint}
 In the cartesian plane, construct a square with vertices
