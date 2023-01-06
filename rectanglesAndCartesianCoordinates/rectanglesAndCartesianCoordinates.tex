@@ -308,12 +308,12 @@ is
 Now we will show in euclidean geometry that given any positive real numbers
 $a$ and $b$, there exist rectangles with adjacent side of lengths $a$
 and $b$. Your task is to fill-in the details of the proof below.
-
-Start by constructing lines $\l_1$ and $\l_2$ with $\l_1$
-perpendicular to $\l_2$ at point $A$. On $\l_1$ add point $B$ so that
-$|AB|=a$. Next construct $\l_3$ perpendicular to $\l_1$ through
-$B$. On $\l_3$ add point $C$ such that $|BC|=b$. Finally add $\l_4$
-through $C$ so that $\l_4$ is perpendicular to $\l_3$. 
+\begin{enumerate}
+\item Start by constructing lines $\l_1$ and $\l_2$ with $\l_1$
+  perpendicular to $\l_2$ at point $A$. On $\l_1$ add point $B$ so
+  that $|AB|=a$. Next construct $\l_3$ perpendicular to $\l_1$ through
+  $B$. On $\l_3$ add point $C$ such that $|BC|=b$. Finally add $\l_4$
+  through $C$ so that $\l_4$ is perpendicular to $\l_3$.
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
 \coordinate (A) at (2,1);
@@ -413,7 +413,7 @@ we see that $\l_3$ is parallel to $\l_2$.
 \end{freeResponse}
 
 
-Explain why $\l_4$ intersects $\l_2$.
+\item Explain why $\l_4$ intersects $\l_2$.
 
 \begin{freeResponse}
   Seeking a contradiction, suppose that $\l_4$ does not intersect
@@ -423,7 +423,7 @@ Explain why $\l_4$ intersects $\l_2$.
 \end{freeResponse}
 
 
-Call the intersection of $\l_2$ and $\l_4$ point $D$ and label the two
+\item Call the intersection of $\l_2$ and $\l_4$ point $D$ and label the two
 remaining sides $a'$ and $b'$. Explain why $\angle ADC = 90^\circ$.
 
 \begin{freeResponse}
@@ -435,7 +435,7 @@ $90^\circ$.
 
 
 
-Explain why $\l_1$ is parallel to $\l_4$.
+\item Explain why $\l_1$ is parallel to $\l_4$.
 
 \begin{freeResponse}
 Since alternate interior angles are equal
@@ -488,7 +488,7 @@ we see that $\l_1$ is parallel to $\l_4$.
 
 
 
-Finally, add a segment to our figure and use a triangle congruence
+\item Finally, add a segment to our figure and use a triangle congruence
 theorem to explain why $a=a'$ and $b = b'$.
 
 \begin{freeResponse}
@@ -551,6 +551,7 @@ Now by ASA
 Hence we see that $a = a'$ and $b = b'$. This completes the proof that
 $ABCD$ is a rectangle.
 \end{freeResponse}
+\end{enumerate}
 \end{problem}
 
 
