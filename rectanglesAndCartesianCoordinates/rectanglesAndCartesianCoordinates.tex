@@ -1,4 +1,4 @@
-\documentclass[newpage,hints,handout]{ximera}
+\documentclass[newpage,hints,handout,noauthor,nooutcomes,12pt]{ximera}
 
 \input{../preamble.tex}
 
@@ -13,33 +13,37 @@ axiom.
 \end{abstract}
 \maketitle
 
-\section*{Euclid's fifth axiom, the parallel postulate}
+\subsection{Euclid's fifth axiom: the parallel postulate}
 
 We are finally ready to introduce Euclid's fifth and final axiom, the
-so-called \textit{Parallel Postulate}.
+so-called \textit{parallel postulate}.
 
 \begin{axiom}
 Through a point not on a line there passes a unique parallel line.
 \end{axiom}
-\t
+
 Neutral geometry together with the fifth axiom is called euclidean
 geometry. As mentioned above, we will see later that there is another
 geometry called \textit{hyperbolic geometry} that satisfies all the
 postulates of neutral geometry but not the fifth axiom. In it, the sum
 of the interior angles of a triangle will \textit{always} be less than
-$180^\circ$! 
+$180$ degrees!
 
 \begin{problem}
 \label{24} Show that if two parallel lines are cut by a
-transversal line, then alternate interior angles are equal.
+transversal line, then alternate interior angles are equal. Note: We
+proved the converse earlier \textit{without} use of the parallel
+postulate.
+
+
 
 \begin{hint}
 Draw a picture and seek a contradiction.
 \end{hint}
 \begin{freeResponse}
-Seeking a contradiction, suppose that we have two parallel lines cut
-by a transversal line where the alternate interior angles are not
-equal:
+  Seeking a contradiction, suppose that we have two parallel lines cut
+  by a transversal line where the alternate interior angles are not
+  equal:
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
 \coordinate (A) at (0,4.5);
@@ -58,16 +62,53 @@ equal:
 \tkzLabelAngle[pos = 0.4](D,G,H){$\alpha$}
 
 \tkzMarkAngle[size=0.5cm,thin](A,H,G)
-\tkzLabelAngle[pos = -0.3](A,H,G){$\epsilon$}
+\tkzLabelAngle[pos = 0.3](A,H,G){$\epsilon$}
 
 
 %\draw[thin,step=.5cm] (0,0) grid (10,5);
 \end{tikzpicture}
 \end{image}
 Without loss of generality, we may assume that $\epsilon<
-\alpha$. From the vertex of the angle with measure $\epsilon$, add a
-new line that crosses the transversal line with angle $\alpha$. By E5,
-this new line must cross the lower of the parallel lines:
+\alpha$. Decorating our picture more,
+
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,4.5);
+\coordinate (B) at (10,4.5);
+\coordinate (C) at (0,1.5);
+\coordinate (D) at (10,1.5);
+\coordinate (E) at (1.5,0);
+\coordinate (F) at (3.5,6);
+\coordinate (G) at (2,1.5);
+\coordinate (H) at (3,4.5);
+\draw (A)--(B);
+\draw (C)--(D);
+\draw[thin] (E)--(F);
+
+\tkzMarkAngle[size=0.6cm,thin](D,G,H)
+\tkzLabelAngle[pos = 0.4](D,G,H){$\alpha$}
+
+\tkzMarkAngle[size=0.8cm,thin](H,G,C)
+\tkzLabelAngle[pos = 0.4](H,G,C){$\beta$}
+
+
+
+\tkzMarkAngle[size=0.5cm,thin](A,H,G)
+\tkzLabelAngle[pos = 0.3](A,H,G){$\epsilon$}
+
+\tkzMarkAngle[size=0.7cm,thin](G,H,B)
+\tkzLabelAngle[pos = 0.5](G,H,B){$\gamma$}
+
+
+
+%\draw[thin,step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+
+Since $\alpha> \epsilon$, we see $\beta < \gamma$.  From the vertex of
+the angle with measure $\epsilon$, add a new line that crosses the
+transversal line with angle $\alpha$. By Euclid's fifth axiom, this new line must cross
+the lower of the parallel lines:
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
 \coordinate (A) at (0,4.5);
@@ -87,19 +128,33 @@ this new line must cross the lower of the parallel lines:
 \tkzMarkAngle[size=0.6cm,thin](D,G,H)
 \tkzLabelAngle[pos = 0.4](D,G,H){$\alpha$}
 
-\tkzMarkAngle[size=0.5cm,thin](I,H,G)
-\tkzLabelAngle[pos = -0.3](I,H,G){$\alpha$}
+\tkzMarkAngle[size=0.8cm,thin](H,G,C)
+\tkzLabelAngle[pos = 0.4](H,G,C){$\beta$}
 
-\tkzMarkAngle[size=0.5cm,thin](G,H,D)
-\tkzLabelAngle[pos = 0.3](G,H,D){$\beta$}
+
+
+\tkzMarkAngle[size=0.5cm,thin](A,H,G)
+\tkzLabelAngle[pos = 0.3](A,H,G){$\epsilon$}
+
+\tkzMarkAngle[size=0.7cm,thin](G,H,B)
+\tkzLabelAngle[pos = 0.5](G,H,B){$\gamma$}
+
+\tkzMarkAngle[size=1.2cm,thin](G,H,D)
+\tkzLabelAngle[pos = 1](G,H,D){$\beta$}
+
+%\draw[thin,step=.5cm] (0,0) grid (10,5);
 \end{tikzpicture}
 \end{image}
-Now we have constructed a triangle where two angle sum to $180^\circ$,
-as we have seen, this is impossible. Hence if two parallel lines are
-cut by a transversal line, then alternate interior angles are equal.
+
+Now we have constructed a triangle where two angles $\alpha$ and
+$\beta$ sum to $180^\circ$. As we have seen, this is impossible. Hence
+if two parallel lines are cut by a transversal line, then alternate
+interior angles are equal.
 \end{freeResponse}
 
 \end{problem}
+
+
 
 
 \begin{problem}
@@ -207,8 +262,9 @@ the base:
 %\draw[step=.5cm] (0,0) grid (10,5);
 \end{tikzpicture}
 \end{image}
-As we have seen, using E5 we can assert that alternate interior angles
-are equal, hence we may further decorate our diagram as follows: 
+As we have seen, using the parallel postulate we can assert that
+alternate interior angles are equal, hence we may further decorate our
+diagram as follows:
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
 \coordinate (A) at (0,2);
@@ -419,7 +475,7 @@ we see that $\l_3$ is parallel to $\l_2$.
   Seeking a contradiction, suppose that $\l_4$ does not intersect
   $\l_2$. This would mean that $\l_4$ is parallel to $\l_2$. However,
   both $\l_4$ and $\l_3$ pass through point $C$ and now both are
-  parallel to $\l_2$, this violates E5.
+  parallel to $\l_2$, this violates the parallel postulate.
 \end{freeResponse}
 
 
@@ -556,66 +612,66 @@ $ABCD$ is a rectangle.
 
 
 
-\begin{problem}
-Show that there is a cartesian coordinate system on euclidean geometry. This
-means you must show that there is a bijection between the points in
-euclidean geometry and elements of $\R^2$, the set of pairs of real numbers.
+%% \begin{problem}
+%% Show that there is a cartesian coordinate system on euclidean geometry. This
+%% means you must show that there is a bijection between the points in
+%% euclidean geometry and elements of $\R^2$, the set of pairs of real numbers.
 
-\begin{freeResponse}
-Pick any point of euclidean geometry, call it $A$. Our map will take this
-point to $(0,0)$. By our previous problem, we can construct an
-$a\times b$ rectangle $ABCD$ in euclidean geometry.
-\begin{image}
-\begin{tikzpicture}[geometryDiagrams]
-\coordinate (A) at (2,1);
-\coordinate (B) at (8,1);
-\coordinate (C) at (8,4);
-\coordinate (D) at (2,4);
-\coordinate (E) at (0,1);
-\coordinate (F) at (10,1);
-\coordinate (G) at (2,0);
-\coordinate (H) at (2,5);
-\coordinate (I) at (8,0);
-\coordinate (J) at (8,5);
-\coordinate (K) at (0,4);
-\coordinate (L) at (10,4);
+%% \begin{freeResponse}
+%% Pick any point of euclidean geometry, call it $A$. Our map will take this
+%% point to $(0,0)$. By our previous problem, we can construct an
+%% $a\times b$ rectangle $ABCD$ in euclidean geometry.
+%% \begin{image}
+%% \begin{tikzpicture}[geometryDiagrams]
+%% \coordinate (A) at (2,1);
+%% \coordinate (B) at (8,1);
+%% \coordinate (C) at (8,4);
+%% \coordinate (D) at (2,4);
+%% \coordinate (E) at (0,1);
+%% \coordinate (F) at (10,1);
+%% \coordinate (G) at (2,0);
+%% \coordinate (H) at (2,5);
+%% \coordinate (I) at (8,0);
+%% \coordinate (J) at (8,5);
+%% \coordinate (K) at (0,4);
+%% \coordinate (L) at (10,4);
 
-\draw (E)--(F);
-\draw (G)--(H);
-\draw (I)--(J);
-\draw (K)--(L);
+%% \draw (E)--(F);
+%% \draw (G)--(H);
+%% \draw (I)--(J);
+%% \draw (K)--(L);
 
-\node[below] at (5,1) {$a$};
-\node[right] at (8,2.5) {$b$};
-\node[above] at (5,4) {$a$};
-\node[left] at (2,2.5) {$b$};
+%% \node[below] at (5,1) {$a$};
+%% \node[right] at (8,2.5) {$b$};
+%% \node[above] at (5,4) {$a$};
+%% \node[left] at (2,2.5) {$b$};
 
-\tkzMarkRightAngle(B,A,D)
-\tkzMarkRightAngle(C,B,A)
-\tkzMarkRightAngle(D,C,B)
-\tkzMarkRightAngle(A,D,C)
+%% \tkzMarkRightAngle(B,A,D)
+%% \tkzMarkRightAngle(C,B,A)
+%% \tkzMarkRightAngle(D,C,B)
+%% \tkzMarkRightAngle(A,D,C)
 
-\tkzLabelPoints[below left](A)
-\tkzLabelPoints[below right](B)
-\tkzLabelPoints[above right](C)
-\tkzLabelPoints[above left](D)
+%% \tkzLabelPoints[below left](A)
+%% \tkzLabelPoints[below right](B)
+%% \tkzLabelPoints[above right](C)
+%% \tkzLabelPoints[above left](D)
 
-%draw[step=.5cm,thin] (0,0) grid (10,5);
-\end{tikzpicture}
-\end{image}
-Our map will take the the point $C$ to $(a,b)$. On the other hand, if
-$B$ was placed to the left of $A$, our map takes $C$ to the point
-$(-a,b)$. If $D$ was placed below $A$, then our map takes $C$ to
-$(a,-b)$. Finally if $B$ was placed to the left of $A$ and $D$ was
-placed below $A$, then our map takes $C$ to $(-a,-b)$.  By
-construction, this map is one-to-one and onto and hence shows that we
-have a cartesian coordinate system in euclidean geometry.
-\end{freeResponse}
+%% %draw[step=.5cm,thin] (0,0) grid (10,5);
+%% \end{tikzpicture}
+%% \end{image}
+%% Our map will take the the point $C$ to $(a,b)$. On the other hand, if
+%% $B$ was placed to the left of $A$, our map takes $C$ to the point
+%% $(-a,b)$. If $D$ was placed below $A$, then our map takes $C$ to
+%% $(a,-b)$. Finally if $B$ was placed to the left of $A$ and $D$ was
+%% placed below $A$, then our map takes $C$ to $(-a,-b)$.  By
+%% construction, this map is one-to-one and onto and hence shows that we
+%% have a cartesian coordinate system in euclidean geometry.
+%% \end{freeResponse}
 
-\end{problem}
+%% \end{problem}
 
 
-\section*{The distance formula in euclidean geometry}
+\subsection{The distance formula in euclidean geometry}
 
 It is the existence of a cartesian coordinate system in euclidean geometry that
 allows us to define distance between points%
