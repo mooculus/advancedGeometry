@@ -1,4 +1,4 @@
-\documentclass[newpage,hints,handout]{ximera}
+\documentclass[newpage,hints,handout,nooutcomes,noauthor,12pt]{ximera}
 
 \input{../preamble.tex}
 
@@ -12,7 +12,53 @@ Now we explore when three lines meet at a point.
 
 Let's look at a some \textit{concurrence} theorems. Concurrence
 theorems deal with situations when three or more lines (or curves)
-pass through the same point.
+pass through the same point. To do this we will use the notion of
+area.
+
+\begin{definition}
+  Given a rectangle of base length $b$ and height length $h$, its
+  \dfn{area} is the value $b\cdot h$.
+\end{definition}
+
+From this basic definition, we can see that the area of a
+\textit{right} triangle is $bh/2$.  If we want to know the area of any
+triangle, simply shear it to be a right triangle:
+      \begin{center}
+        \begin{tikzpicture}[geometryDiagrams]
+          \coordinate (A) at (0,0);
+          \coordinate (B) at (2,0);
+          \coordinate (C) at (.5,3);
+          \draw[pattern=horizontal lines] (A)--(B)--(C)--cycle;
+          
+          \draw[line width=5pt, ->] (2,1.5)--(4,1.5);
+          
+          \coordinate (AA) at (4,0);
+          \coordinate (BB) at (6,0);
+          \coordinate (CC) at (6,3);
+          \draw[pattern=horizontal lines] (AA)--(BB)--(CC)--cycle;
+          \tkzLabelSegment[right](BB,CC){$h$}
+          \tkzLabelSegment[below](BB,AA){$b$}
+          \tkzLabelSegment[below](B,A){$b$} 
+        \end{tikzpicture}
+      \end{center}
+Recall that \dfn{shearing} is a process where you take a shape, cut
+it into thin strips, then push the strips around in one direction to
+make a new shape.  Cavalieri's principle, or ``the shearing
+principle,'' states:\index{Cavalieri's principle}
+  \begin{quote}
+    Shearing parallel to a fixed direction does not change the
+    $n$-dimensional measure of an object.
+  \end{quote}
+
+The up-shot is that right triangle has the same area as our original
+triangle. Thus the area of the original triangle is:
+    \[
+    \text{Area of any triangle} = \frac{bh}{2}
+    \]
+
+
+
+  
 
 \begin{problem}
 \label{25} Denote the measure or area of a triangle $\triangle
