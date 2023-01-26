@@ -37,7 +37,7 @@
 \SetWatermarkLightness{.98}
 
 
-%\setcounter{tocdepth}{1}
+
 
 
 
@@ -99,6 +99,14 @@
 \renewcommand{\hat}{\widehat}
 
 
+
+\let\image\relax
+\let\endimage\relax
+\NewEnviron{image}{
+\begin{center}
+\BODY
+\end{center}
+}
 
 
 \NewEnviron{listOutcomes}{

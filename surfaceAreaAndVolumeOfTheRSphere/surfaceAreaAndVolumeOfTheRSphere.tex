@@ -1,8 +1,8 @@
-\documentclass[newpage,hints,handout]{ximera}
+\documentclass[newpage,hints,handout,noauthor,nooutcomes,12pt]{ximera}
 
 \input{../preamble.tex}
 
-\title{Surface area and volume of the $R$-sphere}
+\title{Surface area and volume of the sphere}
 \begin{document}
 \begin{abstract}
 In this activity we begin to explore spherical geometry.
@@ -11,24 +11,53 @@ In this activity we begin to explore spherical geometry.
 
 
 We are now going to study the geometry of the $R$-sphere in euclidean
-$3$-space. This is the sphere of radius $R$ in normal $3$-space.  We
-will show why there is a factor of $1/3$ in many formulas for volumes
-in $3$-dimensional euclidean geometry, just like there is a factor of
-$1/2$ in many formulas for areas in $2$-dimensional euclidean
-geometry.
+$3$-space. This is the sphere of radius $R$ in normal $3$D space.
+
+%% We will show why there is a factor of $1/3$ in many formulas for
+%% volumes in $3$-dimensional euclidean geometry, just like there is a
+%% factor of $1/2$ in many formulas for areas in $2$-dimensional
+%% euclidean geometry.
 
 
+In what follows we dare work with $\pi$ without computing it. Do not
+judge us too harshly! After all, Euclid merely says (in modern language)
+\begin{quote}
+  \textbf{Euclid: Proposition II of Book XII}
+  
+  Given two circles, the ratio of their circumference to the square of
+  their diameters are equal.
+  \[
+  \frac{(\text{area of a circle})}{(\text{diameter of a circle})^2} =
+  \frac{(\text{area of another circle})}{(\text{diameter of another
+      circle})^2}
+  \]
+\end{quote}
 
-\section{Circumference and area of circles}
+So let's make a definition.
+
+\begin{definition}
+  The \textbf{circumference of a circle of radius $\boldsymbol R$} is $2\pi R$.
+\end{definition}
+
+\subsection{Circumference and area of circles}
 
 We begin with perhaps the most basic fact of all about circles in
-euclidean geometry. We will use calculus to compute the perimeter of a unit
-circle.
+euclidean geometry: If a circle has a circumference of $2\pi R$, then
+its area is $\pi R^2$.
+
+\begin{problem}
+  If we are allowed to use calculus, we can deduce this immediately with
+  \[
+  \int_0^R 2\pi r \d r = \pi R^2.
+  \]
+  Explain using words and pictures why this makes sense.
+\end{problem}
+
 
 
 \begin{problem}
-Consider a unit circle with $n$ equal inscribed triangles meeting at the center.
-Here we have shown the $n$th triangle:
+Consider a circle of radius $R$ with $n$ equal inscribed triangles
+meeting at the center.  Here we have shown the $n$th triangle:
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
 \draw [domain=-20:65] plot ({4*cos(\x)}, {4*sin(\x)});
@@ -37,11 +66,11 @@ Here we have shown the $n$th triangle:
 \coordinate (C) at (2.83,2.83);
 \draw[thin] (A)--(O)--(C)--(A);
 \node[left] at (3.41,1.41) {$b_n$};
-\node[right] at (4,0) {$(1,0)$};
+\node[right] at (4,0) {$(R,0)$};
 \node[left] at (0,0) {$(0,0)$};
 %\node[above] at (C) {$P$};
-\tkzMarkAngle[size=0.7cm,thin](A,O,C)
-\tkzLabelAngle[pos = 0.5](A,O,C){$\theta_n$}
+\tkzMarkAngle[size=0.8cm,thin](A,O,C)
+\tkzLabelAngle[pos = 0.6](A,O,C){$\theta_n$}
 \end{tikzpicture}
 \end{image}
 Find $\theta_n$ and $b_n$ in terms of $n$.
@@ -58,9 +87,8 @@ computes and compute the limit.
 
 
 
-\begin{problem}
-The circle of radius $1$ has circumference $2\pi$. Use this to reason
-that the circle of radius $1$ has area $\pi$.
+The circle of radius $1$ has circumference $2\pi$. We can see that the
+circle has area $\pi$ by cutting the circle in to tiny wedges:
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
 \draw (0,0) circle (2cm);
@@ -71,13 +99,8 @@ that the circle of radius $1$ has area $\pi$.
 \end{tikzpicture}
 \end{image}
 
-\begin{hint}
-Approximate a rectangle by rearranging the slices in the picture.
-Compute the area of the ``rectangle.''
-\end{hint}
-\begin{freeResponse}
-Slice up the circle as indicated and rearrange into the following
-``rectangle.'' 
+Next we approximate a rectangle by rearranging the slices in the
+picture. 
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams] % r= 2cm
   \foreach \coeff in {0,1,2,...,17}
@@ -95,8 +118,7 @@ and finer, the shape will more, and more, closely approximate a
 rectangle. This rectangle has perimeter $2+2\pi$, and hence is a
 $1\times \pi$ rectangle. Thus the area of the rectangle is $\pi$ as is
 the area of the initial circle.
-\end{freeResponse}
-\end{problem}
+
 
 
 Not content to give just one explanation, let's give another. The
@@ -123,40 +145,24 @@ the circle), here we have shown the $n$th triangle:
 \end{tikzpicture}
 \end{image}
 In each triangle, label $b_n$ and $h_n$, where $b_n$ is conceptualized
-as a ``base'' and $h_n$ is a ``height.'' Compute
-\[
-\lim_{n\to \infty} h_n
-\]
-and explain your reasoning.
-\begin{freeResponse}
-As $n$ goes to infinity, $h_n$ goes to the radius length of the radius
-of the circle. Hence
-\[
-\lim_{n\to \infty} h_n = 1.
-\]
-\end{freeResponse}
-\end{problem}
-
-
-\begin{problem}
-Consider the limit
+as a ``base'' and $h_n$ is a ``height.''  Consider the limit
 \[
 \lim_{n\to\infty} \frac{n\cdot b_n\cdot h_n}{2}.
 \]
-Explain what this limit is computing, and compute this limit.
+Explain what this limit is computing and compute this limit.
 \begin{freeResponse}
 This limit is computing the sum of the areas of the triangles as $n$
 goes to infinity. This will be the area of the circle of radius
-$1$. From using substitution from our work above, we see
+$1$. Since $n\to 1$, and $n\cdot b_n\to 2\pi$
 \begin{align*}
-\lim_{n\to\infty} \frac{n\cdot b_n\cdot h_n}{2} &= \frac{1\cdot 2\pi}{2}\\
+\lim_{n\to\infty} \frac{n\cdot b_n\cdot h_n}{2} &= \frac{2\pi\cdot 1}{2}\\
 &=\pi.
 \end{align*}
 \end{freeResponse}
 \end{problem}
 
 
-\section{Surface area of spheres}
+\subsection{Surface area of spheres}
 
 To compute the surface area of the sphere of radius $R$ in $3$-dimensional
 euclidean space, we will show that its surface area is equal to the surface
@@ -164,20 +170,19 @@ area of something we can lay out flat. The argument for this goes way back to
 the great physicist and mathematician, Archimedes of Alexandria, in the $2$nd
 century B.C. To follow his argument, we have to begin by computing the area of
 a `lamp shade' or `collar.' We think of a circular collar as in the figure
-below%
+below
+
 \begin{image}
-\begin{tikzpicture}
-    \draw (-1,0) arc (180:360:1cm and 0.5cm);
-    \draw (-1,0) arc (180:0:1cm and 0.5cm);
-    \draw (-2,-3) arc (180:370:2cm and 1cm);
-    \draw[dashed] (-2,-3) arc (180:10:2cm and 1cm);
-    \draw(-2,-2.9)  -- (-1,0);
-    \draw(2,-2.9)   -- (1,0);
-    \node [left] at (2,-1) {$s$};
-    \shade[left color=blue!5!white,right color=blue!60!white,opacity=0.3] (-1,0) arc (180:360:1cm and 0.5cm) -- (2,-3) arc (360:180:2cm and 1cm) -- cycle;
-    \shade[left color=blue!5!white,right color=blue!60!white,opacity=0.3] (0,0) circle (1cm and 0.5cm);
+\begin{tikzpicture}[geometryDiagrams]
+    \draw (2,2) arc (0:360:2cm and 0.5cm);
+    \draw (-4,0) arc (180:360:4cm and 1cm);
+    \draw[dashed,thin] (4,0) arc (8:172: 4cm and 1cm);
+    \draw(-4,0)  -- (-2,2);
+    \draw(4,0)   -- (2,2);
+    %\node [left] at (2,-1) {$s$};
 \end{tikzpicture}
 \end{image}
+
 as approximated by an arrangement of trapezoids. To achieve this, we
 approximate the bottom circle of the collar by an inscribed regular $n$-gon
 whose vertices are the points of intersection with the slant lines in the
@@ -185,12 +190,40 @@ figure. Similarly approximate the top circle by an inscribed regular $n$-gon
 positioned directly above the bottom one, again with vertices given by the
 points of intersection with the slant lines. Complete a side of the bottom
 $n$-gon and the side of the top $n$-gon directly above it to a trapezoid by
-adjoining the two slant lines in the figure that connect endpoints. Let
+adjoining the two slant lines in the figure that connect endpoints.
+
+
+
+Let
 \begin{itemize}
 \item $b_{n}$ denote the length of a side of the bottom regular
-  $n$-gon and let 
+  $n$-gon and let
 \item $t_{n}$ denote the length of a side of the top $n$-gon. 
 \end{itemize}
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+  \draw (2,2) -- (1,2.5) -- (-1,2.5) -- (-2,2) -- (-1,1.5) -- (1,1.5) -- cycle;
+  \draw (-4,0) -- (-1.5,-1) -- (1.5,-1) -- (4,0);
+  \draw[dashed,thin] (4,0) -- (1.5,1)  -- (-1.5,1) -- (-4,0);
+  \draw (-4,0)  -- (-2,2);
+  \draw (4,0)   -- (2,2);
+  \draw[thin] (-1,1.5) -- (-1.5,-1);
+  \draw[thin] (1,1.5) -- (1.5,-1);
+  \draw[thin] (-1,2.5) -- (-1.3,1.6);
+  \draw[thin,dashed]  (-1.3,1.6) -- (-1.5,1);
+  \draw[thin] (1,2.5) -- (1.3,1.6);
+  \draw[thin,dashed]  (1.3,1.6) -- (1.5,1);
+
+  \draw[thin] (0,-1) -- (0,1.5);
+  
+  \node[below] at (0,-1) {$b_6$};
+  \node[above] at (0,2.5) {$t_6$};
+
+
+  \node[right] at (0,0) {$h_6$};
+  
+\end{tikzpicture}
+\end{image}
 Then the trapezoid has area
 \[
 \left(  \frac{b_{n}+t_{n}}{2}\right)  \cdot h_{n}%
@@ -228,6 +261,21 @@ Let
 \item $r_a$ be the average of $r_b$ and $r_t$,
 \item $s$ be the slant height of the collar.
 \end{itemize}
+
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+    \draw (2,2) arc (0:360:2cm and 0.5cm);
+    \draw (-4,0) arc (180:360:4cm and 1cm);
+    \draw[dashed,thin] (4,0) arc (8:172: 4cm and 1cm);
+    \draw(-4,0)  -- (-2,2);
+    \draw(4,0)   -- (2,2);
+    \node[above right] at (3,1) {$s$};
+    \draw[thin] (0,2) -- (2,2);
+    \draw[thin] (0,0) -- (4,0);
+    \node[above] at (2,0) {$r_b$};
+    \node at (1,2.2) {$r_t$};
+\end{tikzpicture}
+\end{image}
 Explain why the area of the collar is%
 \[
 \pi \cdot \left( r_{b}+r_{t}\right)\cdot s.
@@ -239,25 +287,36 @@ Explain why the area of the collar is%
 \begin{theorem}
  The surface area of the sphere of radius $R$ is the same as the
 surface area of the label of the smallest can into which the sphere will fit.%
-\pgfdeclareradialshading{ballshading}{\pgfpoint{-10bp}{10bp}}
- {color(0bp)=(gray!40!white); 
- color(9bp)=(gray!75!white);
- color(18bp)=(gray!70!blue); 
- color(25bp)=(gray!50!blue); 
- color(50bp)=(black)}
+
+
 \begin{image}
-\begin{pgfpicture}
-\pgfellipse[]{\pgfxy(0,-2)}{\pgfxy(0,.7)}{\pgfxy(2,0)}
-\pgfstroke
-  \pgfpathcircle{\pgfpoint{0cm}{0cm}}{2cm}
-  \pgfshadepath{ballshading}{20}
-  \pgfusepath{}
- \pgfxyline(2,2)(2,-2)
- \pgfxyline(-2,2)(-2,-2)
-\pgfellipse[]{\pgfxy(0,2)}{\pgfxy(0,.7)}{\pgfxy(2,0)}
-\pgfstroke
-\end{pgfpicture}
+  \begin{tikzpicture}[geometryDiagrams]
+    \draw (1.1,1.4) arc (51:129:1.75);
+    \draw[dashed] (-1.1,1.4) arc (129:411:1.75);
+    
+    %%%% Equator
+    \draw (-1.75,0) arc (180:360:1.75 and .5);
+    \draw[dashed,thin] (1.75,0) arc (0:180:1.75 and .5);
+
+    \draw (1.75,1.75) arc (0:360:1.75 and .5);
+
+    %\draw (1.75,-1.75) arc (0:360:1.75 and .5);
+
+    \draw (1.75,1.75) -- (1.75,-1.75);
+
+    \draw (-1.75,1.75) -- (-1.75,-1.75);
+    
+
+
+    \draw (-1.75,-1.75) arc (180:360:1.75 and .5);
+    \draw[dashed,thin] (1.75,-1.75) arc (0:180:1.75 and .5);
+  \end{tikzpicture}
 \end{image}
+
+
+
+
+
 Namely the surface area of the sphere of radius $R$ is
 \[
 2\pi R\cdot 2R=4\pi R^{2}.
@@ -320,7 +379,7 @@ r_{i}\cdot s_{i}=h_{i}\cdot R.
 
 
 
-\section{Volumes of pyramids and spheres}
+\subsection{Volumes of pyramids and spheres}
 
 We will start by looking at the volumes of pyramids.
 
@@ -427,7 +486,7 @@ components.)
 
 \end{problem}
 
-\section{The magnification principle}
+\subsection{The magnification principle}
 
 \textbf{The magnification principle:} If an object in Euclidean $n$-space is
 magnified by factors of $r_{1},\ldots,r_{n}$, its $n$-dimensional
@@ -502,7 +561,7 @@ V=\left(  1/3\right)  \cdot B\cdot h.
 \]
 \end{problem}
 
-\section{Relation between volume and surface area of a sphere}
+\subsection{Relation between volume and surface area of a sphere}
 
 Think of a disco-ball. Its surface is approximately a sphere, but that
 surface is made up of tiny flat mirrors.
