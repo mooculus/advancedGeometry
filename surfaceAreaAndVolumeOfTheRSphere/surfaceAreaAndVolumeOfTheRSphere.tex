@@ -54,6 +54,8 @@ its area is $\pi R^2$.
 \end{problem}
 
 
+Now we will take a more foundational route.
+
 
 \begin{problem}
 Consider a circle of radius $R$ with $n$ equal inscribed triangles
@@ -100,7 +102,7 @@ circle has area $\pi$ by cutting the circle in to tiny wedges:
 \end{image}
 
 Next we approximate a rectangle by rearranging the slices in the
-picture. 
+picture. Note, this picture is to scale with the previous one.
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams] % r= 2cm
   \foreach \coeff in {0,1,2,...,17}
@@ -147,7 +149,7 @@ the circle), here we have shown the $n$th triangle:
 In each triangle, label $b_n$ and $h_n$, where $b_n$ is conceptualized
 as a ``base'' and $h_n$ is a ``height.''  Consider the limit
 \[
-\lim_{n\to\infty} \frac{n\cdot b_n\cdot h_n}{2}.
+\lim_{n\to\infty} \left(\frac{n\cdot b_n\cdot h_n}{2}\right).
 \]
 Explain what this limit is computing and compute this limit.
 \begin{freeResponse}
@@ -170,7 +172,7 @@ area of something we can lay out flat. The argument for this goes way back to
 the great physicist and mathematician, Archimedes of Alexandria, in the $2$nd
 century B.C. To follow his argument, we have to begin by computing the area of
 a `lamp shade' or `collar.' We think of a circular collar as in the figure
-below
+below:
 
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
@@ -182,24 +184,10 @@ below
     %\node [left] at (2,-1) {$s$};
 \end{tikzpicture}
 \end{image}
-
-as approximated by an arrangement of trapezoids. To achieve this, we
-approximate the bottom circle of the collar by an inscribed regular $n$-gon
-whose vertices are the points of intersection with the slant lines in the
-figure. Similarly approximate the top circle by an inscribed regular $n$-gon
-positioned directly above the bottom one, again with vertices given by the
-points of intersection with the slant lines. Complete a side of the bottom
-$n$-gon and the side of the top $n$-gon directly above it to a trapezoid by
-adjoining the two slant lines in the figure that connect endpoints.
-
-
-
-Let
-\begin{itemize}
-\item $b_{n}$ denote the length of a side of the bottom regular
-  $n$-gon and let
-\item $t_{n}$ denote the length of a side of the top $n$-gon. 
-\end{itemize}
+Next, we will approximate this collar by using regular $n$-gons to
+approximate the circles and arrangement of trapezoids to approximate
+the sides. Below we see our collar approximate by two regular hexagons
+and an arrangement of six congruent trapezoids. 
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
   \draw (2,2) -- (1,2.5) -- (-1,2.5) -- (-2,2) -- (-1,1.5) -- (1,1.5) -- cycle;
@@ -224,44 +212,47 @@ Let
   
 \end{tikzpicture}
 \end{image}
-Then the trapezoid has area
+Generally we will let
+\begin{itemize}
+\item $b_{n}$ is the length of a side of the bottom regular $n$-gon,
+\item $t_{n}$ is the length of a side of the top $n$-gon, and
+\item $h_{n}$ is the slant height of the trapezoid.
+\end{itemize}
+Now each the trapezoid has area
 \[
 \left(  \frac{b_{n}+t_{n}}{2}\right)  \cdot h_{n}%
 \]
-where $h_{n}$ is the vertical height of the trapezoid. The collar is
-approximated by the union of these $n$ trapezoids, so the area of the collar
-is approximated by the sum of the areas of the $n$ congruent trapezoids,
-namely%
+and so the $n$th approximation of the collar has area
 \[
 n\cdot \left(  \frac{b_{n}+t_{n}}{2}\right)
 \cdot h_{n}=\left(  \frac{n\cdot %
 b_{n}+n\cdot t_{n}}{2}\right) \cdot h_{n}.
 \]
-As $n$ goes to infinity, the area of the approximation approaches the area of
-the collar. But if 
-\begin{itemize}
-\item $c_{b}$ is the circumference of the bottom circle and 
-\item $c_{t}$ is the circumference of the top circle and 
-\item $s$ is the slant height of the collar as shown in the above
-  figure,
-\end{itemize}
+As $n$ goes to infinity, the area of the approximation approaches the
+area of the collar. Moreover, if we consider the collar once more,
+
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+    \draw (2,2) arc (0:360:2cm and 0.5cm);
+    \draw (-4,0) arc (180:360:4cm and 1cm);
+    \draw[dashed,thin] (4,0) arc (8:172: 4cm and 1cm);
+    \draw(-4,0)  -- (-2,2);
+    \draw(4,0)   -- (2,2);
+    \node[above right] at (3,1) {$s=$ the slant height};
+    %\draw[thin] (0,2) -- (2,2);
+    %\draw[thin] (0,0) -- (4,0);
+    \node[above right] at (4,0) {$c_b=$ the circumference of the bottom};
+    \node[above right] at (2,2) {$c_t=$ the circumference of the top};
+\end{tikzpicture}
+\end{image}
 then
-\begin{align*}
-\lim_{n\to \infty} n\cdot b_{n}  &  =c_{b}\\
-\lim_{n\to \infty} n \cdot t_{n}  &  =c_{t}\\
-\lim_{n\to \infty} h_{n}  &  =s.
-\end{align*}
+\[
+\lim_{n\to \infty} n \cdot t_{n} =c_{t},\qquad \lim_{n\to \infty} h_{n}   =s,\qquad \lim_{n\to \infty} n\cdot b_{n}  =c_{b}.
+\]
 
 
 \begin{problem}
-Let
-\begin{itemize}
-\item $r_b$ be the radius of the circle defining the base of the collar,
-\item $r_t$ be the radius of the circle defining the top of the collar,
-\item $r_a$ be the average of $r_b$ and $r_t$,
-\item $s$ be the slant height of the collar.
-\end{itemize}
-
+Now consider the collar
 \begin{image}
 \begin{tikzpicture}[geometryDiagrams]
     \draw (2,2) arc (0:360:2cm and 0.5cm);
@@ -276,11 +267,18 @@ Let
     \node at (1,2.2) {$r_t$};
 \end{tikzpicture}
 \end{image}
+where
+\begin{itemize}
+\item $r_b$ is the radius of the circle defining the base of the collar,
+\item $r_t$ is the radius of the circle defining the top of the collar,
+\item $r_a$ is the average of $r_b$ and $r_t$,
+\item $s$ is the slant height of the collar.
+\end{itemize}
 Explain why the area of the collar is%
 \[
 \pi \cdot \left( r_{b}+r_{t}\right)\cdot s.
 \]
-(This can also be written as $2\pi\cdot r_{a}\cdot s$.)
+This can also be written as $2\pi\cdot r_{a}\cdot s$.
 \end{problem}
 
 
