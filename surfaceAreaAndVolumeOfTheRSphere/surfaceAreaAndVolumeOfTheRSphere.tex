@@ -1,4 +1,4 @@
-\documentclass[newpage,hints,handout,noauthor,nooutcomes,12pt]{ximera}
+\documentclass[hints,handout,noauthor,nooutcomes,12pt]{ximera}
 
 \input{../preamble.tex}
 
@@ -286,9 +286,8 @@ Explain why the area of the collar is%
 
 \begin{theorem}
  The surface area of the sphere of radius $R$ is the same as the
-surface area of the label of the smallest can into which the sphere will fit.%
-
-
+ surface area of the label of the smallest can into which the sphere
+ will fit.
 \begin{image}
   \begin{tikzpicture}[geometryDiagrams]
     \draw (1.1,1.4) arc (51:129:1.75);
@@ -312,11 +311,6 @@ surface area of the label of the smallest can into which the sphere will fit.%
     \draw[dashed,thin] (1.75,-1.75) arc (0:180:1.75 and .5);
   \end{tikzpicture}
 \end{image}
-
-
-
-
-
 Namely the surface area of the sphere of radius $R$ is
 \[
 2\pi R\cdot 2R=4\pi R^{2}.
@@ -332,7 +326,7 @@ Slice the picture above into $n$ horizontal slices. Approximate the
 piece of the surface of the sphere between the $i$th pair of
 successive slices by a collar $C_{i}$. Let $a\left( C_{i}\right) $
 denote the area of $C_{i}$, let $r_{i}$ denote its average radius and
-Explain why the surface area of the sphere is
+explain why the surface area of the sphere is
 \[
 \lim_{n\to \infty}\sum_{i=1}^{n} a(C_i).
 \]
@@ -363,10 +357,10 @@ is given by the picture below.
 \coordinate (F) at (-.5,2);
 \draw (A)--(B)--(C)--cycle;
 \draw (D)--(E)--(F)--cycle;
-\node[above] at (2,1) {$r_i$};
-\node[above] at (2,0) {$R$};
+\node[below] at (2,1) {$r_i$};
+\node[below] at (2,0) {$R$};
 \node[left] at (-.5,1) {$h_i$};
-\node[left,above] at (-.2,1) {$s_i$};
+\node[above right] at (.2,1) {$s_i$};
 \end{tikzpicture}
 \end{image}
 Now use facts about similar triangles to explain why
@@ -381,20 +375,32 @@ r_{i}\cdot s_{i}=h_{i}\cdot R.
 
 \subsection{Volumes of pyramids and spheres}
 
-We will start by looking at the volumes of pyramids.
+Now we will deduce that the volume of the $R$-sphere is $(4/3) \pi
+R^3$.
 
-\begin{problem} Show that an $r\times r\times r$ cube can be constructed
-from three equal pyramids with an $r\times r$ square base. Conclude
-that the volume of each pyramid is $1/3$ the volume of the cube,
-namely
-\[
-\frac{r^{3}}{3}.
-\]
+\begin{problem}
+  If we are allowed to use calculus, we can deduce this immediately with
+  \[
+  \int_0^R 4\pi r^2 \d r = \frac{4\pi R^3}{3}.
+  \]
+  Explain using words and pictures why this makes sense.
+\end{problem}
+
+We will take a more basic route, and will start by looking at the
+volumes of pyramids.
+
+\begin{problem}
+  Show that an $r\times r\times r$ cube can be constructed from three
+  equal pyramids with an $r\times r$ square base. Conclude that the
+  volume of each pyramid is $1/3$ the volume of the cube, namely
+  \[
+  \frac{r^{3}}{3}.
+  \]
 
 \begin{hint}
-Suppose the cube had a hollow interior and infinitely thin
-faces. Put your (infinitely tiny) eye at one vertex of the cube and
-look inside. How many faces of the cube can you see?
+  Suppose the cube had a hollow interior and infinitely thin
+  faces. Put your (infinitely tiny) eye at one vertex of the cube and
+  look inside. How many faces of the cube can you see?
 \end{hint}
 
 \begin{freeResponse}
@@ -460,19 +466,19 @@ multivariable calculus.
 
 \begin{hint}
 Put the base of the pyramid $P$ so that its vertices are $\left(
-0,0\right) $, $\left( r,0\right) $, $\left( 0,r\right) $ and $\left(
-r,r\right) $ in $3$-dimensional euclidean space. Consider the
-transformation%
+0,0,0\right) $, $\left( r,0,0\right) $, $\left( 0,r,0\right) $ and
+$\left( r,r,0\right) $ in $3$-dimensional euclidean space. Consider
+the transformation%
 \[
-T(x,y,z)=
+\mathrm{shear}(x,y,z)=
 \begin{bmatrix}
-1 & 0 & a\\
-0 & 1 & b\\
-0 & 0 & 1
+a+ f(z)\\
+b+g(z)\\
+1
 \end{bmatrix}
-\begin{bmatrix} x \\ y \\ z\end{bmatrix}
 \]
-and use the 3-dimensional change of variables formula,
+where $f:\R\to\R$ and $g:\R\to\R$ are functions and use the
+3-dimensional change of variables formula,
 $$\iiint_{T(P)} f(x,y,z)dxdydz=\iiint_P f(T(x,y,z))\lvert\det DT(x,y,z)\rvert dxdydz,$$
 where
 $$DT(x,y,z)=\begin{bmatrix}
@@ -541,25 +547,20 @@ Now suppose we have any pyramid%
 \draw[ultra thick] (B2)--(B3)--(B4)--(B5)--(peak)--(B4)--(B3)--(peak)--(B2);
 \end{tikzpicture}
 \end{image}
-with any shaped base of area $B$ and any vertical altitude $h$. Approximate
-the base as close as you want (i.e.\ $\varepsilon$-close) by tiling its interior
-with rectangles. Let $t$ denote the sum of the areas of these rectangles.
-Approximate the base as close as you want (i.e.\ $\varepsilon$-close) by
-covering it entirely with rectangles. Let $T$ denote the sum of the areas of
-these rectangles. Why is the area $B$ of the base of the pyramid caught
-between $B-\varepsilon$ and $B+\varepsilon$?
-
-\begin{problem}
-Show that the volume $V$ of the pyramid is caught between $\left(
-1/3\right) \cdot t\cdot h$ and $\left( 1/3\right) \cdot T\cdot
-h$. Argue that, given any positive real number $\varepsilon$, however
-small, the volume $V$ of the pyramid is caught between $\left(
-1/3\right) \cdot \left( B-\varepsilon\right)\cdot h$ and $\left(
-1/3\right) \cdot \left( B+\varepsilon\right) \cdot h$. Finally, show that
+with any shaped base of area $B$ and any vertical altitude $h$. We can
+approximate the base as close as we want ($\varepsilon$-close) by
+tiling its interior with rectangles. Taking the limit we find 
 \[
-V=\left(  1/3\right)  \cdot B\cdot h.
+\text{volume of a cone} =\left(  1/3\right)  \cdot B\cdot h.
 \]
-\end{problem}
+where $B$ is the area of the base of the cone. This formula holds regardless of the shape of the base of the cone.
+
+
+
+
+
+
+
 
 \subsection{Relation between volume and surface area of a sphere}
 
