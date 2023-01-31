@@ -384,8 +384,8 @@ R^3$.
   Explain using words and pictures why this makes sense.
 \end{problem}
 
-We will take a more basic route, and will start by looking at the
-volumes of pyramids.
+We will take a more fundamental route, starting with the volumes of square-based
+pyramids.
 
 \begin{problem}
   Show that an $r\times r\times r$ cube can be constructed from three
@@ -449,9 +449,7 @@ distance $r$, the volume is unchanged.
 This fact is an example of \textit{Cavalieri's Principle}: Shearing a
 figure parallel to a fixed direction does not change the
 $n$-dimensional measure of an object in euclidean $n$-space. Think of
-a stack of (very thin) books. We'll give a proof in euclidean $3$-space,
-and we will use the coordinates $(\hat{x},\hat{y},\hat{z})$ to denote
-this space. 
+a stack of (very thin) books. 
 
 
 
@@ -463,27 +461,27 @@ Show that Cavalieri's Principle is true for the pyramid using
 multivariable calculus.
 
 \begin{hint}
-Put the base of the pyramid $P$ so that its vertices are $\left(
-0,0,0\right) $, $\left( r,0,0\right) $, $\left( 0,r,0\right) $ and
-$\left( r,r,0\right) $ in $3$-dimensional euclidean space. Consider
-the transformation%
+Let $P$ be the base of the pyramid. Consider the transformation%
 \[
 \mathrm{shear}(x,y,z)=
 \begin{bmatrix}
-a+ f(z)\\
-b+g(z)\\
-1
+x+ f(z)\\
+y+g(z)\\
+z
 \end{bmatrix}
 \]
-where $f:\R\to\R$ and $g:\R\to\R$ are functions and use the
-3-dimensional change of variables formula,
-$$\iiint_{T(P)} f(x,y,z)dxdydz=\iiint_P f(T(x,y,z))\lvert\det DT(x,y,z)\rvert dxdydz,$$
-where
-$$DT(x,y,z)=\begin{bmatrix}
-\frac{\partial T}{\partial x} & \frac{\partial T}{\partial y} & \frac{\partial T}{\partial z}
-\end{bmatrix}.$$
-(Each partial derivative is itself a vector since $T(x,y,z)$ has three
-components.)
+where $f:\R\to\R$ and $g:\R\to\R$ are functions. Setting
+\[
+\jac(\mathrm{shear}) =
+\begin{bmatrix}
+  \frac{\partial}{\partial x}\mathrm{shear} &  \frac{\partial}{\partial y}\mathrm{shear}   & \frac{\partial}{\partial z}\mathrm{shear} 
+\end{bmatrix}
+\]
+we may write the 3-dimensional change of variables formula,
+\[
+\iiint_{T(P)} F \d V=\iiint_P F\circ T \det \jac(\mathrm{shear}) \, dV,
+\]
+where $F:\R^3\to\R$.  Use this formula.
 \end{hint}
 
 
@@ -510,41 +508,41 @@ Prove the magnification principle using multivariable calculus.
 \begin{hint}
 Consider the transformation%
 \[
-J(\vec x)=
+\mathrm{mag}(x,y,z)=
 \begin{bmatrix}
-r_{1} & 0   & \dots & 0\\
-0     & r_2 & \dots & 0\\
-\vdots &\vdots &\ddots & \vdots \\
-0     & 0   & \dots & r_{n}%
-\end{bmatrix}\vec x.
+x_0 + r_{1} x \\
+y_0 + r_2 y \\
+z_0 + r_3 z
+\end{bmatrix}
 \]
-and use the change of variables formula.
+where $(x_0,y_0,z_0)$ is the center of the dilation, and use the
+change of variables formula.
 \end{hint}
 \end{problem}
 
 Now suppose we have any pyramid%
-\begin{image}
-\begin{tikzpicture}
-%\draw[thick,-stealth] (0,0,0)--(0,0,6); 
-%\draw[thick,-stealth] (0,0,0)--(0,6,0);
-%\draw[-stealth] (0,0,0)--(6,0,0);
-\coordinate (B1) at (0,0,0);
-\coordinate (B2) at (0,0,2);
-\coordinate (B3) at (2,0,1);
-\coordinate (B4) at (4,0,2);
-\coordinate (B5) at (3,0,0);
-\coordinate (peak) at (1,3,1);
+%% \begin{image}
+%% \begin{tikzpicture}
+%% %\draw[thick,-stealth] (0,0,0)--(0,0,6); 
+%% %\draw[thick,-stealth] (0,0,0)--(0,6,0);
+%% %\draw[-stealth] (0,0,0)--(6,0,0);
+%% \coordinate (B1) at (0,0,0);
+%% \coordinate (B2) at (0,0,2);
+%% \coordinate (B3) at (2,0,1);
+%% \coordinate (B4) at (4,0,2);
+%% \coordinate (B5) at (3,0,0);
+%% \coordinate (peak) at (1,3,1);
 
-\draw[fill=red,opacity=0.3] (B1)--(B2)--(B3)--(B4)--(B5)--cycle; % base
-\draw[fill=orange,opacity=0.3] (B1)--(B2)--(peak);
-\draw[fill=yellow,opacity=0.3] (B2)--(B3)--(peak);
-\draw[fill=green,opacity=0.3] (B3)--(B4)--(peak);
-\draw[fill=blue,opacity=0.3] (B4)--(B5)--(peak);
-\draw[fill=purple,opacity=0.3] (B5)--(B1)--(peak);
+%% \draw[fill=red,opacity=0.3] (B1)--(B2)--(B3)--(B4)--(B5)--cycle; % base
+%% \draw[fill=orange,opacity=0.3] (B1)--(B2)--(peak);
+%% \draw[fill=yellow,opacity=0.3] (B2)--(B3)--(peak);
+%% \draw[fill=green,opacity=0.3] (B3)--(B4)--(peak);
+%% \draw[fill=blue,opacity=0.3] (B4)--(B5)--(peak);
+%% \draw[fill=purple,opacity=0.3] (B5)--(B1)--(peak);
 
-\draw[ultra thick] (B2)--(B3)--(B4)--(B5)--(peak)--(B4)--(B3)--(peak)--(B2);
-\end{tikzpicture}
-\end{image}
+%% \draw[ultra thick] (B2)--(B3)--(B4)--(B5)--(peak)--(B4)--(B3)--(peak)--(B2);
+%% \end{tikzpicture}
+%% \end{image}
 with any shaped base of area $B$ and any vertical altitude $h$. We can
 approximate the base as close as we want ($\varepsilon$-close) by
 tiling its interior with rectangles. Taking the limit we find 

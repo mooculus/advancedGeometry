@@ -310,6 +310,7 @@ ED\right\vert $.
 \tkzMarkSegments[mark=||](A,D D,E)
 \tkzLabelPoints[above](B,D,E)
 \tkzLabelPoints[below](A,C)
+\tkzDrawPoints(A,B,C,D,E)
 %\draw[step=.5cm] (0,0) grid (10,5);
 \end{tikzpicture}
 \end{image}
@@ -333,7 +334,7 @@ diagram above,
 \coordinate (E) at (8,4);
 \coordinate (D) at (4,3);
 \draw (A)--(B)--(C)--(E)--(D)--cycle;
-
+\tkzDrawPoints(A,B,C,D,E)
 \tkzMarkAngle[size=0.7cm,thin](B,D,A)
 \tkzLabelAngle[pos = -0.4](B,D,A){$\alpha$}
 
@@ -372,6 +373,7 @@ BDA$ and triangle $\triangle CDE$ are congruent.
 \coordinate (B) at (2,5);
 \coordinate (C) at (6.5,2);
 \coordinate (F) at (9,2);
+\tkzDrawPoints(A,B,C)
 \draw (A)--(B)--(C)--cycle;
 \draw (C)--(F);
 \tkzLabelPoints[above](B)
@@ -644,6 +646,7 @@ sum of the angles in $\triangle ACB$
 \tkzLabelPoints[above](B,D,E)
 \tkzLabelPoints[below](A,C)
 %\draw[step=.5cm] (0,0) grid (10,5);
+\tkzDrawPoints(A,B,C,D,E)
 \end{tikzpicture}
 \end{image}
 
@@ -719,7 +722,7 @@ $\angle CAB$.
 \coordinate (B) at (2,5);
 \coordinate (C) at (6.5,.5);
 \draw (A)--(B)--(C)--cycle;
-
+\tkzDrawPoints(A,B,C)
 \tkzLabelPoints[above](B)
 \tkzLabelPoints[below](A,C)
 %\draw[step=.5cm] (0,0) grid (10,5);
@@ -736,7 +739,7 @@ $\angle CAB$.
 \coordinate (C) at (6.5,.5);
 \coordinate (E) at (8,4);
 \coordinate (D) at (4,3);
-
+\tkzDrawPoints(A,B,C,D,E)
 \draw (A)--(B)--(C)--cycle;
 \draw[thin] (A)--(E)--(C);
 

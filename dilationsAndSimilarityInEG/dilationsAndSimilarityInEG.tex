@@ -46,10 +46,13 @@ Given a point $\left(x_{0},y_{0}\right)$ in the plane and a positive
 real number $r$, we define a mapping $D$ with center $\left(
 x_{0},y_{0}\right)$ and magnification factor $r$ by the formula
 \[
-D\left(  x,y\right)  =\left(  x_{0},y_{0}\right)  +r\left(  x-x_{0}%
-,y-y_{0}\right).
+\mathrm{mag}(x,y)  =
+\begin{bmatrix}
+  x_0 + r(x-x_0)\\
+  y_0 + r(y-y_0)
+  \end{bmatrix}
 \]
-We will also denote the output $D\left(x,y\right)$ of the dilation
+We will also denote the output $\mathrm{mag}(x,y)$ of the dilation
 as $\left(\underline{x},\underline{y}\right)$.
 \end{definition}
 
@@ -66,11 +69,11 @@ $\left( x_{0},y_{0}\right) $.
 \begin{freeResponse}
 First we must show that the center of the dilation is fixed, that is we must show that 
 \[
-D(x_0,y_0) = (x_0,y_0).
+\mathrm{mag}(x_0,y_0) = (x_0,y_0).
 \]
 Write
 \begin{align*}
-D(x_0,y_0) &= (x_0,y_0) + r(x_0-x_0,y_0-y_0)\\
+\mathrm{mag}(x_0,y_0) &= (x_0,y_0) + r(x_0-x_0,y_0-y_0)\\
 &= (x_0,y_0) + r(0,0)\\
 &=(x_0,y_0).
 \end{align*}
@@ -82,7 +85,7 @@ itself. To do this, consider the line
 that goes through the center of the dilation in the direction of the
 vector $(u,v)$. Write
 \begin{align*}
-D(\l(t)) &= D(x_0+tu,y_0+tv)\\
+\mathrm{mag}(\l(t)) &= \mathrm{mag}(x_0+tu,y_0+tv)\\
 &= (x_0,y_0) + r(x_0+tu-x_0,y_0+tv-y_0)\\
 &= (x_0,y_0) + r(tu,tv)\\
 &= (x_0,y_0) + t(ru,rv). 
@@ -97,13 +100,13 @@ Finally, we must show that all distances are multiplied by the
 magnification factor of the dilation. Consider two points $(a_1,b_1)$
 and $(a_2,b_2)$.  Write
 \begin{align*}
-D(a_1,b_1) &= (x_0,y_0)+r(a_1-x_0,b_1-y_0)\\
+\mathrm{mag}(a_1,b_1) &= (x_0,y_0)+r(a_1-x_0,b_1-y_0)\\
 &=(x_0+ra_1-rx_0,y_0+rb_1-ry_0)\\
 &=(\underline{a_1},\underline{b_1}).
 \end{align*}
 and
 \begin{align*}
-D(a_2,b_2) &= (x_0,y_0)+r(a_2-x_0,b_2-y_0)\\
+\mathrm{mag}(a_2,b_2) &= (x_0,y_0)+r(a_2-x_0,b_2-y_0)\\
 &=(x_0+ra_2-rx_0,y_0+rb_2-ry_0)\\
 &=(\underline{a_2},\underline{b_2}).
 \end{align*}
@@ -132,10 +135,10 @@ View the vector as the difference between two points.
 Consider the vector with its tip at $(a,b)$ and its tail at
 $(c,d)$. This is vector $(a-c, b-d)$. Now if apply the dilation,
 \begin{align*}
-D(a,b) &= (x_0,y_0) + r(a-x_0, b-y_0)\\
+\mathrm{mag}(a,b) &= (x_0,y_0) + r(a-x_0, b-y_0)\\
 &= (ra + (1-r)x_0, rb+(1-r)y_0).
 \end{align*}
-Likewise, $D(c,d) = (rc + (1-r)x_0, rd+(1-r)y_0)$. This is vector
+Likewise, $\mathrm{mag}(c,d) = (rc + (1-r)x_0, rd+(1-r)y_0)$. This is vector
 \[
 (ra-rc,rb-rd) = r(a-c,b-d).
 \]
@@ -156,7 +159,7 @@ Using the parametric formula for a line
 \]
 we see that
 \begin{align*}
-D(\l(t)) &=D(a+tu,b+tv)\\
+\mathrm{mag}(\l(t)) &=\mathrm{mag}(a+tu,b+tv)\\
 &= (x_0,y_0) + r(a+tu-x_0,b+tv-y_0)\\
 &= (x_0,y_0) + (ra - rx_0,rb-ry_0)+ r(tu,tv)\\
 &= (x_0(1-r) + ra,y_0(1-r)+rb)) + t(ru,rv). 
@@ -200,45 +203,43 @@ same center but with magnification factor $r^{-1}$.
 
 
 \begin{problem}
-Show using several-variable calculus that a dilation $D$ with
+Show using several-variable calculus that a dilation $mag$ with
 magnification factor $r$ multiplies all areas by a factor of $r^{2}$.
 \begin{hint}
-Recall that if $R$ is a region in the plane, $D(R)$ is the dialated region and 
+Recall that if $R$ is a region in the plane, $\mathrm{mag}(R)$ is the
+dialated region, and $F:\R^2\to\R$ is continuous, then
 \[
-\iint_{D(R)} f(x,y)  \d xdy = \iint_{R} f(D(x,y)) \left|\det J_D(x,y)\right| \d xdy,
+\iint_{\mathrm{mag}(R)} F  \d A= \iint_{R} F\circ \mathrm{mag} \det \jac(\mathrm{mag})  \d A,
 \]
 where
 \[
-J_D(x,y) =
-{\renewcommand\arraystretch{2}
+\jac(\mathrm{mag}) = 
 \begin{bmatrix}
-\pp[D_x]{x} & \pp[D_y]{x} \\
-\pp[D_x]{y} & \pp[D_y]{y}
-\end{bmatrix}}
+\frac{\partial}{\partial{x}}\mathrm{mag} &\frac{\partial}{\partial{y}}\mathrm{mag}
+\end{bmatrix}
 \]
-and $D_x$ and $D_y$ are the components of $D(x,y)$.
 \end{hint}
 \begin{freeResponse}
 Let $R$ be the region in the plane. Write
 \[
-\int_{D(R)} 1  \d xdy = \int_{R}  \left|\det J_D(x,y)\right| \d xdy,
+\iint_{\mathrm{mag}(R)} 1  \d A = \iint_{R}  \det \jac(\mathrm{mag}) \d A,
 \]
 where
 \[
-J_D(x,y) =
+J_\mathrm{mag}(x,y) =
 {\renewcommand\arraystretch{2}
 \begin{bmatrix}
-\pp[D_x]{x} & \pp[D_x]{y} \\
-\pp[D_y]{x} & \pp[D_y]{y}
+\pp[\mathrm{mag}_x]{x} & \pp[\mathrm{mag}_x]{y} \\
+\pp[\mathrm{mag}_y]{x} & \pp[\mathrm{mag}_y]{y}
 \end{bmatrix}} = 
 \begin{bmatrix}
 r & 0 \\
 0 & r
 \end{bmatrix}.
 \]
-Hence $\left|\det J_D(x,y)\right| = r^2$ and so 
+Hence $\left|\det J_\mathrm{mag}(x,y)\right| = r^2$ and so 
 \[
-\int_{D(R)} 1  \d xdy = r^2\cdot \int_R 1\d xdy.
+\int_{\mathrm{mag}(R)} 1  \d xdy = r^2\cdot \int_R 1\d xdy.
 \]
 This shows that a dilation with magnification factor $r$ multiplies
 all areas by a factor of $r^{2}$.
