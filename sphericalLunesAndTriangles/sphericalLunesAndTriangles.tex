@@ -1,4 +1,4 @@
-\documentclass[newpage,hints]{ximera}
+\documentclass[newpage,hints,12pt,handout,nooutcomes,noauthor]{ximera}
 
 \input{../preamble.tex}
 
@@ -12,15 +12,94 @@ see an explanation of why this is the right notion.
 \end{abstract}
 \maketitle
 
+\subsection{Rigid motions}
 
 
-\section{Spherical lunes}
+Rigid motions are transformations that preserve lengths. This
+means that the distance between two points $A$ and $B$ is the same,
+both before and after the transformation is applied. Rigid motions are
+central to geometry because \textit{congruences} can be explained in
+terms of rigid motions: \textbf{Two objects are congruent if there is a rigid
+motion mapping one to the other.} 
 
-In the picture we have shaded in an `$\alpha$-lune' on the $R$-sphere in
-euclidean $3$-space.%
-\begin{image}
-\includegraphics[width=3in]{W13_3.png}%
-\end{image}
+
+
+\begin{problem}
+  Give an intuitive explanation why the transformation
+  \[
+  \begin{bmatrix}-x\\-y\\-z\end{bmatrix}=
+    \begin{bmatrix}
+      -1 & 0 & 0\\
+      0 & -1 & 0\\
+      0 & 0 & -1
+    \end{bmatrix}
+    \begin{bmatrix}x\\y\\z\end{bmatrix}
+  \]
+  preserves lengths, angles, and areas (and hence, is a rigid
+  motion). Later, we will find a method to make this rigorous and
+  general.
+\end{problem}
+
+
+
+
+\subsection{Spherical lunes}
+While a three-sided triangle is the `simplest' closed convex polygon
+in euclidean geometry, this is not the case for spherical geometry. In
+this case, we have two-sided lunes.  In the picture we have drawn an
+`$\alpha$-lune' on the $R$-sphere in euclidean $3$-space.
+%% \begin{image}
+%% \includegraphics[width=3in]{W13_3.png}%
+%% \end{image}
+
+
+
+\begin{center}
+  \begin{tikzpicture}[geometryDiagrams,scale=1.7]  
+      
+    %% sphere
+    \draw (1.75,0) arc (0:360:1.75);
+    
+    %%right line
+    \draw[thin,dashed,rotate around={80:(0,0)}] (-1.75,0) arc (180:360:1.75 and .5);
+    \draw[thin,rotate around={80:(0,0)}] (1.75,0) arc (0:180:1.75 and .5);     
+    \begin{scope}
+      \clip[rotate around={120:(0,0)}] (-1.75,0) arc (180:360:1.75 and .5);
+      \draw[rotate around={80:(0,0)}] (1.75,0) arc (0:180:1.75 and .5);     
+    \end{scope}
+    \begin{scope}
+      \clip (-1,1) rectangle (1,-2);
+      \draw[rotate around={80:(0,0)}] (1.75,0) arc (0:180:1.75 and .5);     
+    \end{scope}
+    \draw[dashed,rotate around={80:(0,0)}] (-1.75,0) arc (180:233:1.75 and .5);
+    
+
+    
+    %% left line
+    \draw[thin,rotate around={120:(0,0)}] (-1.75,0) arc (180:360:1.75 and .5);
+    \draw[thin,dashed,rotate around={120:(0,0)}] (1.75,0) arc (0:128:1.75 and .5);
+    \begin{scope}
+      \clip[rotate around={80:(0,0)}] (1.75,0) arc (0:180:1.75 and .5);
+      \draw[rotate around={120:(0,0)}] (-1.75,0) arc (180:360:1.75 and .5); 
+    \end{scope}
+    \begin{scope}
+      \clip (0,1) rectangle (1,-2);
+      \draw[rotate around={120:(0,0)}] (-1.75,0) arc (180:360:1.75 and .5);     
+    \end{scope}
+    \draw[dashed,rotate around={120:(0,0)}] (-1.75,0) arc (180:127:1.75 and .5);
+
+    \node at (-.15,.85) {$\alpha$};
+
+
+    \begin{scope}
+      \clip[rotate around={80:(0,0)}] (1.75,0) arc (0:180:1.75 and .5);     
+      \clip[rotate around={120:(0,0)}] (-1.75,0) arc (180:360:1.75 and .5);
+
+      \draw[thin] (-.15,1) circle (.3cm);
+    \end{scope}
+\end{tikzpicture}  
+  \end{center}
+
 
 
 The lune has two vertices. They are at opposite (antipodal) points on the
@@ -28,56 +107,123 @@ $R$-sphere, that is, the line in euclidean $3$-space that joins the two
 vertices runs through the center of the sphere. The angle at a vertex of the
 lune is $\alpha$ radians.
 
+
+
+
+
+
+
+\begin{problem}
+  Prove that the other vertex of of the lune is found by the rigid motion%
+  \[
+  \begin{bmatrix}-x\\-y\\-z\end{bmatrix}=
+    \begin{bmatrix}
+      -1 & 0 & 0\\
+      0 & -1 & 0\\
+      0 & 0 & -1
+    \end{bmatrix}
+    \begin{bmatrix}x\\y\\z\end{bmatrix}.
+  \]
+  \begin{hint}
+    Let $x^2 + y^2 + z^2 = R^2$ be the equation for the
+    $R$-sphere. Hence the vertices of our lune are solutions to
+    simultaneous equations of the form:
+    \begin{align*}
+      x^2 + y^2 + z^2 &= R^2\\
+      ax + by + cz &= 0\\
+      a'x + b'y + c'z &= 0.
+    \end{align*}
+    Prove that if $(x,y,z)$ is a solution, so is $(-x,-y,-z)$.
+  \end{hint}
+\end{problem}
+
+
+
+
+
 \begin{problem}
 \label{67} Explain why the area of the $\alpha$-lune is $2\alpha
 \cdot R^{2}$.
 \end{problem}
 
 
-\section{Spherical triangles}
+\subsection{Spherical triangles}
 
 If a triangle on the sphere of radius $R$ has interior angles with radian
 measures $\alpha$, $\beta$, and $\gamma$, it can be covered three times by
 lunes as shown in the figure below.%
-\begin{image}
-\includegraphics[width=3in]{W13_4.png}%
-\end{image}
-Notice that each lune has one vertex at a vertex of the triangle and angle
-equal to that interior angle of the triangle. The other vertices of each lune
-are vertices of an `opposite' triangle that has the same area as the given one
-since it is just the image of the given one under the rigid motion%
-\[
-\begin{bmatrix}-x\\-y\\-z\end{bmatrix}=
-\begin{bmatrix}
--1 & 0 & 0\\
-0 & -1 & 0\\
-0 & 0 & -1
-\end{bmatrix}
-\begin{bmatrix}x\\y\\z\end{bmatrix}.
-\]
-The three lunes cover the triangle three times. The three opposite
-lunes cover the opposite triangle three times. If you take all six
-lunes together, they cover each of the two triangles three times and
-everything else exactly once.
+%% \begin{image}
+%% \includegraphics[width=3in]{W13_4.png}%
+%% \end{image}
+
+
+
+
+
+\begin{center}
+  \begin{tikzpicture}[geometryDiagrams,scale=1.7]  
+      
+    %% sphere
+    \draw (1.75,0) arc (0:360:1.75);
+    
+
+    \draw[thin,rotate around={10:(0,0)}] (-1.75,0) arc (180:360:1.75 and .5);
+    \draw[thin,dashed,rotate around={10:(0,0)}] (1.75,0) arc (0:180:1.75 and .5);
+    \begin{scope}
+      \clip (-.705,-1) rectangle (1,2);
+      \draw[rotate around={10:(0,0)}] (-1.75,0) arc (180:292:1.75 and .5);     
+    \end{scope}
+
+
+
+
+    
+    \draw[thin,dashed,rotate around={70:(0,0)}] (-1.75,0) arc (180:360:1.75 and .5);
+    \draw[thin,rotate around={70:(0,0)}] (1.75,0) arc (0:180:1.75 and .5);
+    %% \begin{scope}
+    %%   \clip[rotate around={120:(0,0)}] (-1.75,0) arc (180:360:1.75 and .5);
+    %%   \clip[rotate around={10:(0,0)}] (-1.75,0) arc (180:360:1.75 and .5);
+    %%   \draw[blue,rotate around={70:(0,0)}] (1.75,0) arc (0:130:1.75 and .5);     
+    %% \end{scope}
+    \begin{scope}
+      \clip (-1,1.01) rectangle (1,-2);
+      \draw[rotate around={70:(0,0)}] (1.75,0) arc (0:117:1.75 and .5);     
+    \end{scope}
+    
+
+
+
+    
+    \draw[thin,rotate around={120:(0,0)}] (-1.75,0) arc (180:360:1.75 and .5);
+    \draw[thin,dashed,rotate around={120:(0,0)}] (1.75,0) arc (0:180:1.75 and .5);
+    \begin{scope}
+      \clip (-1,1.01) rectangle (1,-2);
+      \draw[rotate around={120:(0,0)}] (1.75,0) arc (0:-112:1.75 and .5);     
+    \end{scope}
+\end{tikzpicture}  
+  \end{center}
+Notice that each lune has one vertex at a vertex of the triangle and
+angle equal to that interior angle of the triangle.
 
 \begin{problem}
-Show that the area of the spherical triangle is given by the
-formula%
+Show that the area of the spherical triangle with angles $\alpha$,
+$\beta$, and $\gamma$ is given by the formula%
 \[
 R^{2}\left(  \left(  \alpha+\beta+\gamma\right)  -\pi\right).
 \]
 \begin{hint}
-Use the previous problem.
+From our previous work, we see that the triangle and its opposite have
+the same area.  The three lunes cover the triangle three times. The
+three opposite lunes cover the opposite triangle three times. If you
+take all six lunes together, they cover each of the two triangles
+three times and everything else exactly once.
 \end{hint}
 \end{problem}
 
 
 \begin{problem}
-Use induction to derive a formula for the area of any spherical
-$n$-gon.
-\begin{hint}
-Divide the spherical $n$-gon into spherical triangles.
-\end{hint}
+Find a formula for the area of any spherical quadrilateral.
+
 \end{problem}
 
 
