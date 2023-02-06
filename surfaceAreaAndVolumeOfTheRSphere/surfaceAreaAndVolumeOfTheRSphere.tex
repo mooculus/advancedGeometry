@@ -322,11 +322,11 @@ Show why the above theorem is true.
 \begin{hint}
 Slice the picture above into $n$ horizontal slices. Approximate the
 piece of the surface of the sphere between the $i$th pair of
-successive slices by a collar $C_{i}$. Let $a\left( C_{i}\right) $
+successive slices by a collar $C_{i}$. Let $\mathrm{area}( C_{i}) $
 denote the area of $C_{i}$, let $r_{i}$ denote its average radius and
 explain why the surface area of the sphere is
 \[
-\lim_{n\to \infty}\sum_{i=1}^{n} a(C_i).
+\lim_{n\to \infty}\sum_{i=1}^{n} \mathrm{area}(C_i).
 \]
 Explain further how we can conclude that the area of the sphere is
 given by
@@ -339,7 +339,7 @@ given by
 Let $h_{i}$ denote the vertical height of the label on the can between
 the $i$th pair of successive slices. Explain why the area of the label is exactly%
 \[%
-\sum_{i=1}^{n} 2\pi R \cdot h_{i}.
+\lim_{n\to\infty}\sum_{i=1}^{n} 2\pi R \cdot h_{i}.
 \]
 \end{hint}
 \begin{hint}
@@ -490,7 +490,7 @@ where $F:\R^3\to\R$.  Use this formula.
 
 \subsection{The magnification principle}
 
-\textbf{The magnification principle:} If an object in Euclidean $n$-space is
+\textbf{The magnification principle:} If an object in euclidean $n$-space is
 magnified by factors of $r_{1},\ldots,r_{n}$, its $n$-dimensional
 measure is multiplied by $r_{1}\cdots r_{n}$.
 
@@ -532,14 +532,12 @@ Now suppose we have any pyramid%
 %% \coordinate (B4) at (4,0,2);
 %% \coordinate (B5) at (3,0,0);
 %% \coordinate (peak) at (1,3,1);
-
 %% \draw[fill=red,opacity=0.3] (B1)--(B2)--(B3)--(B4)--(B5)--cycle; % base
 %% \draw[fill=orange,opacity=0.3] (B1)--(B2)--(peak);
 %% \draw[fill=yellow,opacity=0.3] (B2)--(B3)--(peak);
 %% \draw[fill=green,opacity=0.3] (B3)--(B4)--(peak);
 %% \draw[fill=blue,opacity=0.3] (B4)--(B5)--(peak);
 %% \draw[fill=purple,opacity=0.3] (B5)--(B1)--(peak);
-
 %% \draw[ultra thick] (B2)--(B3)--(B4)--(B5)--(peak)--(B4)--(B3)--(peak)--(B2);
 %% \end{tikzpicture}
 %% \end{image}
