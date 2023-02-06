@@ -41,3 +41,4 @@
 auto/
 *.fdb_latexmk
 *.fls
+*.xoc
