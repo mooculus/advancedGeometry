@@ -118,7 +118,6 @@ After answering the following questions, students should be able to:
 }
 
 
-
 %% thm like environments
 \let\problem\relax
 \let\endproblem\relax
@@ -139,5 +138,5 @@ After answering the following questions, students should be able to:
 \addtocounter{problem}{1}
 \noindent\textbf{Problem~\theproblem}\quad
 \BODY
-\ifhandout\newpage\else\fi
+\ifnewpage\newpage\else\fi
 }
