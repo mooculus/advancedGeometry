@@ -1,4 +1,4 @@
-\documentclass[newpage,hints,handout]{ximera}
+\documentclass[newpage,hints,handout,nooutcomes,noauthor,12pt]{ximera}
 
 \input{../preamble.tex}
 
@@ -105,7 +105,7 @@ It is also denoted as%
 \]
 or in matrix notation as%
 \[
-\hat{\mathbf v}_{1}\cdot \hat{\mathbf v}_{2}^\transpose.
+\hat{\mathbf v}_{1}^\transpose\cdot \hat{\mathbf v}_{2}.
 \]
 
 \end{definition}
@@ -559,7 +559,7 @@ the calculation of the area of the parallelogram they generate.
 %% \end{problem}
 
 
-\subsection{Curves in euclidean $3$-space and vectors tangent to them}
+\subsection{Curves in euclidean space and vectors tangent to them}
 
 \begin{definition}
 A \textbf{smooth curve in }$\mathbf{3}$\textbf{-dimensional euclidean space}
@@ -579,11 +579,11 @@ from an interval $[b,e]$ on the real line whose tangent vector
 is not the zero vector for any $t$ in $[b,e]$.  We will sometimes use column
 vector notation if it looks better:%
 \[
-\hat{\gamma}(t) = \begin{pmatrix}
+\hat{\gamma}(t) = \begin{bmatrix}
   \hat{x}(t)\\
   \hat{y}(t)\\
-  \hat{z}(t).
-\end{pmatrix}
+  \hat{z}(t)
+\end{bmatrix}.
 \]
 \end{definition}
 
@@ -640,39 +640,8 @@ $\theta = \arccos \left(
 
 \end{problem}
 
-There are two kinds of vectors that naturally arise from curves: the
-displacement between times $t_1$ and $t_2$, given by%
-\[
-\hat{\mathbf v}=\hat{\gamma}(t_2)-\hat{\gamma}(t_1)=
-(\hat{x}(t_2)-\hat{x}(t_1),\hat{y}(t_2)-\hat{y}(t_1),\hat{z}(t_2)-\hat{z}(t_1)),
-\]
-and the instantaneous velocity of a point moving along a curve, given by%
-\[
-\hat{\mathbf v}=\frac{d\hat{\gamma}(t)}{dt}=
-\left(\frac{d\hat{x}(t)}{dt},\frac{d\hat{y}(t)}{dt},\frac{d\hat{z}(t)}{dt}\right).
-\]
-%[DS,30ff].
 
-In matrix notation we can think of the difference between two points
-\[
-\hat{X}_{2}-\hat{X}_{1}=\left(  \hat{x}_{2}-\hat{x}_{1},\hat{y}_{2}-\hat
-{y}_{1},\hat{z}_{2}-\hat{z}_{1}\right)
-\]
-as a $1\times3$ matrix $\left[\hat{X}_{2}-\hat{X}_{1}\right]$. Then we can
-write the formula for the distance between $\hat{X}_{1}$ and
-$\hat{X}_{2}$ in euclidean $3$-space in terms of the dot-product:%
-\begin{equation}
-  d(\hat{X}_{1},\hat{X}_{2})=\sqrt{(\hat{X}_{2}-\hat{X}_{1})\bullet
-    (\hat{X}_{2}-\hat{X}_{1})} \label{13}%
-\end{equation}
-or in terms of the matrix product%
-\[
-d(\hat{X}_{1},\hat{X}_{2}) =\sqrt{\left[\hat{X}_{2}-\hat{X}_{1} \right]
-  \cdot\left[\hat{X}_{2}-\hat{X}_{1}\right]^\transpose }.
-\]
-
-
-\subsection{Length of a smooth curve in euclidean $3$-space}
+\subsection{Length of a smooth curve in euclidean space}
 
 \begin{problem}
 Compute the length of the tangent vector
