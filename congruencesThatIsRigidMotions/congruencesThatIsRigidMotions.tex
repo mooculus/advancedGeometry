@@ -9,15 +9,25 @@ We explore rigid motions as matrix multiplication.
 \end{abstract}
 \maketitle
 
-\subsection{Transformations of euclidean space}
+
 
 Consider the following mapping of euclidean space to itself:%
 \[
 \begin{bmatrix}
 \underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
 \end{bmatrix}^\transpose
-=\hat M \begin{bmatrix} \hat{x} & \hat{y} & \hat{z}\end{bmatrix}^\transpose,
+=\hat M \begin{bmatrix} \hat{x} & \hat{y} & \hat{z}\end{bmatrix}^\transpose.
 \]
+Note
+\begin{image}
+  \begin{tikzpicture}
+    \node{
+      \begin{tikzcd}[ampersand replacement=\&]
+         \R^3\ar[r,"\hat{M}"] \& \R^3
+    \end{tikzcd}};
+  \end{tikzpicture}
+\end{image}
+
 where $\hat{M}$ is an invertible $3\times3$ matrix. Since the matrix
 is invertible, this mapping is one-to-one and onto.
 
@@ -36,6 +46,12 @@ vertically.
 It turns out that there is a special class of matrices that give rise
 to rigid motions.
 
+
+
+\subsection{The group of orthogonal matrices}
+
+
+
 \begin{definition}
   A matrix $\hat{M}$ satisfying
   \[
@@ -49,8 +65,8 @@ to rigid motions.
 \end{definition}
 
 \begin{problem}
-  Prove that a matrix $\hat{M}$ defines a rigid motion (a congruence)
-  via
+  Prove that a matrix $\hat{M}$ preserves dot products, and hence is a
+  rigid motion (a congruence) via
   \[
   \begin{bmatrix}
     \underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}%
@@ -58,57 +74,23 @@ to rigid motions.
   =\hat M \begin{bmatrix} \hat{x} & \hat{y} & \hat{z}\end{bmatrix}^\transpose
   \]
   if and only if it is orthogonal.
-
-  \begin{hint}
-    Note that the square of the distance between $\hat{X}_{1}$ and
-    $\hat{X}_{2}$ is the dot product of the vector%
-    \[
-    \hat{\mathbf v}=\hat{X}_{2}-\hat{X}_{1}%
-    \]
-    with itself.  Also recall the identity $(AB)^\transpose=B^\transpose A^\transpose$.
-  \end{hint}
   \begin{hint}
     If $\hat{M}$ is orthogonal, write
     \[
-    (\hat M\hat{\mathbf v}) \bullet (\hat M\hat{\mathbf v})
+    (\hat M\hat{\mathbf v}) \bullet (\hat M\hat{\mathbf w})
     \]
-    and deduce that this equals $\hat{\mathbf v}\bullet\hat{\mathbf v}$. 
+    and deduce that this equals $\hat{\mathbf v}\bullet\hat{\mathbf w}$. 
   \end{hint}
   \begin{hint}
-    Now suppose that $\hat{M}$ defines a rigid motion. Explain why this means
+    Now suppose that $\hat{M}$ preserves dot products. Explain why this means
     that
     \[
-    (\hat{M}\hat{\mathbf v}) \bullet (\hat M\hat{\mathbf v})=
-    \hat{\mathbf v} \bullet \hat{\mathbf v}
+    (\hat{M}\hat{\mathbf v}) \bullet (\hat M\hat{\mathbf w})=
+    \hat{\mathbf v} \bullet \hat{\mathbf w}
     \]
-    for every $\hat{\mathbf v}$.  Now rewrite as:
-    \[
-    \hat{\mathbf v}^\transpose \cdot\hat{\mathbf v}
-    =(\hat{M}\hat{\mathbf v})^\transpose \cdot (\hat M\hat{\mathbf v}).
-    \]
-    Write
-    \[
-    \hat{\mathbf v} =
-    \begin{bmatrix}
-      a \\ b \\ c
-    \end{bmatrix}
-    \qquad \text{and} \qquad
-    \hat{M} =
-    \begin{bmatrix}
-      m_{11} & m_{12} & m_{13}\\
-      m_{21} & m_{22} & m_{23}\\
-      m_{31} & m_{32} & m_{33}
-    \end{bmatrix}
-    \]
-    and view the equation 
-    \[
-    \hat{\mathbf v}^\transpose \cdot\hat{\mathbf v}
-    =(\hat{M}\hat{\mathbf v})^\transpose \bullet (\hat M\hat{\mathbf v})
-    \]
-    as a polynomial equation in the variables $a$, $b$, and $c$. 
-  \end{hint}
-  \begin{hint}
-    Polynomials are equal if and only if their coefficients are equal. 
+    for every $\hat{\mathbf v}$ and $\hat{\mathbf w}$. Let
+    $\hat{\mathbf v}$ and $\hat{\mathbf w}$ be basis vectors, and note
+    their dot product.
   \end{hint}
   
   
@@ -480,7 +462,7 @@ Therefore, because $\hat{M}$ is orthogonal $\left( \hat{M}^{-1} \right)^\transpo
 
 \end{problem}
 
-
+\subsection{Explicit examples}
 
 
 \begin{problem}
@@ -612,7 +594,7 @@ show that its length is unchanged.
 \begin{hint}
   Recall that the length of a curve is given by
 \[
-\int_{b}^{e} \sqrt{\frac{d\hat{\gamma}}{dt} \bullet \frac{d\hat{\gamma}}{dt}}\d t.
+\int_{b}^{e} \sqrt{\frac{d\hat{\gamma}}{d t} \bullet \frac{d\hat{\gamma}}{dt}}\d t.
 \]  
 \end{hint}
 
