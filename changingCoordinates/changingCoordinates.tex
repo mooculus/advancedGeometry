@@ -36,13 +36,22 @@ unfortunate situation.
 
 Consider another copy of $\mathbb{R}^{3}$, that we will call
 \dfn{$\boldsymbol{K}$-warped space}, whose coordinates we denote as
-$\left( x,y,z\right) $.  We make the following rule in order to pass
-between the two $\mathbb{R}^{3}$'s:%
-\begin{align*}
-\hat{x}  &  =x\\
-\hat{y}  &  =y\\
-\hat{z}  &  =Rz.
-\end{align*}
+$\left( x,y,z\right) $.  We make the following rule $E_R:\R^3\to\R^3$
+to pass between the two systems.
+\[
+E_R(x,y,z) = 
+\begin{bmatrix}
+\hat{x}  \\
+\hat{y}  \\
+\hat{z}  
+\end{bmatrix}
+=
+\begin{bmatrix}
+  x\\
+  y\\
+  Rz
+\end{bmatrix}.
+\]
 We think of the $\left( x,y,z\right) $-coordinates as simply being a
 different set of addresses for the points in euclidean space. For
 example,
@@ -149,11 +158,7 @@ but we want lengths and angles to be the usual euclidean ones in $(
   \begin{tikzpicture}
     \node{
   \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement=\&]
-    t\in\R \ar[r,mapsto,"\gamma"] \ar[rd,mapsto,dashed,swap,"\hat\gamma"] \&  (x(t),y(t),z(t))\in\R^3\ar[d,mapsto,"{\left[\begin{smallmatrix}
-            1 & 0 & 0\\
-            0 & 1 & 0\\
-            0 & 0 & R
-          \end{smallmatrix}\right]}"
+    t\in\R \ar[r,mapsto,"\gamma"] \ar[rd,mapsto,dashed,swap,"\hat\gamma"] \&  (x(t),y(t),z(t))\in\R^3\ar[d,mapsto,"{E_R}"
     ] \\
     \& \hat\gamma(t)=(\hat x(t),\hat y(t),\hat z(t))\in\R^3 
     \end{tikzcd}};
@@ -376,8 +381,6 @@ c_{2}%
 
 \end{definition}
 
-\subsection{Computing length}
-
 \begin{problem}
   Show that if a vector is given to us in $(x,y,z)$-coordinates as
   $\mathbf{v}=(a,b,c)$, then the length of its image in euclidean
@@ -448,8 +451,6 @@ Then $|V|_{K} = \sqrt{V \bullet_{K} V} = \frac{1}{\sqrt{K}} = |R|$. This tells u
 %% \]
 
 
-\subsection{Computing angles}
-
 \begin{problem}
   Show that when $K>0$ if two vectors are given to us in $(x,y,z)$-coordinates as
   \[
@@ -474,7 +475,6 @@ Then $|V|_{K} = \sqrt{V \bullet_{K} V} = \frac{1}{\sqrt{K}} = |R|$. This tells u
 
 
 
-\subsection{Computing area}
 
 \begin{problem}
 %% Show that, if we have any two vectors in euclidean three-space that
@@ -579,13 +579,11 @@ geometry, lengths, areas, angles, everything. And the set
 \[
 1=K\left(x^{2}+y^{2}\right)+z^{2} 
 \]
-continues to make sense even when $K$ is
-negative. And as we will see later on, the definition of the $K$-dot
-product also makes sense for tangent vectors to that set when $K$ is
-negative. The geometry we get when the constant $K$ is chosen to be
-negative is called a hyperbolic geometry. The geometry we get, when
-the constant $K$ is just chosen to be non-zero is called a
-non-euclidean geometry.  In fact all the non-euclidean $2$-dimensional
+continues to make sense even when $K$ is negative.  The geometry we
+get when the constant $K$ is chosen to be negative is called a
+hyperbolic geometry. The geometry we get, when the constant $K$ is
+just chosen to be non-zero is called a non-euclidean geometry of
+constant curvature.  In fact all the non-euclidean $2$-dimensional
 geometries are either spherical or hyperbolic.
 
 %% \textit{Coming attractions:} In hyperbolic geometry, when $K^{-1}$ in
