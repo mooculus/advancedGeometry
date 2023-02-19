@@ -1,4 +1,4 @@
-\documentclass[newpage,hints,handout]{ximera}
+\documentclass[newpage,hints,handout,12pt,noauthor,nooutcomes]{ximera}
 
 \input{../preamble.tex}
 
@@ -10,42 +10,31 @@ Now we will change coordinates.
 \maketitle
 
 
-\section{Bringing the North Pole of the $R$-sphere to $\left(
-0,0,1\right)  $}
+\subsection{From infinity to one}
 
-We are now ready to change coordinates on euclidean $3$-space so that we can fill
-up that space  with plane geometry and all the spherical and hyperbolic
-geometries.  We have reserved the notation $(x,y,z)$ for these new coordinates
-that we will put on the `same' objects we have been studying in euclidean
-$(\hat{x},\hat{y},\hat{z})$-coordinates. These new coordinates will be chosen to
-keep the north and south poles from going to infinity as the radius $R$ of a
-sphere increases without bound. In these now $(x,y,z)$-coordinates the sphere of
-radius $R$ will be given by the equation
-\[
-K(x^{2}+y^{2})+z^{2}=1
-\]
-where $K=1/R^2$. Notice that the above equation has solutions even when $K$ is negative. It is on those solution sets that hyperbolic geometries will live. So this change of
-viewpoint will eventually let us go hyperbolic or, in the language of Buzz
-Lightyear, will let $R$ go `to infinity and beyond.' The
-idea will be like the change from rectangular to polar coordinates for the
-plane that you encountered in calculus, only easier. 
+We will now change coordinates from euclidean $3$-space to a new
+``warped'' space.  This new space will allow us to unify plane
+geometry, spherical, and (as we shall see) hyperbolic
+geometries.
 
-We are now ready to introduce this slightly different set of coordinates for
-$\mathbb{R}^{3}$, three-dimensional euclidean space. To understand a bit better why we are doing this,
-suppose we are standing at the North Pole%
+
+Suppose we are standing at the North Pole%
 \[
-N=(0,0,R)
+\hat{N}=(0,0,R)
 \]
 of the sphere%
 \[
 \hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=R^{2} %\label{4}%
 \]
-of radius $R$. As $R$ increases, but we stay our same size, the sphere
-around us becomes more and more like a flat, plane surface. However it
-can never get completely flat because we are zooming out the positive
-$\hat{z}$-axis and we would have to be `at infinity' for our surface
-to become exactly flat. We remedy that unfortunate situation by
-considering another copy of $\mathbb{R}^{3}$, that we will call
+of radius $R$. If we let $R$ increase, but we stay our same size, the
+sphere around us becomes more and more flat, like a plane. However it
+can never get completely flat. No matter how large the radius is, we
+still have a sphere.  We would have to be `at infinity' for our
+surface to become exactly flat. Our new coordinates remedy this
+unfortunate situation.
+
+
+Consider another copy of $\mathbb{R}^{3}$, that we will call
 \dfn{$\boldsymbol{K}$-warped space}, whose coordinates we denote as
 $\left( x,y,z\right) $.  We make the following rule in order to pass
 between the two $\mathbb{R}^{3}$'s:%
@@ -62,22 +51,29 @@ example,
 \]
 tells me that the point in euclidean space that I'm referring to is%
 \[
-\left(\hat{x},\hat{y},\hat{z}\right) =\left( 0,0,R\right)= N.
+\left(\hat{x},\hat{y},\hat{z}\right) =\left( 0,0,R\right)= \hat{N}.
 \]
 Continuing with this ``change of addresses'' the sphere of radius $R$
 in euclidean space is given by
 \begin{align*}
-R^{2} & =\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}\\ &
-=x^{2}+y^{2}+R^{2}z^{2}
+  R^{2} &=\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}\\
+  &=x^{2}+y^{2}+R^{2}z^{2}
 \end{align*}
 that is, by the equation
 \[
 1=\frac{1}{R^{2}}\left(  x^{2}+y^{2}\right)  +z^{2}. %\label{5}%
 \]
+poles at a constant finite location.  Now note that if $K=1/R^2$, then
+we may express the formula for a sphere as
+\[
+1=K(x^{2}+y^{2})+z^{2}.
+\]
+
+
 \begin{definition}
   For the surface defined by
   \[
-  1=\frac{1}{R^{2}}\left(  x^{2}+y^{2}\right)  +z^{2}. %\label{5%}
+  1=K\left(  x^{2}+y^{2}\right)  +z^{2}. %\label{5%}
   \]
 The quantity $K=\frac{1}{R^{2}}$ is called the \dfn{curvature} of the
 $R$-sphere.
@@ -119,15 +115,15 @@ R^{2}=\hat{x}^{2}+\hat{y}^{2}+\hat{z}^{2}=10^{-2}.
 %\end{hint}
 \end{problem}
 
-\section{Formulas for euclidean lengths, angles, and areas in terms of $(x,y,z)$-coordinates}
+\subsection{New formulas for euclidean lengths, angles, and areas}
 
 To prepare ourselves to do hyperbolic geometry, which (in some sense)
 has no satisfactory model in euclidean space, we will `practice' by
 doing spherical geometry (which \textit{does} have a completely
 satisfactory model in euclidean space) using these `slightly strange'
-$\left( x,y,z\right) $-coordinates. Gradually throughout this course
+$(x,y,z)$-coordinates. Gradually throughout this course
 we will discover that the same rules that govern spherical geometry,
-expressed in $\left( x,y,z\right) $-coordinates, also govern flat and
+expressed in $(x,y,z)$-coordinates, also govern flat and
 hyperbolic geometry! In all three cases, the surface in $\left(
 x,y,z\right) $-coordinates that we will study is%
 \[
@@ -141,9 +137,9 @@ R=\frac{1}{\sqrt{K}}.
 If $K=0$ we will be studying flat (plane) geometry. If $K<0$, we will be
 studying hyperbolic geometry. 
 
-In short, we want to use $\left(  x,y,z\right)  $-coordinates to compute with,
-but we want lengths and angles to be the usual euclidean ones in $\left(
-\hat{x},\hat{y},\hat{z}\right)  $-coordinates.
+In short, we want to use $(  x,y,z)  $-coordinates to compute with,
+but we want lengths and angles to be the usual euclidean ones in $(
+\hat{x},\hat{y},\hat{z})  $-coordinates.
 
 \begin{problem}
   Suppose we have a curve $\hat\gamma$ in euclidean space and we think of it as a
@@ -152,13 +148,14 @@ but we want lengths and angles to be the usual euclidean ones in $\left(
   \begin{image}
   \begin{tikzpicture}
     \node{
-  \begin{tikzcd}[ampersand replacement=\&]
-    t \ar[r,mapsto,"\gamma"] \ar[rr,mapsto,bend right=20,swap,"\hat\gamma"] \&  (x(t),y(t),z(t))\ar[r,mapsto,"{\left[\begin{smallmatrix}
-            \hat x(x,y,z)\\
-            \hat y(x,y,z)\\
-            \hat z(x,y,z)
+  \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement=\&]
+    t\in\R \ar[r,mapsto,"\gamma"] \ar[rd,mapsto,dashed,swap,"\hat\gamma"] \&  (x(t),y(t),z(t))\in\R^3\ar[d,mapsto,"{\left[\begin{smallmatrix}
+            1 & 0 & 0\\
+            0 & 1 & 0\\
+            0 & 0 & R
           \end{smallmatrix}\right]}"
-    ] \& \hat\gamma(t)=(\hat x(t),\hat y(t),\hat z(t))
+    ] \\
+    \& \hat\gamma(t)=(\hat x(t),\hat y(t),\hat z(t))\in\R^3 
     \end{tikzcd}};
   \end{tikzpicture}
 \end{image}
@@ -283,15 +280,15 @@ D_K =
 
 This last computation shows that if
 \[
-\hat{\mathbf v}_{1}=\begin{pmatrix}\hat{a}_{1} \\ \hat{b}_{1} \\ \hat{c}_{1}\end{pmatrix}
+\hat{\mathbf v}_{1}=\begin{bmatrix}\hat{a}_{1} \\ \hat{b}_{1} \\ \hat{c}_{1}\end{bmatrix}
 \qquad\text{and}\qquad
-\hat{\mathbf v}_{2} =\begin{pmatrix}\hat{a}_{2} \\ \hat{b}_{2} \\ \hat{c}_{2}\end{pmatrix}
+\hat{\mathbf v}_{2} =\begin{bmatrix}\hat{a}_{2} \\ \hat{b}_{2} \\ \hat{c}_{2}\end{bmatrix}
 \]
 are vectors tangent to a curve in $(\hat{x},\hat{y},\hat{z})$-coordinates and
 \[
-\mathbf{v}_{1}=\begin{pmatrix}a_{1} \\ b_{1} \\ c_{1}\end{pmatrix}
+\mathbf{v}_{1}=\begin{bmatrix}a_{1} \\ b_{1} \\ c_{1}\end{bmatrix}
 \qquad\text{and}\qquad
-\mathbf{v}_{2} =\begin{pmatrix}a_{2} \\ b_{2} \\ c_{2}\end{pmatrix}
+\mathbf{v}_{2} =\begin{bmatrix}a_{2} \\ b_{2} \\ c_{2}\end{bmatrix}
 \]
 are their transformations into $(x,y,z)$-coordinates, then
 \[
@@ -382,15 +379,12 @@ c_{2}%
 \subsection{Computing length}
 
 \begin{problem}
-  Show that if a vector is given to us in $(x,y,z)$-coordinates as%
-\[
-\mathbf{v}=(a,b,c)^\transpose,
-\]
-then the length of its image in euclidean space is given by
-\[
-|\mathbf{v}|_K=\sqrt{\mathbf{v} \bullet_K \mathbf{v}}.
-\]
-
+  Show that if a vector is given to us in $(x,y,z)$-coordinates as
+  $\mathbf{v}=(a,b,c)$, then the length of its image in euclidean
+  space is given by
+  \[
+  |\mathbf{v}|_K=\sqrt{\mathbf{v} \bullet_K \mathbf{v}}.
+  \]
 \begin{freeResponse}
 $\hat{\mathbf v} = \left(a,b,Rc \right)$ is the image of $V$ in euclidean space. Then,
 \begin{align*}
@@ -459,9 +453,9 @@ Then $|V|_{K} = \sqrt{V \bullet_{K} V} = \frac{1}{\sqrt{K}} = |R|$. This tells u
 \begin{problem}
   Show that when $K>0$ if two vectors are given to us in $(x,y,z)$-coordinates as
   \[
-  \mathbf{v}_{1}=\begin{pmatrix}a_{1} \\ b_{1} \\ c_{1}\end{pmatrix}
+  \mathbf{v}_{1}=\begin{bmatrix}a_{1} \\ b_{1} \\ c_{1}\end{bmatrix}
   \qquad\text{and}\qquad
-  \mathbf{v}_{2} =\begin{pmatrix}a_{2} \\ b_{2} \\ c_{2}\end{pmatrix}
+  \mathbf{v}_{2} =\begin{bmatrix}a_{2} \\ b_{2} \\ c_{2}\end{bmatrix}
   \]
   then the angle between their image in euclidean space is given by
   \[
@@ -488,9 +482,9 @@ Then $|V|_{K} = \sqrt{V \bullet_{K} V} = \frac{1}{\sqrt{K}} = |R|$. This tells u
   
   Show that if two vectors are given to us in $(x,y,z)$-coordinates as
   \[
-  \mathbf{v}_{1}=\begin{pmatrix}a_{1} \\ b_{1} \\ c_{1}\end{pmatrix}
+  \mathbf{v}_{1}=\begin{bmatrix}a_{1} \\ b_{1} \\ c_{1}\end{bmatrix}
   \qquad\text{and}\qquad
-  \mathbf{v}_{2} =\begin{pmatrix}a_{2} \\ b_{2} \\ c_{2}\end{pmatrix}
+  \mathbf{v}_{2} =\begin{bmatrix}a_{2} \\ b_{2} \\ c_{2}\end{bmatrix}
   \]
   then the area of the parallelogram spanned by the image of those two vectors in
   euclidean space is%
