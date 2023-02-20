@@ -10,15 +10,12 @@ Now we will change coordinates.
 \maketitle
 
 
-\subsection{From infinity to one}
+
 
 We will now change coordinates from euclidean $3$-space to a new
 ``warped'' space.  This new space will allow us to unify plane
-geometry, spherical, and (as we shall see) hyperbolic
-geometries.
-
-
-Suppose we are standing at the North Pole%
+geometry, spherical, and (as we shall see) hyperbolic geometries. To
+better understand our method, suppose we are standing at the North Pole%
 \[
 \hat{N}=(0,0,R)
 \]
@@ -31,13 +28,147 @@ sphere around us becomes more and more flat, like a plane. However it
 can never get completely flat. No matter how large the radius is, we
 still have a sphere.  We would have to be `at infinity' for our
 surface to become exactly flat. Our new coordinates remedy this
-unfortunate situation.
+situation.
 
 
-Consider another copy of $\mathbb{R}^{3}$, that we will call
-\dfn{$\boldsymbol{K}$-warped space}, whose coordinates we denote as
-$\left( x,y,z\right) $.  We make the following rule $E_R:\R^3\to\R^3$
-to pass between the two systems.
+\subsection{The general method}
+
+
+We will consider a different copy of $\R^3$ with coordinates
+$(x,y,z)$. We will give a map
+\begin{center}
+\begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement = \&]
+  (x,y,z)\in \R^3 \ar[r,|->,"E"] \& (\hat x, \hat y , \hat z) \in \R^3
+\end{tikzcd}
+\end{center}
+from this space to euclidean 3-space, $\R^3$ with coordinates $(\hat
+x,\hat y,\hat z)$. We may write
+\[
+E(x,y,z) = 
+\begin{bmatrix}
+\hat{x}  \\
+\hat{y}  \\
+\hat{z}  
+\end{bmatrix}
+=
+\begin{bmatrix}
+\hat{x}(x,y,z)  \\
+\hat{y}(x,y,z)  \\
+\hat{z}(x,y,z)  
+\end{bmatrix}
+\]
+where $\hat x$, $\hat y$, $\hat z$ are each (differentiable) functions mapping
+$\R^3$ to $\R$.
+
+
+To do geometry with our new coordinates, we need to understand how
+lengths, angles and areas change. However, since the computation of
+each of these (for complex shapes) is a limiting process, we need to
+do this in a \textbf{local} way. This means we need to understand how
+derivatives are transformed under this coordinate change.
+
+
+\begin{problem}
+  Suppose we have a curve $\gamma:\R\to\R^3$ in
+  $(x,y,z)$-coordinates. Setting $\hat \gamma = E\circ\gamma$ we have
+  a curve in euclidean coordinates. 
+  \begin{center}
+    \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement=\&]
+      t\in\R \ar[r,|->,"\gamma"] \ar[rd,|->,swap,"\hat\gamma=E\circ \gamma"] \&  (x(t),y(t),z(t))\in\R^3\ar[d,|->,"{E}"] \\
+      \& \hat\gamma(t)=(\hat x(t),\hat y(t),\hat z(t))\in\R^3 
+    \end{tikzcd}
+  \end{center}
+  
+  Use the chain rule to compute
+  \[
+  \dd[\hat x]{t}, \qquad \dd[\hat y]{t}, \qquad \dd[\hat z]{t},
+  \]
+  in terms of $\dd[x]{t}$, $\dd[y]{t}$, $\dd[z]{t}$, $\pp[\hat x]{x}$, $\pp[\hat y]{x}$, $\pp[\hat z]{x}$,
+  $\pp[\hat x]{y}$, $\pp[\hat y]{y}$, $\pp[\hat z]{y}$, $\pp[\hat x]{z}$, $\pp[\hat y]{z}$, and $\pp[\hat z]{z}$. 
+  \begin{hint}
+    Recall that if $F$ is a differentiable function of $x$, $y$, and
+    $z$; and if $x$, $y$, and $z$ are all differentiable functions of
+    $t$, then the chain rule states
+    \[
+    \dd[F]{t} = \nabla F \cdot
+    \begin{bmatrix}
+      \dd[x]{t} & \dd[y]{t} & \dd[z]{t}
+    \end{bmatrix}^\transpose.
+    \]
+  \end{hint}
+  \begin{freeResponse}
+    Write
+    \begin{align*}
+      \dd[\hat x]{t} &= \begin{bmatrix} \pp[\hat x]{x} & \pp[\hat x]{y} & \pp[\hat x]{z} \end{bmatrix} \cdot \begin{bmatrix} \dd[x]{t} & \dd[y]{t} & \dd[z]{t} \end{bmatrix}^\transpose
+      = \pp[\hat x]{x}\cdot\dd[x]{t} + \pp[\hat x]{y}\cdot\dd[y]{t} + \pp[\hat x]{z}\cdot\dd[z]{t}, \\
+      \dd[\hat y]{t} &= \begin{bmatrix} \pp[\hat y]{x} & \pp[\hat y]{y} & \pp[\hat y]{z} \end{bmatrix} \cdot \begin{bmatrix} \dd[x]{t} & \dd[y]{t} & \dd[z]{t} \end{bmatrix}^\transpose
+      = \pp[\hat y]{x}\cdot\dd[x]{t} + \pp[\hat y]{y}\cdot\dd[y]{t} + \pp[\hat y]{z}\cdot\dd[z]{t}, \\
+      \dd[\hat z]{t} &= \begin{bmatrix} \pp[\hat z]{x} & \pp[\hat z]{y} & \pp[\hat z]{z} \end{bmatrix} \cdot \begin{bmatrix} \dd[x]{t} & \dd[y]{t} & \dd[z]{t} \end{bmatrix}^\transpose
+      = \pp[\hat z]{x}\cdot\dd[x]{t} + \pp[\hat z]{y}\cdot\dd[y]{t} + \pp[\hat z]{z}\cdot\dd[z]{t}.
+    \end{align*}
+  \end{freeResponse}
+\end{problem}
+
+\begin{problem}
+  With the same setting as in the previous problem, rewrite the result
+  of your computation in matrix notation to find $D$ such that
+\[
+\begin{bmatrix}
+d\hat{x}/dt \\ d\hat{y}/dt \\ d\hat{z}/dt%
+\end{bmatrix}
+=D \cdot \begin{bmatrix}
+dx/dt \\ dy/dt \\ dz/dt
+\end{bmatrix}
+\]
+in terms of $\pp[\hat x]{x}$, $\pp[\hat y]{x}$, $\pp[\hat z]{x}$,
+$\pp[\hat x]{y}$, $\pp[\hat y]{y}$, $\pp[\hat z]{y}$, $\pp[\hat x]{z}$,
+$\pp[\hat y]{z}$, and $\pp[\hat z]{z}$.
+
+\begin{freeResponse}
+\[
+\begin{bmatrix}
+\frac{d\hat{x}}{dt} & \frac{d\hat{y}}{dt} & \frac{d\hat{z}}{dt}%
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{dx}{dt} & \frac{dy}{dt} & \frac{dz}{dt}%
+\end{bmatrix}\cdot
+\begin{bmatrix}
+\pp[\hat x]{x} & \pp[\hat y]{x} & \pp[\hat z]{x} \\
+\pp[\hat x]{y} & \pp[\hat y]{y} & \pp[\hat z]{y} \\
+\pp[\hat x]{z} &\pp[\hat y]{z} & \pp[\hat z]{z}
+\end{bmatrix}
+\]
+\[
+D = 
+\begin{bmatrix}
+\pp[\hat x]{x} & \pp[\hat y]{x} & \pp[\hat z]{x} \\
+\pp[\hat x]{y} & \pp[\hat y]{y} & \pp[\hat z]{y} \\
+\pp[\hat x]{z} &\pp[\hat y]{z} & \pp[\hat z]{z}
+\end{bmatrix}
+\]
+
+\end{freeResponse}
+\end{problem}
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{From infinity to one}
+
+
+Now we will get explicit. Consider another copy of $\mathbb{R}^{3}$,
+that we will call \dfn{$\boldsymbol{K}$-warped space}, whose
+coordinates we denote as $( x,y,z) $.  We make the
+following rule $E_R:\R^3\to\R^3$ to pass between the two systems.
 \[
 E_R(x,y,z) = 
 \begin{bmatrix}
@@ -150,104 +281,21 @@ In short, we want to use $(  x,y,z)  $-coordinates to compute with,
 but we want lengths and angles to be the usual euclidean ones in $(
 \hat{x},\hat{y},\hat{z})  $-coordinates.
 
-\begin{problem}
-  Suppose we have a curve $\hat\gamma$ in euclidean space and we think of it as a
-  composition of a curve $\gamma$ in $K$-warped space with a transformation.  In
-  other words, we're looking at a diagram
-  \begin{image}
-  \begin{tikzpicture}
-    \node{
-  \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement=\&]
-    t\in\R \ar[r,mapsto,"\gamma"] \ar[rd,mapsto,dashed,swap,"\hat\gamma"] \&  (x(t),y(t),z(t))\in\R^3\ar[d,mapsto,"{E_R}"
-    ] \\
-    \& \hat\gamma(t)=(\hat x(t),\hat y(t),\hat z(t))\in\R^3 
-    \end{tikzcd}};
-  \end{tikzpicture}
-\end{image}
 
-  Use the chain rule to compute
+
+\begin{problem}
+  Suppose we have a curve $\gamma:\R\to\R^3$ in
+  $(x,y,z)$-coordinates. Setting $\hat \gamma = E_R\circ\gamma$ we have
+  a curve in euclidean coordinates. 
+  \begin{center}
+    \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement=\&]
+      t\in\R \ar[r,|->,"\gamma"] \ar[rd,|->,swap,"\hat\gamma=E\circ \gamma"] \&  (x(t),y(t),z(t))\in\R^3\ar[d,|->,"{E_R}"] \\
+      \& \hat\gamma(t)=(\hat x(t),\hat y(t),\hat z(t))\in\R^3 
+    \end{tikzcd}
+  \end{center}
+  Find an explicit matrix $D$ so that:
   \[
-  \dd[\hat x]{t}, \qquad \dd[\hat y]{t}, \qquad \dd[\hat z]{t},
-  \]
-  in terms of $\dd[x]{t}$, $\dd[y]{t}$, $\dd[z]{t}$, $\pp[\hat x]{x}$, $\pp[\hat y]{x}$, $\pp[\hat z]{x}$,
-  $\pp[\hat x]{y}$, $\pp[\hat y]{y}$, $\pp[\hat z]{y}$, $\pp[\hat x]{z}$, $\pp[\hat y]{z}$, and $\pp[\hat z]{z}$. 
-  \begin{hint}
-    Recall that if $F$ is a differentiable function of $x$, $y$, and
-    $z$; and if $x$, $y$, and $z$ are all differentiable functions of
-    $t$, then the chain rule states
-    \[
-    \dd[F]{t} = \nabla F \cdot
-    \begin{bmatrix}
-      \dd[x]{t} & \dd[y]{t} & \dd[z]{t}
-    \end{bmatrix}^\transpose.
-    \]
-  \end{hint}
-  \begin{freeResponse}
-    Write
-    \begin{align*}
-      \dd[\hat x]{t} &= \begin{bmatrix} \pp[\hat x]{x} & \pp[\hat x]{y} & \pp[\hat x]{z} \end{bmatrix} \cdot \begin{bmatrix} \dd[x]{t} & \dd[y]{t} & \dd[z]{t} \end{bmatrix}^\transpose
-      = \pp[\hat x]{x}\cdot\dd[x]{t} + \pp[\hat x]{y}\cdot\dd[y]{t} + \pp[\hat x]{z}\cdot\dd[z]{t}, \\
-      \dd[\hat y]{t} &= \begin{bmatrix} \pp[\hat y]{x} & \pp[\hat y]{y} & \pp[\hat y]{z} \end{bmatrix} \cdot \begin{bmatrix} \dd[x]{t} & \dd[y]{t} & \dd[z]{t} \end{bmatrix}^\transpose
-      = \pp[\hat y]{x}\cdot\dd[x]{t} + \pp[\hat y]{y}\cdot\dd[y]{t} + \pp[\hat y]{z}\cdot\dd[z]{t}, \\
-      \dd[\hat z]{t} &= \begin{bmatrix} \pp[\hat z]{x} & \pp[\hat z]{y} & \pp[\hat z]{z} \end{bmatrix} \cdot \begin{bmatrix} \dd[x]{t} & \dd[y]{t} & \dd[z]{t} \end{bmatrix}^\transpose
-      = \pp[\hat z]{x}\cdot\dd[x]{t} + \pp[\hat z]{y}\cdot\dd[y]{t} + \pp[\hat z]{z}\cdot\dd[z]{t}.
-    \end{align*}
-  \end{freeResponse}
-\end{problem}
-
-\begin{problem}
-  With the same setting as in the previous problem, rewrite the result
-  of your computation in matrix notation to find $D_K$ such that
-\[
-\begin{bmatrix}
-d\hat{x}/dt \\ d\hat{y}/dt \\ d\hat{z}/dt%
-\end{bmatrix}
-=D_K \cdot \begin{bmatrix}
-dx/dt \\ dy/dt \\ dz/dt
-\end{bmatrix}
-\]
-in terms of $\pp[\hat x]{x}$, $\pp[\hat y]{x}$, $\pp[\hat z]{x}$,
-$\pp[\hat x]{y}$, $\pp[\hat y]{y}$, $\pp[\hat z]{y}$, $\pp[\hat x]{z}$,
-$\pp[\hat y]{z}$, and $\pp[\hat z]{z}$.
-
-\begin{freeResponse}
-\[
-\begin{bmatrix}
-\frac{d\hat{x}}{dt} & \frac{d\hat{y}}{dt} & \frac{d\hat{z}}{dt}%
-\end{bmatrix}
-=
-\begin{bmatrix}
-\frac{dx}{dt} & \frac{dy}{dt} & \frac{dz}{dt}%
-\end{bmatrix}\cdot
-\begin{bmatrix}
-\pp[\hat x]{x} & \pp[\hat y]{x} & \pp[\hat z]{x} \\
-\pp[\hat x]{y} & \pp[\hat y]{y} & \pp[\hat z]{y} \\
-\pp[\hat x]{z} &\pp[\hat y]{z} & \pp[\hat z]{z}
-\end{bmatrix}
-\]
-\[
-D_K = 
-\begin{bmatrix}
-\pp[\hat x]{x} & \pp[\hat y]{x} & \pp[\hat z]{x} \\
-\pp[\hat x]{y} & \pp[\hat y]{y} & \pp[\hat z]{y} \\
-\pp[\hat x]{z} &\pp[\hat y]{z} & \pp[\hat z]{z}
-\end{bmatrix}
-\]
-
-\end{freeResponse}
-\end{problem}
-
-
-\begin{problem}
-  Use the previous problems and the relationship between euclidean and
-  $(x,y,z)$-coordinates to show that
-  \[
-  \left[\dd[\hat{\gamma}]{t}\right] =
-  \begin{bmatrix}
-    1 & 0 & 0\\
-    0 & 1 & 0\\
-    0 & 0 & R
-  \end{bmatrix}\cdot \left[ \dd[\gamma]{t}\right].
+  \left[\dd[\hat{\gamma}]{t}\right] = D \cdot \left[ \dd[\gamma]{t}\right].
   \]
   
 \begin{freeResponse}
