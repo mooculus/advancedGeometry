@@ -403,12 +403,12 @@ Show that we have the following equality:
 \sqrt{
   \det\left(
 \begin{bmatrix}
-\hat{\mathbf v}_{1} \\
-\hat{\mathbf v}_{2}
+\hat{\mathbf v}_{1}^\transpose \\
+\hat{\mathbf v}_{2}^\transpose
 \end{bmatrix}
 \cdot
 \begin{bmatrix}
-\hat{\mathbf v}_{1}^\transpose  & \hat{\mathbf v}_{2}^\transpose 
+\hat{\mathbf v}_{1}  & \hat{\mathbf v}_{2} 
 \end{bmatrix}\right)}.
 \]
 
@@ -678,19 +678,14 @@ product. That is, if we know the formula for the dot product, we know (the
 formula for) the length of any curve.
 \end{definition}
 
-Our first example is the path%
-\[
-\left(\hat{x}(t),\hat{y}(t),\hat{z}(t)\right)=\left(R\cdot\sin(t),0,R\cdot\cos(t)\right) \qquad
-0 \leq t\leq\pi.
-\]
-
-
-Notice that this path lies on the sphere of radius $R$.
-
 \begin{problem}
-  Write the formula for the tangent vector to the path above. Show that the
-  length of this path is $R\pi$.
-
+  Write the formula for the tangent vector to the path
+  \[
+  \left(\hat{x}(t),\hat{y}(t),\hat{z}(t)\right)=\left(R\cdot\sin(t),0,R\cdot\cos(t)\right) \qquad
+  0 \leq t\leq\pi.
+  \]
+  Notice that this path lies on the sphere of radius $R$.  Show that
+  the length of this path is $R\pi$.
 \begin{freeResponse}
 \[
 \left( \dd[\hat{x}]{t}, \dd[\hat{y}]{t}, \dd[\hat{z}]{t} \right) 
