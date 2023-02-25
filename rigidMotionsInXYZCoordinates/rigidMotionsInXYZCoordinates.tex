@@ -1,54 +1,34 @@
-\documentclass[newpage,hints,handout]{ximera}
+\documentclass[newpage,hints,handout,noauthor,nooutcomes,12pt]{ximera}
 
 \input{../preamble.tex}
 
-\title{Rigid motions in $(x,y,z)$-coordinates}
+\title{Rigid motions in new coordinates}
 \begin{document}
 \begin{abstract}
   Here we dig deeper to understand our different coordinates.
 \end{abstract}
 \maketitle
 
-We now wish to figure out how to convert a transformation
-\[\hat{T}(\hat x,\hat y,\hat z)=
-\begin{bmatrix}
-\underline{\hat{x}} \\ \underline{\hat{y}} \\ \underline{\hat{z}}%
-\end{bmatrix}
-  =\hat{M} \cdot \begin{bmatrix}
-\hat{x} \\ \hat{y} \\ \hat{z}%
-\end{bmatrix} \label{100}%
-\]
-from euclidean space to $(x,y,z)$-coordinates. Recall to convert a
-point from $(x,y,z)$-coordinates to euclidean coordinates, we write
+We now wish to figure out how to convert a rigid motion $\hat M$ from
+euclidean space to $(x,y,z)$-coordinates. Recall to convert a point
+from $(x,y,z)$-coordinates to euclidean coordinates, we write
 \[
+E_R(x,y,z)=
 \begin{bmatrix}
 \hat{x} \\ \hat{y} \\ \hat{z}%
 \end{bmatrix}
 =\begin{bmatrix}
   x \\ y \\ Rz
-\end{bmatrix}
-=\cdot\begin{bmatrix}
-  1 & 0 & 0\\
-  0 & 1 & 0\\
-  0 & 0 & R
-\end{bmatrix}
-\begin{bmatrix}
-  x \\ y \\ z
 \end{bmatrix}.
 \]
-So we have the diagram%
-\begin{image}
-\begin{tikzpicture}
-  \node (xyzHat) {$\begin{bmatrix}\hat{x} & \hat{y} & \hat{z}\end{bmatrix}^\transpose\in\mathbb{R}^3$};
-  \node (xyzHatBar) [node distance=2cm,below of=xyzHat] {$\begin{bmatrix}\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}\end{bmatrix}^\transpose$};
-  \node (xyz) [node distance=6cm,right of=xyzHat] {$\begin{bmatrix}x & y & z\end{bmatrix}^\transpose\in\mathbb{R}^3$};
-  \node (xyzBar) [node distance=6cm,right of=xyzHatBar] {$\begin{bmatrix}\underline{x} & \underline{y} & \underline{z}\end{bmatrix}^\transpose$};
-  \draw[|->] (xyz) to node[above] {$\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R\end{smallmatrix}\right]\cdot$} (xyzHat);
-  \draw[|->] (xyz) to node[right] {$T = \text{?}$} (xyzBar);
-  \draw[|->] (xyzHat) to node[right] {$\hat{M} \cdot$} (xyzHatBar);
-  \draw[|->] (xyzBar) to node [above] {$\left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R\end{smallmatrix}\right]\cdot$} (xyzHatBar);
-\end{tikzpicture}
-\end{image}
+We seek a rigid motion $M$ in $(x,y,z)$-coordinates that completes the diagram below:
+\begin{center}
+  \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement=\&]
+    (x,y,z)\in\R^3\ar[r,|->,"M",dashed] \ar[d,|->,"{E_R}"] \&  (\underline{x}(t),\underline{y}(t),\underline{z}(t))\in\R^3\ar[d,|->,"{E_R}"] \\
+    (\hat x,\hat y,\hat z)\in\R^3\ar[r,|->,"\hat M"] \&  (\underline{\hat x}(t),\underline{\hat y}(t),\underline{\hat z}(t))\in\R^3
+  \end{tikzcd}
+\end{center}
+
 \begin{problem}
 Using the diagram above, explain why%
 \[
@@ -67,7 +47,8 @@ Using the diagram above, explain why%
 \cdot \begin{bmatrix}x \\ y \\ z\end{bmatrix}.
 \]
 \begin{hint}
-  Express the transformation matrix $M$ of $T$ in terms of $\hat{M}$.
+  Express $E_R$ in terms of a matrix. Note, this might not always be
+  possible, but in this case it is!
 \end{hint}
 
 \begin{freeResponse}
@@ -93,7 +74,11 @@ $ in K-geometry. Multiplying by
 0 & 0 & R
 \end{bmatrix}
 \]
-moves us to the left corner of the diagram and gives the image of the vector in euclidean space. Then, multiplying by $\hat{M}$ moves us to the bottom-left corner of the diagram and gives the transformation in euclidean space. Now, to determine $M$ in terms of $\hat{M}$, we map the current vector
+moves us to the left corner of the diagram and gives the image of the
+vector in euclidean space. Then, multiplying by $\hat{M}$ moves us to
+the bottom-left corner of the diagram and gives the transformation in
+euclidean space. Now, to determine $M$ in terms of $\hat{M}$, we map
+the current vector
 \[
 %\begin{bmatrix}
 %\underline{\hat{x}} & \underline{\hat{y}} & \underline{\hat{z}}
@@ -211,7 +196,7 @@ x & y & z
 \begin{problem}
   Show that a transformation $M$ in $(x,y,z)$-coordinates preserves distances in
   $K$-warped space if and only if%
-  \begin{equation} \label{Korth}\tag{$*$}
+  \[
     M^\transpose \cdot\begin{bmatrix}
     1 & 0 & 0\\
     0 & 1 & 0\\
@@ -221,18 +206,26 @@ x & y & z
     1 & 0 & 0\\
     0 & 1 & 0\\
     0 & 0 & K^{-1}
-    \end{bmatrix}. 
-  \end{equation}
+    \end{bmatrix}
+  \]
+  where $K = 1/R^2$.
 \begin{hint} 
   Explain how the previous problem gives a correspondence between
-  transformations defined by a matrix in $K$-warped space and transformations
-  defined by a matrix in euclidean space.  Then show that \eqref{Korth} is
-  equivalent to the corresponding euclidean matrix $\hat{M}$ being orthogonal. 
+  transformations defined by a matrix in $K$-warped space and
+  transformations defined by a matrix in euclidean space.  Then show
+  that our equation above is equivalent to the corresponding euclidean
+  matrix $\hat{M}$ being orthogonal.
 \end{hint}
   
 
 \begin{freeResponse}
-First we assume that a transformation $M$ in K-warped space preserves distances. In the previous problem we showed that there is a a bijection between transformations defined by a matrix in K-warped space and transformations defined by a matrix in euclidean space. Therefore, if a transformation $M$ preserves distances in K-warped space then, then $\hat{M}$ preserves distances in euclidean space and thus is orthogonal. We have
+First we assume that a transformation $M$ in K-warped space preserves
+distances. In the previous problem we showed that there is a a
+bijection between transformations defined by a matrix in K-warped
+space and transformations defined by a matrix in euclidean
+space. Therefore, if a transformation $M$ preserves distances in
+K-warped space then, then $\hat{M}$ preserves distances in euclidean
+space and thus is orthogonal. We have
 \[
 M = \begin{bmatrix}
 1 & 0 & 0\\
@@ -361,54 +354,74 @@ Therefore, the transformation $M$ preserves distances in $K$-warped space.
 
 \end{problem}
 
-The equation \eqref{Korth} is the condition (in $(x,y,z)$-coordinates) which
-affirms that the transformation which takes the path $\gamma(t)=(x(t),y(t),z(t))$
-to the path $\gamma_M(t)=M \cdot (x(t),y(t),z(t))^\transpose$ preserves lengths of
-tangent vectors at corresponding points. Therefore, by integrating, the
-(total) length of the curve $\gamma_M$ is the same as the total length of the
-curve $\gamma$.
-
-\begin{problem}
-Verify that this is the correct condition by showing that any $3\times3$ matrix
-$M$ satisfying \eqref{Korth} also satisfies%
+The equation
 \[
-(M \cdot \mathbf v) \bullet_{K} (M \cdot \mathbf v)=
-\mathbf v \bullet_K \mathbf v,
-\]
-where%
+    M^\transpose \cdot\begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & K^{-1}
+    \end{bmatrix}
+    \cdot M=\begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & K^{-1}
+    \end{bmatrix}
+    \]
+is the condition (in $(x,y,z)$-coordinates) which affirms that
 \[
-\mathbf v=X_{2}-X_{1}.
+\left|\frac{d\gamma(t)}{dt}\right|_K =\left|\frac{d\gamma_M(t)}{dt}\right|_K
 \]
-That is, the transformation given in $(x,y,z)$-coordinates by a matrix $M$ that
-satisfies your condition preserves the $K$-dot product.
+where
+\[
+\gamma_M(t) = M \cdot
+\begin{bmatrix}
+  x(t) \\ y(t) \\ z(t)
+\end{bmatrix}
+\]
+Therefore, the (total) length of the curve $\gamma_M$ is the same as
+the total length of the curve $\gamma$.
 
-\begin{freeResponse} 
-Let $M$ be a matrix satisfying the previous condition. 
-\begin{align*}
-\left(   V  \cdot M\right)  \bullet_{K}\left(   V
-\cdot M\right)  
-&= \left(   V  \cdot M\right) \cdot
- \begin{bmatrix}
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & K^{-1}
-\end{bmatrix} \cdot \left(   V
-\cdot M\right)^\transpose \\
-&= V  \cdot M \cdot 
- \begin{bmatrix}
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & K^{-1}
-\end{bmatrix} \cdot M^\transpose \cdot V^\transpose \\
-&= V \cdot \begin{bmatrix}
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & K^{-1}
-\end{bmatrix} \cdot V^\transpose = V\bullet_{K}V
-\end{align*}
-\end{freeResponse}
+%% \begin{problem}
+%% Verify that this is the correct condition by showing that any $3\times3$ matrix
+%% $M$ satisfying \eqref{Korth} also satisfies%
+%% \[
+%% (M \cdot \mathbf v) \bullet_{K} (M \cdot \mathbf v)=
+%% \mathbf v \bullet_K \mathbf v,
+%% \]
+%% where%
+%% \[
+%% \mathbf v=X_{2}-X_{1}.
+%% \]
+%% That is, the transformation given in $(x,y,z)$-coordinates by a matrix $M$ that
+%% satisfies your condition preserves the $K$-dot product.
 
-\end{problem}
+%% \begin{freeResponse} 
+%% Let $M$ be a matrix satisfying the previous condition. 
+%% \begin{align*}
+%% \left(   V  \cdot M\right)  \bullet_{K}\left(   V
+%% \cdot M\right)  
+%% &= \left(   V  \cdot M\right) \cdot
+%%  \begin{bmatrix}
+%% 1 & 0 & 0\\
+%% 0 & 1 & 0\\
+%% 0 & 0 & K^{-1}
+%% \end{bmatrix} \cdot \left(   V
+%% \cdot M\right)^\transpose \\
+%% &= V  \cdot M \cdot 
+%%  \begin{bmatrix}
+%% 1 & 0 & 0\\
+%% 0 & 1 & 0\\
+%% 0 & 0 & K^{-1}
+%% \end{bmatrix} \cdot M^\transpose \cdot V^\transpose \\
+%% &= V \cdot \begin{bmatrix}
+%% 1 & 0 & 0\\
+%% 0 & 1 & 0\\
+%% 0 & 0 & K^{-1}
+%% \end{bmatrix} \cdot V^\transpose = V\bullet_{K}V
+%% \end{align*}
+%% \end{freeResponse}
+
+%% \end{problem}
 
 
 
@@ -440,26 +453,26 @@ M^\transpose\cdot\begin{bmatrix}
 
 
 \begin{problem}
-  For $K\ne 0$, show that if $M$ is $K$-orthogonal, then the transformation
-  \[T(x,y,z)=
+  For $K\ne 0$, show that if $M$ is $K$-orthogonal, then the $K$-rigid motion
+  \[
+  M \cdot
+  \begin{bmatrix}
+    x \\ y \\ z
+  \end{bmatrix}=
   \begin{bmatrix}
     \underline{x} \\ \underline{y} \\ \underline{z}
   \end{bmatrix}
-  =M \cdot
-  \begin{bmatrix}
-    x \\ y \\ z
-  \end{bmatrix}
   \]
   takes the set of points $(x,y,z)$ such that
-\[
-1 = K\left(x^2 + y^2\right) +z^2
-\]
-to the set of points $(\underline{x},\underline{y},\underline{z})$ such that
-\[
-1=K\left(\underline{x}^2 + \underline{y}^{2}\right) + \underline{z}^{2}.
-\]
-That is, $M$ gives a one-to-one and onto mapping of $K$-geometry to
-itself.
+  \[
+  1 = K\left(x^2 + y^2\right) +z^2
+  \]
+  to the set of points $(\underline{x},\underline{y},\underline{z})$ such that
+  \[
+  1=K\left(\underline{x}^2 + \underline{y}^{2}\right) + \underline{z}^{2}.
+  \]
+  That is, $M$ gives a one-to-one and onto mapping of $K$-sphere to
+  itself.
 \begin{hint}
   Explain how you can write the equation
   \[
@@ -755,7 +768,7 @@ $M_\psi$ does change when converted into a $K$-orthogonal matrix because $M_\psi
 
 
 
-\section{Why use $K$-coordinates?}
+\subsection{Why use new coordinates?}
 
 We have seen that we could measure the usual euclidean lengths of
 curves $\hat{\gamma}$ in terms of the formulas of curves $\gamma$ in $K$-warped
@@ -771,7 +784,7 @@ where
 0 & 1 & 0\\
 0 & 0 & K^{-1}%
 \end{bmatrix}
-\cdot\left[\dd[X]{t}\right]^\transpose.
+\cdot\left[\dd[\gamma]{t}\right]^\transpose.
 \]
 In other words, the usual geometry of the sphere of radius $R$ is
 simply the geometry of the set
@@ -785,9 +798,9 @@ $(x,y,z)$-coordinates. All we need is the set defined by the relation
 1 = K\left(x^2 + y^2\right) +z^2
 \]
 and the $K$-dot product. But the set defined by the equation above
-continues to exist even if $K=0$ or $K<0$, and the $K$-dot product
-formula continues to make sense even if $K<0$. In short we have the
-following table:
+\textbf{continues to exist even if $\boldsymbol{K=0}$ or
+  $\boldsymbol{K<0}$,} and the $K$-dot product formula continues to
+make sense even if $K<0$. In short we have the following table:
 \[
   {\renewcommand{\arraystretch}{2.7}
   \begin{array}{|c||c|c|c|}\hline
