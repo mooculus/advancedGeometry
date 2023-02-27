@@ -32,7 +32,7 @@ We seek a rigid motion $M$ in $(x,y,z)$-coordinates that completes the diagram b
 \begin{problem}
 Using the diagram above, explain why%
 \[
-\begin{bmatrix} \underline{x} \\ \underline{y} \\ \underline{z} \end{bmatrix}
+M
 =\begin{bmatrix}
 1 & 0 & 0\\
 0 & 1 & 0\\
@@ -44,7 +44,6 @@ Using the diagram above, explain why%
 0 & 1 & 0\\
 0 & 0 & R
 \end{bmatrix}
-\cdot \begin{bmatrix}x \\ y \\ z\end{bmatrix}.
 \]
 \begin{hint}
   Express $E_R$ in terms of a matrix. Note, this might not always be
@@ -194,7 +193,7 @@ x & y & z
 
 
 \begin{problem}
-  Show that a transformation $M$ in $(x,y,z)$-coordinates preserves distances in
+  Show that a matrix $M$ in $(x,y,z)$-coordinates preserves distances in
   $K$-warped space if and only if%
   \[
     M^\transpose \cdot\begin{bmatrix}
@@ -210,11 +209,10 @@ x & y & z
   \]
   where $K = 1/R^2$.
 \begin{hint} 
-  Explain how the previous problem gives a correspondence between
-  transformations defined by a matrix in $K$-warped space and
-  transformations defined by a matrix in euclidean space.  Then show
-  that our equation above is equivalent to the corresponding euclidean
-  matrix $\hat{M}$ being orthogonal.
+  Explain how the previous problem gives a correspondence between a
+  matrix in $K$-warped space and a matrix in euclidean space.  Then
+  show that our equation above is equivalent to the corresponding
+  euclidean matrix $\hat{M}$ being orthogonal.
 \end{hint}
   
 
@@ -428,7 +426,7 @@ the total length of the curve $\gamma$.
 
 
 \begin{definition}
-A $K$-distance-preserving transformation of $K$-geometry is called a
+A $K$-distance-preserving matrix in $K$-geometry is called a
 $K$\textbf{-rigid motion} or a $K$\textbf{-congruence}.
 \end{definition}
 
@@ -819,6 +817,7 @@ make sense even if $K<0$. In short we have the following table:
         0 & 0 & K^{-1}
       \end{smallmatrix}\right] \mathbf w &  \text{DNE}
     & \mathbf{v}^\transpose \left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & K^{-1}\end{smallmatrix}\right]\mathbf w \\\hline
+    \text{Rigid motions} &  \left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R^{-1}\end{smallmatrix}\right] \hat M \left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & R\end{smallmatrix}\right] & \hat M & \left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & \sqrt{K}\end{smallmatrix}\right] \hat M \left[\begin{smallmatrix}1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & \sqrt{K^{-1}}\end{smallmatrix}\right] \\\hline
 \end{array}}
 \]
 
@@ -840,8 +839,10 @@ this difficulty.
 Summarize the results from this section. In particular, indicate which
 results follow from the others.
 \begin{freeResponse}
-In this section we learned the definition of a \textit{$K$-rigid motion}, a $K$-distance-preserving transformation of $K$-geometry. Next we gave a necessary and sufficient condition for a matrix to be a $K$-rigid motion: 
-A matrix $M$ is a $K$-rigid motion if and only if 
+In this section we learned the definition of a \textit{$K$-rigid
+  motion}, a $K$-distance-preserving matrix in $K$-geometry. Next we
+gave a necessary and sufficient condition for a matrix to be a
+$K$-rigid motion: A matrix $M$ is a $K$-rigid motion if and only if
 \[
 M\cdot\begin{bmatrix}
 1 & 0 & 0\\

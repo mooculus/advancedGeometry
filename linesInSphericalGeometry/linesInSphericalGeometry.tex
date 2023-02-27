@@ -1,4 +1,4 @@
-\documentclass[newpage,hints,handout]{ximera}
+\documentclass[newpage,hints,handout,noauthor,nooutcomes,12pt]{ximera}
 
 \input{../preamble.tex}
 
@@ -11,13 +11,16 @@ version of the Pythagorean Theorem.
 \maketitle
 
 
-\section{Spherical coordinates, a shortest path from the North Pole}
 
 We next will figure out what is the shortest path you can take between
 two points on the euclidean $R$-sphere. However, we will do our
 calculation using $(x,y,z)$-coordinates, as we won't have
 $(\hat{x},\hat{y},\hat{z})$-coordinates when we get to hyperbolic
 geometry.
+
+
+\section{Spherical coordinates, a shortest path from the North Pole}
+
 
 For our purposes, it will be convenient to parameterize the sphere in
 $K$-geometry:%
@@ -28,9 +31,52 @@ z(\sigma,\tau) &=\cos \sigma,
 \end{align*}
 where $0\le \sigma\le\pi$ and $0\le \tau<2\pi$.
 
-\begin{image}
-  \includegraphics[width=3in]{spherePara.jpg}
-\end{image}
+\begin{center}
+  \begin{tikzpicture}[geometryDiagrams,scale=1.7]  
+      %% x-axis
+      \draw [thin,->] (2.2,1.1)--(-2.2,-1.1); 
+      \node[below left] at (-2.2,-1.1) {$x$};
+
+      %% y-axis
+      \draw [thin,->] (-2.2,0)--(2.5,0); 
+      \node[right] at (2.5,0) {$y$};
+
+      %% z-axis
+      \draw [thin,->] (0,-2)--(0,2.2); 
+      \node[above] at (0,2.2) {$z$};
+
+      
+      
+      %% sphere
+      \draw (1.75,0) arc (0:360:1.75);
+      %%%% Equator
+      \draw (-1.75,0) arc (180:360:1.75 and .5);
+      \draw[thin,dashed] (1.75,0) arc (0:180:1.75 and .5);
+
+      
+      
+      %%%% line to point
+      %\draw[thin,gray] (0,0)--(.88,1.21);
+      \draw[thin,gray] (0,0)--(.88,-.2)--(.88,1.21) -- (0,0) -- cycle;
+
+      
+      %%%% point on sphere
+      \draw[fill=black] (.88,1.21) circle (.05);
+      \node at (1.6,1.6) {$(x,y,z)$};
+
+      %% angles:
+      \draw[thin,->] (-.4,-.2) arc (206:342:.5 and .25);
+      \node at (.1,-.2) {$\sigma$};
+      
+      \draw[thin,->] (0,.6) arc (90:60:.6);
+      \node at (.1,.3) {$\tau$}; 
+  \end{tikzpicture}  
+\end{center}
+
+
+%% \begin{image}
+%%   \includegraphics[width=3in]{spherePara.jpg}
+%% \end{image}
 
 
 \begin{problem}
@@ -77,25 +123,45 @@ diagram above.
 
 
 If we are going to describe paths on the $R$-sphere by paths in the
-$(\sigma,\tau)$-plane we are going to need to figure out the $K$-dot
-product in $(\sigma,\tau)$-coordinates so that we can compute the
-lengths of paths in these coordinates.
+$(\sigma,\tau)$-plane, we should state a map from this plane to
+$(x,y,z)$-space.
+\begin{center}
+\begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement = \&]
+  (\sigma,\tau)\in \R^2 \ar[r,|->,"S_R"] \& (x, y , z) \in \R^3
+\end{tikzcd}
+\end{center}
+Explicitly we will write:
+\[
+S_R(\sigma,\tau) = 
+\begin{bmatrix}
+x(\sigma,\tau)  \\
+y(\sigma,\tau)  \\
+z(\sigma,\tau)  
+\end{bmatrix}
+=
+\begin{bmatrix}
+  R\cdot \sin\sigma\cdot \cos \tau  \\
+  R\cdot \sin\sigma\cdot \sin\tau\\
+R\cdot \cos \sigma \\
+\end{bmatrix}.
+\]
+
+
+Now we will find the $K$-dot product in $(\sigma,\tau)$-coordinates so
+that we can compute the lengths of paths in terms of these
+coordinates.
 
 \begin{problem}
-Suppose we have a curve $\gamma$ in $K$-warped space which we can decompose as
-\begin{image}
-  \begin{tikzpicture}
-    \node{
-\begin{tikzcd}[ampersand replacement=\&]
-  t \ar[r,mapsto,"\gamma_{\mathrm{sph}}"] \ar[rr,mapsto,bend right=20,swap,"\gamma"] \&  (\sigma(t),\tau(t))\ar[r,mapsto,"{\left[\begin{smallmatrix}
-          x(\sigma,\tau)\\
-          y(\sigma,\tau)\\
-          z(\sigma,\tau)
-        \end{smallmatrix}\right]}"
-  ] \& \gamma(t)=(x(t),y(t),z(t))
-    \end{tikzcd}};
-  \end{tikzpicture}
-\end{image}
+  Suppose we have a curve $\gamma$ in $K$-warped space which we can decompose as
+
+
+    \begin{center}
+    \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement=\&]
+      t\in\R \ar[r,|->,"\gamma_\mathrm{sph}"] \ar[rd,|->,swap,"\gamma=S_R\circ \gamma_\mathrm{sph}"] \&  (\sigma(t),\tau(t))\in\R^2\ar[d,|->,"{S_R}"] \\
+      \& \gamma(t)=( x(t), y(t), z(t))\in\R^3 
+    \end{tikzcd}
+    \end{center}
+
 Use the chain rule to compute
 \[
 \dd[x]{t},\qquad \dd[y]{t}, \qquad \dd[z]{t},
@@ -104,12 +170,12 @@ in terms of $\dd[\sigma]{t}$, $\dd[\tau]{t}$, $\pp[x]{\sigma}$,
 $\pp[y]{\sigma}$, $\pp[z]{\sigma}$, $\pp[x]{\tau}$, $\pp[y]{\tau}$,
 and $\pp[z]{\tau}$.
 \begin{hint}
-  Recall that if $F$ is a differentiable function of $a$ and $b$; and if $a$ and
-  $b$ are all differentiable functions of $t$, then the chain rule states
+  Recall that if $F$ is a differentiable function of $a$ and $b$; and if $x$ and
+  $y$ are all differentiable functions of $t$, then the chain rule states
   \[
-  \dd[F]{t} = \nabla F \cdot
+  \dd[F]{t} = \nabla F \dot
   \begin{bmatrix}
-    da/dt \\ db/dt
+    dx/dt \\ dy/dt
   \end{bmatrix}
   .
   \]
@@ -676,6 +742,9 @@ through $(0,0,0)$.
 
 To start we need some basic facts about lengths of lines in spherical
 geometry.
+
+
+
 \begin{problem}
   Given a line in spherical geometry lying entirely in the plane $y=0$,
   \begin{align*}

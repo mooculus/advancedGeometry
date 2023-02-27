@@ -90,7 +90,7 @@ derivatives are transformed under this coordinate change.
     $z$; and if $x$, $y$, and $z$ are all differentiable functions of
     $t$, then the chain rule states
     \[
-    \dd[F]{t} = \nabla F \cdot
+    \dd[F]{t} = \nabla F \dot
     \begin{bmatrix}
       \dd[x]{t} & \dd[y]{t} & \dd[z]{t}
     \end{bmatrix}^\transpose.
@@ -542,18 +542,18 @@ Then $|V|_{K} = \sqrt{V \bullet_{K} V} = \frac{1}{\sqrt{K}} = |R|$. This tells u
       \mathbf{v}_{1}\bullet_{K}\mathbf{v}_{1} & \mathbf{v}_{2}\bullet_{K}\mathbf{v}_{1}\\
       \mathbf{v}_{1}\bullet_{K}\mathbf{v}_{2} & \mathbf{v}_{2}\bullet_{K}\mathbf{v}_{2}%
     \end{bmatrix}}
-  =\sqrt{\det\left( 
+  =\sqrt{\det\left({\renewcommand*{\arraystretch}{1.4} 
       \begin{bmatrix}
-        \mathbf{v}_{1} \\
-        \mathbf{v}_{2}
-      \end{bmatrix}
+        \mathbf{v}_{1}^\transpose \\
+        \mathbf{v}_{2}^\transpose
+      \end{bmatrix}}
       \begin{bmatrix}
         1 & 0 & 0\\
         0 & 1 & 0\\
         0 & 0 & K^{-1}%
       \end{bmatrix}
       \begin{bmatrix}
-        \mathbf{v}_{1}^\transpose & \mathbf{v}_{2}^\transpose%
+        \mathbf{v}_{1} & \mathbf{v}_{2}%
       \end{bmatrix}
     \right) }.
 \]
