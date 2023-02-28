@@ -14,11 +14,13 @@ hyperbolic version of the Pythagorean Theorem.
 \subsection{Hyperbolic coordinates, a shortest path from the North Pole}
 
 We next will figure out what is the shortest path you can take between
-two points in hyperbolic geometry. Since $K$ is negative, we must do
-our calculation using only $(x,y,z)$-coordinates. However, this will
-allow us to see the full power of working in $K$-warped space, since
-our work will be essentially the same as when $K$ was positive---though
-our parametrization will be different.
+two points on the surface defined by $K(x^2+y^2)+z^2=1$ when $K$ is
+negative. This surface is called a \textbf{two-sheeted
+  hyperboloid}. Since $K$ is negative, we must do our calculation
+using only $(x,y,z)$-coordinates. However, this will allow us to see
+the full power of working in $K$-warped space, since our work will be
+essentially the same as when $K$ was positive.
+
 
 Just as $(\cos\sigma,\sin\sigma)$ parametrize the unit circle,
 hyperbolic functions parametrize the `unit' hyperbola.
@@ -26,13 +28,12 @@ hyperbolic functions parametrize the `unit' hyperbola.
 \includegraphics[width=4in]{trigVsHyp.jpg}
 \end{image}
 where
-\[
-\left(
-\cosh\sigma=\cos(i \sigma),
-\sinh\sigma=-i\sin(i\sigma).
-\right)
-\]
-To parametrize the surface $K(x^2+y^2) + z^2 = K$ we define
+\begin{align*}
+  \cosh\sigma &=\cos(i \sigma),\\
+  \sinh\sigma &=-i\sin(i\sigma).
+\end{align*}
+and $A$ is the marked area.  To parametrize the surface $K(x^2+y^2)
++ z^2 = 1$ we define
 \begin{align*}
   x(\sigma,\tau) &=|K|^{-1/2}\cdot \sinh \sigma\cdot\cos \tau,\\
   y(\sigma,\tau) &=|K|^{-1/2}\cdot\sinh\sigma\cdot\sin \tau,\\
@@ -94,64 +95,68 @@ Just as we did on the $R$-sphere, we can write a path on the
 $K$-sphere by giving a path in the $(\sigma,\tau)$-plane. Again, we
 will need to figure out the $K$-dot product in
 $(\sigma,\tau)$-coordinates so that we can compute the lengths of
-paths in these coordinates.
-
-
-\begin{problem}
-Suppose we have a curve $\gamma$ in $K$-warped space which we can decompose as
-\begin{image}
-  \begin{tikzpicture}
-    \node{
-\begin{tikzcd}[ampersand replacement=\&]
-  t \ar[r,mapsto,"\gamma_{\mathrm{hyp}}"] \ar[rr,mapsto,bend right=20,swap,"\gamma"] \&  (\sigma(t),\tau(t))\ar[r,mapsto,"{\left[\begin{smallmatrix}
-          x(\sigma,\tau)\\
-          y(\sigma,\tau)\\
-          z(\sigma,\tau)
-        \end{smallmatrix}\right]}"
-  ] \& \gamma(t)=(x(t),y(t),z(t))
-\end{tikzcd}};
-  \end{tikzpicture}
-\end{image}
-Use the chain rule to compute
+paths in these coordinates. Our map from the $(\sigma,\tau)$ plane to $K$-warped space will be
+\begin{center}
+\begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement = \&]
+  (\sigma,\tau)\in \R^2 \ar[r,|->,"H_K"] \& (x, y , z) \in \R^3
+\end{tikzcd}
+\end{center}
+where
 \[
-\dd[x]{t},\qquad \dd[y]{t}, \qquad \dd[z]{t},
+H_K(\sigma,\tau) = 
+\begin{bmatrix}
+x(\sigma,\tau)  \\
+y(\sigma,\tau)  \\
+z(\sigma,\tau)  
+\end{bmatrix}
+=
+\begin{bmatrix}
+  |K|^{-1/2}\cdot \sinh\sigma\cdot \cos \tau  \\
+  |K|^{-1/2}\cdot \sinh\sigma\cdot \sin\tau\\
+  |K|^{-1/2}\cdot \cosh \sigma \\
+\end{bmatrix}.
 \]
-in terms of $\dd[\sigma]{t}$, $\dd[\tau]{t}$, $\pp[x]{\sigma}$,
-$\pp[y]{\sigma}$, $\pp[z]{\sigma}$, $\pp[x]{\tau}$, $\pp[y]{\tau}$,
-and $\pp[z]{\tau}$.
-\begin{hint}
-  Simply write down the answer from a previous problem.
-\end{hint}
-\begin{freeResponse}
-  Write
-  \begin{align*}
-    \dd[x]{t} &= \pp[x]{\sigma}\cdot\dd[\sigma]{t}+\pp[x]{\tau}\cdot\dd[\tau]{t}, \\
-    \dd[y]{t} &= \pp[y]{\sigma}\cdot\dd[\sigma]{t}+\pp[y]{\tau}\cdot\dd[\tau]{t}, \\
-    \dd[z]{t} &= \pp[z]{\sigma}\cdot\dd[\sigma]{t}+\pp[z]{\tau}\cdot\dd[\tau]{t}.  
-  \end{align*}
-\end{freeResponse}
-\end{problem}
+
 
 
 
 \begin{problem}
-  With the same setting as in the previous problem, rewrite the result
-  of your computation in matrix notation to find $D_{\mathrm{hyp}}$ such
-  that
-\[
-\begin{bmatrix}
-dx/dt\\ dy/dt \\ dz/dt
-\end{bmatrix}
-= D_{\mathrm{hyp}} \cdot
-\begin{bmatrix}
-d\sigma/dt \\ d\tau/dt
-\end{bmatrix}
-\]
-in terms of $\pp[x]{\sigma}$, $\pp[y]{\sigma}$, $\pp[z]{\sigma}$,
-$\pp[x]{\tau}$, $\pp[y]{\tau}$, and $\pp[z]{\tau}$.
-\begin{hint}
-  Simply write down the answer from a previous problem.
-\end{hint}
+  Suppose we have a curve $\gamma$ in $K$-warped space which we can decompose as
+    \begin{center}
+    \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement=\&]
+      t\in\R \ar[r,|->,"\gamma_\mathrm{hyp}"] \ar[rd,|->,swap,"\gamma=H_K\circ \gamma_\mathrm{hyp}"] \&  (\sigma(t),\tau(t))\in\R^2\ar[d,|->,"{H_K}"] \\
+      \& \gamma(t)=( x(t), y(t), z(t))\in\R^3 
+    \end{tikzcd}
+    \end{center}
+    Now use your previous work to:
+    \begin{enumerate}
+    \item Find $D_{\mathrm{hyp}}$ such
+      that
+      \[
+      \begin{bmatrix}
+        dx/dt\\ dy/dt \\ dz/dt
+      \end{bmatrix}
+      = D_{\mathrm{hyp}} \cdot
+      \begin{bmatrix}
+        d\sigma/dt \\ d\tau/dt
+      \end{bmatrix}
+      \]
+    \item Find $P_\mathrm{hyp}$ such that
+      \[
+      \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)\bullet_K
+      \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)
+      =
+      \begin{bmatrix}
+        \dd[\sigma]{t} &  \dd[\tau]{t}
+      \end{bmatrix}
+      \cdot P_\mathrm{hyp}
+      \cdot
+      \begin{bmatrix}
+        d\sigma/dt \\  d\tau/dt
+      \end{bmatrix}.
+      \]
+    \end{enumerate}
+    
 \begin{freeResponse}
   \[
   D_{\mathrm{hyp}} =
@@ -160,102 +165,14 @@ $\pp[x]{\tau}$, $\pp[y]{\tau}$, and $\pp[z]{\tau}$.
     \pp[x]{\tau}   & \pp[y]{\tau}   & \pp[z]{\tau}
   \end{bmatrix}.
   \]
-\end{freeResponse}
-\end{problem}
-
-
-\begin{problem}
-  Now find $P_\mathrm{hyp}$ in terms of $K$, $\pp[x]{\sigma}$, $\pp[y]{\sigma}$,
-  $\pp[z]{\sigma}$, $\pp[x]{\tau}$, $\pp[y]{\tau}$, and $\pp[z]{\tau}$
-  such that
-  \[
-  \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)\bullet_K
-  \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)
-  =
-  \begin{bmatrix}
-    \dd[\sigma]{t} &  \dd[\tau]{t}
-  \end{bmatrix}
-  \cdot P_\mathrm{hyp}
-  \cdot
-  \begin{bmatrix}
-    \dd[\sigma]{t} \\  \dd[\tau]{t}
-  \end{bmatrix}.
-  \]
-  \begin{hint}
-    Simply write down the answer from a previous problem.
-  \end{hint}
-  \begin{freeResponse}
-    \[
-    P_\mathrm{hyp} =
-    \begin{bmatrix}
-        \left(\pp[x]{\sigma}\right)^2 + \left(\pp[y]{\sigma}\right)^2 + \left(\pp[z]{\sigma}\right)^2K^{-1} & \pp[x]{\sigma}\pp[x]{\tau} + \pp[y]{\sigma}\pp[y]{\tau} + \pp[z]{\sigma}\pp[z]{\tau} K^{-1}\\
-        \pp[x]{\sigma}\pp[x]{\tau} + \pp[y]{\sigma}\pp[y]{\tau} + \pp[z]{\sigma}\pp[z]{\tau} K^{-1}       & \left(\pp[x]{\tau}\right)^2 + \left(\pp[y]{\tau}\right)^2 + \left(\pp[z]{\tau}\right)^2K^{-1}
-      \end{bmatrix}.
-    \]
-  \end{freeResponse}
-\end{problem}
-
-
-
-
-\begin{problem}
-  Set
-  \begin{align*}
-    x(\sigma,\tau) &=|K|^{-1/2}\cdot \sinh\sigma\cdot \cos \tau,\\
-    y(\sigma,\tau) &=|K|^{-1/2}\cdot \sinh\sigma\cdot \sin\tau,\\
-    z(\sigma,\tau) &=\cosh\sigma,
-  \end{align*}
-  and show that $P_\mathrm{hyp}$ from the problem above is
-  \[
-  P_\mathrm{hyp} =
-  \begin{bmatrix}
-    |K|^{-1} & 0 \\
-    0 &  |K|^{-1}\cdot\sinh^2 \sigma
-  \end{bmatrix}.
-  \]
-  \begin{freeResponse}
-    Write
-    \[
-    \begin{split}
-      \pp[x]{\sigma} &= |K|^{-1/2}\cdot \cosh\sigma\cdot \cos \tau, \\
-      \pp[y]{\sigma} &= |K|^{-1/2}\cdot \cosh\sigma\cdot \sin\tau,\\
-      \pp[z]{\sigma} &= \sinh\sigma,
-    \end{split}
-    \qquad
-    \begin{split}
-      \pp[x]{\tau} &= -|K|^{-1/2}\cdot \sinh\sigma\cdot \sin \tau,\\
-      \pp[y]{\tau} &= |K|^{-1/2}\cdot \sinh\sigma\cdot \cos\tau,\\
-      \pp[z]{\tau} &= 0. 
-    \end{split}
-    \]
-    Now we see $\left(\pp[x]{\sigma}\right)^2 + \left(\pp[y]{\sigma}\right)^2 + \left(\pp[z]{\sigma}\right)^2K^{-1}$
-    \begin{align*}
-      &= \left(|K|^{-1/2}\cdot \cosh\sigma\cdot \cos \tau \right)^2 + \left(|K|^{-1/2}\cdot \cosh\sigma\cdot \sin\tau\right)^2 + \left(\sinh\sigma\right)^2K^{-1}\\
-      &= |K|^{-1}\cdot \cosh^2\sigma\cdot \cos^2 \tau + |K|^{-1}\cdot \cosh^2\sigma\cdot \sin^2\tau - |K|^{-1} \sinh^2\sigma \\
-      &= |K|^{-1}\cdot \cosh^2\sigma\left(\cos^2 \tau + \sin^2\tau\right) -|K|^{-1} \sinh^2\sigma \\
-      &= |K|^{-1}\left(\cosh^2\sigma -\sinh^2\sigma\right) \\
-      &= |K|^{-1}.
-    \end{align*}
-    That $\pp[x]{\sigma}\pp[x]{\tau} + \pp[y]{\sigma}\pp[y]{\tau} + \pp[z]{\sigma}\pp[z]{\tau} K^{-1}$
-    \begin{align*}
-      &= -|K|^{-1}\cdot \cos\sigma\cdot \cos \tau \cdot \sin\sigma\cdot \sin \tau + |K|^{-1}\cdot \cos\sigma\cdot \cos \tau \cdot \sin\sigma\cdot \sin \tau\\
-      &= 0.
-    \end{align*}
-    And finally that $\left(\pp[x]{\tau}\right)^2 + \left(\pp[y]{\tau}\right)^2 + \left(\pp[z]{\tau}\right)^2K^{-1}$
-     \begin{align*}
-       &= \left(|K|^{-1/2}\cdot \sinh\sigma\cdot \sin \tau \right)^2 + \left( |K|^{-1/2}\cdot \sinh\sigma\cdot \cos\tau \right)^2 \\
-       &= |K|^{-1}\cdot \sinh^2\sigma\cdot \sin^2 \tau + |K|^{-1}\cdot \sinh^2\sigma\cdot \cos^2\tau \\
-       &= |K|^{-1}\cdot \sinh^2\sigma\left(\sin^2 \tau + \cos^2\tau\right) \\
-       &= |K|^{-1}\cdot \sinh^2\sigma.
-     \end{align*}
-     Hence
+  And write
      \[
      P_\mathrm{hyp} =
   \begin{bmatrix}
     |K|^{-1} & 0 \\
     0 & |K|^{-1}\cdot\sinh^2 \sigma
   \end{bmatrix}.
-     \]
+  \]
   \end{freeResponse}
 \end{problem}
 
@@ -282,26 +199,34 @@ $\pp[x]{\tau}$, $\pp[y]{\tau}$, and $\pp[z]{\tau}$.
 
 
 
-Now notice that you can write a path on the $K$-surface by giving a path
-$\left( \sigma(t),\tau(t)\right)$ in the $(\sigma,\tau)$-plane.  To write a path
-that starts at the North Pole, just write%
+
+Now notice that you can write a path on the $R$-sphere by giving a
+path
 \[
-\left(\sigma(t),\tau(t)\right), \qquad 0\leq t \leq e
+\gamma_\mathrm{hyp}(t) = \left( \sigma(t),\tau(t)\right)
 \]
-and demand that $\sigma(0)=\tau(0) =0$.  If you want the path to end on the plane
-$y=\hat{y}=0$, demand additionally that $\tau(e)=0.$
-
-
- Now given a path on the $K$-surface
- \[
- \left(\sigma(t),\tau(t)\right),\qquad 0 \leq t \leq e
+in the $(\sigma,\tau)$-plane.  To write a path that starts at the
+North Pole, $(0,0,1)$, demand that $\sigma(0)=0$.  If you want the path
+to end on the plane $y=\hat{y}=0$, demand additionally that
+$\tau(e)=0$. Given such a path, its length is given by the formula%
+\[
+L=\int_{0}^e \sqrt{\left(\frac{d\sigma}{dt},\frac{d\tau}{dt}\right)
+  \bullet_\mathrm{hyp} \left(\frac{d\sigma}{dt},\frac{d\tau}{dt}\right)}\, dt
  \]
- satisfying $\sigma(0)=\tau(0)=0$ and $\tau(e)=0$, its length is given by the
- formula%
- \begin{equation} \label{length}\tag{$*$}
-   L=\int_{0}^e \sqrt{\left(\frac{d\sigma}{dt},\frac{d\tau}{dt}\right)
-     \bullet_\mathrm{hyp} \left(\frac{d\sigma}{dt},\frac{d\tau}{dt}\right)}dt.
- \end{equation}
+ since $\frac{d\gamma_\mathrm{hyp}}{d t} \dot_\mathrm{hyp} \frac{d\gamma_\mathrm{hyp}}{d t}
+ = \frac{d\gamma}{d t} \dot_K \frac{d\gamma}{d t} = \frac{d\hat \gamma}{d t} \dot \frac{d\hat\gamma}{d t}$.
+
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{problem}
   Prove that the shortest path on the $K$-surface from the North Pole
@@ -315,7 +240,7 @@ $y=\hat{y}=0$, demand additionally that $\tau(e)=0.$
   \]
   is the path lying in the plane $y=0$.
   \begin{hint}
-    Use the same steps you did in the sphere case.
+    Use the same steps you did in the case of the sphere.
   \end{hint}
 
   \begin{freeResponse}
@@ -383,7 +308,34 @@ motions to add to our collection.
 \begin{problem}
   Assuming $K$ is negative, show
   \[
-  N_\psi=
+  \begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & \sqrt{K}
+  \end{bmatrix}
+  \cdot 
+  \hat N_\psi
+  \begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0\\
+    0 & 0 & \sqrt{K^{-1}}
+  \end{bmatrix}
+=
+  \begin{bmatrix}
+    \cosh\psi & 0 & |K|^{-1/2}\cdot\sinh\psi\\
+    0 & 1 & 0\\
+    |K|^{1/2}\cdot\sinh\psi & 0 & \cosh\psi
+  \end{bmatrix}
+  \]
+\end{problem}
+
+
+
+
+\begin{problem}
+  Assuming $K$ is negative, show
+  \[
+   N_\psi=
   \begin{bmatrix}
     \cosh\psi & 0 & |K|^{-1/2}\cdot\sinh\psi\\
     0 & 1 & 0\\
