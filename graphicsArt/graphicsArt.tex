@@ -81,7 +81,7 @@
 
 
 
-
+%% 2-sheeted hyperboloid
 \begin{tikzpicture}[geometryDiagrams]  
       %% x-axis
       \draw[thin,->] (3,1.5)--(-3,-1.5); 
@@ -130,9 +130,8 @@
 
 
 For lines in spherical geometry:
-
-
-\begin{tikzpicture}[geometryDiagrams,scale=1.7]  
+\begin{center}
+  \begin{tikzpicture}[geometryDiagrams,scale=1.7]  
       %% x-axis
       \draw [thin,->] (2.2,1.1)--(-2.2,-1.1); 
       \node[below left] at (-2.2,-1.1) {$x$};
@@ -151,7 +150,7 @@ For lines in spherical geometry:
       \draw (1.75,0) arc (0:360:1.75);
       %%%% Equator
       \draw (-1.75,0) arc (180:360:1.75 and .5);
-      \draw[gray,thin,dashed] (1.75,0) arc (0:180:1.75 and .5);
+      \draw[thin,dashed,gray] (1.75,0) arc (0:180:1.75 and .5);
 
       
       
@@ -166,11 +165,12 @@ For lines in spherical geometry:
 
       %% angles:
       \draw[thin,->] (-.4,-.2) arc (206:342:.5 and .25);
-      \node at (.1,-.2) {$\sigma$};
+      \node at (.1,-.2) {$\tau$};
       
       \draw[thin,->] (0,.6) arc (90:60:.6);
-      \node at (.1,.3) {$\tau$}; 
-\end{tikzpicture}  
+      \node at (.1,.3) {$\sigma$}; 
+  \end{tikzpicture}  
+\end{center}
 
 
 
@@ -284,5 +284,120 @@ For triangle
     \end{scope}
 \end{tikzpicture}  
   \end{center}
+
+
+
+
+
+
+
+
+
+
+%% parameterize hyperbola
+\begin{tikzpicture}[geometryDiagrams,scale=2.5]  
+      %% x-axis
+      \draw[thin,->] (-.2,0)--(2.2,0); 
+      \node[right] at (2.2,0) {$x$};
+
+      %% y-axis
+      \draw[thin,->] (0,-1.2)--(0,1.2); 
+      \node[above] at (0,1.2) {$y$};
+     
+      
+      %% hyperbola
+      \draw[domain=-1.2:1.2,smooth] plot ({cosh(\x)},{sinh(\x)});
+      \draw[fill=black] ({cosh(1)},{sinh(1)}) circle (.03);
+      \node[right] at ({cosh(1)},{sinh(1)}) {$(\cosh(t),\sinh(t))$};
+\end{tikzpicture}  
+
+%% parameterize cicle
+\begin{tikzpicture}[geometryDiagrams,scale=2.5]  
+      %% x-axis
+      \draw[thin,->] (-1.2,0)--(1.2,0); 
+      \node[right] at (1.2,0) {$x$};
+
+      %% y-axis
+      \draw[thin,->] (0,-1.2)--(0,1.2); 
+      \node[above] at (0,1.2) {$y$};
+     
+      
+      \draw[domain=0:360,smooth] plot ({cos(\x)},{sin(\x)});
+      \draw[fill=black] ({cos(57)},{sin(57)}) circle (.03);
+      \node[above right] at ({cos(57)},{sin(57)}) {$(\cos(t),\sin(t))$};
+\end{tikzpicture}  
+
+
+
+
+
+
+
+Lines in Hyperbolic
+
+\begin{center}
+  \begin{tikzpicture}[geometryDiagrams,scale=1]  
+      %% x-axis
+      \draw [thin,->] (2.2,1.1)--(-2.2,-1.1); 
+      \node[below left] at (-2.2,-1.1) {$x$};
+
+      %% y-axis
+      \draw [thin,->] (-2.2,0)--(2.5,0); 
+      \node[right] at (2.5,0) {$y$};
+
+       %% z-axis
+      \draw[thin,->] (0,-1)--(0,3.5); 
+      \node[above] at (0,3.5) {$z$};
+
+      
+      
+      %% 2-sheeted hyperboloid
+      \draw[domain=-3.5:3.5] plot (\x,{sqrt(1.75^2+\x*\x)});
+      %%%% Equator
+      \draw (3.5,4) arc (0:360:3.5 and .8);
+      \node[right] at (3.5,4) {$K(x^2+y^2) + z^2 = 1$};
+      \node[right] at (3.5,3.5) {$K<0$};
+
+      
+
+      
+      
+      %%%% line to point
+      %\draw[thin,gray] (0,0)--(.88,1.21);
+      \draw[thin,gray] (0,0)--(.88,-.2)--(.88,2.3);
+
+      
+      %%%% point on sphere
+      \draw[fill=black] (.88,2.3) circle (.05);
+      \node at (1.7,1.6) {$(x,y,z)$};
+
+      %% angles:
+      \draw[thin,->] (-.5,-.25) arc (206:342:.6 and .3);
+      \node at (.15,-.25) {$\tau$};
+      
+      %% \draw[thin,->] (0,.6) arc (90:60:.6);
+      %% \node at (.1,.3) {$\sigma$}; 
+  \end{tikzpicture}  
+\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
