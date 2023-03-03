@@ -137,7 +137,7 @@ z(\sigma,\tau)
 \begin{bmatrix}
   R\cdot \sin\sigma\cdot \cos \tau  \\
   R\cdot \sin\sigma\cdot \sin\tau\\
-R\cdot \cos \sigma \\
+  \cos \sigma \\
 \end{bmatrix}.
 \]
 
@@ -480,13 +480,12 @@ route an airplane would take when flying between the two cities.
 
 
 \begin{theorem}
-Given any two points $X_{1}=\left(x_{1},y_{1},z_{1}\right) $ and
-$X_{2}=\left(x_{2},y_{2},z_{_{2}}\right) $ in $K$-geometry, the
-shortest path between the two points is the path cut out by the set
+Given any two points $A$ and $B$ on the $K$-surface, the shortest path
+between the two points is the path cut out by the set
 \[
 K\left(  x^{2}+y^{2}\right)  +z^{2}=1
 \]
-and the plane containing $(0,0,0)$, $X_{1}$, and $X_{2}$.
+and the plane containing $(0,0,0)$, $A$, and $B$.
 \end{theorem}
 
 \begin{problem} %\textbf{(Tricky!)}
@@ -510,6 +509,13 @@ and the plane containing $(0,0,0)$, $X_{1}$, and $X_{2}$.
   \begin{hint}
     $M_\theta$ is a $K$-rigid motion that rotates around the $z$-axis and
     $N_\psi$ is a $K$-rigid motion that rotates around the $y$-axis.
+  \end{hint}
+  \begin{hint}
+    Points $A$ and $B$ will correspond to angles in
+    $(\sigma,\tau)$-coordinates. Let
+    \[
+    S_R(\sigma_A,\tau_A) = A\qquad\text{and}\qquad S_R(\sigma_B,\tau_B) = B.
+    \]
   \end{hint}
   \begin{hint}
     You should apply \textit{two} $K$-rigid motions of the form
