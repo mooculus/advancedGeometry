@@ -1,4 +1,4 @@
-\documentclass[newpage,hints,handout,12pt,noauthor,nooutcomes]{ximera}
+\documentclass[handout,newpage,hints,,12pt,noauthor,nooutcomes]{ximera}
 
 \input{../preamble.tex}
 
@@ -302,9 +302,9 @@ path
 in the $(\sigma,\tau)$-plane.  To write a path that starts at the
 North Pole, $(0,0,1)$, demand that $\sigma(0)=0$.  If you want the path
 to end on the plane $y=\hat{y}=0$, demand additionally that
-$\tau(e)=0$. Given such a path, its length is given by the formula%
+$\tau(\varepsilon)=0$. Given such a path, its length is given by the formula%
 \[
-L=\int_{0}^e \sqrt{\left(\frac{d\sigma}{dt},\frac{d\tau}{dt}\right)
+L=\int_{0}^\varepsilon \sqrt{\left(\frac{d\sigma}{dt},\frac{d\tau}{dt}\right)
   \bullet_\mathrm{hyp} \left(\frac{d\sigma}{dt},\frac{d\tau}{dt}\right)}\, dt
  \]
  since $\frac{d\gamma_\mathrm{hyp}}{d t} \dot_\mathrm{hyp} \frac{d\gamma_\mathrm{hyp}}{d t}
@@ -330,7 +330,7 @@ L=\int_{0}^e \sqrt{\left(\frac{d\sigma}{dt},\frac{d\tau}{dt}\right)
   \]
   to a point
   \[
-  (x,y,z)=\left(|K|^{-1/2}\sinh e,0,\cosh e\right)
+  (x,y,z)=\left(|K|^{-1/2}\sinh \varepsilon,0,\cosh \varepsilon\right)
   \]
   is the path lying in the plane $y=0$.
   \begin{hint}
@@ -612,8 +612,8 @@ geometry.
     y(t) &= 0,\\
     z(t) &= \cosh(t),
   \end{align*}
-  show that the length of the segment on the interval $0 \leq t \leq e$ is
-  exactly $|K|^{-1/2}e$.
+  show that the length of the segment on the interval $0 \leq t \leq
+  \varepsilon$ is exactly $|K|^{-1/2}\varepsilon$.
   \begin{hint}
     Use a previous problem.
   \end{hint}
@@ -705,11 +705,11 @@ M_\theta=
 when $\theta = \pi/2$ we see that the length of side $a$ is $|K|^{-1/2}\cdot
 \beta$. Set
 \[
-\gamma = \mathrm{arcosh}\left(\frac{A\bullet_K B}{|A|_K\cdot |B|_K}\right).
+\varepsilon = \mathrm{arcosh}\left(\frac{A\bullet_K B}{|A|_K\cdot |B|_K}\right).
 \]
 Since we are working on the $K$-surface,
 \begin{align*}
-  K^{-1}\cdot \cosh \gamma &= A\bullet_K B\\
+  K^{-1}\cdot \cosh \varepsilon &= A\bullet_K B\\
   &=
   \begin{bmatrix}
     |K|^{-1/2}\cdot \sinh\alpha &  0 & \cosh\alpha
@@ -731,7 +731,7 @@ Since we are working on the $K$-surface,
 \begin{problem}
   Explain how to progress from the fact that
   \[
-  K^{-1}\cdot \cosh \gamma = K^{-1} \cdot \cosh\alpha \cdot \cosh\beta.
+  K^{-1}\cdot \cosh \varepsilon = K^{-1} \cdot \cosh\alpha \cdot \cosh\beta.
   \]
   to the conclusion of the theorem
   \[
@@ -743,13 +743,13 @@ Since we are working on the $K$-surface,
     \begin{split}
       |K|^{-1/2}\cdot \alpha &= a,\\
       |K|^{-1/2}\cdot \beta  &= b,\\
-      |K|^{-1/2}\cdot \gamma &= c,
+      |K|^{-1/2}\cdot \varepsilon &= c,
     \end{split}
     \qquad\text{so}\qquad
     \begin{split}
       \alpha &= |K|^{1/2} \cdot a,\\
       \beta  &= |K|^{1/2} \cdot b,\\
-      \gamma &= |K|^{1/2} \cdot c,\\
+      \varepsilon &= |K|^{1/2} \cdot c,\\
     \end{split}
     \]
     and hence

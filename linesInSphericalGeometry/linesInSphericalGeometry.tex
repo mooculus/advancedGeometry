@@ -391,10 +391,10 @@ path
 \]
 in the $(\sigma,\tau)$-plane.  To write a path that starts at the
 North Pole, demand that $\sigma(0)=0$.  If you want the path to end on
-the plane $y=\hat{y}=0$, demand additionally that $\tau(e)=0$. Given
+the plane $y=\hat{y}=0$, demand additionally that $\tau(\varepsilon)=0$. Given
 such a path, its length is given by the formula%
  \[
-   L=\int_{0}^e \sqrt{\left(\frac{d\sigma}{dt},\frac{d\tau}{dt}\right)
+   L=\int_{0}^\varepsilon \sqrt{\left(\frac{d\sigma}{dt},\frac{d\tau}{dt}\right)
      \bullet_\mathrm{sph} \left(\frac{d\sigma}{dt},\frac{d\tau}{dt}\right)}\, dt
  \]
  since $\frac{d\gamma_\mathrm{sph}}{d t} \dot_\mathrm{sph} \frac{d\gamma_\mathrm{sph}}{d t}
@@ -404,13 +404,14 @@ such a path, its length is given by the formula%
   Prove that the shortest path on the $R$-sphere from the North Pole $(0,0,1)$
   (in $(\sigma,\tau)$-coordinates, $(0,0)$) to a point
   \[
-  (x,y,z)=(R\sin e,0,\cos e)
+  (x,y,z)=(R\sin \varepsilon,0,\cos \varepsilon)
   \]
-  (in $\sigma,\tau)$-coordinates, $(e,0)$) is the downwards path lying in the
+  (in $\sigma,\tau)$-coordinates, $(\varepsilon,0)$) is the downwards path lying in the
   plane $y=0$.
   \begin{hint}
-    Start with some arbitrary path $(\sigma(t),\tau(t))$ which begins and ends at
-    this point and show that it's longer than this path, in two steps:
+    Start with some arbitrary path $(\sigma(t),\tau(t))$ which begins
+    and ends at these points and show that it is longer than this
+    path, in two steps:
     \begin{itemize}
     \item First use the integral above to show that it gets shorter if
       you keep the same $\sigma$ but make $\tau$ always zero (squishing the curve
@@ -655,14 +656,14 @@ geometry.
     y(t) &= 0,\\
     z(t) &= \cos t,
   \end{align*}
-  show that the length of the segment from $0 \leq t \leq e$ is exactly $Re$.
+  show that the length of the segment from $0 \leq t \leq \varepsilon$ is exactly $R\varepsilon$.
   \begin{hint}
     Use a previous problem.
   \end{hint}
   \begin{freeResponse}
     By a previous problem the length of this line is given by
     \[
-    L=R \cdot \int_{0}^e 1 \d\sigma = Re.
+    L=R \cdot \int_{0}^\varepsilon 1 \d\sigma = R\varepsilon.
     \]
   \end{freeResponse}
 \end{problem}
@@ -672,7 +673,7 @@ geometry.
   say $A$ and $B$, the length of the spherical line connecting them
   is given by
   \[
-  R\cdot e = R\cdot\arccos\left(\frac{A\bullet_K B}{|A|_K\cdot |B|_K}\right).
+  R\cdot \varepsilon = R\cdot\arccos\left(\frac{A\bullet_K B}{|A|_K\cdot |B|_K}\right).
   \]
   by using $K$-rigid motions of the form
   \[
@@ -792,11 +793,11 @@ Hence the length of side $b$ is $R\cdot\alpha$. Working analogusly (or
 by using the rigid motion $M_{\pi/2}$ to move side $a$ to the plane
 $y=0$) see that the length of side $a$ is $R\cdot \beta$. Set
 \[
-\gamma = \arccos\left(\frac{A\bullet_K B}{|A|_K\cdot |B|_K}\right).
+\varepsilon = \arccos\left(\frac{A\bullet_K B}{|A|_K\cdot |B|_K}\right).
 \]
 Since we are working on the $R$-sphere,
 \begin{align*}
-  R^2\cdot \cos \gamma &= A\bullet_K B\\
+  R^2\cdot \cos \varepsilon &= A\bullet_K B\\
   &=
   \begin{bmatrix}
     R\cdot \sin\alpha &  0 & \cos\alpha
@@ -818,7 +819,7 @@ Since we are working on the $R$-sphere,
 \begin{problem}
   Explain how to progress from the fact that
   \[
-  R^2\cdot \cos \gamma = R^2 \cdot \cos\alpha \cdot \cos\beta.
+  R^2\cdot \cos \varepsilon = R^2 \cdot \cos\alpha \cdot \cos\beta.
   \]
   to the conclusion of the theorem
   \[
@@ -830,13 +831,13 @@ Since we are working on the $R$-sphere,
     \begin{split}
       R\cdot \alpha &= a,\\
       R\cdot \beta  &= b,\\
-      R\cdot \gamma &= c,
+      R\cdot \varepsilon &= c,
     \end{split}
     \qquad\text{so}\qquad
     \begin{split}
       \alpha &= \frac{a}{R},\\
       \beta  &= \frac{b}{R},\\
-      \gamma &= \frac{c}{R},
+      \varepsilon &= \frac{c}{R},
     \end{split}
     \]
     and hence
