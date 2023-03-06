@@ -105,9 +105,9 @@
 
 
       %% 2-sheeted hyperboloid
-      \draw[domain=-3.5:3.5] plot (\x,{sqrt(1.75^2+\x*\x)});
+      \draw[domain=-3:3] plot (\x,{sqrt(1.75^2+\x*\x)});
       %%%% Equator
-      \draw (3.5,4) arc (0:360:3.5 and .8);
+      \draw (0,4.5) arc (90:450:3.13 and .8);
       \node[right] at (3.5,4) {$K(x^2+y^2) + z^2 = 1$};
       \node[right] at (3.5,3.5) {$K<0$};
 
@@ -173,67 +173,6 @@ For lines in spherical geometry:
 \end{center}
 
 
-
-For triangle
-
-\begin{tikzpicture}[geometryDiagrams,scale=1.7]  
-      %% x-axis
-      \draw [thin,->] (2.2,1.1)--(-2.2,-1.1); 
-      \node[below left] at (-2.2,-1.1) {$x$};
-
-      %% y-axis
-      \draw [thin,->] (-2.2,0)--(2.5,0); 
-      \node[right] at (2.5,0) {$y$};
-
-      %% z-axis
-      \draw [thin,->] (0,-2)--(0,2.2); 
-      \node[above] at (0,2.2) {$z$};
-
-      
-      
-      %% sphere
-      \draw[thick] (1.75,0) arc (0:360:1.75);
-      %%%% Equator
-      \draw[thick] (-1.75,0) arc (180:360:1.75 and .5);
-      \draw[thin,dashed,gray] (1.75,0) arc (0:180:1.75 and .5);
-
-      %% triangle
-      \draw[rotate around={90:(0,0)}] (1.75,0) arc (0:75:1.75 and .9);
-      \draw (0,1.75) arc (90:35:1.75);
-      \draw[rotate around={33:(0,0)}] (1.75,0) arc (0:106:1.75 and .9);
-
-
-
-      \draw[thin,gray] (0,0)--(-.86,.5);
-
-      \draw[thin,gray] (0,0)--(1.43,1);
-
-
-      
-      
-      %%%% points on sphere
-      \draw[fill=black] (0,1.75) circle (.05);
-      \node[above right] at (0,1.75) {$C$};
-
-
-      \draw[fill=black] (-.86,.5) circle (.05);
-      \node[left] at (-.86,.5) {$A$};
-
-      
-      \draw[fill=black] (1.43,1) circle (.05);
-      \node[right] at (1.43,1) {$B$};
-
-      \node at (-.1,.2) {$\alpha$};
-      \draw[rotate around={90:(0,0)},thin,->] (.5,0) arc (0:70:.5 and .25);
-      
-      \node at (.15,.3) {$\beta$};
-      \draw[thin,->] (0,.6) arc (90:40:.6);
-
-
-      \node at (.8,1.7) {$a$};
-      \node at (-.8,1.3) {$b$};
-      \node at (.15,.9) {$c$};
-\end{tikzpicture}  
 
 
 
@@ -379,6 +318,155 @@ Lines in Hyperbolic
       %% \node at (.1,.3) {$\sigma$}; 
   \end{tikzpicture}  
 \end{center}
+
+
+
+
+
+For spherical triangle
+
+\begin{tikzpicture}[geometryDiagrams,scale=1.7]  
+      %% x-axis
+      \draw [thin,->] (2.2,1.1)--(-2.2,-1.1); 
+      \node[below left] at (-2.2,-1.1) {$x$};
+
+      %% y-axis
+      \draw [thin,->] (-2.2,0)--(2.5,0); 
+      \node[right] at (2.5,0) {$y$};
+
+      %% z-axis
+      \draw [thin,->] (0,-2)--(0,2.2); 
+      \node[above] at (0,2.2) {$z$};
+
+      
+      
+      %% sphere
+      \draw[thick] (1.75,0) arc (0:360:1.75);
+      %%%% Equator
+      \draw[thick] (-1.75,0) arc (180:360:1.75 and .5);
+      \draw[thin,dashed,gray] (1.75,0) arc (0:180:1.75 and .5);
+
+      %% triangle
+      \draw[rotate around={90:(0,0)}] (1.75,0) arc (0:75:1.75 and .9);
+      \draw (0,1.75) arc (90:35:1.75);
+      \draw[rotate around={33:(0,0)}] (1.75,0) arc (0:106:1.75 and .9);
+
+
+
+      \draw[thin,gray] (0,0)--(-.86,.5);
+
+      \draw[thin,gray] (0,0)--(1.43,1);
+
+
+      
+      
+      %%%% points on sphere
+      \draw[fill=black] (0,1.75) circle (.05);
+      \node[above right] at (0,1.75) {$C$};
+
+
+      \draw[fill=black] (-.86,.5) circle (.05);
+      \node[left] at (-.86,.5) {$A$};
+
+      
+      \draw[fill=black] (1.43,1) circle (.05);
+      \node[right] at (1.43,1) {$B$};
+
+      \node at (-.1,.2) {$\alpha$};
+      \draw[rotate around={90:(0,0)},thin,->] (.5,0) arc (0:70:.5 and .25);
+      
+      \node at (.15,.3) {$\beta$};
+      \draw[thin,->] (0,.6) arc (90:40:.6);
+
+
+      \node at (.8,1.7) {$a$};
+      \node at (-.8,1.3) {$b$};
+      \node at (.15,.9) {$c$};
+\end{tikzpicture}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For hyperbolic triangle
+
+\begin{tikzpicture}[geometryDiagrams,scale=1.7]  
+  %% x-axis
+  \draw [thin,->] (2.2,1.1)--(-2.2,-1.1); 
+  \node[below left] at (-2.2,-1.1) {$x$};
+  
+  %% y-axis
+  \draw [thin,->] (-2.2,0)--(2.5,0); 
+  \node[right] at (2.5,0) {$y$};
+  
+  %% z-axis
+  \draw[thin,->] (0,-1)--(0,3.5); 
+  \node[above] at (0,3.5) {$z$};
+  
+      
+  
+  %% 2-sheeted hyperboloid
+  \draw[thick,domain=-3:3] plot (\x,{sqrt(1.75^2+\x*\x)});
+  %%%% Equator
+  \draw[thick] (0,4.5) arc (90:450:3.13 and .8);
+
+
+
+
+  
+  %% triangle
+  \draw[domain=0:.84,rotate around={90:(0,0)}] plot({1.75 *cosh(\x)},{.9*sinh(\x)});
+  \draw[domain=-1:0,rotate around={90:(0,0)}] plot({1.75 *cosh(\x)},{1.75*sinh(\x)});
+
+
+  \begin{scope}
+  \clip ({-.9*sinh(.84)},{1.75*cosh(.84)-.2}) rectangle ({1.75*sinh(1)},{1.75*cosh(1)+.3});
+  \draw (0,3.55) arc (90:450:2.3 and .6);
+  \end{scope}
+  
+  
+
+
+  %%lines
+  \draw[thin,gray] (0,0)--({-.9*sinh(.84)},{1.75*cosh(.84)});
+  \draw[thin,gray] (0,0)--({1.75*sinh(1)},{1.75*cosh(1)});
+      
+      
+  %%%% points on sphere
+  \draw[fill=black] (0,1.75) circle (.05);
+  \node[below right] at (0,1.75) {$C$};
+  
+  
+  \draw[fill=black] ({-.9*sinh(.84)},{1.75*cosh(.84)}) circle (.05);
+  \node[above left] at  ({-.9*sinh(.84)},{1.75*cosh(.84)}) {$A$};
+  
+      
+  \draw[fill=black] ({1.75*sinh(1)},{1.75*cosh(1)}) circle (.05);
+  \node[below right] at ({1.75*sinh(1)},{1.75*cosh(1)}) {$B$};
+  
+  \node at (-.1,.6) {$\alpha$};
+  \draw[rotate around={90:(0,0)},thin,->] (.9,0) arc (0:35:.8 and .4);
+  
+  \node at (.13,.4) {$\beta$};
+  \draw[thin,->] (0,.6) arc (90:65:.8);
+      
+
+  \node at (.9,1.8) {$a$};
+  \node at (-.4,2.1) {$b$};
+  \node at (.5,2.5) {$c$};
+\end{tikzpicture}  
 
 
 
