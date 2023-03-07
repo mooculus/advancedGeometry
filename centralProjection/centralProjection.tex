@@ -1,4 +1,4 @@
-\documentclass[newpage,hints,handout]{ximera}
+\documentclass[newpage,hints,handout,12pt,noauthor,nooutcomes]{ximera}
 
 \input{../preamble.tex}
 
@@ -9,11 +9,20 @@ Here we start to develop unified models for our geometries.
 \end{abstract}
 \maketitle
 
-\section{Central projection coordinates}
+Now we will examine one way to produce coordinates uniformly for
+spherical, plane, and hyperbolic geometry that will allow us to pass
+smoothly through the three geometries.
 
-Now we will examine one way to produce coordinates uniformly for spherical, plane, and hyperbolic geometry that will allow us to pass smoothly through the three geometries. Let's project $K$-geometry,
+
+\subsection{Central projection coordinates}
+
+
+
+
+
+Let's project $K$-geometry,
 \[
-1=K\left(x^{2}+y^{2}\right)+z^{2} 
+1=K\left(x^{2}+y^{2}\right)+z^{2}
 \]
 onto the plane $z=1$ using the origin $O=(0,0,0)$ as the center of
 projection:
@@ -59,27 +68,23 @@ this is the plane $z=1$.
 
 
 \begin{problem}
-  What range of values could $\lambda$ take when $K>0$?
+  Let't think about this a bit.
+  \begin{enumerate}
+  \item What range of values could $\lambda$ take when $K>0$?
+  \item What range of values could $\lambda$ take when $K<0$?
+  \item What range of values could $\lambda$ take when $K=0$?
+  \end{enumerate}
   \begin{freeResponse}
-    In this case, $\lambda\in (0,1]$.
-  \end{freeResponse}
-\end{problem}
-
-\begin{problem}
-  What range of values could $\lambda$ take when $K<0$?
-  \begin{freeResponse}
-    In this case, $\lambda\in[1,\infty)$.
-  \end{freeResponse}
-\end{problem}
-
-\begin{problem}
-  What range of values could $\lambda$ take when $K=0$?
-  \begin{freeResponse}
-    In this case
+    Let's answer these in turn.
+    \begin{enumerate}
+    \item In this case, $\lambda\in (0,1]$.
+    \item In this case, $\lambda\in[1,\infty)$.
+    \item In this case
     \[
     1=K\left(x^{2}+y^{2}\right)+z^{2} 
     \]
     is the plane $z = 1$, hence $\lambda=1$.
+    \end{enumerate}
   \end{freeResponse}
 \end{problem}
 
@@ -132,7 +137,7 @@ this is the plane $z=1$.
     \begin{align*}
       x &= \frac{x_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}},\\
       y &= \frac{y_c}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}},\\
-      z &= \frac{1}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}.\\
+      z &= \frac{1}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}.
     \end{align*}
   \end{freeResponse}
 \end{problem}
@@ -142,191 +147,52 @@ this is the plane $z=1$.
 
 
 
-\section{Central projection dot product}
+\subsection{Central projection dot product}
 
 Like we have done before, now we want to be able to find a dot product
 that will allow us to compute lengths in central projection
 coordinates that will agree with the $K$-dot product, and hence the
-euclidean dot product.
-
-
-\begin{problem}
-Suppose we have a curve $\gamma$ in $K$-warped space which we can decompose as
-\begin{image}
-  \begin{tikzpicture}
-    \node{
-      \begin{tikzcd}[ampersand replacement=\&]
-        t \ar[r,mapsto,"\gamma_{c}"] \ar[rr,mapsto,bend right=20,swap,"\gamma"] \&  (x_c(t),y_c(t))\ar[r,mapsto,"{\left[\begin{smallmatrix}
-          x(x_c,y_c)\\
-          y(x_c,y_c)\\
-          z(x_c,y_c)
-              \end{smallmatrix}\right]}"
-        ] \& \gamma(t)=(x(t),y(t),z(t))
-    \end{tikzcd}};
-  \end{tikzpicture}
-\end{image}
-Use the chain rule to compute
+euclidean dot product.  We will give a map
+\begin{center}
+\begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement = \&]
+  (x_c,y_c)\in \R^2 \ar[r,|->,"K_c"] \& (x, y ,z) \in \R^3
+\end{tikzcd}
+\end{center}
+from this space to $K$-warped space. We may write
 \[
-\dd[x]{t}, \qquad \dd[y]{t}, \qquad \dd[z]{t},
+K_c(x_c,y_c) = 
+\begin{bmatrix}
+x(x_c,y_c)  \\
+y(x_c,y_c)  \\
+z(x_c,y_c)  
+\end{bmatrix}
+=
+\begin{bmatrix}
+\lambda x_c  \\
+\lambda y_c  \\
+\lambda  
+\end{bmatrix}
 \]
-in terms of $\dd[x_c]{t}$, $\dd[y_c]{t}$, $\pp[x]{x_c}$,
-$\pp[y]{x_c}$, $\pp[z]{x_c}$, $\pp[x]{y_c}$, $\pp[y]{y_c}$,
-and $\pp[z]{y_c}$.
-  \begin{hint}
-  Simply write down the answer from a previous problem with some minor
-  changes.
-  \end{hint}
-  \begin{freeResponse}
-  Write
-  \begin{align*}
-    \dd[x]{t} &= \begin{bmatrix}\pp[x]{x_c} & \pp[x]{y_c}\end{bmatrix}\cdot\begin{bmatrix}\dd[x_c]{t} & \dd[y_c]{t}\end{bmatrix}^\transpose = \pp[x]{x_c}\cdot\dd[x_c]{t}+\pp[x]{y_c}\cdot\dd[y_c]{t},   \\
-    \dd[y]{t} &= \begin{bmatrix}\pp[y]{x_c} & \pp[y]{y_c}\end{bmatrix}\cdot\begin{bmatrix}\dd[x_c]{t} & \dd[y_c]{t}\end{bmatrix}^\transpose = \pp[y]{x_c}\cdot\dd[x_c]{t}+\pp[y]{y_c}\cdot\dd[y_c]{t},   \\
-    \dd[z]{t} &= \begin{bmatrix}\pp[z]{x_c} & \pp[z]{y_c}\end{bmatrix}\cdot\begin{bmatrix}\dd[x_c]{t} & \dd[y_c]{t}\end{bmatrix}^\transpose = \pp[z]{x_c}\cdot\dd[x_c]{t}+\pp[z]{y_c}\cdot\dd[y_c]{t}.  
-  \end{align*}
-\end{freeResponse}
-\end{problem}
+where $\lambda =  \frac{1}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}$.
+
+
+
+
 
 
 
 
 \begin{problem}
-  With the same setting as in the previous problem, rewrite the result
-  of your computation in matrix notation to find $D_c$ such that
-  \[
-  \begin{bmatrix}
-    dx/dt \\ dy/dt \\ dz/dt
-  \end{bmatrix}
-  =D_c \cdot
-  \begin{bmatrix}
-    dx_c/dt \\ dy_c/dt
-  \end{bmatrix}
-  \]
-  in terms of $\pp[x]{x_c}$, $\pp[y]{x_c}$, $\pp[z]{x_c}$,
-  $\pp[x]{y_c}$, $\pp[y]{y_c}$, and $\pp[z]{y_c}$.
-  \begin{hint}
-    Simply write down the answer from a previous problem with some minor
-    changes.
-  \end{hint}
-  \begin{freeResponse}
-    \[
-    D_c =
-    \begin{bmatrix}
-      \pp[x]{x_c} & \pp[y]{x_c} & \pp[z]{x_c} \\
-      \pp[x]{y_c}   & \pp[y]{y_c}   & \pp[z]{y_c}
-    \end{bmatrix}.
-    \]
-  \end{freeResponse}
-\end{problem}
-
-
-
-
-\begin{problem}
-  Now find $P_c$ in terms of $K$, $\pp[x]{x_c}$, $\pp[y]{x_c}$,
-  $\pp[z]{x_c}$, $\pp[x]{y_c}$, $\pp[y]{y_c}$, and $\pp[z]{y_c}$ such
-  that
-  \[
-  \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)\bullet_K
-  \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)
-  =
-  \begin{bmatrix}
-    \dd[x_c]{t} &  \dd[y_c]{t}
-  \end{bmatrix}
-  \cdot P_c
-  \cdot
-  \begin{bmatrix}
-    \dd[x_c]{t} \\  \dd[y_c]{t}
-  \end{bmatrix}.
-  \]
-  \begin{hint}
-  Simply write down the answer from a previous problem with some minor
-  changes.
-  \end{hint}
-  \begin{freeResponse}
-    For completeness sake, we will include a complete solution.
-    Working from the $K$-dot product, we need that
-    \begin{align*}
-    \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)\bullet_K
-    \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)
-    &=
-    \begin{bmatrix}
-      \dd[x]{t} & \dd[y]{t} & \dd[z]{t}
-    \end{bmatrix}
-    \begin{bmatrix}
-      1 & 0 & 0\\
-      0 & 1 & 0\\
-      0 & 0 & K^{-1}
-    \end{bmatrix}
-    \begin{bmatrix}
-      \dd[x]{t} \\ \dd[y]{t} \\ \dd[z]{t}
-    \end{bmatrix}\\
-    &=
-    \begin{bmatrix}
-      \frac{dx_c}{dt} & \frac{dy_c}{dt}
-    \end{bmatrix}\cdot D_{c}\cdot
-    \begin{bmatrix}
-      1 & 0 & 0\\
-      0 & 1 & 0\\
-    0 & 0 & K^{-1}
-    \end{bmatrix}
-    \cdot
-    \left(
-    \begin{bmatrix}
-      \frac{dx_c}{dt} & \frac{dy_c}{dt}
-    \end{bmatrix}\cdot D_{c}
-    \right)^\transpose\\
-    &=
-    \begin{bmatrix}
-      \frac{dx_c}{dt} & \frac{dy_c}{dt}
-    \end{bmatrix}\cdot D_{c}\cdot
-    \begin{bmatrix}
-      1 & 0 & 0\\
-      0 & 1 & 0\\
-    0 & 0 & K^{-1}
-    \end{bmatrix}
-    \cdot
-    D_{c}^\transpose
-    \cdot \begin{bmatrix}
-      \frac{dx_c}{dt} \\ \frac{dy_c}{dt}
-    \end{bmatrix}.
-  \end{align*}
-    Hence
-    \begin{align*}
-      P_c &=
-      \begin{bmatrix}
-        \pp[x]{x_c} & \pp[y]{x_c} & \pp[z]{x_c} \\
-        \pp[x]{y_c} & \pp[y]{y_c} & \pp[z]{y_c}
-      \end{bmatrix}
-      \begin{bmatrix}
-        1 & 0 & 0\\
-        0 & 1 & 0\\
-        0 & 0 & K^{-1}
-      \end{bmatrix}
-      \begin{bmatrix}
-        \pp[x]{x_c} & \pp[x]{y_c}\\ 
-        \pp[y]{x_c} & \pp[y]{y_c}\\
-        \pp[z]{x_c} & \pp[z]{y_c}
-      \end{bmatrix}\\
-      &=
-      \begin{bmatrix}
-        \left(\pp[x]{x_c}\right)^2 + \left(\pp[y]{x_c}\right)^2 + \left(\pp[z]{x_c}\right)^2K^{-1} & \pp[x]{x_c}\pp[x]{y_c} + \pp[y]{x_c}\pp[y]{y_c} + \pp[z]{x_c}\pp[z]{y_c} K^{-1}\\
-        \pp[x]{x_c}\pp[x]{y_c} + \pp[y]{x_c}\pp[y]{y_c} + \pp[z]{x_c}\pp[z]{y_c} K^{-1}       & \left(\pp[x]{y_c}\right)^2 + \left(\pp[y]{y_c}\right)^2 + \left(\pp[z]{y_c}\right)^2K^{-1}
-      \end{bmatrix}.
-    \end{align*}
-  \end{freeResponse}
-\end{problem}
-
-Before we actually compute $P_c$, it will help to compute the partial
-derivatives.
-
-\begin{problem}
-  Set
-  \begin{align*}
-    x(x_c,y_c) &=\lambda\cdot x_c,\\
-    y(x_c,y_c) &=\lambda\cdot y_c,\\
-    z(x_c,y_c) &=\lambda,
-  \end{align*}
-  and show that
+  Suppose we have a curve $\gamma$ in $K$-warped space which we can
+  decompose as
+  \begin{center}
+    \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement=\&]
+      t\in\R \ar[r,|->,"\gamma_\mathrm{c}"] \ar[rd,|->,swap,"\gamma=K_c\circ \gamma_\mathrm{c}"] \&  (x_c(t),y_c(t))\in\R^2\ar[d,|->,"{K_c}"] \\
+      \& \gamma(t)=( x(t), y(t), z(t))\in\R^3 
+    \end{tikzcd}
+    \end{center}
+\begin{enumerate}
+\item Show that:
   \[
   \begin{split}
     \pp[x]{x_c} &=\lambda -Kx_c^2 \lambda^3,\\
@@ -340,17 +206,43 @@ derivatives.
     \pp[z]{y_c} &= -Ky_c \lambda^3.
   \end{split}
   \]
-  \begin{hint}
-  Work in the following way:
-  \begin{enumerate}
-  \item Remember that $\lambda$ is itself a function of $x_c$ and $y_c$, so its
-    partial derivatives also matter.  Use the product rule:
-    $$\pp[x]{x_c} = \lambda + x_c \cdot \pp[\lambda]{x_c}.$$
-  \item Express the partial derivative in terms of $\lambda$, $K$, $x_c$, and
-    $y_c$.
-  \end{enumerate}
+  \item Find $D_c$ such
+      that
+      \[
+      \begin{bmatrix}
+        dx/dt\\ dy/dt \\ dz/dt
+      \end{bmatrix}
+      = D_c \cdot
+      \begin{bmatrix}
+        dx_c/dt \\ dy_c/dt
+      \end{bmatrix}
+      \]
+    \item Find $P_c$ such that
+      \[
+      \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)\bullet_K
+      \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)
+      =
+      \begin{bmatrix}
+        \dd[x_c]{t} &  \dd[y_c]{t}
+      \end{bmatrix}
+      \cdot P_c
+      \cdot
+      \begin{bmatrix}
+        dx_c/dt \\  dy_c/dt
+      \end{bmatrix}.
+      \]
+\end{enumerate}
+
+\begin{hint}
+  When simplifying, combine the terms with the highest degree of $\lambda$
+  and note that
+  \[
+  \lambda^{-2} = K\left(x_c^2 + y_c^2\right) + 1.
+  \]
 \end{hint}
-  \begin{freeResponse}
+
+
+\begin{freeResponse}
     Write
   \begin{align*}
     \pp[x]{x_c} &= \lambda  + x_c \cdot \pp[\lambda]{x_c}\\
@@ -378,29 +270,14 @@ derivatives.
       \pp[y]{y_c} &= \lambda - Ky_c^2 \lambda^3,\\
       \pp[z]{y_c} &= -Ky_c \lambda^3.
     \end{align*}
-  \end{freeResponse}
-\end{problem}
-
-
-
-\begin{problem}
-With the same setting as above, show that $P_c$ is
-  \[
+    And
+    \[
   P_c =
   \begin{bmatrix}
     \left(Ky_c^2+1\right)\lambda^4 & -Kx_{c}y_{c}\lambda^4\\
     -Kx_{c}y_{c}\lambda^4 & \left(Kx_c^2+1\right)\lambda^4
   \end{bmatrix}.
 \]
-
-\begin{hint}
-  When simplifying, combine the terms with the highest degree of $\lambda$
-  and note that
-  \[
-  \lambda^{-2} = K\left(x_c^2 + y_c^2\right) + 1.
-  \]
-\end{hint}
-\begin{freeResponse}
   
   Write $\left(\pp[x]{x_c}\right)^2 + \left(\pp[y]{x_c}\right)^2 +\left(\pp[z]{x_c}\right)^2K^{-1}$
     \begin{align*}
@@ -458,7 +335,7 @@ With the same setting as above, show that $P_c$ is
 \end{definition}
 
 
-\section{When the finite is infinite and the infinite is finite}
+\subsection{When the finite is infinite and the infinite is finite}
 
 Central projection allows us to think about both ``finite'' areas and
 ``infinite'' areas in new ways.
