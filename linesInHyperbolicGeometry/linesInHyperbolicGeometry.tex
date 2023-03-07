@@ -112,7 +112,7 @@ where $0\le \sigma< \infty$ and $0\le \tau<2\pi$.
       %% 2-sheeted hyperboloid
       \draw[domain=-3:3] plot (\x,{sqrt(1.75^2+\x*\x)});
       %%%% Equator
-      \draw (0,4.5) arc (90:450:3.13 and .8);
+      \draw[dashed] (0,4.5) arc (90:450:3.13 and .8);
       \node[right] at (3.5,4) {$K(x^2+y^2) + z^2 = 1$};
       \node[right] at (3.5,3.5) {$K<0$};
 
@@ -714,7 +714,7 @@ be switched---if this is the case, simply rename them). In this case,
   %% 2-sheeted hyperboloid
   \draw[thick,domain=-3:3] plot (\x,{sqrt(1.75^2+\x*\x)});
   %%%% Equator
-  \draw[thick] (0,4.5) arc (90:450:3.13 and .8);
+  \draw[thick,dashed] (0,4.5) arc (90:450:3.13 and .8);
 
 
 
