@@ -26,14 +26,139 @@ Let's project $K$-geometry,
 \]
 onto the plane $z=1$ using the origin $O=(0,0,0)$ as the center of
 projection:
-\begin{image}
-\includegraphics[width=5in]{KGeomCentralProjection.png}
-\end{image}
+\begin{center}
+  \scalebox{.6}{\begin{tikzpicture}[geometryDiagrams]  
+      %% x-axis
+      \draw [thin,->] (3,1.5)--(-3,-1.5); 
+      \node[below left] at (-3,-1.5) {$x$};
+
+      %% y-axis
+      \draw [thin,->] (-3.5,0)--(3.5,0); 
+      \node[right] at (3.5,0) {$y$};
+
+      %% z-axis
+      \draw [thin,->] (0,-2.5)--(0,3.5); 
+      \node[above] at (0,3.5) {$z$};
+
+      %% NP
+      \draw [fill=black] (0,1.75) circle (.075);
+      
+      %% plane at z=1
+      \draw (-5,.75)--(-1,2.75)--(5,2.75)--(1,.75)--cycle;
+      \node[right] at (4.2,2.25) {$z=1$};
+      
+      %% sphere
+      \draw[dashed,thin] (1.45,0.98) arc (34:155:1.75);
+      \draw (-1.58,0.75) arc (155:394:1.75);
+      %%%% Equator
+      \draw (-1.75,0) arc (180:360:1.75 and .5);
+      \draw[dashed,thin] (1.75,0) arc (0:180:1.75 and .5);
+
+      \node[right] at (1,-1.5) {$K(x^2+y^2) + z^2 = 1$};
+      \node[right] at (1,-2) {$K>0$};
+
+      
+      %% point on plane and point on sphere connected by central line
+      %%%% point on plane
+      \draw[fill=black] (-1.6,2.2) circle (.075);
+      \node[right] at (-1.6,2.2) {$(x_c,y_c)$};
+      %%%% line to point
+      \draw[thin] (0,0)--(-1.6,2.2); 
+      %%%% point on sphere
+      \draw[fill=black] (-.88,1.21) circle (.075);
+      \node[left] at (-1.3,1.21) {$(x,y,z)$};
+  \end{tikzpicture}}  \qquad
+%% 2-sheeted hyperboloid
+  \scalebox{.6}{\begin{tikzpicture}[geometryDiagrams]  
+      %% x-axis
+      \draw[thin,->] (3,1.5)--(-3,-1.5); 
+      \node[below left] at (-3,-1.5) {$x$};
+
+      %% y-axis
+      \draw[thin,->] (-3.5,0)--(3.5,0); 
+      \node[right] at (3.5,0) {$y$};
+
+      %% z-axis
+      \draw[thin,->] (0,-1)--(0,3.5); 
+      \node[above] at (0,3.5) {$z$};
+
+      %% NP
+      \draw[fill=black] (0,1.75) circle (.075);
+      
+      %% plane at z=1
+      \draw (2.12,2.75)--(5,2.75)--(1,.75)--(-5,.75)--(-1.67,2.42);
+      \draw[dashed,thin] (-1.67,2.42)--(-1,2.75)--(2.12,2.75);
+      \node[right] at (4.2,2.25) {$z=1$};
+
+
+      %% 2-sheeted hyperboloid
+      \draw[domain=-3:3] plot (\x,{sqrt(1.75^2+\x*\x)});
+      %%%% Equator
+      \draw[dashed] (0,4.5) arc (90:450:3.13 and .8);
+      \node[right] at (3.5,4) {$K(x^2+y^2) + z^2 = 1$};
+      \node[right] at (3.5,3.5) {$K<0$};
+
+      %% point on plane and point on hyperboloid connected by central line
+      %%%% point on plane
+      \draw[fill=black] (-2,3.5) circle (.075);
+      \node[right] at (-2,3.5) {$(x_c,y_c)$};
+      %%%% line to point
+      \draw[thin] (0,0)--(-2,3.5);
+      %%%% point on sphere
+      \draw[fill=black] (-1,1.75) circle (.075);
+      \node[left] at (-1,1.75) {$(x,y,z)$};
+\end{tikzpicture}}
+\end{center}
 Let's look at this from a different vantage point, say with our eye
 along the edge of the plane $z=1$:
-\begin{image}
-\includegraphics[width=5in]{2dCentralProjection.png}
-\end{image}
+\begin{center}
+  \begin{tikzpicture}[geometryDiagrams,scale=2.5]  
+      %% x-axis
+      \draw[thin,->] (-1.2,0)--(1.2,0); 
+      \node[right] at (1.2,0) {$x$};
+
+      %% y-axis
+      \draw[thin,->] (0,-1.2)--(0,1.2); 
+      \node[above] at (0,1.2) {$z$};
+      %% z=1
+      \draw (-1.2,1)--(1.2,1);
+      \node[right] at (1.2,1) {$z=1$};
+      
+      \draw[domain=0:360,smooth] plot ({cos(\x)},{sin(\x)});
+      \draw[fill=black] ({cos(57)},{sin(57)}) circle (.03);
+      \node[right] at ({cos(57)+.1},{sin(57)}) {$(x,y,z)$};
+
+      \draw[fill=black] (.64,1) circle (.03);
+      \node[above left] at (.64,1) {$(x_c,y_c)$};
+
+       \draw[thin] (0,0)--(.64,1);
+  \end{tikzpicture}
+  \qquad
+  \begin{tikzpicture}[geometryDiagrams,scale=2.5]  
+      %% x-axis
+      \draw[thin,->] (-1.2,0)--(1.2,0); 
+      \node[right] at (1.2,0) {$x$};
+
+      %% y-axis
+      \draw[thin,->] (0,-.2)--(0,2.2); 
+      \node[above] at (0,2.2) {$z$};
+
+      %% z=1
+      \draw (-1.2,1)--(1.2,1);
+      \node[right] at (1.2,1) {$z=1$};
+      
+      \draw[thin] (0,0)--({sinh(1)},{cosh(1)});
+
+      
+      %% hyperbola
+      \draw[domain=-1.2:1.2,smooth] plot ({sinh(\x)},{cosh(\x)});
+      \draw[fill=black] ({sinh(1)},{cosh(1)}) circle (.03);
+      \node[above left] at ({sinh(1)},{cosh(1)}) {$(x,y,z)$};
+
+      \draw[fill=black] (.76,1) circle (.03);
+      \node[below right] at (.76,1) {$(x_c,y_c)$};
+\end{tikzpicture} 
+\end{center}
 Note, we are only projecting the top of the surface
 \[
 1=K\left(x^{2}+y^{2}\right)+z^{2} 
@@ -340,7 +465,7 @@ where $\lambda =  \frac{1}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}$.
 Central projection allows us to think about both ``finite'' areas and
 ``infinite'' areas in new ways.
 
-\paragraph{When $K$ is positive, the finite is infinite}
+\paragraph{When $\boldsymbol K$ is positive, the finite is infinite}
 
 When $K>0$, we are working with a sphere. As we know, a sphere has
 finite surface area.
@@ -366,7 +491,7 @@ finite surface area.
 \end{problem}
 
 
-\paragraph{When $K$ is negative, the infinite is finite}
+\paragraph{When $\boldsymbol K$ is negative, the infinite is finite}
 
 
 Notice that, if $K<0$, the equation for the $K$-plane becomes
@@ -377,9 +502,47 @@ This describes a $2$-sheeted hyperboloid with the $z$-axis as major axis.  We
 will only consider the sheet on which $z$ is positive as forming the
 $K$-geometry. In plain English, this means we are doing geometry on this
 hyperboloid:
-\begin{image}
-\includegraphics[width=3in]{UpperHyperboloid.png}
-\end{image}
+\begin{center}
+\begin{tikzpicture}[geometryDiagrams]  
+      %% x-axis
+      \draw[thin,->] (3,1.5)--(-3,-1.5); 
+      \node[below left] at (-3,-1.5) {$x$};
+
+      %% y-axis
+      \draw[thin,->] (-3.5,0)--(3.5,0); 
+      \node[right] at (3.5,0) {$y$};
+
+      %% z-axis
+      \draw[thin,->] (0,-1)--(0,3.5); 
+      \node[above] at (0,3.5) {$z$};
+
+      %% NP
+      \draw[fill=black] (0,1.75) circle (.075);
+      
+      %% plane at z=1
+      \draw (2.12,2.75)--(5,2.75)--(1,.75)--(-5,.75)--(-1.67,2.42);
+      \draw[dashed,thin] (-1.67,2.42)--(-1,2.75)--(2.12,2.75);
+      \node[right] at (4.2,2.25) {$z=1$};
+
+
+      %% 2-sheeted hyperboloid
+      \draw[domain=-3:3] plot (\x,{sqrt(1.75^2+\x*\x)});
+      %%%% Equator
+      \draw[dashed] (0,4.5) arc (90:450:3.13 and .8);
+      \node[right] at (3.5,4) {$K(x^2+y^2) + z^2 = 1$};
+      \node[right] at (3.5,3.5) {$K<0$};
+
+      %% point on plane and point on hyperboloid connected by central line
+      %%%% point on plane
+      \draw[fill=black] (-2,3.5) circle (.075);
+      \node[right] at (-2,3.5) {$(x_c,y_c)$};
+      %%%% line to point
+      \draw[thin] (0,0)--(-2,3.5);
+      %%%% point on sphere
+      \draw[fill=black] (-1,1.75) circle (.075);
+      \node[left] at (-1,1.75) {$(x,y,z)$};
+\end{tikzpicture}
+\end{center}
 Of critical importance, note
 
 \begin{center}
@@ -391,9 +554,32 @@ The hyperboloid above is obtained by rotating the hyperbola
 z^{2}-\left\vert K\right\vert x^{2}= 1
 \]
 in the $(x,z)$-plane around the $z$-axis.
-\begin{image}
-\includegraphics[width=3in]{UpperHyperbola.png}
-\end{image}
+\begin{center}
+\begin{tikzpicture}[geometryDiagrams,scale=2.5]  
+      %% x-axis
+      \draw[thin,->] (-1.2,0)--(1.2,0); 
+      \node[right] at (1.2,0) {$x$};
+
+      %% y-axis
+      \draw[thin,->] (0,-.2)--(0,2.2); 
+      \node[above] at (0,2.2) {$z$};
+
+      %% z=1
+      \draw (-1.2,1)--(1.2,1);
+      \node[right] at (1.2,1) {$z=1$};
+      
+      \draw[thin] (0,0)--({sinh(1)},{cosh(1)});
+
+      
+      %% hyperbola
+      \draw[domain=-1.2:1.2,smooth] plot ({sinh(\x)},{cosh(\x)});
+      \draw[fill=black] ({sinh(1)},{cosh(1)}) circle (.03);
+      \node[above left] at ({sinh(1)},{cosh(1)}) {$(x,y,z)$};
+
+      \draw[fill=black] (.76,1) circle (.03);
+      \node[below right] at (.76,1) {$(x_c,y_c)$};
+\end{tikzpicture}
+\end{center}
 
 
 \begin{problem}
