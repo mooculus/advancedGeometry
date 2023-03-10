@@ -1,4 +1,4 @@
-\documentclass[newpage,hints,handout]{ximera}
+\documentclass[newpage,hints,handout,12pt,nooutcomes,noauthor]{ximera}
 
 \input{../preamble.tex}
 
@@ -10,14 +10,8 @@
 \end{abstract}
 \maketitle
 
-\section{Rigid motions in central projection coordinates}
 
-Suppose now we have a $K$-rigid motion
-\[
-\begin{bmatrix}\underline{x}\\\underline{y}\\\underline{z}\end{bmatrix}
-=M\begin{bmatrix}x\\y\\z\end{bmatrix}
-\]
-of $K$-geometry, given by a $K$-orthogonal matrix%
+Suppose now we have a $K$-rigid motion given by a $K$-orthogonal matrix%
 \[
 M=\begin{bmatrix}
 m_{11} & m_{12} & m_{13}\\
@@ -29,25 +23,13 @@ Let's convert this $K$-rigid motion to a rigid motion in central
 projection coordinates. This new rigid motion will not necessarily be
 a mapping defined by a matrix, so we'll have to use some new notation.
 
+\begin{center}
+  \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement=\&]
+    (x_c,y_c)\in\R^2\ar[r,|->,"\mu_c",dashed] \ar[d,|->,"{K_c}"] \&  (\underline{x_c},\underline{y_c})\in\R^2\ar[d,|->,"{K_c}"] \\
+    (x,y,z)\in\R^3\ar[r,|->,"M"] \&  (\underline{x},\underline{y},\underline{z})\in\R^3
+  \end{tikzcd}
+\end{center}
 
-\begin{image}
-\begin{tikzpicture}
-  \node (xyz) {$(x,y,z)\in\mathbb{R}^3$};
-  \node (xyzBar) [node distance=2cm,below of=xyz] {$(\underline{x},\underline{y},\underline{z})$};
-  \node (xcyc1) [node distance=4cm,right of=xyz] {$(x_c,y_c,1)\in\mathbb{R}^2\times\{1\}$};
-  \node (xcyc1Bar) [node distance=4cm,right of=xyzBar] {$(\underline{x_c},\underline{y_c},1)$};
-  \node (xcyc) [node distance=4cm,right of=xcyc1] {$(x_c,y_c)\in\mathbb{R}^2$};
-  \node (xcycBar) [node distance=4cm,right of=xcyc1Bar] {$(\underline{x_c},\underline{y_c})$};
-  \draw[|->] (xcyc1) to node[above] {$\cdot \lambda$} (xyz);
-  \draw[|->] (xcyc1Bar) to node [above] {$\cdot\underline{\lambda}$} (xyzBar);
-  \draw[|->] (xcyc) to (xcyc1);
-  \draw[|->] (xcycBar) to (xcyc1Bar);
-
-  \draw[|->] (xyz) to node[right] {$M \cdot$} (xyzBar);
-  \draw[|->] (xcyc1) to node[right] {$\mu_{c'}=?$} (xcyc1Bar);
-  \draw[|->] (xcyc) to node[right] {$\mu_{c}=?$} (xcycBar);
-\end{tikzpicture}
-\end{image}
 
 \begin{problem}
   Using the diagram above, explain why the formula for
@@ -117,7 +99,7 @@ a mapping defined by a matrix, so we'll have to use some new notation.
 \end{problem}
 
 
-\section{From $K$-rigid motions to rigid motions in central projection}
+\subsection{Finding rigid motions in central projection}
 
 Now let's use our new tool to convert $K$-rigid motions to rigid motions in central projection. 
 

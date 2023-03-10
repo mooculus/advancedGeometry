@@ -45,13 +45,15 @@ where $0\le \sigma\le\pi$ and $0\le \tau<2\pi$.
       \draw [thin,->] (0,-2)--(0,2.2); 
       \node[above] at (0,2.2) {$z$};
 
-      
-      
-      %% sphere
-      \draw (1.75,0) arc (0:360:1.75);
+
+
       %%%% Equator
       \draw (-1.75,0) arc (180:360:1.75 and .5);
       \draw[thin,dashed,gray] (1.75,0) arc (0:180:1.75 and .5);
+      
+      %% sphere
+      \draw (1.75,0) arc (0:360:1.75);
+      
 
       
       
@@ -751,12 +753,15 @@ be switched---if this is the case, simply rename them). In this case,
 
       
       
-      %% sphere
-      \draw[thick] (1.75,0) arc (0:360:1.75);
+     
       %%%% Equator
       \draw[thick] (-1.75,0) arc (180:360:1.75 and .5);
       \draw[thin,dashed,gray] (1.75,0) arc (0:180:1.75 and .5);
 
+
+       %% sphere
+      \draw[thick] (1.75,0) arc (0:360:1.75);
+      
       %% triangle
       \draw[rotate around={90:(0,0)}] (1.75,0) arc (0:75:1.75 and .9);
       \draw (0,1.75) arc (90:35:1.75);
