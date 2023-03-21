@@ -470,7 +470,7 @@ For hyperbolic triangle
 
 
 
-
+Central Proj
 
 
 %% parameterize hyperbola
@@ -525,8 +525,59 @@ For hyperbolic triangle
 
 
 
+Stereographic
 
 
+%% parameterize hyperbola
+\begin{tikzpicture}[geometryDiagrams,scale=2.5]  
+      %% x-axis
+      \draw[thin,->] (-1.2,0)--(1.2,0); 
+      \node[right] at (1.2,0) {$x$};
+
+      %% y-axis
+      \draw[thin,->] (0,-1.2)--(0,2.2); 
+      \node[above] at (0,2.2) {$z$};
+
+      %% z=1
+      \draw (-1.2,1)--(1.2,1);
+      \node[right] at (1.2,1) {$z=1$};
+
+
+      
+      \draw[thin] (0,-1)--({sinh(1)},{cosh(1)});
+
+      
+      %% hyperbola
+      \draw[domain=-1.2:1.2,smooth] plot ({sinh(\x)},{cosh(\x)});
+      \draw[fill=black] ({sinh(1)},{cosh(1)}) circle (.03);
+      \node[above left] at ({sinh(1)},{cosh(1)}) {$(x,y,z)$};
+
+      \draw[fill=black] (.92,1) circle (.03);
+      \node[below left] at (.88,1) {$(x_s,y_s)$};
+\end{tikzpicture}  
+
+%% parameterize cicle
+\begin{tikzpicture}[geometryDiagrams,scale=2.5]  
+      %% x-axis
+      \draw[thin,->] (-1.2,0)--(1.2,0); 
+      \node[right] at (1.2,0) {$x$};
+
+      %% y-axis
+      \draw[thin,->] (0,-1.2)--(0,1.2); 
+      \node[above] at (0,1.2) {$z$};
+      %% z=1
+      \draw (-1.2,1)--(1.2,1);
+      \node[right] at (1.2,1) {$z=1$};
+      
+      \draw[domain=0:360,smooth] plot ({cos(\x)},{sin(\x)});
+      \draw[fill=black] ({cos(54.5)},{sin(54.5)}) circle (.03);
+      \node[right] at ({cos(55)+.1},{sin(55)}) {$(x,y,z)$};
+
+      \draw[fill=black] (.64,1) circle (.03);
+      \node[above left] at (.64,1) {$(x_s,y_s)$};
+
+       \draw[thin] (0,-1)--(.64,1);
+\end{tikzpicture}  
 
 
 
