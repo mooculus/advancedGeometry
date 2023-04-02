@@ -1,4 +1,4 @@
-\documentclass[newpage,hints,handout]{ximera}
+\documentclass[newpage,hints,12pt,noauthor,handout,nooutcomes]{ximera}
 
 \input{../preamble.tex}
 
@@ -10,7 +10,7 @@
 \end{abstract}
 \maketitle
 
-\section{Central projection preserves lines}
+\subsection{Central projection preserves lines}
 
 We all probably realize that you can't make a perfect flat map of our
 spherical world.  What this means is that either great circular arcs
@@ -111,7 +111,7 @@ represented.
   \end{freeResponse}
 \end{problem}
 
-\section{Angles in central projection coordinates}
+\subsection{Angles in central projection coordinates}
 
 While central projection coordinates ``preserve'' lines, meaning that
 shortest paths in euclidean geometry, spherical geometry, and
@@ -138,7 +138,7 @@ the angle is changed by a rigid motion.
 \end{problem}
 
 
-\section{Areas in central projection coordinates}
+\subsection{Areas in central projection coordinates}
 
 
 
@@ -148,9 +148,48 @@ way.
 
 \begin{problem}
   Let $K>0$ and consider the following region in central projection
- \begin{image}
-   \includegraphics[width=3in]{halfLune.png}
- \end{image}
+  \begin{center}
+    \begin{tikzpicture}[geometryDiagrams,scale=3]  
+
+  \begin{scope}
+    \clip (0,0) -- ({1.3*cos(50)},{1.3*sin(50)}) -- (1.3,0) --cycle;
+    \fill[fill=black!5!white] (0,0) rectangle (1.3,1.3);
+  \end{scope}
+  \draw[draw=none,fill=black!5!white] (1.3,0) arc (0:50:1.3);
+  
+  
+  \begin{scope}
+    \clip (0,0) -- ({1.15*cos(50)},{1.15*sin(50)}) -- (1.3,0) --cycle;
+    \fill[fill=black!7!white] (0,0) rectangle (1.15,1.15);
+  \end{scope}
+  \draw[draw=none,fill=black!7!white] (1.15,0) arc (0:50:1.15);
+
+  
+  \begin{scope}
+    \clip (0,0) -- ({cos(50)},{sin(50)}) -- (1,0) --cycle;
+    \fill[fill=black!10!white] (0,0) rectangle (1,1);
+  \end{scope}
+  \draw[draw=none,fill=black!10!white] (1,0) arc (0:50:1);
+
+
+  \draw (0,0)--({cos(50)},{sin(50)});
+  \draw (0,0)--(1,0);
+
+    \draw[dashed] ({cos(50)},{sin(50)}) --  ({1.3*cos(50)},{1.3*sin(50)});
+    \draw[dashed] (1,0)--(1.3,0);
+
+  \draw[domain=0:50,thick,smooth] plot ({.25*cos(\x)},{.25*sin(\x)});
+
+  \node at (.15,.07) {$\alpha$};
+
+    %% x-axis
+  \draw[thin,->] (-.5,0)--(1.5,0); 
+  \node[right] at (1.5,0) {$x_c$};
+  %% y-axis
+  \draw[thin,->] (0,-.5)--(0,1); 
+  \node[above] at (0,1) {$y_c$};
+\end{tikzpicture}  
+  \end{center}
  Use the fact that the area of an $\alpha$-lune is $2\alpha\cdot R^2$
  to compute the area of the region.
  \begin{freeResponse}
@@ -158,134 +197,53 @@ In central projection we are only considering the top half of the $R$-sphere in 
  \end{freeResponse}
 \end{problem}
 
-On the other hand, we know that the area in spherical geometry
-represented by the region in central projection is given by
-\[
-\iint_{L_c} \sqrt{
-  \det
-  \begin{bmatrix}
-    \pp[X]{x_c}\bullet_K \pp[X]{x_c} & \pp[X]{y_c}\bullet_K \pp[X]{x_c} \\
-    \pp[X]{x_c}\bullet_K \pp[X]{y_c} & \pp[X]{y_c}\bullet_K \pp[X]{y_c}
-  \end{bmatrix}
-}\d x_c\d y_c
-\]
 
-\begin{problem}
-  Give a heuristic explanation of why this integral computes what we
-  say it computes.
-  \begin{hint}
-    Think about a tiny square in $(x_c,y_c)$-coordinates.
-  \end{hint}
-\end{problem}
 
-You have already shown that
-\begin{multline*}
-  \iint_{L_c} \sqrt{
-    \det
+On the other hand, we know the area of the parallelogram spanned by two vectors in
+  $K$-warped space is%
+  \begin{align*}
+  \sqrt{\det
     \begin{bmatrix}
-      \pp[X]{x_c}\bullet_K \pp[X]{x_c} & \pp[X]{y_c}\bullet_K \pp[X]{x_c} \\
-      \pp[X]{x_c}\bullet_K \pp[X]{y_c} & \pp[X]{y_c}\bullet_K \pp[X]{y_c}
-    \end{bmatrix}
-  }\d x_c\d y_c \\
-  =\iint_{L_c} \sqrt{
-    \det\left(
+      \mathbf{v}\bullet_{K}\mathbf{v} & \mathbf{w}\bullet_{K}\mathbf{v}\\
+      \mathbf{v}\bullet_{K}\mathbf{w} & \mathbf{w}\bullet_{K}\mathbf{w}
+    \end{bmatrix}}
+  &=\sqrt{\det
+    \begin{bmatrix}
+      \mathbf{v}_c\bullet_{c}\mathbf{v}_c & \mathbf{w}_c\bullet_{c}\mathbf{v}_c\\
+      \mathbf{v}_c\bullet_{c}\mathbf{w}_c & \mathbf{w}_c\bullet_{c}\mathbf{w}_c
+    \end{bmatrix}}\\
+  &=
+  \sqrt{\det\left({\renewcommand*{\arraystretch}{1.4} 
       \begin{bmatrix}
-        \leftarrow & \pp[X]{x_c} & \rightarrow \\
-        \leftarrow & \pp[X]{y_c} & \rightarrow
+        \mathbf{v}_c^\transpose \\
+        \mathbf{w}_c^\transpose
+      \end{bmatrix}}
+      \cdot P_c\cdot 
+      \begin{bmatrix}
+        \mathbf{v} & \mathbf{w}%
       \end{bmatrix}
-      \begin{bmatrix}
-        1 & 0 & 0\\
-        0 & 1 & 0\\
-        0 & 0 & K^{-1}
-      \end{bmatrix}
-      \begin{bmatrix}
-        \uparrow & \uparrow \\
-        \pp[X]{x_c} & \pp[X]{y_c} \\
-        \downarrow & \downarrow
-      \end{bmatrix}\right)
-  }\d x_c\d y_c
-\end{multline*}
+    \right) }.
+  \end{align*}
+  In particular, if we want to know the area spanned by unit vectors
+  \[
+  \mathbf{v}_c = \begin{bmatrix}
+    1\\
+    0
+  \end{bmatrix}
+  \qquad\text{and}\qquad
+    \mathbf{w}_c = \begin{bmatrix}
+    0\\
+    1
+  \end{bmatrix}
+    \]
+    we find the area is exactly $\sqrt{\det P_c}$. This means that to
+    compute area of a region $L_c$ using integrals, but in central
+    projection, we use
+    \[
+    \iint_{L_c} \sqrt{\det P_c}\d x_c\d y_c.
+    \]
 
-\begin{problem}
-  Explain why
-  \[
-\begin{bmatrix}
-    \leftarrow & \pp[X]{x_c} & \rightarrow \\
-    \leftarrow & \pp[X]{y_c} & \rightarrow
-  \end{bmatrix}
-  \begin{bmatrix}
-    1 & 0 & 0\\
-    0 & 1 & 0\\
-    0 & 0 & K^{-1}
-  \end{bmatrix}
-  \begin{bmatrix}
-    \uparrow & \uparrow \\
-    \pp[X]{x_c} & \pp[X]{y_c} \\
-    \downarrow & \downarrow
-  \end{bmatrix} =P_c.
-  \]
-  \begin{hint}
-    No new computations need to be done, just look at how $P_c$ was derived.
-  \end{hint}
-  \begin{freeResponse}
-  In a previous section we derived $P_c$ by computing
-  \[
-  D_c \cdot 
-  \begin{bmatrix}
-    1 & 0 & 0\\
-    0 & 1 & 0\\
-    0 & 0 & K^{-1}
-  \end{bmatrix} \cdot D_c^\transpose.
-  \]
-  Since $D_c$ and $X\left(t\right)$ were defined as follows:
-  \[
-X(t) = 
-\begin{cases}
-  x(x_c(t),y_c(t)),\\
-  y(x_c(t),y_c(t)),\\
-  z(x_c(t),y_c(t)).
-\end{cases} \\
- D_c =
-  \begin{bmatrix}
-    \pp[x]{x_c} & \pp[y]{x_c} & \pp[z]{x_c} \\
-    \pp[x]{y_c}   & \pp[y]{y_c}   & \pp[z]{y_c}
-  \end{bmatrix}.
-\]
-Then, 
-\[
- \begin{bmatrix}
-    \pp[X]{x_c}\\
-    \pp[X]{y_c}
-  \end{bmatrix}
-  \begin{bmatrix}
-    1 & 0 & 0\\
-    0 & 1 & 0\\
-    0 & 0 & K^{-1}
-  \end{bmatrix}
-  \begin{bmatrix}
-    \left(\pp[X]{x_c}\right)^\transpose & \left(\pp[X]{y_c}\right)^\transpose
-  \end{bmatrix}
-  = D_c \cdot 
-  \begin{bmatrix}
-    1 & 0 & 0\\
-    0 & 1 & 0\\
-    0 & 0 & K^{-1}
-  \end{bmatrix} \cdot D_c^\transpose
-  = P_c
-\]
-  \end{freeResponse}
-\end{problem}
 
-Hence now we see 
-\[
-\iint_{L_c} \sqrt{
-  \det
-  \begin{bmatrix}
-    \pp[X]{x_c}\bullet_K \pp[X]{x_c} & \pp[X]{y_c}\bullet_K \pp[X]{x_c} \\
-    \pp[X]{x_c}\bullet_K \pp[X]{y_c} & \pp[X]{y_c}\bullet_K \pp[X]{y_c}
-  \end{bmatrix}
-}\d x_c\d y_c = \iint_{L_c} \sqrt{\det P_c}\d x_c\d y_c
-\]
 \begin{problem}
   Compute $\sqrt{\det P_c}$.
   \begin{hint}
@@ -323,9 +281,48 @@ At this point we see we are interested in the following integral
 
 \begin{problem}
   Examining the following diagram
-  \begin{image}
-    \includegraphics[width=3in]{halfLune.png}
-  \end{image}
+  \begin{center}
+    \begin{tikzpicture}[geometryDiagrams,scale=3]  
+
+  \begin{scope}
+    \clip (0,0) -- ({1.3*cos(50)},{1.3*sin(50)}) -- (1.3,0) --cycle;
+    \fill[fill=black!5!white] (0,0) rectangle (1.3,1.3);
+  \end{scope}
+  \draw[draw=none,fill=black!5!white] (1.3,0) arc (0:50:1.3);
+  
+  
+  \begin{scope}
+    \clip (0,0) -- ({1.15*cos(50)},{1.15*sin(50)}) -- (1.3,0) --cycle;
+    \fill[fill=black!7!white] (0,0) rectangle (1.15,1.15);
+  \end{scope}
+  \draw[draw=none,fill=black!7!white] (1.15,0) arc (0:50:1.15);
+
+  
+  \begin{scope}
+    \clip (0,0) -- ({cos(50)},{sin(50)}) -- (1,0) --cycle;
+    \fill[fill=black!10!white] (0,0) rectangle (1,1);
+  \end{scope}
+  \draw[draw=none,fill=black!10!white] (1,0) arc (0:50:1);
+
+
+  \draw (0,0)--({cos(50)},{sin(50)});
+  \draw (0,0)--(1,0);
+
+    \draw[dashed] ({cos(50)},{sin(50)}) --  ({1.3*cos(50)},{1.3*sin(50)});
+    \draw[dashed] (1,0)--(1.3,0);
+
+  \draw[domain=0:50,thick,smooth] plot ({.25*cos(\x)},{.25*sin(\x)});
+
+  \node at (.15,.07) {$\alpha$};
+
+    %% x-axis
+  \draw[thin,->] (-.5,0)--(1.5,0); 
+  \node[right] at (1.5,0) {$x_c$};
+  %% y-axis
+  \draw[thin,->] (0,-.5)--(0,1); 
+  \node[above] at (0,1) {$y_c$};
+\end{tikzpicture}  
+  \end{center}
   convert
   \[
   \iint_{L_c} (K(x_c^2+y_c^2)+1)^{-3/2} \d x_c\d y_c.
@@ -359,7 +356,7 @@ At this point we see we are interested in the following integral
 
 Hopefully you got the same area that you predicted in the previous problem!
 
-\section{Central projection unifies euclidean, spherical, and hyperbolic geometry}
+\subsection{Central projection unifies euclidean, spherical, and hyperbolic geometry}
 
 Under central projection, our new dot product defined by
 \[
