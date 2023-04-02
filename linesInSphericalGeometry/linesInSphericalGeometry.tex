@@ -124,12 +124,12 @@ $(\sigma,\tau)$-plane, we should state a map from this plane to
 $(x,y,z)$-space.
 \begin{center}
 \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement = \&]
-  (\sigma,\tau)\in \R^2 \ar[r,|->,"S_R"] \& (x, y , z) \in \R^3
+  (\sigma,\tau)\in \R^2 \ar[r,|->,"\toS"] \& (x, y , z) \in \R^3
 \end{tikzcd}
 \end{center}
 Explicitly we will write:
 \[
-S_R(\sigma,\tau) = 
+\toS(\sigma,\tau) = 
 \begin{bmatrix}
 x(\sigma,\tau)  \\
 y(\sigma,\tau)  \\
@@ -154,7 +154,7 @@ coordinates.
 
     \begin{center}
     \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement=\&]
-      t\in\R \ar[r,|->,"\gamma_\mathrm{sph}"] \ar[rd,|->,swap,"\gamma=S_R\circ \gamma_\mathrm{sph}"] \&  (\sigma(t),\tau(t))\in\R^2\ar[d,|->,"{S_R}"] \\
+      t\in\R \ar[r,|->,"\gamma_\mathrm{sph}"] \ar[rd,|->,swap,"\gamma=\toS\circ \gamma_\mathrm{sph}"] \&  (\sigma(t),\tau(t))\in\R^2\ar[d,|->,"{\toS}"] \\
       \& \gamma(t)=( x(t), y(t), z(t))\in\R^3 
     \end{tikzcd}
     \end{center}
@@ -516,7 +516,7 @@ and the plane containing $(0,0,0)$, $A$, and $B$.
     Points $A$ and $B$ will correspond to angles in
     $(\sigma,\tau)$-coordinates. Let
     \[
-    S_R(\sigma_A,\tau_A) = A\qquad\text{and}\qquad S_R(\sigma_B,\tau_B) = B.
+    \toS(\sigma_A,\tau_A) = A\qquad\text{and}\qquad \toS(\sigma_B,\tau_B) = B.
     \]
   \end{hint}
   \begin{hint}

@@ -1,4 +1,4 @@
-\documentclass[newpage,hints,handout]{ximera}
+\documentclass[hints,handout,12pt,noauthor,nooutcomes]{ximera}
 
 \input{../preamble.tex}
 
@@ -10,7 +10,7 @@ Here we start to develop another model for our geometry.
 \maketitle
 
 
-\section{Stereographic projection coordinates}
+\subsection{Stereographic projection coordinates}
 
 Now we will examine the second way to produce coordinates uniformly for
 spherical, plane, and hyperbolic geometry that will allow us to pass smoothly
@@ -140,51 +140,61 @@ along the edge of the plane $z=1$:
 \end{problem}
 
 
-\section{Stereographic projection dot product}
+\subsection{Stereographic projection dot product}
 
 Once more, we want to be able to find a dot product that will allow us
 to compute lengths in stereographic projection coordinates that will agree
-with the $K$-dot product, and hence the euclidean dot product.
+with the $K$-dot product, and hence the euclidean dot product. We will give a map
 
-\begin{problem}
-Suppose we have a curve $\gamma$ in $K$-warped space which we can decompose as
-\begin{image}
-  \begin{tikzpicture}
-    \node{
-\begin{tikzcd}[ampersand replacement=\&]
-  t \ar[r,mapsto,"\gamma_{s}"] \ar[rr,mapsto,bend right=20,swap,"\gamma"] \&  (x_s(t),y_s(t))\ar[r,mapsto,"{\left[\begin{smallmatrix}
-          x(x_s,y_s)\\
-          y(x_s,y_s)\\
-          z(x_s,y_s)
-        \end{smallmatrix}\right]}"
-  ] \& \gamma(t)=(x(t),y(t),z(t))
-\end{tikzcd}};
-  \end{tikzpicture}
-\end{image}
-Use the chain rule to compute
+\begin{center}
+\begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement = \&]
+  (x_s,y_s)\in \R^2 \ar[r,|->,"\toGs"] \& (x, y ,z) \in \R^3
+\end{tikzcd}
+\end{center}
+from this space to $K$-warped space. We may write
 \[
-\dd[x]{t}, \qquad \dd[y]{t}, \qquad \dd[z]{t},
+\toGs(x_s,y_s) = 
+\begin{bmatrix}
+x(x_s,y_s)  \\
+y(x_s,y_s)  \\
+z(x_s,y_s)  
+\end{bmatrix}
+=
+\begin{bmatrix}
+\rho  \cdot x_s  \\
+\rho \cdot y_s  \\
+2\rho -1
+\end{bmatrix}.
 \]
-in terms of $\dd[x_s]{t}$, $\dd[y_s]{t}$, $\pp[x]{x_s}$,
-$\pp[y]{x_s}$, $\pp[z]{x_s}$, $\pp[x]{y_s}$, $\pp[y]{y_s}$,
-and $\pp[z]{y_s}$.
-  \begin{hint}
-  Simply write down the answer from a previous problem with some minor changes.
-  \end{hint}
-  \begin{freeResponse}
-  Write
-  \begin{align*}
-    \dd[x]{t} &= \begin{bmatrix}\pp[x]{x_s} & \pp[x]{y_s}\end{bmatrix}\cdot\begin{bmatrix}\dd[x_s]{t} & \dd[y_s]{t}\end{bmatrix}^\transpose = \pp[x]{x_s}\cdot\dd[x_s]{t}+\pp[x]{y_s}\cdot\dd[y_s]{t},   \\
-    \dd[y]{t} &= \begin{bmatrix}\pp[y]{x_s} & \pp[y]{y_s}\end{bmatrix}\cdot\begin{bmatrix}\dd[x_s]{t} & \dd[y_s]{t}\end{bmatrix}^\transpose = \pp[y]{x_s}\cdot\dd[x_s]{t}+\pp[y]{y_s}\cdot\dd[y_s]{t},   \\
-    \dd[z]{t} &= \begin{bmatrix}\pp[z]{x_s} & \pp[z]{y_s}\end{bmatrix}\cdot\begin{bmatrix}\dd[x_s]{t} & \dd[y_s]{t}\end{bmatrix}^\transpose = \pp[z]{x_s}\cdot\dd[x_s]{t}+\pp[z]{y_s}\cdot\dd[y_s]{t}.  
-  \end{align*}
-\end{freeResponse}
-\end{problem}
 
 
 \begin{problem}
-  With the same setting as in the previous problem, rewrite the result
-  of your computation in matrix notation to find $D_s$ such that
+  Suppose we have a curve $\gamma$ in $K$-warped space which we can
+decompose as
+
+\begin{center}
+  \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement=\&]
+    t\in\R \ar[r,|->,"\gamma_\mathrm{s}"] \ar[rd,|->,swap,"\gamma=\toGs\circ \gamma_s"] \&  (x_s(t),y_s(t))\in\R^2\ar[d,|->,"{\toGs}"] \\
+    \& \gamma(t)=( x(t), y(t), z(t))\in\R^3 
+  \end{tikzcd}
+\end{center}
+
+\begin{enumerate}
+\item Show that:
+\[
+  \begin{split}
+    \pp[x]{x_s} &=\rho-\left(\frac{K}{2}\right)\rho^2x_s^2,\\
+    \pp[y]{x_s} &=-\left(\frac{K}{2}\right)\rho^2x_sy_s,\\
+    \pp[z]{x_s} &=-K\rho^2x_s,
+  \end{split}
+  \qquad
+  \begin{split}
+    \pp[x]{y_s} &= -\left(\frac{K}{2}\right)\rho^2x_sy_s,\\
+    \pp[y]{y_s} &=\rho-\left(\frac{K}{2}\right)\rho^2y_s^2,\\
+    \pp[z]{y_s} &= -K\rho^2y_s.
+  \end{split}
+  \]
+  \item Find $D_s$ such that
   \[
   \begin{bmatrix}
     dx/dt \\ dy/dt \\ dz/dt
@@ -194,26 +204,7 @@ and $\pp[z]{y_s}$.
     dx_s/dt \\ dy_s/dt
   \end{bmatrix}
   \]
-in terms of $\pp[x]{x_s}$, $\pp[y]{x_s}$, $\pp[z]{x_s}$,
-$\pp[x]{y_s}$, $\pp[y]{y_s}$, and $\pp[z]{y_s}$.
-\begin{hint}
-  Simply write down the answer from a previous problem with some minor changes.
-\end{hint}
-\begin{freeResponse}
-  \[
-  D_s =
-  \begin{bmatrix}
-    \pp[x]{x_s} & \pp[y]{x_s} & \pp[z]{x_s} \\
-    \pp[x]{y_s}   & \pp[y]{y_s}   & \pp[z]{y_s}
-  \end{bmatrix}.
-  \]
-\end{freeResponse}
-\end{problem}
-
-\begin{problem}
-  Now find $P_s$ in terms of $K$, $\pp[x]{x_s}$, $\pp[y]{x_s}$,
-  $\pp[z]{x_s}$, $\pp[x]{y_s}$, $\pp[y]{y_s}$, and $\pp[z]{y_s}$ such
-  that
+\item Find $P_s$ in terms of $\rho$ such that
   \[
   \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)\bullet_K
   \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)
@@ -227,59 +218,37 @@ $\pp[x]{y_s}$, $\pp[y]{y_s}$, and $\pp[z]{y_s}$.
     \dd[x_s]{t} \\  \dd[y_s]{t}
   \end{bmatrix}.
   \]
+\end{enumerate}
+
   \begin{hint}
-  Simply write down the answer from a previous problem with some minor
-  changes.
+  Work in the following way:
+  \begin{enumerate}
+  \item Recall $x = \rho\cdot x_s$.
+  \item Note that $\pp[x]{x_s} = \rho + x_s \cdot \pp[\rho]{x_s}$.
+  \item Express the partial derivative in terms of $\rho$, $K$, $x_s$,
+      and $y_s$.
+  \end{enumerate}
   \end{hint}
-  \begin{freeResponse}
-    For completeness sake, we will include a complete solution.
-    Working from the $K$-dot product, we need that
-    \begin{align*}
-    \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)\bullet_K
-    \left(\dd[x]{t}, \dd[y]{t}, \dd[z]{t}\right)
-    &=
-    \begin{bmatrix}
-      \dd[x]{t} & \dd[y]{t} & \dd[z]{t}
-    \end{bmatrix}
-    \begin{bmatrix}
-      1 & 0 & 0\\
-      0 & 1 & 0\\
-      0 & 0 & K^{-1}
-    \end{bmatrix}
-    \begin{bmatrix}
-      \dd[x]{t} \\ \dd[y]{t} \\ \dd[z]{t}
-    \end{bmatrix}\\
-    &=
-    \begin{bmatrix}
-      \frac{dx_s}{dt} & \frac{dy_s}{dt}
-    \end{bmatrix}\cdot D_{s}\cdot
-    \begin{bmatrix}
-      1 & 0 & 0\\
-      0 & 1 & 0\\
-    0 & 0 & K^{-1}
-    \end{bmatrix}
-    \cdot
-    \left(
-    \begin{bmatrix}
-      \frac{dx_s}{dt} & \frac{dy_s}{dt}
-    \end{bmatrix}\cdot D_{s}
-    \right)^\transpose\\
-    &=
-    \begin{bmatrix}
-      \frac{dx_s}{dt} & \frac{dy_s}{dt}
-    \end{bmatrix}\cdot D_{s}\cdot
-    \begin{bmatrix}
-      1 & 0 & 0\\
-      0 & 1 & 0\\
-    0 & 0 & K^{-1}
-    \end{bmatrix}
-    \cdot
-    D_{s}^\transpose
-    \cdot \begin{bmatrix}
-      \frac{dx_s}{dt} \\ \frac{dy_s}{dt}
-    \end{bmatrix}.
-  \end{align*}
-    Hence
+
+
+  \begin{hint}
+  When simplifying, combine the terms with the highest degree of $\rho$
+  and note that
+  \[
+  \rho^{-1} = \frac{K\left(x_s^2 + y_s^2\right)+4}{4}.
+  \]
+\end{hint}
+
+
+\begin{freeResponse}
+  \[
+  D_s =
+  \begin{bmatrix}
+    \pp[x]{x_s} & \pp[y]{x_s} & \pp[z]{x_s} \\
+    \pp[x]{y_s}   & \pp[y]{y_s}   & \pp[z]{y_s}
+  \end{bmatrix}.
+  \]
+  Hence
     \begin{align*}
       P_s &=
       \begin{bmatrix}
@@ -302,93 +271,8 @@ $\pp[x]{y_s}$, $\pp[y]{y_s}$, and $\pp[z]{y_s}$.
         \pp[x]{x_s}\pp[x]{y_s} + \pp[y]{x_s}\pp[y]{y_s} + \pp[z]{x_s}\pp[z]{y_s} K^{-1}       & \left(\pp[x]{y_s}\right)^2 + \left(\pp[y]{y_s}\right)^2 + \left(\pp[z]{y_s}\right)^2K^{-1}
       \end{bmatrix}.
     \end{align*}
-  \end{freeResponse}
-\end{problem}
 
 
-Before we actually compute $P_s$, it will help to compute the partial
-derivatives.
-
-
-\begin{problem}
-  Set
-  \begin{align*}
-    x(x_s,y_s) &=\rho\cdot x_s,\\
-    y(x_s,y_s) &=\rho\cdot y_s,\\
-    z(x_s,y_s) &=2\rho-1,
-  \end{align*}
-  and show that
-  \[
-  \begin{split}
-    \pp[x]{x_s} &=\rho-\left(\frac{K}{2}\right)\rho^2x_s^2,\\
-    \pp[y]{x_s} &=-\left(\frac{K}{2}\right)\rho^2x_sy_s,\\
-    \pp[z]{x_s} &=-K\rho^2x_s,
-  \end{split}
-  \qquad
-  \begin{split}
-    \pp[x]{y_s} &= -\left(\frac{K}{2}\right)\rho^2x_sy_s,\\
-    \pp[y]{y_s} &=\rho-\left(\frac{K}{2}\right)\rho^2y_s^2,\\
-    \pp[z]{y_s} &= -K\rho^2y_s.
-  \end{split}
-  \]
-  \begin{hint}
-  Work in the following way:
-  \begin{enumerate}
-  \item Recall $x = \rho\cdot x_s$.
-  \item Note that $\pp[x]{x_s} = \rho + x_s \cdot \pp[\rho]{x_s}$.
-  \item Express the partial derivative in terms of $\rho$, $K$, $x_s$,
-      and $y_s$.
-  \end{enumerate}
-  \end{hint}
-  \begin{freeResponse}
-    Write
-    \begin{align*}
-      \pp[x]{x_s} &= \rho + x_s\cdot \pp[\rho]{x_s}\\
-      &= \rho + x_s\cdot \pp{x_s}\left(\frac{4}{K\left(x_s^2 + y_s^2\right) + 4}\right)\\
-      &= \rho - x_s\cdot \left(\frac{4}{\left(K\left(x_s^2 + y_s^2\right) + 4\right)^{2}}\right)\cdot2Kx_s \\
-      &=\rho-\left(\frac{K}{2}\right)\rho^2x_s^2.
-    \end{align*}
-    Similarly,
-      \begin{align*}
-      \pp[y]{x_s} &= y_s\cdot \pp[\rho]{x_s}\\
-      &= y_s\cdot \pp{x_s}\left(\frac{4}{K\left(x_s^2 + y_s^2\right) + 4}\right)\\
-      &= - y_s\cdot \left(\frac{4}{\left(K\left(x_s^2 + y_s^2\right) + 4\right)^{2}}\right)\cdot2Kx_s \\
-      &= -\left(\frac{K}{2}\right)\rho^2x_sy_s.
-      \end{align*}
-      Finally,
-      \begin{align*}
-      \pp[z]{x_s} &= 2\cdot\pp[\rho]{x_s}\\
-      &= 2\cdot\cdot \pp{x_s}\left(\frac{4}{K\left(x_s^2 + y_s^2\right) + 4}\right)\\
-      &= - 2\cdot \left(\frac{4}{\left(K\left(x_s^2 + y_s^2\right) + 4\right)^{2}}\right)\cdot2Kx_s \\
-      &= -\frac{K}\rho^2x_s.
-      \end{align*}
-      Now with entirely similar computations, we see
-      \begin{align*}
-        \pp[x]{y_s} &= -\left(\frac{K}{2}\right)\rho^2x_sy_s,\\
-        \pp[y]{y_s} &=\rho-\left(\frac{K}{2}\right)\rho^2y_s^2,\\
-        \pp[z]{y_s} &= -K\rho^2y_s.       
-      \end{align*}
-  \end{freeResponse}
-\end{problem}
-
-
-\begin{problem}
-With the same setting as above, show that $P_s$ is
-  \[
-  P_s =
-  \begin{bmatrix}
-    \rho^2 & 0\\
-    0 & \rho^2
-  \end{bmatrix}.
-  \]
-  \begin{hint}
-  When simplifying, combine the terms with the highest degree of $\rho$
-  and note that
-  \[
-  \rho^{-1} = \frac{K\left(x_s^2 + y_s^2\right)+4}{4}.
-  \]
-\end{hint}
-\begin{freeResponse}
   Write $\left(\pp[x]{x_s}\right)^2 + \left(\pp[y]{x_s}\right)^2 +\left(\pp[z]{x_s}\right)^2K^{-1}$
   \begin{align*}
     &=\left(\rho-\left(\frac{K}{2}\right)\rho^2x_s^2\right)^2 + \left(-\left(\frac{K}{2}\right)\rho^2x_sy_s\right)^2 +\left(-K\rho^2x_s\right)^2K^{-1}\\
@@ -420,8 +304,13 @@ With the same setting as above, show that $P_s$ is
       0 & \rho^2
     \end{bmatrix}.
     \]
+
+
 \end{freeResponse}
+
 \end{problem}
+
+
 
 \begin{definition}
   Let $\mathbf{v}_s$ and $\mathbf{w}_s$ be vectors in $(x_s,y_s)$-coordinates
@@ -447,12 +336,12 @@ With the same setting as above, show that $P_s$ is
 
 
 
-\section{Again, when the finite is infinite and the infinite is finite}
+\subsection{Again, when the finite is infinite and the infinite is finite}
 
 Just like central projection, stereographic projection allows us to
 think about both ``finite'' areas and ``infinite'' areas in new ways.
 
-\paragraph{When $K$ is positive, the finite is infinite}
+\paragraph{When $\boldsymbol K$ is positive, the finite is infinite}
 
 When $K>0$, we are working with a sphere. As we know, a sphere has
 finite surface area.
@@ -501,7 +390,7 @@ finite surface area.
 
 
 
-\paragraph{When $K$ is negative, the infinite is finite}
+\paragraph{When $\boldsymbol K$ is negative, the infinite is finite}
 
 
 Recall that, if $K<0$, the equation of $K$-geometry becomes

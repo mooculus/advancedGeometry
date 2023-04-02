@@ -278,14 +278,15 @@ Like we have done before, now we want to be able to find a dot product
 that will allow us to compute lengths in central projection
 coordinates that will agree with the $K$-dot product, and hence the
 euclidean dot product.  We will give a map
+
 \begin{center}
 \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement = \&]
-  (x_c,y_c)\in \R^2 \ar[r,|->,"K_c"] \& (x, y ,z) \in \R^3
+  (x_c,y_c)\in \R^2 \ar[r,|->,"\toGc"] \& (x, y ,z) \in \R^3
 \end{tikzcd}
 \end{center}
 from this space to $K$-warped space. We may write
 \[
-K_c(x_c,y_c) = 
+\toGc(x_c,y_c) = 
 \begin{bmatrix}
 x(x_c,y_c)  \\
 y(x_c,y_c)  \\
@@ -293,8 +294,8 @@ z(x_c,y_c)
 \end{bmatrix}
 =
 \begin{bmatrix}
-\lambda x_c  \\
-\lambda y_c  \\
+\lambda \cdot x_c  \\
+\lambda \cdot y_c  \\
 \lambda  
 \end{bmatrix}
 \]
@@ -312,7 +313,7 @@ where $\lambda =  \frac{1}{\sqrt{K\left(x_c^2 + y_c^2\right)+1}}$.
   decompose as
   \begin{center}
     \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement=\&]
-      t\in\R \ar[r,|->,"\gamma_\mathrm{c}"] \ar[rd,|->,swap,"\gamma=K_c\circ \gamma_\mathrm{c}"] \&  (x_c(t),y_c(t))\in\R^2\ar[d,|->,"{K_c}"] \\
+      t\in\R \ar[r,|->,"\gamma_\mathrm{c}"] \ar[rd,|->,swap,"\gamma=\toGc\circ \gamma_c"] \&  (x_c(t),y_c(t))\in\R^2\ar[d,|->,"{\toGc}"] \\
       \& \gamma(t)=( x(t), y(t), z(t))\in\R^3 
     \end{tikzcd}
     \end{center}

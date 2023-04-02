@@ -38,13 +38,13 @@ We will consider a different copy of $\R^3$ with coordinates
 $(x,y,z)$. We will give a map
 \begin{center}
 \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement = \&]
-  (x,y,z)\in \R^3 \ar[r,|->,"E"] \& (\hat x, \hat y , \hat z) \in \R^3
+  (x,y,z)\in \R^3 \ar[r,|->,"\mathcal{E}"] \& (\hat x, \hat y , \hat z) \in \R^3
 \end{tikzcd}
 \end{center}
 from this space to euclidean 3-space, $\R^3$ with coordinates $(\hat
 x,\hat y,\hat z)$. We may write
 \[
-E(x,y,z) = 
+\mathcal{E}(x,y,z) = 
 \begin{bmatrix}
 \hat{x}  \\
 \hat{y}  \\
@@ -70,11 +70,11 @@ derivatives are transformed under this coordinate change.
 
 \begin{problem}
   Suppose we have a curve $\gamma:\R\to\R^3$ in
-  $(x,y,z)$-coordinates. Setting $\hat \gamma = E\circ\gamma$ we have
+  $(x,y,z)$-coordinates. Setting $\hat \gamma = \mathcal{E}\circ\gamma$ we have
   a curve in euclidean coordinates. 
   \begin{center}
     \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement=\&]
-      t\in\R \ar[r,|->,"\gamma"] \ar[rd,|->,swap,"\hat\gamma=E\circ \gamma"] \&  (x(t),y(t),z(t))\in\R^3\ar[d,|->,"{E}"] \\
+      t\in\R \ar[r,|->,"\gamma"] \ar[rd,|->,swap,"\hat\gamma=\mathcal{E}\circ \gamma"] \&  (x(t),y(t),z(t))\in\R^3\ar[d,|->,"{\mathcal{E}}"] \\
       \& \hat\gamma(t)=(\hat x(t),\hat y(t),\hat z(t))\in\R^3 
     \end{tikzcd}
   \end{center}
@@ -168,9 +168,9 @@ D =
 Now we will get explicit. Consider another copy of $\mathbb{R}^{3}$,
 that we will call \dfn{$\boldsymbol{K}$-warped space}, whose
 coordinates we denote as $( x,y,z) $.  We make the
-following rule $E_R:\R^3\to\R^3$ to pass between the two systems.
+following rule $\toE:\R^3\to\R^3$ to pass between the two systems.
 \[
-E_R(x,y,z) = 
+\toE(x,y,z) = 
 \begin{bmatrix}
 \hat{x}  \\
 \hat{y}  \\
@@ -285,11 +285,11 @@ but we want lengths and angles to be the usual euclidean ones in $(
 
 \begin{problem}
   Suppose we have a curve $\gamma:\R\to\R^3$ in
-  $(x,y,z)$-coordinates. Setting $\hat \gamma = E_R\circ\gamma$ we have
+  $(x,y,z)$-coordinates. Setting $\hat \gamma = \toE\circ\gamma$ we have
   a curve in euclidean coordinates. 
   \begin{center}
     \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement=\&]
-      t\in\R \ar[r,|->,"\gamma"] \ar[rd,|->,swap,"\hat\gamma=E\circ \gamma"] \&  (x(t),y(t),z(t))\in\R^3\ar[d,|->,"{E_R}"] \\
+      t\in\R \ar[r,|->,"\gamma"] \ar[rd,|->,swap,"\hat\gamma=\toE\circ \gamma"] \&  (x(t),y(t),z(t))\in\R^3\ar[d,|->,"{\toE}"] \\
       \& \hat\gamma(t)=(\hat x(t),\hat y(t),\hat z(t))\in\R^3 
     \end{tikzcd}
   \end{center}

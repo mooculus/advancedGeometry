@@ -192,12 +192,12 @@ $(\sigma,\tau)$-coordinates so that we can compute the lengths of
 paths in these coordinates. Our map from the $(\sigma,\tau)$ plane to $K$-warped space will be
 \begin{center}
 \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement = \&]
-  (\sigma,\tau)\in \R^2 \ar[r,|->,"H_K"] \& (x, y , z) \in \R^3
+  (\sigma,\tau)\in \R^2 \ar[r,|->,"\toH"] \& (x, y , z) \in \R^3
 \end{tikzcd}
 \end{center}
 where
 \[
-H_K(\sigma,\tau) = 
+\toH(\sigma,\tau) = 
 \begin{bmatrix}
 x(\sigma,\tau)  \\
 y(\sigma,\tau)  \\
@@ -218,7 +218,7 @@ z(\sigma,\tau)
   Suppose we have a curve $\gamma$ in $K$-warped space which we can decompose as
     \begin{center}
     \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement=\&]
-      t\in\R \ar[r,|->,"\gamma_\mathrm{hyp}"] \ar[rd,|->,swap,"\gamma=H_K\circ \gamma_\mathrm{hyp}"] \&  (\sigma(t),\tau(t))\in\R^2\ar[d,|->,"{H_K}"] \\
+      t\in\R \ar[r,|->,"\gamma_\mathrm{hyp}"] \ar[rd,|->,swap,"\gamma=\toH\circ \gamma_\mathrm{hyp}"] \&  (\sigma(t),\tau(t))\in\R^2\ar[d,|->,"{\toH}"] \\
       \& \gamma(t)=( x(t), y(t), z(t))\in\R^3 
     \end{tikzcd}
     \end{center}
@@ -552,7 +552,7 @@ and the plane containing $(0,0,0)$, $A$, and $B$.
     Points $A$ and $B$ will correspond to ``angles'' in
     $(\sigma,\tau)$-coordinates. Let
     \[
-    H_K(\sigma_A,\tau_A) = A\qquad\text{and}\qquad H_K(\sigma_B,\tau_B) = B.
+    \toH(\sigma_A,\tau_A) = A\qquad\text{and}\qquad \toH(\sigma_B,\tau_B) = B.
     \]
   \end{hint}
   \begin{hint}
