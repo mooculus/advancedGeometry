@@ -1,4 +1,4 @@
-\documentclass[newpage,hints,handout]{ximera}
+\documentclass[newpage,hints,handout,12pt,noauthor,nooutcomes]{ximera}
 
 \input{../preamble.tex}
 
@@ -115,10 +115,36 @@ When we project shortest paths, they map to circles (unless $c=0$ as above).
 When $K<0$, the circles meet the ``circle at infinity'' at right angles.
 \textbf{We won't make you prove this, but try to convince yourself that it's true!}
 
+\begin{center}
+\begin{tikzpicture}[geometryDiagrams,scale=2]
+  %% x_s-axis
+  \draw [thin,->] (-1.2,0)--(1.2,0); 
+  \node[right] at (1.2,0) {$x_s$};
+  
+  %% y_s-axis
+  \draw [thin,->] (0,-1.2)--(0,1.2); 
+  \node[above] at (0,1.2) {$y_s$};
 
-\begin{image}
-\includegraphics[width=3in]{stereoLines.png}
-\end{image}
+
+  \tkzDefPoint(0,0){O}
+  \tkzDefPoint(1,0){A}
+  \tkzDrawCircle[ultra thick](O,A)
+
+  \tkzDefPoint(0.2,-0.5){z1}
+  \tkzDefPoint(-0.3,-0.25){z2}
+  \tkzDefPoint(0.3,0.3){z3}
+  \tkzDefPoint(-0.3,0.3){z4}
+  \tkzDefPoint(.7,-.3){z5}
+  
+  \tkzClipCircle(O,A)
+  \tkzDrawCircle[orthogonal through=z1 and z2](O,A)
+  \tkzDrawCircle[orthogonal through=z3 and z4](O,A)
+  \tkzDrawCircle[orthogonal through=z3 and z5](O,A)
+  \tkzDrawPoints[color=black,fill=black,size=3](z3)
+  
+  %\tkzLabelPoints(z1,x2)
+\end{tikzpicture}
+\end{center}
 
 \begin{problem}
   If $K<0$ explain why Euclid's fifth axiom:
@@ -251,94 +277,85 @@ will prove this fact with ease!
 \subsection{Areas in stereographic projection coordinates}
 
 Let's use the power of stereographic coordinates to compute the areas
-of spherical, hyperbolic, and euclidean circles.
-
-We know that the area of a region in stereographic coordinates is given by 
-\[
-\iint_{C_s} \sqrt{
-  \det
-  \begin{bmatrix}
-    \pp[X]{x_s}\bullet_K \pp[X]{x_s} & \pp[X]{y_s}\bullet_K \pp[X]{x_s} \\
-    \pp[X]{x_s}\bullet_K \pp[X]{y_s} & \pp[X]{y_s}\bullet_K \pp[X]{y_s}
-  \end{bmatrix}
-}\d x_s\d y_s
-\]
-
-\begin{problem}
-  Give a heuristic explanation of why this integral computes what we
-  say it computes.
-\end{problem}
-
-You have already shown that
-\begin{multline*}
-  \iint_{C_s} \sqrt{
-    \det
+of spherical, hyperbolic, and euclidean circles. Working as we did
+before, we know the area of the parallelogram spanned by two vectors
+in $K$-warped space is%
+  \begin{align*}
+  \sqrt{\det
     \begin{bmatrix}
-      \pp[X]{x_s}\bullet_K \pp[X]{x_s} & \pp[X]{y_s}\bullet_K \pp[X]{x_s} \\
-      \pp[X]{x_s}\bullet_K \pp[X]{y_s} & \pp[X]{y_s}\bullet_K \pp[X]{y_s}
-    \end{bmatrix}
-  }\d x_s\d y_s \\
-  =\iint_{C_s} \sqrt{
-    \det\left(
+      \mathbf{v}\bullet_{K}\mathbf{v} & \mathbf{w}\bullet_{K}\mathbf{v}\\
+      \mathbf{v}\bullet_{K}\mathbf{w} & \mathbf{w}\bullet_{K}\mathbf{w}
+    \end{bmatrix}}
+  &=\sqrt{\det
+    \begin{bmatrix}
+      \mathbf{v}_s\bullet_{s}\mathbf{v}_s & \mathbf{w}_s\bullet_{s}\mathbf{v}_s\\
+      \mathbf{v}_s\bullet_{s}\mathbf{w}_s & \mathbf{w}_s\bullet_{s}\mathbf{w}_s
+    \end{bmatrix}}\\
+  &=
+  \sqrt{\det\left({\renewcommand*{\arraystretch}{1.4} 
       \begin{bmatrix}
-        \leftarrow & \pp[X]{x_s} & \rightarrow \\
-        \leftarrow & \pp[X]{y_s} & \rightarrow
+        \mathbf{v}_s^\transpose \\
+        \mathbf{w}_s^\transpose
+      \end{bmatrix}}
+      \cdot P_s\cdot 
+      \begin{bmatrix}
+        \mathbf{v}_s & \mathbf{w}_s%
       \end{bmatrix}
-      \begin{bmatrix}
-        1 & 0 & 0\\
-        0 & 1 & 0\\
-        0 & 0 & K^{-1}
-      \end{bmatrix}
-      \begin{bmatrix}
-        \uparrow & \uparrow \\
-        \pp[X]{x_s} & \pp[X]{y_s} \\
-        \downarrow & \downarrow
-      \end{bmatrix}\right)
-}\d x_s\d y_s.
-\end{multline*}
-
-\begin{problem}
-  Explain why
+    \right) }.
+  \end{align*}
+  In particular, if we want to know the area spanned by unit vectors
   \[
-  \begin{bmatrix}
-    \leftarrow & \pp[X]{x_s} & \rightarrow \\
-    \leftarrow & \pp[X]{y_s} & \rightarrow
+  \mathbf{v}_s = \begin{bmatrix}
+    1\\
+    0
   \end{bmatrix}
-  \begin{bmatrix}
-    1 & 0 & 0\\
-    0 & 1 & 0\\
-    0 & 0 & K^{-1}
+  \qquad\text{and}\qquad
+    \mathbf{w}_s = \begin{bmatrix}
+    0\\
+    1
   \end{bmatrix}
-  \begin{bmatrix}
-    \uparrow & \uparrow \\
-    \pp[X]{x_s} & \pp[X]{y_s} \\
-    \downarrow & \downarrow
-  \end{bmatrix} =P_s.
-  \]
-  \begin{hint}
-    No new computations need to be done, just look at how $P_s$ was derived.
-  \end{hint}
-\end{problem}
-
-Hence now we see 
-\[
-\iint_{C_s} \sqrt{
-  \det
-  \begin{bmatrix}
-    \pp[X]{x_s}\bullet_K \pp[X]{x_s} & \pp[X]{y_s}\bullet_K \pp[X]{x_s} \\
-    \pp[X]{x_s}\bullet_K \pp[X]{y_s} & \pp[X]{y_s}\bullet_K \pp[X]{y_s}
-  \end{bmatrix}
-}\d x_s\d y_s = \iint_{C_s} \sqrt{\det P_s}\d x_s\d y_s.
-\]
-
+    \]
+    we find the area is exactly $\sqrt{\det P_s}$. This means that to
+    compute area of a region $C_s$ using integrals, but in stereographic
+    projection, we use
+    \[
+    \iint_{C_s} \sqrt{\det P_s}\d x_s\d y_s.
+    \]
 \begin{problem}
   Compute $\sqrt{\det P_s}$ in terms of $K$, $x_s$, and $y_s$.
 \end{problem}
 
 For the next few problems, consider the following diagram:
-\begin{image}
-  \includegraphics[width=3in]{stereoCirc.png}
-\end{image}
+%% \begin{image}
+%%   \includegraphics[width=3in]{stereoCirc.png}
+%% \end{image}
+\begin{center}
+\begin{tikzpicture}[geometryDiagrams,scale=2]
+    \tkzDefPoint(0,0){O}
+    \tkzDefPoint(.5,0){A}
+    \tkzDrawCircle[ultra thick,fill=black!10!white](O,A)
+
+  %% x_s-axis
+  \draw [thin,->] (-1.2,0)--(1.2,0); 
+  \node[right] at (1.2,0) {$x_s$};
+  
+  %% y_s-axis
+  \draw [thin,->] (0,-1.2)--(0,1.2); 
+  \node[above] at (0,1.2) {$y_s$};
+
+  \draw [
+    thin,
+    decoration={
+        brace,
+        mirror,
+        raise=0.1cm
+    },
+    decorate
+] (.03,0) -- (.47,0) node [pos=0.5,anchor=north,yshift=-0.1cm] {$a$}; 
+\end{tikzpicture}
+\end{center}
+
+
 \begin{problem}
   Compute the area of $C_s$ in $K$-geometry by taking the integral
   \[\iint_{C_s} \sqrt{\det P_s}dx_sdy_s.\]

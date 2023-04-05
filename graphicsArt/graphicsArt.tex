@@ -624,7 +624,61 @@ Stereographic
 \end{tikzpicture}  
 
 
+For poincare disk:
 
+\begin{tikzpicture}[geometryDiagrams,scale=3]
+  %% x_s-axis
+  \draw [thin,->] (-1.2,0)--(1.2,0); 
+  \node[right] at (1.2,0) {$x_s$};
+  
+  %% y_s-axis
+  \draw [thin,->] (0,-1.2)--(0,1.2); 
+  \node[above] at (0,1.2) {$y_s$};
+
+
+  \tkzDefPoint(0,0){O}
+  \tkzDefPoint(1,0){A}
+  \tkzDrawCircle[ultra thick](O,A)
+
+  \tkzDefPoint(0.2,-0.5){z1}
+  \tkzDefPoint(-0.3,-0.25){z2}
+  \tkzDefPoint(0.3,0.3){z3}
+  \tkzDefPoint(-0.3,0.3){z4}
+  \tkzDefPoint(.7,-.3){z5}
+  
+  \tkzClipCircle(O,A)
+  \tkzDrawCircle[orthogonal through=z1 and z2](O,A)
+  \tkzDrawCircle[orthogonal through=z3 and z4](O,A)
+  \tkzDrawCircle[orthogonal through=z3 and z5](O,A)
+  \tkzDrawPoints[color=black,fill=black,size=5](z3)
+  
+  %\tkzLabelPoints(z1,x2)
+\end{tikzpicture}
+
+
+\begin{tikzpicture}[geometryDiagrams,scale=3]
+    \tkzDefPoint(0,0){O}
+    \tkzDefPoint(.5,0){A}
+    \tkzDrawCircle[ultra thick,fill=black!10!white](O,A)
+
+  %% x_s-axis
+  \draw [thin,->] (-1.2,0)--(1.2,0); 
+  \node[right] at (1.2,0) {$x_s$};
+  
+  %% y_s-axis
+  \draw [thin,->] (0,-1.2)--(0,1.2); 
+  \node[above] at (0,1.2) {$y_s$};
+
+  \draw [
+    thin,
+    decoration={
+        brace,
+        mirror,
+        raise=0.1cm
+    },
+    decorate
+] (.03,0) -- (.47,0) node [pos=0.5,anchor=north,yshift=-0.1cm] {$a$}; 
+\end{tikzpicture}
 
 
 
