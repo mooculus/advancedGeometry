@@ -14,8 +14,35 @@ Here we look at lines, angles, and areas in stereographic projection coordinates
 
 As we know, we cannot make perfect flat maps of 3D surfaces. In stereographic
 projection, shortest paths are sent to either lines or circles, and (perhaps
-surprisingly!) circles are sent to circles.
+surprisingly!) circles are sent to circles. Recall that 
 
+\begin{center}
+\begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement = \&]
+  (x_s,y_s)\in \R^2 \ar[r,|->,"\toGs"] \& (x, y ,z) \in \R^3
+\end{tikzcd}
+\end{center}
+from this space to $K$-warped space. We may set $\rho=\frac{4}{K(x_s^2 + y_s^2) + 4}$ and write
+\[
+\toGs(x_s,y_s) = 
+\begin{bmatrix}
+x(x_s,y_s)  \\
+y(x_s,y_s)  \\
+z(x_s,y_s)  
+\end{bmatrix}
+=
+\begin{bmatrix}
+\rho  \cdot x_s  \\
+\rho \cdot y_s  \\
+2\rho -1
+\end{bmatrix}
+=
+\renewcommand{\arraystretch}{2.5} % Default value: 1
+\begin{bmatrix}
+ \frac{4x_s}{K(x_s^2 + y_s^2) + 4}  \\
+ \frac{4y_s}{K(x_s^2 + y_s^2) + 4} \\
+\frac{4-K(x_s^2 + y_s^2)}{4+K(x_s^2 + y_s^2)}
+\end{bmatrix}.
+\]
 
 
 \begin{problem}
@@ -34,16 +61,6 @@ surprisingly!) circles are sent to circles.
   ax+by+cz = 0
   \]
   produces a $K$-geometry line.
-\item Use the projection formulas
-  \begin{align*}
-      x &= \frac{4x_s}{K(x_s^2 + y_s^2) + 4},\\
-      y &= \frac{4y_s}{K(x_s^2 + y_s^2) + 4},\\
-      z &= \frac{4-K(x_s^2 + y_s^2)}{4+K(x_s^2 + y_s^2)},
-  \end{align*}
-  and note that the points generated this way automatically satisfy the condition
-  \[
-  1 = K(x^2+y^2) + z^2.
-  \]
 \item If $c=0$, then you will find the line
   \[
    ax_s + by_s = 0.
@@ -321,6 +338,7 @@ in $K$-warped space is%
     \[
     \iint_{C_s} \sqrt{\det P_s}\d x_s\d y_s.
     \]
+    
 \begin{problem}
   Compute $\sqrt{\det P_s}$ in terms of $K$, $x_s$, and $y_s$.
 \end{problem}
@@ -358,7 +376,7 @@ For the next few problems, consider the following diagram:
 
 \begin{problem}
   Compute the area of $C_s$ in $K$-geometry by taking the integral
-  \[\iint_{C_s} \sqrt{\det P_s}dx_sdy_s.\]
+  \[\iint_{C_s} \sqrt{\det P_s}\, dx_sdy_s.\]
   \begin{hint}
     In the previous problem, you should have obtained
     \[\sqrt{\det P_s}=\frac{16}{(K(x_s^2+y_s^2)+4)^2}.\]
@@ -387,29 +405,64 @@ For the next few problems, consider the following diagram:
     \end{align*}
   \end{freeResponse}
 \end{problem}
-\begin{problem}
-  Explain why the radius of $C_s$ in $K$-geometry is given by
-  \[r=\int_0^a \sqrt{\left(\frac{dx_s}{dt},\frac{dy_s}{dt}\right)
-    \bullet_s \left(\frac{dx_s}{dt},\frac{dy_s}{dt}\right)}dt\]
-  where
-  \[(x_s(t),y_s(t))=(t,0).\]
-\end{problem}
+
+
+
 
 \begin{problem}
-  When $K>0$, find $a$ in terms of the radius $r$ from the previous problem.
-  \begin{hint}
-    There are two ways of going about this:
-    \begin{itemize}
-    \item Compute the integral from the previous problem, using the fact that
-      \[\frac{d}{dx}\arctan(Ax)=\frac{A}{1+(Ax)^2}.\]
-      Then solve for $a$.
-    \item \textbf{Or,} consider the following diagram in Euclidean geometry and
-      use facts about circles and triangles:
-      \begin{image}
-        \includegraphics[width=3in]{stereoSphere.png}
-      \end{image}
-    \end{itemize}
-  \end{hint}
+  When $K>0$, find $a$ in terms of the radius $r$ from the previous problem using two different methods:
+  \begin{enumerate}
+  \item By computing the integral
+    \[
+    r=\int_0^a \sqrt{\left(\frac{dx_s}{dt},\frac{dy_s}{dt}\right)
+      \bullet_s \left(\frac{dx_s}{dt},\frac{dy_s}{dt}\right)} \, dt
+    \]
+    where $(x_s(t),y_s(t))=(t,0)$.
+  
+  \item By considering the following diagram in Euclidean geometry
+      and use facts about circles and triangles:
+      \begin{center}
+        \begin{tikzpicture}[geometryDiagrams,scale=2.5]  
+      %% x-axis
+      \draw[thin,->] (-1.2,0)--(1.2,0); 
+      \node[right] at (1.2,0) {$\hat x$};
+
+      %% y-axis
+      \draw[thin,->] (0,-1.2)--(0,1.2); 
+      \node[above] at (0,1.2) {$\hat z$};
+      %% z=1
+      \draw[thick] (-1.5,1)--(1.5,1);
+      \node[left] at (-1.5,1) {$\hat z=R$};
+
+
+      \draw (0,1) -- (1,1);
+      
+      
+      \draw[domain=0:360,smooth,thick] plot ({cos(\x)},{sin(\x)});
+      \draw[fill=black] ({cos(37)},{sin(37)}) circle (.03);
+      
+      \node[right] at ({cos(37)},{sin(37)}) {$(\hat x,\hat y,\hat z)$};
+      \draw[fill=black] (0,1) circle (.03);
+
+      \draw[fill=black] (1,1) circle (.03);
+      
+      \node[below] at ({sin(22)},{cos(22)}) {$r$};
+      
+      \draw [ thin, decoration={ brace, raise=0.1cm }, decorate ]
+      (.04,1) -- (.96,1) node [pos=0.5,anchor=south,yshift=0.1cm]
+            {$a$};
+            
+      \draw[domain=0:53,smooth,ultra thick] plot ({sin(\x)},{cos(\x)});
+      
+      \draw[thin] (0,-1)--(1,1);
+
+      \draw[thin] (0,0)-- ({cos(37)},{sin(37)}) ;
+
+      \draw[thin] (0,-.8) arc (90:63:.2);
+      \draw[thin] (0,.2) arc (90:36:.2);
+\end{tikzpicture}  
+      \end{center}
+  \end{enumerate}
 \end{problem}
 
 \begin{problem}

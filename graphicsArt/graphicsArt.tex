@@ -696,29 +696,35 @@ For poincare disk:
       \draw[thin,->] (0,-1.2)--(0,1.2); 
       \node[above] at (0,1.2) {$\hat z$};
       %% z=1
-      \draw (-1.2,1)--(1.2,1);
-      \node[left] at (-1.2,1) {$\hat z=R$};
+      \draw[thick] (-1.5,1)--(1.5,1);
+      \node[left] at (-1.5,1) {$\hat z=R$};
+
+
+      \draw (0,1) -- (1,1);
       
-      \draw[domain=0:360,smooth] plot ({cos(\x)},{sin(\x)});
-      \draw[fill=black] ({cos(54.5)},{sin(54.5)}) circle (.03);
-      \node[right] at ({cos(55)+.1},{sin(55)}) {$(\hat x,\hat y,\hat z)$};
+      
+      \draw[domain=0:360,smooth,thick] plot ({cos(\x)},{sin(\x)});
+      \draw[fill=black] ({cos(37)},{sin(37)}) circle (.03);
+      
+      \node[right] at ({cos(37)},{sin(37)}) {$(\hat x,\hat y,\hat z)$};
       \draw[fill=black] (0,1) circle (.03);
 
-      \draw[fill=black] (.64,1) circle (.03);
-      %\node[above left] at (.64,1) {$(x_s,y_s)$};
-
+      \draw[fill=black] (1,1) circle (.03);
       
-      \draw [
-        thin,
-    decoration={
-      brace,
-      raise=0.1cm
-    },
-    decorate
-      ] (.04,1) -- (.6,1) node [pos=0.5,anchor=south,yshift=0.1cm] {$a$}; 
-
+      \node[below] at ({sin(22)},{cos(22)}) {$r$};
       
-      \draw[thin] (0,-1)--(.64,1);
+      \draw [ thin, decoration={ brace, raise=0.1cm }, decorate ]
+      (.04,1) -- (.96,1) node [pos=0.5,anchor=south,yshift=0.1cm]
+            {$a$};
+            
+      \draw[domain=0:53,smooth,ultra thick] plot ({sin(\x)},{cos(\x)});
+      
+      \draw[thin] (0,-1)--(1,1);
+
+      \draw[thin] (0,0)-- ({cos(37)},{sin(37)}) ;
+
+      \draw[thin] (0,-.8) arc (90:63:.2);
+      \draw[thin] (0,.2) arc (90:36:.2);
 \end{tikzpicture}  
 
 
