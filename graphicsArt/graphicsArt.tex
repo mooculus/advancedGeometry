@@ -777,13 +777,13 @@ Ideal Triangle
 
   
   \tkzClipCircle(O,A)
-  \tkzDrawCircle[ultra thick,orthogonal through=A and z1](O,A)
-  \tkzDrawCircle[ultra thick,orthogonal through=A and z2](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=A and z1](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=A and z2](O,A)
   \tkzDrawCircle[orthogonal through=z1 and z2](O,A)
   \draw (O) -- (z1);
   \draw (O) -- (z2);
   \draw (O) -- (A);
-  
+  \tkzDrawCircle[thick](O,A)
   %\tkzDrawPoints[color=black,fill=black,size=5](z1)
   %\tkzDrawPoints[color=black,fill=black,size=5](z2)
 \end{tikzpicture}
@@ -803,15 +803,24 @@ Ideal Triangle
 
   \tkzDefPoint(.5,.87){z1}
   \tkzDefPoint(.5,-.87){z2}
-    
+
+
+  \begin{scope}
+    \clip (O) -- (z1) -- (A) -- (z2) -- cycle;
+    \draw[fill = black!10!white, draw=none] (0,-1) rectangle (1,1);
+  \end{scope}
+
+
+  
   \tkzClipCircle(O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=z1 and z2](O,A)
   \tkzDrawCircle[thick,orthogonal through=A and z1](O,A)
   \tkzDrawCircle[thick,orthogonal through=A and z2](O,A)
-  \tkzDrawCircle[ultra thick,orthogonal through=z1 and z2](O,A)
   \draw (O) -- (z1);
   \draw (O) -- (z2);
   \draw[thick] (O) -- (A);
-  
+
+  \tkzDrawCircle[thick](O,A)
   %\tkzDrawPoints[color=black,fill=black,size=5](z1)
   %\tkzDrawPoints[color=black,fill=black,size=5](z2)
 \end{tikzpicture}
@@ -831,19 +840,25 @@ Ideal Triangle
 
   \tkzDefPoint(.5,.87){z1}
   \tkzDefPoint(.5,-.87){z2}
-    
+
+
+   % \begin{scope}
+   % \clip (O) -- (z1) -- (A) -- (z2) -- cycle;
+   % \draw[fill = black!10!white, draw=none] (0,-1) rectangle (1,1);
+  %\end{scope}
+  
   \tkzClipCircle(O,A)
-  \tkzDrawCircle[ultra thick,orthogonal through=A and z1](O,A)
-  \tkzDrawCircle[ultra thick,orthogonal through=A and z2](O,A)
-  \tkzDrawCircle[ultra thick,orthogonal through=z1 and z2](O,A)
+  \tkzDrawCircle[fill=black!10!white,ultra thick,orthogonal through=z1 and z2](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=A and z1](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=A and z2](O,A)
+
   \draw[thick] (O) -- (z1);
   \draw[thick] (O) -- (z2);
   \draw[thick] (O) -- (A);
-  
+  \tkzDrawCircle[thick](O,A)
   %\tkzDrawPoints[color=black,fill=black,size=5](z1)
   %\tkzDrawPoints[color=black,fill=black,size=5](z2)
 \end{tikzpicture}
-
 \end{center}
 
 
@@ -862,20 +877,17 @@ Ideal Triangle
 
 Poincare triangle
 \begin{center}
-
 \begin{tikzpicture}[geometryDiagrams,scale=1.7]
-  %% x_s-axis
+   %% x_s-axis
   \draw [thin,->] (-1.2,0)--(1.2,0); 
   \node[right] at (1.2,0) {$x_s$};
   
   %% y_s-axis
   \draw [thin,->] (0,-1.2)--(0,1.2); 
   \node[above] at (0,1.2) {$y_s$};
-
-
   \tkzDefPoint(0,0){O}
   \tkzDefPoint(1,0){A}
-  \tkzDrawCircle[thick](O,A)
+  \tkzDrawCircle[fill=black!10!white,thick](O,A)
 
   \tkzDefPoint(.3,.96){z1}
   \tkzDefPoint(-.3,.96){z2}
@@ -887,19 +899,26 @@ Poincare triangle
   \tkzDefPoint(.98,-.22){z6}
     
   \tkzClipCircle(O,A)
-  \tkzDrawCircle[ultra thick,orthogonal through=z1 and z2](O,A)
-  \tkzDrawCircle[ultra thick,orthogonal through=z2 and z3](O,A)
-  \tkzDrawCircle[ultra thick,orthogonal through=z3 and z4](O,A)
-  \tkzDrawCircle[ultra thick,orthogonal through=z4 and z5](O,A)
-  \tkzDrawCircle[ultra thick,orthogonal through=z5 and z6](O,A)
-  \tkzDrawCircle[ultra thick,orthogonal through=z6 and z1](O,A)
   \tkzDrawCircle[thick,orthogonal through=z1 and z3](O,A)
   \tkzDrawCircle[thick,orthogonal through=z3 and z5](O,A)
   \tkzDrawCircle[thick,orthogonal through=z5 and z1](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=z1 and z2](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=z2 and z3](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=z3 and z4](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=z4 and z5](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=z5 and z6](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=z6 and z1](O,A)
+  
   
 
+  \tkzDrawCircle[thick](O,A)
+  %% x_s-axis
+  \draw [thin,->] (-1.2,0)--(1.2,0); 
+  \node[right] at (1.2,0) {$x_s$};
   
-%  \tkzDrawPoints[color=black,fill=black,size=5](z1,z2,z3,z4,z5,z6)
+  %% y_s-axis
+  \draw [thin,->] (0,-1.2)--(0,1.2); 
+  \node[above] at (0,1.2) {$y_s$};
 \end{tikzpicture}
 \begin{tikzpicture}[geometryDiagrams,scale=1.7]
   %% x_s-axis
@@ -928,10 +947,19 @@ Poincare triangle
   \tkzDefPoint(0,-.3){o1}
   
   \tkzClipCircle(O,A)
-  \tkzDrawCircle[ultra thick,orthogonal through=z1 and z2](O,A)
+  \draw[fill=black!10!white,draw=none] (0,.15) -- (z5) -- (z4) -- cycle;
+  \draw[fill=black!10!white,draw=none] (0,.2) -- (.1,.05) -- (-.1,.05) -- cycle;
+
+  \draw[fill=black!10!white,draw=none] (0,.2) -- (z1) -- (z2) -- cycle;
+  %\draw[fill=black!10!white,draw=none] (0,.2) -- (.1,.05) -- (-.1,.05) -- cycle;
+
+
+
+
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=z1 and z2](O,A)
   \tkzDrawCircle[thick,orthogonal through=z2 and z3](O,A)
   \tkzDrawCircle[thick,orthogonal through=z3 and z4](O,A)
-  \tkzDrawCircle[ultra thick,orthogonal through=z4 and z5](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=z4 and z5](O,A)
   \tkzDrawCircle[thick,orthogonal through=z5 and z6](O,A)
   \tkzDrawCircle[thick,orthogonal through=z6 and z1](O,A)
   
@@ -939,17 +967,24 @@ Poincare triangle
   \tkzDrawCircle[ultra thick,orthogonal through=z2 and z5](O,A)
   \tkzDrawCircle[thick,orthogonal through=z3 and z6](O,A)
 
-\end{tikzpicture}
-\begin{tikzpicture}[geometryDiagrams,scale=1.7]
-  %% x_s-axis
+  
+  
+   %% x_s-axis
   \draw [thin,->] (-1.2,0)--(1.2,0); 
   \node[right] at (1.2,0) {$x_s$};
   
   %% y_s-axis
   \draw [thin,->] (0,-1.2)--(0,1.2); 
   \node[above] at (0,1.2) {$y_s$};
-
-
+\end{tikzpicture}
+\begin{tikzpicture}[geometryDiagrams,scale=1.7]
+   %% x_s-axis
+  \draw [thin,->] (-1.2,0)--(1.2,0); 
+  \node[right] at (1.2,0) {$x_s$};
+  
+  %% y_s-axis
+  \draw [thin,->] (0,-1.2)--(0,1.2); 
+  \node[above] at (0,1.2) {$y_s$};
   \tkzDefPoint(.3,.96){z1}
   \tkzDefPoint(-.3,.96){z2}
 
@@ -964,6 +999,9 @@ Poincare triangle
   \tkzDefPoint(1,0){A}
   \tkzDrawCircle[thick](O,A)
 
+
+  
+  \draw[fill=black!10!white,draw=none] (0,.2) -- (.2,-.1) -- (-.2,-.1) -- cycle;
     
   \tkzClipCircle(O,A)
   \tkzDrawCircle[thick,orthogonal through=z1 and z2](O,A)
@@ -976,9 +1014,13 @@ Poincare triangle
   \tkzDrawCircle[ultra thick,orthogonal through=z1 and z4](O,A)
   \tkzDrawCircle[ultra thick,orthogonal through=z2 and z5](O,A)
   \tkzDrawCircle[ultra thick,orthogonal through=z3 and z6](O,A)
+  %% x_s-axis
+  \draw [thin,->] (-1.2,0)--(1.2,0); 
+  \node[right] at (1.2,0) {$x_s$};
   
-  %\tkzDrawPoints[color=black,fill=black,size=5](z1)
-  %\tkzDrawPoints[color=black,fill=black,size=5](z2)
+  %% y_s-axis
+  \draw [thin,->] (0,-1.2)--(0,1.2); 
+  \node[above] at (0,1.2) {$y_s$};
 \end{tikzpicture}
 
 \end{center}

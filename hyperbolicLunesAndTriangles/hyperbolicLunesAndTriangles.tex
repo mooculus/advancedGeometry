@@ -1,4 +1,4 @@
-\documentclass[newpage,hints,12pt,nooutcomes,noauthor]{ximera}
+\documentclass[newpage,hints,12pt,nooutcomes,noauthor,handout]{ximera}
 
 \input{../preamble.tex}
 
@@ -16,6 +16,7 @@ $\alpha$, $\beta$, and $\gamma$ is given by
 \[
 R^2(\alpha+\beta+\gamma - \pi).
 \]
+
 \begin{problem}
   Briefly sketch the line of reasoning used to deduce the formula for
   the area of a triangle on the $R$-sphere.
@@ -180,9 +181,118 @@ angles are preserved in the Poincar\'e disk.
 
 \begin{problem}
   Use the diagrams below
-  \begin{image}
-  \includegraphics[width=4in]{diagramOfIdealTri.png}
-  \end{image}
+  %% \begin{image}
+  %% \includegraphics[width=4in]{diagramOfIdealTri.png}
+  %% \end{image}
+  \begin{center}
+\begin{tikzpicture}[geometryDiagrams,scale=1.7]
+  %% x_s-axis
+  \draw [thin,->] (-1.2,0)--(1.2,0); 
+  \node[right] at (1.2,0) {$x_s$};
+  
+  %% y_s-axis
+  \draw [thin,->] (0,-1.2)--(0,1.2); 
+  \node[above] at (0,1.2) {$y_s$};
+
+
+  \tkzDefPoint(0,0){O}
+  \tkzDefPoint(1,0){A}
+  \tkzDrawCircle[thick](O,A)
+
+  \tkzDefPoint(.5,.87){z1}
+  \tkzDefPoint(.5,-.87){z2}
+
+  \begin{scope}
+    \clip (O) -- (z1) -- (A) -- (z2) -- cycle;
+    \draw[fill = black!10!white, draw=none] (0,-1) rectangle (1,1);
+  \end{scope}
+
+  
+  \tkzClipCircle(O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=A and z1](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=A and z2](O,A)
+  \tkzDrawCircle[orthogonal through=z1 and z2](O,A)
+  \draw (O) -- (z1);
+  \draw (O) -- (z2);
+  \draw (O) -- (A);
+  \tkzDrawCircle[thick](O,A)
+  %\tkzDrawPoints[color=black,fill=black,size=5](z1)
+  %\tkzDrawPoints[color=black,fill=black,size=5](z2)
+\end{tikzpicture}
+\begin{tikzpicture}[geometryDiagrams,scale=1.7]
+  %% x_s-axis
+  \draw [thin,->] (-1.2,0)--(1.2,0); 
+  \node[right] at (1.2,0) {$x_s$};
+  
+  %% y_s-axis
+  \draw [thin,->] (0,-1.2)--(0,1.2); 
+  \node[above] at (0,1.2) {$y_s$};
+
+
+  \tkzDefPoint(0,0){O}
+  \tkzDefPoint(1,0){A}
+  \tkzDrawCircle[thick](O,A)
+
+  \tkzDefPoint(.5,.87){z1}
+  \tkzDefPoint(.5,-.87){z2}
+
+
+  \begin{scope}
+    \clip (O) -- (z1) -- (A) -- (z2) -- cycle;
+    \draw[fill = black!10!white, draw=none] (0,-1) rectangle (1,1);
+  \end{scope}
+
+
+  
+  \tkzClipCircle(O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=z1 and z2](O,A)
+  \tkzDrawCircle[thick,orthogonal through=A and z1](O,A)
+  \tkzDrawCircle[thick,orthogonal through=A and z2](O,A)
+  \draw (O) -- (z1);
+  \draw (O) -- (z2);
+  \draw[thick] (O) -- (A);
+
+  \tkzDrawCircle[thick](O,A)
+  %\tkzDrawPoints[color=black,fill=black,size=5](z1)
+  %\tkzDrawPoints[color=black,fill=black,size=5](z2)
+\end{tikzpicture}
+\begin{tikzpicture}[geometryDiagrams,scale=1.7]
+  %% x_s-axis
+  \draw [thin,->] (-1.2,0)--(1.2,0); 
+  \node[right] at (1.2,0) {$x_s$};
+  
+  %% y_s-axis
+  \draw [thin,->] (0,-1.2)--(0,1.2); 
+  \node[above] at (0,1.2) {$y_s$};
+
+
+  \tkzDefPoint(0,0){O}
+  \tkzDefPoint(1,0){A}
+  \tkzDrawCircle[thick](O,A)
+
+  \tkzDefPoint(.5,.87){z1}
+  \tkzDefPoint(.5,-.87){z2}
+
+
+   % \begin{scope}
+   % \clip (O) -- (z1) -- (A) -- (z2) -- cycle;
+   % \draw[fill = black!10!white, draw=none] (0,-1) rectangle (1,1);
+  %\end{scope}
+  
+  \tkzClipCircle(O,A)
+  \tkzDrawCircle[fill=black!10!white,ultra thick,orthogonal through=z1 and z2](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=A and z1](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=A and z2](O,A)
+
+  \draw[thick] (O) -- (z1);
+  \draw[thick] (O) -- (z2);
+  \draw[thick] (O) -- (A);
+  \tkzDrawCircle[thick](O,A)
+  %\tkzDrawPoints[color=black,fill=black,size=5](z1)
+  %\tkzDrawPoints[color=black,fill=black,size=5](z2)
+\end{tikzpicture}
+\end{center}
+
   to help compute the area of an ideal triangle in hyperbolic geometry.
   \begin{hint}
     Above we see a comic-strip of Poincar\'e disks.
@@ -199,17 +309,167 @@ angles are preserved in the Poincar\'e disk.
   geometry with its vertices at infinity.
 \end{definition}
 
-\begin{problem}
-Use induction to derive a formula for the area of any ideal $n$-gon in
-hyperbolic geometry.
-\end{problem}
+%% \begin{problem}
+%% Use induction to derive a formula for the area of any ideal $n$-gon in
+%% hyperbolic geometry.
+%% \end{problem}
 
 \begin{problem}
   Use the diagrams below
-  \begin{image}
-  \includegraphics[width=4in]{diagramHex.png}
-  \end{image}
+  %% \begin{image}
+  %% \includegraphics[width=4in]{diagramHex.png}
+  %% \end{image}
+  \begin{center}
+\begin{tikzpicture}[geometryDiagrams,scale=1.7]
+   %% x_s-axis
+  \draw [thin,->] (-1.2,0)--(1.2,0); 
+  \node[right] at (1.2,0) {$x_s$};
+  
+  %% y_s-axis
+  \draw [thin,->] (0,-1.2)--(0,1.2); 
+  \node[above] at (0,1.2) {$y_s$};
+  \tkzDefPoint(0,0){O}
+  \tkzDefPoint(1,0){A}
+  \tkzDrawCircle[fill=black!10!white,thick](O,A)
+
+  \tkzDefPoint(.3,.96){z1}
+  \tkzDefPoint(-.3,.96){z2}
+
+  \tkzDefPoint(-.98,-.22){z3}
+  \tkzDefPoint(-.68,-.74){z4}
+
+  \tkzDefPoint(.68,-.74){z5}
+  \tkzDefPoint(.98,-.22){z6}
+    
+  \tkzClipCircle(O,A)
+  \tkzDrawCircle[thick,orthogonal through=z1 and z3](O,A)
+  \tkzDrawCircle[thick,orthogonal through=z3 and z5](O,A)
+  \tkzDrawCircle[thick,orthogonal through=z5 and z1](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=z1 and z2](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=z2 and z3](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=z3 and z4](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=z4 and z5](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=z5 and z6](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=z6 and z1](O,A)
+  
+  
+
+  \tkzDrawCircle[thick](O,A)
+  %% x_s-axis
+  \draw [thin,->] (-1.2,0)--(1.2,0); 
+  \node[right] at (1.2,0) {$x_s$};
+  
+  %% y_s-axis
+  \draw [thin,->] (0,-1.2)--(0,1.2); 
+  \node[above] at (0,1.2) {$y_s$};
+\end{tikzpicture}
+\begin{tikzpicture}[geometryDiagrams,scale=1.7]
+  %% x_s-axis
+  \draw [thin,->] (-1.2,0)--(1.2,0); 
+  \node[right] at (1.2,0) {$x_s$};
+  
+  %% y_s-axis
+  \draw [thin,->] (0,-1.2)--(0,1.2); 
+  \node[above] at (0,1.2) {$y_s$};
+
+
+  \tkzDefPoint(0,0){O}
+  \tkzDefPoint(1,0){A}
+  \tkzDrawCircle[thick](O,A)
+  
+  \tkzDefPoint(.3,.96){z1}
+  \tkzDefPoint(-.3,.96){z2}
+
+  \tkzDefPoint(-.98,-.22){z3}
+  \tkzDefPoint(-.68,-.74){z4}
+
+  \tkzDefPoint(.68,-.74){z5}
+  \tkzDefPoint(.98,-.22){z6}
+
+
+  \tkzDefPoint(0,-.3){o1}
+  
+  \tkzClipCircle(O,A)
+  \draw[fill=black!10!white,draw=none] (0,.15) -- (z5) -- (z4) -- cycle;
+  \draw[fill=black!10!white,draw=none] (0,.2) -- (.1,.05) -- (-.1,.05) -- cycle;
+
+  \draw[fill=black!10!white,draw=none] (0,.2) -- (z1) -- (z2) -- cycle;
+  %\draw[fill=black!10!white,draw=none] (0,.2) -- (.1,.05) -- (-.1,.05) -- cycle;
+
+
+
+
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=z1 and z2](O,A)
+  \tkzDrawCircle[thick,orthogonal through=z2 and z3](O,A)
+  \tkzDrawCircle[thick,orthogonal through=z3 and z4](O,A)
+  \tkzDrawCircle[fill=white,ultra thick,orthogonal through=z4 and z5](O,A)
+  \tkzDrawCircle[thick,orthogonal through=z5 and z6](O,A)
+  \tkzDrawCircle[thick,orthogonal through=z6 and z1](O,A)
+  
+  \tkzDrawCircle[ultra thick,orthogonal through=z1 and z4](O,A)
+  \tkzDrawCircle[ultra thick,orthogonal through=z2 and z5](O,A)
+  \tkzDrawCircle[thick,orthogonal through=z3 and z6](O,A)
+
+  
+  
+   %% x_s-axis
+  \draw [thin,->] (-1.2,0)--(1.2,0); 
+  \node[right] at (1.2,0) {$x_s$};
+  
+  %% y_s-axis
+  \draw [thin,->] (0,-1.2)--(0,1.2); 
+  \node[above] at (0,1.2) {$y_s$};
+\end{tikzpicture}
+\begin{tikzpicture}[geometryDiagrams,scale=1.7]
+   %% x_s-axis
+  \draw [thin,->] (-1.2,0)--(1.2,0); 
+  \node[right] at (1.2,0) {$x_s$};
+  
+  %% y_s-axis
+  \draw [thin,->] (0,-1.2)--(0,1.2); 
+  \node[above] at (0,1.2) {$y_s$};
+  \tkzDefPoint(.3,.96){z1}
+  \tkzDefPoint(-.3,.96){z2}
+
+  \tkzDefPoint(-.98,-.22){z3}
+  \tkzDefPoint(-.68,-.74){z4}
+
+  \tkzDefPoint(.68,-.74){z5}
+  \tkzDefPoint(.98,-.22){z6}
+  
+
+  \tkzDefPoint(0,0){O}
+  \tkzDefPoint(1,0){A}
+  \tkzDrawCircle[thick](O,A)
+
+
+  
+  \draw[fill=black!10!white,draw=none] (0,.2) -- (.2,-.1) -- (-.2,-.1) -- cycle;
+    
+  \tkzClipCircle(O,A)
+  \tkzDrawCircle[thick,orthogonal through=z1 and z2](O,A)
+  \tkzDrawCircle[thick,orthogonal through=z2 and z3](O,A)
+  \tkzDrawCircle[thick,orthogonal through=z3 and z4](O,A)
+  \tkzDrawCircle[thick,orthogonal through=z4 and z5](O,A)
+  \tkzDrawCircle[thick,orthogonal through=z5 and z6](O,A)
+  \tkzDrawCircle[thick,orthogonal through=z6 and z1](O,A)
+  
+  \tkzDrawCircle[ultra thick,orthogonal through=z1 and z4](O,A)
+  \tkzDrawCircle[ultra thick,orthogonal through=z2 and z5](O,A)
+  \tkzDrawCircle[ultra thick,orthogonal through=z3 and z6](O,A)
+  %% x_s-axis
+  \draw [thin,->] (-1.2,0)--(1.2,0); 
+  \node[right] at (1.2,0) {$x_s$};
+  
+  %% y_s-axis
+  \draw [thin,->] (0,-1.2)--(0,1.2); 
+  \node[above] at (0,1.2) {$y_s$};
+\end{tikzpicture}
+\end{center}
   to help compute the area of a triangle in hyperbolic geometry.
+  \begin{hint}
+    What's the area of the ideal hexagon?
+  \end{hint}
   \begin{hint}
     Make your own drawings inspired by those above.
   \end{hint}
