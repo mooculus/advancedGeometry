@@ -1,4 +1,4 @@
-\documentclass[newpage,hints,handout]{ximera}
+\documentclass[newpage,hints,12pt,nooutcomes,noauthor]{ximera}
 
 \input{../preamble.tex}
 
@@ -24,13 +24,48 @@ R^2(\alpha+\beta+\gamma - \pi).
 We will use similar reasoning to deduce the formula for the area of a triangle
 with angles $\alpha$, $\beta$, and $\gamma$ in hyperbolic geometry.
 
-\section{Hyperbolic lunes}
+\subsection{Hyperbolic lunes}
 
 Consider the following diagram on the Klein disk, that is the central projection
 of hyperbolic geometry:
-\begin{image}
-  \includegraphics[width=3in]{diagramOfHyperbolicLune.png}
-\end{image}
+%% \begin{image}
+%%   \includegraphics[width=3in]{diagramOfHyperbolicLune.png}
+%% \end{image}
+\begin{center}
+\begin{tikzpicture}[geometryDiagrams,scale=3]
+    \tkzDefPoint(0,0){O}
+    \tkzDefPoint(1,0){A}
+    %\tkzDrawCircle[ultra thick,fill=black!10!white](O,A)
+    \tkzDrawCircle(O,A)
+    \draw[ultra thick, fill = black!10!white] (0,0)--({cos(30)},{sin(30)})--({cos(-30)},{sin(-30)})--cycle;
+    
+  %% x_s-axis
+  \draw [thin,->] (-1.2,0)--(1.2,0); 
+  \node[right] at (1.2,0) {$x_c$};
+  
+  %% y_s-axis
+  \draw [thin,->] (0,-1.2)--(0,1.2); 
+  \node[above] at (0,1.2) {$y_c$};
+
+  
+  
+  \draw [
+    thin,
+    decoration={
+        brace,
+        raise=0.1cm
+    },
+    decorate
+  ] (-.03,0) -- (-.97,0) node [pos=0.5,anchor=north,yshift=-0.1cm] {$|K|^{-1/2}$};
+
+
+  \draw[thick] (.3,0) arc (0:30:.3);
+  \draw[thick] (.3,0) arc (0:-30:.3);
+  \node at (.2,.05) {$\alpha$};
+\end{tikzpicture}
+\end{center}
+
+
 
 Notice that in both the Klein model and the Poincar\'e model, every line hits
 ``the circle at infinity'' at two specific points.  This means we can talk about
@@ -42,18 +77,11 @@ shapes with ``vertices at infinity''.
   are at infinity.
 \end{definition}
 
-We have seen that
-\begin{align*}
-  \iint_{L_c} \sqrt{
-  \det
-  \begin{bmatrix}
-    \pp[X]{x_c}\bullet_K \pp[X]{x_c} & \pp[X]{y_c}\bullet_K \pp[X]{x_c} \\
-    \pp[X]{x_c}\bullet_K \pp[X]{y_c} & \pp[X]{y_c}\bullet_K \pp[X]{y_c}
-  \end{bmatrix}
-  }\d x_c\d y_c &=
-  \iint_{L_c} \sqrt{\det P_c}\d x_c\d y_c\\
-  &=\iint_{L_c} \left(K\left(x_c^2+y_c^2\right)+1\right)^{-3/2} \d x_c\d y_c.
-\end{align*}
+We have seen that to compute areas in central projection, we use
+\[
+  \iint_{L_c} \sqrt{\det P_c}\d x_c\d y_c
+  =\iint_{L_c} \left(K\left(x_c^2+y_c^2\right)+1\right)^{-3/2} \d x_c\d y_c.
+\]
 
 
 In what follows, we will assume that $K=-1$. This will simplify the
@@ -137,12 +165,13 @@ case, the general case when $K<0$ will fall easily.
 \end{problem}
 
 
-\section{Hyperbolic triangles}
+\subsection{Hyperbolic triangles}
 
 Again assuming $K=-1$, we will use our knowledge that the hyperbolic
 $\alpha$-lune has area $\pi-\alpha$ to compute the area of an
-\textit{ideal triangle} in hyperbolic geometry. Note, now we are working under
-stereographic projection in the Poincar\'e disk (because it's more fun to draw.)
+\textit{ideal triangle} in hyperbolic geometry. Note, now we are
+working under stereographic projection in the Poincar\'e disk, because
+angles are preserved in the Poincar\'e disk.
 
 \begin{definition}
   An \dfn{ideal triangle} is a triangle in hyperbolic geometry with all of

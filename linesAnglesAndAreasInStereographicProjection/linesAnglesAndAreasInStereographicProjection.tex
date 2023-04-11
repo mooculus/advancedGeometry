@@ -1,4 +1,4 @@
-\documentclass[newpage,hints,12pt,noauthor,nooutcomes]{ximera}
+\documentclass[newpage,handout,hints,12pt,noauthor,nooutcomes]{ximera}
 
 \input{../preamble.tex}
 
@@ -412,13 +412,6 @@ For the next few problems, consider the following diagram:
 \begin{problem}
   When $K>0$, find $a$ in terms of the radius $r$ from the previous problem using two different methods:
   \begin{enumerate}
-  \item By computing the integral
-    \[
-    r=\int_0^a \sqrt{\left(\frac{dx_s}{dt},\frac{dy_s}{dt}\right)
-      \bullet_s \left(\frac{dx_s}{dt},\frac{dy_s}{dt}\right)} \, dt
-    \]
-    where $(x_s(t),y_s(t))=(t,0)$.
-  
   \item By considering the following diagram in Euclidean geometry
       and use facts about circles and triangles:
       \begin{center}
@@ -462,7 +455,15 @@ For the next few problems, consider the following diagram:
       \draw[thin] (0,.2) arc (90:36:.2);
 \end{tikzpicture}  
       \end{center}
+    \item By computing the integral
+    \[
+    r=\int_0^a \sqrt{\left(\frac{dx_s}{dt},\frac{dy_s}{dt}\right)
+      \bullet_s \left(\frac{dx_s}{dt},\frac{dy_s}{dt}\right)} \, dt
+    \]
+    and solving for $a$ where $(x_s(t),y_s(t))=(t,0)$.
   \end{enumerate}
+  \begin{freeResponse}
+  \end{freeResponse}
 \end{problem}
 
 \begin{problem}
@@ -471,37 +472,22 @@ For the next few problems, consider the following diagram:
 \end{problem}
 
 \begin{problem}
-  What happens as $r$ approaches $\pi R=\pi K^{-1/2}$?
-
-  When $r$ gets very small, what happens to $\frac{\text{area}}{r^2}$?
-
-  Explain how these computations square with our understanding of spheres.
+  Let's think about this a little more.
+  \begin{enumerate}
+  \item What happens as $r$ approaches $\pi R=\pi K^{-1/2}$?
+  \item When $r$ gets very small, what happens to $\frac{(\text{area of circle})}{r^2}$?
+  \end{enumerate}
+  In each case, explain how these computations align with our understanding of spheres.
 \end{problem}
 
 \begin{problem}
-  When $K<0$, find $a$ in terms of the radius $r$.
-  \begin{hint}
-    There are two ways of going about this:
-    \begin{itemize}
-    \item Compute the integral from a previous problem,  using the fact that
-      \[\frac{d}{dx}\mathrm{artanh}(Ax)=\frac{A}{1-(Ax)^2}.\]
-      Then solve for $a$.
-    \item \textbf{Or,} use the fact that the $K$-length of the line
-      $$\text{from}\quad(1,0,0)\quad\text{to}\quad
-      (|K|^{-1/2}\sinh(\sigma),0,\cosh(\sigma))$$
-      is $|K|^{-1/2}\sigma$, and compare that to the length of its stereographic
-      projection onto the plane $z=1$.  Use the identities
-      \begin{align*}
-        \cosh(2x) &= 2\cosh^2(x)-1 \\
-        \sinh(2x) &= 2\sinh(x)\cosh(x).
-      \end{align*}
-      to simplify.
-    \end{itemize}
-  \end{hint}
-  \begin{hint}
-    This problem is potentially more involved than the spherical version, but in
-    the end you should get the same answer with an extra ``h''.
-  \end{hint}
+  When $K<0$, find $a$ in terms of the radius $r$ by computing the
+  integral from a previous problem, using the fact that
+  \[
+  \frac{d}{dx}\mathrm{artanh}(Ax)=\frac{A}{1-(Ax)^2}
+  \]
+  and then solve for $a$.
+
 \end{problem}
 
 \begin{problem}
@@ -509,16 +495,24 @@ For the next few problems, consider the following diagram:
   in terms of its radius $r$.
 \end{problem}
 
-Notice that for big enough $x$, $\sinh(x) \approx e^x/2$, since the $e^{-x}$ term
-is pretty much zero.  So the area of a circle in hyperbolic geometry grows
-exponentially with radius, unlike in Euclidean geometry where it only grows
-quadratically.  There's a \textbf{lot} of space within radius $r$ of a point in
-the hyperbolic plane.
+Notice that for big enough $x$,
+\begin{align*}
+\sinh(x) &= \frac{e^x-e^{-x}}{2}\\
+&\approx e^x/2,
+\end{align*}
+since the $e^{-x}$ term is pretty much zero.  So the area of a circle
+in hyperbolic geometry grows exponentially with radius, unlike in
+Euclidean geometry where it only grows quadratically.  There's a
+\textbf{lot} of space within radius $r$ of a point in the hyperbolic
+plane.
 
 
 \begin{problem}
-  When $r$ gets very small, what happens to $\frac{\text{area}}{r^2}$?  Explain
-  why this makes sense.
+  When $r$ gets very small, what happens to
+  \[
+  \frac{(\text{area of circle})}{r^2}?
+  \]
+  Explain why this makes sense.
   \begin{freeResponse}
     This makes sense because we already discussed that at small scales,
     hyperbolic geometry ``looks linear''.
