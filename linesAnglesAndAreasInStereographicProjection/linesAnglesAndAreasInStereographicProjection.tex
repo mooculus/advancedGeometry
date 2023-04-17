@@ -127,10 +127,10 @@ denominators to find
 \end{remark}
 
 
-When we project shortest paths, they map to circles (unless $c=0$ as above).
-
-When $K<0$, the circles meet the ``circle at infinity'' at right angles.
-\textbf{We won't make you prove this, but try to convince yourself that it's true!}
+When we project shortest paths, they map to circles (unless $c=0$ as
+above).  When $K<0$, the circles meet the ``circle at infinity'' at
+right angles.  \textbf{We won't make you prove this, but try to
+  convince yourself that it's true!}
 
 \begin{center}
 \begin{tikzpicture}[geometryDiagrams,scale=2]
@@ -462,6 +462,9 @@ For the next few problems, consider the following diagram:
     \]
     and solving for $a$ where $(x_s(t),y_s(t))=(t,0)$.
   \end{enumerate}
+  \begin{hint}
+    Recall that: $\frac{d}{dx} \arctan(x) = \frac{1}{1+x^2}$
+  \end{hint}
   \begin{freeResponse}
   \end{freeResponse}
 \end{problem}
@@ -484,7 +487,7 @@ For the next few problems, consider the following diagram:
   When $K<0$, find $a$ in terms of the radius $r$ by computing the
   integral from a previous problem, using the fact that
   \[
-  \frac{d}{dx}\mathrm{artanh}(Ax)=\frac{A}{1-(Ax)^2}
+  \frac{d}{dx}\mathrm{arctanh}(x)=\frac{1}{1-x^2}
   \]
   and then solve for $a$.
 

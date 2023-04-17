@@ -1,4 +1,6 @@
-\documentclass{ximera}
+\documentclass[12pt,noauthor,nooutcomes,handout,newpage]{ximera}
+
+\author{Bart Snapp}
 
 \input{../preamble.tex}
 
@@ -15,19 +17,26 @@ relativity. Underlying all of this work is the notion of a
 \textit{group action}.
 
 \begin{definition}
-  If $G$ is a group and $X$ is a set, then a (right) \dfn{group
-    action} is a map (written as $x\cdot g$, for all $g\in G$ and
-  $x\in X$) satisfying the following properties:
+  If $G$ is a group and $X$ is a set, then a (left) \dfn{group
+    action} is a map
+  \begin{align*}
+    \_\cdot\_: G\times X &\to X\\
+    (g,x) &\mapsto g\cdot x
+  \end{align*}
+  written as $g\cdot x \in X$ such that
   \begin{enumerate}
-  \item $(x\cdot g_1)\cdot g_2 = x\cdot (g_1\cdot g_2)$, for all $g_1,
+  \item $(g_2\cdot g_1)\cdot x = g_2\cdot (g_1\cdot x)$, for all $g_1,
     g_2\in G$ and $x\in X$.
-  \item $x\cdot I = x$ for all $x\in X$ where $I$ is the identity
+  \item $I\cdot x = x$ for all $x\in X$ where $I$ is the identity
     element of the group.
   \end{enumerate}
 \end{definition}
-As we work, you should try to see where we are using group actions.
+In essence, a group action tells you how to ``multiply'' elements of a
+group by elements of a set, and obtain an element of the set as a
+result of the multiplication. As we work, you should try to see where
+we are using group actions.
 
-\section{Galilean transformations of velocity}
+\subsection{Galilean transformations of velocity}
 
 
 
@@ -54,16 +63,16 @@ I =
 \qquad
 M_\theta=
 \begin{bmatrix}
-  \cos\theta & \sin\theta & 0\\
-  -\sin\theta & \cos\theta & 0\\
+  \cos\theta & -\sin\theta & 0\\
+  \sin\theta & \cos\theta & 0\\
   0 & 0 & 1
 \end{bmatrix},
 \]
 \[
 N_\psi=\begin{bmatrix}
-\cosh\psi & 0 & |K|^{1/2}\cdot\sinh\psi\\
+\cosh\psi & 0 & |K|^{-1/2}\cdot\sinh\psi\\
 0 & 1 & 0\\
-|K|^{-1/2}\cdot\sinh\psi & 0 & \cosh\psi
+|K|^{1/2}\cdot\sinh\psi & 0 & \cosh\psi
 \end{bmatrix}
 \]
 If we have an observer at point $O = (0,0)$ in central projection
@@ -84,9 +93,13 @@ would like to answer the following question:
   measured by the original observer?
 \end{quote}
 
+
+
 \begin{problem}
   Can you give a naive solution to this problem?
 \end{problem}
+
+
 Even if you can give a naive solution to this problem, we will think
 of this problem in central projection coordinates. Eventually we want
 to solve a much harder problem where the naive solution will fail,
@@ -100,9 +113,9 @@ goes to zero, and see what we find.
   Convert the $K$-rigid motion
   \[
   N_\psi=\begin{bmatrix}
-  \cosh\psi & 0 & |K|^{1/2}\cdot\sinh\psi\\
+  \cosh\psi & 0 & |K|^{-1/2}\cdot\sinh\psi\\
   0 & 1 & 0\\
-  |K|^{-1/2}\cdot\sinh\psi & 0 & \cosh\psi
+  |K|^{1/2}\cdot\sinh\psi & 0 & \cosh\psi
 \end{bmatrix}
   \]
   to a rigid motion of the $(x_c,y_c)$-plane. Call your answer $\nu_\psi$.
@@ -203,7 +216,7 @@ difficult'' we preemptively retort:
 
 
 
-\section{Hyperbolic transformations of velocity}
+\subsection{Hyperbolic transformations of velocity}
 
 Armed with experience from above, let's now suppose we are again attacking the question:
 \begin{quote}
@@ -241,34 +254,32 @@ For those who are in-the-know, a minor miracle has just occurred. The transforma
 \]
 is in fact the velocity transformation for Einstein's special theory
 of relativity when one takes the speed of light to be $c=1$!
+%% \begin{problem}
+%% Show that the transformation of the Klein disk $\nu_u$ is
+%% given by the transformation of $K$-warped space
+%% \[
+%% N_u = 
+%% \begin{bmatrix}
+%%   \frac{1}{\sqrt{1-u^2\cdot|K|}} & 0 & \frac{u\cdot|K|}{\sqrt{1-u^2\cdot|K|}}\\
+%%   0 & 1 & 0\\
+%%   \frac{u}{\sqrt{1-u^2\cdot|K|}} & 0 & \frac{1}{\sqrt{1-u^2\cdot|K|}}
+%% \end{bmatrix}
+%% \]
+%% when $K=-1$.
+%% \end{problem}
 
-\begin{problem}
-Show that the transformation of the Klein disk $\nu_u$ is
-given by the transformation of $K$-warped space
-\[
-N_u = 
-\begin{bmatrix}
-  \frac{1}{\sqrt{1-u^2\cdot|K|}} & 0 & \frac{u\cdot|K|}{\sqrt{1-u^2\cdot|K|}}\\
-  0 & 1 & 0\\
-  \frac{u}{\sqrt{1-u^2\cdot|K|}} & 0 & \frac{1}{\sqrt{1-u^2\cdot|K|}}
-\end{bmatrix}
-\]
-when $K=-1$.
-\end{problem}
-
-\begin{problem}
-  Show that
-  \[
-  N_u = 
-  \begin{bmatrix}
-    \frac{1}{\sqrt{1-u^2\cdot|K|}} & 0 & \frac{u\cdot|K|}{\sqrt{1-u^2\cdot|K|}}\\
-    0 & 1 & 0\\
-    \frac{u}{\sqrt{1-u^2\cdot|K|}} & 0 & \frac{1}{\sqrt{1-u^2\cdot|K|}}
-  \end{bmatrix}
-  \]
-  is a $K$-rigid motion.
-\end{problem}
-
+%% \begin{problem}
+%%   Show that
+%%   \[
+%%   N_u = 
+%%   \begin{bmatrix}
+%%     \frac{1}{\sqrt{1-u^2\cdot|K|}} & 0 & \frac{u\cdot|K|}{\sqrt{1-u^2\cdot|K|}}\\
+%%     0 & 1 & 0\\
+%%     \frac{u}{\sqrt{1-u^2\cdot|K|}} & 0 & \frac{1}{\sqrt{1-u^2\cdot|K|}}
+%%   \end{bmatrix}
+%%   \]
+%%   is a $K$-rigid motion.
+%% \end{problem}
 The upshot to all of these computations is that transformations of the form:
 \[
 \nu_u(x_c,y_c) = \left(\frac{x_c + u}{x_c\cdot u + 1},\frac{y_c\cdot \sqrt{1-u^2}}{x_c\cdot u+1}\right),
@@ -277,13 +288,35 @@ correspond exactly to a rigid motion of the surface
 \[
 -(x^2+y^2) + z^2 =1
 \]
-with the $K$-dot product. One imaginative interpretation of these
-computations is that we are in fact living on a hyperbolic surface,
-and that we experience our world through the lens of a central
-projection. What an amazing thought!
+with the $K$-dot product.
 
 
-%% \section{Hyperbolic transformations of position}
+One imaginative interpretation of these computations is that we are in
+fact living on a hyperbolic surface, and that we experience our world
+through the lens of a central projection.
+%% In our experience, the ``visual'' velocity of an object should be a
+%% straight vector. It's magnitude coincides with the euclidean force
+%% required to accelerate the object to that speed.  This applied force
+%% can be viewed as an applied rigid motion that transforms velocity as
+%% we have seen above. We find special relativity confusing because our
+%% world looks euclidean to us, yet we find velcity transforms in a
+%% strange way.
+%% Perhaps we are living on the hyperbolic surface, experiencing velocity as
+%% Moreover, if we imagine the path of an object in space, the velocity
+%% vectors look like euclidean vectors, but they are not measured using a
+%% euclidean metric. When when we measure velocity vectors, we must use
+%% the $K$-dot product, even though we are witnessing a projection. Let's
+%% repeat the last bit, this means that tangent vectors are measured
+%% using the $K$-dot product. And as we know by now,
+%% \begin{center}
+%%   \textbf{The dot product RULES!}
+%% \end{center}
+%% The conclusion is as inescapble as the Klein disk, we live in
+%% hyprbolic geometry.
+What an amazing thought!
+
+
+%% \subsection{Hyperbolic transformations of position}
 
 
 %% THIS IS A DRAFT
