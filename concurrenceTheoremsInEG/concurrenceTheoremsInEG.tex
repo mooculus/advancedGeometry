@@ -28,6 +28,7 @@ triangle, simply shear it to be a right triangle:
           \coordinate (A) at (0,0);
           \coordinate (B) at (2,0);
           \coordinate (C) at (.5,3);
+          
           \draw[pattern=horizontal lines] (A)--(B)--(C)--cycle;
 
           \draw[dashed,thin] (-2,0)--(8,0);
@@ -42,7 +43,9 @@ triangle, simply shear it to be a right triangle:
           \draw[pattern=horizontal lines] (AA)--(BB)--(CC)--cycle;
           \tkzLabelSegment[right](BB,CC){$h$}
           \tkzLabelSegment[below](BB,AA){$b$}
-          \tkzLabelSegment[below](B,A){$b$} 
+          \tkzLabelSegment[below](B,A){$b$}
+
+          \tkzDrawPoints(A,B,C,AA,BB,CC)
         \end{tikzpicture}
       \end{center}
 Recall that \dfn{shearing} is a process where you take a shape, cut

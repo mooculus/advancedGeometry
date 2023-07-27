@@ -39,11 +39,18 @@ So let's make a definition.
   The \textbf{circumference of a circle of radius one} is called the number $2\pi$.
 \end{definition}
 
+
+\begin{problem}
+  Prove, using a dialation, that a circle of radius $R$ has
+  circumference $2\pi R$.
+\end{problem}
+
+
+
 \subsection{Circumference and area of circles}
 
-We begin with perhaps the most basic fact of all about circles in
-euclidean geometry: If a circle has a circumference of $2\pi R$, then
-its area is $\pi R^2$.
+Now that we know the circumference of any circle, we will use this
+fact to find the formula for the area of a circle. 
 
 \begin{problem}
   If we are allowed to use calculus, we can deduce this immediately with
@@ -73,6 +80,7 @@ meeting at the center.  Here we have shown the $n$th triangle:
 %\node[above] at (C) {$P$};
 \tkzMarkAngle[size=0.8cm,thin](A,O,C)
 \tkzLabelAngle[pos = 0.6](A,O,C){$\theta_n$}
+\tkzDrawPoints(O,A,C)
 \end{tikzpicture}
 \end{image}
 Find $\theta_n$ and $b_n$ in terms of $n$.
@@ -143,6 +151,8 @@ the circle), here we have shown the $n$th triangle:
 \node[below] at (3.1,2) {$b_n$};
 
 \tkzMarkRightAngle[thin](A,B,O)
+
+\tkzDrawPoints(A,O,C,B)
 
 \end{tikzpicture}
 \end{image}
