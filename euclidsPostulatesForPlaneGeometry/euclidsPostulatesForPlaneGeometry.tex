@@ -1,4 +1,4 @@
-\documentclass[noauthor,nooutcomes,12pt,hints]{ximera}
+\documentclass[noauthor,nooutcomes,12pt,hints,handout,newpage]{ximera}
 
 \input{../preamble.tex}
 %% \prerequisites{rigidMotions,geometry}
@@ -81,6 +81,8 @@ If we are only given axioms 1--4, we will call our geometry
 \end{definition}
 
 
+We should note, that the usual rules for congruent triangles (SSS, SAS,
+ASA) hold in any neutral geometry.
 
 
 
@@ -98,6 +100,8 @@ see what we can prove using these first four postulates.
 In \textbf{neutral geometry}, two distinct lines are called \textbf{parallel} if and
 only if they don't intersect.
 \end{definition}
+
+
 
 
 
@@ -288,10 +292,6 @@ only if they don't intersect.
 %% \end{freeResponse}
 %% \end{problem}
 
-Although it is a bit tedious to show (and we will not ask you to do it
-here), using only Axioms 1--4 you can derive the usual rules for congruent
-triangles (SSS, SAS, ASA). Thus these laws hold in any neutral
-geometry.
 
 
 
@@ -324,7 +324,7 @@ geometry.
   congruent.
 
   \begin{hint}
-    First you should explain why $\angle BDA = \angle CDE$.
+    First you should prove that  $\angle BDA = \angle CDE$.
   \end{hint}
   \begin{hint}
     Next you should use one of the congruence properties above. 
@@ -404,8 +404,8 @@ sum of any two angles of a triangle is less than $180^{\circ}$.
 
 
 \begin{hint}
-Add line segments to the diagram above, and attempt to use the
-previous problem.
+To start, bisect $\bar{BC}$ with a new point $D$. Draw a segment from
+$A$ to some new point $E$ and attempt to use the previous problem.
 \end{hint}
 %% \begin{freeResponse} 
 %% For part (a), consider the midpoint of $\bar{BC}$, call it
@@ -839,7 +839,7 @@ but with one of its angles having measure less than $x$. %[MJG,125-127]
 Use the previous problem repeatedly to construct a triangle where the sum of the
 interior angles is $(180+x)^\circ$ but one of this triangles measures is less than
 \[
-\frac{\angle CAB}{2^n},
+\frac{|\angle CAB|}{2^n},
 \]
 for any value of $n$.
 \end{hint}
