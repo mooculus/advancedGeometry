@@ -1,4 +1,4 @@
-\documentclass[noauthor,nooutcomes,12pt,hints,handout,newpage]{ximera}
+\documentclass[noauthor,nooutcomes,12pt,hints,newpage,handout]{ximera}
 
 \input{../preamble.tex}
 %% \prerequisites{rigidMotions,geometry}
@@ -555,55 +555,60 @@ $A$ to some new point $E$ and attempt to use the previous problem.
 %% $\alpha + \beta < 180^\circ$.
 %% \end{freeResponse}
 
-%% \end{problem}
+\end{problem}
 
-%% \begin{problem}\label{ng_parallel}
-%% Show in \textbf{neutral geometry} that, if two lines cut by a
-%% transversal line have a pair of congruent alternate interior angles,
-%% then they are parallel. Explain why spherical geometry is not a
-%% neutral geometry.
+\begin{problem}\label{ng_parallel}
+  Let's talk about alternate interior angles.
+  \begin{enumerate}
+  \item Show that in \textbf{neutral geometry}, if two lines cut by a
+    transversal line have a pair of congruent alternate interior
+    angles, then they are parallel.
+  \item Explain why spherical geometry is not a neutral geometry.
+  \end{enumerate}
+\begin{hint}
+For the first part, suppose the assertion is false for some pair of
+lines. Find a triangle that violates the conclusion of the previous
+problem.
 
-%% \begin{hint}
-%% Suppose the assertion is false for some pair of lines. Find a triangle
-%% that violates the conclusion of the previous problem.
-%% \end{hint}
-%% \begin{freeResponse}
-%% Seeking a contradiction, consider the following diagram with
-%% nonparallel lines $\l$ and $m$:
-%% \begin{image}
-%% \begin{tikzpicture}[geometryDiagrams]
-%% \coordinate (A) at (0,4.5);
-%% \coordinate (B) at (10,2);
-%% \coordinate (C) at (0,.5);
-%% \coordinate (D) at (10,3);
-%% \coordinate (E) at (2,5);
-%% \coordinate (F) at (2,0);
-%% \coordinate (G) at (2,4);
-%% \coordinate (H) at (2,1);
-%% \draw (A)--(B);
-%% \draw (C)--(D);
-%% \draw[thin] (E)--(F);
+For the second, draw a picture.
+\end{hint}
+\begin{freeResponse}
+Seeking a contradiction, consider the following diagram with
+nonparallel lines $\l$ and $m$:
+\begin{image}
+\begin{tikzpicture}[geometryDiagrams]
+\coordinate (A) at (0,4.5);
+\coordinate (B) at (10,2);
+\coordinate (C) at (0,.5);
+\coordinate (D) at (10,3);
+\coordinate (E) at (2,5);
+\coordinate (F) at (2,0);
+\coordinate (G) at (2,4);
+\coordinate (H) at (2,1);
+\draw (A)--(B);
+\draw (C)--(D);
+\draw[thin] (E)--(F);
 
-%% \node[above] at (A) {$\l$};
-%% \node[above] at (C) {$m$};
+\node[above] at (A) {$\l$};
+\node[above] at (C) {$m$};
 
 
-%% \tkzMarkAngle[size=0.6cm,thin](F,G,B)
-%% \tkzLabelAngle[pos = 0.4](F,G,B){$\alpha$}
+\tkzMarkAngle[size=0.6cm,thin](F,G,B)
+\tkzLabelAngle[pos = 0.4](F,G,B){$\alpha$}
 
-%% \tkzMarkAngle[size=0.5cm,thin](G,H,C)
-%% \tkzLabelAngle[pos = -0.3](G,H,C){$\alpha$}
+\tkzMarkAngle[size=0.5cm,thin](G,H,C)
+\tkzLabelAngle[pos = -0.3](G,H,C){$\alpha$}
 
-%% \tkzMarkAngle[size=0.5cm,thin](B,H,E)
-%% \tkzLabelAngle[pos = 0.3](B,H,E){$\beta$}
+\tkzMarkAngle[size=0.5cm,thin](B,H,E)
+\tkzLabelAngle[pos = 0.3](B,H,E){$\beta$}
 
-%% %\draw[thin,step=.5cm] (0,0) grid (10,5);
-%% \end{tikzpicture}
-%% \end{image}
-%% From the diagram we have $\alpha + \beta = 180^\circ$. This is a
-%% contradiction since the sum of any two interior angles of a triangle
-%% is always less than $180^\circ$ in neutral geometry.
-%% \end{freeResponse}
+%\draw[thin,step=.5cm] (0,0) grid (10,5);
+\end{tikzpicture}
+\end{image}
+From the diagram we have $\alpha + \beta = 180^\circ$. This is a
+contradiction since the sum of any two interior angles of a triangle
+is always less than $180^\circ$ in neutral geometry.
+\end{freeResponse}
 
 \end{problem}
 
