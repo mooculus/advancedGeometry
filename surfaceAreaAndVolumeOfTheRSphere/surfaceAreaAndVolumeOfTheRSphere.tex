@@ -1,4 +1,4 @@
-\documentclass[hints,handout,noauthor,nooutcomes,12pt]{ximera}
+\documentclass[hints,handout,noauthor,nooutcomes,12pt,newpage]{ximera}
 
 \input{../preamble.tex}
 
@@ -19,7 +19,9 @@ $3$-space. This is the sphere of radius $R$ in normal $3$D space.
 %% euclidean geometry.
 
 
-In what follows we dare work with $\pi$ without computing it.%%  Do not
+In what follows we dare work with $\pi$ without computing it. So let's make a definition.
+
+%%  Do not
 %% judge us too harshly! After all, Euclid merely says (in modern language)
 %% \begin{quote}
 %%   \textbf{Euclid: Proposition II of Book XII}
@@ -32,7 +34,7 @@ In what follows we dare work with $\pi$ without computing it.%%  Do not
 %%       circle})^2}
 %%   \]
 %% \end{quote}
-So let's make a definition.
+
 
 \begin{definition}
   The \textbf{circumference of a circle of radius one} is called the number $2\pi$.
@@ -493,7 +495,7 @@ where $f:\R\to\R$ and $g:\R\to\R$ are functions. Setting
 \]
 we may write the 3-dimensional change of variables formula,
 \[
-\iiint_{\mathrm{shear}(P)} F \d V=\iiint_P F\circ \mathrm{shear} \det \jac(\mathrm{shear}) \, dV,
+\iiint_{\mathrm{shear}(P)} F \d V=\iiint_P F\circ \mathrm{shear} |\det \jac(\mathrm{shear}) | \, dV,
 \]
 where $F:\R^3\to\R$.  Use this formula.
 \end{hint}
@@ -524,9 +526,9 @@ Consider the transformation%
 \[
 \mathrm{mag}(x,y,z)=
 \begin{bmatrix}
-x_0 + r_{1} x \\
-y_0 + r_2 y \\
-z_0 + r_3 z
+x_0 + r_{1} (x-x_0) \\
+y_0 + r_2 (y-y_0)\\
+z_0 + r_3 (z-z_0)
 \end{bmatrix}
 \]
 where $(x_0,y_0,z_0)$ is the center of the dilation, and use the
