@@ -1,4 +1,4 @@
-\documentclass[newpage,hints,12pt,noauthor,nooutcomes]{ximera}
+\documentclass[newpage,hints,12pt,noauthor,nooutcomes,handout]{ximera}
 
 \input{../preamble.tex}
 
@@ -14,14 +14,15 @@ Here we look at lines, angles, and areas in stereographic projection coordinates
 
 As we know, we cannot make perfect flat maps of 3D surfaces. In stereographic
 projection, shortest paths are sent to either lines or circles, and (perhaps
-surprisingly!) circles are sent to circles. Recall that 
-
+surprisingly!) circles are sent to circles. Recall that the function
 \begin{center}
 \begin{tikzcd}[column sep=large,row sep = huge,ampersand replacement = \&]
   (x_s,y_s)\in \R^2 \ar[r,|->,"\toGs"] \& (x, y ,z) \in \R^3
 \end{tikzcd}
 \end{center}
-from this space to $K$-warped space. We may set $\rho=\frac{4}{K(x_s^2 + y_s^2) + 4}$ and write
+maps from $2$-dimensional stereographic coordinates to this space to
+$K$-warped space. We may set $\rho=\frac{4}{K(x_s^2 + y_s^2) + 4}$ and
+write
 \[
 \toGs(x_s,y_s) = 
 \begin{bmatrix}
