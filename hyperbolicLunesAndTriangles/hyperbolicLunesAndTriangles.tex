@@ -1,4 +1,4 @@
-\documentclass[newpage,hints,12pt,nooutcomes,noauthor,hints]{ximera}
+\documentclass[newpage,hints,12pt,nooutcomes,noauthor,hints,handout]{ximera}
 
 \input{../preamble.tex}
 
@@ -199,8 +199,8 @@ angles are preserved in the Poincar\'e disk.
   \tkzDefPoint(1,0){A}
   \tkzDrawCircle[thick](O,A)
 
-  \tkzDefPoint(.5,.87){z1}
-  \tkzDefPoint(.5,-.87){z2}
+  \tkzDefPoint(.6,.8){z1}
+  \tkzDefPoint(.4,-.92){z2}
 
   \begin{scope}
     \clip (O) -- (z1) -- (A) -- (z2) -- cycle;
@@ -233,8 +233,8 @@ angles are preserved in the Poincar\'e disk.
   \tkzDefPoint(1,0){A}
   \tkzDrawCircle[thick](O,A)
 
-  \tkzDefPoint(.5,.87){z1}
-  \tkzDefPoint(.5,-.87){z2}
+  \tkzDefPoint(.6,.8){z1}
+  \tkzDefPoint(.4,-.92){z2}
 
 
   \begin{scope}
@@ -270,8 +270,8 @@ angles are preserved in the Poincar\'e disk.
   \tkzDefPoint(1,0){A}
   \tkzDrawCircle[thick](O,A)
 
-  \tkzDefPoint(.5,.87){z1}
-  \tkzDefPoint(.5,-.87){z2}
+  \tkzDefPoint(.6,.8){z1}
+  \tkzDefPoint(.4,-.92){z2}
 
 
    % \begin{scope}
@@ -466,16 +466,15 @@ angles are preserved in the Poincar\'e disk.
   \node[above] at (0,1.2) {$y_s$};
 \end{tikzpicture}
 \end{center}
-  to help compute the area of a triangle in hyperbolic geometry.
+  to help compute the area of a triangle with angle $\alpha$, $\beta$, and $\gamma$ in hyperbolic geometry.
   \begin{hint}
-    What's the area of the ideal hexagon?
+    Start by using the pictures above to find the area of the ideal hexagon.
   \end{hint}
   \begin{hint}
-    Make your own drawings inspired by those above.
+ Use the area of the hyperbolic lune next.
   \end{hint}
   \begin{hint}
-    Make sure your computation is general: start with an arbitrary triangle and
-    explain how you can fill in the rest of the diagram.
+    Cover your arbitrary triangle and solve for its area.
   \end{hint}
 \end{problem}
 
